@@ -1,0 +1,53 @@
+filters:
+  and:
+    - file.hasTag("demanda")
+    - file.ext == "md"
+formulas:
+  dias_em_andamento: if(data_inicio, (today() - date(data_inicio)).days, "")
+  status_icone: if(status == "concluida", "✅", if(status == "hml", "🟡", if(status == "dev", "🔵", "⚪")))
+  prioridade_icone: if(prioridade == "alta", "🔴", if(prioridade == "media", "🟡", "🟢"))
+properties:
+  modulo:
+    displayName: Módulo
+  responsavel:
+    displayName: Responsável
+  formula.status_icone:
+    displayName: Status
+  formula.prioridade_icone:
+    displayName: Prioridade
+  formula.dias_em_andamento:
+    displayName: Dias
+views:
+  - type: table
+    name: Todas as Demandas
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icone
+      - formula.prioridade_icone
+      - modulo
+      - responsavel
+      - formula.dias_em_andamento
+  - type: table
+    name: Em Andamento
+    filters:
+      and:
+        - status != "concluida"
+    order:
+      - file.name
+      - formula.status_icone
+      - formula.prioridade_icone
+      - modulo
+      - formula.dias_em_andamento
+  - type: table
+    name: Concluídas
+    filters:
+      and:
+        - status == "concluida"
+    order:
+      - file.name
+      - modulo
+      - responsavel
+      - data_fim

@@ -1,0 +1,30 @@
+filters:
+  and:
+    - file.inFolder("QA Workspace/01 Daily")
+    - file.hasTag("daily")
+formulas:
+  dia_semana: date(date).format("dddd")
+  resumo: (file.size / 100).round(0).toString() + " linhas"
+properties:
+  formula.dia_semana:
+    displayName: Dia
+  formula.resumo:
+    displayName: Tamanho
+views:
+  - type: table
+    name: Diários Recentes
+    order:
+      - file.name
+      - formula.dia_semana
+      - formula.resumo
+      - file.mtime
+    limit: 30
+  - type: table
+    name: Esta Semana
+    filters:
+      and:
+        - file.mtime >= (today() - "7d")
+    order:
+      - file.name
+      - formula.dia_semana
+      - formula.resumo

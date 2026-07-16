@@ -1,0 +1,150 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiCalendarDays",
+      "LiLayers",
+      "LiCode2",
+      "LiRocket",
+      "LiFlaskConical",
+      "LiCheckSquare",
+      "LiShieldCheck",
+      "LiBookOpen",
+      "LiFileText",
+      "LiArchive"
+    ],
+    "recentlyUsedIconsSize": 10,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "QA Workspace": {
+    "iconName": "LiBeaker",
+    "iconColor": "#0d9488"
+  },
+  "QA Workspace/Dashboard": {
+    "iconName": "LiLayoutDashboard",
+    "iconColor": "#eab308"
+  },
+  "QA Workspace/Dashboard/Dashboard.md": {
+    "iconName": "LiLayoutDashboard",
+    "iconColor": "#eab308"
+  },
+  "QA Workspace/00 Inbox": {
+    "iconName": "LiListTodo",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/01 Daily": {
+    "iconName": "LiCalendarDays",
+    "iconColor": "#d97706"
+  },
+  "QA Workspace/02 Demandas": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/02 Demandas/DEV": {
+    "iconName": "LiCode2",
+    "iconColor": "#059669"
+  },
+  "QA Workspace/02 Demandas/HML": {
+    "iconName": "LiClipboardCheck",
+    "iconColor": "#ea580c"
+  },
+  "QA Workspace/02 Demandas/POCs": {
+    "iconName": "LiFlaskConical",
+    "iconColor": "#c026d3"
+  },
+  "QA Workspace/02 Demandas/Concluídas": {
+    "iconName": "LiBadgeCheck",
+    "iconColor": "#ca8a04"
+  },
+  "QA Workspace/03 Sanidades": {
+    "iconName": "LiShieldCheck",
+    "iconColor": "#0891b2"
+  },
+  "QA Workspace/04 Conhecimento": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#e11d48"
+  },
+  "QA Workspace/99 Arquivo": {
+    "iconName": "LiArchive",
+    "iconColor": "#78350f"
+  },
+  "QA Workspace/Sistema": {
+    "iconName": "LiSettings",
+    "iconColor": "#475569"
+  },
+  "QA Workspace/Sistema/Contexto": {
+    "iconName": "LiCompass",
+    "iconColor": "#4338ca"
+  },
+  "QA Workspace/Sistema/Skills": {
+    "iconName": "LiWrench",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/Sistema/Templates": {
+    "iconName": "LiLayoutTemplate",
+    "iconColor": "#0d9488"
+  },
+  "QA Workspace/Sistema/Specs": {
+    "iconName": "LiPencilRuler",
+    "iconColor": "#0284c7"
+  },
+  "QA Workspace/02 Demandas/Hotfix": {
+    "iconName": "LiFlame",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/Evidências": {
+    "iconName": "LiVideo",
+    "iconColor": "#16a34a"
+  },
+  "QA Workspace/Evidências/Desenvolvimento": {
+    "iconName": "LiCode2",
+    "iconColor": "#059669"
+  },
+  "QA Workspace/Evidências/Homologação": {
+    "iconName": "LiClipboardCheck",
+    "iconColor": "#ea580c"
+  },
+  "QA Workspace/Evidências/Hotfix": {
+    "iconName": "LiFlame",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/Evidências/Produção": {
+    "iconName": "LiGlobe",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/Evidências/Arquitetura": {
+    "iconName": "LiNetwork",
+    "iconColor": "#4338ca"
+  },
+  "QA Workspace/Evidências/Cadastrar": {
+    "iconName": "LiFilePlus2",
+    "iconColor": "#ca8a04"
+  },
+  "QA Workspace/01 Daily/2026-07": {
+    "iconName": "LiCalendar",
+    "iconColor": "#d97706"
+  }
+}

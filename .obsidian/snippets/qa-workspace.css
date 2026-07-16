@@ -1,0 +1,161 @@
+/* ============================================================
+   QA Workspace — snippet do vault (Dashboard + Daily)
+   Escopado por cssclasses (qa-dashboard / qa-daily):
+   nada aqui afeta notas que não declarem essas classes.
+   Cores derivadas do sistema de cores por pasta documentado
+   em Sistema/Contexto/Plugins Instalados.md.
+   ============================================================ */
+
+/* ---------- Dashboard: título e rótulos de seção ---------- */
+
+.qa-dashboard h1 {
+  letter-spacing: -0.02em;
+  padding-bottom: 0.25em;
+  border-bottom: 3px solid #0d9488;
+}
+
+.qa-dashboard h2 {
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.35em;
+}
+
+/* hr padrão fica mais discreto dentro da dashboard */
+.qa-dashboard hr {
+  border-color: transparent;
+  margin: 0.6em 0;
+}
+
+/* ---------- Assinatura: faixa de KPIs (LEDs de status) ---------- */
+
+.qa-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin: 0.5em 0 0.3em;
+}
+
+.qa-kpi {
+  flex: 1 1 96px;
+  min-width: 96px;
+  padding: 0.55em 0.85em 0.65em;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-top: 3px solid var(--kpi, var(--text-muted));
+  transition: transform 120ms ease;
+}
+
+.qa-kpi:hover {
+  transform: translateY(-1px);
+}
+
+.qa-kpi-n {
+  font-family: var(--font-monospace);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-normal);
+}
+
+.qa-kpi-l {
+  font-size: 0.72em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 0.15em;
+}
+
+/* contador zerado fica apagado — o olho vai direto pro que tem valor */
+.qa-kpi.is-zero {
+  opacity: 0.5;
+}
+
+/* ---------- Botão "escrever na daily de hoje" ---------- */
+
+.qa-today a {
+  display: inline-block;
+  background: #0d9488;
+  color: #ffffff !important;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 120ms ease;
+}
+
+.qa-today a:hover {
+  background: #0f766e;
+}
+
+.qa-today-missing {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.qa-atualizar {
+  margin-inline-start: 0.6em;
+  background: transparent;
+  color: #0d9488;
+  border: 1.5px solid #0d9488;
+  padding: 0.45em 0.9em;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.qa-atualizar:hover {
+  background: #0d9488;
+  color: #ffffff;
+}
+
+/* ---------- Fluxograma: centralizado e respirando ---------- */
+
+.qa-dashboard .mermaid {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+/* ---------- Daily: cor por seção (a cor é informação) ----------
+   Barras laterais usando as mesmas cores das pastas/status:
+   Atividades teal, Bugs vermelho, Melhorias âmbar, Pendências
+   violeta, Anotações cinza; DEV/HML/POCs nas cores das subpastas.
+   Só afeta o modo leitura (data-heading). Títulos não mudam de
+   texto — as queries da Dashboard dependem deles. */
+
+.qa-daily h2,
+.qa-daily h3 {
+  border-inline-start: 3px solid transparent;
+  padding-inline-start: 0.45em;
+}
+
+.qa-daily h2[data-heading="Pendências de ontem"]  { border-inline-start-color: #7c3aed; }
+.qa-daily h2[data-heading="Atividades"]           { border-inline-start-color: #0d9488; }
+.qa-daily h2[data-heading="Bugs encontrados"]     { border-inline-start-color: #dc2626; }
+.qa-daily h2[data-heading="Melhorias propostas"]  { border-inline-start-color: #d97706; }
+.qa-daily h2[data-heading="Anotações"]            { border-inline-start-color: #64748b; }
+.qa-daily h2[data-heading="Pendente para amanhã"] { border-inline-start-color: #7c3aed; }
+
+.qa-daily h3[data-heading="DEV"]  { border-inline-start-color: #059669; }
+.qa-daily h3[data-heading="HML"]  { border-inline-start-color: #ea580c; }
+.qa-daily h3[data-heading="POCs"] { border-inline-start-color: #c026d3; }
+.qa-daily h3[data-heading="Auto-organização"] { border-inline-start-color: #475569; }
+
+/* ---------- Acessibilidade ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .qa-kpi,
+  .qa-today a {
+    transition: none;
+  }
+  .qa-kpi:hover {
+    transform: none;
+  }
+}

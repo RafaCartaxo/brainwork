@@ -1,0 +1,65 @@
+filters:
+  and:
+    - file.hasTag("bug")
+    - file.ext == "md"
+formulas:
+  status_icone: if(status == "resolvido", "✅", if(status == "em_validacao", "🟡", if(status == "aberto", "🔴", "⚪")))
+  prioridade_icone: if(prioridade == "critica", "🔴", if(prioridade == "alta", "🟠", if(prioridade == "media", "🟡", "🟢")))
+  dias_aberto: if(status == "aberto", if(data_inicio, (today() - date(data_inicio)).days, if(data, (today() - date(data)).days, "")), "")
+properties:
+  ambiente:
+    displayName: Ambiente
+  modulo:
+    displayName: Módulo
+  formula.status_icone:
+    displayName: Status
+  formula.prioridade_icone:
+    displayName: Prioridade
+  formula.dias_aberto:
+    displayName: Dias aberto
+views:
+  - type: table
+    name: Bugs Abertos
+    filters:
+      and:
+        - status == "aberto"
+    order:
+      - file.name
+      - formula.prioridade_icone
+      - formula.dias_aberto
+      - ambiente
+      - modulo
+    sort:
+      - property: formula.prioridade_icone
+        direction: ASC
+  - type: table
+    name: Todos os Bugs
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icone
+      - formula.prioridade_icone
+      - ambiente
+      - modulo
+  - type: table
+    name: Bugs por Ambiente
+    groupBy:
+      property: ambiente
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icone
+      - formula.prioridade_icone
+      - modulo
+  - type: table
+    name: Bugs por Módulo
+    groupBy:
+      property: modulo
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icone
+      - formula.prioridade_icone
+      - ambiente
