@@ -25,6 +25,7 @@ date: 2026-07-13
 | Minimal Theme Settings  | `obsidian-minimal-settings`  | Configurações do tema Minimal                 |
 | Editing Toolbar         | `editing-toolbar`            | Barra de formatação estilo Word no modo de edição |
 | Homepage                | `homepage`                   | Abre a [[../../Dashboard/Dashboard\|Dashboard]] automaticamente ao abrir o vault; botão na ribbon + comando com atalho |
+| Obsidian Git            | `obsidian-git`               | Versionamento/sincronização automática do vault (pull ao abrir; commit+push a cada 10 min) |
 
 ## Plugins Core (nativos) que precisam estar ligados
 - **Bases** — necessário pros arquivos `.base` funcionarem ([[../../Dashboard/Bugs.base|Bugs.base]], [[../../Dashboard/Demandas.base|Demandas.base]], [[../../01 Daily/Índice Diário.base|Índice Diário.base]]). Em Settings → Core plugins.
@@ -53,6 +54,13 @@ Três caminhos, sem navegar por pastas (config do Homepage: Settings → Homepag
 3. **Bookmark** — a Dashboard fica fixa no painel Bookmarks (core plugin) no topo da sidebar.
 
 A daily de hoje se acessa pelo botão "✏️ Escrever na daily de hoje" da própria Dashboard, ou pelo Calendar.
+
+## Versionamento (git + Obsidian Git)
+O vault inteiro (`BrainWork/`, incluindo `.obsidian/` com plugins, scripts e snippets) é um repositório git — **clonar em outra máquina traz o ambiente completo**, não só as notas. Remoto: repositório **privado pessoal** no GitHub (o vault é método de trabalho/insights do QA; código do projeto é da empresa e não entra aqui).
+
+- **Fora do git**: `QA Workspace/Evidências/` (vídeos, 600MB+ — ficam locais por máquina; o registro oficial da evidência é a task do Notion) e `workspace.json` (layout volátil).
+- **Sincronização**: Obsidian Git com pull ao abrir o vault, commit+push automáticos a cada 10 min, pull antes de push (merge). Mensagens `vault: <timestamp>`.
+- **Nova máquina**: `git clone <repo>` → abrir a pasta como vault no Obsidian → ativar community plugins quando perguntado → configurar credencial GitHub (HTTPS + token) → recriar só o que é do SO (esquema `evidencia://`, ver seção própria).
 
 ## Botão "🔄 Atualizar" da Dashboard (script local, sem plugin)
 O botão na seção **Hoje** da [[../../Dashboard/Dashboard|Dashboard]] roda o script `.obsidian/scripts/qa-atualiza.py` (Python 3 puro, sem dependências, offline — **não usa IA nem Claude CLI**). Ele executa a parte mecânica do ciclo do [[../Skills/SKILL_INBOX|SKILL_INBOX]]: cria a daily de hoje se não existir, carrega pendências de ontem sem duplicar, e completa pendências concluídas com resultado anotado entre parênteses (frases padrão, cards atualizados/movidos/renomeados, Histórico). O disparo é feito pelo bloco `dataviewjs` da própria Dashboard via `child_process` — funciona só no desktop (requer `python3` no sistema). Idempotente: pode clicar quantas vezes quiser.
