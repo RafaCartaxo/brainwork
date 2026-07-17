@@ -92,6 +92,10 @@ Cada pasta tem um ícone Lucide + cor própria, escolhidos pra remeter ao que a 
 | `02 Demandas/Concluídas` | badge-check | `#ca8a04` |
 | `03 Sanidades` | shield-check | `#0891b2` |
 | `04 Conhecimento` | book-open | `#e11d48` |
+| `04 Conhecimento/Módulos` | puzzle | `#7c3aed` |
+| `04 Conhecimento/Fluxos` | route | `#0891b2` |
+| `04 Conhecimento/Referências` | library | `#ca8a04` |
+| `05 Refinar` | gem | `#db2777` |
 | `99 Arquivo` | archive | `#78350f` |
 | `Evidências` | video | `#16a34a` |
 | `Evidências/Desenvolvimento` | code-2 | `#059669` |

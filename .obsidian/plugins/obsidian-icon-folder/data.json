@@ -146,5 +146,21 @@
   "QA Workspace/01 Daily/2026-07": {
     "iconName": "LiCalendar",
     "iconColor": "#d97706"
+  },
+  "QA Workspace/05 Refinar": {
+    "iconName": "LiGem",
+    "iconColor": "#db2777"
+  },
+  "QA Workspace/04 Conhecimento/Módulos": {
+    "iconName": "LiPuzzle",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/04 Conhecimento/Fluxos": {
+    "iconName": "LiRoute",
+    "iconColor": "#0891b2"
+  },
+  "QA Workspace/04 Conhecimento/Referências": {
+    "iconName": "LiLibrary",
+    "iconColor": "#ca8a04"
   }
 }

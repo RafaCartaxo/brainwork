@@ -30,7 +30,10 @@ QA Workspace/
 ├── 03 Sanidades/
 │   └── README.md (sem estrutura ainda — template/skill de Sanidade no backlog do vault)
 ├── 04 Conhecimento/
-│   ├── README.md (análises de refinamento arquivadas — `<SGV> - Refinamento <título>.md`; outros tipos sem estrutura ainda)
+│   ├── README.md (estrutura e regras de uso da base de conhecimento)
+│   ├── Módulos/ (uma nota por módulo do Sogov — regras de negócio e comportamentos, template Conhecimento.md)
+│   ├── Fluxos/ (fluxos de negócio ponta a ponta que cruzam módulos)
+│   ├── Referências/ (docs do repo, manuais, links externos, leis)
 │   └── SGV - Refinamento <título>.md (mesas de trabalho concluídas, status: refinado)
 ├── 05 Refinar/
 │   └── README.md (mesa de trabalho do refinamento — exports do Notion etc. no template Refinamento.md; concluído, arquiva em 04 Conhecimento/)
