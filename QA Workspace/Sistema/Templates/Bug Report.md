@@ -40,19 +40,22 @@ Então ...
 
 ### Critérios de aceite
 
+- [ ] ...
+
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Título do caso de teste**
-    - Dado que ...
-    - E ...
-    - Quando ...
-    - Então ...
+    Dado que ...
+    E ...
+    Quando ...
+    Então ...
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -60,13 +63,7 @@ Então ...
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: [Desenvolvimento / Homologação / Produção]
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 
