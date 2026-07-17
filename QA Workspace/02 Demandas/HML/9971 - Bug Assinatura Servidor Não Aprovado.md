@@ -53,14 +53,15 @@ O sistema não deve permitir concluir a solicitação de assinatura para servido
 ### Casos de Teste Básicos
 
 - **CT-B01 Bloquear solicitação de assinatura para servidor com cadastro "A aprovar"**
-    - Dado que exista um servidor com cadastro na situação "A aprovar"
-    - E o usuário esteja solicitando assinatura em um documento
-    - Quando o usuário buscar/selecionar esse servidor para a solicitação de assinatura
-    - Então o sistema deve exibir o badge de cadastro incompleto e o servidor não deve estar disponível para solicitação de assinatura
+    Dado que exista um servidor com cadastro na situação "A aprovar"
+    E o usuário esteja solicitando assinatura em um documento
+    Quando o usuário buscar/selecionar esse servidor para a solicitação de assinatura
+    Então o sistema deve exibir o badge de cadastro incompleto e o servidor não deve estar disponível para solicitação de assinatura
 
-    - Execução Passou?
+	- Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -68,13 +69,7 @@ O sistema não deve permitir concluir a solicitação de assinatura para servido
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 
