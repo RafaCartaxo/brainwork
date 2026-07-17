@@ -42,7 +42,7 @@ O botão flutuante de ancoragem deve aparecer na posição correta desde o iníc
 
 ### Critérios de aceite
 
-- [ ] O botão de ancoragem deve ser exibido na posição correta durante todo o carregamento da página
+- [x] O botão de ancoragem deve ser exibido na posição correta durante todo o carregamento da página
 
 ---
 
@@ -57,6 +57,7 @@ O botão flutuante de ancoragem deve aparecer na posição correta desde o iníc
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -64,13 +65,7 @@ O botão flutuante de ancoragem deve aparecer na posição correta desde o iníc
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

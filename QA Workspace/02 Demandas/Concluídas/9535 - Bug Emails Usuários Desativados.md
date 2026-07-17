@@ -44,9 +44,9 @@ Usuários desativados não devem receber e-mails de notificação do sistema (as
 
 ### Critérios de aceite
 
-- [ ] Usuário desativado mencionado/envolvido em despacho ou documento não deve receber e-mail quando o documento for assinado
-- [ ] Administrador desativado não deve receber e-mail de atualização de módulo
-- [ ] Usuários ativos devem continuar recebendo essas notificações normalmente (sem regressão)
+- [x] Usuário desativado mencionado/envolvido em despacho ou documento não deve receber e-mail quando o documento for assinado
+- [x] Administrador desativado não deve receber e-mail de atualização de módulo
+- [x] Usuários ativos devem continuar recebendo essas notificações normalmente (sem regressão)
 
 ---
 
@@ -60,6 +60,7 @@ Usuários desativados não devem receber e-mails de notificação do sistema (as
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B02 Manter e-mail de assinatura para usuário ativo envolvido em despacho/documento**
@@ -70,6 +71,7 @@ Usuários desativados não devem receber e-mails de notificação do sistema (as
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B03 Bloquear e-mail de atualização de módulo para administrador desativado**
@@ -80,6 +82,7 @@ Usuários desativados não devem receber e-mails de notificação do sistema (as
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B04 Manter e-mail de atualização de módulo para administrador ativo**
@@ -90,6 +93,7 @@ Usuários desativados não devem receber e-mails de notificação do sistema (as
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -97,13 +101,7 @@ Usuários desativados não devem receber e-mails de notificação do sistema (as
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

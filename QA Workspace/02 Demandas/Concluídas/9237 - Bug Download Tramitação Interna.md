@@ -49,8 +49,8 @@ O download realizado por um cidadão não deve conter, em nenhuma hipótese, con
 
 ### Critérios de aceite
 
-- [ ] O arquivo baixado por um cidadão não deve conter informações de tramitação interna
-- [ ] O comportamento deve ser consistente entre os ambientes de DEV, HML e PROD
+- [x] O arquivo baixado por um cidadão não deve conter informações de tramitação interna
+- [x] O comportamento deve ser consistente entre os ambientes de DEV, HML e PROD
 
 ---
 
@@ -64,6 +64,7 @@ O download realizado por um cidadão não deve conter, em nenhuma hipótese, con
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -71,13 +72,7 @@ O download realizado por um cidadão não deve conter, em nenhuma hipótese, con
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

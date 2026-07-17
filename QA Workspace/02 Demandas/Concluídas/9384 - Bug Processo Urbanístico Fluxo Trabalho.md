@@ -47,7 +47,7 @@ O Processo Urbanístico deve ser carregado e exibido corretamente na lista de se
 
 ### Critérios de aceite
 
-- [ ] O Processo Urbanístico deve aparecer disponível para seleção ao acessar o Fluxo de Trabalho
+- [x] O Processo Urbanístico deve aparecer disponível para seleção ao acessar o Fluxo de Trabalho
 
 ---
 
@@ -61,6 +61,7 @@ O Processo Urbanístico deve ser carregado e exibido corretamente na lista de se
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -68,13 +69,7 @@ O Processo Urbanístico deve ser carregado e exibido corretamente na lista de se
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

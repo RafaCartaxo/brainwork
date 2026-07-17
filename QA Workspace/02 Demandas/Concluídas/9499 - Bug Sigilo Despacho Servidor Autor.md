@@ -44,9 +44,9 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
 
 ### Critérios de aceite
 
-- [ ] O servidor autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente (tela e download/PDF)
-- [ ] Servidores diretamente envolvidos no despacho devem continuar visualizando o conteúdo normalmente
-- [ ] Servidores/setores sem envolvimento direto e que não são autores não devem visualizar o conteúdo sigiloso, mesmo sendo donos/responsáveis pelo processo administrativo em questão
+- [x] O servidor autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente (tela e download/PDF)
+- [x] Servidores diretamente envolvidos no despacho devem continuar visualizando o conteúdo normalmente
+- [x] Servidores/setores sem envolvimento direto e que não são autores não devem visualizar o conteúdo sigiloso, mesmo sendo donos/responsáveis pelo processo administrativo em questão
 
 ---
 
@@ -60,6 +60,7 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B02 Baixar PDF do próprio despacho sigiloso como autor (servidor)**
@@ -70,6 +71,7 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B03 Ocultar conteúdo do despacho sigiloso para servidor sem envolvimento direto**
@@ -81,6 +83,7 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -88,12 +91,7 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
 ### Ambiente
 
 - Versão:
-
 - Ambiente: Homologação
-
-- Navegador:
-
-- Sistema Operacional:
 
 ---
 

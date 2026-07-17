@@ -98,7 +98,7 @@ QA Workspace/
 Quando um bug ou suspeita de bug (achado via análise de código, CX, ou qualquer outra origem) é investigado e confirmado que **não ocorre** (cenário impossível, premissa errada, ou já coberto por outro comportamento):
 - `status` vira `descartado` (novo valor, ao lado de `aberto`/`em_validacao`/`resolvido`)
 - Move-se o arquivo fisicamente pra `99 Arquivo/` (mesma lógica de mover por mudança de status já usada entre `DEV`/`HML`/`Concluídas`)
-- O(s) Caso(s) de Teste Básico(s) relacionado(s) são marcados como "Sim" (comportamento esperado se confirma — não há bug)
+- O(s) Caso(s) de Teste Básico(s) relacionado(s) são marcados como "Sim" e os checkboxes de Critérios de aceite marcados (comportamento esperado se confirma — não há bug)
 - `Observações` explica o motivo do descarte (por que o cenário não se aplica ou não reproduz)
 - Registra-se em Atividades da daily do dia com a frase padrão: `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)`
 

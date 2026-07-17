@@ -42,8 +42,8 @@ A data deve ser exibida corretamente em todos os eventos de despacho.
 
 ### Critérios de aceite
 
-- [ ] O evento de despacho deve exibir a data corretamente
-- [ ] Não deve haver casos onde a data apareça em branco/ausente
+- [x] O evento de despacho deve exibir a data corretamente
+- [x] Não deve haver casos onde a data apareça em branco/ausente
 
 ---
 
@@ -57,6 +57,7 @@ A data deve ser exibida corretamente em todos os eventos de despacho.
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -64,13 +65,7 @@ A data deve ser exibida corretamente em todos os eventos de despacho.
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

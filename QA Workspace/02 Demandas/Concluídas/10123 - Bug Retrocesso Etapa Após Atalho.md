@@ -48,8 +48,8 @@ Ao retroceder uma etapa que foi avançada por atalho, o cluster de seleção do 
 
 ### Critérios de aceite
 
-- [ ] O cluster de seleção do setor responsável deve ser exibido ao retroceder etapa avançada por atalho
-- [ ] O retrocesso da etapa deve ser concluído com sucesso após a seleção do setor responsável
+- [x] O cluster de seleção do setor responsável deve ser exibido ao retroceder etapa avançada por atalho
+- [x] O retrocesso da etapa deve ser concluído com sucesso após a seleção do setor responsável
 
 ---
 
@@ -64,6 +64,7 @@ Ao retroceder uma etapa que foi avançada por atalho, o cluster de seleção do 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes: ![[10123 - retrocesso de etapa após atalho aprovado em homologação.mp4]]
 
 ---
@@ -71,12 +72,7 @@ Ao retroceder uma etapa que foi avançada por atalho, o cluster de seleção do 
 ### Ambiente
 
 - Versão:
-
 - Ambiente: Homologação
-
-- Navegador:
-
-- Sistema Operacional:
 
 ---
 

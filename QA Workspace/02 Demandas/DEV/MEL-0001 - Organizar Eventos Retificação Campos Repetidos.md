@@ -55,6 +55,7 @@ Campos com "permitir repetição de campo" podem ser duplicados N vezes (repeti�
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-002 Vários campos repetidos retificados seguem a ordem do formulário**
@@ -65,6 +66,7 @@ Campos com "permitir repetição de campo" podem ser duplicados N vezes (repeti�
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-003 Regressão do 8805 — texto do evento continua amigável**
@@ -75,6 +77,7 @@ Campos com "permitir repetição de campo" podem ser duplicados N vezes (repeti�
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---

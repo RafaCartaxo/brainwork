@@ -43,8 +43,8 @@ O cidadão autor de um despacho sigiloso na própria resposta de Processo Admini
 
 ### Critérios de aceite
 
-- [ ] O cidadão autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente
-- [ ] Demais cidadãos/servidores sem envolvimento direto e que não são autores continuam sem acesso ao conteúdo sigiloso (regra de sigilo não deve regredir)
+- [x] O cidadão autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente
+- [x] Demais cidadãos/servidores sem envolvimento direto e que não são autores continuam sem acesso ao conteúdo sigiloso (regra de sigilo não deve regredir)
 
 ---
 
@@ -58,6 +58,7 @@ O cidadão autor de um despacho sigiloso na própria resposta de Processo Admini
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -65,12 +66,7 @@ O cidadão autor de um despacho sigiloso na própria resposta de Processo Admini
 ### Ambiente
 
 - Versão:
-
 - Ambiente: Desenvolvimento
-
-- Navegador:
-
-- Sistema Operacional:
 
 ---
 

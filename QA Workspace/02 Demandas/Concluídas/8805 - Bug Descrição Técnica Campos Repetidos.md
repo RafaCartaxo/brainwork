@@ -44,9 +44,9 @@ O evento de retificação deve exibir o nome amigável do campo e o número da r
 
 ### Critérios de aceite
 
-- [ ] Eventos de retificação de campos repetidos devem exibir o nome amigável do campo, não o identificador técnico
-- [ ] Deve indicar corretamente o número da repetição (ex.: "repetição 3")
-- [ ] Deve valer para qualquer tipo de campo repetido (texto, numérico, data e hora, e-mail, link, etc.)
+- [x] Eventos de retificação de campos repetidos devem exibir o nome amigável do campo, não o identificador técnico
+- [x] Deve indicar corretamente o número da repetição (ex.: "repetição 3")
+- [x] Deve valer para qualquer tipo de campo repetido (texto, numérico, data e hora, e-mail, link, etc.)
 
 ---
 
@@ -60,6 +60,7 @@ O evento de retificação deve exibir o nome amigável do campo e o número da r
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -67,13 +68,7 @@ O evento de retificação deve exibir o nome amigável do campo e o número da r
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Homologação
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

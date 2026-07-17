@@ -45,9 +45,9 @@ A última página de um documento com assinatura ICP deve ser exibida corretamen
 
 ### Critérios de aceite
 
-- [ ] A última página com assinatura ICP deve exibir corretamente o selo e o conteúdo ao imprimir
-- [ ] A visualização mobile deve exibir o conteúdo completo da última página, não apenas a assinatura
-- [ ] Documentos muito grandes devem exibir todas as páginas corretamente ao imprimir
+- [x] A última página com assinatura ICP deve exibir corretamente o selo e o conteúdo ao imprimir
+- [x] A visualização mobile deve exibir o conteúdo completo da última página, não apenas a assinatura
+- [x] Documentos muito grandes devem exibir todas as páginas corretamente ao imprimir
 
 ---
 
@@ -61,6 +61,7 @@ A última página de um documento com assinatura ICP deve ser exibida corretamen
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B02 Validar visualização mobile de documento com assinatura ICP**
@@ -71,6 +72,7 @@ A última página de um documento com assinatura ICP deve ser exibida corretamen
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B03 Validar impressão em documentos grandes com assinatura ICP**
@@ -81,6 +83,7 @@ A última página de um documento com assinatura ICP deve ser exibida corretamen
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -88,13 +91,7 @@ A última página de um documento com assinatura ICP deve ser exibida corretamen
 ### Ambiente
 
 - Versão:
-    
 - Ambiente: Produção
-    
-- Navegador:
-    
-- Sistema Operacional:
-    
 
 ---
 

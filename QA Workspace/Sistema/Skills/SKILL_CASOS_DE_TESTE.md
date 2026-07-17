@@ -16,20 +16,20 @@ Criar e organizar casos de teste seguindo o padrão utilizado pelo QA. ([Templat
 
 ## Estrutura Padrão
 
-## CT-001 Nome do Cenário
+Mesmo formato dos CTs embutidos em cards de bug ([[SKILL_BUGS|SKILL_BUGS]]) — um padrão único de CT em todo o vault, o que muda é só a numeração (CT-001 na nota avulsa, CT-B01 no card de bug):
 
-Dado que...
+- **CT-001 Nome do Cenário**
+    Dado que...
+    Quando...
+    Então...
 
-Quando...
+    - Execução Passou?
+        - [ ] <span style="color:#2ecc71">Sim</span>
+        - [ ] <span style="color:#e74c3c">Não</span>
 
-Então...
+    - Evidências de Testes:
 
-Execução Passou?
-
-- [ ] Sim
-- [ ] Não
-
-Evidências de Testes:
+Cada caso é um item de lista (`- **CT-001 Título**`) com o Dado/E/Quando/Então **sem bullet própria** — linhas soltas, indentadas como continuação do item. O "Execução Passou?" é uma to-do list com "Sim" em verde e "Não" em vermelho.
 
 ---
 
