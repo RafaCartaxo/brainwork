@@ -46,6 +46,7 @@ Regra de bolso: **escreveu? foi na daily. quer ver? foi na Dashboard.**
 | O que aconteceu | Onde registrar na daily |
 |---|---|
 | Fiz/testei algo | `## Atividades` (DEV/HML/POCs), com a [[QA Workspace/01 Daily/README|frase padrão]] |
+| Planejei/refinei/triei/documentei (trabalho que prepara teste) | `## Atividades` → `### Planejamento`, com a [[QA Workspace/01 Daily/README|copy do catálogo]] (🔎 📝 📤 📋 📚) |
 | Vi um bug | `## Bugs encontrados` |
 | Tive ideia de melhoria do produto | `## Melhorias propostas` (checkbox) |
 | Lembrete pra depois | `## Pendente para amanhã` |
