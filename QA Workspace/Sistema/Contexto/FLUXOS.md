@@ -34,7 +34,8 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 1. Abrir a [[QA Workspace/Dashboard/Dashboard|Dashboard]] — é a página de leitura: KPIs de bugs, pendências em aberto, melhorias propostas.
 2. Conferir a seção **Pendências em aberto** (o que ficou de ontem) e **Melhorias propostas em aberto**.
 3. Clicar no botão **✏️ Escrever na daily de hoje**. Se a daily ainda não existe: `Ctrl+P` → "Daily notes: Open today's daily note" (cria já com o template).
-4. Na daily, revisar o callout **Pendências de ontem** e marcar em **A fazer hoje** o que continua valendo.
+4. Na daily, revisar o callout **Pendências de ontem** (vem recolhido — é a memória do carry-over) e marcar em **A fazer hoje** o que continua valendo.
+5. Conferir o bloco **Status — reunião** no topo (ver [[QA Workspace/01 Daily/README|regras do bloco]]): é ele que se lê na reunião da daily. Se estiver desatualizado, pedir numa sessão "gera meu status da reunião" — ele se regenera do que está registrado, nunca acumula.
 
 A partir daqui, o dia inteiro acontece dentro da daily.
 

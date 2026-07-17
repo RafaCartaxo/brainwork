@@ -150,6 +150,67 @@
 .qa-daily h3[data-heading="Planejamento"] { border-inline-start-color: #2563eb; }
 .qa-daily h3[data-heading="Auto-organização"] { border-inline-start-color: #475569; }
 
+/* ---------- Daily: Status — reunião (o quadro que abre o dia) ----------
+   Único bloco com presença própria na nota: tinta teal suave + títulos
+   dos grupos (Fiz/Foco/Travas) em caixa-alta, estilo rótulo da Dashboard. */
+
+.qa-daily .callout[data-callout="abstract"] {
+  background: rgba(13, 148, 136, 0.05);
+  border-inline-start: 3px solid #0d9488;
+  border-radius: 6px;
+}
+
+.qa-daily .callout[data-callout="abstract"] .callout-title {
+  color: #0d9488;
+}
+
+.qa-daily .callout[data-callout="abstract"] .callout-content strong {
+  display: inline-block;
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 0.35em;
+}
+
+/* ---------- Daily: fila (A fazer hoje) ----------
+   Blockquote puro fora do callout do carry-over: é painel de trabalho,
+   não citação — texto normal, barra violeta de pendências. */
+
+.qa-daily blockquote {
+  border-inline-start: 3px solid #7c3aed;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  padding: 0.55em 0.9em;
+  font-style: normal;
+  color: var(--text-normal);
+}
+
+/* ---------- Daily: carry-over recolhido some do caminho ----------
+   Mesma lógica do KPI zerado da Dashboard: o que não pede atenção
+   fica apagado. Expandiu, volta ao normal. */
+
+.qa-daily .callout[data-callout="info"].is-collapsed {
+  opacity: 0.6;
+}
+
+/* ---------- Daily: "Detalhes" aninhado nas Atividades ----------
+   Contexto expandível, não bloco de destaque: compacto, sem fundo,
+   fio discreto — a lista continua mandando. */
+
+.qa-daily ul .callout {
+  background: transparent;
+  border-inline-start: 2px solid var(--background-modifier-border);
+  border-radius: 0;
+  padding: 0.15em 0.75em;
+  margin: 0.25em 0 0.45em;
+  font-size: 0.92em;
+}
+
+.qa-daily ul .callout .callout-title {
+  color: var(--text-muted);
+}
+
 /* ---------- Acessibilidade ---------- */
 
 @media (prefers-reduced-motion: reduce) {
