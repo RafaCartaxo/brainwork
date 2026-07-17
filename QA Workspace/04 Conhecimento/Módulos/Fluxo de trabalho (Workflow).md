@@ -1,0 +1,285 @@
+---
+title: Fluxo de trabalho (Workflow)
+tags:
+  - qa
+  - conhecimento
+  - sogov
+  - workflow
+tipo: modulo
+revisado: 2026-07-17
+fonte: https://app.notion.com/p/alfa-group/Fluxo-de-trabalho-Workflow-4773d79eb5dc457da4582f05b4527f51
+fonte_criado: 2024-07-08 (Rafael)
+fonte_ultima_edicao: 2026-07-08 (Fernando Junior)
+---
+# Fluxo de trabalho (Workflow)
+
+> [!info] Origem
+> Importado do Notion (link em `fonte`) em 2026-07-17 — a página do Notion continua sendo a fonte de verdade externa; esta cópia é o acervo local pesquisável. O export veio com ruído (imagens, âncoras) que foi limpo preservando as regras; várias seções de atualização vieram **só como título** (ver [[#Dúvidas em aberto]]). Ao detectar divergência com o sistema em teste, atualizar aqui e registrar em [[#Comportamentos observados em teste (QA)]].
+
+## Definição geral
+
+Workflow é a funcionalidade para criar fluxos pré-definidos para módulos, serviços ou assuntos, em formato de **etapas**, virtualizando o ritual físico dos órgãos (ex.: solicitação de pagamento → finanças → nota fiscal do fornecedor → conferência → tesouraria empenha/liquida/paga). O fluxo pode retroceder etapas (ex.: NF com problema) e segue até a última etapa.
+
+Nas etapas podem ser inseridas configurações específicas: despachos com campos personalizados, prazos, assinaturas obrigatórias etc.
+
+> [!warning] Restrição de tipo
+> Só é possível configurar workflow para a natureza/tipo de documento **Processo Administrativo**.
+
+## Liberando uso de workflow para clientes
+
+- A liberação é feita no **ambiente administrativo SOGO**, na edição do cliente (gerenciamento de clientes).
+- A **primeira ativação** é feita no ambiente técnico SOGO (área de Gerenciamento de Workflow); depois dela o menu Workflow passa a aparecer no ambiente do cliente.
+- No ambiente técnico existem **modelos de workflow** que podem ser vinculados a clientes (como módulos): customizáveis pontualmente na instância sem perder vínculo com o modelo principal.
+
+### Ativar / desativar / suspender no cliente
+
+| Ação | Efeito |
+|---|---|
+| **Ativar** | Escolhe quais módulos do cliente poderão configurar workflow; menu aparece pro cliente |
+| **Desativar** | Pode ser feito a qualquer momento sem aviso; só impacta documentos novos (em tramitação seguem com suas etapas); módulos **perdem a configuração definitivamente** (não restaura); menu some |
+| **Suspender** | Idem desativar, mas a configuração **não é perdida** — removendo a suspensão tudo volta ao estado anterior; menu some enquanto suspenso; cliente suspenso não tem opção de desativar (precisa remover a suspensão antes) |
+
+Permissão: qualquer usuário SOGO com permissão de cadastrar/editar cliente.
+
+## Criando e gerenciando workflows
+
+Criação e gerenciamento podem ser feitos **na instância do cliente** ou **no ambiente técnico SOGO**.
+
+### Usuários com permissão
+
+| Ambiente | Quem | Escopo |
+|---|---|---|
+| Técnico SOGO | Adm SOGO | Todos os clientes |
+| Técnico SOGO | Técnico SOGO | Clientes da sua carteira |
+| Cliente | Adm SOGO / Técnico SOGO | Todos / carteira |
+| Cliente | Adm Servidor | Todos os setores da instância |
+| Cliente | Adm setorial | Só setores da sua hierarquia (listagem/edição e criação limitadas a módulos/assuntos/serviços da hierarquia) |
+
+### Criando workflow (ambiente cliente)
+
+Mínimo necessário: **Módulo** (obrigatório) + **Assunto ou serviço** (obrigatório*) + **no mínimo 2 etapas**.
+
+> [!note] *Módulo sem serviço/assunto: workflow pode ser criado direto no módulo. Se o módulo **tem** assuntos/serviços, só é possível criar a nível de assunto/serviço. Se um módulo com workflow ganhar serviço/assunto no futuro, o usuário é avisado na criação de que o workflow do módulo será **desativado**.
+
+## Etapas
+
+Dois modos de inserção — simples e avançado.
+
+### Modo avançado
+
+- **Descrição geral**: nome (obrigatório) + descrição (opcional);
+- **Regras de tramitação** (abaixo);
+- **Despachos customizados** (opcional).
+
+### Regras de tramitação da etapa
+
+- **Setor responsável pela etapa** (obrigatório):
+	- *Setor específico* — listado conforme regras de tramitação herdadas do módulo/serviço/assunto; ao avançar, não pede destinatário (vai automático);
+	- *Setor especificado na hora de avançar* — na tramitação, só é possível setar **um** setor de encaminhamento (vira o responsável); esse setor pode envolver outros na demanda.
+- **Setores que podem participar da etapa** (obrigatório) — default: todos da regra de tramitação do módulo/serviço/assunto (deselecionáveis, mínimo um). Na tramitação, só age na etapa quem está envolvido nela, e só podem ser envolvidos os setores desta regra.
+- **Setores que podem apenas visualizar** (opcional) — subconjunto dos participantes; não podem ser destino de avanço, só envolvidos via despacho/comentário.
+- **Setores que podem avançar ou retroceder** (obrigatório) — default: todos os participantes.
+- **Setores que podem encerrar na etapa** (obrigatório) — encerram o fluxo inteiro mesmo sem ser a última etapa; default: todos os participantes. Refinável por **nível** (Administrador, Adm setorial, N1, N2) e por **servidores específicos** (opcionais).
+
+> [!note] Herança e embutidos
+> Sem serviço/assunto → regras herdadas do módulo; com serviço/assunto → herdadas dele. O **setor dono** do documento e o **setor responsável pela etapa** estão sempre "embutidos" nas regras, mesmo não selecionados.
+
+### Modo simples
+
+Só nome (obrigatório), descrição (opcional) e setor responsável (obrigatório, mesmas regras do avançado). Por debaixo dos panos, participar/avançar-retroceder/encerrar já vêm pré-configurados com a herança do módulo/serviço/assunto.
+
+### Editando uma etapa
+
+Tudo é editável (etapa simples pode ganhar configuração avançada na edição).
+
+> [!warning] Edição durante tramitação em andamento
+> Não é permitido editar os setores envolvidos na etapa atual (nem participantes, nem setores de ações personalizadas). **Regra geral: edição só vale pra documentos novos** — documentos em tramitação seguem as regras antigas. Se a edição afetar etapa anterior e o responsável dela sair das regras: o nome antigo continua exibido; se retrocederem pra ela, pede-se novo encaminhamento dentro da nova regra (ou vai automático, se a edição setou responsável específico).
+
+## Despachos customizados
+
+Artefatos que dão robustez à etapa: uma vez inseridos, **tornam-se obrigatórios** — a etapa só avança quando o despacho for emitido (sem ele, só retroceder ou encerrar).
+
+Configuração obrigatória:
+
+- **Nome do despacho** — exibido na criação durante a tramitação (como despacho de revogação/retificação);
+- **Setores que podem emitir** — dentre os participantes da etapa (default: todos, incluindo o responsável). Retirar um setor envolvido numa ação personalizada "quebra" a configuração (deve ficar explícito).
+
+Regras na tramitação:
+
+- Com "Outros setores podem emitir este despacho": setor dono e responsável da etapa também podem emitir;
+- Destinatários possíveis: só participantes da etapa;
+- Com múltiplos despachos configurados, o botão da toolbar vira menu (despacho normal + customizados); emitidos saem da lista; evento da etapa atualiza;
+- O despacho segue a numeração sequencial da timeline e a estética original (incluindo config de sigilo do módulo/serviço/assunto).
+
+### Assinaturas no despacho customizado
+
+Solicitadas **após a emissão** do despacho. Configuração:
+
+- **Setor** (obrigatório) — específico (dos participantes) ou "setor que emitiu o despacho";
+- **Nível de permissão** (opcional) — sem nível, segue a regra geral do SoGov;
+- **Servidor** (opcional) — dos setores/níveis selecionados; sem nível definido, retorna todos os que podem assinar;
+- **Papel do signatário** (opcional) e **Tipo de assinatura** (obrigatório) — padrão SoGov ([[Assinaturas]]);
+- **Locais** (obrigatório) — Despacho, Anexos do despacho, campos tipo arquivo personalizados.
+
+> [!note] Locais "Anexos do despacho": o signatário escolhe qualquer um/todos os anexos, mas assina **pelo menos um**. Sem essa opção, anexo ainda pode ser assinado avulso.
+
+- Suporta múltiplas solicitações e estrutura **sequencial** (padrão SoGov);
+- Se a assinatura configurada é do próprio emissor, ele já é remetido pra assinar logo após emitir;
+- Solicitação para setor (sem servidor específico): CTA de assinar fica disponível pra qualquer servidor dentro das regras.
+
+## Prazo para etapas
+
+Define-se a **quantidade de dias** da etapa (disponível na listagem de etapas).
+
+Regras principais:
+
+- Módulo/assunto/serviço com prazo: a **soma dos prazos das etapas** deve caber no prazo total configurado;
+- Documento sem prazo de módulo/assunto/serviço mas com prazos de etapa: prazo do documento deve respeitar o mínimo da soma das etapas **restantes** (ex.: 3 etapas restantes de 2 dias → mínimo 6 dias a partir da inserção);
+- O prazo da etapa **conta a partir do início dela** e **pausa** ao avançar/retroceder; voltando à etapa, retoma de onde parou;
+- Documento com prazo vencido entrando em etapa com prazo: o prazo da etapa é **substituído** pelo do documento, com sinalização;
+- O prazo da etapa é o prazo do **setor responsável pela etapa**; se o setor já tinha prazo, a header mostra o mais próximo de vencer; resolvido um, o outro entra em vigor;
+- Etapas concluídas: prazo não pode mais ser alterado/inserido;
+- Documento **pausado** durante etapa com prazo → prazo da etapa pausa;
+- Ao **retroceder**: prazos da etapa retrocedida não podem mais ser alterados; pode-se adicionar prazo pra etapas futuras; se a data já passou, fica **atrasada**;
+- Na aba de prazos, dá pra adicionar/editar prazos de etapas sem prazo configurado (só etapa atual e próximas);
+- **Prazo de assinatura da etapa**: um só, vale pra todas as assinaturas solicitadas na etapa atual.
+
+Permissões de prazo:
+
+| Ação | Quem |
+|---|---|
+| Adicionar | Setor dono: etapa atual e demais; Setor responsável: só a etapa atual dele (etapa e assinatura) |
+| Editar | Prazo definido pelo dono → responsável pode editar; definido pelo responsável → dono pode editar |
+
+## Gerenciamento de workflow
+
+Menu com listagem de todos os workflows da instância: ordenação (default: mais recente criado/editado primeiro), filtros (módulo, serviço/assunto, status) e busca integrada aos filtros.
+
+Item da listagem: módulo, serviço/assunto, status, data/hora da última atualização, menu de ações.
+
+### Status e ações
+
+Status possíveis: **Rascunho, Ativo e Inativo**.
+
+| Status | Ações disponíveis |
+|---|---|
+| Rascunho | Ativar · Excluir · Duplicar · Editar · Histórico |
+| Inativo | Ativar · Excluir · Duplicar · Editar · Histórico |
+| Ativo | Inativar · Duplicar · Editar · Histórico |
+
+### Impacto das ações
+
+- **Inativar / Excluir / Editar**: documentos com fluxo não finalizado **não são impactados**; só documentos novos (deixam de seguir fluxo, ou seguem a versão editada);
+- **Duplicar**: sem impacto no original (não pode existir mais de um fluxo por módulo/assunto/serviço).
+
+### Duplicar fluxo de trabalho
+
+- Precisa configurar módulo/serviço/assunto novo (só listam os **sem** fluxo configurado);
+- Módulo pode reaparecer na lista se tiver assuntos/serviços ainda sem fluxo;
+- Se nada do módulo original está livre, campo módulo vem vazio;
+- **Herdado**: prazos (se o prazo do destino é o mesmo, ou se destino não tem prazo a respeitar; senão resetam), etapas (com sugestão de revisar regras de tramitação), regras de tramitação default;
+- **Perdido**: despachos e assinaturas configurados — etapas que os tinham ficam sinalizadas como pendência;
+- Duplicado entra no topo da listagem como **rascunho**; duplicar é possível em qualquer status.
+
+### Histórico
+
+Cada workflow tem histórico de modificações: quem editou, data/hora e lista do que foi editado (criação, reordenação/duplicação/adição/exclusão de etapa, mudança de status, edições de prazo e despachos).
+
+### Editando um fluxo de trabalho
+
+- Editável em qualquer status, mas **mudar módulo/assunto/serviço só em rascunho ou inativo**;
+- Ao mudar módulo/assunto/serviço: regras de tramitação resetam pro padrão novo (perde personalização); prazos seguem a mesma regra da duplicação; despachos/assinaturas configurados se perdem (etapas sinalizadas);
+- Salvar com pendências → vira **rascunho**; **só ativa sem pendências**.
+
+## Fluxo de trabalho na tramitação
+
+### Criação de documento
+
+Documento com workflow **não tem** campos "setor destinatário" e "servidor responsável" — o encaminhamento é o início do fluxo (1ª etapa já define o responsável).
+
+### Documento já criado
+
+- O fluxo **não inicia automático** — usuário com permissão precisa iniciar; **somente o setor dono pode iniciar**;
+- Etapas são exibidas dentro do documento (atual, faltantes, configurações); sinalização da etapa atual, setor responsável e prazo;
+- Ações disponíveis só pra quem tem permissão e participa da etapa atual;
+- Criador que não é dono (direcionamento automático) fica só como envolvido — toolbar diferente (igual pros setores "em cópia").
+
+### Ações obrigatórias
+
+- Sinalizadas no evento principal da etapa; precisam ser cumpridas pra avançar;
+- Despachos específicos: botão vira menu; emitidos saem da lista; evento atualiza;
+- Assinaturas de despachos customizados: CTA no evento pra quem pode assinar; evento atualiza ao assinar.
+
+### Status do documento
+
+- Encerrado com workflow pode ser **reaberto, mas o fluxo não volta a acontecer**;
+- Em tramitação com fluxo não iniciado → toolbar diferente pro dono;
+- **Pausado/Encerrado**: eventos da timeline sem comentar/responder (vale também pra docs sem workflow);
+- Encaminhamento automático (não-dono): envolvidos o tempo inteiro, toolbar normal.
+
+### Avançar e retroceder
+
+- Retroceder gera **evento principal na timeline com justificativa**;
+- Avançar/retroceder **só pela toolbar**;
+- Só avança cumprindo todas as ações obrigatórias;
+- **Setor dono sempre pode** avançar e retroceder;
+- Retrocedendo, o que já foi feito nas ações obrigatórias **não se perde**;
+- **Só retrocede uma vez** a partir de onde está (da 5 pra 4; na 4, só avança) — e depois de um retrocesso, ninguém mais retrocede.
+
+### Prazos na tramitação
+
+Documento com workflow **não tem** prazo de revisão nem de documento. Existem: prazo oficial (se configurado pro tipo), prazo das etapas (configurado antes → não editável; não configurado → pode adicionar na tramitação) e prazo de assinatura (só na etapa atual com solicitação pendente; único pra todas as assinaturas da etapa; não pode ser maior que o da etapa; se a etapa não tem prazo, o da assinatura vira o dela também). Permissões: as mesmas do drawer de prazos; só edita prazos não cumpridos.
+
+### Filtros
+
+Na mesa deve existir filtro por documentos que possuem fluxo de trabalho ([[Mesa de trabalho#Regras de filtros|filtros da Mesa]]).
+
+## Outras regras
+
+- **Só 1 workflow por assunto ou serviço**;
+- **Retificação**: documento com workflow **só pode ser retificado na primeira etapa, e antes de concluí-la**. Concluída a 1ª etapa, mesmo retrocedendo, **não pode mais ser retificado** ⚠️ *ver atualização pendente em [[#Dúvidas em aberto]] — existe update recente "Retificação em qualquer etapa" que pode ter mudado esta regra (relaciona com a mesa [[../../05 Refinar/SGV-4873|SGV-4873]])*;
+- Workflow em edição: sinalizado na listagem; ao concluir, notificação pra usuários com permissão do cliente (o que mudou e em que etapa);
+- **Setor dono não perde seus poderes** sobre o documento durante toda a tramitação, mesmo com responsáveis por etapa;
+- Na header do documento o responsável exibido é sempre o **setor dono**; o responsável da etapa aparece só nos steps;
+- **N2 do setor dono não pode mais encerrar tramitação — vale para todo o SoGov**.
+
+## Permissões extras (funcionalidade)
+
+8 permissões: **Visualizar** (menu + listagem sem ações), **Cadastrar** (botão novo fluxo), **Editar**, **Ativar**, **Inativar**, **Excluir**, **Duplicar**, **Histórico** (cada uma libera a respectiva opção no menu do item).
+
+## Configurações do órgão
+
+Uma permissão única — **Visualizar e editar**: libera no menu profile a opção de configurações do órgão (edição de cores e imagens).
+
+## Perguntas ainda sem resposta (da própria doc)
+
+- O que acontece se o módulo, serviço ou assunto de um flow for editado?
+- E se for inativado?
+- E se um setor envolvido num flow for desativado?
+- Envolvidos em etapas anteriores poderão acompanhar as etapas seguintes (modo visualizar)?
+- Com responsável = "setor selecionado na hora de avançar", como será essa seleção na tramitação?
+
+## Atualizações pós-entrega (conteúdo não veio no export)
+
+- E-mail 03/07/2024
+- Atualização campo texto grande em despacho personalizado — 04/02/2026
+- Implementação de "Selecionar Todos" nos Fluxos de Trabalho — 17/04/2026
+- Possibilidade de configurar atalhos no fluxo de trabalho — 27/05/2026
+- **Retificação de Documento em Qualquer Etapa do Fluxo de Trabalho** — ~08/07/2026 ("Last Wednesday" na data do export)
+
+---
+
+## Comportamentos observados em teste (QA)
+<!-- Divergências entre esta doc e o sistema real, pegadinhas, efeitos colaterais — com data e ambiente -->
+- 
+
+## Dúvidas em aberto
+- [ ] **Retificação em qualquer etapa** (update de ~08/07/2026, veio só o título): buscar o conteúdo no Notion — pode ter revogado a regra "só retifica na 1ª etapa" e é peça-chave da discussão de retificação × assinaturas ([[../../05 Refinar/SGV-4873|mesa SGV-4873]])
+- [ ] Seção **"Repetição da etapa"** existe no sumário mas veio **vazia** no export — configuração chegou a ser especificada?
+- [ ] Demais atualizações pós-entrega (texto grande em despacho, Selecionar Todos, atalhos, e-mail 03/07/2024) vieram só como título — completar do Notion
+- [ ] As 5 "perguntas sem resposta" da própria doc seguem abertas? Validar com produto o que já foi decidido desde então
+
+## Cards relacionados
+<!-- SGVs validados que tocam este módulo -->
+- [[../../05 Refinar/SGV-4873|SGV-4873]] — retificação × cancelamento de assinaturas (a regra de retificação no workflow conversa direto com a análise da mesa)
+- Backlog da página no Notion: melhoria "checkbox marcar/desmarcar todos os setores", "[Melhoria-CX] caminhos alternativos (etapas não obrigatórias)", "[MELHORIA-CX] Permissão de Retificar documento em qualquer etapa do fluxo de Trabalho"

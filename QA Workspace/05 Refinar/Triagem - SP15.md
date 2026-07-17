@@ -42,9 +42,9 @@ responsavel: Rafael
 
 ## Revisar MR (11) — esteira dev, revisar cenários quando couber
 
-- [x] SGV-9458 - [BUG] Nome do destinatário exibido como "Anônimo" ao responder despacho de cidadão PJ (Altíssima · Matheus Godoi) ✅ 2026-07-17
-- [x] SGV-9093 - [BUG] Nome do solicitante exibido no evento de criação em solicitação sigilosa do cidadão (Altíssima · Matheus Godoi) ✅ 2026-07-17
-- [x] SGV-9633 - [BUG-CX] Assinatura em fluxo de trabalho não pode ser concluída (Alta · João Rodrigo) ✅ 2026-07-17
+- [x] SGV-9458 - [BUG] Nome do destinatário exibido como "Anônimo" ao responder despacho de cidadão PJ (Altíssima · Matheus Godoi) ✅ 2026-07-17 (Já possui critérios)
+- [x] SGV-9093 - [BUG] Nome do solicitante exibido no evento de criação em solicitação sigilosa do cidadão (Altíssima · Matheus Godoi) ✅ 2026-07-17 (Já possui critérios)
+- [x] SGV-9633 - [BUG-CX] Assinatura em fluxo de trabalho não pode ser concluída (Alta · João Rodrigo) ✅ 2026-07-17(Já possui critérios)
 - [ ] SGV-5783 - [BUG] Representante legal incorreto na assinatura após fazer alteração (Alta · Diogo Sobreira)
 - [ ] [[QA Workspace/02 Demandas/DEV/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]] - [BUG-CX][API] Pedido de assinatura permanece pendente mesmo com documento sendo encerrado (Média · Washington Junior) — card no vault com critérios prontos; pendência de revisar cenários já na fila
 - [ ] SGV-7829 - [BUG] Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão (Média · João Marcelo)
