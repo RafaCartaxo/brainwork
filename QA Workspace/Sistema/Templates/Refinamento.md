@@ -11,7 +11,7 @@ modulo: ""
 # Refinamento: {{Título}}
 
 > [!info] Mesa de trabalho — [[QA Workspace/Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada (Notion → vault)|fluxo 6]]
-> Este arquivo é o próprio export do Notion envelopado: o conteúdo bruto mora na seção **Material original** (lá embaixo, intocado) e a análise acontece aqui em cima, em quantas rodadas precisar. O card em `02 Demandas/` só nasce do **Destilado**, limpo — análise e suposição ficam aqui. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (status: `refinado`).
+> A análise acontece aqui em cima, em quantas rodadas precisar; o conteúdo integral da task (organizado no formato do vault) mora em **Material original**, lá embaixo. O card em `02 Demandas/` só nasce do **Destilado**, limpo — análise e suposição ficam aqui. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (status: `refinado`).
 
 ## Análise
 
