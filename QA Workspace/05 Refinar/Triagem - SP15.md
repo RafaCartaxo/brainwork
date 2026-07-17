@@ -140,7 +140,7 @@ responsavel: Rafael
 - [ ] **SGV-8395** — Comentários do evento de abertura não são incluídos ao baixar pelo download personalizado
     - `Baixa` · Matheus Godoi
 
-## Em produção / Aprovado / Concluído (6) — conferir encerramento
+## Em produção / Aprovado / Concluído (7) — conferir encerramento
 
 - [ ] **[[QA Workspace/02 Demandas/Concluídas/9237 - Bug Download Tramitação Interna|SGV-9237]]** — Download realizado por cidadão inclui conteúdo de tramitação interna
     - `Alta` · Bruno Clementino
@@ -157,6 +157,8 @@ responsavel: Rafael
     - `Média` · João Marcelo · CX · Notion: Concluído
 - [ ] **SGV-5548** — Aprimorar posicionamento da assinatura em documentos
     - `Alta` · Lucas Cabral · Melhoria · CX
+- [ ] **SGV-9474** — Diferença entre tela de rastrear documentos em prod e o Figma
+    - `Baixa` · B. Luan
 
 ---
 
@@ -165,3 +167,4 @@ responsavel: Rafael
 - 2026-07-17 - Lista criada a partir do export da view SP15 (53/60 cards — 7 faltando por corte do "Load more")
 - 2026-07-17 - Reformatada pra leitura: linha do checkbox só com ID + título; prioridade/dev/origem na sublinha
 - 2026-07-17 - Primeira batida (10/53): 9458, 9093, 9633, 5783, 7829, 6873 → já possuem critérios; 9750, 9963, 8977, 9036 → já refinados, critérios no card. Investigações abertas: 6348 (mesmo caso da 6873?), 9692 (relação com 8977?), 7074 (critérios com Lucas Beninca)
+- 2026-07-17 - Correção: SGV-9474 tinha ficado de fora da lista na montagem (erro de transcrição) — incluído em Em produção; grupo agora com 7
