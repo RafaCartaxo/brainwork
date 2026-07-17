@@ -11,13 +11,7 @@ modulo: ""
 # Refinamento: {{Título}}
 
 > [!info] Mesa de trabalho — [[QA Workspace/Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada (Notion → vault)|fluxo 6]]
-> Este arquivo é onde a análise acontece (quantas rodadas precisar). O card em `02 Demandas/` só nasce do **Destilado**, limpo — análise e suposição ficam aqui. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (status: `refinado`).
-
-## Material original
-
-> [!quote] Export do Notion / texto colado — intocado, do jeito que veio
-
----
+> Este arquivo é o próprio export do Notion envelopado: o conteúdo bruto mora na seção **Material original** (lá embaixo, intocado) e a análise acontece aqui em cima, em quantas rodadas precisar. O card em `02 Demandas/` só nasce do **Destilado**, limpo — análise e suposição ficam aqui. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (status: `refinado`).
 
 ## Análise
 
@@ -54,3 +48,9 @@ modulo: ""
 ## Histórico do refinamento
 
 - <% tp.date.now("YYYY-MM-DD") %> - Material recebido (export do Notion)
+
+---
+
+## Material original
+
+> [!quote] Export do Notion — intocado, do jeito que veio (só artefatos de export removidos: navegação de site, links quebrados de imagem). O conteúdo bruto entra daqui pra baixo. ⬇️
