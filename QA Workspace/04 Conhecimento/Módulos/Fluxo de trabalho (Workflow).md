@@ -237,7 +237,7 @@ Na mesa deve existir filtro por documentos que possuem fluxo de trabalho ([[Mesa
 ## Outras regras
 
 - **Só 1 workflow por assunto ou serviço**;
-- **Retificação**: documento com workflow **só pode ser retificado na primeira etapa, e antes de concluí-la**. Concluída a 1ª etapa, mesmo retrocedendo, **não pode mais ser retificado** ⚠️ *ver atualização pendente em [[#Dúvidas em aberto]] — existe update recente "Retificação em qualquer etapa" que pode ter mudado esta regra (relaciona com a mesa [[../../05 Refinar/SGV-4873|SGV-4873]])*;
+- **Retificação**: ~~documento com workflow só pode ser retificado na primeira etapa, e antes de concluí-la~~ **REGRA REVOGADA** em ~08/07/2026 — retificação passou a ser permitida **em qualquer etapa**, com reinício do fluxo. Ver [[#Retificação de documento em qualquer etapa (~08/07/2026)]];
 - Workflow em edição: sinalizado na listagem; ao concluir, notificação pra usuários com permissão do cliente (o que mudou e em que etapa);
 - **Setor dono não perde seus poderes** sobre o documento durante toda a tramitação, mesmo com responsáveis por etapa;
 - Na header do documento o responsável exibido é sempre o **setor dono**; o responsável da etapa aparece só nos steps;
@@ -253,19 +253,95 @@ Uma permissão única — **Visualizar e editar**: libera no menu profile a opç
 
 ## Perguntas ainda sem resposta (da própria doc)
 
-- O que acontece se o módulo, serviço ou assunto de um flow for editado?
-- E se for inativado?
-- E se um setor envolvido num flow for desativado?
+- O que acontece se o módulo, serviço ou assunto de um flow for editado/inativado? → **parcialmente respondido** no e-mail 03/07/2024 (pergunta 8): inativar módulo do cliente não afeta o workflow; desvincular módulo → fluxos vão pra rascunho com popup + notificação aos admins; inativar assunto/serviço com fluxo → bloqueado até atribuir o fluxo a outro;
+- E se um setor envolvido num flow for desativado? *(sem resposta; correlato: signatário de despacho customizado que sai do setor/é desativado → "continua pendente", e-mail 03/07/2024)*;
 - Envolvidos em etapas anteriores poderão acompanhar as etapas seguintes (modo visualizar)?
 - Com responsável = "setor selecionado na hora de avançar", como será essa seleção na tramitação?
 
-## Atualizações pós-entrega (conteúdo não veio no export)
+## Atualizações pós-entrega
 
-- E-mail 03/07/2024
-- Atualização campo texto grande em despacho personalizado — 04/02/2026
-- Implementação de "Selecionar Todos" nos Fluxos de Trabalho — 17/04/2026
-- Possibilidade de configurar atalhos no fluxo de trabalho — 27/05/2026
-- **Retificação de Documento em Qualquer Etapa do Fluxo de Trabalho** — ~08/07/2026 ("Last Wednesday" na data do export)
+### E-mail 03/07/2024 (dúvidas Virtus × respostas SOGO)
+
+Decisões que viraram regra:
+
+- **Módulo não muda mais de tipo**: uma vez criado e ativado, módulo nunca mais tem o tipo de documento alterado (mesmo voltando pra rascunho) — parâmetros de tipo ficam `disabled` na edição (regra geral, inclusive processo urbanístico);
+- **Desvincular módulo do cliente com workflows**: popup avisa → confirmando, fluxos vão pra **rascunho** + notificação aos administradores do cliente; campos módulo/serviço/assunto ficam vazios na edição; documentos em tramitação continuam normalmente;
+- **Inativar assunto/serviço com fluxo**: bloqueado — popup informa que até atribuir o fluxo a outro serviço/assunto a inativação não pode ser feita;
+- **Inativar módulo do cliente**: nada acontece com o workflow (só não cria mais documentos do módulo);
+- **Suspensão da feature após editar configurações**: módulos adicionados permanecem; o que foi excluído permanece excluído mesmo suspendendo;
+- **Ativar workflow pro cliente**: só na **edição** do cliente (não na criação); ao habilitar o toggle, é **obrigatório** associar módulos;
+- **Tag de fluxo de trabalho** em serviços/assuntos: só aparece quando o fluxo está **ativo**;
+- **Card da etapa**: não é todo clicável — edição só pelo meatball;
+- **"Outros setores podem emitir este despacho"**: setores não vêm pré-selecionados, ficam disponíveis pra seleção;
+- **"Setor que emitiu o despacho"** (assinaturas): não é item fixo de seleção — pesquisa-se como os demais setores;
+- **Signatário de despacho customizado que sai do setor / é desativado**: a solicitação **continua pendente**;
+- **Campos de despacho personalizado**: podem ter lógica; campo de arquivo pode requerer aprovação; campos de referência seguem as regras do formulário do documento;
+- **Cidadão não visualiza as etapas** do fluxo;
+- **Não é possível encerrar um fluxo sem ele ter sido iniciado**;
+- **Iniciar o fluxo**: setor dono **e também o responsável da etapa**, quando já definido na configuração;
+- **Layout "com cópia"**: vale pra todos os despachos, não só o customizado;
+- **Retroceder não cancela eventos**: pendências da etapa continuam pendentes e só podem ser feitas quando avançar de novo pra ela;
+- **Pessoa que encaixa em dois critérios de assinatura**: assina **uma vez** — prioridade: solicitação direta pra pessoa > pro setor;
+- **Editar regras de tramitação do módulo/assunto/serviço retirando setor que é responsável de etapa ou tem ação obrigatória em workflow**: bloqueado com aviso — precisa antes retirar o setor das regras do workflow;
+- **Permissões default**: Workflow → Administrador e Adm setorial (módulos/setores da hierarquia); Configurações do órgão → Administrador;
+- **3 níveis de inadimplência** no filtro de clientes estão corretos (alerta + limitação N1 + limitação N2).
+
+### Texto padrão no campo texto grande de despacho personalizado (04/02/2026)
+
+- Configuração **exclusiva da etapa** onde o despacho foi inserido (sem herança de módulo/assunto/serviço);
+- Componente de texto com posicionamento e grid iguais aos campos de formulário padrão;
+- O texto padrão só aparece quando o processo atinge a etapa configurada;
+- Configuração: cluster "Exemplo de Preenchimento" com botão pra cadastrar o conteúdo; tooltip contextualiza; texto salvo reflete no desenho do fluxo; botão Salvar inicia desabilitado (habilita ao alterar); exclusão exige popup de confirmação;
+- Usuário final: campo já vem preenchido ao despachar; pode apagar/editar/complementar; a edição vale **só naquele processo** (não altera o modelo);
+- Logs no histórico do fluxo: cadastro, edição e exclusão do texto base (indicando a etapa);
+- **Restrições do campo texto grande** no despacho personalizado: obrigatório (não desmarca), sem repetição, sem exclusão, sem lógica.
+
+### "Selecionar Todos" nas configurações de etapa (17/04/2026)
+
+Checkbox de seleção global nos campos: setores que podem participar, avançar/retroceder, encerrar e apenas visualizar. Segue o padrão de "selecionar todos" já estabelecido no sistema.
+
+### Atalhos de etapas (27/05/2026)
+
+Quebra a tramitação estritamente linear: cada etapa pode ser configurada com **atalhos** pra saltar pra etapas futuras ou retornar a anteriores de forma não linear (ex.: 8 → 3, 2 → 5).
+
+- **Configuração** (criação avançada e edição da etapa): select múltiplo "Permitir atalhos entre as seguintes etapas (opcional)", listando as etapas do serviço/assunto (a etapa atual vem desabilitada/oculta); exibe `$etapa - $nomeDaEtapa` com seleção em massa;
+- **Direção livre**: atalho progressivo (avanço) e retroativo (recuo);
+- **Escopo isolado por etapa**: atalho da etapa A pra C não vale pra B; sem atalhos configurados, vale o comportamento linear padrão;
+- **Reposicionamento de etapas reseta atalhos**: as etapas reposicionadas perdem seus atalhos (reset de origem) e as que apontavam pra elas também (reset de destino), com alerta ao administrador antes de confirmar — previne atalhos obsoletos;
+- Rastreabilidade via novos eventos de sistema.
+
+> [!warning] Impacto nas regras base
+> Os atalhos relativizam as regras "só retrocede uma vez" e "avançar/retroceder etapa por etapa" da doc original — em etapas com atalho configurado, o movimento é o do atalho. Regra antiga permanece pro caso sem atalhos.
+
+### Retificação de documento em qualquer etapa (~08/07/2026)
+
+> [!important] Regra anterior REVOGADA
+> "Documento com workflow só pode ser retificado na primeira etapa e se ele não tiver concluído ela ainda" **deixa de existir**. A retificação passa a ser permitida em **qualquer etapa**, equiparando documentos com fluxo aos sem fluxo. Motivação: a necessidade de retificação raramente é identificada na 1ª etapa, sobretudo em documentos de abertura externa.
+
+**Permissões** (mesmas da retificação geral): N1, Administrador ou Adm setorial do **setor dono**; N2 só retifica documentos criados por ele mesmo.
+
+**Restrição por etapa (despachos)**: fora da etapa atual, "Retificar despacho" e "Cancelar despacho" ficam desabilitados no meatball (precisa estar na etapa). Distinta da retificação do documento, que é via toolbar.
+
+**Comportamento central — reinício do fluxo**:
+
+- Retificou em qualquer etapa → o fluxo **retorna integralmente pra 1ª etapa**;
+- **Todos os eventos do fluxo anteriores à retificação são invalidados (anulados)** — os atos administrativos sobre a versão anterior perdem efeito e o ritual refaz sobre o documento corrigido.
+
+**Fluxo do usuário**:
+
+- *Via toolbar* ("Retificar documento"): popup de confirmação — *"Ao retificar este documento, ele retornará a sua primeira etapa e todas as ações realizadas nele serão desfeitas. Deseja mesmo continuar?"* → modo de edição dos campos + despacho de **justificativa obrigatória** → flash "Documento retificado!";
+- *Via meatball do despacho* ("Retificar despacho"): confirmação análoga → retificação + justificativa. Permissão de retificar despacho continua **restrita ao criador original**; despachos gerados por ações sistêmicas (Retificou, Associou, Desassociou, Cancelou, Revogou, Suspendeu, Pausou, Retomou) **não são retificáveis**.
+
+**Impactos na timeline**:
+
+- Eventos anulados: perdem botões de ação, ganham tag **"Anulado"** (tooltip: *"Esta ação foi anulada devido à retificação realizada no documento."*);
+- **Ações de etapa e assinaturas vinculadas aos eventos anulados passam a "Cancelado"** — independente do status anterior (ex.: "Emitido"/"Assinado" → "Cancelado");
+- Eventos anulados ficam **ocultos por padrão** atrás de um separador (*"Eventos anteriores ocultados devido à retificação do documento e reinício de suas etapas."*) com toggle Exibir/Ocultar eventos;
+- **Exceções à ocultação**: evento de criação do documento, eventos/despachos de retificação (registro do ato) e evento de reinício do fluxo permanecem visíveis.
+
+**Evento de reinício do fluxo**: gerado após a retificação com os parâmetros da 1ª etapa, encaminhado ao setor responsável dela (*"Etapas do documento reiniciadas e encaminhado para o Setor Responsável: [Nome do setor] devido à retificação."*), com copy própria no título; reexibe as ações obrigatórias da 1ª etapa (despachos customizados, assinaturas etc.) todas em **"Pendente"**.
+
+**Impactos no documento**: prazos de etapas e do documento **não são alterados** nem recalculados pela retificação; tag **"Retificado"** na header (padrão existente); anexos podem ser substituídos — anexo substituído que já estava aprovado **volta pra pendente de aprovação**.
 
 ---
 
@@ -274,10 +350,10 @@ Uma permissão única — **Visualizar e editar**: libera no menu profile a opç
 - 
 
 ## Dúvidas em aberto
-- [ ] **Retificação em qualquer etapa** (update de ~08/07/2026, veio só o título): buscar o conteúdo no Notion — pode ter revogado a regra "só retifica na 1ª etapa" e é peça-chave da discussão de retificação × assinaturas ([[../../05 Refinar/SGV-4873|mesa SGV-4873]])
-- [ ] Seção **"Repetição da etapa"** existe no sumário mas veio **vazia** no export — configuração chegou a ser especificada?
-- [ ] Demais atualizações pós-entrega (texto grande em despacho, Selecionar Todos, atalhos, e-mail 03/07/2024) vieram só como título — completar do Notion
-- [ ] As 5 "perguntas sem resposta" da própria doc seguem abertas? Validar com produto o que já foi decidido desde então
+- [ ] Seção **"Repetição da etapa"** segue **vazia mesmo no export expandido** (2026-07-17) — a configuração nunca foi especificada no Notion? Confirmar com produto se a feature existe/foi descartada
+- [ ] Perguntas da doc ainda de fato sem resposta: setor envolvido num flow desativado; acompanhamento (modo visualizar) de etapas seguintes pelos envolvidos de etapas anteriores; UX da seleção quando responsável = "setor na hora de avançar"
+- [ ] **Retificação em qualquer etapa × assinaturas**: a update diz que assinaturas vinculadas a eventos do fluxo vão pra "Cancelado" no reinício. E as assinaturas **fora** dos eventos de etapa (abertura/anexos, solicitadas avulsas)? Cruzar com a decisão pendente da [[../../05 Refinar/SGV-4873|mesa SGV-4873]]
+- [ ] Atalhos (27/05/2026) × regra "só retrocede uma vez": confirmar em teste como convivem (o texto diz que sem atalho vale o linear padrão, mas não explicita se usar atalho consome/reseta o direito de retroceder)
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
