@@ -75,13 +75,15 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 
 | Situação | Copy |
 |---|---|
-| Rodada de análise numa mesa de refinamento | `🔎 SGV-XXXX - Análise (<resultado curto>)` |
+| Rodada de análise numa mesa de refinamento | `🔎 SGV-XXXX - Análise (Nª — <status simples>)` — ex.: `(1ª — travada: aguardando decisão do responsável sobre a regra)`, `(1ª — problema entendido, rascunho do card pronto)` |
 | Demanda refinada (card criado) | `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` |
 | Análise/critérios levados pro Notion | `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (análise/critérios registrados na task)` |
 | Batida de triagem de sprint | `📋 Triagem <sprint> - <n>/<total> cards batidos (<resultado curto>)` |
-| Documentação importada/atualizada em 04 Conhecimento | `📚 <Doc> - Documentação importada/atualizada (<resumo curto>)` |
+| Documentação importada/atualizada em 04 Conhecimento | `📚 <Doc> - Documentação importada/atualizada (<escopo curto do que entrou>)` |
 
 As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço.
+
+**O parêntese é em linguagem simples**: descreve o que aconteceu e o que falta, pra qualquer pessoa entender sem conhecer o processo — nada de jargão do fluxo (destilado, mesa, rodada). Os termos técnicos vivem na mesa de refinamento e no callout de Detalhes, onde o contexto os explica.
 
 **Regra do detalhe recolhível** (vale pra qualquer seção de Atividades): a linha da atividade fica **curta** — emoji + link + copy padrão + status curto entre parênteses. Detalhamento longo (contexto, achados, custo do trabalho) desce pra um callout **fechado** logo abaixo, indentado na própria linha:
 
