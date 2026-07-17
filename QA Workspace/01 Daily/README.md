@@ -85,6 +85,15 @@ As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refina
 
 **O parêntese é em linguagem simples**: descreve o que aconteceu e o que falta, pra qualquer pessoa entender sem conhecer o processo — nada de jargão do fluxo (destilado, mesa, rodada). Os termos técnicos vivem na mesa de refinamento e no callout de Detalhes, onde o contexto os explica.
 
+## Status — reunião (primeira seção da daily)
+
+Bloco de standup no topo, pra ler direto na reunião da daily. Três linhas fixas: **Fiz** · **Foco de hoje** · **Travas**.
+
+- **Cabe numa fala de 30 segundos**: máximo 3 itens por linha, separados por `·`, em linguagem simples. Não é inventário — é o que o time precisa ouvir. Detalhe mora em Atividades/fila, nunca aqui.
+- **Regenerado, não acumulado**: o bloco é *derivado* do que já está registrado na daily (Atividades + fila + travas) — reescreve-se por inteiro a cada atualização, não recebe item em cima de item. Pedir numa sessão ("gera meu status da reunião") ou escrever à mão, desde que tudo que ele diga exista registrado embaixo.
+- **Sempre visível**: o callout não é recolhível de propósito — é a primeira coisa da nota.
+- Trava sem dono/ação não entra: "Travas" lista só o que de fato bloqueia algo teu, com quem/o que se espera.
+
 **Regra do detalhe recolhível** (vale pra qualquer seção de Atividades): a linha da atividade fica **curta** — emoji + link + copy padrão + status curto entre parênteses. Detalhamento longo (contexto, achados, custo do trabalho) desce pra um callout **fechado** logo abaixo, indentado na própria linha:
 
 ```

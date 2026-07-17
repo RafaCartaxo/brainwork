@@ -136,6 +136,7 @@
   padding-inline-start: 0.45em;
 }
 
+.qa-daily h2[data-heading="Status — reunião"]     { border-inline-start-color: #0d9488; }
 .qa-daily h2[data-heading="Pendências de ontem"]  { border-inline-start-color: #7c3aed; }
 .qa-daily h2[data-heading="Atividades"]           { border-inline-start-color: #0d9488; }
 .qa-daily h2[data-heading="Bugs encontrados"]     { border-inline-start-color: #dc2626; }
