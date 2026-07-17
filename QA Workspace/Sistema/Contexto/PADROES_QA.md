@@ -30,9 +30,10 @@ QA Workspace/
 ├── 03 Sanidades/
 │   └── README.md (sem estrutura ainda — template/skill de Sanidade no backlog do vault)
 ├── 04 Conhecimento/
-│   └── README.md (sem estrutura ainda)
+│   ├── README.md (análises de refinamento arquivadas — `<SGV> - Refinamento <título>.md`; outros tipos sem estrutura ainda)
+│   └── SGV - Refinamento <título>.md (mesas de trabalho concluídas, status: refinado)
 ├── 05 Refinar/
-│   └── README.md (fila de material bruto — exports do Notion etc. — aguardando refinamento; apagado após virar card)
+│   └── README.md (mesa de trabalho do refinamento — exports do Notion etc. no template Refinamento.md; concluído, arquiva em 04 Conhecimento/)
 ├── 99 Arquivo/
 │   └── README.md (cards descartados — bugs/suspeitas que não ocorrem, melhorias descartadas)
 ├── Evidências/
@@ -57,7 +58,8 @@ QA Workspace/
         ├── Bug Report.md
         ├── Casos de teste.md
         ├── Daily Note.md
-        └── Demanda.md
+        ├── Demanda.md
+        └── Refinamento.md
 ```
 
 ## Templates
@@ -67,6 +69,7 @@ QA Workspace/
 | [[QA Workspace/Sistema/Templates/Casos de teste.md\|Casos de teste.md]] | Criar casos de teste no formato Dado/Quando/Então |
 | [[QA Workspace/Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) |
 | [[QA Workspace/Sistema/Templates/Daily Note.md\|Daily Note.md]] | Registro diário de atividades — lugar único de escrita do dia a dia |
+| [[QA Workspace/Sistema/Templates/Refinamento.md\|Refinamento.md]] | Mesa de trabalho do refinamento (fluxo 6) — análise no arquivo, card nasce destilado |
 
 ## Skills
 | Arquivo | Finalidade |

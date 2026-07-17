@@ -164,14 +164,17 @@ O **Histórico** registra cada etapa vivida pelo card, com a frase padrão prefi
 
 ### Bug com análise (causa raiz)
 
-Quando o card nasce de uma análise — própria ou de outra pessoa, comum ao transformar um bug já cadastrado no Notion pro padrão do vault (precedente: SGV-9963, análise de causa raiz de terceiro) — o material se distribui assim:
+Quando o bug vem acompanhado de análise — própria ou de outra pessoa, comum ao transformar um bug já cadastrado no Notion pro padrão do vault — **a análise não entra no card**. Ela mora na mesa de trabalho do `05 Refinar/` (template [[../Templates/Refinamento.md|Refinamento.md]], fluxo 6): causa raiz, evidências, hipóteses descartadas e pontos a definir são trabalhados lá, e o card nasce **destilado** — só o problema, reprodução, resultado esperado, critérios e CTs, sem análise nem suposição. Ao fechar o ciclo, a mesa é arquivada em `04 Conhecimento/` com link cruzado pro card.
 
-- **Descrição**: comportamento observado + causa raiz **resumida**, com autoria e data ("Durante análise (<quem>, <data>) foi identificada a causa raiz: ..."). Paliativa em uso, se existir, também entra aqui. *(Este é o caso que excetua o "evitar explicações extensas/hipóteses técnicas" da regra de Descrição: análise confirmada não é hipótese.)*
-- **Contexto técnico**: só o que ajuda a escrever e entender os CTs (o que a função faz, variáveis envolvidas) — parágrafo próprio na Descrição, nada além disso.
-- **Critérios de aceite** são o coração do refinamento: além do comportamento correto, cobrir os **dados já corrompidos/afetados** pelo bug (correção retroativa ou paliativa? deixar explícito pra decidir com dev/produto) e a **regressão do fluxo normal**.
+O que sobra da análise no card:
+
+- **Observações**: wikilink pro arquivo de refinamento em `04 Conhecimento/` ("Análise completa: [[...]]") — e nada mais da análise.
+- **Critérios de aceite** são o coração do refinamento (escritos na mesa, copiados pro card): além do comportamento correto, cobrir os **dados já corrompidos/afetados** pelo bug (correção retroativa ou paliativa? deixar explícito pra decidir com dev/produto) e a **regressão do fluxo normal**.
 - **Histórico**: a análise é a primeira linha, datada e com autoria — `- YYYY-MM-DD - Análise de causa raiz (<quem>): <síntese curta>`.
 - **Evidência que mora fora** (ex.: vídeo anexado na task do Notion): anotar na seção Evidências **onde ela está**, sem cópia local — evidência local entra no fluxo normal quando houver validação.
-- **Na daily**: análise sua rende `🔎 SGV-XXXX - Análise (<resultado curto>)`; o refinamento rende `📝 SGV-XXXX - Bug refinado (critérios de aceite prontos)` e, levando pro Notion, `📤`.
+- **Na daily**: cada rodada de análise rende `🔎 SGV-XXXX - Análise (<resultado curto>)`; o destilado rende `📝 SGV-XXXX - Bug refinado (critérios de aceite prontos)` e, levando pro Notion, `📤`.
+
+*Precedente do padrão antigo (análise resumida dentro da Descrição): SGV-9750 e SGV-9963 — ficam como estão, já sincronizados com o Notion nessa estrutura; o padrão da mesa vale daqui pra frente.*
 
 ## Resultado Esperado
 
