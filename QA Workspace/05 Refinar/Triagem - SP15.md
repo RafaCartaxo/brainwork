@@ -72,16 +72,16 @@ responsavel: Rafael
     - Card no vault com critérios prontos; pendência de revisar cenários já na fila
 - [x] **SGV-7829** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17(já possui critérios)
     - `Média` · João Marcelo
-- [ ] **SGV-6873** — Download de documento temporário não corresponde à versão editada
+- [x] **SGV-6873** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 (já possui critérios)
     - `Média` · Matheus Godoi · Sanidade-004
-- [ ] **SGV-6348** — Edição de documentos "Em elaboração" não é exibida ao baixar documento
+- [ ] **SGV-6348** — Edição de documentos "Em elaboração" não é exibida ao baixar documento (parece ser o mesmo caso da 6873, verificar com o dev a solução como foi aplicada)
     - `Média` · Matheus Godoi
-- [ ] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo
+- [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 (já refinada e possui critérios) 
     - `Baixa` · Diogo Sobreira · CX
     - Card no vault com critérios prontos (esteira 3f)
-- [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores
+- [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores (caso de lentidão, verificar situação)
     - `Baixa` · Diogo Sobreira · CX
-- [ ] **SGV-8977** — Erro ao tentar editar regras de tramitação direto no organograma
+- [x] **SGV-8977** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-17 (já refinada e possui critérios) 
     - `Baixa` · Washington Junior · CX · API
 
 ## Em desenvolvimento / Em andamento (4)
