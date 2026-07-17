@@ -42,7 +42,7 @@ responsavel: Rafael
 - [ ] **[[QA Workspace/05 Refinar/SGV-4873|SGV-4873]]** — Assinaturas em anexos de documentos retificados não são canceladas corretamente
     - `Alta` · Matheus Godoi
     - ⚠️ Mesa de refinamento em andamento: possível conflito com regra nova de retificação — **não testar antes da decisão**
-- [ ] **SGV-7074** — Ao alterar módulo de um assunto/serviço os modelos de documentos não são atualizados
+- [x] **SGV-7074** — Ao alterar módulo de um assunto/serviço os modelos de documentos não são atualizados ✅ 2026-07-17
     - `Altíssima` · Matheus Godoi
     - ⚠️ Relação com o [[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]] é só de longe — é outra coisa. **Lucas Beninca** construindo os critérios
 - [ ] **SGV-9610** — Servidor não consegue associar documento na abertura de um novo documento
