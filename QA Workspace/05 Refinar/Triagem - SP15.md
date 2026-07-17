@@ -45,7 +45,7 @@ responsavel: Rafael
 - [x] **SGV-7074** — Ao alterar módulo de um assunto/serviço os modelos de documentos não são atualizados ✅ 2026-07-17
     - `Altíssima` · Matheus Godoi
     - ⚠️ Relação com o [[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]] é só de longe — é outra coisa. **Lucas Beninca** construindo os critérios
-- [ ] **SGV-9610** — Servidor não consegue associar documento na abertura de um novo documento
+- [x] **SGV-9610** — Servidor não consegue associar documento na abertura de um novo documento ✅ 2026-07-17 (refina e criterios aceito, card atualziado no notion com anaslise)
     - `Baixa` · João Rodrigo · CX
 - [ ] **SGV-9548** — Campo de telefone no cadastro de instância não permite número fixo
     - `Baixa` · Matheus Godoi
