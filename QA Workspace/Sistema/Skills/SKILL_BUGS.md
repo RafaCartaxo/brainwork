@@ -58,21 +58,22 @@ Então...
 
 ### Critérios de aceite
 
--
+- [ ] ...
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Título do caso de teste**
-    - Dado que...
-    - E...
-    - Quando...
-    - Então...
+    Dado que...
+    E...
+    Quando...
+    Então...
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -81,8 +82,6 @@ Então...
 
 - Versão:
 - Ambiente:
-- Navegador:
-- Sistema Operacional:
 
 ---
 
@@ -141,7 +140,7 @@ Descrever claramente o comportamento correto.
 
 ### Critérios de Aceite
 
-Utilizar quando houver regra de negócio associada.
+Utilizar quando houver regra de negócio associada. Cada critério é um checkbox (`- [ ] <critério>`), marcado quando confirmado atendido na validação — mesma lógica do "Execução Passou?" dos CTs, mas por critério.
 
 ### Evidências
 
@@ -157,7 +156,7 @@ Infra do `evidencia://`: script `~/.local/bin/abrir-evidencia` + `.desktop` em `
 
 ### Casos de Teste Básicos
 
-Detalhar os cenários de validação no padrão Dado/Quando/Então (CT-B01, CT-B02...), com "Execução Passou?" e "Evidências de Testes" por caso. Estruturar cada caso como um item de lista com subitens (não usar títulos/negrito soltos), para que cada CT possa ser recolhido individualmente no Obsidian. O "Execução Passou?" deve ser uma to-do list com "Sim" em verde e "Não" em vermelho, para facilitar a visualização do resultado.
+Detalhar os cenários de validação no padrão Dado/Quando/Então (CT-B01, CT-B02...), com "Execução Passou?" e "Evidências de Testes" por caso. Estruturar cada caso como um item de lista (`- **CT-B01 Título**`) com o Dado/E/Quando/Então **sem bullet própria** — linhas soltas, só indentadas, como continuação do mesmo item (fica menos poluído visualmente e ainda recolhe o CT inteiro de uma vez no Obsidian, já que a dobra segue o item pai). O "Execução Passou?" deve ser uma to-do list com "Sim" em verde e "Não" em vermelho, para facilitar a visualização do resultado.
 
 ### Informações adicionais
 

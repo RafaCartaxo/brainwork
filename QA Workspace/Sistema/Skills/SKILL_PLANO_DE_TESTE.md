@@ -59,7 +59,7 @@ Criar planos de teste para melhorias, funcionalidades e demandas de maior comple
 
 ## Critérios de Aceite
 
--
+- [ ] ...
 
 ---
 
@@ -100,7 +100,7 @@ Selecionar apenas os tipos aplicáveis à demanda.
 
 ### Critérios de Aceite
 
-Devem ser derivados das regras de negócio e documentação da demanda.
+Devem ser derivados das regras de negócio e documentação da demanda. Cada critério é um checkbox (`- [ ] <critério>`), marcado quando confirmado atendido na validação — mesma regra do [[SKILL_BUGS|SKILL_BUGS]].
 
 ## Resultado Esperado
 

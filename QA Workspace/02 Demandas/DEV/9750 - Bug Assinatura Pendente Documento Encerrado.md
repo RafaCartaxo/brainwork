@@ -49,65 +49,70 @@ Ao encerrar um documento **para todos**, **todas as pendências de assinatura s�
 
 ### Critérios de aceite
 
-- Encerrar um documento **para todos** cancela todas as solicitações de assinatura pendentes vinculadas a ele, inclusive as de despachos
-- Encerrar **para mim** ou encerrar **para meu setor** **não** cancela solicitações de assinatura pendentes — o cancelamento é exclusivo do encerrar para todos
-- Após o encerramento para todos, a assinatura cancelada não aparece mais como pendente pro servidor — nem na página inicial, nem na mesa de trabalho
-- Sem regressão no cancelamento já existente: retificação com troca de anexo continua cancelando a assinatura pendente
-- Sem regressão no fluxo normal: solicitação de assinatura em documento aberto segue sendo assinável após digitar a senha
-- **Solicitações já pendentes de documentos encerrados antes da correção**: definir com dev/produto se a correção inclui saneamento retroativo — deixar explícito na entrega
+- [ ] Encerrar um documento **para todos** cancela todas as solicitações de assinatura pendentes vinculadas a ele, inclusive as de despachos
+- [ ] Encerrar **para mim** ou encerrar **para meu setor** **não** cancela solicitações de assinatura pendentes — o cancelamento é exclusivo do encerrar para todos
+- [ ] Após o encerramento para todos, a assinatura cancelada não aparece mais como pendente pro servidor — nem na página inicial, nem na mesa de trabalho
+- [ ] Sem regressão no cancelamento já existente: retificação com troca de anexo continua cancelando a assinatura pendente
+- [ ] Sem regressão no fluxo normal: solicitação de assinatura em documento aberto segue sendo assinável após digitar a senha
+- [ ] **Solicitações já pendentes de documentos encerrados antes da correção**: definir com dev/produto se a correção inclui saneamento retroativo — deixar explícito na entrega
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Encerrar para todos cancela assinatura pendente de despacho**
-    - Dado que um documento tenha um despacho com solicitação de assinatura pendente
-    - Quando o documento for encerrado para todos
-    - Então a solicitação de assinatura do despacho deve ser cancelada
+    Dado que um documento tenha um despacho com solicitação de assinatura pendente
+    Quando o documento for encerrado para todos
+    Então a solicitação de assinatura do despacho deve ser cancelada
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B02 Servidor não vê pendência de documento encerrado**
-    - Dado que um documento com solicitação de assinatura pendente tenha sido encerrado para todos
-    - Quando o servidor acessar a página inicial e a mesa de trabalho
-    - Então nenhuma assinatura pendente do documento encerrado deve ser exibida, e não deve haver caminho pra tentar assiná-la
+    Dado que um documento com solicitação de assinatura pendente tenha sido encerrado para todos
+    Quando o servidor acessar a página inicial e a mesa de trabalho
+    Então nenhuma assinatura pendente do documento encerrado deve ser exibida, e não deve haver caminho pra tentar assiná-la
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B03 Regressão: retificação com troca de anexo segue cancelando assinatura**
-    - Dado que um documento tenha uma solicitação de assinatura pendente
-    - Quando o documento for retificado com troca de anexo
-    - Então a solicitação de assinatura pendente deve ser cancelada (comportamento atual preservado)
+    Dado que um documento tenha uma solicitação de assinatura pendente
+    Quando o documento for retificado com troca de anexo
+    Então a solicitação de assinatura pendente deve ser cancelada (comportamento atual preservado)
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B04 Regressão: assinatura em documento aberto funciona**
-    - Dado que um documento aberto tenha uma solicitação de assinatura pendente
-    - Quando o servidor assinar digitando a senha
-    - Então a assinatura deve ser efetivada normalmente
+    Dado que um documento aberto tenha uma solicitação de assinatura pendente
+    Quando o servidor assinar digitando a senha
+    Então a assinatura deve ser efetivada normalmente
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B05 Encerramentos parciais não cancelam assinaturas**
-    - Dado que um documento tenha um despacho com solicitação de assinatura pendente
-    - Quando um envolvido encerrar o documento **para mim** (e, em novo cenário, **para meu setor**)
-    - Então as solicitações de assinatura pendentes permanecem inalteradas
+    Dado que um documento tenha um despacho com solicitação de assinatura pendente
+    Quando um envolvido encerrar o documento **para mim** (e, em novo cenário, **para meu setor**)
+    Então as solicitações de assinatura pendentes permanecem inalteradas
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -115,12 +120,7 @@ Ao encerrar um documento **para todos**, **todas as pendências de assinatura s�
 ### Ambiente
 
 - Versão:
-
 - Ambiente: (relato e análise em produção; correção segue esteira 3f — task de API, validação direto em homologação)
-
-- Navegador:
-
-- Sistema Operacional:
 
 ---
 

@@ -49,54 +49,58 @@ Os campos dinâmicos (@) continuam funcionando normalmente após **qualquer** al
 
 ### Critérios de aceite
 
-- Alterar o módulo de um Assunto/Serviço **não quebra** os campos dinâmicos (@) dos modelos de documento automatizado vinculados — eles continuam resolvendo normalmente na geração
-- Funciona em **qualquer sequência de trocas** de módulo (X→Y→X, X→Y→Z, ...): nenhuma alteração, em nenhuma ordem, corrompe a referência dos campos (@)
-- Documentos **já gerados** antes da alteração de módulo permanecem íntegros (conteúdo resolvido não muda)
-- Modelos **já corrompidos** por alterações de módulo anteriores à correção: definir com dev/produto se a correção inclui saneamento retroativo ou se vale a paliativa (novo Assunto/Serviço) — deixar explícito na entrega
-- Sem regressão no fluxo normal: criar modelo novo com @ e gerar documento segue funcionando; todas as variáveis (campos do formulário + as 6 fixas) resolvem com o dado vigente no momento da geração
+- [ ] Alterar o módulo de um Assunto/Serviço **não quebra** os campos dinâmicos (@) dos modelos de documento automatizado vinculados — eles continuam resolvendo normalmente na geração
+- [ ] Funciona em **qualquer sequência de trocas** de módulo (X→Y→X, X→Y→Z, ...): nenhuma alteração, em nenhuma ordem, corrompe a referência dos campos (@)
+- [ ] Documentos **já gerados** antes da alteração de módulo permanecem íntegros (conteúdo resolvido não muda)
+- [ ] Modelos **já corrompidos** por alterações de módulo anteriores à correção: definir com dev/produto se a correção inclui saneamento retroativo ou se vale a paliativa (novo Assunto/Serviço) — deixar explícito na entrega
+- [ ] Sem regressão no fluxo normal: criar modelo novo com @ e gerar documento segue funcionando; todas as variáveis (campos do formulário + as 6 fixas) resolvem com o dado vigente no momento da geração
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Campos (@) continuam funcionando após alteração de módulo**
-    - Dado que um modelo automatizado com campos (@) esteja vinculado a um Assunto/Serviço do módulo X
-    - Quando o módulo do Assunto/Serviço for alterado pra Y e um documento for gerado a partir do modelo
-    - Então todos os campos dinâmicos devem resolver normalmente, com os dados vigentes
+    Dado que um modelo automatizado com campos (@) esteja vinculado a um Assunto/Serviço do módulo X
+    Quando o módulo do Assunto/Serviço for alterado pra Y e um documento for gerado a partir do modelo
+    Então todos os campos dinâmicos devem resolver normalmente, com os dados vigentes
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B02 Trocas múltiplas de módulo mantêm os campos funcionando**
-    - Dado que um Assunto/Serviço com modelo automatizado vinculado passe por uma sequência de trocas de módulo (ex.: X→Y→X, depois X→Z)
-    - Quando um documento for gerado após cada troca
-    - Então os campos dinâmicos devem resolver normalmente em todas as gerações, sem corrupção residual em nenhum ponto
+    Dado que um Assunto/Serviço com modelo automatizado vinculado passe por uma sequência de trocas de módulo (ex.: X→Y→X, depois X→Z)
+    Quando um documento for gerado após cada troca
+    Então os campos dinâmicos devem resolver normalmente em todas as gerações, sem corrupção residual em nenhum ponto
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B03 Documentos gerados antes da alteração permanecem íntegros**
-    - Dado que um documento automatizado tenha sido gerado antes da alteração de módulo
-    - Quando o módulo do Assunto/Serviço for alterado
-    - Então o conteúdo do documento já gerado permanece exatamente como foi resolvido na geração
+    Dado que um documento automatizado tenha sido gerado antes da alteração de módulo
+    Quando o módulo do Assunto/Serviço for alterado
+    Então o conteúdo do documento já gerado permanece exatamente como foi resolvido na geração
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 - **CT-B04 Fluxo normal sem regressão (todas as variáveis)**
-    - Dado que um modelo novo seja criado com campos do formulário e as variáveis fixas (número/data de abertura do doc emissor, tipo do usuário externo, setor responsável, número/data de abertura do doc gerado)
-    - Quando um documento for gerado a partir dele
-    - Então cada variável resolve pro valor vigente no momento da geração, sem nenhuma variável crua ou identificador técnico no resultado
+    Dado que um modelo novo seja criado com campos do formulário e as variáveis fixas (número/data de abertura do doc emissor, tipo do usuário externo, setor responsável, número/data de abertura do doc gerado)
+    Quando um documento for gerado a partir dele
+    Então cada variável resolve pro valor vigente no momento da geração, sem nenhuma variável crua ou identificador técnico no resultado
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
+
     - Evidências de Testes:
 
 ---
@@ -104,12 +108,7 @@ Os campos dinâmicos (@) continuam funcionando normalmente após **qualquer** al
 ### Ambiente
 
 - Versão:
-
 - Ambiente: (validação direto em homologação — fluxo 3f, task de API sem etapa DEV)
-
-- Navegador:
-
-- Sistema Operacional:
 
 ---
 

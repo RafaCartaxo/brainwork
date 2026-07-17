@@ -44,9 +44,9 @@ O sistema não deve permitir concluir a solicitação de assinatura para servido
 
 ### Critérios de aceite
 
-- Servidores com cadastro "A aprovar" não devem estar disponíveis para solicitação de assinatura
-- Deve ser exibido o badge de cadastro incompleto ao tentar selecionar um servidor nessa situação
-- Após a aprovação do cadastro, o servidor deve passar a ficar disponível normalmente para solicitação de assinatura
+- [ ] Servidores com cadastro "A aprovar" não devem estar disponíveis para solicitação de assinatura
+- [ ] Deve ser exibido o badge de cadastro incompleto ao tentar selecionar um servidor nessa situação
+- [ ] Após a aprovação do cadastro, o servidor deve passar a ficar disponível normalmente para solicitação de assinatura
 
 ---
 
