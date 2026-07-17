@@ -44,7 +44,7 @@ responsavel: Rafael
     - ⚠️ Mesa de refinamento em andamento: possível conflito com regra nova de retificação — **não testar antes da decisão**
 - [ ] **SGV-7074** — Ao alterar módulo de um assunto/serviço os modelos de documentos não são atualizados
     - `Altíssima` · Matheus Godoi
-    - ⚠️ Parente do [[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]? (mais ou menos, é outra coisa) Lucas Beninca construindo os criterios
+    - ⚠️ Relação com o [[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]] é só de longe — é outra coisa. **Lucas Beninca** construindo os critérios
 - [ ] **SGV-9610** — Servidor não consegue associar documento na abertura de um novo documento
     - `Baixa` · João Rodrigo · CX
 - [ ] **SGV-9548** — Campo de telefone no cadastro de instância não permite número fixo
@@ -65,28 +65,30 @@ responsavel: Rafael
     - `Altíssima` · Matheus Godoi
 - [x] **SGV-9633** — Assinatura em fluxo de trabalho não pode ser concluída ✅ 2026-07-17 → já possui critérios
     - `Alta` · João Rodrigo · CX
-- [x] **SGV-5783** — Representante legal incorreto na assinatura após fazer alteração ✅ 2026-07-17 (já possui critérios)
+- [x] **SGV-5783** — Representante legal incorreto na assinatura após fazer alteração ✅ 2026-07-17 → já possui critérios
     - `Alta` · Diogo Sobreira
-- [x] **[[QA Workspace/02 Demandas/DEV/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 (já refinado e possui critérios)
+- [x] **[[QA Workspace/02 Demandas/DEV/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 → já refinado, critérios no card
     - `Média` · Washington Junior · CX · API
     - Card no vault com critérios prontos; pendência de revisar cenários já na fila
-- [x] **SGV-7829** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17(já possui critérios)
+- [x] **SGV-7829** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17 → já possui critérios
     - `Média` · João Marcelo
-- [x] **SGV-6873** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 (já possui critérios)
+- [x] **SGV-6873** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 → já possui critérios
     - `Média` · Matheus Godoi · Sanidade-004
-- [ ] **SGV-6348** — Edição de documentos "Em elaboração" não é exibida ao baixar documento (parece ser o mesmo caso da 6873, verificar com o dev a solução como foi aplicada)
+- [ ] **SGV-6348** — Edição de documentos "Em elaboração" não é exibida ao baixar documento
     - `Média` · Matheus Godoi
-- [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 (já refinada e possui critérios) 
+    - ⚠️ Parece o mesmo caso da SGV-6873 — verificar com o dev como a solução foi aplicada
+- [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 → já refinado, critérios no card
     - `Baixa` · Diogo Sobreira · CX
     - Card no vault com critérios prontos (esteira 3f)
-- [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores (caso de lentidão, verificar situação, se relaciona com a 8977?)
+- [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores
     - `Baixa` · Diogo Sobreira · CX
-- [x] **SGV-8977** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-17 (já refinada e possui critérios) 
+    - ⚠️ Caso de lentidão — verificar situação; tem relação com a SGV-8977?
+- [x] **SGV-8977** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-17 → já refinado, critérios no card
     - `Baixa` · Washington Junior · CX · API
 
 ## Em desenvolvimento / Em andamento (4)
 
-- [x] **SGV-9036** — Mensagens de erro são exibidas quando é selecionado um signatário para assinatura ✅ 2026-07-17 (já refinada e possui critérios) 
+- [x] **SGV-9036** — Mensagens de erro são exibidas quando é selecionado um signatário para assinatura ✅ 2026-07-17 → já refinado, critérios no card
     - `Altíssima` · Washington Junior · API
 - [ ] **SGV-9841** — Login autenticando usuário em conta de outro servidor
     - `Alta` · Matheus Godoi · CX
@@ -162,3 +164,4 @@ responsavel: Rafael
 
 - 2026-07-17 - Lista criada a partir do export da view SP15 (53/60 cards — 7 faltando por corte do "Load more")
 - 2026-07-17 - Reformatada pra leitura: linha do checkbox só com ID + título; prioridade/dev/origem na sublinha
+- 2026-07-17 - Primeira batida (10/53): 9458, 9093, 9633, 5783, 7829, 6873 → já possuem critérios; 9750, 9963, 8977, 9036 → já refinados, critérios no card. Investigações abertas: 6348 (mesmo caso da 6873?), 9692 (relação com 8977?), 7074 (critérios com Lucas Beninca)
