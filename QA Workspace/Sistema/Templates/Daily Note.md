@@ -26,6 +26,9 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 ### POCs
 - 
 
+### Planejamento
+- 
+
 ## Bugs encontrados
 - 
 

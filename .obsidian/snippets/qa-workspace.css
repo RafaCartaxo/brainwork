@@ -146,6 +146,7 @@
 .qa-daily h3[data-heading="DEV"]  { border-inline-start-color: #059669; }
 .qa-daily h3[data-heading="HML"]  { border-inline-start-color: #ea580c; }
 .qa-daily h3[data-heading="POCs"] { border-inline-start-color: #c026d3; }
+.qa-daily h3[data-heading="Planejamento"] { border-inline-start-color: #2563eb; }
 .qa-daily h3[data-heading="Auto-organização"] { border-inline-start-color: #475569; }
 
 /* ---------- Acessibilidade ---------- */

@@ -71,6 +71,18 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Melhoria passou no reteste após reabertura | `🔁 SGV-XXXX - Melhoria retestada e aprovada em <ambiente>` |
 | Melhoria falhou na validação | `🔴 SGV-XXXX - Melhoria reaberta em <ambiente>` |
 
+**Planejamento** (subseção própria em Atividades — triagem, refinamento, estudo/importação de documentação, definição de critérios; trabalho que prepara os testes, sem ser execução em ambiente):
+
+| Situação | Copy |
+|---|---|
+| Rodada de análise numa mesa de refinamento | `🔎 SGV-XXXX - Análise (<resultado curto>)` |
+| Demanda refinada (card criado) | `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` |
+| Análise/critérios levados pro Notion | `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (análise/critérios registrados na task)` |
+| Batida de triagem de sprint | `📋 Triagem <sprint> - <n>/<total> cards batidos (<resultado curto>)` |
+| Documentação importada/atualizada em 04 Conhecimento | `📚 <Doc> - Documentação importada/atualizada (<resumo curto>)` |
+
+As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço. Registrar o custo quando fizer diferença: um refinamento que atravessou o dia merece o contexto no parêntese.
+
 **Regras transversais**:
 - **Cada estágio vivido no dia é uma atividade**: proposta, refinamento, atualização no Notion, cadastro, validação — cada etapa que acontecer hoje ganha a própria linha em Atividades no momento em que acontece (inclusive quando o trabalho é feito numa sessão com IA — ela registra a linha de cada estágio que executar). A daily mostra o caminho: `💭 → 📝 → 📤 → 💡 → 🚀/✅...`.
 - **A fazer hoje é o ledger completo do dia**: todo estágio executado aparece nele também como item **marcado**, com o que foi feito entre parênteses (`- [x] SGV-XXXX - Refinar (card criado, critérios prontos)`) — mesmo que a tarefa nunca tenha sido enfileirada antes; registra-se já concluída, com a marca ` → registrado`. O botão 🔄 Atualizar faz esse backfill sozinho a partir das linhas de Atividades. No fim do dia, a fila mostra tudo: o que foi feito (marcado) e o que carrega pra amanhã (aberto).
