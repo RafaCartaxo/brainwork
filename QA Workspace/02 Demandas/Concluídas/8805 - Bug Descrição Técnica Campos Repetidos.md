@@ -44,18 +44,18 @@ O evento de retificação deve exibir o nome amigável do campo e o número da r
 
 ### Critérios de aceite
 
-- Eventos de retificação de campos repetidos devem exibir o nome amigável do campo, não o identificador técnico
-- Deve indicar corretamente o número da repetição (ex.: "repetição 3")
-- Deve valer para qualquer tipo de campo repetido (texto, numérico, data e hora, e-mail, link, etc.)
+- [ ] Eventos de retificação de campos repetidos devem exibir o nome amigável do campo, não o identificador técnico
+- [ ] Deve indicar corretamente o número da repetição (ex.: "repetição 3")
+- [ ] Deve valer para qualquer tipo de campo repetido (texto, numérico, data e hora, e-mail, link, etc.)
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Exibir nome amigável e número da repetição no evento de retificação**
-    - Dado que um campo com repetição habilitada seja retificado
-    - Quando o evento de retificação for exibido
-    - Então deve mostrar o nome amigável do campo e o número da repetição, sem identificador técnico
+    Dado que um campo com repetição habilitada seja retificado
+    Quando o evento de retificação for exibido
+    Então deve mostrar o nome amigável do campo e o número da repetição, sem identificador técnico
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

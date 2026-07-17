@@ -49,17 +49,17 @@ O download realizado por um cidadão não deve conter, em nenhuma hipótese, con
 
 ### Critérios de aceite
 
-- O arquivo baixado por um cidadão não deve conter informações de tramitação interna
-- O comportamento deve ser consistente entre os ambientes de DEV, HML e PROD
+- [ ] O arquivo baixado por um cidadão não deve conter informações de tramitação interna
+- [ ] O comportamento deve ser consistente entre os ambientes de DEV, HML e PROD
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Validar que download do cidadão não exibe tramitação interna**
-    - Dado que um cidadão realize o download de um documento público
-    - Quando o download for concluído
-    - Então o conteúdo de tramitação interna não deve estar presente no arquivo baixado
+    Dado que um cidadão realize o download de um documento público
+    Quando o download for concluído
+    Então o conteúdo de tramitação interna não deve estar presente no arquivo baixado
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

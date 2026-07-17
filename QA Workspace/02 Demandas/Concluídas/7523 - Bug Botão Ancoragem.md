@@ -42,17 +42,17 @@ O botão flutuante de ancoragem deve aparecer na posição correta desde o iníc
 
 ### Critérios de aceite
 
-- O botão de ancoragem deve ser exibido na posição correta durante todo o carregamento da página
+- [ ] O botão de ancoragem deve ser exibido na posição correta durante todo o carregamento da página
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Validar posicionamento do botão de ancoragem durante carregamento**
-    - Dado que a página esteja carregando
-    - E o botão flutuante de ancoragem for renderizado
-    - Quando o carregamento avançar
-    - Então ele deve aparecer na posição correta desde o início
+    Dado que a página esteja carregando
+    E o botão flutuante de ancoragem for renderizado
+    Quando o carregamento avançar
+    Então ele deve aparecer na posição correta desde o início
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

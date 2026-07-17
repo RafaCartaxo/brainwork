@@ -43,17 +43,17 @@ O cidadão autor de um despacho sigiloso na própria resposta de Processo Admini
 
 ### Critérios de aceite
 
-- O cidadão autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente
-- Demais cidadãos/servidores sem envolvimento direto e que não são autores continuam sem acesso ao conteúdo sigiloso (regra de sigilo não deve regredir)
+- [ ] O cidadão autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente
+- [ ] Demais cidadãos/servidores sem envolvimento direto e que não são autores continuam sem acesso ao conteúdo sigiloso (regra de sigilo não deve regredir)
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Visualizar conteúdo do próprio despacho sigiloso como autor (cidadão)**
-    - Dado que um cidadão crie um despacho de resposta com a opção "Com Sigilo" marcada, no próprio Processo Administrativo
-    - Quando ele mesmo visualizar o despacho na linha do tempo do documento
-    - Então o conteúdo do despacho deve ser exibido normalmente para ele
+    Dado que um cidadão crie um despacho de resposta com a opção "Com Sigilo" marcada, no próprio Processo Administrativo
+    Quando ele mesmo visualizar o despacho na linha do tempo do documento
+    Então o conteúdo do despacho deve ser exibido normalmente para ele
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

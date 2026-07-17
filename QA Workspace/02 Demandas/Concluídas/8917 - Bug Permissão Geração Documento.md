@@ -46,20 +46,20 @@ O botão "Gerar documento" não deve ser exibido quando o setor em que o servido
 
 ### Critérios de aceite
 
-- O botão "Gerar documento" não deve aparecer para documentos vinculados diretamente ao Módulo quando o setor não tem permissão
-- O botão "Gerar documento" não deve aparecer para documentos vinculados a Assunto e Serviço quando o setor não tem permissão
-- A visibilidade do botão deve reagir à troca de setor sem necessidade de reload
-- Documentos sem assunto/serviço vinculado devem continuar exibindo o botão normalmente quando o setor tem permissão
+- [ ] O botão "Gerar documento" não deve aparecer para documentos vinculados diretamente ao Módulo quando o setor não tem permissão
+- [ ] O botão "Gerar documento" não deve aparecer para documentos vinculados a Assunto e Serviço quando o setor não tem permissão
+- [ ] A visibilidade do botão deve reagir à troca de setor sem necessidade de reload
+- [ ] Documentos sem assunto/serviço vinculado devem continuar exibindo o botão normalmente quando o setor tem permissão
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Bloquear geração de documento vinculado ao Módulo quando setor não tem permissão**
-    - Dado que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
-    - E o documento automatizado esteja vinculado diretamente ao Módulo
-    - Quando ele tentar gerar o documento
-    - Então o botão "Gerar documento" não deve ser exibido
+    Dado que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
+    E o documento automatizado esteja vinculado diretamente ao Módulo
+    Quando ele tentar gerar o documento
+    Então o botão "Gerar documento" não deve ser exibido
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
@@ -67,10 +67,10 @@ O botão "Gerar documento" não deve ser exibido quando o setor em que o servido
     - Evidências de Testes:
 
 - **CT-B02 Bloquear geração de documento vinculado ao Assunto e Serviço quando setor não tem permissão**
-    - Dado que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
-    - E o documento automatizado esteja vinculado ao Assunto e Serviço
-    - Quando ele tentar gerar o documento
-    - Então o botão "Gerar documento" não deve ser exibido
+    Dado que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
+    E o documento automatizado esteja vinculado ao Assunto e Serviço
+    Quando ele tentar gerar o documento
+    Então o botão "Gerar documento" não deve ser exibido
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

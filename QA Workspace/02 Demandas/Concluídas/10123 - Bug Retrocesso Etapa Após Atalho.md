@@ -48,18 +48,18 @@ Ao retroceder uma etapa que foi avançada por atalho, o cluster de seleção do 
 
 ### Critérios de aceite
 
-- O cluster de seleção do setor responsável deve ser exibido ao retroceder etapa avançada por atalho
-- O retrocesso da etapa deve ser concluído com sucesso após a seleção do setor responsável
+- [ ] O cluster de seleção do setor responsável deve ser exibido ao retroceder etapa avançada por atalho
+- [ ] O retrocesso da etapa deve ser concluído com sucesso após a seleção do setor responsável
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Retroceder etapa avançada por atalho exibindo cluster de setor responsável**
-    - Dado que exista um fluxo de trabalho com atalho da etapa inicial para a última etapa
-    - E o usuário tenha avançado para a última etapa pelo atalho
-    - Quando o usuário retroceder a etapa
-    - Então o cluster de seleção do setor responsável deve ser exibido e a etapa deve retroceder com sucesso
+    Dado que exista um fluxo de trabalho com atalho da etapa inicial para a última etapa
+    E o usuário tenha avançado para a última etapa pelo atalho
+    Quando o usuário retroceder a etapa
+    Então o cluster de seleção do setor responsável deve ser exibido e a etapa deve retroceder com sucesso
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

@@ -48,9 +48,9 @@ Campos com "permitir repetição de campo" podem ser duplicados N vezes (repeti�
 ## Casos de teste
 
 - **CT-001 Repetições do mesmo campo agrupadas e em ordem numérica**
-    - Dado que um campo com repetição habilitada tenha as repetições 1, 3 e 4 retificadas
-    - Quando os eventos de retificação forem exibidos na linha do tempo
-    - Então as três retificações devem aparecer juntas, na ordem 1 → 3 → 4
+    Dado que um campo com repetição habilitada tenha as repetições 1, 3 e 4 retificadas
+    Quando os eventos de retificação forem exibidos na linha do tempo
+    Então as três retificações devem aparecer juntas, na ordem 1 → 3 → 4
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
@@ -58,9 +58,9 @@ Campos com "permitir repetição de campo" podem ser duplicados N vezes (repeti�
     - Evidências de Testes:
 
 - **CT-002 Vários campos repetidos retificados seguem a ordem do formulário**
-    - Dado que dois ou mais campos repetidos (ex.: Descrição, Número) tenham repetições retificadas
-    - Quando os eventos forem exibidos
-    - Então as retificações devem vir agrupadas por campo, com os campos na ordem em que aparecem no formulário, sem intercalar
+    Dado que dois ou mais campos repetidos (ex.: Descrição, Número) tenham repetições retificadas
+    Quando os eventos forem exibidos
+    Então as retificações devem vir agrupadas por campo, com os campos na ordem em que aparecem no formulário, sem intercalar
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>
@@ -68,9 +68,9 @@ Campos com "permitir repetição de campo" podem ser duplicados N vezes (repeti�
     - Evidências de Testes:
 
 - **CT-003 Regressão do 8805 — texto do evento continua amigável**
-    - Dado que qualquer repetição de campo seja retificada
-    - Quando o evento for exibido
-    - Então o texto continua no formato "campo <Label>: (repetição N) de '...' para '...'", sem identificador técnico
+    Dado que qualquer repetição de campo seja retificada
+    Quando o evento for exibido
+    Então o texto continua no formato "campo <Label>: (repetição N) de '...' para '...'", sem identificador técnico
 
     - Execução Passou?
         - [ ] <span style="color:#2ecc71">Sim</span>

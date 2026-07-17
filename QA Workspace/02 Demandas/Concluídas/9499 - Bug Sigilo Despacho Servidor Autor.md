@@ -44,18 +44,18 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
 
 ### Critérios de aceite
 
-- O servidor autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente (tela e download/PDF)
-- Servidores diretamente envolvidos no despacho devem continuar visualizando o conteúdo normalmente
-- Servidores/setores sem envolvimento direto e que não são autores não devem visualizar o conteúdo sigiloso, mesmo sendo donos/responsáveis pelo processo administrativo em questão
+- [ ] O servidor autor de um despacho sigiloso deve visualizar o próprio conteúdo normalmente (tela e download/PDF)
+- [ ] Servidores diretamente envolvidos no despacho devem continuar visualizando o conteúdo normalmente
+- [ ] Servidores/setores sem envolvimento direto e que não são autores não devem visualizar o conteúdo sigiloso, mesmo sendo donos/responsáveis pelo processo administrativo em questão
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Visualizar conteúdo do próprio despacho sigiloso como autor (servidor)**
-    - Dado que um servidor crie um despacho de resposta com a opção "Com Sigilo" marcada
-    - Quando ele mesmo visualizar o despacho na linha do tempo do documento
-    - Então o conteúdo do despacho deve ser exibido normalmente para ele
+    Dado que um servidor crie um despacho de resposta com a opção "Com Sigilo" marcada
+    Quando ele mesmo visualizar o despacho na linha do tempo do documento
+    Então o conteúdo do despacho deve ser exibido normalmente para ele
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
@@ -63,9 +63,9 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
     - Evidências de Testes:
 
 - **CT-B02 Baixar PDF do próprio despacho sigiloso como autor (servidor)**
-    - Dado que um servidor tenha criado um despacho de resposta com a opção "Com Sigilo" marcada
-    - Quando ele mesmo solicitar o download/PDF do despacho
-    - Então o conteúdo do despacho deve constar normalmente no arquivo gerado
+    Dado que um servidor tenha criado um despacho de resposta com a opção "Com Sigilo" marcada
+    Quando ele mesmo solicitar o download/PDF do despacho
+    Então o conteúdo do despacho deve constar normalmente no arquivo gerado
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
@@ -73,10 +73,10 @@ O servidor autor de um despacho sigiloso deve conseguir visualizar o próprio co
     - Evidências de Testes:
 
 - **CT-B03 Ocultar conteúdo do despacho sigiloso para servidor sem envolvimento direto**
-    - Dado que exista um despacho sigiloso criado por outro servidor no processo
-    - E o servidor atual não esteja diretamente envolvido nesse despacho (mesmo sendo responsável/dono do processo, ex.: cenário "Ursula")
-    - Quando ele acessar a linha do tempo do documento
-    - Então o conteúdo do despacho sigiloso não deve ser exibido para ele
+    Dado que exista um despacho sigiloso criado por outro servidor no processo
+    E o servidor atual não esteja diretamente envolvido nesse despacho (mesmo sendo responsável/dono do processo, ex.: cenário "Ursula")
+    Quando ele acessar a linha do tempo do documento
+    Então o conteúdo do despacho sigiloso não deve ser exibido para ele
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

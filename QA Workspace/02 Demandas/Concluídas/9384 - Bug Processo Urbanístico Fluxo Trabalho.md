@@ -47,16 +47,16 @@ O Processo Urbanístico deve ser carregado e exibido corretamente na lista de se
 
 ### Critérios de aceite
 
-- O Processo Urbanístico deve aparecer disponível para seleção ao acessar o Fluxo de Trabalho
+- [ ] O Processo Urbanístico deve aparecer disponível para seleção ao acessar o Fluxo de Trabalho
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Validar carregamento de Processo Urbanístico para seleção no Fluxo de Trabalho**
-    - Dado que o usuário acesse o Fluxo de Trabalho para selecionar um Processo Urbanístico
-    - Quando a lista de processos for carregada
-    - Então o Processo Urbanístico deve aparecer disponível para seleção
+    Dado que o usuário acesse o Fluxo de Trabalho para selecionar um Processo Urbanístico
+    Quando a lista de processos for carregada
+    Então o Processo Urbanístico deve aparecer disponível para seleção
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>

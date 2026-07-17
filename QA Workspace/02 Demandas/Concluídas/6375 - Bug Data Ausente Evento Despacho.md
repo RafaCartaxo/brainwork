@@ -42,17 +42,17 @@ A data deve ser exibida corretamente em todos os eventos de despacho.
 
 ### Critérios de aceite
 
-- O evento de despacho deve exibir a data corretamente
-- Não deve haver casos onde a data apareça em branco/ausente
+- [ ] O evento de despacho deve exibir a data corretamente
+- [ ] Não deve haver casos onde a data apareça em branco/ausente
 
 ---
 
 ### Casos de Teste Básicos
 
 - **CT-B01 Exibir data corretamente no evento de despacho**
-    - Dado que um despacho seja realizado
-    - Quando o evento do despacho for exibido
-    - Então a data do evento deve ser exibida corretamente
+    Dado que um despacho seja realizado
+    Quando o evento do despacho for exibido
+    Então a data do evento deve ser exibida corretamente
 
     - Execução Passou?
         - [x] <span style="color:#2ecc71">Sim</span>
