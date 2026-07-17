@@ -138,7 +138,8 @@ Documento ao qual o servidor tem acesso — **por qualquer setor do qual partici
 
 - Demanda relacionada: [MR !537](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/537) (João Rodrigo — aprovado por B. Luan e Bruno Clementino; status Notion: pronto pra teste em dev)
     
-- Observações: análise completa do refinamento em [[../../05 Refinar/SGV-9610|SGV-9610 (mesa de refinamento)]]; regras do módulo em [[../../04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]]
+- Observações: análise completa do refinamento em [[../../04 Conhecimento/SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor|SGV-9610 (refinamento arquivado)]]; regras do módulo em [[../../04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]]
     
 - Histórico:
     - 2026-07-17 - 🐛 Card criado a partir do refinamento (destilado)
+    - 2026-07-17 - 📤 Análise/critérios registrados na task no Notion; mesa de refinamento arquivada em 04 Conhecimento

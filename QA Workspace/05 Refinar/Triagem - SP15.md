@@ -16,6 +16,10 @@ responsavel: Rafael
 > [!warning]- Export incompleto: 53 de 60 cards
 > A view do Notion corta no "Load more" — faltam 7 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui).
 
+> [!tip] Progresso: **12/53** batidos (atualizado 2026-07-17)
+> Homologação `0/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `0/7` · Produção `0/7`
+> *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
+
 ## Disponível para homologação (9) — ação QA imediata
 
 - [ ] **SGV-5273** — Login com senha correta não funciona após tentativas incorretas
@@ -45,8 +49,9 @@ responsavel: Rafael
 - [x] **SGV-7074** — Ao alterar módulo de um assunto/serviço os modelos de documentos não são atualizados ✅ 2026-07-17
     - `Altíssima` · Matheus Godoi
     - ⚠️ Relação com o [[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]] é só de longe — é outra coisa. **Lucas Beninca** construindo os critérios
-- [x] **SGV-9610** — Servidor não consegue associar documento na abertura de um novo documento ✅ 2026-07-17 (refina e criterios aceito, card atualziado no notion com anaslise)
+- [x] **[[QA Workspace/02 Demandas/DEV/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610]]** — Servidor não consegue associar documento na abertura de um novo documento ✅ 2026-07-17 → refinado, critérios de aceite no card, análise no Notion, mesa arquivada em 04 Conhecimento
     - `Baixa` · João Rodrigo · CX
+    - Card no vault pronto pra validar em DEV (pendência na fila)
 - [ ] **SGV-9548** — Campo de telefone no cadastro de instância não permite número fixo
     - `Baixa` · Matheus Godoi
 - [ ] **SGV-9959** — Inconsistência de status entre drawer de solicitação e evento de assinatura após recusa em assinatura sequencial
@@ -168,3 +173,4 @@ responsavel: Rafael
 - 2026-07-17 - Reformatada pra leitura: linha do checkbox só com ID + título; prioridade/dev/origem na sublinha
 - 2026-07-17 - Primeira batida (10/53): 9458, 9093, 9633, 5783, 7829, 6873 → já possuem critérios; 9750, 9963, 8977, 9036 → já refinados, critérios no card. Investigações abertas: 6348 (mesmo caso da 6873?), 9692 (relação com 8977?), 7074 (critérios com Lucas Beninca)
 - 2026-07-17 - Correção: SGV-9474 tinha ficado de fora da lista na montagem (erro de transcrição) — incluído em Em produção; grupo agora com 7
+- 2026-07-17 - Segunda batida (12/53): **9610** → refinado de ponta a ponta (card no vault com CTs, análise no Notion, mesa arquivada em 04 Conhecimento); **7074** → critérios sendo construídos com Lucas Beninca. Painel de progresso adicionado no topo (contador geral + por grupo)

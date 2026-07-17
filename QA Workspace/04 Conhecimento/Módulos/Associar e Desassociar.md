@@ -108,4 +108,4 @@ Fluxos v1 permanecem, com UI/UX uniformizada:
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
-- [[../../02 Demandas/DEV/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610]] — busca de associação na abertura não retornava documento de setor em que o servidor multi-setor não está atuando (consulta sem setor ativo); card em validação em DEV ([[../../05 Refinar/SGV-9610|análise do refinamento]])
+- [[../../02 Demandas/DEV/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610]] — busca de associação na abertura não retornava documento de setor em que o servidor multi-setor não está atuando (consulta sem setor ativo); card em validação em DEV ([[../SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor|análise do refinamento]])

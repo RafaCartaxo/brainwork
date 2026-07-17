@@ -3,7 +3,7 @@ tags:
   - qa
   - refinamento
 task: "9610"
-status: em_refinamento
+status: refinado
 data_inicio: 2026-07-17
 responsavel: Rafael
 modulo: associar-desassociar
@@ -31,7 +31,7 @@ modulo: associar-desassociar
 
 ## Análise
 
-- **Regra violada (documentada)**: [[../04 Conhecimento/Módulos/Associar e Desassociar#Permissões e visibilidade|Associar/Desassociar]] — "o usuário só busca documentos aos quais tem acesso"; tendo acesso, o documento deve aparecer na busca. A funcionalidade de associação **na abertura** é a da atualização de 22/10/2025 (Drawer na toolbar inferior do formulário de criação).
+- **Regra violada (documentada)**: [[Módulos/Associar e Desassociar#Permissões e visibilidade|Associar/Desassociar]] — "o usuário só busca documentos aos quais tem acesso"; tendo acesso, o documento deve aparecer na busca. A funcionalidade de associação **na abertura** é a da atualização de 22/10/2025 (Drawer na toolbar inferior do formulário de criação).
 - **Escopo isolado pela análise da Bruna**: só a busca do fluxo de **associar na abertura** falha; associar **via despacho** funciona (validado em HML com o mesmo documento). Compatível com a causa descrita no MR: a busca na abertura fazia consulta **sem setor** (setor ativo do agente não identificado corretamente).
 - **Ponto de atenção do MR**: além das telas de abertura/associação, o MR toca `SignatureToolbarItem.tsx` (tela de **Assinatura de Documento**) e a query compartilhada `PublicAgent.queries.ts` — a validação deve cobrir regressão na assinatura via toolbar, não só a associação.
 - **Evidências**: análise da Bruna (25/06, com print no Notion); vídeo de evidência anexo na task; descrição técnica do MR !537.
@@ -78,7 +78,7 @@ Documento ao qual o servidor tem acesso — **por qualquer setor do qual partici
 
 ### Casos de Teste Básicos
 
-*(gerar CTs completos na validação — skill de casos de teste, usando [[../04 Conhecimento/Módulos/Associar e Desassociar|a doc do módulo]] como fonte de regras)*
+*(gerar CTs completos na validação — skill de casos de teste, usando [[Módulos/Associar e Desassociar|a doc do módulo]] como fonte de regras)*
 
 ---
 
@@ -88,3 +88,4 @@ Documento ao qual o servidor tem acesso — **por qualquer setor do qual partici
 - 2026-07-17 - 🔎 Análise: problema isolado (análise Bruna 25/06) à busca do fluxo de associar **na abertura**; regra violada está documentada em 04 Conhecimento (Associar/Desassociar); MR !537 corrige envio do setor ativo na busca — atenção à regressão em Assinatura (toolbar), tela também tocada. Destilado rascunhado; pendências: cenário de reprodução em DEV e destino do vídeo de evidência.
 - 2026-07-17 - 🔎 Rodada 2 (com Rafael): reprodução confirmada — gatilho é servidor **multi-setor** buscando, na abertura, documento de setor que participa mas **não está atuando**. Passo a passo reescrito em Dado/Quando/Então e critérios de aceite refinados (cenário do bug, base, paridade com despacho, limite de acesso preservado, regressão nas telas do MR). Falta só decidir o destino do vídeo de evidência — destilado pronto pra virar card na validação.
 - 2026-07-17 - 📝 Destilado aprovado (padrão dos cards do vault) e card criado em [[../02 Demandas/DEV/9610 - Bug Associar Documento Abertura Multi-Setor|02 Demandas/DEV/9610]] com 6 CTs básicos. Próximo passo (Rafael): marcar `status: refinado`, levar análise pro Notion (📤) e arquivar esta mesa em 04 Conhecimento.
+- 2026-07-17 - 📤 Análise/critérios levados pro Notion (Rafael) e mesa arquivada em `04 Conhecimento/` (`status: refinado`). Ciclo do fluxo 6 concluído — resta a validação em DEV (pendência na fila).
