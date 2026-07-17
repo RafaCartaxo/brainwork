@@ -79,14 +79,14 @@ responsavel: Rafael
 - [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 (já refinada e possui critérios) 
     - `Baixa` · Diogo Sobreira · CX
     - Card no vault com critérios prontos (esteira 3f)
-- [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores (caso de lentidão, verificar situação)
+- [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores (caso de lentidão, verificar situação, se relaciona com a 8977?)
     - `Baixa` · Diogo Sobreira · CX
 - [x] **SGV-8977** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-17 (já refinada e possui critérios) 
     - `Baixa` · Washington Junior · CX · API
 
 ## Em desenvolvimento / Em andamento (4)
 
-- [ ] **SGV-9036** — Mensagens de erro são exibidas quando é selecionado um signatário para assinatura
+- [x] **SGV-9036** — Mensagens de erro são exibidas quando é selecionado um signatário para assinatura ✅ 2026-07-17 (já refinada e possui critérios) 
     - `Altíssima` · Washington Junior · API
 - [ ] **SGV-9841** — Login autenticando usuário em conta de outro servidor
     - `Alta` · Matheus Godoi · CX
