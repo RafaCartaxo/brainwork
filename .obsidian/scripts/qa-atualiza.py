@@ -81,9 +81,9 @@ date: {hoje:%Y-%m-%d}
 # Daily QA — {hoje:%d/%m/%Y}
 
 ## Pendências de ontem
-> [!info] Carregado de {origem}
+> [!info]- Carregado de {origem}
 {call}
->
+
 > **A fazer hoje:**
 {afazer}
 
