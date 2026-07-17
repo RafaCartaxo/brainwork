@@ -81,7 +81,17 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Batida de triagem de sprint | `📋 Triagem <sprint> - <n>/<total> cards batidos (<resultado curto>)` |
 | Documentação importada/atualizada em 04 Conhecimento | `📚 <Doc> - Documentação importada/atualizada (<resumo curto>)` |
 
-As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço. Registrar o custo quando fizer diferença: um refinamento que atravessou o dia merece o contexto no parêntese.
+As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço.
+
+**Regra do detalhe recolhível** (vale pra qualquer seção de Atividades): a linha da atividade fica **curta** — emoji + link + copy padrão + status curto entre parênteses. Detalhamento longo (contexto, achados, custo do trabalho) desce pra um callout **fechado** logo abaixo, indentado na própria linha:
+
+```
+- 🔎 SGV-XXXX - Análise (rodada 1 — bloqueada no responsável)
+	> [!note]- Detalhes
+	> Texto longo aqui, quantas linhas precisar.
+```
+
+Bater o olho na lista mostra só emoji+status; expandir mostra o resto. Parêntese longo demais é sinal de que o conteúdo pertence ao callout.
 
 **Regras transversais**:
 - **Cada estágio vivido no dia é uma atividade**: proposta, refinamento, atualização no Notion, cadastro, validação — cada etapa que acontecer hoje ganha a própria linha em Atividades no momento em que acontece (inclusive quando o trabalho é feito numa sessão com IA — ela registra a linha de cada estágio que executar). A daily mostra o caminho: `💭 → 📝 → 📤 → 💡 → 🚀/✅...`.
