@@ -98,7 +98,7 @@ QA Workspace/
 - **Hotfix**: correção urgente é validada num ambiente de homologação que carrega a versão de produção + a hotfix. O card vive em `02 Demandas/Hotfix/` durante a validação (`ambiente: HOTFIX`) e, aprovado, vai pra `Concluídas/` como qualquer bug. Evidências na subpasta `Evidências/Hotfix/`.
 - **Bug de produção em sustentação** (relatado/analisado em produção, correção **não urgente** — se urgente, é Hotfix acima): não existe pasta `Produção/` em `02 Demandas/` de propósito — o card nasce em `DEV/` com `ambiente: DEV`, representando a **posição na esteira de correção**, e a origem/análise em produção fica registrada na Descrição e no Histórico. Daí segue a esteira normal (ou a variação 3f, se for task de API). Precedentes: SGV-9963, SGV-9750.
 - `cadastrado_por` (opcional): quem cadastrou o card, quando não foi o próprio responsável pela validação. Se tem a informação, preenche; se não, deixa vazio — não inventar.
-- Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../../Sistema/Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
+- Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
 
 ## Tasks de API (fluxo 3f)
 
@@ -110,7 +110,7 @@ Tasks que envolvem apenas API (sem interface visual) seguem um ciclo de validaç
 - A task é descrita em termos de endpoints, payloads, status codes
 
 ### Template
-Usa o [[../../Sistema/Templates/Demanda.md|Demanda.md]] (assim como melhoria ou funcionalidade). No campo Tipo: "API" ou "Melhoria/Funcionalidade" com menção explícita nos Critérios.
+Usa o [[../Templates/Demanda|Demanda]] (assim como melhoria ou funcionalidade). No campo Tipo: "API" ou "Melhoria/Funcionalidade" com menção explícita nos Critérios.
 
 ### Ciclo de validação
 1. **QA define critérios** no card — status codes esperados, contratos de payload, cenários de erro

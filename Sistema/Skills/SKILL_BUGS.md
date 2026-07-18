@@ -165,7 +165,7 @@ O que sobra da análise no card:
 - **Critérios de aceite**: incluir dados já corrompidos/afetados e regressão do fluxo normal
 - **Histórico**: `- YYYY-MM-DD - Análise de causa raiz (<quem>): <síntese curta>`
 - **Evidência externa** (Notion): anotar na seção Evidências **onde ela está**, sem cópia local
-- **Na daily**: `🔎` pra cada rodada, `📝` pro destilado, `📤` pro Notion (catálogo em [[../../../QA Workspace/01 Daily/README|01 Daily/README]])
+- **Na daily**: `🔎` pra cada rodada, `📝` pro destilado, `📤` pro Notion (catálogo em [[../../QA Workspace/01 Daily/README|01 Daily/README]])
 
 ## Resultado Esperado
 
