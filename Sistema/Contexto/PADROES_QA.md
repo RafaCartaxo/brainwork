@@ -98,7 +98,42 @@ QA Workspace/
 - **Hotfix**: correção urgente é validada num ambiente de homologação que carrega a versão de produção + a hotfix. O card vive em `02 Demandas/Hotfix/` durante a validação (`ambiente: HOTFIX`) e, aprovado, vai pra `Concluídas/` como qualquer bug. Evidências na subpasta `Evidências/Hotfix/`.
 - **Bug de produção em sustentação** (relatado/analisado em produção, correção **não urgente** — se urgente, é Hotfix acima): não existe pasta `Produção/` em `02 Demandas/` de propósito — o card nasce em `DEV/` com `ambiente: DEV`, representando a **posição na esteira de correção**, e a origem/análise em produção fica registrada na Descrição e no Histórico. Daí segue a esteira normal (ou a variação 3f, se for task de API). Precedentes: SGV-9963, SGV-9750.
 - `cadastrado_por` (opcional): quem cadastrou o card, quando não foi o próprio responsável pela validação. Se tem a informação, preenche; se não, deixa vazio — não inventar.
-- Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele.
+- Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../../Sistema/Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
+
+## Tasks de API (fluxo 3f)
+
+Tasks que envolvem apenas API (sem interface visual) seguem um ciclo de validação reduzido — sem esteira DEV, direto em homologação.
+
+### Quando classificar como "só de API"
+- Não há tela/interface pra validar visualmente
+- A validação depende de chamadas diretas (curl, Postman, swagger)
+- A task é descrita em termos de endpoints, payloads, status codes
+
+### Template
+Usa o [[../../Sistema/Templates/Demanda.md|Demanda.md]] (assim como melhoria ou funcionalidade). No campo Tipo: "API" ou "Melhoria/Funcionalidade" com menção explícita nos Critérios.
+
+### Ciclo de validação
+1. **QA define critérios** no card — status codes esperados, contratos de payload, cenários de erro
+2. **Dev implementa os cenários de teste** como parte da task
+3. **QA revisa os cenários** contra os critérios — confere cobertura (code review de QA)
+4. **Teste real em homologação** — Postman, curl, swagger. Sem esteira DEV.
+5. **Aprovado** → `status: resolvido`, mover pra `Concluídas/`
+6. **Reprovado** → `status: aberto`, pendência de revalidação
+
+### Critérios de aceite específicos
+- [ ] Status codes corretos (200, 201, 400, 404, 500 conforme o caso)
+- [ ] Payload de request validado (campos obrigatórios, formatos)
+- [ ] Payload de response validado (estrutura, tipos, valores)
+- [ ] Cenários de erro cobertos (token inválido, permissão, dados malformados)
+- [ ] Regras de negócio aplicadas (ex.: não permite duplicar, valida CPF)
+
+### Evidências
+Respostas de API (print do Postman, log de curl, swagger response) anotadas nos CTs do card. Não gera vídeo (sem interface pra gravar). Link direto pra collection: `docs/api-collection.json` no Postman.
+
+### Frase padrão na daily
+- `🔎 SGV-XXXX - Revisão de cenários (API) (<resultado>)`
+- `✅ SGV-XXXX - API aprovada em homologação`
+- `🔴 SGV-XXXX - API reaberta em homologação`
 
 ## Descarte de bug/suspeita (99 Arquivo)
 Quando um bug ou suspeita de bug (achado via análise de código, CX, ou qualquer outra origem) é investigado e confirmado que **não ocorre** (cenário impossível, premissa errada, ou já coberto por outro comportamento):

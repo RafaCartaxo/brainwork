@@ -9,7 +9,7 @@ tags:
 Atuo como Analista de Testes (QA), trabalhando principalmente com validações funcionais, exploratórias, regressões, homologações, sanidades e análise de regras de negócio. Meu objetivo é garantir que as entregas atendam ao comportamento esperado, às regras documentadas e à experiência do usuário.
 
 ## Rotina
-Começo o dia pela [[../../Dashboard/Dashboard|Dashboard]] — ela reúne a nota diária de hoje, os KPIs de bugs (abertos/resolvidos, por ambiente, por prioridade) e as pendências em aberto do Inbox e das dailies num só lugar, antes de entrar em cada pasta específica.
+Começo o dia pela [[../../QA Workspace/Dashboard/Dashboard|Dashboard]] — ela reúne a nota diária de hoje, os KPIs de bugs (abertos/resolvidos, por ambiente, por prioridade) e as pendências em aberto do Inbox e das dailies num só lugar, antes de entrar em cada pasta específica.
 
 ## Ambientes
 
@@ -50,7 +50,7 @@ Sempre que possível registrar vídeos, prints, links e arquivos auxiliares. O g
 Detalhe de formatação pra bugs: ver [[../Skills/SKILL_BUGS#Evidências|SKILL_BUGS]].
 
 ## Diário
-Utilizado para registrar atividades realizadas, demandas em andamento, bugs encontrados, melhorias de produto propostas, anotações rápidas, pendências e próximos passos. O diário não deve ser utilizado como documentação definitiva da demanda. Regra de como e quando linkar um SGV pro card dele, e de como registrar melhorias propostas: ver [[../../01 Daily/README|01 Daily/README]].
+Utilizado para registrar atividades realizadas, demandas em andamento, bugs encontrados, melhorias de produto propostas, anotações rápidas, pendências e próximos passos. O diário não deve ser utilizado como documentação definitiva da demanda. Regra de como e quando linkar um SGV pro card dele, e de como registrar melhorias propostas: ver [[../../QA Workspace/01 Daily/README|01 Daily/README]].
 
 ## Demandas
 Melhoria, Funcionalidade e POC podem ter uma nota principal (hub) com [[../Skills/SKILL_PLANO_DE_TESTE.md|plano de teste]], [[../Skills/SKILL_CASOS_DE_TESTE.md|casos de teste]] e evidências. Bug é diferente: não usa hub, é sempre uma nota única com [[../Skills/SKILL_BUGS.md|estrutura própria]].

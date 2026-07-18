@@ -37,7 +37,7 @@ Breve descrição da demanda.
 
 ## Casos de teste
 
-- [[Casos de Teste]]
+- Criar casos de teste (padrão Dado/Quando/Então — ver [[Sistema/Templates/Casos de teste|Casos de teste]])
 
 ---
 

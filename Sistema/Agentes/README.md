@@ -14,6 +14,7 @@ Diferente de [[../Skills|Skills]] (que são instruções de referência para voc
 | Agente | Gatilho | O que faz |
 |---|---|---|
 | [[AGENTE_ORGANIZADOR]] | 🔄 Atualizar (Dashboard) / "organiza a daily" (IA) / 7h (agendado) | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards, mantém a fila viva |
+| [[AGENTE_MIGRACAO_CARDS]] | Conclusão de pendência / "move o card" (IA) / verificação diária | Move cards entre pastas da esteira atualizando wikilinks, frontmatter e Histórico atomicamente |
 
 ## Como funciona um agente
 

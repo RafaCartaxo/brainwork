@@ -20,15 +20,15 @@ date: 2026-07-13
 | Calendar                | `calendar`                   | Visualização calendário das notas diárias     |
 | Tasks                   | `obsidian-tasks-plugin`      | Gerenciamento de tarefas/checklists            |
 | Templater               | `templater-obsidian`         | Templates dinâmicos (ex.: data automática)    |
-| Dataview                | `dataview`                   | Consultas e listagens dinâmicas sobre notas (usado na [[../../Dashboard/Dashboard|Dashboard]]) |
+| Dataview                | `dataview`                   | Consultas e listagens dinâmicas sobre notas (usado na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]]) |
 | Slides Extended         | `slides-extended`            | Apresentações a partir de notas               |
 | Minimal Theme Settings  | `obsidian-minimal-settings`  | Configurações do tema Minimal                 |
 | Editing Toolbar         | `editing-toolbar`            | Barra de formatação estilo Word no modo de edição |
-| Homepage                | `homepage`                   | Abre a [[../../Dashboard/Dashboard\|Dashboard]] automaticamente ao abrir o vault; botão na ribbon + comando com atalho |
+| Homepage                | `homepage`                   | Abre a [[../../QA Workspace/Dashboard/Dashboard\|Dashboard]] automaticamente ao abrir o vault; botão na ribbon + comando com atalho |
 | Obsidian Git            | `obsidian-git`               | Versionamento/sincronização automática do vault (pull ao abrir; commit+push a cada 10 min) |
 
 ## Plugins Core (nativos) que precisam estar ligados
-- **Bases** — necessário pros arquivos `.base` funcionarem ([[../../Dashboard/Bugs.base|Bugs.base]], [[../../Dashboard/Demandas.base|Demandas.base]], [[../../01 Daily/Índice Diário.base|Índice Diário.base]]). Em Settings → Core plugins.
+- **Bases** — necessário pros arquivos `.base` funcionarem ([[../../QA Workspace/Dashboard/Bugs.base|Bugs.base]], [[../../QA Workspace/Dashboard/Demandas.base|Demandas.base]], [[../../QA Workspace/01 Daily/Índice Diário.base|Índice Diário.base]]). Em Settings → Core plugins.
 - **Daily notes** — ver configuração específica abaixo.
 
 ## Daily Notes (configuração)
@@ -63,11 +63,11 @@ O vault inteiro (`BrainWork/`, incluindo `.obsidian/` com plugins, scripts e sni
 - **Nova máquina**: `git clone <repo>` → abrir a pasta como vault no Obsidian → ativar community plugins quando perguntado → configurar credencial GitHub (HTTPS + token) → recriar só o que é do SO (esquema `evidencia://`, ver seção própria).
 
 ## Botão "🔄 Atualizar" da Dashboard (script local, sem plugin)
-O botão na seção **Hoje** da [[../../Dashboard/Dashboard|Dashboard]] roda o script `.obsidian/scripts/qa-atualiza.py` (Python 3 puro, sem dependências, offline — **não usa IA nem Claude CLI**). Ele executa a parte mecânica do ciclo do [[../Skills/SKILL_INBOX|SKILL_INBOX]]: cria a daily de hoje se não existir, carrega pendências de ontem sem duplicar, e completa pendências concluídas com resultado anotado entre parênteses (frases padrão, cards atualizados/movidos/renomeados, Histórico). O disparo é feito pelo bloco `dataviewjs` da própria Dashboard via `child_process` — funciona só no desktop (requer `python3` no sistema). Idempotente: pode clicar quantas vezes quiser.
+O botão na seção **Hoje** da [[../../QA Workspace/Dashboard/Dashboard|Dashboard]] roda o script `.obsidian/scripts/qa-atualiza.py` (Python 3 puro, sem dependências, offline — **não usa IA nem Claude CLI**). Ele executa a parte mecânica do ciclo do [[../Skills/SKILL_INBOX|SKILL_INBOX]]: cria a daily de hoje se não existir, carrega pendências de ontem sem duplicar, e completa pendências concluídas com resultado anotado entre parênteses (frases padrão, cards atualizados/movidos/renomeados, Histórico). O disparo é feito pelo bloco `dataviewjs` da própria Dashboard via `child_process` — funciona só no desktop (requer `python3` no sistema). Idempotente: pode clicar quantas vezes quiser.
 
 ## CSS snippet (`qa-workspace.css`)
 Arquivo em `.obsidian/snippets/qa-workspace.css`, habilitado em Settings → Appearance → CSS snippets. Estiliza só as notas que declaram as classes no frontmatter (`cssclasses`):
-- **`qa-dashboard`** (usada na [[../../Dashboard/Dashboard|Dashboard]]): título com sublinhado teal, seções em rótulo caixa-alta, faixa de KPIs em cards (classes `qa-kpis`/`qa-kpi`, geradas pelo bloco `dataviewjs` do Resumo de Bugs), botão da daily de hoje (classe `qa-today`), fluxograma centralizado.
+- **`qa-dashboard`** (usada na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]]): título com sublinhado teal, seções em rótulo caixa-alta, faixa de KPIs em cards (classes `qa-kpis`/`qa-kpi`, geradas pelo bloco `dataviewjs` do Resumo de Bugs), botão da daily de hoje (classe `qa-today`), fluxograma centralizado.
 - **`qa-daily`** (usada no template [[../Templates/Daily Note.md|Daily Note.md]] e nas dailies): barra lateral colorida por seção no modo leitura, usando as mesmas cores das pastas/status (Status — reunião e Atividades teal, Bugs vermelho, Melhorias âmbar, Pendências violeta, DEV/HML/POCs nas cores das subpastas de `02 Demandas`, Planejamento azul `#2563eb`). Além das barras: o callout `[!abstract]` do **Status — reunião** ganha fundo teal suave e rótulos (Fiz/Foco/Travas) em caixa-alta; o blockquote puro da **fila (A fazer hoje)** vira painel com barra violeta (texto normal, sem itálico de citação); o callout `[!info]-` do **carry-over recolhido** fica apagado (opacity 0.6) até ser expandido; callouts **aninhados em listas** (os "Detalhes" das Atividades) ficam compactos, sem fundo, com fio discreto.
 
 As cores derivam da tabela de ícones/cores por pasta abaixo — se mudar uma cor lá, mudar no snippet também. Sem o snippet habilitado, as notas continuam 100% funcionais, só perdem o estilo.

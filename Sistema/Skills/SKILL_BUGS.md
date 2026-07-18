@@ -154,7 +154,7 @@ Detalhar os cenários de validação no padrão Dado/Quando/Então (CT-B01, CT-B
 
 ### Informações adicionais
 
-O **Histórico** registra cada etapa vivida pelo card, com a frase padrão prefixada pela data (`- YYYY-MM-DD - <frase com emoji>` — mesma copy do [[../../01 Daily/README|01 Daily/README]]). O card nasce com a primeira linha: `🐛 Bug cadastrado` quando já tem SGV; `🐛 Bug confirmado (card criado)` quando ainda não tem.
+O **Histórico** registra cada etapa vivida pelo card, com a frase padrão prefixada pela data (`- YYYY-MM-DD - <frase com emoji>` — mesma copy do [[../../QA Workspace/01 Daily/README|01 Daily/README]]). O card nasce com a primeira linha: `🐛 Bug cadastrado` quando já tem SGV; `🐛 Bug confirmado (card criado)` quando ainda não tem.
 
 ### Bug com análise (causa raiz)
 
