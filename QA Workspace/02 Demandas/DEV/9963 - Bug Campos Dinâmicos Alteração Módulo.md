@@ -115,7 +115,7 @@ Os campos dinâmicos (@) continuam funcionando normalmente após **qualquer** al
 ### Informações adicionais
 
 - Demanda relacionada: SGV-9963 (análise de Bruna Machado, 13/07/2026)
-- Observações: Esteira 3f ([[QA Workspace/Sistema/Contexto/FLUXOS|FLUXOS]]) — QA define critérios, dev implementa os cenários de teste, QA revisa os cenários contra estes critérios, teste real direto em homologação.
+- Observações: Esteira 3f ([[Sistema/Contexto/FLUXOS|FLUXOS]]) — QA define critérios, dev implementa os cenários de teste, QA revisa os cenários contra estes critérios, teste real direto em homologação.
 - Histórico:
     - 2026-07-13 - Análise de causa raiz (Bruna Machado): alteração de módulo corrompe referência dos (@) de forma irreversível
     - 2026-07-15 - 📝 Bug refinado (critérios de aceite prontos pro dev)

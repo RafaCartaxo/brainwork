@@ -9,7 +9,7 @@ tags:
 - **Projeto:** QA Workspace (Obsidian)
 - **Branch:** n/a (vault sem git)
 - **Data de criação:** 2026-07-14
-- **Referência:** [[QA Workspace/Sistema/Contexto/FLUXOS|FLUXOS]] (passo a passo), [[QA Workspace/01 Daily/README|01 Daily/README]] (frases padrão e MEL), [[QA Workspace/Sistema/Skills/SKILL_INBOX|SKILL_INBOX]] (auto-organizador)
+- **Referência:** [[Sistema/Contexto/FLUXOS|FLUXOS]] (passo a passo), [[QA Workspace/01 Daily/README|01 Daily/README]] (frases padrão e MEL), [[Sistema/Skills/SKILL_INBOX|SKILL_INBOX]] (auto-organizador)
 
 | Fluxo | CTs |
 |---|---|

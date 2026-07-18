@@ -33,7 +33,7 @@ Usar sempre a mesma frase pro mesmo tipo de resultado — não variar a redaçã
 
 Toda linha começa com o **emoji de status** — numa lista de Atividades, a coluna de emojis vira leitura instantânea do dia (verde = passou, vermelho = voltou), sem precisar ler as frases. Este catálogo é a **copy oficial**: usando a frase exata da situação, qualquer pessoa (ou IA) sabe exatamente o que aconteceu e onde agir, sem interpretar.
 
-**`<ambiente>`** assume: `DEV`, `homologação`, `hotfix` (ambiente de homologação com a versão de produção + a hotfix — ver [[QA Workspace/Sistema/Contexto/PADROES_QA.md#Organização de Bugs\|PADROES_QA]]) ou `produção`.
+**`<ambiente>`** assume: `DEV`, `homologação`, `hotfix` (ambiente de homologação com a versão de produção + a hotfix — ver [[Sistema/Contexto/PADROES_QA.md#Organização de Bugs\|PADROES_QA]]) ou `produção`.
 
 **Validação de bug** (o card mora na pasta do ambiente em `02 Demandas/`):
 
@@ -52,10 +52,10 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Situação | Copy |
 |---|---|
 | Identifiquei um possível bug (suspeita, a investigar) | `❓ Suspeita de bug registrada: <título curto>` — registrar também em **Bugs encontrados** como suspeita, e a pendência "Investigar suspeita: <título>" entra em **A fazer hoje** |
-| Suspeita confirmada, card criado (sem SGV ainda) | `🐛 Bug confirmado (card criado): [[card]]` — card nasce pela [[QA Workspace/Sistema/Skills/SKILL_BUGS\|SKILL_BUGS]]; pendência de cadastro no Notion entra na fila |
+| Suspeita confirmada, card criado (sem SGV ainda) | `🐛 Bug confirmado (card criado): [[card]]` — card nasce pela [[Sistema/Skills/SKILL_BUGS\|SKILL_BUGS]]; pendência de cadastro no Notion entra na fila |
 | Bug novo encontrado e cadastrado (já com SGV) | `🐛 SGV-XXXX - Bug cadastrado` (e linkar também em **Bugs encontrados**) |
 | Suspeita investigada e descartada sem card | `🗑️ Suspeita descartada: <título> (não é bug: <motivo curto>)` |
-| Bug/suspeita com card, investigada e descartada (não ocorre) | `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)` (ver [[QA Workspace/Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]]) |
+| Bug/suspeita com card, investigada e descartada (não ocorre) | `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)` (ver [[Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]]) |
 
 **Melhoria** (antes do cadastro é `MEL-NNNN`; depois, a frase leva a palavra "Melhoria" pra diferenciar da esteira de bug só lendo a daily):
 

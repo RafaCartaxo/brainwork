@@ -35,7 +35,7 @@ date: 2026-07-13
 Em Settings → Daily notes:
 - **Folder**: `QA Workspace/01 Daily`
 - **Format**: `YYYY-MM/DD-MM`
-- **Template**: `QA Workspace/Sistema/Templates/Daily Note.md`
+- **Template**: `Sistema/Templates/Daily Note.md`
 
 > [!warning] Por que não é "Julho/13 de Julho"
 > Esse Obsidian não tem o locale em português carregado pro moment.js — nomes de mês por extenso (`Julho`) só são gerados em inglês (`July`), quebrando a geração automática de notas. Por isso o formato é 100% numérico (`YYYY-MM/DD-MM`), o que também deixa os nós mais curtos no Graph View.
@@ -117,7 +117,7 @@ Em Settings → Graph View (ou no ícone de grafo), os seguintes grupos por quer
 |---|---|
 | `path:"QA Workspace/01 Daily"` | `#d97706` |
 | `tag:#bug` | `#7c3aed` |
-| `path:"QA Workspace/Sistema"` | `#475569` |
+| `path:"Sistema"` | `#475569` |
 | `path:"QA Workspace/Dashboard"` | `#eab308` |
 | `path:"QA Workspace/00 Inbox"` | `#2563eb` |
 

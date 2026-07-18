@@ -1,5 +1,5 @@
 {
   "folder": "QA Workspace/01 Daily",
   "format": "YYYY-MM/DD-MM",
-  "template": "QA Workspace/Sistema/Templates/Daily Note.md"
+  "template": "Sistema/Templates/Daily Note.md"
 }

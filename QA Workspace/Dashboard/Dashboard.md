@@ -66,7 +66,7 @@ for (const k of kpis) {
 ## Demandas (hub)
 
 > [!info] O que aparece aqui
-> Notas hub com a tag `demanda` (criadas a partir de [[QA Workspace/Sistema/Templates/Demanda.md|Demanda.md]] para Melhorias/Funcionalidades/POCs). Bugs individuais usam só a tag `bug` e aparecem na seção "Bugs" acima, não aqui.
+> Notas hub com a tag `demanda` (criadas a partir de [[Sistema/Templates/Demanda.md|Demanda.md]] para Melhorias/Funcionalidades/POCs). Bugs individuais usam só a tag `bug` e aparecem na seção "Bugs" acima, não aqui.
 
 ![[Demandas.base]]
 
@@ -134,20 +134,20 @@ if (items.length === 0) {
 
 | Área | Link |
 |---|---|
-| Passo a passo dos fluxos | [[QA Workspace/Sistema/Contexto/FLUXOS\|FLUXOS]] |
+| Passo a passo dos fluxos | [[Sistema/Contexto/FLUXOS\|FLUXOS]] |
 | Diário de hoje | [[QA Workspace/01 Daily/README\|01 Daily]] |
 | Índice de diários | [[QA Workspace/01 Daily/Índice Diário.base\|Índice Diário]] |
 | Backlog do vault | [[QA Workspace/00 Inbox/README\|00 Inbox]] |
 | Demandas por ambiente | [[QA Workspace/02 Demandas/README\|02 Demandas]] |
 | Evidências de validação | [📁 abrir pasta](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/) |
-| Padrões e skills | [[QA Workspace/Sistema/README\|Sistema]] |
+| Padrões e skills | [[Sistema/README\|Sistema]] |
 
 ---
 
 ## Fluxo de trabalho
 
 > [!tip] Regra de bolso
-> **Escreveu? Foi na daily. Quer ver? Foi aqui na Dashboard.** O Inbox não é lugar de anotar — é só o backlog do próprio vault. Passo a passo completo de cada fluxo (dia, bug, melhoria, evidência): [[QA Workspace/Sistema/Contexto/FLUXOS|FLUXOS]]. Lógica do organizador: [[QA Workspace/Sistema/Skills/SKILL_INBOX|SKILL_INBOX]].
+> **Escreveu? Foi na daily. Quer ver? Foi aqui na Dashboard.** O Inbox não é lugar de anotar — é só o backlog do próprio vault. Passo a passo completo de cada fluxo (dia, bug, melhoria, evidência): [[Sistema/Contexto/FLUXOS|FLUXOS]]. Lógica do organizador: [[Sistema/Skills/SKILL_INBOX|SKILL_INBOX]].
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {

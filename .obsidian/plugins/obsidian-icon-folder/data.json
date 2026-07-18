@@ -91,23 +91,23 @@
     "iconName": "LiArchive",
     "iconColor": "#78350f"
   },
-  "QA Workspace/Sistema": {
+  "Sistema": {
     "iconName": "LiSettings",
     "iconColor": "#475569"
   },
-  "QA Workspace/Sistema/Contexto": {
+  "Sistema/Contexto": {
     "iconName": "LiCompass",
     "iconColor": "#4338ca"
   },
-  "QA Workspace/Sistema/Skills": {
+  "Sistema/Skills": {
     "iconName": "LiWrench",
     "iconColor": "#dc2626"
   },
-  "QA Workspace/Sistema/Templates": {
+  "Sistema/Templates": {
     "iconName": "LiLayoutTemplate",
     "iconColor": "#0d9488"
   },
-  "QA Workspace/Sistema/Specs": {
+  "Sistema/Specs": {
     "iconName": "LiPencilRuler",
     "iconColor": "#0284c7"
   },

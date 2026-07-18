@@ -15,4 +15,4 @@ Ciclo de vida das demandas de teste.
 | POCs | Provas de conceito — novas ferramentas, frameworks ou abordagens antes de virar fluxo principal |
 | Concluídas | Demandas finalizadas — mantenha organizado para consultas futuras e métricas |
 
-Bugs/suspeitas investigados e **descartados** (não ocorrem) não ficam aqui — vão pra `99 Arquivo/` com `status: descartado`, conforme [[QA Workspace/Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)|regra de descarte]].
+Bugs/suspeitas investigados e **descartados** (não ocorrem) não ficam aqui — vão pra `99 Arquivo/` com `status: descartado`, conforme [[Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)|regra de descarte]].

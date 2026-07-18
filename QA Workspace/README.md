@@ -21,4 +21,4 @@ tags:
 | 04 Conhecimento | Base de conhecimento do Sogov: docs de módulos/fluxos/referências importadas + análises de refinamento arquivadas |
 | [[QA Workspace/05 Refinar/README\|05 Refinar]] | Mesa de trabalho do refinamento — material bruto vira card destilado; concluído, arquiva em 04 Conhecimento |
 | 99 Arquivo | Histórico e arquivamento — concluídos não mais relevantes e bugs/suspeitas descartados |
-| [[QA Workspace/Sistema/README\|Sistema]] | Configuração do vault: contexto, skills, specs e templates |
+| [[Sistema/README\|Sistema]] | Configuração do vault: contexto, skills, specs e templates |

@@ -14,7 +14,7 @@ QA Workspace/
 │   ├── Bugs.base
 │   └── Demandas.base
 ├── 00 Inbox/
-│   └── README.md (backlog do próprio vault/ferramenta — não é captura do dia a dia, ver [[QA Workspace/Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]])
+│   └── README.md (backlog do próprio vault/ferramenta — não é captura do dia a dia, ver [[Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]])
 ├── 01 Daily/
 │   ├── README.md
 │   ├── Índice Diário.base
@@ -68,31 +68,31 @@ QA Workspace/
 ## Templates
 | Template | Uso |
 |----------|-----|
-| [[QA Workspace/Sistema/Templates/Bug Report.md\|Bug Report.md]] | Reportar bugs com estrutura padronizada |
-| [[QA Workspace/Sistema/Templates/Casos de teste.md\|Casos de teste.md]] | Criar casos de teste no formato Dado/Quando/Então |
-| [[QA Workspace/Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) |
-| [[QA Workspace/Sistema/Templates/Daily Note.md\|Daily Note.md]] | Registro diário de atividades — lugar único de escrita do dia a dia |
-| [[QA Workspace/Sistema/Templates/Refinamento.md\|Refinamento.md]] | Mesa de trabalho do refinamento (fluxo 6) — análise no arquivo, card nasce destilado |
+| [[Sistema/Templates/Bug Report.md\|Bug Report.md]] | Reportar bugs com estrutura padronizada |
+| [[Sistema/Templates/Casos de teste.md\|Casos de teste.md]] | Criar casos de teste no formato Dado/Quando/Então |
+| [[Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) |
+| [[Sistema/Templates/Daily Note.md\|Daily Note.md]] | Registro diário de atividades — lugar único de escrita do dia a dia |
+| [[Sistema/Templates/Refinamento.md\|Refinamento.md]] | Mesa de trabalho do refinamento (fluxo 6) — análise no arquivo, card nasce destilado |
 
 ## Skills
 | Arquivo | Finalidade |
 |---------|------------|
-| [[QA Workspace/Sistema/Skills/SKILL_BUGS.md\|SKILL_BUGS.md]] | Estrutura e checklist para reportar bugs |
-| [[QA Workspace/Sistema/Skills/SKILL_CASOS_DE_TESTE.md\|SKILL_CASOS_DE_TESTE.md]] | Estrutura e boas práticas de casos de teste |
-| [[QA Workspace/Sistema/Skills/SKILL_PLANO_DE_TESTE.md\|SKILL_PLANO_DE_TESTE.md]] | Estrutura e template de plano de teste |
-| [[QA Workspace/Sistema/Skills/SKILL_PADRONIZACAO.md\|SKILL_PADRONIZACAO.md]] | Diretrizes de escrita e consistência visual |
-| [[QA Workspace/Sistema/Skills/SKILL_INBOX.md\|SKILL_INBOX.md]] | Auto-organização da daily: classificação e roteamento dos registros crus (+ capturas legadas do Inbox) |
+| [[Sistema/Skills/SKILL_BUGS.md\|SKILL_BUGS.md]] | Estrutura e checklist para reportar bugs |
+| [[Sistema/Skills/SKILL_CASOS_DE_TESTE.md\|SKILL_CASOS_DE_TESTE.md]] | Estrutura e boas práticas de casos de teste |
+| [[Sistema/Skills/SKILL_PLANO_DE_TESTE.md\|SKILL_PLANO_DE_TESTE.md]] | Estrutura e template de plano de teste |
+| [[Sistema/Skills/SKILL_PADRONIZACAO.md\|SKILL_PADRONIZACAO.md]] | Diretrizes de escrita e consistência visual |
+| [[Sistema/Skills/SKILL_INBOX.md\|SKILL_INBOX.md]] | Auto-organização da daily: classificação e roteamento dos registros crus (+ capturas legadas do Inbox) |
 
 ## Contexto
 | Arquivo | Finalidade |
 |---------|------------|
-| [[QA Workspace/Sistema/Contexto/COMO_EU_TRABALHO.md\|COMO_EU_TRABALHO.md]] | Fluxo de trabalho pessoal, ambientes e tipos de demanda |
-| [[QA Workspace/Sistema/Contexto/FLUXOS.md\|FLUXOS.md]] | Passo a passo prático de cada fluxo (dia, bug, melhoria, evidência) — linkado na Dashboard |
-| [[QA Workspace/Sistema/Contexto/PADROES_QA.md\|PADROES_QA.md]] | Este arquivo — padrões técnicos e de documentação |
-| [[QA Workspace/Sistema/Contexto/Plugins Instalados.md\|Plugins Instalados.md]] | Setup completo do vault: plugins, atalhos, ícones/cores, Daily Notes, Graph View — necessário pra replicar em outro computador ou com outra IA |
+| [[Sistema/Contexto/COMO_EU_TRABALHO.md\|COMO_EU_TRABALHO.md]] | Fluxo de trabalho pessoal, ambientes e tipos de demanda |
+| [[Sistema/Contexto/FLUXOS.md\|FLUXOS.md]] | Passo a passo prático de cada fluxo (dia, bug, melhoria, evidência) — linkado na Dashboard |
+| [[Sistema/Contexto/PADROES_QA.md\|PADROES_QA.md]] | Este arquivo — padrões técnicos e de documentação |
+| [[Sistema/Contexto/Plugins Instalados.md\|Plugins Instalados.md]] | Setup completo do vault: plugins, atalhos, ícones/cores, Daily Notes, Graph View — necessário pra replicar em outro computador ou com outra IA |
 
 ## Organização de Bugs
-- Todo bug usa o [[QA Workspace/Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[QA Workspace/Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
+- Todo bug usa o [[Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
 - `status` reflete o ciclo de vida do bug: `aberto` (ainda com problema) → `em_validacao` → `resolvido`. Não usar `dev`/`hml`/`prod` nesse campo — isso é o que o campo `ambiente` já representa.
 - `ambiente` reflete o último ambiente testado (DEV/HML/HOTFIX/PROD), usado para localizar o card em `02 Demandas/`.
 - **Hotfix**: correção urgente é validada num ambiente de homologação que carrega a versão de produção + a hotfix. O card vive em `02 Demandas/Hotfix/` durante a validação (`ambiente: HOTFIX`) e, aprovado, vai pra `Concluídas/` como qualquer bug. Evidências na subpasta `Evidências/Hotfix/`.

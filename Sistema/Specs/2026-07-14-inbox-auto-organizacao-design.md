@@ -56,7 +56,7 @@ O organizador processa a daily mais recente até hoje (na execução agendada da
 
 Itens **não marcados** de `## Melhorias propostas` e `## Pendente para amanhã` não são processados — já são o destino certo; a Dashboard agrega de lá (por isso melhoria não "repete" em outro lugar: ela mora na daily e a Dashboard só exibe).
 
-**Extensão (15/07) — checkbox concluído como gatilho de continuação**: pendências marcadas `[x]` cujo desfecho ainda não foi aplicado no vault também são fonte. Rafael anota o resultado curto entre parênteses ao marcar (`(aprovada)`, `(reprovada)`, `(SGV-XXXX)` pra cadastros) e o organizador completa o processo definido: linha em Atividades com a frase padrão, card atualizado/movido/renomeado, Histórico. Sem anotação, não inventa — pergunta (manual) ou sinaliza `⏳ aguardando resultado` (agendado). Tabela completa em [[QA Workspace/Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]].
+**Extensão (15/07) — checkbox concluído como gatilho de continuação**: pendências marcadas `[x]` cujo desfecho ainda não foi aplicado no vault também são fonte. Rafael anota o resultado curto entre parênteses ao marcar (`(aprovada)`, `(reprovada)`, `(SGV-XXXX)` pra cadastros) e o organizador completa o processo definido: linha em Atividades com a frase padrão, card atualizado/movido/renomeado, Histórico. Sem anotação, não inventa — pergunta (manual) ou sinaliza `⏳ aguardando resultado` (agendado). Tabela completa em [[Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]].
 
 **Marca de processado**: linha já roteada ganha sufixo ` → <resultado>` (ex.: ` → card criado: [[...]]`). O organizador nunca reprocessa linha com essa marca. A daily continua legível como diário: registro original + desfecho na mesma linha.
 
@@ -66,7 +66,7 @@ Itens **não marcados** de `## Melhorias propostas` e `## Pendente para amanhã`
 
 | Tipo detectado | Destino | Marca no registro original |
 |---|---|---|
-| Bug (comportamento errado observado) | Card em `02 Demandas/DEV/` ([[QA Workspace/Sistema/Templates/Bug Report.md\|Bug Report.md]]) | ` → card criado: [[card]]` |
+| Bug (comportamento errado observado) | Card em `02 Demandas/DEV/` ([[Sistema/Templates/Bug Report.md\|Bug Report.md]]) | ` → card criado: [[card]]` |
 | Melhoria de produto | Checkbox em `## Melhorias propostas` da mesma daily | ` → movido pra Melhorias propostas` |
 | Tarefa/lembrete pontual | Item em `## Pendente para amanhã` da mesma daily | ` → movido pra Pendente para amanhã` |
 | Ideia sobre o próprio vault/ferramenta | Item no checklist "Próximos passos" de `00 Inbox/README.md` | ` → backlog do vault` |
@@ -88,7 +88,7 @@ Itens **não marcados** de `## Melhorias propostas` e `## Pendente para amanhã`
 
 ## 4. Onde a lógica fica documentada
 
-- [[QA Workspace/Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]] — lógica completa (fonte, roteamento, marcas, modos). Comando manual e tarefa agendada seguem esse mesmo documento.
+- [[Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]] — lógica completa (fonte, roteamento, marcas, modos). Comando manual e tarefa agendada seguem esse mesmo documento.
 - Fluxograma didático na [[QA Workspace/Dashboard/Dashboard|Dashboard]] — o guia visual mora onde Rafael trabalha.
 
 ## Fora de escopo (não incluído neste design)
