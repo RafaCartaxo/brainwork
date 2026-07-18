@@ -24,9 +24,10 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Tive ideia de melhoria do produto | 4 | Checkbox `**MEL-NNNN · Título**` em Melhorias propostas (próximo número: Dashboard) |
 | Gravei um vídeo de validação | 5 | [[../../QA Workspace/Evidências/README\|Evidências/README]] — renomear e mover **no mesmo dia** |
 | Chegou demanda já cadastrada pra refinar | 6 | Material bruto → `05 Refinar/` → análise na mesa → card destilado. Regras: [[../../QA Workspace/05 Refinar/README\|05 Refinar/README]] |
+| Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
 | Exportei documentação do projeto | 8 | Limpar → classificar → template Conhecimento.md → `04 Conhecimento/` |
 | Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
-| Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
+| Exportei .md do Notion (não sei o tipo) | — | Pedir "processa o material novo" — o [[../Agentes/AGENTE_PROCESSAR_EXPORT\|agente]] classifica e roteia |
 | Quero que a IA organize tudo que ficou cru | — | Pedir "organiza a daily" — cobre parte mecânica + classificação ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) |
 
 ---
@@ -74,7 +75,7 @@ Executar CTs → gravar evidência → frase padrão na daily. Aprovou? Mover ca
 `status: descartado` → CTs marcados Sim → mover pra `99 Arquivo/` → `🗑️` na daily. Regra completa: [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|PADROES_QA]].
 
 ### 3f. Tasks só de API
-QA define critérios → dev implementa cenários → QA revisa → teste direto em homologação. Sem esteira DEV.
+QA define critérios → dev implementa cenários → QA revisa → teste direto em homologação. Sem esteira DEV. Regras completas: [[../Contexto/PADROES_QA#Tasks de API\|PADROES_QA]].
 
 ### 3g. Reprovação com bug novo (SGV próprio)
 Duas demandas nascem: a original reaberta + card novo pro bug. Marcar a pendência com `(reprovada em <ambiente>, bug SGV-YYYY aberto)` e o [[../Agentes/AGENTE_ORGANIZADOR\|organizador]] completa o resto.

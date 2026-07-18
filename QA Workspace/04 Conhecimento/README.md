@@ -36,4 +36,4 @@ Quando um refinamento do [[../05 Refinar/README|05 Refinar]] é concluído ([[..
 A fonte de verdade externa da análise continua sendo a task no Notion (`📤`); a cópia daqui é o acervo local pesquisável — vale pra investigar bug parecido depois, sem depender de buscar no Notion.
 
 > [!note] Auto-organizador
-> O [[../Sistema/Skills/SKILL_INBOX|SKILL_INBOX]] só roteia pra cá as análises de refinamento (fluxo 6); as pastas de documentação (`Módulos/`, `Fluxos/`, `Referências/`) são alimentadas manualmente (ou pedindo pra IA numa sessão). Quando o uso estabilizar, atualizar o skill com regras de roteamento pra elas.
+> O [[../Sistema/Agentes/AGENTE_PROCESSAR_EXPORT|AGENTE_PROCESSAR_EXPORT]] roteia documentação automaticamente pra cá (modo C do [[../Sistema/Skills/SKILL_LIMPEZA_EXPORT|SKILL_LIMPEZA_EXPORT]]). As pastas de documentação (`Módulos/`, `Fluxos/`, `Referências/`) também podem ser alimentadas manualmente (ou pedindo pra IA numa sessão).

@@ -81,7 +81,9 @@ QA Workspace/
 | [[Sistema/Skills/SKILL_CASOS_DE_TESTE.md\|SKILL_CASOS_DE_TESTE.md]] | Estrutura e boas práticas de casos de teste |
 | [[Sistema/Skills/SKILL_PLANO_DE_TESTE.md\|SKILL_PLANO_DE_TESTE.md]] | Estrutura e template de plano de teste |
 | [[Sistema/Skills/SKILL_PADRONIZACAO.md\|SKILL_PADRONIZACAO.md]] | Diretrizes de escrita e consistência visual |
-| [[Sistema/Skills/SKILL_INBOX.md\|SKILL_INBOX.md]] | Auto-organização da daily: classificação e roteamento dos registros crus (+ capturas legadas do Inbox) |
+| [[Sistema/Skills/SKILL_INBOX.md\|SKILL_INBOX.md]] | Como invocar o auto-organizador da daily |
+| [[Sistema/Skills/SKILL_LIMPEZA_EXPORT.md\|SKILL_LIMPEZA_EXPORT.md]] | Limpeza de .md bruto exportado do Notion (3 modos: mesa, card direto, documentação) |
+| [[Sistema/Skills/SKILL_TRIAGEM_SPRINT.md\|SKILL_TRIAGEM_SPRINT.md]] | Processar view de sprint do Notion (agrupar por status, cruzar com vault) |
 
 ## Contexto
 | Arquivo | Finalidade |
@@ -90,6 +92,14 @@ QA Workspace/
 | [[Sistema/Contexto/FLUXOS.md\|FLUXOS.md]] | Passo a passo prático de cada fluxo (dia, bug, melhoria, evidência) — linkado na Dashboard |
 | [[Sistema/Contexto/PADROES_QA.md\|PADROES_QA.md]] | Este arquivo — padrões técnicos e de documentação |
 | [[Sistema/Contexto/Plugins Instalados.md\|Plugins Instalados.md]] | Setup completo do vault: plugins, atalhos, ícones/cores, Daily Notes, Graph View — necessário pra replicar em outro computador ou com outra IA |
+
+## Agentes
+| Arquivo | Finalidade |
+|---------|------------|
+| [[Sistema/Agentes/AGENTE_PROCESSAR_EXPORT\|AGENTE_PROCESSAR_EXPORT]] | Pipeline completo: classifica .md bruto do Notion → limpa → roteia pro destino (task? triagem? doc?) |
+| [[Sistema/Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]] | Auto-organização da daily: classificação, roteamento, reconciliação, fila viva |
+| [[Sistema/Agentes/AGENTE_MIGRACAO_CARDS\|AGENTE_MIGRACAO_CARDS]] | Movimentação atômica de cards entre pastas da esteira (wikilinks + frontmatter + Histórico) |
+| [[Sistema/Agentes/AGENTE_STATUS_REUNIAO\|AGENTE_STATUS_REUNIAO]] | Regenera o bloco Status — reunião (Fiz/Foco/Travas) a partir da daily |
 
 ## Organização de Bugs
 - Todo bug usa o [[Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
