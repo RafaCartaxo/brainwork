@@ -83,7 +83,7 @@ Sempre avaliar:
 
 ### Evidências de Testes
 
-Mesmo processo de qualquer evidência do vault (gravar → renomear `<número do card> - <breve descrição>.mp4` → mover pra subpasta do ambiente → embed na nota) — ver [[../Contexto/COMO_EU_TRABALHO.md#Evidências|COMO_EU_TRABALHO.md]]. Vale pra caso de teste tanto quanto pra bug.
+Mesmo processo de qualquer evidência do vault — ver [[../../QA Workspace/Evidências/README|Evidências/README]]. Vale pra caso de teste tanto quanto pra bug.
 
 ## Resultado Esperado
 

@@ -1,6 +1,7 @@
 # Evidências (vídeos/prints) — binário grande, não versionar no git.
 # Levar para outro computador por fora (nuvem, HD externo, cópia manual).
-QA Workspace/Evidências/
+QA Workspace/Evidências/*
+!QA Workspace/Evidências/README.md
 
 # Estado volátil do Obsidian — muda a cada sessão, geraria conflito eterno entre máquinas
 .obsidian/workspace.json

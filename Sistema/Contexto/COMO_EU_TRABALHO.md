@@ -45,15 +45,9 @@ Validação de conceito ou análise exploratória. Pode gerar evidências, bugs,
 Validação rápida dos principais fluxos de uma versão. Objetivo: identificar bloqueios críticos e garantir estabilidade mínima para continuidade dos testes.
 
 ## Evidências
-Sempre que possível registrar vídeos, prints, links e arquivos auxiliares. As evidências devem permitir entendimento do cenário validado. Vale tanto pra bug quanto pra qualquer caso de teste executado, em qualquer esteira (DEV, HML, PROD, Hotfix, Arquitetura).
+Sempre que possível registrar vídeos, prints, links e arquivos auxiliares. O guia completo (gravação com OBS, renomear, mover pra subpasta, embedar, links 📁/🔍, gravação compartilhada) está em [[../../QA Workspace/Evidências/README|Evidências/README]].
 
-Processo padrão de uma gravação:
-1. Gravar com o OBS (já salva direto em `QA Workspace/Evidências/`, ver [[Plugins Instalados.md]])
-2. Renomear pro padrão `<número do card> - <breve descrição>.mp4`
-3. Mover pra subpasta do ambiente correspondente (`Desenvolvimento/`, `Homologação/`, `Produção/`, `Hotfix/`, `Arquitetura/`)
-4. Referenciar na nota do Obsidian (card de bug ou caso de teste) como embed — `![[arquivo.mp4]]`, toca direto na nota
-
-Detalhe de formatação pra bugs: ver [[../Skills/SKILL_BUGS.md#Evidências|SKILL_BUGS.md]].
+Detalhe de formatação pra bugs: ver [[../Skills/SKILL_BUGS#Evidências|SKILL_BUGS]].
 
 ## Diário
 Utilizado para registrar atividades realizadas, demandas em andamento, bugs encontrados, melhorias de produto propostas, anotações rápidas, pendências e próximos passos. O diário não deve ser utilizado como documentação definitiva da demanda. Regra de como e quando linkar um SGV pro card dele, e de como registrar melhorias propostas: ver [[../../01 Daily/README|01 Daily/README]].

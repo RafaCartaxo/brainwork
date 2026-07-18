@@ -144,15 +144,9 @@ Utilizar quando houver regra de negócio associada. Cada critério é um checkbo
 
 ### Evidências
 
-Referenciar vídeos, imagens ou links utilizados na validação. Processo completo (gravar → renomear → mover pra subpasta do ambiente → embed): ver [[../Contexto/COMO_EU_TRABALHO.md#Evidências|COMO_EU_TRABALHO.md]]. Nome do arquivo: `<número do card> - <breve descrição>.mp4` (ex.: `9971 - solicitar assinatura para servidor com cadastro incompleto.mp4`). Referenciar como embed, não como caminho em texto: `![[9971 - solicitar assinatura para servidor com cadastro incompleto.mp4]]`.
+Referenciar vídeos, imagens ou links utilizados na validação. O guia completo de evidências (gravar → renomear → mover → embed, subpastas, links 📁/🔍, gravação compartilhada) está em [[../../QA Workspace/Evidências/README|Evidências/README]].
 
-**Mesma gravação servindo a mais de um caso** (ex.: validação que reprova uma demanda e abre um bug novo): criar uma cópia do arquivo renomeada com o número de cada card — cada card embeda a sua — e anotar o compartilhamento em **Observações** dos dois lados (ex.: "Evidência compartilhada com SGV-XXXX — mesmo vídeo, cópia renomeada").
-
-O título da seção leva dois links de atalho, só o ícone: `### Evidências [📁](file:///caminho/da/pasta/do/ambiente/) [🔍](evidencia://<número do card>)`.
-- **📁**: abre a pasta do ambiente inteira (Desenvolvimento/Homologação/Produção/etc.) no gerenciador de arquivos. Confiável, mas mostra todos os vídeos daquele ambiente, não só os do card.
-- **🔍**: usa um esquema de URI customizado (`evidencia://`) que abre o Nautilus em modo de busca pelo número do card — mais rápido quando funciona, mas a busca não é restrita à pasta Evidências (pode trazer resultado de fora). Por isso os dois ficam lado a lado por enquanto, até melhorar a precisão da busca.
-
-Infra do `evidencia://`: script `~/.local/bin/abrir-evidencia` + `.desktop` em `~/.local/share/applications/abrir-evidencia.desktop`, registrado via `xdg-mime default` pra `x-scheme-handler/evidencia` (detalhe completo em [[Plugins Instalados.md]]). Só funciona nesta máquina (Linux/GNOME/Nautilus) — em outro computador ou com outra IA, cai de volta só pro link `file://` de pasta.
+O título da seção leva dois links de atalho: `### Evidências [📁](file:///caminho/da/pasta/do/ambiente/) [🔍](evidencia://<número do card>)`. Infra do `evidencia://`: [[../../Sistema/Contexto/Plugins Instalados|Plugins Instalados]].
 
 ### Casos de Teste Básicos
 
@@ -164,17 +158,14 @@ O **Histórico** registra cada etapa vivida pelo card, com a frase padrão prefi
 
 ### Bug com análise (causa raiz)
 
-Quando o bug vem acompanhado de análise — própria ou de outra pessoa, comum ao transformar um bug já cadastrado no Notion pro padrão do vault — **a análise não entra no card**. Ela mora na mesa de trabalho do `05 Refinar/` (template [[../Templates/Refinamento.md|Refinamento.md]], fluxo 6): causa raiz, evidências, hipóteses descartadas e pontos a definir são trabalhados lá, e o card nasce **destilado** — só o problema, reprodução, resultado esperado, critérios e CTs, sem análise nem suposição. Ao fechar o ciclo, a mesa é arquivada em `04 Conhecimento/` com link cruzado pro card.
+Quando o bug vem acompanhado de análise, a análise **não entra no card**. Ela mora na mesa de trabalho do `05 Refinar/` (template [[../Templates/Refinamento.md|Refinamento.md]]). O card nasce **destilado** — só o problema, reprodução, resultado esperado, critérios e CTs. O fluxo completo de refinamento está em [[../../QA Workspace/05 Refinar/README|05 Refinar/README]] e no [[../Contexto/FLUXOS#6. Refinar demanda já cadastrada|FLUXOS (fluxo 6)]].
 
 O que sobra da análise no card:
-
-- **Observações**: wikilink pro arquivo de refinamento em `04 Conhecimento/` ("Análise completa: [[...]]") — e nada mais da análise.
-- **Critérios de aceite** são o coração do refinamento (escritos na mesa, copiados pro card): além do comportamento correto, cobrir os **dados já corrompidos/afetados** pelo bug (correção retroativa ou paliativa? deixar explícito pra decidir com dev/produto) e a **regressão do fluxo normal**.
-- **Histórico**: a análise é a primeira linha, datada e com autoria — `- YYYY-MM-DD - Análise de causa raiz (<quem>): <síntese curta>`.
-- **Evidência que mora fora** (ex.: vídeo anexado na task do Notion): anotar na seção Evidências **onde ela está**, sem cópia local — evidência local entra no fluxo normal quando houver validação.
-- **Na daily**: cada rodada de análise rende `🔎 SGV-XXXX - Análise (<resultado curto>)`; o destilado rende `📝 SGV-XXXX - Bug refinado (critérios de aceite prontos)` e, levando pro Notion, `📤`.
-
-*Precedente do padrão antigo (análise resumida dentro da Descrição): SGV-9750 e SGV-9963 — ficam como estão, já sincronizados com o Notion nessa estrutura; o padrão da mesa vale daqui pra frente.*
+- **Observações**: wikilink pro arquivo de refinamento em `04 Conhecimento/`
+- **Critérios de aceite**: incluir dados já corrompidos/afetados e regressão do fluxo normal
+- **Histórico**: `- YYYY-MM-DD - Análise de causa raiz (<quem>): <síntese curta>`
+- **Evidência externa** (Notion): anotar na seção Evidências **onde ela está**, sem cópia local
+- **Na daily**: `🔎` pra cada rodada, `📝` pro destilado, `📤` pro Notion (catálogo em [[../../../QA Workspace/01 Daily/README|01 Daily/README]])
 
 ## Resultado Esperado
 
