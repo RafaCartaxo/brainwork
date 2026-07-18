@@ -31,7 +31,9 @@ views:
       - modulo
     sort:
       - property: formula.prioridade_icone
-        direction: ASC
+        direction: DESC
+      - property: formula.dias_aberto
+        direction: DESC
   - type: table
     name: Todos os Bugs
     groupBy:
