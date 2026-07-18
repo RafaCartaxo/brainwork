@@ -13,6 +13,7 @@ Diferente de [[../Skills|Skills]] (que são instruções de referência para voc
 
 | Agente | Gatilho | O que faz |
 |---|---|---|
+| [[AGENTE_PROCESSAR_EXPORT]] | "processa o material novo" / "processa o export SGV-XXXX" | Pipeline completo: classifica .md bruto do Notion (task? triagem? doc?) → limpa → roteia pro destino (mesa/card/conhecimento/triagem) |
 | [[AGENTE_ORGANIZADOR]] | 🔄 Atualizar (Dashboard) / "organiza a daily" (IA) / 7h (agendado) | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards, mantém a fila viva |
 | [[AGENTE_MIGRACAO_CARDS]] | Conclusão de pendência / "move o card" (IA) / verificação diária | Move cards entre pastas da esteira atualizando wikilinks, frontmatter e Histórico atomicamente |
 | [[AGENTE_STATUS_REUNIAO]] | 🔄 Atualizar / "status da reunião" (IA) / abertura da daily | Lê Atividades + fila da daily e gera o bloco Status — reunião (Fiz/Foco/Travas) |

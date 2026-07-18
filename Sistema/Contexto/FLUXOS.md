@@ -24,6 +24,8 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Tive ideia de melhoria do produto | 4 | Checkbox `**MEL-NNNN · Título**` em Melhorias propostas (próximo número: Dashboard) |
 | Gravei um vídeo de validação | 5 | [[../../QA Workspace/Evidências/README\|Evidências/README]] — renomear e mover **no mesmo dia** |
 | Chegou demanda já cadastrada pra refinar | 6 | Material bruto → `05 Refinar/` → análise na mesa → card destilado. Regras: [[../../QA Workspace/05 Refinar/README\|05 Refinar/README]] |
+| Exportei documentação do projeto | 8 | Limpar → classificar → template Conhecimento.md → `04 Conhecimento/` |
+| Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
 | Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
 | Quero que a IA organize tudo que ficou cru | — | Pedir "organiza a daily" — cobre parte mecânica + classificação ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) |
 
@@ -98,3 +100,21 @@ Material bruto em `05 Refinar/` → análise na mesa ([[../Templates/Refinamento
 2. Preencher `## Pendente para amanhã`
 3. Conferir se não sobrou vídeo cru na raiz de `Evidências/`
 4. Clicar **🔄 Atualizar** na Dashboard
+
+## 8. Importar documentação do projeto
+
+Export .md bruto → limpar ([[../Skills/SKILL_LIMPEZA_EXPORT\|SKILL_LIMPEZA_EXPORT]], modo C) → classificar (módulo? fluxo? referência?) → template [[../Templates/Conhecimento.md\|Conhecimento.md]] → `04 Conhecimento/<subpasta>/`.
+
+| Tipo | Pasta | Exemplo |
+|---|---|---|
+| Módulo do sistema | `Módulos/` | Assinaturas, Workflow, Mesa de trabalho |
+| Fluxo ponta a ponta | `Fluxos/` | Ciclo de vida do documento |
+| Doc externa (repo, lei, manual) | `Referências/` | Docs do repositório, leis, normativas |
+
+Regra de ouro: **importar ≠ copiar tudo**. Trazer só o que ajuda a testar (regras, restrições, perfis, estados). O resto vira link na seção Referências. Na daily: `📚 <Doc> - Documentação importada/atualizada (<escopo curto>)` em Atividades → Planejamento. Regras completas: [[../../QA Workspace/04 Conhecimento/README\|04 Conhecimento/README]].
+
+## 9. Triagem de sprint
+
+Export da view de sprint do Notion (dezenas de cards num arquivo) → [[../Skills/SKILL_TRIAGEM_SPRINT\|SKILL_TRIAGEM_SPRINT]]. Pipeline: agrupar por status → cruzar com cards existentes no vault → identificar divergências Notion × vault → criar documento em `05 Refinar/Triagem - <sprint>`. Na daily: `📋 Triagem <sprint> - <n>/<total> cards batidos` em Planejamento.
+
+O agente [[../Agentes/AGENTE_PROCESSAR_EXPORT\|AGENTE_PROCESSAR_EXPORT]] automatiza a classificação e o roteamento — você dropa o .md e ele decide o caminho.
