@@ -16,14 +16,15 @@ responsavel: Rafael
 > [!warning]- Export incompleto: 53 de 60 cards
 > A view do Notion corta no "Load more" — faltam 7 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui).
 
-> [!tip] Progresso: **12/53** batidos (atualizado 2026-07-17)
-> Homologação `0/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `0/7` · Produção `0/7`
+> [!tip] Progresso: **13/53** batidos (atualizado 2026-07-20)
+> Homologação `1/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `0/7` · Produção `0/7`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (9) — ação QA imediata
 
-- [ ] **SGV-5273** — Login com senha correta não funciona após tentativas incorretas
+- [x] **[[QA Workspace/02 Demandas/HML/5273 - Bug Login Senha Correta Apos Tentativas|SGV-5273]]** — Login com senha correta não funciona após tentativas incorretas ✅ 2026-07-20 → card criado, critérios de aceite prontos
     - `Altíssima` · Matheus Godoi
+    - [MR !419](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/419) revisado (SKILL_REVISAO_ESCOPO_MR) — fix inverte a ordem senha↔tentativas, sem teste automatizado; card criado direto em `02 Demandas/HML/` (status real do Notion: testando em homologação)
 - [ ] **SGV-3820** — Erro ao criar despacho e assinar documento via workflow
     - `Altíssima` · Washington Junior · API
 - [ ] **SGV-7640** — Campo de busca de setor destinatário fica inutilizável após seleção inicial no ambiente do cidadão
