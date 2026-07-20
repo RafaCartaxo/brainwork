@@ -132,3 +132,4 @@ Ao encerrar um documento **para todos**, **todas as pendências de assinatura s�
     - 2026-07-03 - Análise de causa raiz (Bruna Machado): encerramento de documento não cancela solicitações de assinatura pendentes de despacho (retificação com troca de anexo cancela); reproduzido em produção
     - 2026-07-16 - 📝 Bug refinado (critérios de aceite prontos; MR já em revisão)
     - 2026-07-16 - 📤 Bug atualizado no Notion (critérios de aceite registrados na task, incluindo o ponto a definir do saneamento retroativo)
+    - 2026-07-20 - 🔎 Cenários de teste do MR revisados a nível de escopo ([MR !583](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/583)) — 6 cenários implementados batem com os 5 critérios de aceite, inclusive o caso de dado legado; fix cobre também revogação de documento (além de encerramento, que era o pedido original) — sem CT formal pra revogação no card ainda

@@ -75,7 +75,7 @@ responsavel: Rafael
     - [MR !581](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/581) revisado a nível de escopo em 2026-07-20 (cenários de teste implementados batem com o problema) — falta validação manual do fluxo de reemissão de certificado
 - [x] **[[QA Workspace/02 Demandas/DEV/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 → já refinado, critérios no card
     - `Média` · Washington Junior · CX · API
-    - Card no vault com critérios prontos; pendência de revisar cenários já na fila
+    - Card no vault com critérios prontos; [MR !583](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/583) revisado a nível de escopo em 2026-07-20 (6 cenários batem com os 5 critérios) — pendência de revisar cenários concluída na fila
 - [x] **SGV-7829** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17 → já possui critérios
     - `Média` · João Marcelo
 - [x] **SGV-6873** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 → já possui critérios
