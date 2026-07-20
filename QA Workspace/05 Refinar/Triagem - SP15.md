@@ -72,6 +72,7 @@ responsavel: Rafael
     - `Alta` · João Rodrigo · CX
 - [x] **SGV-5783** — Representante legal incorreto na assinatura após fazer alteração ✅ 2026-07-17 → já possui critérios
     - `Alta` · Diogo Sobreira
+    - [MR !581](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/581) revisado a nível de escopo em 2026-07-20 (cenários de teste implementados batem com o problema) — falta validação manual do fluxo de reemissão de certificado
 - [x] **[[QA Workspace/02 Demandas/DEV/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 → já refinado, critérios no card
     - `Média` · Washington Junior · CX · API
     - Card no vault com critérios prontos; pendência de revisar cenários já na fila
@@ -87,6 +88,7 @@ responsavel: Rafael
     - Card no vault com critérios prontos (esteira 3f)
 - [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores
     - `Baixa` · Diogo Sobreira · CX
+    - [MR !573](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/573) revisado a nível de escopo em 2026-07-20 (troca de chamada individual por lote — bate com a lentidão; testes cobrem a regra de negócio, não performance) — ainda não batido/decidido
     - ⚠️ Caso de lentidão — verificar situação; tem relação com a SGV-8977?
 - [x] **SGV-8977** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-17 → já refinado, critérios no card
     - `Baixa` · Washington Junior · CX · API
