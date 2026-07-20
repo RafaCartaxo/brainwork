@@ -105,6 +105,7 @@ Cada pasta tem um ícone Lucide + cor própria, escolhidos pra remeter ao que a 
 | `Evidências/Arquitetura` | network | `#4338ca` |
 | `Evidências/Cadastrar` | file-plus-2 | `#ca8a04` |
 | `Sistema` | settings | `#475569` |
+| `Sistema/Agentes` | bot | `#7c3aed` |
 | `Sistema/Contexto` | compass | `#4338ca` |
 | `Sistema/Skills` | wrench | `#dc2626` |
 | `Sistema/Specs` | pencil-ruler | `#0284c7` |
