@@ -5,9 +5,9 @@ tags:
   - login
 task: "5273"
 prioridade: altíssima
-status: em_validacao
+status: resolvido
 data_inicio: 2025-12-26
-data_fim: ""
+data_fim: 2026-07-20
 responsavel: Rafael
 cadastrado_por: ""
 modulo: login
@@ -39,7 +39,9 @@ Então o login deveria ser efetuado — mas, no bug original, a conta aparecia b
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://5273)
 
-- Evidências **na task do Notion**, sem cópia local: print anexado à descrição original (bug reproduzido) e evidência da aprovação em DEV mencionada no comentário de Rafael (10/07). Evidência local entra no fluxo normal na validação em HML.
+![[5273 - login com senha correta aprovado em homologação.mp4]]
+
+- Evidências **na task do Notion**, sem cópia local: print anexado à descrição original (bug reproduzido) e evidência da aprovação em DEV mencionada no comentário de Rafael (10/07).
 
 ---
 
@@ -51,11 +53,11 @@ Quando o usuário digitar as credenciais de acesso corretas — mesmo após ter 
 
 ### Critérios de aceite
 
-- [ ] Usuário consegue logar com a **senha correta** mesmo após ter atingido o limite máximo de tentativas (cenário original do bug)
-- [ ] Senha **incorreta** informada após o limite de tentativas continua bloqueando a conta normalmente, com envio do e-mail de recuperação (regressão do fluxo de bloqueio — não pode ter sido removido, só reordenado)
-- [ ] Dentro do limite, senha incorreta continua incrementando o contador de tentativas e exibindo corretamente quantas tentativas restam
-- [ ] E-mail de recuperação exibido/enviado na mensagem de bloqueio continua **anonimizado** (ver [[QA Workspace/04 Conhecimento/Módulos/Login|Login]])
-- [ ] **Sem teste automatizado cobrindo o fix** — toda validação é manual; conferir também em **Produção**, já que o export original cita Homologação e Produção como ambientes afetados
+- [x] Usuário consegue logar com a **senha correta** mesmo após ter atingido o limite máximo de tentativas (cenário original do bug)
+- [x] Senha **incorreta** informada após o limite de tentativas continua bloqueando a conta normalmente, com envio do e-mail de recuperação (regressão do fluxo de bloqueio — não pode ter sido removido, só reordenado)
+- [x] Dentro do limite, senha incorreta continua incrementando o contador de tentativas e exibindo corretamente quantas tentativas restam
+- [x] E-mail de recuperação exibido/enviado na mensagem de bloqueio continua **anonimizado** (ver [[QA Workspace/04 Conhecimento/Módulos/Login|Login]])
+- [ ] **Sem teste automatizado cobrindo o fix** — toda validação é manual; conferir também em **Produção** (não coberto por esta aprovação em HML — follow-up separado, ver Observações)
 
 ---
 
@@ -67,10 +69,10 @@ Quando o usuário digitar as credenciais de acesso corretas — mesmo após ter 
     Então o login deve ser efetuado com sucesso
 
     - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
+        - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
 
-    - Evidências de Testes:
+    - Evidências de Testes: ![[5273 - login com senha correta aprovado em homologação.mp4]]
 
 - **CT-B02 Regressão: bloqueio continua funcionando com senha errada no limite**
     Dado que o usuário atinja o limite máximo de tentativas
@@ -78,10 +80,10 @@ Quando o usuário digitar as credenciais de acesso corretas — mesmo após ter 
     Então a conta deve ser bloqueada e o e-mail de recuperação deve ser disparado, como antes do fix
 
     - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
+        - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
 
-    - Evidências de Testes:
+    - Evidências de Testes: ver evidência do CT-B01 (mesma gravação)
 
 - **CT-B03 Regressão: contador de tentativas dentro do limite**
     Dado que o usuário erre a senha uma vez, dentro do limite
@@ -89,10 +91,10 @@ Quando o usuário digitar as credenciais de acesso corretas — mesmo após ter 
     Então deve ser informado corretamente quantas tentativas restam
 
     - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
+        - [x] <span style="color:#2ecc71">Sim</span>
         - [ ] <span style="color:#e74c3c">Não</span>
 
-    - Evidências de Testes:
+    - Evidências de Testes: ver evidência do CT-B01 (mesma gravação)
 
 - **CT-B04 Validação em Produção**
     Dado o mesmo cenário do CT-B01
@@ -117,10 +119,11 @@ Quando o usuário digitar as credenciais de acesso corretas — mesmo após ter 
 ### Informações adicionais
 
 - Demanda relacionada: [MR !419](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/419) (Matheus Godoi — revisores Marcos Vinicius e Lucas Cabral; QA Responsável: Rafael Borges)
-- Observações: Relacionado à **SGV-5428** (Notion — "Plataforma não está encaminhando o e-mail de recuperação de conta para usuário bloqueado", status **Despriorizado**) — mesmo fluxo de bloqueio/recuperação, mas item separado e sem prioridade no momento. Regras do módulo em [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] (bloqueio em 5 tentativas, e-mail anonimizado).
+- Observações: Relacionado à **SGV-5428** (Notion — "Plataforma não está encaminhando o e-mail de recuperação de conta para usuário bloqueado", status **Despriorizado**) — mesmo fluxo de bloqueio/recuperação, mas item separado e sem prioridade no momento. Regras do módulo em [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] (bloqueio em 5 tentativas, e-mail anonimizado). **Produção não validada** nesta aprovação — CT-B04 fica em aberto como follow-up separado, já que o export original citava Homologação e Produção como ambientes afetados.
 - Histórico:
     - 2025-12-26 - 🔎 Análise de causa raiz (Bruna Machado): bloqueio ocorria por checar o limite de tentativas antes da senha
     - 2026-06-12 - Entrega do dev (Matheus Godoi, MR !419 aberto)
     - 2026-06-16 - MR aprovado para testes (Marcos Vinicius, Lucas Cabral)
     - 2026-07-10 - ✅ Aprovado em DEV (Rafael)
     - 2026-07-20 - 🐛 Card trazido pro vault a partir do export do Notion (status real: Testando em homologação) — critérios de aceite e CTs escritos a partir da descrição, análise e do diff do MR !419
+    - 2026-07-20 - ✅ Aprovada em homologação (Rafael) — CT-B01/B02/B03 confirmados; CT-B04 (Produção) segue em aberto

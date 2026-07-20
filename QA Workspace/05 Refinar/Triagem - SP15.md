@@ -22,9 +22,9 @@ responsavel: Rafael
 
 ## Disponível para homologação (9) — ação QA imediata
 
-- [x] **[[QA Workspace/02 Demandas/HML/5273 - Bug Login Senha Correta Apos Tentativas|SGV-5273]]** — Login com senha correta não funciona após tentativas incorretas ✅ 2026-07-20 → card criado, critérios de aceite prontos
+- [x] **[[QA Workspace/02 Demandas/Concluídas/5273 - Bug Login Senha Correta Apos Tentativas|SGV-5273]]** — Login com senha correta não funciona após tentativas incorretas ✅ 2026-07-20 → **aprovada em homologação**, card em Concluídas
     - `Altíssima` · Matheus Godoi
-    - [MR !419](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/419) revisado (SKILL_REVISAO_ESCOPO_MR) — fix inverte a ordem senha↔tentativas, sem teste automatizado; card criado direto em `02 Demandas/HML/` (status real do Notion: testando em homologação)
+    - [MR !419](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/419) revisado (SKILL_REVISAO_ESCOPO_MR) — fix inverte a ordem senha↔tentativas, sem teste automatizado; card nasceu em `02 Demandas/HML/` (status real do Notion) e foi aprovado no mesmo dia — CT-B04 (Produção) segue em aberto como follow-up
 - [ ] **SGV-3820** — Erro ao criar despacho e assinar documento via workflow
     - `Altíssima` · Washington Junior · API
 - [ ] **SGV-7640** — Campo de busca de setor destinatário fica inutilizável após seleção inicial no ambiente do cidadão
