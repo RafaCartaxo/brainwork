@@ -70,7 +70,7 @@ Após limpar, o agente avalia se a task está completa o suficiente pra card dir
 
 - ✅ Remove lixo de export (metadados, campos vazios, artefatos)
 - ✅ Identifica e registra lacunas (vira item em Pontos a definir)
-- ✅ Registra na daily com a frase padrão do catálogo ([[../../../QA Workspace/01 Daily/README\|01 Daily/README]])
+- ✅ Registra na daily com a frase padrão do catálogo ([[../../QA Workspace/01 Daily/README\|01 Daily/README]])
 - ✅ Cria pendências na fila (fila viva — [[AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]])
 - ✅ Remove arquivo original do Downloads (se aplicável)
 - ✅ Registra tudo no bloco recolhido `[!organizacao]- Auto-organização`

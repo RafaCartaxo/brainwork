@@ -16,7 +16,7 @@ Base de conhecimento sobre o Sogov — comportamentos do sistema, regras de neg�
 | `Referências/` | Material importado ou linkado de fora: docs do repositório, manuais, links externos, leis e normativas (ex.: TCE-PE) |
 | (raiz) | Análises de refinamento arquivadas (ver seção abaixo) |
 
-Notas de documentação usam o template [[../Sistema/Templates/Conhecimento.md|Conhecimento.md]].
+Notas de documentação usam o template [[../../Sistema/Templates/Conhecimento.md|Conhecimento.md]].
 
 ## Regras de uso
 
@@ -27,7 +27,7 @@ Notas de documentação usam o template [[../Sistema/Templates/Conhecimento.md|C
 
 ## Análises de refinamento (primeiro tipo estruturado)
 
-Quando um refinamento do [[../05 Refinar/README|05 Refinar]] é concluído ([[../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada (Notion → vault)|fluxo 6]]), o arquivo de mesa de trabalho ([[../Sistema/Templates/Refinamento.md|Refinamento.md]]) é **arquivado aqui** — com a análise completa (causa raiz, evidências, hipóteses descartadas, decisões dos pontos a definir) que **não entra no card**:
+Quando um refinamento do [[../05 Refinar/README|05 Refinar]] é concluído ([[../../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada (Notion → vault)|fluxo 6]]), o arquivo de mesa de trabalho ([[../../Sistema/Templates/Refinamento.md|Refinamento.md]]) é **arquivado aqui** — com a análise completa (causa raiz, evidências, hipóteses descartadas, decisões dos pontos a definir) que **não entra no card**:
 
 - Nome do arquivo: `<SGV> - Refinamento <título curto>.md` (mesmo título curto do card, prefixado por "Refinamento")
 - `status: refinado` no frontmatter (era `em_refinamento` na fila)
@@ -36,4 +36,4 @@ Quando um refinamento do [[../05 Refinar/README|05 Refinar]] é concluído ([[..
 A fonte de verdade externa da análise continua sendo a task no Notion (`📤`); a cópia daqui é o acervo local pesquisável — vale pra investigar bug parecido depois, sem depender de buscar no Notion.
 
 > [!note] Auto-organizador
-> O [[../Sistema/Agentes/AGENTE_PROCESSAR_EXPORT|AGENTE_PROCESSAR_EXPORT]] roteia documentação automaticamente pra cá (modo C do [[../Sistema/Skills/SKILL_LIMPEZA_EXPORT|SKILL_LIMPEZA_EXPORT]]). As pastas de documentação (`Módulos/`, `Fluxos/`, `Referências/`) também podem ser alimentadas manualmente (ou pedindo pra IA numa sessão).
+> O [[../../Sistema/Agentes/AGENTE_PROCESSAR_EXPORT|AGENTE_PROCESSAR_EXPORT]] roteia documentação automaticamente pra cá (modo C do [[../../Sistema/Skills/SKILL_LIMPEZA_EXPORT|SKILL_LIMPEZA_EXPORT]]). As pastas de documentação (`Módulos/`, `Fluxos/`, `Referências/`) também podem ser alimentadas manualmente (ou pedindo pra IA numa sessão).

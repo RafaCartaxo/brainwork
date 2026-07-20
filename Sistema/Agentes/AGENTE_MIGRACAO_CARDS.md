@@ -60,4 +60,4 @@ Registra na daily no callout `[!organizacao]- Auto-organização` com `⚠️ ca
 
 ## Copy padronizada
 
-Segue o catálogo de frases do [[../../../QA Workspace/01 Daily/README|01 Daily/README]] — mesmo padrão de qualquer validação.
+Segue o catálogo de frases do [[../../QA Workspace/01 Daily/README|01 Daily/README]] — mesmo padrão de qualquer validação.

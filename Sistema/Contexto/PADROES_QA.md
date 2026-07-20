@@ -154,6 +154,11 @@ Quando um bug ou suspeita de bug (achado via análise de código, CX, ou qualque
 - `Observações` explica o motivo do descarte (por que o cenário não se aplica ou não reproduz)
 - Registra-se em Atividades da daily do dia com a frase padrão: `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)`
 
+**Descarte sem card prévio no vault** (gap encontrado em 2026-07-20, caso SGV-3413): quando o bug só existe no Notion — nunca teve card local — e Rafael confirma diretamente (verificação manual, sem export/material de causa raiz em mãos) que não reproduz mais, o card **nasce já** com `status: descartado` direto em `99 Arquivo/` (nunca passa por `02 Demandas/`). Regras adicionais pra esse caso:
+- Descrição e Passo a passo ficam com o que **de fato** se tem (normalmente só o título da task) — não inventar cenário de reprodução que não foi fornecido;
+- Critério de aceite e CT são escritos de forma mínima, inferidos do título, e marcados como confirmados;
+- `Observações` registra explicitamente a ausência de material de causa raiz, pra quem reabrir no futuro saber que precisa reconstituir o passo a passo do zero (a task no Notion continua sendo a referência, se existir lá).
+
 ## Frontmatter
 Todas as notas seguem frontmatter YAML com ao menos a tag `qa`:
 ```yaml

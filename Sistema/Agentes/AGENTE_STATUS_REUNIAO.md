@@ -34,7 +34,7 @@ Escaneia as seções:
 
 - **Cabe em 30 segundos**: máx. 3 itens por bloco
 - **Emoji + numeração na frente**: mesmo padrão das Atividades
-- **Agrupado por estágio**: emojis se agrupam numa linha só (`📝📤` = refinado e levado pro Notion)
+- **Agrupado por estágio**: emojis se agrupam numa linha só (`📝📤` = refinado e levado pro Notion; `🗑️🔎` = descarte + análises no mesmo tema; `🐛📝` = bug trazido pro vault já com card refinado) — e itens **diferentes mas do mesmo tipo de trabalho** também podem ser consolidados numa linha só quando o detalhe completo já está em Planejamento (ex.: "5 MRs revisados a nível de escopo — SGV-A, SGV-B, SGV-C" em vez de 5 linhas separadas), sempre respeitando o máximo de 3 por bloco
 - **Tudo linkado**: card quando existe; sem card, a mesa de refinamento
 - **Regenerado, não acumulado**: reescreve o bloco por inteiro a cada execução
 - **Sempre visível**: o callout não é recolhível
