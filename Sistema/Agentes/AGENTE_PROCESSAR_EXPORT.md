@@ -73,7 +73,7 @@ Após limpar, o agente avalia se a task está completa o suficiente pra card dir
 - ✅ Registra na daily com a frase padrão do catálogo ([[../../../QA Workspace/01 Daily/README\|01 Daily/README]])
 - ✅ Cria pendências na fila (fila viva — [[AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]])
 - ✅ Remove arquivo original do Downloads (se aplicável)
-- ✅ Registra tudo no bloco `### Auto-organização`
+- ✅ Registra tudo no bloco recolhido `[!organizacao]- Auto-organização`
 - ✅ Se for documentação e a estrutura de `04 Conhecimento/` não existir, cria
 
 ## Relação com outros agentes

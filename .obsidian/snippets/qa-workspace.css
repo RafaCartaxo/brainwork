@@ -148,7 +148,22 @@
 .qa-daily h3[data-heading="HML"]  { border-inline-start-color: #ea580c; }
 .qa-daily h3[data-heading="POCs"] { border-inline-start-color: #c026d3; }
 .qa-daily h3[data-heading="Planejamento"] { border-inline-start-color: #2563eb; }
-.qa-daily h3[data-heading="Auto-organização"] { border-inline-start-color: #475569; }
+
+/* Auto-organização deixou de ser heading (### ) e virou callout recolhido
+   por padrão ([!organizacao]-) — mesmo tratamento do "Carregado de ontem":
+   cor própria (slate, herdada do h3 antigo) e apagado quando fechado. */
+.qa-daily .callout[data-callout="organizacao"] {
+  border-inline-start: 3px solid #475569;
+  border-radius: 6px;
+}
+
+.qa-daily .callout[data-callout="organizacao"] .callout-title {
+  color: #475569;
+}
+
+.qa-daily .callout[data-callout="organizacao"].is-collapsed {
+  opacity: 0.6;
+}
 
 /* ---------- Daily: Status — reunião (o quadro que abre o dia) ----------
    Único bloco com presença própria na nota: tinta teal suave + títulos

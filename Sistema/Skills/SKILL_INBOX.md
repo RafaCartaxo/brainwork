@@ -25,7 +25,7 @@ tags:
 3. Completa ciclos de pendências marcadas com resultado anotado entre parênteses
 4. Reconcilia Atividades escritas à mão com os cards correspondentes
 5. Garante que todo card aberto tem item ativo na fila (invariante da fila viva)
-6. Registra tudo no bloco `### Auto-organização` da daily
+6. Registra tudo no bloco recolhido `[!organizacao]- Auto-organização` da daily
 
 ### Marca de processado
 

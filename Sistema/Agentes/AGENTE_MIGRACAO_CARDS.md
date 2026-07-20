@@ -51,7 +51,7 @@ Varre `02 Demandas/` periodicamente e sinaliza:
 - Card em `Concluídas/` com `status: aberto` → inconsistente
 - Card em `DEV/` com `status: resolvido` → inconsistente
 
-Registra na daily como `### Auto-organização` com `⚠️ card em pasta inconsistente: [[card]]`.
+Registra na daily no callout `[!organizacao]- Auto-organização` com `⚠️ card em pasta inconsistente: [[card]]`.
 
 ## Relação com outros agentes
 

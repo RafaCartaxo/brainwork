@@ -113,11 +113,11 @@ Tudo que o organizador escreve segue a copy já padronizada do vault — nunca i
 
 ## Registro na daily
 
-Todo processamento (manual ou agendado) grava um bloco novo na daily processada:
+Todo processamento (manual ou agendado) grava um bloco novo na daily processada — recolhido por padrão, mesmo tratamento do "Carregado de ontem":
 
 ```markdown
-### Auto-organização
-- <resumo do item> → <destino/resultado>
+> [!organizacao]- Auto-organização
+> - <resumo do item> → <destino/resultado>
 ```
 
 Itens resolvidos por palpite automático (modo agendado) levam a marca `(auto)` no fim da linha.

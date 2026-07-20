@@ -15,7 +15,7 @@ sem IA nenhuma (offline, stdlib):
    - "Revisar cenários ... SGV-XXXX ... (resultado)" -> linha em Atividades + Histórico
    - "Cadastrar ... [[card]] ... (SGV-XXXX)" -> preenche task e renomeia o card linkado
 4. Concluído SEM anotação -> não inventa: sinaliza "aguardando resultado".
-5. Registra tudo no bloco "### Auto-organização" da daily.
+5. Registra tudo no callout recolhido "[!organizacao]- Auto-organização" da daily.
 
 O que este script NÃO faz (fica pra IA — sessão interativa ou tarefa das 7h):
 classificar anotações cruas de ## Anotações / ## Bugs encontrados.
@@ -581,11 +581,11 @@ def linkifica_ids(texto):
 def bloco_registro(daily, hoje):
     if not acoes and not avisos:
         return daily
-    linhas_bloco = [f"- {a}" for a in acoes] + [f"- {a}" for a in avisos]
+    linhas_bloco = [f"> - {a}" for a in acoes] + [f"> - {a}" for a in avisos]
     corpo = "\n".join(linhas_bloco)
-    if "### Auto-organização" in daily:
+    if "[!organizacao]- Auto-organização" in daily:
         return daily.rstrip() + "\n" + corpo + "\n"
-    return daily.rstrip() + f"\n\n### Auto-organização\n{corpo}\n"
+    return daily.rstrip() + f"\n\n> [!organizacao]- Auto-organização\n{corpo}\n"
 
 
 def main():

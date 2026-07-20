@@ -23,7 +23,7 @@ Diferente de [[../Skills|Skills]] (que são instruções de referência para voc
 1. **Gatilho** dispara o agente (botão, comando de IA, horário)
 2. **Fonte** é a daily mais recente (ou a especificada)
 3. **Regras** definem o que fazer com cada tipo de registro
-4. **Resultado** é registrado no bloco `### Auto-organização` da daily
+4. **Resultado** é registrado no bloco recolhido `[!organizacao]- Auto-organização` da daily
 
 ## Criar um novo agente
 
