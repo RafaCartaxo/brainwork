@@ -89,6 +89,16 @@ Na prática:
 - O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão
 - A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)
 
+## Invariante da Triagem confiável
+
+**Toda entrada de uma Triagem de sprint (`05 Refinar/Triagem - <sprint>.md`) marcada como "já refinado"/"critérios no card" tem um link real pro card** — nunca só o texto em negrito sem wikilink. Gap encontrado em 2026-07-20: a SGV-8977 estava marcada `✅ → já refinado, critérios no card` desde 17/07 sem nenhum arquivo em `02 Demandas/` — só apareceu ao revisar o MR correspondente ([[../Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]]).
+
+Verificação (varredura de `05 Refinar/Triagem - *.md`):
+- Linha com `✅` e "já refinado"/"critérios no card"/"card criado" **sem wikilink** pro card → inconsistência. Duas causas possíveis: (a) card existe mas o link não foi feito, (b) card nunca foi criado de fato.
+- Pra cada uma: checar se o card existe em `02 Demandas/` pelo SGV. Existe → só adicionar o wikilink que faltava. Não existe → sinalizar como pendência real (`SGV-XXXX - Criar card (Triagem indicava "refinado" sem card existir)`), não assumir que está tudo bem.
+
+Quando disparar: no botão 🔄 Atualizar (parte mecânica: só reporta a inconsistência, não decide o desfecho) e nas sessões interativas de revisão de MR ou de bater a Triagem — é o momento natural de já cruzar a informação.
+
 ## Pendência até o cadastro externo
 
 Criar o card/checkbox no vault não fecha o ciclo — Bug e Melhoria ainda precisam ser registrados na ferramenta externa (Notion ou equivalente). Todo item roteado como Bug ou Melhoria também gera uma linha em **A fazer hoje** da daily do dia.

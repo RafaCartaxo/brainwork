@@ -28,6 +28,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Exportei documentação do projeto | 8 | Limpar → classificar → template Conhecimento.md → `04 Conhecimento/` |
 | Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
 | Exportei .md do Notion (não sei o tipo) | — | Pedir "processa o material novo" — o [[../Agentes/AGENTE_PROCESSAR_EXPORT\|agente]] classifica e roteia |
+| Tenho um MR do GitLab pra revisar o escopo | — | Colar o link (+ problema original, se tiver) → [[../Skills/SKILL_REVISAO_ESCOPO_MR\|SKILL_REVISAO_ESCOPO_MR]] |
 | Quero que a IA organize tudo que ficou cru | — | Pedir "organiza a daily" — cobre parte mecânica + classificação ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) |
 
 ---

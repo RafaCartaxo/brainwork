@@ -84,6 +84,7 @@ QA Workspace/
 | [[Sistema/Skills/SKILL_INBOX.md\|SKILL_INBOX.md]] | Como invocar o auto-organizador da daily |
 | [[Sistema/Skills/SKILL_LIMPEZA_EXPORT.md\|SKILL_LIMPEZA_EXPORT.md]] | Limpeza de .md bruto exportado do Notion (3 modos: mesa, card direto, documentação) |
 | [[Sistema/Skills/SKILL_TRIAGEM_SPRINT.md\|SKILL_TRIAGEM_SPRINT.md]] | Processar view de sprint do Notion (agrupar por status, cruzar com vault) |
+| [[Sistema/Skills/SKILL_REVISAO_ESCOPO_MR.md\|SKILL_REVISAO_ESCOPO_MR.md]] | Acessar MR do GitLab via `git fetch`, confirmar escopo, levantar cenários de teste implementados, decidir entre revisar card existente ou criar direto com critérios reescritos |
 
 ## Contexto
 | Arquivo | Finalidade |
