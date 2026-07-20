@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export incompleto: 53 de 60 cards
 > A view do Notion corta no "Load more" — faltam 7 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui).
 
-> [!tip] Progresso: **13/53** batidos (atualizado 2026-07-20)
-> Homologação `1/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `0/7` · Produção `0/7`
+> [!tip] Progresso: **14/53** batidos (atualizado 2026-07-20)
+> Homologação `1/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `1/7` · Produção `0/7`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (9) — ação QA imediata
@@ -135,8 +135,9 @@ responsavel: Rafael
 
 - [ ] **SGV-5360** — Assinatura de despacho customizado não aparece na tela de "Assinaturas pendentes" do servidor
     - `Média` · João Marcelo
-- [ ] **SGV-3413** — Erro ao assinar despacho de desassociação de documentos
+- [x] **[[QA Workspace/99 Arquivo/Bug Assinatura Despacho Desassociacao|SGV-3413]]** — Erro ao assinar despacho de desassociação de documentos ✅ 2026-07-20 → descartado, não reproduz mais
     - `Média` · Squad 3
+    - Verificado diretamente por Rafael (20/07) — card criado já como descartado em `99 Arquivo/`, sem material de causa raiz disponível
 - [ ] **SGV-5245** — Nome do mês e ano incorretos no filtro de data da Mesa de Trabalho
     - `Média` · Lucas Lacerda
 - [ ] **SGV-3412** — Marcação automática incorreta de checkbox na Lista de Solicitações de Assinaturas
