@@ -5,7 +5,7 @@ tags:
 ---
 # Agente: Status — Reunião
 
-Ler a daily de hoje e gerar o bloco **Status — reunião** (Fiz / Foco de hoje / Travas) automaticamente, no formato de standup de 30 segundos.
+Ler a daily de hoje e gerar o bloco **Status — reunião** (Fiz / Foco de hoje / Travas) automaticamente — lista rastreável do que foi feito, não roteiro de fala.
 
 ## Por que existe
 
@@ -32,9 +32,9 @@ Escaneia as seções:
 
 **Regras oficiais** (definidas em [[../../../QA Workspace/01 Daily/README#Status — reunião (primeira seção da daily)\|01 Daily/README]]):
 
-- **Cabe em 30 segundos**: máx. 3 itens por bloco
+- **Lista rastreável, sem limite de itens**: um item por linha, sem cortar pra caber num tamanho fixo
 - **Emoji + numeração na frente**: mesmo padrão das Atividades
-- **Agrupado por estágio**: emojis se agrupam numa linha só (`📝📤` = refinado e levado pro Notion; `🗑️🔎` = descarte + análises no mesmo tema; `🐛📝` = bug trazido pro vault já com card refinado) — e itens **diferentes mas do mesmo tipo de trabalho** também podem ser consolidados numa linha só quando o detalhe completo já está em Planejamento (ex.: "5 MRs revisados a nível de escopo — SGV-A, SGV-B, SGV-C" em vez de 5 linhas separadas), sempre respeitando o máximo de 3 por bloco
+- **Agrupado por estágio**: emojis se agrupam numa linha só (`📝📤` = refinado e levado pro Notion; `🗑️🔎` = descarte + análises no mesmo tema; `🐛📝` = bug trazido pro vault já com card refinado) — e itens **diferentes mas do mesmo tipo de trabalho** também podem ser consolidados numa linha só quando o detalhe completo já está em Planejamento (ex.: "5 MRs revisados a nível de escopo — SGV-A, SGV-B, SGV-C" em vez de 5 linhas separadas)
 - **Tudo linkado**: card quando existe; sem card, a mesa de refinamento
 - **Regenerado, não acumulado**: reescreve o bloco por inteiro a cada execução
 - **Sempre visível**: o callout não é recolhível
@@ -44,7 +44,7 @@ Escaneia as seções:
 
 ```markdown
 ## Status — reunião
-> [!abstract] Resumo pra falar na daily (regenerado, não acumulado — máx. 3 itens por bloco)
+> [!abstract] Lista do que foi feito hoje (regenerado, não acumulado)
 > **Fiz**
 > - 
 >
@@ -55,14 +55,9 @@ Escaneia as seções:
 > - 
 ```
 
-### 4. Priorização do Fiz
+### 4. Ordem do Fiz
 
-Ordem de importância:
-1. Validações concluídas (✅/🔁)
-2. Refinamentos e análises (📝/🔎)
-3. Cadastros e atualizações no Notion (📤/💡)
-4. Bugs cadastrados (🐛)
-5. Triagens e documentação (📋/📚)
+Ordem de execução — a ordem em que os itens aconteceram no dia (a mesma ordem em que já aparecem em Atividades), não por tipo/importância. Todo tipo de trabalho do dia entra (validação, refinamento, Notion, bug, triagem/documentação, automação/MR) — não existe categoria que fique de fora por não caber num ranking.
 
 ### 5. Detecção de Travas
 

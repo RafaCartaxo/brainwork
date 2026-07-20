@@ -87,9 +87,9 @@ As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refina
 
 ## Status — reunião (primeira seção da daily)
 
-Bloco de standup no topo, pra ler direto na reunião da daily. Três linhas fixas: **Fiz** · **Foco de hoje** · **Travas**.
+Lista do que foi feito no dia, no topo da daily, pra rastreabilidade — não um roteiro de fala pra reunião (Rafael já sabe o que falar). Três blocos fixos: **Fiz** · **Foco de hoje** · **Travas**.
 
-- **Cabe numa fala de 30 segundos**: cada bloco (**Fiz**/**Foco de hoje**/**Travas**) é uma pequena lista — um item por linha, máximo 3 por bloco, em linguagem simples. Não é inventário — é o que o time precisa ouvir. Detalhe mora em Atividades/fila, nunca aqui.
+- **Lista rastreável, sem limite de itens**: cada bloco (**Fiz**/**Foco de hoje**/**Travas**) é uma lista — um item por linha, em linguagem simples, sem cortar pra caber num tamanho fixo. Detalhe mais extenso mora em Atividades/fila, nunca aqui.
 - **Mesmo padrão das Atividades, agrupado**: emoji(s) de status + numeração na frente, depois a frase (`📝📤 SGV-XXXX - ...`). Se o mesmo item passou por vários estágios no dia, os emojis se **agrupam numa linha só** (📝📤 = refinado e levado pro Notion) em vez de virar linhas separadas. Em "Travas", `⏳` na frente. **Tudo linkado** (regra de links: card; sem card, a mesa de refinamento).
 - **Regenerado, não acumulado**: o bloco é *derivado* do que já está registrado na daily (Atividades + fila + travas) — reescreve-se por inteiro a cada atualização, não recebe item em cima de item. Pedir numa sessão ("gera meu status da reunião") ou escrever à mão, desde que tudo que ele diga exista registrado embaixo.
 - **Sempre visível**: o callout não é recolhível de propósito — é a primeira coisa da nota.
