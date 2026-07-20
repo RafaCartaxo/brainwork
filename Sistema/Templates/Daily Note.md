@@ -9,7 +9,7 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 # Daily QA — <% tp.date.now("DD/MM/YYYY") %>
 
 ## Status — reunião
-> [!abstract] Resumo pra falar na daily (regenerado, não acumulado — máx. 3 itens por bloco)
+> [!abstract] Lista do que foi feito hoje
 > **Fiz**
 > - 
 >
@@ -47,7 +47,8 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 - [ ] 
 
 ## Anotações
-- 
+> [!note]- Anotações do dia
+> - 
 
 ## Pendente para amanhã
 - [ ] 
