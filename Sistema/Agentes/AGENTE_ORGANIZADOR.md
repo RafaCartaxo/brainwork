@@ -91,13 +91,17 @@ Na prática:
 
 ## Invariante da Triagem confiável
 
-**Toda entrada de uma Triagem de sprint (`05 Refinar/Triagem - <sprint>.md`) marcada como "já refinado"/"critérios no card" tem um link real pro card** — nunca só o texto em negrito sem wikilink. Gap encontrado em 2026-07-20: a SGV-8977 estava marcada `✅ → já refinado, critérios no card` desde 17/07 sem nenhum arquivo em `02 Demandas/` — só apareceu ao revisar o MR correspondente ([[../Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]]).
+**Toda entrada de uma Triagem de sprint (`05 Refinar/Triagem - <sprint>.md`) marcada "já refinado"/"critérios no card" **sem wikilink** pro card precisa ter a pendência de confirmação rastreada** — não necessariamente um card no vault. "Card" aqui pode ser a **task do Notion**, não o arquivo local — Rafael confirmou isso em 2026-07-20. Não presumir inconsistência automaticamente; presumir **pendência de confirmação**.
+
+Gap encontrado em 2026-07-20: SGV-8977 e SGV-9036 estavam marcadas `✅ → já refinado, critérios no card` desde 17/07, sem wikilink. A SGV-8977 de fato não tinha card local (confirmado ao revisar o MR — [[../Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]] — e resolvido criando o card). A SGV-9036 pode estar correta como está (critérios só no Notion) — **sem material/MR em mãos pra confirmar, não se cria card no escuro.**
 
 Verificação (varredura de `05 Refinar/Triagem - *.md`):
-- Linha com `✅` e "já refinado"/"critérios no card"/"card criado" **sem wikilink** pro card → inconsistência. Duas causas possíveis: (a) card existe mas o link não foi feito, (b) card nunca foi criado de fato.
-- Pra cada uma: checar se o card existe em `02 Demandas/` pelo SGV. Existe → só adicionar o wikilink que faltava. Não existe → sinalizar como pendência real (`SGV-XXXX - Criar card (Triagem indicava "refinado" sem card existir)`), não assumir que está tudo bem.
+- Linha com `✅` e "já refinado"/"critérios no card"/"card criado" **sem wikilink** → checar se existe card em `02 Demandas/` pelo SGV.
+  - Existe → só faltava o link; adicionar.
+  - Não existe **e** há material/MR disponível pra confirmar → seguir [[../Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]] (card direto ou revisão).
+  - Não existe **e não há** material/MR em mãos → **não inventar nem criar card sem conteúdo**. Garantir que existe pendência na fila (`SGV-XXXX - Confirmar critérios (Notion) e revisar MR quando disponível`) — é isso que fecha o invariante, não a criação forçada de um card.
 
-Quando disparar: no botão 🔄 Atualizar (parte mecânica: só reporta a inconsistência, não decide o desfecho) e nas sessões interativas de revisão de MR ou de bater a Triagem — é o momento natural de já cruzar a informação.
+Quando disparar: no botão 🔄 Atualizar (parte mecânica: só reporta a ausência de pendência, não decide o desfecho) e nas sessões interativas de revisão de MR ou de bater a Triagem — é o momento natural de já cruzar a informação.
 
 ## Pendência até o cadastro externo
 

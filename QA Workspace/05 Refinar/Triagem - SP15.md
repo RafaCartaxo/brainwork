@@ -98,6 +98,7 @@ responsavel: Rafael
 
 - [x] **SGV-9036** — Mensagens de erro são exibidas quando é selecionado um signatário para assinatura ✅ 2026-07-17 → já refinado, critérios no card
     - `Altíssima` · Washington Junior · API
+    - ⚠️ Sem wikilink — não há card em `02 Demandas/`; "no card" aqui provavelmente é a task do Notion, não o vault. Sem material/MR em mãos pra confirmar (2026-07-20) — pendência de confirmação criada na fila em vez de card inventado
 - [ ] **SGV-9841** — Login autenticando usuário em conta de outro servidor
     - `Alta` · Matheus Godoi · CX
 - [ ] **SGV-9772** — Documento permanece com status "em aberto" e não abre ao clicar
