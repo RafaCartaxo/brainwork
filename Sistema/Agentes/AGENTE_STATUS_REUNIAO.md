@@ -57,7 +57,17 @@ Escaneia as seções:
 
 ### 4. Ordem do Fiz
 
-Ordem de execução — a ordem em que os itens aconteceram no dia (a mesma ordem em que já aparecem em Atividades), não por tipo/importância. Todo tipo de trabalho do dia entra (validação, refinamento, Notion, bug, triagem/documentação, automação/MR) — não existe categoria que fique de fora por não caber num ranking.
+Ordem de execução — a ordem em que os itens aconteceram no dia (a mesma ordem em que já aparecem em Atividades), não por tipo/importância. Todo tipo de trabalho do dia entra — não existe categoria que fique de fora por não caber num ranking.
+
+| Categoria | Emoji | Exemplo real |
+|---|---|---|
+| Validação | ✅ 🔁 🔴 | SGV-5273 aprovada em homologação |
+| Refinamento | 🔎 📝 | MR !583 revisado, critérios batem |
+| Notion | 📤 💡 | Análise levada pra task |
+| Bug | 🐛 | SGV-8977 card criado direto |
+| Triagem / Documentação | 📋 📚 | Gerar Documento importado |
+| Automação | 🤖 | MR !24 e !25 abertos no sogov-automation-test |
+| Descarte | 🗑️ | SGV-3413 descartado |
 
 ### 5. Detecção de Travas
 

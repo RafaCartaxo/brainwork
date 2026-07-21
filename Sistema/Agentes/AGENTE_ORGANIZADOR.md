@@ -46,7 +46,8 @@ Quando Rafael marca uma pendência como feita, ele anota o **resultado curto ent
 | `Retestar SGV-XXXX (não reproduzido)` | Linha `⚪` em Atividades, item no Histórico |
 | `Cadastrar bug ... no Notion (SGV-XXXX)` | Preenche `task` no card (e renomeia se ainda estava sem número), linha `🐛 SGV-XXXX - Bug cadastrado` em Atividades |
 | `Revisar cenários de teste do SGV-XXXX (<resultado>)` | Linha em Atividades com o resultado anotado, item no Histórico do card |
-| `Atualizar/levar análise do SGV-XXXX pro Notion (feito)` | Linha `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (...)` em Atividades, item no Histórico do card |
+| `Atualizar/levar análise do SGV-XXXX pro Notion (feito)` | Linha `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (...)` em Atividades, item no Histórico do card. Se existir mesa em `05 Refinar/` com esse SGV (`status: em_refinamento`): renomeia pra `<SGV> - Refinamento <título curto>.md`, muda status pra `refinado`, move pra `04 Conhecimento/`, cross-link no card |
+| `Refinar SGV-XXXX (card criado, critérios prontos)` | Lê o Destilado da mesa em `05 Refinar/SGV-XXXX.md` → cria card em `02 Demandas/<ambiente>/` (template [[../Templates/Bug Report.md\|Bug Report]] pra bug, [[../Templates/Demanda.md\|Demanda]] pra melhoria/funcionalidade), preenche frontmatter (task, status, ambiente, data_inicio), cross-link mesa ↔ card (Observações: "Análise completa: [[04 Conhecimento/<SGV> - Refinamento <título>]]" no card, wikilink reverso na mesa), linha `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` em Atividades → Planejamento, item no Histórico do card, cria pendência `SGV-XXXX - Atualizar no Notion (levar análise/critérios pra task)`. Aplica regra de links: toda menção ao SGV na daily vira wikilink pro card |
 | `Investigar suspeita: <título> (descartada: <motivo>)` | Linha `🗑️ Suspeita descartada: <título> (não é bug: <motivo>)` em Atividades |
 | `Investigar suspeita: <título> (confirmada)` | **Botão**: cria pendência "Criar card do bug: <título> (via SKILL_BUGS)" na fila — o card em si exige IA/sessão, que o cria e registra |
 | Marcada **sem anotação de resultado** | **Manual**: pergunta o desfecho antes de agir. **Agendado**: não inventa — lista como `⏳ aguardando resultado` e não altera nada |
@@ -88,6 +89,8 @@ Na prática:
 - Pendência que nasce durante o dia entra em **A fazer hoje**
 - O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão
 - A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)
+
+**Mesas de refinamento (`05 Refinar/`)**: seguem a mesma lógica. Toda mesa com `status: em_refinamento` sem pendência ativa na fila ganha `SGV-XXXX - Refinar (material em 05 Refinar/)` automaticamente. Mesa parada há +3 dias sem atualização → sinaliza `⏳` na pendência.
 
 ## Invariante da Triagem confiável
 
