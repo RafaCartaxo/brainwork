@@ -148,8 +148,12 @@ A criação de um serviço/assunto pode ser feita de duas formas:
 - [ ] Não há, no export, uma definição explícita da diferença conceitual entre "Serviço" e "Assunto" (o documento trata os dois quase sempre em conjunto/como sinônimos operacionais) — confirmar se há distinção de regra de negócio entre os dois tipos ou se é só nomenclatura conforme o módulo.
 - [ ] "Configuração para Abertura Externa" (Seção 03) menciona que a config do módulo "deve ser replicada no serviço em criação, com possibilidade de edição" — não fica claro se há alguma restrição de "igual ou mais restritivo que o módulo" (como existe explicitamente para prazos na Seção 05) ou se a edição é livre em qualquer direção.
 
+## Cards relacionados
+<!-- SGVs validados que tocam este módulo -->
+- 
+
 ## Referências
-<!-- Docs do repo (caminho), cards relacionados ([[SGV-XXXX]]), links externos, leis -->
+<!-- Docs do repo (caminho), links externos, leis -->
 - `packages/e2e/tests/10-ServicosEAssuntos/` (repo Sogov-application) — suíte de testes e2e do módulo (categorias/subcategorias, criação/edição/duplicação de assuntos, listagens, permissões)
 - `packages/e2e/pageobject/matterService.elements.ts` (repo Sogov-application) — no código o conceito aparece como "matter service" / "matterService"
 - [[Fluxo de trabalho (Workflow)]] — módulo relacionado (regras de tramitação, prazos, prorrogações herdadas/configuradas a nível de módulo)

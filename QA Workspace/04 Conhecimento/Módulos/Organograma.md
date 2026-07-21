@@ -211,9 +211,12 @@ Eventos registrados (lista literal do export), agrupados em três blocos:
 - [ ] Regra de "setor soberano" (Grupo de trabalho) descrita apenas como "não atende regras de acesso de setor e documentos por hierarquia de organograma" — sem mais detalhe de como isso se comporta na prática (ex.: quem consegue enviar documentos pra ele).
 - [ ] Não fica claro no export se a remoção de permissão de edição de regras de tramitação (status muda pra "Recusada") é reversível ou se o setor precisa passar por nova solicitação do zero.
 
+## Cards relacionados
+<!-- SGVs validados que tocam este módulo -->
+- [[../../02 Demandas/DEV/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977 - Timeout na edição de regras do Organograma]]
+
 ## Referências
-<!-- Docs do repo (caminho), cards relacionados ([[SGV-XXXX]]), links externos, leis -->
+<!-- Docs do repo (caminho), links externos, leis -->
 - Módulos relacionados: [[Serviços e Assuntos]] e [[Fluxo de trabalho (Workflow)]] — consomem as regras de tramitação por setor definidas aqui
-- Card de bug relacionado (não documentação, mas toca o mesmo módulo): [[../../02 Demandas/DEV/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977 - Timeout na edição de regras do Organograma]]
 - Feature de permissões referenciada no export: [Usuários e gerenciamento de permissões](https://app.notion.com/p/Usu-rios-e-gerenciamento-de-permiss-es-1eeb22fe245143b4a412209763906be7)
 - Protótipo Figma (Visualização de servidores por setor): https://www.figma.com/design/oFhUaElUXOBns9E400kswH/Organograma---Handoff?node-id=383-1625

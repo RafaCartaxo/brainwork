@@ -110,8 +110,11 @@ O usuário pode definir o escopo da busca padrão entre seus próprios setores (
 - [ ] Sem evidência de telas/prints no export (o link do Figma "Ambiente Servidor — Handoff" não foi trazido) — consultar Figma/Notion originais antes de qualquer teste manual;
 - [ ] Sem passo a passo de reprodução ou ambiente definido no export — é documentação de especificação de produto, não uma task de teste; casos de teste ainda precisam ser derivados a partir das regras acima.
 
+## Cards relacionados
+<!-- SGVs validados que tocam este módulo -->
+- [[../02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]] — "Novo rastreio" deve reiniciar os filtros (aprovado em HML 2026-07-21; ver [[#Comportamentos observados em teste]] — diverge da doc, decisão de produto em aberto)
+
 ## Referências
-<!-- Docs do repo (caminho), cards relacionados ([[SGV-XXXX]]), links externos, leis -->
-- Cards relacionados: [[../02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]] — "Novo rastreio" deve reiniciar os filtros (aprovado em HML 2026-07-21; ver [[#Comportamentos observados em teste]] — diverge da doc, decisão de produto em aberto)
+<!-- Docs do repo (caminho), links externos, leis -->
 - Notion original: https://app.notion.com/p/alfa-group/Rastrear-documento-2922aec67d30805fb768f15d4d1f8e12
 - Figma referenciado no export (não copiado aqui): https://www.figma.com/design/BmFazoCXyqI9NQQeQESXJ6/Ambiente-Servidor---Handoff?node-id=397-76190
