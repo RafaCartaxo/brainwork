@@ -19,6 +19,14 @@ Diferente de [[../Skills|Skills]] (que são instruções de referência para voc
 | [[AGENTE_MIGRACAO_CARDS]] | Conclusão de pendência / "move o card" (IA) / verificação diária | Move cards entre pastas da esteira atualizando wikilinks, frontmatter e Histórico atomicamente |
 | [[AGENTE_STATUS_REUNIAO]] | 🔄 Atualizar / "status da reunião" (IA) / abertura da daily | Lê Atividades + fila da daily e gera o bloco Status — reunião (Fiz/Foco/Travas) |
 
+## Gatilhos compartilhados
+
+| Gatilho | Agentes disparados |
+|---|---|
+| 🔄 Atualizar (Dashboard) | AGENTE_ORGANIZADOR + AGENTE_FILA + AGENTE_MIGRACAO_CARDS + AGENTE_STATUS_REUNIAO |
+| "processa o material novo" | AGENTE_PROCESSAR_EXPORT |
+| "organiza a daily" | AGENTE_ORGANIZADOR (modo IA, classificação completa) |
+
 ## Como funciona um agente
 
 1. **Gatilho** dispara o agente (botão, comando de IA, horário)
