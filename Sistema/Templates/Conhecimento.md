@@ -25,6 +25,10 @@ revisado: <% tp.date.now("YYYY-MM-DD") %>
 ## Dúvidas em aberto
 - [ ] 
 
+## Cards relacionados
+<!-- SGVs validados que tocam este módulo -->
+- 
+
 ## Referências
-<!-- Docs do repo (caminho), cards relacionados ([[SGV-XXXX]]), links externos, leis -->
+<!-- Docs do repo (caminho), links externos, leis -->
 - 
