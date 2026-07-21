@@ -101,6 +101,7 @@ QA Workspace/
 | [[Sistema/Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]] | Auto-organização da daily: classificação, roteamento, reconciliação, fila viva |
 | [[Sistema/Agentes/AGENTE_MIGRACAO_CARDS\|AGENTE_MIGRACAO_CARDS]] | Movimentação atômica de cards entre pastas da esteira (wikilinks + frontmatter + Histórico) |
 | [[Sistema/Agentes/AGENTE_STATUS_REUNIAO\|AGENTE_STATUS_REUNIAO]] | Regenera o bloco Status — reunião (Fiz/Foco/Travas) a partir da daily |
+| [[Sistema/Agentes/AGENTE_FILA\|AGENTE_FILA]] | Organizador da fila: agrupa por natureza, sinaliza idade (🕐) e bloqueio (⏳), move concluídos, alerta zumbis +7d |
 
 ## Organização de Bugs
 - Todo bug usa o [[Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
