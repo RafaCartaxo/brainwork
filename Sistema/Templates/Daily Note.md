@@ -19,12 +19,16 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 > **Travas**
 > - 
 
+---
+
 ## Pendências de ontem
 > [!info]- Carregado de <% tp.date.now("DD/MM", -1) %>
 > - 
 
 > **A fazer hoje:**
 > - [ ] 
+
+---
 
 ## Atividades
 
@@ -40,6 +44,8 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 ### Planejamento
 - 
 
+---
+
 ## Bugs encontrados
 - 
 
@@ -49,6 +55,8 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 ## Anotações
 > [!note]- Anotações do dia
 > - 
+
+---
 
 ## Pendente para amanhã
 - [ ] 
