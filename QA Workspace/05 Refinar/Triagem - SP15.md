@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export incompleto: 53 de 60 cards
 > A view do Notion corta no "Load more" — faltam 7 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui).
 
-> [!tip] Progresso: **14/53** batidos (atualizado 2026-07-20)
-> Homologação `1/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `1/7` · Produção `0/7`
+> [!tip] Progresso: **15/53** batidos (atualizado 2026-07-21)
+> Homologação `2/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `1/7` · Produção `0/7`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (9) — ação QA imediata
@@ -33,7 +33,7 @@ responsavel: Rafael
     - `Alta` · Matheus Godoi
 - [ ] **SGV-9690** — SGA: filtro de busca não localiza palavras com variações de caracteres especiais
     - `Média` · Lucas Cabral · CX
-- [ ] **SGV-6975** — Erro 503 ao ativar clientes com status "Em implantação"
+- [x] **[[QA Workspace/02 Demandas/Concluídas/6975 - Bug Erro 503 Ativar Cliente Em Implantação|SGV-6975]]** — Erro 503 ao ativar clientes com status "Em implantação" ✅ 2026-07-21 → **aprovada em homologação**, card em Concluídas
     - `Média` · Matheus Godoi · Sanidade-006
 - [ ] **SGV-6083** — Edição de documento não atualiza o conteúdo na assinatura ou download
     - `Média` · Matheus Godoi
