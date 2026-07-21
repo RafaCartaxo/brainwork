@@ -29,6 +29,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
 | Exportei .md do Notion (não sei o tipo) | — | Pedir "processa o material novo" — o [[../Agentes/AGENTE_PROCESSAR_EXPORT\|agente]] classifica e roteia |
 | Tenho um MR do GitLab pra revisar o escopo | — | Colar o link (+ problema original, se tiver) → [[../Skills/SKILL_REVISAO_ESCOPO_MR\|SKILL_REVISAO_ESCOPO_MR]] |
+| Quero conferir um bug/demanda contra a documentação | — | Identificar o módulo → cruzar contra `04 Conhecimento/Módulos/` → [[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]] |
 | Quero que a IA organize tudo que ficou cru | — | Pedir "organiza a daily" — cobre parte mecânica + classificação ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) |
 
 ---
@@ -72,6 +73,8 @@ O ciclo completo de vida do bug está em [[../../QA Workspace/02 Demandas/README
 ### 3b–3d. Validar em DEV / HML / Hotfix
 Executar CTs → gravar evidência → frase padrão na daily. Aprovou? Mover card pra próxima pasta (DEV→HML→Concluídas). Reprovou? Reabrir + pendência de revalidação. Regras de movimentação: [[../Contexto/PADROES_QA#Organização de Bugs\|PADROES_QA]].
 
+Ao validar, cruzar o comportamento aprovado contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]) — se o que foi aprovado contradiz a doc, ela provavelmente está desatualizada (decisão de Produto + pendência de atualizar).
+
 ### 3e. Descartar
 `status: descartado` → CTs marcados Sim → mover pra `99 Arquivo/` → `🗑️` na daily. Regra completa: [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|PADROES_QA]].
 
@@ -95,6 +98,8 @@ Guia completo em [[../../QA Workspace/Evidências/README\|Evidências/README]].
 ## 6. Refinar demanda já cadastrada
 
 Material bruto em `05 Refinar/` → análise na mesa ([[../Templates/Refinamento.md|Refinamento.md]]) → card destilado → Notion atualizado → mesa arquivada em `04 Conhecimento/`. Regras completas: [[../../QA Workspace/05 Refinar/README\|05 Refinar/README]].
+
+Ao definir o **resultado esperado** e os **critérios** da mesa, cruzar contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]) antes de destilar o card — confirma o critério ou expõe divergência doc × comportamento.
 
 ## 7. Fechar o dia
 

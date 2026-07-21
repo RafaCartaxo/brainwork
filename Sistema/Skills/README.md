@@ -19,3 +19,4 @@ Instruções de referência para atividades de QA. Diferente de [[../Agentes/REA
 | [[SKILL_LIMPEZA_EXPORT]] | Limpar .md bruto exportado do Notion (3 modos: mesa, card direto, documentação) |
 | [[SKILL_TRIAGEM_SPRINT]] | Processar view de sprint do Notion (agrupar por status, cruzar com vault) |
 | [[SKILL_REVISAO_ESCOPO_MR]] | Revisar escopo de MR via git fetch, levantar cenários de teste |
+| [[SKILL_VERIFICACAO_DOC]] | Cruzar bug/demanda contra a doc de módulo (04 Conhecimento) — confirma critério ou expõe divergência |

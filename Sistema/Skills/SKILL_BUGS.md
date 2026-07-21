@@ -136,7 +136,7 @@ Os passos devem permitir reprodução do problema.
 
 ### Resultado Esperado
 
-Descrever claramente o comportamento correto.
+Descrever claramente o comportamento correto. Ao defini-lo, cruzar contra a doc do módulo ([[SKILL_VERIFICACAO_DOC]]) — a doc respalda o resultado esperado, ou há divergência a registrar.
 
 ### Critérios de Aceite
 
