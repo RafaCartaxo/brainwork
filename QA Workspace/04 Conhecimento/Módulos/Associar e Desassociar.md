@@ -23,7 +23,15 @@ Associar um documento é a funcionalidade que permite vincular um documento a ou
 
 ## Permissões e visibilidade
 
-- **Quem pode associar/desassociar**: usuário com permissão **N1 (Especialista), N2 (Usuário básico), Adm ou Adm setorial** — do setor dono **ou** de um setor envolvido *("Especialista"/"Usuário básico" são a nomenclatura nova de N1/N2 — confirmado com Rafael em 2026-07-17, só renomeação, mesma regra)*;
+> [!info] Legenda canônica dos níveis de permissão (referência do vault)
+> Hierarquia, do maior pro menor acesso: **Adm › Adm Setorial › N1 › N2 › Somente Leitura**.
+> - **N1** = "Especialista" (nomenclatura nova; só renomeação, mesma regra — confirmado com Rafael em 2026-07-17);
+> - **N2** = "Usuário básico", exibido em algumas telas como **"Básico"** (ex.: Organograma);
+> - **Somente Leitura** = nível à parte, abaixo do N2 (confirmado com Rafael em 2026-07-20).
+>
+> Outros docs (`Organograma`, `Workflow`, `Assinaturas`, `Mesa de trabalho`) usam a forma crua N1/N2 — todos apontam pra esta legenda.
+
+- **Quem pode associar/desassociar**: usuário com permissão **N1 (Especialista), N2 (Usuário básico), Adm ou Adm setorial** — do setor dono **ou** de um setor envolvido;
 - **Busca limitada ao acesso**: o usuário só busca documentos aos quais tem acesso. Documento válido/existente mas sem acesso: **é exibido, mas não permite associar**;
 - **Visibilidade da associação**: uma vez associado, **todos os envolvidos no documento principal** passam a ver o documento associado;
 	- **Restrição de ação**: quem só tem acesso ao associado por estar envolvido no principal (sem permissão intrínseca) apenas **visualiza** — nenhuma ação é permitida lá dentro (experiência análoga ao acesso via "mesas alheias");

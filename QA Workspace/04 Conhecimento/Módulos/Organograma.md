@@ -139,12 +139,12 @@ O contador de servidores de cada setor (antes estático) funciona como gatilho p
 
 ### Edição de regras de tramitação de setores (fluxo de aprovação de permissão)
 
-Funcionalidade que formaliza um fluxo de governança pra edição de regras de tramitação: usuários designados (Adm Setorial e Especialistas) solicitam permissão de edição de forma controlada, com justificativa obrigatória e aprovação centralizada — pra rastreabilidade e segurança sobre alterações críticas nos fluxos de trabalho.
+Funcionalidade que formaliza um fluxo de governança pra edição de regras de tramitação: usuários designados (Adm Setorial e N1/Especialistas) solicitam permissão de edição de forma controlada, com justificativa obrigatória e aprovação centralizada — pra rastreabilidade e segurança sobre alterações críticas nos fluxos de trabalho.
 
 **Ponto de controle único**: aprovar/reprovar uma solicitação acontece exclusivamente na tela de Gerenciamento de Servidores. Notificações por e-mail e alertas na plataforma são apenas atalhos pra esse ponto de decisão.
 
 **Quem pode aprovar**:
-- Ambiente cliente: Administradores, Administradores Setoriais, Especialistas;
+- Ambiente cliente: Administradores, Administradores Setoriais, N1 (Especialistas);
 - Ambiente SOGO: Administradores SOGO, Analistas, Suporte.
 
 **Onde solicitar**: na tela de edição do setor, acessada via organograma.
@@ -169,10 +169,10 @@ Funcionalidade que formaliza um fluxo de governança pra edição de regras de t
 - Recusa: "[Nome do Aprovador] recusou permissão de edição de regras de tramitação para $Assinatura_textual em [Data]";
 - Remoção pós-aprovação: "[Nome do Aprovador] removeu a permissão de edição de regras de tramitação para $Assinatura_textual em [Data]".
 
-**Permissões e visualização por perfil**:
-- ADMs: visualização **global** de todas as solicitações e edições; por default, checkbox "Regras de tramitação" vem marcado no container de Permissões Globais, com poder de conceder a permissão a Adms Setoriais e Especialistas;
-- ADMs Setoriais e Especialistas: visualização restrita aos setores em que **tiverem essa permissão especificamente** (exemplo do export: um especialista lotado em 5 setores, com a permissão em apenas 2, só visualiza/aprova/recusa nesses 2). Checkbox vem **desmarcado** por default nesses níveis; pode ser concedido por outros ADMs/ADMs Setoriais/Especialistas que tenham permissão para tal;
-- Usuários de nível **Básico e Somente Leitura não visualizam** essa permissão/funcionalidade.
+**Permissões e visualização por perfil** (nomenclatura de níveis: `N1 (Especialista)`, `N2 (Usuário básico, exibido como "Básico")` e `Somente Leitura` — nível à parte, abaixo do N2; ver legenda canônica em [[Associar e Desassociar#Permissões e visibilidade]]):
+- ADMs: visualização **global** de todas as solicitações e edições; por default, checkbox "Regras de tramitação" vem marcado no container de Permissões Globais, com poder de conceder a permissão a Adms Setoriais e N1 (Especialistas);
+- ADMs Setoriais e N1 (Especialistas): visualização restrita aos setores em que **tiverem essa permissão especificamente** (exemplo do export: um N1 lotado em 5 setores, com a permissão em apenas 2, só visualiza/aprova/recusa nesses 2). Checkbox vem **desmarcado** por default nesses níveis; pode ser concedido por outros ADMs/ADMs Setoriais/N1 que tenham permissão para tal;
+- Usuários de nível **N2 (Básico) e Somente Leitura não visualizam** essa permissão/funcionalidade.
 
 ### Limite de caracteres em siglas
 
@@ -196,7 +196,7 @@ Eventos registrados (lista literal do export), agrupados em três blocos:
 
 **1. Dados do setor/subsetor**: criação de setor/subsetor; alteração de nome, sigla, setor pai (subsetor), observações (adição/remoção/alteração) e telefone (adição/remoção/alteração) — cada ação com sua variação para setor e para subsetor.
 
-**2. Regras de tramitação** (aplicável a operações no ambiente Sogov ou módulos específicos): adição/remoção de módulo e de assunto/serviço nas regras de Criação de Documentos, Recebimento e Tramitação de Documentos, Interação com o Cidadão, Visualização de Dados Sigilosos e Disponibilidade para Recebimento de Documentos — cada uma com variação setor/subsetor.
+**2. Regras de tramitação** (aplicável a operações no ambiente Sogov ou módulos específicos): adição/remoção de módulo e de assunto/serviço nas regras de Criação de Documentos, Recebimento e Tramitação de Documentos, Interação com o Cidadão, Visualização de Dados Sigilosos e Disponibilidade para Recebimento de Documentos — cada uma com variação setor/subsetor. (Essas mesmas categorias de regra são configuradas por serviço em [[Serviços e Assuntos]] e por etapa em [[Fluxo de trabalho (Workflow)]].)
 
 **3. Demais regras e status** (espelhados inclusive se alterados via Perfil do Servidor): adicionar/remover usuário do setor/subsetor; alterar cargo do usuário no setor/subsetor; alterar nível de permissão do usuário no setor/subsetor; modificar setor para subsetor (e vice-versa); suspender/reativar setor ou subsetor.
 
@@ -213,6 +213,7 @@ Eventos registrados (lista literal do export), agrupados em três blocos:
 
 ## Referências
 <!-- Docs do repo (caminho), cards relacionados ([[SGV-XXXX]]), links externos, leis -->
+- Módulos relacionados: [[Serviços e Assuntos]] e [[Fluxo de trabalho (Workflow)]] — consomem as regras de tramitação por setor definidas aqui
 - Card de bug relacionado (não documentação, mas toca o mesmo módulo): [[../../02 Demandas/DEV/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977 - Timeout na edição de regras do Organograma]]
 - Feature de permissões referenciada no export: [Usuários e gerenciamento de permissões](https://app.notion.com/p/Usu-rios-e-gerenciamento-de-permiss-es-1eeb22fe245143b4a412209763906be7)
 - Protótipo Figma (Visualização de servidores por setor): https://www.figma.com/design/oFhUaElUXOBns9E400kswH/Organograma---Handoff?node-id=383-1625

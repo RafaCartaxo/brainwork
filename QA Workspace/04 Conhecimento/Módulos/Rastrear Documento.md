@@ -19,7 +19,7 @@ fonte_ultima_edicao: 2026-03-25 (Edu)
 
 ## Visão geral
 
-Feature de busca global de documentos, acessível a partir de um botão "Rastrear Documento" no topheader do SOGOV (disponível em qualquer área da plataforma, para usuário servidor já logado). Antes desta feature, a localização de documentos fora da Central de Atendimento (busca por código de rastreio) só era possível pela Mesa de Trabalho do próprio servidor, limitada aos setores dos quais ele participava.
+Feature de busca global de documentos, acessível a partir de um botão "Rastrear Documento" no topheader do SOGOV (disponível em qualquer área da plataforma, para usuário servidor já logado). Antes desta feature, a localização de documentos fora da Central de Atendimento (busca por código de rastreio) só era possível pela [[Mesa de trabalho]] do próprio servidor, limitada aos setores dos quais ele participava.
 
 A busca abre em um modal (mantendo o usuário no contexto/área em que estava) e oferece dois modos alternáveis por toggle:
 - **Busca padrão**: filtros avançados (texto, tipo de documento, período, escopo de setor);
@@ -60,9 +60,9 @@ O usuário pode definir o escopo da busca padrão entre seus próprios setores (
 - **Código inválido** → erro "Código inválido";
 - **Código válido + acesso permitido**: modal exibe card único com dados do documento, clicável, pode abrir em nova aba;
 - **Código válido + acesso restrito**: modal exibe card informativo com dados públicos do documento e indicação "Sem acesso"; card não é clicável;
-- **Documentos associados**: se o documento buscado tiver documentos associados, a existência de emissão/tramitação deles é exibida, mas só é acessível se o usuário/setor tiver permissão;
+- **Documentos associados** (ver [[Associar e Desassociar]]): se o documento buscado tiver documentos associados, a existência de emissão/tramitação deles é exibida, mas só é acessível se o usuário/setor tiver permissão;
 - **Usuários com permissão de visualizar mesas alheias**: mantêm essa permissão na busca (maior retorno possível de documentos acessíveis), mas continuam restritos a nível de pessoa/setor para documentos sigilosos;
-- **Documentos sigilosos**: seguem a mesma regra já existente hoje para mesas — são visíveis/buscáveis, mas só exibem a tramitação (não o conteúdo de abertura, despachos e afins), igual à regra atual de demandas sigilosas.
+- **Documentos sigilosos**: seguem a mesma regra já existente hoje para mesas (ver [[Mesa de trabalho]]) — são visíveis/buscáveis, mas só exibem a tramitação (não o conteúdo de abertura, despachos e afins), igual à regra atual de demandas sigilosas.
 
 ### Busca em setores que não participo (Fluxo C)
 
@@ -78,7 +78,7 @@ O usuário pode definir o escopo da busca padrão entre seus próprios setores (
 
 ### Filtros adicionais — busca por conteúdo e documentos importados
 
-- **Checkbox "Buscar por conteúdo do documento"**: habilita busca textual dentro do corpo/arquivo do documento, seguindo os mesmos parâmetros técnicos já estabelecidos na Mesa de Trabalho. Desmarcado por padrão, não obrigatório;
+- **Checkbox "Buscar por conteúdo do documento"**: habilita busca textual dentro do corpo/arquivo do documento, seguindo os mesmos parâmetros técnicos já estabelecidos na [[Mesa de trabalho]]. Desmarcado por padrão, não obrigatório;
 - **Checkbox "Buscar apenas por documentos importados"**: restringe resultados a documentos com flag de importação, respeitando os demais filtros ativos. Desmarcado por padrão, não obrigatório;
 - **Fallback**: se nenhum dos dois checkboxes estiver marcado, a busca ocorre só nas informações básicas visíveis no card/listagem;
 - **Pills de feedback visual** nos resultados: "Conteúdo do documento" (quando busca interna ativa) e "Documentos importados" (quando restrição de origem ativa) — mantidos mesmo em listagens com scroll infinito/paginação;
