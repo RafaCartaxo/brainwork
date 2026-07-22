@@ -92,6 +92,10 @@ QA Workspace/
 | [[Sistema/Skills/SKILL_LIMPEZA_EXPORT.md\|SKILL_LIMPEZA_EXPORT.md]] | Limpeza de .md bruto exportado do Notion (3 modos: mesa, card direto, documentação) |
 | [[Sistema/Skills/SKILL_TRIAGEM_SPRINT.md\|SKILL_TRIAGEM_SPRINT.md]] | Processar view de sprint do Notion (agrupar por status, cruzar com vault) |
 | [[Sistema/Skills/SKILL_REVISAO_ESCOPO_MR.md\|SKILL_REVISAO_ESCOPO_MR.md]] | Acessar MR do GitLab via `git fetch`, confirmar escopo, levantar cenários de teste implementados, decidir entre revisar card existente ou criar direto com critérios reescritos |
+| [[Sistema/Skills/SKILL_REFINAMENTO.md\|SKILL_REFINAMENTO.md]] | Conduzir a mesa de refinamento (05 Refinar) até o card destilado — gate de doc, CTs, encadeia pra validação/automação |
+| [[Sistema/Skills/SKILL_VERIFICACAO_DOC.md\|SKILL_VERIFICACAO_DOC.md]] | Cruzar bug/demanda contra a doc de módulo (04 Conhecimento) — confirma critério ou expõe divergência |
+| [[Sistema/Skills/SKILL_INICIAR_AUTOMACAO.md\|SKILL_INICIAR_AUTOMACAO.md]] | Levar card validado ao início da automação e2e — gates, onde escrever, o que reaproveitar |
+| [[Sistema/Skills/SKILL_REVISAO_AUTOMACAO_E2E.md\|SKILL_REVISAO_AUTOMACAO_E2E.md]] | Revisar código de teste e2e (padrão + coerência de asserts) antes de subir |
 
 ## Contexto
 | Arquivo | Finalidade |
@@ -109,6 +113,7 @@ QA Workspace/
 | [[Sistema/Agentes/AGENTE_MIGRACAO_CARDS\|AGENTE_MIGRACAO_CARDS]] | Movimentação atômica de cards entre pastas da esteira (wikilinks + frontmatter + Histórico) |
 | [[Sistema/Agentes/AGENTE_STATUS_REUNIAO\|AGENTE_STATUS_REUNIAO]] | Regenera o bloco Status — reunião (Fiz/Foco/Travas) a partir da daily |
 | [[Sistema/Agentes/AGENTE_FILA\|AGENTE_FILA]] | Organizador da fila: agrupa por natureza, sinaliza idade (🕐) e bloqueio (⏳), move concluídos, alerta zumbis +7d |
+| [[Sistema/Agentes/AGENTE_VALIDACAO_DOC\|AGENTE_VALIDACAO_DOC]] | Rede de segurança do gate de doc: sinaliza cards aprovados sem cruzamento contra doc do módulo (levanta pendência ⏳) |
 
 ## Organização de Bugs
 - Todo bug usa o [[Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
