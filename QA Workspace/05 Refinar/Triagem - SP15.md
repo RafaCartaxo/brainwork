@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export ainda incompleto: 53 de 75 cards
 > O export de 22/07 continua cortando no "Load more" — captura 53 cards, mas o rodapé do Notion agora diz **Count 75** (antes o total estimado era 60). Faltam ~22 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui). **11 cards que estavam na triagem antiga não vieram neste corte** (ver seção "Fora do export atual" no fim) — preservados, não apagados.
 
-> [!tip] Progresso: **16/64** batidos (53 no export + 11 preservados fora do corte — atualizado 2026-07-22 pós-reconciliação)
-> Homologação `1/7` · Teste dev `5/10` · Testando HML `0/2` · Revisar MR `2/7` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `3/11`
+> [!tip] Progresso: **17/64** batidos (53 no export + 11 preservados fora do corte — atualizado 2026-07-22 pós-reconciliação)
+> Homologação `1/7` · Teste dev `5/10` · Testando HML `0/2` · Revisar MR `2/7` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (7) — ação QA imediata
@@ -212,7 +212,7 @@ responsavel: Rafael
     - `Baixa` · Matheus Godoi · era **Pronto pra teste em dev**
 - [ ] **SGV-9808** — Documento, mesmo assinado, continua com status de "assinatura pendente"
     - `Baixa` · João Marcelo · CX · relacionado: 9809, 9870, 9842 · era **Disponível para homologação**
-- [ ] **SGV-8380** — Referência de resposta em despachos exibida incorretamente na cadeia de respostas
+- [x] **[[QA Workspace/02 Demandas/Concluídas/8380 - Bug Referencia Resposta Despacho Cadeia Respostas|SGV-8380]]** — Referência de resposta em despachos exibida incorretamente na cadeia de respostas ✅ 2026-07-22 → aprovada em HML
     - `Baixa` · Diogo Sobreira · era **Disponível para homologação**
 - [ ] **SGV-8395** — Comentários do evento de abertura não são incluídos ao baixar pelo download personalizado
     - `Baixa` · Matheus Godoi · era **Backlog**
@@ -233,4 +233,5 @@ responsavel: Rafael
 - 2026-07-17 - Correção: SGV-9474 tinha ficado de fora da lista na montagem (erro de transcrição) — incluído em Em produção; grupo agora com 7
 - 2026-07-17 - Segunda batida (12/53): **9610** → refinado de ponta a ponta (card no vault com CTs, análise no Notion, mesa arquivada em 04 Conhecimento); **7074** → critérios sendo construídos com Lucas Beninca. Painel de progresso adicionado no topo (contador geral + por grupo)
 - 2026-07-22 - Batida (16/53): **3412** (Backlog) → aprovada em DEV, card criado em modo enxuto em `02 Demandas/HML/` (segue pra validação em HML). Backlog 1→2/7
+- 2026-07-22 - Batida (17/64): **8380** (Fora do export atual) → aprovada em HML, card criado em modo enxuto em `02 Demandas/Concluídas/`. Fora do export 3→4/11
 - 2026-07-22 - **Reconciliação com novo export (22/07 13:25)**. Export ainda incompleto: 53 cards, mas Notion agora diz Count 75 (antes ~60). **11 cards novos** entraram: 10246, 10231, 10193, 10166, 10143 (produção/revisar/dev), 7935, 7337, 6427, 6136, 6094, 8129. **20 mudanças de status** aplicadas (Notion → grupo da triagem), preservando marcações e decisões do vault: 9458/9093/5783/6873/6348 (Revisar MR→Teste dev), 9036 (Em dev→Revisar MR), 6568 (Impedimento→Revisar MR), 5245 (Backlog→Revisar MR), 5360 (Backlog→Em dev), 8870 (Não reproduzido→Homologação), 3820 (Homologação→Testando HML), 9772 (Em dev→Aguardando CX), 7829 (Revisar MR→Impedimento), 9959 (Teste dev→Homologação), 9750 (Revisar MR→Homologação), 3786 (Em dev→Não reproduzido), 3413 (Backlog→Não reproduzido, bate com descarte do vault), 3412 (Backlog→[QA] Aprovado no Dev, bate com o vault), 5273/6975 (Homologação→Aprovado por QA, batem com o vault). **11 cards saíram do corte** (9610, 9963, 8977, 9692, 9548, 9808, 8380, 8395, 9430, 5548, 9474) → movidos pra seção "Fora do export atual", trabalho preservado (não apagados). Contadores recontados por grupo.
