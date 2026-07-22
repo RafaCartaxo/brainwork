@@ -78,9 +78,9 @@ responsavel: Rafael
 - [ ] **SGV-3820** — Erro ao criar despacho e assinar documento via workflow
     - `Altíssima` · Washington Junior · API
     - ⚠️ Notion mudou de **Disponível para homologação → Testando em homologação** (22/07)
-- [ ] **SGV-6906** — Não é possível assinar documento em instância Em Implantação
+- [ ] **[[QA Workspace/02 Demandas/HML/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]** — Não é possível assinar documento em instância Em Implantação
     - `Média` · Lucas Lacerda · Sanidade-005
-    - Validação em HML iniciada e impedida (HML não envia e-mail de cadastro) — ver daily 22/07
+    - 🔴 Reaberta em HML (22/07): impedimento de e-mail contornado; bug original resolvido (assinatura Em Implantação OK), mas documentos de teste ganham numeração e escapam da limpeza de "Sem numeração" da implantação — permanecem válidos na base. Card criado, aguardando dev corrigir — ver daily 22/07
 
 ## Revisar MR (7) — esteira dev, revisar cenários quando couber
 

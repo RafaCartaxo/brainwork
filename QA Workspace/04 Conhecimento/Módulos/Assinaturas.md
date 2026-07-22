@@ -278,6 +278,7 @@ Removido background da página PAdES e bordas dos selos; hash abaixo da identifi
 ## Dúvidas em aberto
 - [ ] As três atualizações de 2026 (Página Extra, Reposicionamento de selos, PJ sem responsável legal) vieram só como título no export — buscar o conteúdo no Notion e completar aqui
 - [ ] Regras do documento Pausado × assinatura dependem do doc "Pausar documento" do Notion — importar também?
+- [ ] Assinatura em instância **Em Implantação** × numeração e limpeza da implantação: a doc não cobre a regra de que a implantação apaga documentos "Sem numeração", nem como a numeração é atribuída no contexto Em Implantação (gap detectado em 2026-07-22, HML — ver [[QA Workspace/02 Demandas/HML/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]). Importar doc que descreva o comportamento da implantação (fluxo 8)
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
