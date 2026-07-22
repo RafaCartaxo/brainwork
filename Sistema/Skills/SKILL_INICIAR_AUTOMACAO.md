@@ -47,7 +47,7 @@ Gate aberto → registrar bloqueio na fila da daily como pendência `⏳` com o 
 3. **Escrever o(s) teste(s)** seguindo o guia do repo `.claude/agents/criar-teste-e2e.md` (convenções, estrutura, selectors, personas). Reaproveitar antes de criar.
 4. **Rodar localmente** contra o ambiente-alvo e confirmar verde — incluindo regressão dos fluxos que o fix tocou.
 5. **Entregar pra revisão** via [[SKILL_REVISAO_AUTOMACAO_E2E]] antes do commit/MR.
-6. **Registrar na daily** (`## Atividades → ### Planejamento`, copies do [[QA Workspace/01 Daily/README|01 Daily/README]]) o início/andamento, com wikilink pro card; atualizar o Histórico do card quando a cobertura automatizada existir.
+6. **Registrar na daily** (`## Atividades → ### Planejamento`, copies do [[../../QA Workspace/01 Daily/README|01 Daily/README]]) o início/andamento, com wikilink pro card; atualizar o Histórico do card quando a cobertura automatizada existir.
 
 ## Resultado Esperado
 

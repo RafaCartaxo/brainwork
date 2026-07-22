@@ -21,3 +21,4 @@ Instruções de referência para atividades de QA. Diferente de [[../Agentes/REA
 | [[SKILL_REVISAO_ESCOPO_MR]] | Revisar escopo de MR via git fetch, levantar cenários de teste |
 | [[SKILL_REVISAO_AUTOMACAO_E2E]] | Revisar código de teste e2e (padrão + coerência de asserts) antes de subir |
 | [[SKILL_VERIFICACAO_DOC]] | Cruzar bug/demanda contra a doc de módulo (04 Conhecimento) — confirma critério ou expõe divergência |
+| [[SKILL_INICIAR_AUTOMACAO]] | Ir de um card validado ao início da automação — gates (validação + ambiente), onde escrever e o que reaproveitar |
