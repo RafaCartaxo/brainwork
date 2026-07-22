@@ -7,7 +7,7 @@ tags:
 
 Agentes são comportamentos autônomos do vault — eles executam ações sem intervenção humana, seguindo regras pré-definidas.
 
-Diferente de [[../Skills|Skills]] (que são instruções de referência para você ou a IA seguir quando solicitado), agentes **disparam sozinhos** em resposta a gatilhos específicos.
+Diferente de [[../Skills/README|Skills]] (que são instruções de referência para você ou a IA seguir quando solicitado), agentes **disparam sozinhos** em resposta a gatilhos específicos.
 
 ## Agentes ativos
 

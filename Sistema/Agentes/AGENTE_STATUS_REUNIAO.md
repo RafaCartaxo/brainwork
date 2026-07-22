@@ -30,7 +30,7 @@ Escaneia as seções:
 
 ### 2. Aplica as regras do bloco
 
-**Regras oficiais** (definidas em [[../../../QA Workspace/01 Daily/README#Status — reunião (primeira seção da daily)\|01 Daily/README]]):
+**Regras oficiais** (definidas em [[../../QA Workspace/01 Daily/README#Status — reunião (primeira seção da daily)\|01 Daily/README]]):
 
 - **Lista rastreável, sem limite de itens**: um item por linha, sem cortar pra caber num tamanho fixo
 - **Emoji + numeração na frente**: mesmo padrão das Atividades

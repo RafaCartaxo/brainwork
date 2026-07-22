@@ -181,7 +181,7 @@ Para cada servidor, gerar **2 documentos por módulo**. Para documentos e comuni
 **Ativar o cliente.**
 
 ## Automação
-- Repo: `sogov-automation-test` ([[../../../../project_sogov_automation_repo|nota do projeto]] / GitLab).
+- Repo: `sogov-automation-test` (nota do projeto de automação / GitLab).
 - O **passo 2** (dados gerais do cliente) já tem infra no repo: comando `createInstance` + `getInstanceOrCreate` e factory `makeInstance` (`cypress/support/commands/api/instance.api.commands.js`), hoje usados só como setup em `support/e2e.js`, **sem spec dedicado**. Este roteiro é a fonte manual pra derivar o CT `create.instance` (happy path + negativos).
 - Passos 4–13 têm comandos análogos no repo (`getSectorOrCreate`, `getModuleOrCreate`, assuntos/serviços) — candidatos a virar specs de sanidade automatizados.
 

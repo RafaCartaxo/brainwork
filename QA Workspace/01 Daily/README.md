@@ -21,7 +21,7 @@ O mesmo vale pra **melhorias (MEL)**: a partir do momento em que a melhoria tem 
 **Vale pra todo lugar onde a numeração aparece** — inclusive **Pendências de ontem**, **A fazer hoje** e **Pendente para amanhã**: se o card existe, a citação é link (da Dashboard, que renderiza a fila, vira acesso de um clique). Sem card, texto puro, como sempre. O botão 🔄 Atualizar linkifica sozinho as linhas de fila que estiverem em texto puro.
 
 ## Regra de reabertura
-Quando um bug for reaberto (voltou a falhar depois de já ter sido considerado resolvido/aprovado em algum ambiente), além de registrar em **Atividades** do dia, adicionar um item na fila (A fazer hoje) pra lembrar de revalidar mais tarde, com o SGV linkado pro card (ex.: "[[card|SGV-9237]] - Revalidar (reaberta novamente em homologação)").
+Quando um bug for reaberto (voltou a falhar depois de já ter sido considerado resolvido/aprovado em algum ambiente), além de registrar em **Atividades** do dia, adicionar um item na fila (A fazer hoje) pra lembrar de revalidar mais tarde, com o SGV linkado pro card (ex.: `"[[card|SGV-9237]] - Revalidar (reaberta novamente em homologação)"`).
 
 ## Regra de conclusão de pendência
 Toda vez que um item de **A fazer hoje** (retestar, revalidar, gravar evidência, etc.) for marcado como feito, o resultado entra automaticamente como uma linha em **Atividades** (no ambiente correspondente: DEV/HML/POCs) — não basta só marcar o checkbox. Isso fecha o ciclo com a Regra de reabertura acima: reabriu → vira pendência; pendência resolvida → vira atividade com o resultado.

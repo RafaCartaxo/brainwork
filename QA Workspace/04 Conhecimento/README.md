@@ -27,7 +27,7 @@ Notas de documentação usam o template [[../../Sistema/Templates/Conhecimento.m
 
 ## Análises de refinamento (primeiro tipo estruturado)
 
-Quando um refinamento do [[../05 Refinar/README|05 Refinar]] é concluído ([[../../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada (Notion → vault)|fluxo 6]]), o arquivo de mesa de trabalho ([[../../Sistema/Templates/Refinamento.md|Refinamento.md]]) é **arquivado aqui** — com a análise completa (causa raiz, evidências, hipóteses descartadas, decisões dos pontos a definir) que **não entra no card**:
+Quando um refinamento do [[../05 Refinar/README|05 Refinar]] é concluído ([[../../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada|fluxo 6]]), o arquivo de mesa de trabalho ([[../../Sistema/Templates/Refinamento.md|Refinamento.md]]) é **arquivado aqui** — com a análise completa (causa raiz, evidências, hipóteses descartadas, decisões dos pontos a definir) que **não entra no card**:
 
 - Nome do arquivo: `<SGV> - Refinamento <título curto>.md` (mesmo título curto do card, prefixado por "Refinamento")
 - `status: refinado` no frontmatter (era `em_refinamento` na fila)

@@ -48,7 +48,7 @@ O título da seção no card de bug leva dois links de atalho:
 ```
 
 - **📁**: abre a pasta do ambiente inteira no gerenciador de arquivos. Mostra todos os vídeos daquele ambiente.
-- **🔍**: usa esquema de URI customizado (`evidencia://`) que abre o Nautilus em modo de busca pelo número do card. Infra: script `~/.local/bin/abrir-evidencia` + `.desktop` em `~/.local/share/applications/abrir-evidencia.desktop`. Só funciona em Linux/GNOME/Nautilus. Em outro computador, cai de volta pro link `file://`. Configuração completa: [[Sistema/Contexto/Plugins Instalados#Esquema de URI evidencia:// fora do Obsidian específico desta máquina|Plugins Instalados]].
+- **🔍**: usa esquema de URI customizado (`evidencia://`) que abre o Nautilus em modo de busca pelo número do card. Infra: script `~/.local/bin/abrir-evidencia` + `.desktop` em `~/.local/share/applications/abrir-evidencia.desktop`. Só funciona em Linux/GNOME/Nautilus. Em outro computador, cai de volta pro link `file://`. Configuração completa: [[Sistema/Contexto/Plugins Instalados#Esquema de URI `evidencia://` (fora do Obsidian, específico desta máquina)|Plugins Instalados]].
 
 ## Mesma gravação para mais de um card
 

@@ -10,7 +10,7 @@ modulo: associar-desassociar
 ---
 # Refinamento: [BUG-CX] Servidor não consegue associar documento na abertura de um novo documento
 
-> [!info]- Mesa de trabalho — [[../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada (Notion → vault)|fluxo 6]]
+> [!info]- Mesa de trabalho — [[../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada|fluxo 6]]
 > Análise e suposição vivem aqui — o card em `02 Demandas/` nasce do **Destilado**, limpo. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (`status: refinado`).
 > Automação (quando validar): [[SGV-9610 - Plano de Automação]].
 

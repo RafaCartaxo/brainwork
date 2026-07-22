@@ -82,7 +82,7 @@ Executar CTs → gravar evidência → **gate de doc (abaixo)** → frase padrã
 `status: descartado` → CTs marcados Sim → mover pra `99 Arquivo/` → `🗑️` na daily. Regra completa: [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|PADROES_QA]].
 
 ### 3f. Tasks só de API
-QA define critérios → dev implementa cenários → QA revisa → teste direto em homologação. Sem esteira DEV. Regras completas: [[../Contexto/PADROES_QA#Tasks de API\|PADROES_QA]].
+QA define critérios → dev implementa cenários → QA revisa → teste direto em homologação. Sem esteira DEV. Regras completas: [[../Contexto/PADROES_QA#Tasks de API (fluxo 3f)\|PADROES_QA]].
 
 ### 3g. Reprovação com bug novo (SGV próprio)
 Duas demandas nascem: a original reaberta + card novo pro bug. Marcar a pendência com `(reprovada em <ambiente>, bug SGV-YYYY aberto)` e o [[../Agentes/AGENTE_ORGANIZADOR\|organizador]] completa o resto.
