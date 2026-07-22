@@ -23,7 +23,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Validação reprovou **e** abriu bug novo (SGV próprio) | 3g | Marcar a pendência com `(reprovada em <ambiente>, bug SGV-YYYY aberto)` — o organizador completa o resto |
 | Tive ideia de melhoria do produto | 4 | Checkbox `**MEL-NNNN · Título**` em Melhorias propostas (próximo número: Dashboard) |
 | Gravei um vídeo de validação | 5 | [[../../QA Workspace/Evidências/README\|Evidências/README]] — renomear e mover **no mesmo dia** |
-| Chegou demanda já cadastrada pra refinar | 6 | Material bruto → `05 Refinar/` → análise na mesa → card destilado. Regras: [[../../QA Workspace/05 Refinar/README\|05 Refinar/README]] |
+| Chegou demanda já cadastrada pra refinar | 6 | Conduzir a mesa → [[../Skills/SKILL_REFINAMENTO\|SKILL_REFINAMENTO]] (material → `05 Refinar/` → Destilado → gate de doc → CTs → card) |
 | Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
 | Exportei documentação do projeto | 8 | Limpar → classificar → template Conhecimento.md → `04 Conhecimento/` |
 | Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
@@ -31,7 +31,8 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Tenho um MR do GitLab pra revisar o escopo | — | Colar o link (+ problema original, se tiver) → [[../Skills/SKILL_REVISAO_ESCOPO_MR\|SKILL_REVISAO_ESCOPO_MR]] |
 | Tenho um teste e2e pronto pra subir | — | Revisar padrão + coerência de asserts → [[../Skills/SKILL_REVISAO_AUTOMACAO_E2E\|SKILL_REVISAO_AUTOMACAO_E2E]] |
 | Quero conferir um bug/demanda contra a documentação | — | Identificar o módulo → cruzar contra `04 Conhecimento/Módulos/` → [[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]] |
-| Quero iniciar automação de um card | — | Conferir gates (card validado + fix no ambiente do Cypress) → repo `sogov-automation-test` → [[../Skills/SKILL_INICIAR_AUTOMACAO\|SKILL_INICIAR_AUTOMACAO]] |
+| Quero iniciar automação de um card | 3h | Conferir gates (card validado + fix no ambiente do Cypress) → repo `sogov-automation-test` → [[../Skills/SKILL_INICIAR_AUTOMACAO\|SKILL_INICIAR_AUTOMACAO]] |
+| Documento/card fora do padrão do vault | — | Revisar grafia/estrutura/copy oficial → [[../Skills/SKILL_PADRONIZACAO\|SKILL_PADRONIZACAO]] |
 | Quero que a IA organize tudo que ficou cru | — | Pedir "organiza a daily" — cobre parte mecânica + classificação ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) |
 
 ---
@@ -73,9 +74,9 @@ O ciclo completo de vida do bug está em [[../../QA Workspace/02 Demandas/README
 5. Pendência de cadastro no Notion na fila
 
 ### 3b–3d. Validar em DEV / HML / Hotfix
-Executar CTs → gravar evidência → frase padrão na daily. Aprovou? Mover card pra próxima pasta (DEV→HML→Concluídas). Reprovou? Reabrir + pendência de revalidação. Regras de movimentação: [[../Contexto/PADROES_QA#Organização de Bugs\|PADROES_QA]].
+Executar CTs → gravar evidência → **gate de doc (abaixo)** → frase padrão na daily. Aprovou? Mover card pra próxima pasta (DEV→HML→Concluídas) — movimentação atômica via [[../Agentes/AGENTE_MIGRACAO_CARDS\|AGENTE_MIGRACAO_CARDS]] (dispara ao marcar o checkbox com o resultado). Reprovou? Reabrir + pendência de revalidação. Regras de movimentação: [[../Contexto/PADROES_QA#Organização de Bugs\|PADROES_QA]].
 
-Ao validar, cruzar o comportamento aprovado contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]) — se o que foi aprovado contradiz a doc, ela provavelmente está desatualizada (decisão de Produto + pendência de atualizar).
+**Gate obrigatório antes de ✅ e de mover o card**: cruzar o comportamento aprovado contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]) e registrar o veredito. Aprovado contradiz a doc → decisão de Produto + pendência de atualizar; doc **não existe** → pendência de importar (fluxo 8). Rede de segurança: [[../Agentes/AGENTE_VALIDACAO_DOC\|AGENTE_VALIDACAO_DOC]] sinaliza aprovações sem esse registro.
 
 ### 3e. Descartar
 `status: descartado` → CTs marcados Sim → mover pra `99 Arquivo/` → `🗑️` na daily. Regra completa: [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|PADROES_QA]].
@@ -85,6 +86,9 @@ QA define critérios → dev implementa cenários → QA revisa → teste direto
 
 ### 3g. Reprovação com bug novo (SGV próprio)
 Duas demandas nascem: a original reaberta + card novo pro bug. Marcar a pendência com `(reprovada em <ambiente>, bug SGV-YYYY aberto)` e o [[../Agentes/AGENTE_ORGANIZADOR\|organizador]] completa o resto.
+
+### 3h. Após aprovar: preparar automação
+Fecha a ponte validação → automação. Card aprovado (idealmente em HML) e com CTs prontos → conferir os gates (card validado + fix no ambiente que o Cypress ataca) → [[../Skills/SKILL_INICIAR_AUTOMACAO\|SKILL_INICIAR_AUTOMACAO]] → escrever o teste (guia no repo `sogov-automation-test`) → revisar ([[../Skills/SKILL_REVISAO_AUTOMACAO_E2E\|SKILL_REVISAO_AUTOMACAO_E2E]]) → commit/MR + atualizar Histórico do card. Gates abertos → pendência `⏳` com o motivo, não iniciar.
 
 ## 4. Melhoria: da ideia ao cadastro
 
@@ -99,9 +103,9 @@ Guia completo em [[../../QA Workspace/Evidências/README\|Evidências/README]].
 
 ## 6. Refinar demanda já cadastrada
 
-Material bruto em `05 Refinar/` → análise na mesa ([[../Templates/Refinamento.md|Refinamento.md]]) → card destilado → Notion atualizado → mesa arquivada em `04 Conhecimento/`. Regras completas: [[../../QA Workspace/05 Refinar/README\|05 Refinar/README]].
+Conduzido pela [[../Skills/SKILL_REFINAMENTO\|SKILL_REFINAMENTO]]: material bruto em `05 Refinar/` → análise na mesa ([[../Templates/Refinamento.md|Refinamento.md]], regra das 2 pendências) → **gate de doc** → Destilado → **CTs** → card → Notion atualizado → mesa arquivada em `04 Conhecimento/`. Regras completas: [[../../QA Workspace/05 Refinar/README\|05 Refinar/README]].
 
-Ao definir o **resultado esperado** e os **critérios** da mesa, cruzar contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]) antes de destilar o card — confirma o critério ou expõe divergência doc × comportamento.
+Encadeamento do fim da mesa: ao fechar o Destilado (resultado esperado + critérios), **gate obrigatório** de cruzar contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]); depois criar o card ([[../Skills/SKILL_BUGS\|SKILL_BUGS]]) e os casos de teste ([[../Skills/SKILL_CASOS_DE_TESTE\|SKILL_CASOS_DE_TESTE]]) — um CT por critério de aceite.
 
 ## 7. Fechar o dia
 

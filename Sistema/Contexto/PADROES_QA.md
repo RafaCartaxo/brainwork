@@ -37,6 +37,9 @@ QA Workspace/
 │   └── SGV - Refinamento <título>.md (mesas de trabalho concluídas, status: refinado)
 ├── 05 Refinar/
 │   └── README.md (mesa de trabalho do refinamento — exports do Notion etc. no template Refinamento.md; concluído, arquiva em 04 Conhecimento/)
+├── 06 Estudos/
+│   ├── README.md (estrutura e regras — aprendizado ad hoc de fontes externas)
+│   └── <Tópico>.md (uma nota por tópico de estudo, template Estudo.md; gradua pra 04 Conhecimento quando vira regra estável)
 ├── 99 Arquivo/
 │   └── README.md (cards descartados — bugs/suspeitas que não ocorrem, melhorias descartadas)
 ├── Evidências/
@@ -60,8 +63,10 @@ QA Workspace/
     └── Templates/
         ├── Bug Report.md
         ├── Casos de teste.md
+        ├── Conhecimento.md
         ├── Daily Note.md
         ├── Demanda.md
+        ├── Estudo.md
         └── Refinamento.md
 ```
 
@@ -73,6 +78,8 @@ QA Workspace/
 | [[Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) |
 | [[Sistema/Templates/Daily Note.md\|Daily Note.md]] | Registro diário de atividades — lugar único de escrita do dia a dia |
 | [[Sistema/Templates/Refinamento.md\|Refinamento.md]] | Mesa de trabalho do refinamento (fluxo 6) — análise no arquivo, card nasce destilado |
+| [[Sistema/Templates/Conhecimento.md\|Conhecimento.md]] | Nota da base de conhecimento (04 Conhecimento) — módulo/fluxo/referência do sistema |
+| [[Sistema/Templates/Estudo.md\|Estudo.md]] | Nota de estudo ad hoc (06 Estudos) — aprendizado de fonte externa, em andamento |
 
 ## Skills
 | Arquivo | Finalidade |

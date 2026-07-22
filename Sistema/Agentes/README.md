@@ -18,12 +18,13 @@ Diferente de [[../Skills|Skills]] (que são instruções de referência para voc
 | [[AGENTE_ORGANIZADOR]] | 🔄 Atualizar (Dashboard) / "organiza a daily" (IA) / 7h (agendado) | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards, mantém a fila viva |
 | [[AGENTE_MIGRACAO_CARDS]] | Conclusão de pendência / "move o card" (IA) / verificação diária | Move cards entre pastas da esteira atualizando wikilinks, frontmatter e Histórico atomicamente |
 | [[AGENTE_STATUS_REUNIAO]] | 🔄 Atualizar / "status da reunião" (IA) / abertura da daily | Lê Atividades + fila da daily e gera o bloco Status — reunião (Fiz/Foco/Travas) |
+| [[AGENTE_VALIDACAO_DOC]] | 🔄 Atualizar / "organiza a daily" (IA) | Rede de segurança do gate de doc: sinaliza cards aprovados sem cruzamento contra a doc do módulo (levanta pendência ⏳) |
 
 ## Gatilhos compartilhados
 
 | Gatilho | Agentes disparados |
 |---|---|
-| 🔄 Atualizar (Dashboard) | AGENTE_ORGANIZADOR + AGENTE_FILA + AGENTE_MIGRACAO_CARDS + AGENTE_STATUS_REUNIAO |
+| 🔄 Atualizar (Dashboard) | AGENTE_ORGANIZADOR + AGENTE_FILA + AGENTE_MIGRACAO_CARDS + AGENTE_STATUS_REUNIAO + AGENTE_VALIDACAO_DOC |
 | "processa o material novo" | AGENTE_PROCESSAR_EXPORT |
 | "organiza a daily" | AGENTE_ORGANIZADOR (modo IA, classificação completa) |
 

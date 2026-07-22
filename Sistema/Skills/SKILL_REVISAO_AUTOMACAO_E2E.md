@@ -80,6 +80,9 @@ push. Rodar 2x pra descartar flake.
 |---|---|---|
 | `matters-services/matter-service.cy.js` (Criar Serviço) — 21/07/2026 | Criava "Assunto", mas o fluxo real capturado é "Serviço" (`type=SERVICES`); módulo chutado (`Alvarás` → `Precondition DO API`); a tela Casca era detectada por um testid inexistente → trocado pela classe estável `.casca-dialog` (senão o loop clicava no "Avançar" já coberto pelo modal → 60s de timeout); assert final na ordem errada (tem que vir DEPOIS de "Ajustar proporção", que dispara o `updateMatterService` `status:READY`); vários comentários desatualizados. | Ajustar antes de subir → depois **verde 2x seguidas** |
 
+## 6. Depois de aprovado
+"Pode subir" → commit/MR no repo de automação → registrar na daily (`### Planejamento`) e no **Histórico do card** que a cobertura automatizada existe (com link do MR). É o fecho da cadeia de automação — não deixar a revisão morrer no veredito.
+
 ## Resultado Esperado
 Crivo rápido e consistente de qualidade do teste e2e antes do commit/MR — mesmo veredito e
 formato toda vez, independente de quem (ou qual IA) revisa. A revisão em si não altera nada;

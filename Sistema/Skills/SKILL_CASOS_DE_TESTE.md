@@ -81,6 +81,14 @@ Sempre avaliar:
 - Exibição de informações
 - Cenários negativos quando aplicável
 
+### Completude (contrato com os critérios de aceite)
+
+Antes de dar os CTs por prontos, casar **CT ↔ critério** do card:
+
+- **Cada critério de aceite** tem ao menos **1 CT** que o exercita.
+- **Cada CT** amarra em pelo menos um critério (CT que não valida nenhum critério: remover ou justificar).
+- Nenhum critério fica descoberto — se faltar, escrever o CT antes de seguir pra validação.
+
 ### Evidências de Testes
 
 Mesmo processo de qualquer evidência do vault — ver [[../../QA Workspace/Evidências/README|Evidências/README]]. Vale pra caso de teste tanto quanto pra bug.

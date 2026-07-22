@@ -16,6 +16,16 @@ Cruzar o comportamento de um bug/demanda (o que foi relatado, o resultado espera
 | Ao criar card de bug ([[SKILL_BUGS]]) | ao definir **Resultado Esperado** e **Critérios de aceite**, checar se a doc respalda |
 | Ao validar/aprovar em HML (fluxo 3c) | quando o comportamento aprovado contradiz a doc → a doc provavelmente está desatualizada |
 
+## Gate obrigatório — antes de ✅ aprovar e antes de destilar o card
+
+Rodar esta verificação **não é opcional** nestes dois momentos:
+- **Ao destilar o card no refinamento** (fechar resultado esperado + critérios): cruzar contra a doc do módulo antes de fechar o Destilado.
+- **Antes de marcar `✅ aprovado`** numa validação (DEV/HML): cruzar o comportamento aprovado contra a doc **no momento da aprovação**, não em retrospectiva. Não marque ✅ nem mova o card pra próxima pasta antes de rodar a verificação e registrar o veredito.
+
+**Se a doc do módulo não existe:** não pule em silêncio. Registrar a lacuna e **abrir pendência "Importar doc de \<Módulo\> (fluxo 8)"** na fila da daily — ausência de doc é gap a preencher, não "ok, segue".
+
+Rede de segurança do gate: [[AGENTE_VALIDACAO_DOC]] varre, na organização da daily, cards aprovados sem esse registro e levanta pendência.
+
 ## 1. Achar a doc do módulo
 
 1. Identificar o **módulo** — do campo `módulo` do card/mesa, ou do título/descrição do bug (ex.: "Novo rastreio de documentos" → módulo **Rastrear Documento**).
