@@ -17,6 +17,10 @@ Diferente do [[../04 Conhecimento/README|04 Conhecimento]], que guarda o que já
 
 Começa plano (uma nota por tópico na raiz da pasta). Se um tema crescer muito, vira subpasta.
 
+## Motor de retenção — Engram
+
+Pra **reter** (não só ler), o estudo aqui roda no **Engram** (plugin do Claude Code, adotado 2026-07-22 — ver [[Ferramentas e Recursos (IA · dev · QA)]]): `/learn <tópico>` estuda com tutoria + avaliação cega, `/review` faz revisão espaçada (FSRS), `/coach` mostra retenção/stats. O Engram guarda o **agendamento de revisão** em `~/.claude/learning/` (fora do vault); a **nota do tópico aqui** continua sendo o registro legível que gradua pra `04 Conhecimento`. Um cuida de *quando revisar*, o outro do *conteúdo consolidado*.
+
 ## Regras de uso
 
 1. **Uma nota por tópico**, usando o template [[../../Sistema/Templates/Estudo.md\|Estudo.md]]. Tópico que já tem nota: acrescenta ali, não duplica.
