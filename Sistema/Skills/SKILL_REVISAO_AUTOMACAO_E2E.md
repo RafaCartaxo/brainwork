@@ -33,14 +33,17 @@ Comparar contra 2-3 irmãos (ex.: `processing/sign.document.cy.js`,
 - **Spec**: `describe("Entidade - Ação")`; `beforeEach` lê env
   (`INSTANCE_ID`/`AGENT_CPF`/`AGENT_PASSWORD`) e faz `loginAgent`; título `"[SUCESSO] Como
   <persona>, desejo <ação>"`; passos com `cy.log("AÇÃO N: ...")` / `PRECONDIÇÃO` / `RESULTADO`;
-  imports relativos; dados dinâmicos com `faker`.
-- **Command**: comentário ANTES de cada `Cypress.Commands.add`; divisórias `// ---`; comandos
-  best-effort recursivos com `attemptsLeft`; `scrollAndClick`/`scrollAndGet`; `cy.log("[CMD] ...")`
-  quando ajudar o diagnóstico.
+  imports relativos; dados de teste dinâmicos (`faker`) ou valores fixos.
+- **Command**: comandos não-triviais têm comentário antes do `Cypress.Commands.add` (os óbvios
+  podem não ter); arquivos maiores costumam usar divisórias `// ---`; comandos best-effort
+  recursivos com `attemptsLeft`; `scrollAndClick`/`scrollAndGet`; `cy.log("[CMD] ...")` quando
+  ajudar o diagnóstico. Nada disso é obrigatório em todo comando — é o estilo dominante, não regra
+  rígida (não reprovar um comando só por não ter comentário/divisória).
 - **Asserts**: baseados em toast/estado visível — `cy.contains('[data-testid="flashMessage-snackbar"]',
   <texto>).should('be.visible')` com timeout generoso (10-30s).
-- **Docs**: 2 arquivos — commands (assinatura + descrição + exemplo) e business-rules (fluxo +
-  gotchas + resultado esperado).
+- **Docs**: quando existem, ficam em dois lugares — `docs/commands/e2e/` (assinatura + descrição +
+  exemplo) e `docs/business-rules/e2e/` (fluxo + gotchas + resultado esperado). Nem toda feature
+  tem os dois (algumas só têm o de commands) — a ausência de um deles não é, por si, defeito.
 
 ## 3. Checklist de auditoria
 - [ ] **Padrão**: spec/command/docs batem com a seção 2?
@@ -70,6 +73,12 @@ push. Rodar 2x pra descartar flake.
 - **Achados** por gravidade: 🔴 crítico (contradição/bug) · 🟡 médio · ⚪ leve/opcional ·
   ✅ positivos confirmados. Cada um com `arquivo:linha` + sugestão.
 - **Decisão**: "pode subir" ou "ajustar X antes".
+
+## Exemplos reais
+
+| Feature | Achados | Decisão |
+|---|---|---|
+| `matters-services/matter-service.cy.js` (Criar Serviço) — 21/07/2026 | Criava "Assunto", mas o fluxo real capturado é "Serviço" (`type=SERVICES`); módulo chutado (`Alvarás` → `Precondition DO API`); a tela Casca era detectada por um testid inexistente → trocado pela classe estável `.casca-dialog` (senão o loop clicava no "Avançar" já coberto pelo modal → 60s de timeout); assert final na ordem errada (tem que vir DEPOIS de "Ajustar proporção", que dispara o `updateMatterService` `status:READY`); vários comentários desatualizados. | Ajustar antes de subir → depois **verde 2x seguidas** |
 
 ## Resultado Esperado
 Crivo rápido e consistente de qualidade do teste e2e antes do commit/MR — mesmo veredito e
