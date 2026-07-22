@@ -26,6 +26,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Chegou demanda já cadastrada pra refinar | 6 | Conduzir a mesa → [[../Skills/SKILL_REFINAMENTO\|SKILL_REFINAMENTO]] (material → `05 Refinar/` → Destilado → gate de doc → CTs → card) |
 | Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
 | Exportei documentação do projeto | 8 | Limpar → classificar → template Conhecimento.md → `04 Conhecimento/` |
+| Quero estudar/pesquisar algo (fonte externa) | — | Nota por tópico (template Estudo.md) → [[../../QA Workspace/06 Estudos/README\|06 Estudos]]; gradua pra `04 Conhecimento` quando vira regra estável |
 | Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
 | Exportei .md do Notion (não sei o tipo) | — | Pedir "processa o material novo" — o [[../Agentes/AGENTE_PROCESSAR_EXPORT\|agente]] classifica e roteia |
 | Tenho um MR do GitLab pra revisar o escopo | — | Colar o link (+ problema original, se tiver) → [[../Skills/SKILL_REVISAO_ESCOPO_MR\|SKILL_REVISAO_ESCOPO_MR]] |
