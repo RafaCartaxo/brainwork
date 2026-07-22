@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export incompleto: 53 de 60 cards
 > A view do Notion corta no "Load more" — faltam 7 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui).
 
-> [!tip] Progresso: **15/53** batidos (atualizado 2026-07-21)
-> Homologação `2/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `1/7` · Produção `0/7`
+> [!tip] Progresso: **16/53** batidos (atualizado 2026-07-22)
+> Homologação `2/9` · Teste dev `2/5` · Testando HML `0/1` · Revisar MR `9/11` · Em dev `1/4` · Impedimento `0/4` · Não reproduzido `0/5` · Backlog `2/7` · Produção `0/7`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (9) — ação QA imediata
@@ -140,7 +140,7 @@ responsavel: Rafael
     - Verificado diretamente por Rafael (20/07) — card criado já como descartado em `99 Arquivo/`, sem material de causa raiz disponível
 - [ ] **SGV-5245** — Nome do mês e ano incorretos no filtro de data da Mesa de Trabalho
     - `Média` · Lucas Lacerda
-- [ ] **SGV-3412** — Marcação automática incorreta de checkbox na Lista de Solicitações de Assinaturas
+- [x] **[[QA Workspace/02 Demandas/HML/3412 - Bug Marcação Automática Checkbox Lista Solicitações Assinaturas|SGV-3412]]** — Marcação automática incorreta de checkbox na Lista de Solicitações de Assinaturas ✅ 2026-07-22 → **aprovada em DEV**, card criado em `02 Demandas/HML/` (segue pra validação em HML)
     - `Média` · Squad 3
 - [ ] **[[QA Workspace/02 Demandas/DEV/9977 - Bug Nome Oculto Cópia Despacho|SGV-9977]]** — Nome do envolvido em cópia fica oculto no componente do despacho após emissão
     - `Baixa` · sem dev
@@ -180,3 +180,4 @@ responsavel: Rafael
 - 2026-07-17 - Primeira batida (10/53): 9458, 9093, 9633, 5783, 7829, 6873 → já possuem critérios; 9750, 9963, 8977, 9036 → já refinados, critérios no card. Investigações abertas: 6348 (mesmo caso da 6873?), 9692 (relação com 8977?), 7074 (critérios com Lucas Beninca)
 - 2026-07-17 - Correção: SGV-9474 tinha ficado de fora da lista na montagem (erro de transcrição) — incluído em Em produção; grupo agora com 7
 - 2026-07-17 - Segunda batida (12/53): **9610** → refinado de ponta a ponta (card no vault com CTs, análise no Notion, mesa arquivada em 04 Conhecimento); **7074** → critérios sendo construídos com Lucas Beninca. Painel de progresso adicionado no topo (contador geral + por grupo)
+- 2026-07-22 - Batida (16/53): **3412** (Backlog) → aprovada em DEV, card criado em modo enxuto em `02 Demandas/HML/` (segue pra validação em HML). Backlog 1→2/7
