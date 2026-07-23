@@ -29,9 +29,9 @@ responsavel: Rafael
     - `Alta` · Matheus Godoi · CX
 - [ ] **SGV-4995** — Contagem de dias incorreta ao configurar prazos em etapas com prazo oficial pré-definido
     - `Alta` · Matheus Godoi
-- [ ] **SGV-9959** — Inconsistência de status entre drawer de solicitação e evento de assinatura após recusa em assinatura sequencial
+- [x] **[[QA Workspace/02 Demandas/Concluídas/9959 - Bug Inconsistência Status Drawer Evento Recusa Assinatura Sequencial|SGV-9959]]** — Inconsistência de status entre drawer de solicitação e evento de assinatura após recusa em assinatura sequencial ✅ 2026-07-23 → aprovada em HML, card criado enxuto em Concluídas/
     - `Média` · João Marcelo · Squad 3
-    - ⚠️ Notion mudou de **Pronto pra teste em dev → Disponível para homologação** (22/07)
+    - Notion: Pronto pra teste em dev → Disponível para homologação (22/07) → aprovada por QA em homologação (23/07)
 - [x] **[[QA Workspace/02 Demandas/Concluídas/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 → já refinado, critérios no card
     - `Média` · Washington Junior · CX · API · Squad 1
     - Card no vault com critérios prontos; [MR !583](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/583) revisado a nível de escopo em 2026-07-20 (6 cenários batem com os 5 critérios) — pendência de revisar cenários concluída na fila
@@ -235,3 +235,4 @@ responsavel: Rafael
 - 2026-07-22 - Batida (16/53): **3412** (Backlog) → aprovada em DEV, card criado em modo enxuto em `02 Demandas/HML/` (segue pra validação em HML). Backlog 1→2/7
 - 2026-07-22 - Batida (17/64): **8380** (Fora do export atual) → aprovada em HML, card criado em modo enxuto em `02 Demandas/Concluídas/`. Fora do export 3→4/11
 - 2026-07-22 - **Reconciliação com novo export (22/07 13:25)**. Export ainda incompleto: 53 cards, mas Notion agora diz Count 75 (antes ~60). **11 cards novos** entraram: 10246, 10231, 10193, 10166, 10143 (produção/revisar/dev), 7935, 7337, 6427, 6136, 6094, 8129. **20 mudanças de status** aplicadas (Notion → grupo da triagem), preservando marcações e decisões do vault: 9458/9093/5783/6873/6348 (Revisar MR→Teste dev), 9036 (Em dev→Revisar MR), 6568 (Impedimento→Revisar MR), 5245 (Backlog→Revisar MR), 5360 (Backlog→Em dev), 8870 (Não reproduzido→Homologação), 3820 (Homologação→Testando HML), 9772 (Em dev→Aguardando CX), 7829 (Revisar MR→Impedimento), 9959 (Teste dev→Homologação), 9750 (Revisar MR→Homologação), 3786 (Em dev→Não reproduzido), 3413 (Backlog→Não reproduzido, bate com descarte do vault), 3412 (Backlog→[QA] Aprovado no Dev, bate com o vault), 5273/6975 (Homologação→Aprovado por QA, batem com o vault). **11 cards saíram do corte** (9610, 9963, 8977, 9692, 9548, 9808, 8380, 8395, 9430, 5548, 9474) → movidos pra seção "Fora do export atual", trabalho preservado (não apagados). Contadores recontados por grupo.
+- 2026-07-23 - Batida (18/64): **9959** (Disponível para homologação) → aprovada por QA em homologação, card criado em modo enxuto em `02 Demandas/Concluídas/`. (No mesmo dia, a **9750** — já com card — foi aprovada em HML e movida pra Concluídas.)
