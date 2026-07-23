@@ -32,7 +32,7 @@ responsavel: Rafael
 - [ ] **SGV-9959** — Inconsistência de status entre drawer de solicitação e evento de assinatura após recusa em assinatura sequencial
     - `Média` · João Marcelo · Squad 3
     - ⚠️ Notion mudou de **Pronto pra teste em dev → Disponível para homologação** (22/07)
-- [x] **[[QA Workspace/02 Demandas/DEV/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 → já refinado, critérios no card
+- [x] **[[QA Workspace/02 Demandas/Concluídas/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]** — Pedido de assinatura permanece pendente mesmo com documento sendo encerrado ✅ 2026-07-17 → já refinado, critérios no card
     - `Média` · Washington Junior · CX · API · Squad 1
     - Card no vault com critérios prontos; [MR !583](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/583) revisado a nível de escopo em 2026-07-20 (6 cenários batem com os 5 critérios) — pendência de revisar cenários concluída na fila
     - ⚠️ Notion mudou de **Revisar MR → Disponível para homologação** (22/07) — pronto pra validar em HML

@@ -279,6 +279,7 @@ Removido background da página PAdES e bordas dos selos; hash abaixo da identifi
 - [ ] As três atualizações de 2026 (Página Extra, Reposicionamento de selos, PJ sem responsável legal) vieram só como título no export — buscar o conteúdo no Notion e completar aqui
 - [ ] Regras do documento Pausado × assinatura dependem do doc "Pausar documento" do Notion — importar também?
 - [ ] Assinatura em instância **Em Implantação** × numeração e limpeza da implantação: a doc não cobre a regra de que a implantação apaga documentos "Sem numeração", nem como a numeração é atribuída no contexto Em Implantação (gap detectado em 2026-07-22, HML — ver [[QA Workspace/02 Demandas/HML/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]). Importar doc que descreva o comportamento da implantação (fluxo 8)
+- [ ] **Encerramento de documento × cancelamento de assinaturas pendentes**: a doc não descreve se/como encerrar um documento cancela solicitações de assinatura pendentes de despachos vinculados. Comportamento corrigido e validado em 2026-07-23 (HML — ver [[QA Workspace/02 Demandas/Concluídas/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]): encerrar **para todos** cancela todas as pendências (documento + despachos); encerrar **para mim**/**para meu setor** não cancela; retificação com troca de anexo já cancelava. Importar a regra pra doc (fluxo 8)
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
