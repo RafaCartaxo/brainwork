@@ -200,7 +200,7 @@ responsavel: Rafael
 > [!note]- Estavam na triagem antiga mas não vieram neste export
 > O export de 22/07 cortou em 53 (de 75). Estes 11 cards não apareceram no corte — **provavelmente por causa do "Load more", não porque saíram da sprint**. Trabalho do vault preservado; reconferir no próximo export completo. Não apagados.
 
-- [x] **[[QA Workspace/02 Demandas/DEV/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610]]** — Servidor não consegue associar documento na abertura de um novo documento ✅ 2026-07-17 → refinado, critérios de aceite no card, análise no Notion, mesa arquivada em 04 Conhecimento
+- [x] **[[QA Workspace/02 Demandas/HML/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610]]** — Servidor não consegue associar documento na abertura de um novo documento ✅ 2026-07-17 → refinado, critérios de aceite no card, análise no Notion, mesa arquivada em 04 Conhecimento
     - `Baixa` · João Rodrigo · CX · era **Pronto pra teste em dev**
     - Card no vault pronto pra validar em DEV (foco atual — daily 22/07). **Refinado de ponta a ponta** — não perder.
 - [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 → já refinado, critérios no card
