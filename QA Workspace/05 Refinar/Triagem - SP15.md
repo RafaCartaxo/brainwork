@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export ainda incompleto: 53 de 75 cards
 > O export de 22/07 continua cortando no "Load more" — captura 53 cards, mas o rodapé do Notion agora diz **Count 75** (antes o total estimado era 60). Faltam ~22 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui). **11 cards que estavam na triagem antiga não vieram neste corte** (ver seção "Fora do export atual" no fim) — preservados, não apagados.
 
-> [!tip] Progresso: **17/64** batidos (53 no export + 11 preservados fora do corte — atualizado 2026-07-22 pós-reconciliação)
-> Homologação `1/7` · Teste dev `5/10` · Testando HML `0/2` · Revisar MR `2/7` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
+> [!tip] Progresso: **20/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-23)
+> Homologação `2/7` · Teste dev `5/10` · Testando HML `1/2` · Revisar MR `3/8` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (7) — ação QA imediata
@@ -75,14 +75,15 @@ responsavel: Rafael
 
 ## Testando em homologação (2)
 
-- [ ] **SGV-3820** — Erro ao criar despacho e assinar documento via workflow
+- [x] **SGV-3820** — Erro ao criar despacho e assinar documento via workflow ✅ 2026-07-23 → **duplicada de SGV-9633**
     - `Altíssima` · Washington Junior · API
     - ⚠️ Notion mudou de **Disponível para homologação → Testando em homologação** (22/07)
+    - 🧭 Decisão de triagem (23/07): mesmo problema da SGV-9633 → tratada lá. **Já tinha sido reaberta** anteriormente; agora consolidada como duplicada da master 9633
 - [ ] **[[QA Workspace/02 Demandas/HML/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]** — Não é possível assinar documento em instância Em Implantação
     - `Média` · Lucas Lacerda · Sanidade-005
     - 🔴 Reaberta em HML (22/07): impedimento de e-mail contornado; bug original resolvido (assinatura Em Implantação OK), mas documentos de teste ganham numeração e escapam da limpeza de "Sem numeração" da implantação — permanecem válidos na base. Card criado, aguardando dev corrigir — ver daily 22/07
 
-## Revisar MR (7) — esteira dev, revisar cenários quando couber
+## Revisar MR (8) — esteira dev, revisar cenários quando couber
 
 - [ ] **SGV-10246** — Erro ao emitir e assinar despacho como cidadão
     - `Altíssima` · João Marcelo · Squad 3 · 🆕 card novo neste export (22/07)
@@ -92,8 +93,12 @@ responsavel: Rafael
     - ⚠️ Notion mudou de **Em desenvolvimento → Revisar MR** (22/07) — dev entregou, revisar cenários quando disponível
 - [ ] **SGV-7935** — Evento de emissão de documento não é exibido na timeline ao emitir pela toolbar
     - `Altíssima` · Diogo Sobreira · Squad 1 · também em SP16 · 🆕 card novo neste export (22/07)
-- [x] **SGV-9633** — Assinatura em fluxo de trabalho não pode ser concluída ✅ 2026-07-17 → já possui critérios
+- [x] **SGV-9633** — Assinatura em fluxo de trabalho não pode ser concluída ✅ 2026-07-23 → **master, Pronto pra dev** (SGV-3820 e SGV-8574 são o mesmo problema, tratadas aqui)
     - `Alta` · João Rodrigo · CX · Squad 3
+    - 🧭 Decisão de triagem (23/07, validada com o time): 9633/3820/8574 são o mesmo problema → **todas tratadas na 9633**. Esta é a master (Pronto pra dev); 3820 e 8574 marcadas como duplicadas. (Já possuía critérios desde 17/07)
+- [x] **SGV-8574** — (mesmo problema da SGV-9633: assinatura em fluxo de trabalho) ✅ 2026-07-23 → **duplicada de SGV-9633**
+    - `—` · API
+    - 🧭 Decisão de triagem (23/07): consolidada na master 9633. ⚠️ Não estava neste export da triagem — adicionada aqui só para registrar a decisão (conferir no próximo export completo do Notion)
 - [ ] **SGV-7337** — Impossibilidade de alterar serviço de um fluxo de trabalho
     - `Média` · Matheus Godoi · Squad 2 · também em SP16 · 🆕 card novo neste export (22/07)
 - [ ] **SGV-6568** — Erro ao solicitar assinatura gera múltiplas assinaturas duplicadas e registros incorretos na timeline
@@ -236,3 +241,4 @@ responsavel: Rafael
 - 2026-07-22 - Batida (17/64): **8380** (Fora do export atual) → aprovada em HML, card criado em modo enxuto em `02 Demandas/Concluídas/`. Fora do export 3→4/11
 - 2026-07-22 - **Reconciliação com novo export (22/07 13:25)**. Export ainda incompleto: 53 cards, mas Notion agora diz Count 75 (antes ~60). **11 cards novos** entraram: 10246, 10231, 10193, 10166, 10143 (produção/revisar/dev), 7935, 7337, 6427, 6136, 6094, 8129. **20 mudanças de status** aplicadas (Notion → grupo da triagem), preservando marcações e decisões do vault: 9458/9093/5783/6873/6348 (Revisar MR→Teste dev), 9036 (Em dev→Revisar MR), 6568 (Impedimento→Revisar MR), 5245 (Backlog→Revisar MR), 5360 (Backlog→Em dev), 8870 (Não reproduzido→Homologação), 3820 (Homologação→Testando HML), 9772 (Em dev→Aguardando CX), 7829 (Revisar MR→Impedimento), 9959 (Teste dev→Homologação), 9750 (Revisar MR→Homologação), 3786 (Em dev→Não reproduzido), 3413 (Backlog→Não reproduzido, bate com descarte do vault), 3412 (Backlog→[QA] Aprovado no Dev, bate com o vault), 5273/6975 (Homologação→Aprovado por QA, batem com o vault). **11 cards saíram do corte** (9610, 9963, 8977, 9692, 9548, 9808, 8380, 8395, 9430, 5548, 9474) → movidos pra seção "Fora do export atual", trabalho preservado (não apagados). Contadores recontados por grupo.
 - 2026-07-23 - Batida (18/64): **9959** (Disponível para homologação) → aprovada por QA em homologação, card criado em modo enxuto em `02 Demandas/Concluídas/`. (No mesmo dia, a **9750** — já com card — foi aprovada em HML e movida pra Concluídas.)
+- 2026-07-23 - **Consolidação 9633/3820/8574** (decisão de triagem validada com o time): as três são o mesmo problema (assinatura em fluxo de trabalho não pode ser concluída) → **todas tratadas na SGV-9633**. **9633** = master, marcada como **Pronto pra dev** (Revisar MR); **3820** (Testando HML, já havia sido reaberta antes) e **8574** marcadas `[x]` como **duplicadas de 9633**. 8574 não estava neste corte do export — adicionada no grupo Revisar MR (junto da master) só pra registrar a decisão; conferir no próximo export completo. Nenhum dos três tem card em `02 Demandas/` — decisão registrada só na triagem (não criar card do zero). Contadores: Homologação 1→2, Testando HML 0→1, Revisar MR 2/7→3/8 (8574 somada ao grupo). Progresso 18/64 → 20/65.
