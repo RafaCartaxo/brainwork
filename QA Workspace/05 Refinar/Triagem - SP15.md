@@ -202,7 +202,7 @@ responsavel: Rafael
 
 - [x] **[[QA Workspace/02 Demandas/HML/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610]]** — Servidor não consegue associar documento na abertura de um novo documento ✅ 2026-07-17 → refinado, critérios de aceite no card, análise no Notion, mesa arquivada em 04 Conhecimento
     - `Baixa` · João Rodrigo · CX · era **Pronto pra teste em dev**
-    - Card no vault pronto pra validar em DEV (foco atual — daily 22/07). **Refinado de ponta a ponta** — não perder.
+    - **Aprovada em DEV (23/07)** — 6 CTs e 5 critérios atendidos, gate de doc ok (Associar/Desassociar respalda); card movido pra `02 Demandas/HML/`, segue pra homologação.
 - [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 → já refinado, critérios no card
     - `Baixa` · Diogo Sobreira · CX · era **Revisar MR**
     - Card no vault com critérios prontos (esteira 3f)
