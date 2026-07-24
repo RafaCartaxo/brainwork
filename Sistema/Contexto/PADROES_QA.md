@@ -5,6 +5,19 @@ tags:
 ---
 # Padrões de QA
 
+## Regra de data
+
+Vale pra **toda** operação de daily (criar, carregar pendências, registrar atividade, gerar Status, mover card com base no dia).
+
+> [!important] Resolver a data pelo relógio, no momento de escrever
+> Antes de criar ou editar qualquer daily (`01 Daily/YYYY-MM/DD-MM.md`), **resolva a data pelo relógio do ambiente naquele momento** (`date +%F`). O daily-alvo é sempre o de **hoje**.
+>
+> - **Nunca reusar** uma data obtida antes na mesma sessão — uma sessão longa pode **cruzar a meia-noite**, e o `currentDate`/contexto do chat também defasa. **Fonte de verdade = `date` do ambiente.**
+> - **Preflight antes de editar**: o `DD-MM` do arquivo que vou tocar é == hoje? Se **divergir**, pare — abra o daily de hoje (carry-over normal) e, se algo já foi escrito no dia errado, **mova pro dia certo** com nota de correção (não apagar histórico).
+> - O script `qa-atualiza.py` já faz certo (usa `date.today()` a cada run). Esta regra é pros **agentes/sessões de IA**, que é onde o erro acontece (data cacheada da sessão).
+
+**Precedente**: em 2026-07-24 a revisão do MR !592 (SGV-9963), feita no dia 24, foi gravada no daily de 23 por data cacheada de uma sessão que começou no dia 23 — reconciliada depois. Já tinha ocorrido outras vezes.
+
 ## Estrutura de Pastas
 ```
 QA Workspace/

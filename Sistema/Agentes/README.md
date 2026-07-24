@@ -31,7 +31,7 @@ Diferente de [[../Skills/README|Skills]] (que são instruções de referência p
 ## Como funciona um agente
 
 1. **Gatilho** dispara o agente (botão, comando de IA, horário)
-2. **Fonte** é a daily mais recente (ou a especificada)
+2. **Fonte** é a daily **de hoje** — data resolvida pelo relógio do ambiente no momento de escrever (`date +%F`), nunca reusada de antes na sessão (ver [[../Contexto/PADROES_QA#Regra de data|Regra de data]]) — ou a daily especificada
 3. **Regras** definem o que fazer com cada tipo de registro
 4. **Resultado** é registrado no bloco recolhido `[!organizacao]- Auto-organização` da daily
 

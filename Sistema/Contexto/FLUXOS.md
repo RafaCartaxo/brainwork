@@ -40,6 +40,8 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 
 ## 1. Começar o dia
 
+> [!important] Antes de tudo: **resolver a data de hoje pelo relógio** (`date +%F`) — o daily é sempre o de hoje. Não reusar data cacheada (a sessão pode ter cruzado a meia-noite). Ver [[../Contexto/PADROES_QA#Regra de data|Regra de data]].
+
 1. Abrir a [[../../QA Workspace/Dashboard/Dashboard|Dashboard]].
 2. Conferir **Pendências em aberto** e **Melhorias propostas em aberto**.
 3. Clicar em **✏️ Escrever na daily de hoje** (ou `Ctrl+P` → "Daily notes: Open today's daily note").
