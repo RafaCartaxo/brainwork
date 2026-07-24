@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export ainda incompleto: 53 de 75 cards
 > O export de 22/07 continua cortando no "Load more" — captura 53 cards, mas o rodapé do Notion agora diz **Count 75** (antes o total estimado era 60). Faltam ~22 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui). **11 cards que estavam na triagem antiga não vieram neste corte** (ver seção "Fora do export atual" no fim) — preservados, não apagados.
 
-> [!tip] Progresso: **21/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
-> Homologação `2/7` · Teste dev `5/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
+> [!tip] Progresso: **22/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
+> Homologação `3/7` · Teste dev `5/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (7) — ação QA imediata
@@ -64,13 +64,11 @@ responsavel: Rafael
 - [ ] **[[QA Workspace/05 Refinar/SGV-4873|SGV-4873]]** — Assinaturas em anexos de documentos retificados não são canceladas corretamente
     - `Alta` · Matheus Godoi
     - ⚠️ Mesa de refinamento em andamento: possível conflito com regra nova de retificação — **não testar antes da decisão**
-- [x] **SGV-6873** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 → já possui critérios
+- [x] **[[QA Workspace/02 Demandas/Concluídas/6873 - Bug Download Documento Temporário Não Reflete Edição|SGV-6873]]** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 → critérios; **resolvida 2026-07-24 por herança** (é o fix da raiz comum, mergeado em `fix/6083` e aprovado em HML) → card em Concluídas; MR superseded (fechar no GitLab)
     - `Média` · Matheus Godoi · Sanidade-004 · Squad 2
-    - ⚠️ Notion mudou de **Revisar MR → Pronto pra teste em dev** (22/07)
 - [ ] **SGV-6348** — Edição de documentos "Em elaboração" não é exibida ao baixar documento
     - `Média` · Matheus Godoi · Squad 2
-    - ⚠️ Parece o mesmo caso da SGV-6873 — verificar com o dev como a solução foi aplicada
-    - ⚠️ Notion mudou de **Revisar MR → Pronto pra teste em dev** (22/07)
+    - 🧭 Análise (24/07): tem **fix PRÓPRIO e separado** do 6873 (`f8d1cb4e`/`a8df3485` — regeneração de pdf + log de erro no download) → **NÃO coberto** pela aprovação do 6083/6873. **Rafael vai verificar melhor** e testar em HML por conta própria (se aprovar → finalizar + fechar MR)
 - [ ] **SGV-6136** — [SOGOV+PM Conde] Divergência de logo e título na visualização do processo
     - `Média` · Matheus Godoi · Squad 2 · 🆕 card novo neste export (22/07)
 
