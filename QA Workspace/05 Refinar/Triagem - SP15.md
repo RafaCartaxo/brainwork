@@ -138,10 +138,11 @@ responsavel: Rafael
     - ⚠️ Notion mudou de **Em desenvolvimento → Aguardando retorno do CX** (22/07) — bloqueou aguardando CX
 - [ ] **SGV-9807** — Cidadão PJ não consegue assinar documento
     - `Média` · sem dev · CX · aguardando retorno do CX
-- [x] **SGV-7829** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17 → já possui critérios
+- [x] **[[QA Workspace/02 Demandas/HML/7829 - Bug Anexos Despacho Não Carregados Emitir Assinar Cidadão|SGV-7829]]** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17 → já possui critérios; **🔴 reaberta em HML (24/07) — atendimento parcial** (PDF ok, imagem não carrega); sem bloqueio de publicação. Card criado em `02 Demandas/HML/`
     - `Média` · João Marcelo · Squad 3
     - ⚠️ Notion mudou de **Revisar MR → Em impedimento** (22/07) — retrocedeu pra impedimento (revisar motivo com o time)
     - ✅ Resolve o mistério: saiu do impedimento e avançou pra **Disponível para homologação** (Release homolog, 24/07) — pronto pra testar
+    - 🔴 24/07: validado em HML — **PDF carrega, imagem (IMG) não carrega**. Rafael optou por não bloquear a publicação; card reaberto pra cobrir o caso de imagem numa próxima iteração
 
 ## Não reproduzido (6) — validar descarte?
 
