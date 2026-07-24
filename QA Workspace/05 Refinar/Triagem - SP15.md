@@ -10,17 +10,17 @@ responsavel: Rafael
 # Triagem SP15 — Engenharia (BUG'S)
 
 > [!info]- Lista de acompanhamento — bater ponto a ponto com o time
-> Fonte: view `[SP15 - 2026] Engenharia (BUG'S)` do Notion, exportada em 17/07, **reconciliada com novo export de 22/07 13:25**. Sprint 14/07 → 28/07, em andamento (29,33%).
+> Fonte: view `[SP15 - 2026] Engenharia (BUG'S)` do Notion, exportada em 17/07, **reconciliada com novo export de 22/07 13:25** e com a view `Release: 23/07/2026 12.35.36.2` (41 itens, exportada 24/07 15:17 — status de release/homologação, cruza com itens que outros QAs também testam). Sprint 14/07 → 28/07, em andamento (29,33%).
 > **Como usar**: a linha do checkbox é curta de propósito — cole a decisão no fim dela, ex.: `→ já possui critérios`, `→ refinar (prioridade)`, `→ descartado: obsoleto`. Os detalhes (prioridade, dev, origem) ficam na sublinha. Card decidido como "refinar" → exportar o .md individual → mesa própria no `05 Refinar/` (fluxo 6).
 
 > [!warning]- Export ainda incompleto: 53 de 75 cards
 > O export de 22/07 continua cortando no "Load more" — captura 53 cards, mas o rodapé do Notion agora diz **Count 75** (antes o total estimado era 60). Faltam ~22 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui). **11 cards que estavam na triagem antiga não vieram neste corte** (ver seção "Fora do export atual" no fim) — preservados, não apagados.
 
-> [!tip] Progresso: **24/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
-> Homologação `3/7` · Teste dev `6/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `1/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
+> [!tip] Progresso: **42/82** batidos (53 no export original + 11 preservados fora do corte + SGV-8574 + 17 itens novos da view "Release: 23/07/2026 12.35.36.2" — atualizado 2026-07-24)
+> Homologação `6/10` · Teste dev `6/11` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `1/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção/Aprovado `16/24` · Fora do export `5/11`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
-## Disponível para homologação (7) — ação QA imediata
+## Disponível para homologação (10) — ação QA imediata
 
 - [ ] **SGV-8870** — Toggle de abertura externa está setado na criação de Assunto e Serviço
     - `Altíssima` · Lucas Lacerda · Squad 2
@@ -41,18 +41,25 @@ responsavel: Rafael
 - [x] **[[QA Workspace/02 Demandas/Concluídas/6083 - Bug Edição Documento Não Atualiza Download Assinatura|SGV-6083]]** — Edição de documento não atualiza o conteúdo na assinatura ou download ✅ 2026-07-24 → **aprovada em HML** (reabriu na 1ª validação; fix da SGV-6873 mergeado no branch, reaprovou). Card em Concluídas
     - `Média` · Matheus Godoi
     - 🧭 Raiz comum com **6873** (mesmo fix, mergeado aqui → coberto) e **6348** (fix PRÓPRIO/separado → **testar em HML por conta própria**, não coberto pelo 6083)
+- [ ] **SGV-10268** — [BUG-Ajuste] Ajuste no fluxo de solicitação de revisão para eliminar cenário duplicado
+    - `Baixa` · Lucas Lacerda · 🆕 novo (Release homolog, 24/07)
+- [ ] **SGV-8386** — Ordenação Z–A de clientes com ícone invertido e exibição incorreta da lista
+    - `—` · Lucas Lacerda · 🆕 novo (Release homolog, 24/07)
+- [ ] **SGV-5269** — Botão de recuperar senha não redireciona para o fluxo de esqueci senha
+    - `Altíssima` · Matheus Godoi · 🆕 novo (Release homolog, 24/07)
 
-## Pronto pra teste em dev (10)
+## Pronto pra teste em dev (11)
 
 - [x] **SGV-9458** — Nome do destinatário exibido como "Anônimo" ao responder despacho de cidadão PJ ✅ 2026-07-17 → já possui critérios
     - `Altíssima` · Matheus Godoi
-    - ⚠️ Notion mudou de **Revisar MR → Pronto pra teste em dev** (22/07)
+    - ⚠️ Notion mudou de **Revisar MR → Pronto pra teste em dev** (22/07) → agora **Disponível para homologação** (Release homolog, 24/07) — pronto pra testar
 - [x] **SGV-9093** — Nome do solicitante exibido no evento de criação em solicitação sigilosa do cidadão ✅ 2026-07-17 → já possui critérios
     - `Altíssima` · Matheus Godoi · Squad 2
     - ⚠️ Notion mudou de **Revisar MR → Pronto pra teste em dev** (22/07)
 - [x] **SGV-7074** — Ao alterar módulo de um assunto/serviço os modelos de documentos não são atualizados ✅ 2026-07-17
     - `Altíssima` · Matheus Godoi
     - ⚠️ Relação com o [[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]] é só de longe — é outra coisa. **Lucas Beninca** construindo os critérios
+    - ✅ Critérios prontos: Notion avançou **Pronto pra teste em dev → Disponível para homologação** (Release homolog, 24/07) — pronto pra testar
 - [ ] **SGV-6427** — Possibilidade de um documento virar selo e aplicação num anexo PDF
     - `Alta` · Gabriel Alves (designer) · Funcionalidade · 🆕 card novo neste export (22/07)
 - [ ] **SGV-8129** — Estado de hover ao arrastar selo não segue protótipo (decisão de design sobre o cursor)
@@ -64,12 +71,15 @@ responsavel: Rafael
 - [ ] **[[QA Workspace/05 Refinar/SGV-4873|SGV-4873]]** — Assinaturas em anexos de documentos retificados não são canceladas corretamente
     - `Alta` · Matheus Godoi
     - ⚠️ Mesa de refinamento em andamento: possível conflito com regra nova de retificação — **não testar antes da decisão**
+    - 🚨 **ALERTA (Release homolog, 24/07)**: Notion mostra **"Disponível para homologação"** — mas isso está **errado/prematuro**: confirmado no git que `fix/4873` (commit `3dcbfc5442`) **NÃO foi mergeado em `development`** — o código do fix não está em nenhum ambiente. Além disso, o **bloqueio da mesa segue sem decisão** (conflito com a regra nova de retificação de campos específicos — se aprovado como está, implementa regressão). **NÃO TESTAR** apesar do status do Notion. Avisar o time que o status está desalinhado com a realidade do código.
 - [x] **[[QA Workspace/02 Demandas/Concluídas/6873 - Bug Download Documento Temporário Não Reflete Edição|SGV-6873]]** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 → critérios; **resolvida 2026-07-24 por herança** (é o fix da raiz comum, mergeado em `fix/6083` e aprovado em HML) → card em Concluídas; MR superseded (fechar no GitLab)
     - `Média` · Matheus Godoi · Sanidade-004 · Squad 2
 - [x] **[[QA Workspace/02 Demandas/Concluídas/6348 - Bug Edição Documento Elaboração Não Exibida Download|SGV-6348]]** — Edição de documentos "Em elaboração" não é exibida ao baixar documento ✅ 2026-07-24 → resolvida por decisão de QA (sintoma coberto pela correção comum 6083/6873); MR fechada **sem merge** (fix próprio nunca subiu — ver ressalva no card)
     - `Média` · Matheus Godoi · Squad 2
 - [ ] **SGV-6136** — [SOGOV+PM Conde] Divergência de logo e título na visualização do processo
     - `Média` · Matheus Godoi · Squad 2 · 🆕 card novo neste export (22/07)
+- [ ] **SGV-5103** — Mensagem de erro exibida ao alternar para prefeitura na qual o servidor está de férias, apesar do funcionamento normal
+    - `Alta` · Matheus Godoi · 🆕 novo (Release homolog, 24/07)
 
 ## Testando em homologação (2)
 
@@ -85,10 +95,12 @@ responsavel: Rafael
 
 - [ ] **SGV-10246** — Erro ao emitir e assinar despacho como cidadão
     - `Altíssima` · João Marcelo · Squad 3 · 🆕 card novo neste export (22/07)
+    - ⚠️ Notion avançou **Revisar MR → Disponível para homologação** (Release homolog, 24/07). 🚨 **Conectar com achado pendente**: existe um vídeo cru `10246 - primeira validação nok.mp4` na raiz de `Evidências/` desde 23/07 (sinalizado, sem contexto) — pode ser uma primeira tentativa reprovada deste card. **Confirmar com Rafael** o que rolou antes de testar de novo.
 - [x] **SGV-9036** — Mensagens de erro são exibidas quando é selecionado um signatário para assinatura ✅ 2026-07-17 → já refinado, critérios no card
     - `Altíssima` · Washington Junior · API · Squad 1
     - ⚠️ Sem wikilink — não há card em `02 Demandas/`; "no card" aqui provavelmente é a task do Notion, não o vault. Sem material/MR em mãos pra confirmar (2026-07-20) — pendência de confirmação criada na fila em vez de card inventado
     - ⚠️ Notion mudou de **Em desenvolvimento → Revisar MR** (22/07) — dev entregou, revisar cenários quando disponível
+    - ✅ Avançou de novo: **Revisar MR → Pronto pra teste em dev** (Release homolog, 24/07)
 - [x] **[[QA Workspace/02 Demandas/DEV/7935 - Bug Evento Emissão Não Exibido Timeline Toolbar|SGV-7935]]** — Evento de emissão de documento não é exibido na timeline ao emitir pela toolbar ✅ 2026-07-24 → card criado do export; [MR !608](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/608) revisado (critério 2 "exibido na timeline" = validação manual em HML)
     - `Altíssima` · Diogo Sobreira · Squad 1 · também em SP16 · 🆕 card novo neste export (22/07)
 - [x] **SGV-9633** — Assinatura em fluxo de trabalho não pode ser concluída ✅ 2026-07-23 → **master, 🔴 reprovada em DEV 2026-07-24** (SGV-3820 e SGV-8574 são o mesmo problema, tratadas aqui)
@@ -129,6 +141,7 @@ responsavel: Rafael
 - [x] **SGV-7829** — Anexos do despacho não são carregados corretamente ao emitir e assinar como Cidadão ✅ 2026-07-17 → já possui critérios
     - `Média` · João Marcelo · Squad 3
     - ⚠️ Notion mudou de **Revisar MR → Em impedimento** (22/07) — retrocedeu pra impedimento (revisar motivo com o time)
+    - ✅ Resolve o mistério: saiu do impedimento e avançou pra **Disponível para homologação** (Release homolog, 24/07) — pronto pra testar
 
 ## Não reproduzido (6) — validar descarte?
 
@@ -163,7 +176,7 @@ responsavel: Rafael
     - `Média` · João Rodrigo · Squad 3
     - ✅ Notion agora bate com a decisão do vault (mudou de **Backlog → [QA] Aprovado no Dev** em 22/07)
 
-## Em produção / Aprovado / Concluído (11) — conferir encerramento
+## Em produção / Aprovado / Concluído (24) — conferir encerramento
 
 - [x] **[[QA Workspace/02 Demandas/Concluídas/5273 - Bug Login Senha Correta Apos Tentativas|SGV-5273]]** — Login com senha correta não funciona após tentativas incorretas ✅ 2026-07-20 → **aprovada em homologação**, card em Concluídas
     - `Altíssima` · Matheus Godoi
@@ -182,7 +195,7 @@ responsavel: Rafael
 - [ ] **[[QA Workspace/02 Demandas/Concluídas/9237 - Bug Download Tramitação Interna|SGV-9237]]** — Download realizado por cidadão inclui conteúdo de tramitação interna
     - `Alta` · Bruno Clementino
     - Vault: concluído ✓
-- [ ] **SGV-8385** — Definição de caminhos alternativos no fluxo de trabalho (etapas não obrigatórias)
+- [x] **SGV-8385** — Definição de caminhos alternativos no fluxo de trabalho (etapas não obrigatórias) ✅ 2026-07-24 (Release homolog) → confirmado **Em produção**
     - `Alta` · Marcos Vinicius · Melhoria · CX
 - [ ] **SGV-9112** — Implementar o avanço até uma etapa específica a partir do split-button (parte 2)
     - Marcos Vinicius · Tarefa
@@ -193,6 +206,32 @@ responsavel: Rafael
     - `Média` · João Marcelo · CX · Squad 3 · deadline 15/08 · 🆕 card novo neste export (22/07) · Notion: Em produção
 - [ ] **SGV-10075** — Problemas na visualização de conteúdo em processo em tramitação para Cidadão
     - `Média` · João Marcelo · CX · Squad 3 · Notion: Concluído
+- [x] **[[QA Workspace/02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]]** — Ao realizar Novo rastreio de documentos, filtros não são reiniciados ✅ (Release homolog, 24/07) → **Aprovado por QA**, card já em Concluídas (não estava tracked nesta Triagem)
+    - `Baixíssima` · João Marcelo
+- [x] **[[QA Workspace/02 Demandas/Concluídas/7371 - Melhoria URL Validacao Assinatura Nao Expor Codigo|SGV-7371]]** — Alterar URL de validação de assinatura para não expor código ✅ (Release homolog, 24/07) → **Aprovado por QA**, card já em Concluídas (não estava tracked nesta Triagem)
+    - `Altíssima` · Melhoria · B. Luan
+- [x] **SGV-9961** — [BUG - IMPEDITIVO] Lentidão no carregamento dos documentos da mesa de trabalho ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local, sem validação registrada por Rafael 🆕
+    - `Alta` · Gabriel Desidério
+- [x] **SGV-9953** — [BUG] - Busca por setores que não participo trava o seletor de setores ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Média` · João Rodrigo
+- [x] **SGV-9886** — [BUG] Número de documentos em abertos não é igual ao exibido na tela inicial do servidor ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `—` · B. Luan
+- [x] **SGV-9693** — [Melhoria-CX] SGA - Filtro de busca das regras de tramitação também pesquisar pela sigla dos setores ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Baixíssima` · Melhoria · Marcos Vinicius
+- [x] **SGV-9386** — [BUG-CX] - Pendência de assinatura permanece ativa após cancelamento do processo ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Baixíssima` · João Rodrigo
+- [x] **SGV-7168** — [MELHORIA-CX] Alterar copy que descreve ação de documentos com solicitação de revisão configurada ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Média` · Melhoria · Lucas Lacerda
+- [x] **SGV-7162** — [BUG-CX] PM Nísia - Erro ao alterar setor do usuário ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Baixa` · Diogo Sobreira
+- [x] **SGV-6198** — Prazo do despacho não é exibido na tela do servidor destinatário ao criar um novo despacho ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Alta` · Matheus Godoi
+- [x] **SGV-5430** — Visualização de anexo está sendo contabilizada como download ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Média` · Matheus Godoi
+- [x] **SGV-5242** — Setor criador incorreto no histórico da versão inicial do documento ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** — sem card local 🆕
+    - `Baixa` · Diogo Sobreira
+- [x] **SGV-7631** — [Melhoria-CX] Adicionar filtro de solicitações de assinaturas enviadas por mim ✅ 2026-07-24 (Release homolog) → confirmado **Em produção** 🆕
+    - `Altíssima` · Melhoria · Gabriel Desidério
 
 ## Fora do export atual (11) — preservados, saíram do corte de 22/07
 
@@ -206,16 +245,19 @@ responsavel: Rafael
     - `Baixa` · Diogo Sobreira · CX · era **Revisar MR**
     - Card no vault com critérios prontos (esteira 3f)
     - 2026-07-23: [MR !592](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/592) revisado (5 cenários batem com os 5 critérios; achado no critério 4 — modelo já corrompido dropa o campo órfão, sem saneamento retroativo) e **aprovado pela QA** (sign-off de escopo). Acompanhamento no card; validação real em HML quando o fix chegar
+    - ✅ **O fix chegou!** Notion avançou **Disponível para homologação** (Release homolog, 24/07) — destrava a pendência que estava "aguardando disponibilização em HML". Pronto pra validar de verdade agora.
 - [x] **[[QA Workspace/02 Demandas/DEV/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977]]** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-20 → refinado, card criado
     - `Baixa` · Washington Junior · CX · API · era **Revisar MR**
     - [MR !505](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/505) revisado a nível de escopo em 2026-07-20 (mesmo padrão N+1→lote da SGV-9692, aplicado ao Organograma) — card criado com critérios reescritos (timeout entregue foi 10s, não os 30s pedidos); falta validação real de volume
+    - 🚨 **ALERTA (Release homolog, 24/07)**: Notion mostra status **"Reaberto"**. Card segue `aberto`/`DEV` no vault, sem registro de validação. **Coincide exatamente com o risco que o card já apontava**: CT-B02 (concluir dentro dos 10s em ambiente de grande volume) nunca foi comprovado por teste automatizado — "Reaberto" sugere que alguém testou em volume real e o timeout de 10s **não foi suficiente**. **Confirmar com Rafael/time**: quem testou, o que aconteceu, e se precisa de nova iteração do dev no valor do timeout.
 - [ ] **SGV-9692** — SGA: lentidão ao salvar configurações de tramitação na criação de setores
     - `Baixa` · Diogo Sobreira · CX · era **Revisar MR**
     - [MR !573](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/573) revisado a nível de escopo em 2026-07-20 (troca de chamada individual por lote — bate com a lentidão; testes cobrem a regra de negócio, não performance) — ainda não batido/decidido
     - ⚠️ Caso de lentidão — verificar situação; tem relação com a SGV-8977?
 - [ ] **SGV-9548** — Campo de telefone no cadastro de instância não permite número fixo
     - `Baixa` · Matheus Godoi · era **Pronto pra teste em dev**
-- [ ] **SGV-9808** — Documento, mesmo assinado, continua com status de "assinatura pendente"
+    - ✅ Avançou: **Pronto pra teste em dev → Disponível para homologação** (Release homolog, 24/07) — pronto pra testar
+- [x] **SGV-9808** — Documento, mesmo assinado, continua com status de "assinatura pendente" ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** (era Disponível para homologação) — sem card local, sem validação registrada por Rafael
     - `Baixa` · João Marcelo · CX · relacionado: 9809, 9870, 9842 · era **Disponível para homologação**
 - [x] **[[QA Workspace/02 Demandas/Concluídas/8380 - Bug Referencia Resposta Despacho Cadeia Respostas|SGV-8380]]** — Referência de resposta em despachos exibida incorretamente na cadeia de respostas ✅ 2026-07-22 → aprovada em HML
     - `Baixa` · Diogo Sobreira · era **Disponível para homologação**
@@ -246,3 +288,4 @@ responsavel: Rafael
 - 2026-07-24 - Batida (22/65): **6083** (Disponível para homologação) → reabriu na 1ª validação, fix da **6873** mergeado no branch, retestada e **aprovada em HML**; card criado em `02 Demandas/Concluídas/`. Homologação 2→3. **6873** (já batida desde 17/07) resolvida por herança do mesmo fix — card criado, MR superseded. **6348** analisada: tem fix próprio/separado, **não coberto** — Rafael vai verificar e testar em HML à parte.
 - 2026-07-24 - Batida (23/65): **5360** (Em dev) → aprovada em DEV, card criado em `02 Demandas/HML/` (segue pra homologação). Em dev 0/3→1/3.
 - 2026-07-24 - Batida (24/65): **6348** (Pronto pra teste em dev) → **6873 MR fechada no GitLab** (superseded pelo merge no fix/6083, código já em produção). **6348 resolvida por decisão de QA** — sintoma coberto pela correção comum 6083/6873; seu fix próprio (`fix/6348`) **nunca foi mergeado**, MR fechada **sem merge**. Cards criados em `02 Demandas/Concluídas/` com o rastreio explícito da decisão. Teste dev 5/10→6/10.
+- 2026-07-24 - **Reconciliação com a view "Release: 23/07/2026 12.35.36.2"** (41 itens, exportada 24/07 15:17 — export "Release - homolog.md"). Cruzamento item a item contra a Triagem e os cards do vault: **18 avanços de status** confirmados (outros QAs testando em paralelo, conforme avisado pelo Rafael): 7640/4995/9690/9808 → Aprovado por QA; 9036 → Pronto pra teste em dev; 9458/7074/9548/7829 → Disponível para homologação (7829 saiu do impedimento); 8385 → confirmado Em produção; **9963 → Disponível para homologação (fix chegou em HML! destrava a pendência "aguardando disponibilização")**. **17 itens novos** adicionados (não estavam nesta Triagem): 10268/8386/5269 (Disponível p/ homologação), 5103 (Pronto pra teste em dev), 9961/9953/9886/9693/9386/7168/7162/6198/5430/5242 (Aprovado por QA, sem card local), 7631 (Em produção), e 9464/7371 (já tinham card em Concluídas, só não estavam rastreados aqui). **2 alertas críticos levantados** (não resolvidos automaticamente): **SGV-8977** — Notion mostra "Reaberto"; coincide com o risco já apontado no card (timeout de 10s não comprovado por teste automatizado) — confirmar com Rafael o que aconteceu. **SGV-4873** — Notion mostra "Disponível para homologação", mas **`fix/4873` não está mergeado em `development`** (confirmado no git) e o **bloqueio da mesa de refinamento segue sem decisão** — **NÃO TESTAR**, status do Notion está desalinhado com a realidade do código. Também acompanhado: 10246 avançou pra Disponível para homologação, possivelmente ligado ao vídeo cru `10246 - primeira validação nok.mp4` já na raiz de Evidências — confirmar com Rafael. Progresso: 24/65 → **42/82**.
