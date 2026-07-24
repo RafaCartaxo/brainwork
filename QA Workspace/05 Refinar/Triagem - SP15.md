@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export ainda incompleto: 53 de 75 cards
 > O export de 22/07 continua cortando no "Load more" — captura 53 cards, mas o rodapé do Notion agora diz **Count 75** (antes o total estimado era 60). Faltam ~22 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui). **11 cards que estavam na triagem antiga não vieram neste corte** (ver seção "Fora do export atual" no fim) — preservados, não apagados.
 
-> [!tip] Progresso: **22/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
-> Homologação `3/7` · Teste dev `5/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `0/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
+> [!tip] Progresso: **23/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
+> Homologação `3/7` · Teste dev `5/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `1/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (7) — ação QA imediata
@@ -114,9 +114,9 @@ responsavel: Rafael
     - `Alta` · Matheus Godoi · CX
 - [ ] **SGV-6094** — [API] Erro ao alterar o setor principal
     - `Média` · Washington Junior · CX · Squad 1 · também em SP16 · 🆕 card novo neste export (22/07)
-- [ ] **SGV-5360** — Assinatura de despacho customizado não aparece na tela de "Assinaturas pendentes" do servidor
+- [x] **[[QA Workspace/02 Demandas/HML/5360 - Bug Assinatura Despacho Customizado Não Aparece Pendentes|SGV-5360]]** — Assinatura de despacho customizado não aparece na tela de "Assinaturas pendentes" do servidor ✅ 2026-07-24 → aprovada em DEV, card criado, segue pra HML
     - `Média` · João Marcelo · Squad 3
-    - ⚠️ Notion mudou de **Backlog → Em desenvolvimento** (22/07) — entrou em dev
+    - Notion: Backlog → Em desenvolvimento (22/07) → aprovada por QA em DEV (24/07)
 
 ## Em impedimento / Aguardando CX (4)
 
@@ -244,3 +244,5 @@ responsavel: Rafael
 - 2026-07-23 - Batida (18/64): **9959** (Disponível para homologação) → aprovada por QA em homologação, card criado em modo enxuto em `02 Demandas/Concluídas/`. (No mesmo dia, a **9750** — já com card — foi aprovada em HML e movida pra Concluídas.)
 - 2026-07-23 - **Consolidação 9633/3820/8574** (decisão de triagem validada com o time): as três são o mesmo problema (assinatura em fluxo de trabalho não pode ser concluída) → **todas tratadas na SGV-9633**. **9633** = master, marcada como **Pronto pra dev** (Revisar MR); **3820** (Testando HML, já havia sido reaberta antes) e **8574** marcadas `[x]` como **duplicadas de 9633**. 8574 não estava neste corte do export — adicionada no grupo Revisar MR (junto da master) só pra registrar a decisão; conferir no próximo export completo. Nenhum dos três tem card em `02 Demandas/` — decisão registrada só na triagem (não criar card do zero). Contadores: Homologação 1→2, Testando HML 0→1, Revisar MR 2/7→3/8 (8574 somada ao grupo). Progresso 18/64 → 20/65.
 - 2026-07-24 - Batida (21/65): **7935** (Revisar MR) → card criado do export (modo B) em `02 Demandas/DEV/`, [MR !608](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/608) revisado a nível de escopo (critério 2 "exibido na timeline" fica pra validação manual em HML). Revisar MR 3/8→4/8. **9638** também foi importado do export + MR !619 revisado, mas **não estava neste corte** da triagem — rastreado pelo card em `02 Demandas/DEV/`.
+- 2026-07-24 - Batida (22/65): **6083** (Disponível para homologação) → reabriu na 1ª validação, fix da **6873** mergeado no branch, retestada e **aprovada em HML**; card criado em `02 Demandas/Concluídas/`. Homologação 2→3. **6873** (já batida desde 17/07) resolvida por herança do mesmo fix — card criado, MR superseded. **6348** analisada: tem fix próprio/separado, **não coberto** — Rafael vai verificar e testar em HML à parte.
+- 2026-07-24 - Batida (23/65): **5360** (Em dev) → aprovada em DEV, card criado em `02 Demandas/HML/` (segue pra homologação). Em dev 0/3→1/3.
