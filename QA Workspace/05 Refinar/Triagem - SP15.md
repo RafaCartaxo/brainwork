@@ -25,9 +25,9 @@ responsavel: Rafael
 - [ ] **SGV-8870** — Toggle de abertura externa está setado na criação de Assunto e Serviço
     - `Altíssima` · Lucas Lacerda · Squad 2
     - ⚠️ Notion mudou de **Não reproduzido → Disponível para homologação** (22/07) — voltou a ser testável
-- [ ] **SGV-7640** — Campo de busca de setor destinatário fica inutilizável após seleção inicial no ambiente do cidadão
+- [x] **SGV-7640** — Campo de busca de setor destinatário fica inutilizável após seleção inicial no ambiente do cidadão ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** no Notion — sem card local, sem validação registrada por Rafael (outro QA testou)
     - `Alta` · Matheus Godoi · CX
-- [ ] **SGV-4995** — Contagem de dias incorreta ao configurar prazos em etapas com prazo oficial pré-definido
+- [x] **SGV-4995** — Contagem de dias incorreta ao configurar prazos em etapas com prazo oficial pré-definido ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** no Notion — sem card local, sem validação registrada por Rafael (outro QA testou)
     - `Alta` · Matheus Godoi
 - [x] **[[QA Workspace/02 Demandas/Concluídas/9959 - Bug Inconsistência Status Drawer Evento Recusa Assinatura Sequencial|SGV-9959]]** — Inconsistência de status entre drawer de solicitação e evento de assinatura após recusa em assinatura sequencial ✅ 2026-07-23 → aprovada em HML, card criado enxuto em Concluídas/
     - `Média` · João Marcelo · Squad 3
@@ -36,7 +36,7 @@ responsavel: Rafael
     - `Média` · Washington Junior · CX · API · Squad 1
     - Card no vault com critérios prontos; [MR !583](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/583) revisado a nível de escopo em 2026-07-20 (6 cenários batem com os 5 critérios) — pendência de revisar cenários concluída na fila
     - ⚠️ Notion mudou de **Revisar MR → Disponível para homologação** (22/07) — pronto pra validar em HML
-- [ ] **SGV-9690** — SGA: filtro de busca não localiza palavras com variações de caracteres especiais
+- [x] **SGV-9690** — SGA: filtro de busca não localiza palavras com variações de caracteres especiais ✅ 2026-07-24 (Release homolog) → **Aprovado por QA** no Notion — sem card local, sem validação registrada por Rafael (outro QA testou)
     - `Média` · Lucas Cabral · CX · deadline 30/07
 - [x] **[[QA Workspace/02 Demandas/Concluídas/6083 - Bug Edição Documento Não Atualiza Download Assinatura|SGV-6083]]** — Edição de documento não atualiza o conteúdo na assinatura ou download ✅ 2026-07-24 → **aprovada em HML** (reabriu na 1ª validação; fix da SGV-6873 mergeado no branch, reaprovou). Card em Concluídas
     - `Média` · Matheus Godoi
