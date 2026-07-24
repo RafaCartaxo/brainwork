@@ -207,6 +207,7 @@ responsavel: Rafael
 - [x] **[[QA Workspace/02 Demandas/DEV/9963 - Bug Campos Dinâmicos Alteração Módulo|SGV-9963]]** — Modelos automatizados perdem a referência dos campos dinâmicos (@) após alteração do módulo ✅ 2026-07-17 → já refinado, critérios no card
     - `Baixa` · Diogo Sobreira · CX · era **Revisar MR**
     - Card no vault com critérios prontos (esteira 3f)
+    - 2026-07-23: [MR !592](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/592) revisado (5 cenários batem com os 5 critérios; achado no critério 4 — modelo já corrompido dropa o campo órfão, sem saneamento retroativo) e **aprovado pela QA** (sign-off de escopo). Acompanhamento no card; validação real em HML quando o fix chegar
 - [x] **[[QA Workspace/02 Demandas/DEV/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977]]** — Erro ao tentar editar regras de tramitação direto no organograma ✅ 2026-07-20 → refinado, card criado
     - `Baixa` · Washington Junior · CX · API · era **Revisar MR**
     - [MR !505](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/505) revisado a nível de escopo em 2026-07-20 (mesmo padrão N+1→lote da SGV-9692, aplicado ao Organograma) — card criado com critérios reescritos (timeout entregue foi 10s, não os 30s pedidos); falta validação real de volume
