@@ -93,9 +93,10 @@ responsavel: Rafael
     - ⚠️ Notion mudou de **Em desenvolvimento → Revisar MR** (22/07) — dev entregou, revisar cenários quando disponível
 - [ ] **SGV-7935** — Evento de emissão de documento não é exibido na timeline ao emitir pela toolbar
     - `Altíssima` · Diogo Sobreira · Squad 1 · também em SP16 · 🆕 card novo neste export (22/07)
-- [x] **SGV-9633** — Assinatura em fluxo de trabalho não pode ser concluída ✅ 2026-07-23 → **master, Pronto pra dev** (SGV-3820 e SGV-8574 são o mesmo problema, tratadas aqui)
+- [x] **SGV-9633** — Assinatura em fluxo de trabalho não pode ser concluída ✅ 2026-07-23 → **master, 🔴 reprovada em DEV 2026-07-24** (SGV-3820 e SGV-8574 são o mesmo problema, tratadas aqui)
     - `Alta` · João Rodrigo · CX · Squad 3
     - 🧭 Decisão de triagem (23/07, validada com o time): 9633/3820/8574 são o mesmo problema → **todas tratadas na 9633**. Esta é a master (Pronto pra dev); 3820 e 8574 marcadas como duplicadas. (Já possuía critérios desde 17/07)
+    - 🔴 24/07: correção do dev **testada e reprovada em DEV** — bug ainda reproduz (evidência em `Evidências/Desenvolvimento/`). Revalidação pendente (⏳ aguardando nova correção). Ver [[QA Workspace/01 Daily/2026-07/24-07|daily 24/07]].
 - [x] **SGV-8574** — (mesmo problema da SGV-9633: assinatura em fluxo de trabalho) ✅ 2026-07-23 → **duplicada de SGV-9633**
     - `—` · API
     - 🧭 Decisão de triagem (23/07): consolidada na master 9633. ⚠️ Não estava neste export da triagem — adicionada aqui só para registrar a decisão (conferir no próximo export completo do Notion)
