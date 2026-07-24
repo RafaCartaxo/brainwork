@@ -16,8 +16,8 @@ responsavel: Rafael
 > [!warning]- Export ainda incompleto: 53 de 75 cards
 > O export de 22/07 continua cortando no "Load more" — captura 53 cards, mas o rodapé do Notion agora diz **Count 75** (antes o total estimado era 60). Faltam ~22 cards. Pra completar: rolar a lista até o fim no Notion e exportar de novo (eu mesclo, sem perder as marcações daqui). **11 cards que estavam na triagem antiga não vieram neste corte** (ver seção "Fora do export atual" no fim) — preservados, não apagados.
 
-> [!tip] Progresso: **23/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
-> Homologação `3/7` · Teste dev `5/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `1/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
+> [!tip] Progresso: **24/65** batidos (53 no export + 11 preservados fora do corte + SGV-8574 registrada na consolidação — atualizado 2026-07-24)
+> Homologação `3/7` · Teste dev `6/10` · Testando HML `1/2` · Revisar MR `4/8` · Em dev `1/3` · Impedimento/CX `1/4` · Não reproduzido `1/6` · Backlog `0/2` · Aprovado no Dev `1/1` · Produção `2/11` · Fora do export `4/11`
 > *Atualizar os contadores ao bater os cards (ou pedir numa sessão: "atualiza o progresso da triagem").*
 
 ## Disponível para homologação (7) — ação QA imediata
@@ -66,9 +66,8 @@ responsavel: Rafael
     - ⚠️ Mesa de refinamento em andamento: possível conflito com regra nova de retificação — **não testar antes da decisão**
 - [x] **[[QA Workspace/02 Demandas/Concluídas/6873 - Bug Download Documento Temporário Não Reflete Edição|SGV-6873]]** — Download de documento temporário não corresponde à versão editada ✅ 2026-07-17 → critérios; **resolvida 2026-07-24 por herança** (é o fix da raiz comum, mergeado em `fix/6083` e aprovado em HML) → card em Concluídas; MR superseded (fechar no GitLab)
     - `Média` · Matheus Godoi · Sanidade-004 · Squad 2
-- [ ] **SGV-6348** — Edição de documentos "Em elaboração" não é exibida ao baixar documento
+- [x] **[[QA Workspace/02 Demandas/Concluídas/6348 - Bug Edição Documento Elaboração Não Exibida Download|SGV-6348]]** — Edição de documentos "Em elaboração" não é exibida ao baixar documento ✅ 2026-07-24 → resolvida por decisão de QA (sintoma coberto pela correção comum 6083/6873); MR fechada **sem merge** (fix próprio nunca subiu — ver ressalva no card)
     - `Média` · Matheus Godoi · Squad 2
-    - 🧭 Análise (24/07): tem **fix PRÓPRIO e separado** do 6873 (`f8d1cb4e`/`a8df3485` — regeneração de pdf + log de erro no download) → **NÃO coberto** pela aprovação do 6083/6873. **Rafael vai verificar melhor** e testar em HML por conta própria (se aprovar → finalizar + fechar MR)
 - [ ] **SGV-6136** — [SOGOV+PM Conde] Divergência de logo e título na visualização do processo
     - `Média` · Matheus Godoi · Squad 2 · 🆕 card novo neste export (22/07)
 
@@ -246,3 +245,4 @@ responsavel: Rafael
 - 2026-07-24 - Batida (21/65): **7935** (Revisar MR) → card criado do export (modo B) em `02 Demandas/DEV/`, [MR !608](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/608) revisado a nível de escopo (critério 2 "exibido na timeline" fica pra validação manual em HML). Revisar MR 3/8→4/8. **9638** também foi importado do export + MR !619 revisado, mas **não estava neste corte** da triagem — rastreado pelo card em `02 Demandas/DEV/`.
 - 2026-07-24 - Batida (22/65): **6083** (Disponível para homologação) → reabriu na 1ª validação, fix da **6873** mergeado no branch, retestada e **aprovada em HML**; card criado em `02 Demandas/Concluídas/`. Homologação 2→3. **6873** (já batida desde 17/07) resolvida por herança do mesmo fix — card criado, MR superseded. **6348** analisada: tem fix próprio/separado, **não coberto** — Rafael vai verificar e testar em HML à parte.
 - 2026-07-24 - Batida (23/65): **5360** (Em dev) → aprovada em DEV, card criado em `02 Demandas/HML/` (segue pra homologação). Em dev 0/3→1/3.
+- 2026-07-24 - Batida (24/65): **6348** (Pronto pra teste em dev) → **6873 MR fechada no GitLab** (superseded pelo merge no fix/6083, código já em produção). **6348 resolvida por decisão de QA** — sintoma coberto pela correção comum 6083/6873; seu fix próprio (`fix/6348`) **nunca foi mergeado**, MR fechada **sem merge**. Cards criados em `02 Demandas/Concluídas/` com o rastreio explícito da decisão. Teste dev 5/10→6/10.

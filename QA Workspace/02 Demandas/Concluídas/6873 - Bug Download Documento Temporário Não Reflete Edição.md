@@ -62,8 +62,9 @@ Ao baixar um documento (inclusive temporário) após edição, o arquivo reflete
     - O fix da SGV-6873 (`fix/6873`, commits `4e04503a`/`1c16421e` — "corrige download de documento temporário que não refletia a edição") é a **correção da raiz comum**.
     - Ele foi **mergeado dentro do branch `fix/6083`** (`bd8d86a6 fix(SGV-6083): Merge branch 'fix/6873' into fix/6083`).
     - A **SGV-6083 foi validada e aprovada em homologação (2026-07-24) com esse fix incorporado** → o mesmo código que corrige a 6873 foi exercitado. Por isso a 6873 é dada como **aprovada por herança / coberta**, sem validação funcional independente do sintoma específico dela.
-    - **MR da 6873**: superseded pelo merge no `fix/6083` — a ser fechado no GitLab (ação do Rafael). Se em algum momento quiser a prova direta do sintoma do 6873 (download de doc temporário), fazer um teste pontual em HML.
+    - **MR da 6873**: superseded pelo merge no `fix/6083` — **fechada no GitLab (2026-07-24, Rafael)**. Se em algum momento quiser a prova direta do sintoma do 6873 (download de doc temporário), fazer um teste pontual em HML.
 - Gate de doc (2026-07-24): [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]] não cobre "download refletir a edição" — sem divergência; gap de doc (fluxo 8, junto com 6083).
 - Histórico:
     - 2026-07-24 - 📝 Bug importado (card criado a partir do ticket + narrativa; sem export completo)
-    - 2026-07-24 - ✅ Resolvida **por herança**: fix da 6873 mergeado em `fix/6083` e validado via a aprovação da [[QA Workspace/02 Demandas/Concluídas/6083 - Bug Edição Documento Não Atualiza Download Assinatura|SGV-6083]] em homologação. Sem validação funcional independente; MR superseded pelo merge (fechar no GitLab).
+    - 2026-07-24 - ✅ Resolvida **por herança**: fix da 6873 mergeado em `fix/6083` e validado via a aprovação da [[QA Workspace/02 Demandas/Concluídas/6083 - Bug Edição Documento Não Atualiza Download Assinatura|SGV-6083]] em homologação. Sem validação funcional independente; MR superseded pelo merge.
+    - 2026-07-24 - 🔒 MR fechada no GitLab (superseded — o código já está em produção via `fix/6083`)
