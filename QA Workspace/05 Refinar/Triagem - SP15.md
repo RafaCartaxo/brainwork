@@ -38,8 +38,9 @@ responsavel: Rafael
     - ⚠️ Notion mudou de **Revisar MR → Disponível para homologação** (22/07) — pronto pra validar em HML
 - [ ] **SGV-9690** — SGA: filtro de busca não localiza palavras com variações de caracteres especiais
     - `Média` · Lucas Cabral · CX · deadline 30/07
-- [ ] **SGV-6083** — Edição de documento não atualiza o conteúdo na assinatura ou download
+- [x] **[[QA Workspace/02 Demandas/Concluídas/6083 - Bug Edição Documento Não Atualiza Download Assinatura|SGV-6083]]** — Edição de documento não atualiza o conteúdo na assinatura ou download ✅ 2026-07-24 → **aprovada em HML** (reabriu na 1ª validação; fix da SGV-6873 mergeado no branch, reaprovou). Card em Concluídas
     - `Média` · Matheus Godoi
+    - 🧭 Raiz comum com **6873** (mesmo fix, mergeado aqui → coberto) e **6348** (fix PRÓPRIO/separado → **testar em HML por conta própria**, não coberto pelo 6083)
 
 ## Pronto pra teste em dev (10)
 
