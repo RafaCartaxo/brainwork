@@ -32,7 +32,7 @@ Então o arquivo gerado deve refletir a **última edição** (e não a versão a
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://6083)
 
-- ⏳ Evidência da aprovação em homologação **pendente de captura** (não veio na sessão). Anexar a gravação da validação de 24/07 quando disponível.
+![[6083 - edicao documento reflete download assinatura aprovado em homologacao.mp4]]
 
 ---
 
@@ -61,6 +61,7 @@ Após editar um documento, o download e a assinatura refletem o conteúdo atuali
         - [ ] <span style="color:#e74c3c">Não</span>
 
     - Evidências de Testes:
+        ![[6083 - edicao documento reflete download assinatura aprovado em homologacao.mp4]]
 
 - **CT-B02 Assinatura reflete a edição**
     Dado um documento editado
@@ -94,4 +95,5 @@ Após editar um documento, o download e a assinatura refletem o conteúdo atuali
     - 2026-07-24 - 📝 Bug importado (card criado a partir do ticket + narrativa da validação; sem export completo)
     - 2026-07-24 - 🔴 Reaberta em homologação — 1ª validação em HML deu erro (o problema comum ainda ocorria)
     - 2026-07-24 - 🔀 Fix da SGV-6873 mergeado em `fix/6083` (correção da raiz comum) e reenviado pra homologação
-    - 2026-07-24 - 🔁 Retestada e aprovada em homologação (com o fix do 6873 incorporado). Evidência pendente de captura.
+    - 2026-07-24 - 🔁 Retestada e aprovada em homologação (com o fix do 6873 incorporado)
+    - 2026-07-24 - 🎬 Evidência anexada (`6083 - Documento editado ok.mp4`, gravada 15:09 — chegou depois da aprovação inicial)
