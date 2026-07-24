@@ -4,7 +4,7 @@ tags:
   - qa
   - documento
 task: "7935"
-prioridade: media
+prioridade: altíssima
 status: aberto
 data_inicio: 2026-07-24
 data_fim: ""
@@ -96,7 +96,7 @@ Ao emitir pela toolbar, o evento de emissão é registrado com sucesso e **exibi
 
 ### Informações adicionais
 
-- Demanda relacionada: SGV-7935 (origem Notion; Sprint SP15/SP16; dev Diogo Sobreira, Squad 1 - Rogue One; revisor Washington Junior). Relacionada a SGV-7963. Prioridade assumida `media` (o export não trouxe o campo preenchido — corrigir se souber).
+- Demanda relacionada: SGV-7935 (origem Notion; Sprint SP15/SP16; dev Diogo Sobreira, Squad 1 - Rogue One; revisor Washington Junior; prioridade **Altíssima** conforme Triagem SP15). Relacionada a SGV-7963.
 - **Escopo do MR !608** (revisão de 2026-07-24): o fix cria um evento `ISSUED` ao mudar o status do documento de DRAFT→OPEN (emissão), com `eventHistory` (setor dono, cargo, iniciais, assinatura textual, nível de acesso); migration adiciona o tipo de evento `ISSUED`; o lado web (`DocumentEventCard.tsx` + tradução) passa a renderizar o card do evento na timeline.
 - Gate de doc (2026-07-24): [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]] descreve eventos de **geração** (documento gerado a partir de outro), mas **não cobre o evento de emissão** (DRAFT→OPEN) na timeline — sem divergência com o aprovado; gap de doc registrado (fluxo 8).
 - Histórico:
