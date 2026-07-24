@@ -520,39 +520,56 @@ LEDGER = [
     ("🔁", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (aprovada)"),
     ("🔴", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (reprovada)"),
     ("⚪", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (não reproduzido)"),
+    ("🔎", ("revis", "análise", "escopo", "cenári"), "{rid} - Revisar cenários/análise (concluída)"),
+    ("📋", ("triagem", "bater"), "{rid} - Triagem (item batido)"),
 ]
+
+# Emojis reconhecidos como prefixo de linha em Atividades (ordem não importa aqui;
+# usados em alternação, nunca como character class solto — 🗑️ é 2 codepoints).
+_EMOJI_ALT = "💭|📝|📤|💡|🐛|🗑️|✅|🔁|🔴|⚪|🔎|📋"
+# Modificadores que podem aparecer colados a um emoji da lista acima (ex.: "🔎👍",
+# "🔒" sozinho) — não geram item de ledger próprio, só não podem quebrar o
+# reconhecimento dos emojis "de verdade" ao lado deles na mesma linha.
+_MODIFICADOR_ALT = "👍|🔒"
+_PREFIXO_ALT = rf"(?:{_EMOJI_ALT}|{_MODIFICADOR_ALT})"
 
 
 def ledger_do_dia(texto):
     """A fazer hoje = ledger completo do dia: todo estágio executado (linha em
     Atividades) aparece também como item MARCADO na fila, com o que foi feito —
-    mesmo que a tarefa nunca tenha sido enfileirada antes."""
+    mesmo que a tarefa nunca tenha sido enfileirada antes.
+
+    Aceita também linhas com MAIS DE UM emoji prefixado sem espaço entre eles
+    (ex.: "🔎👍 SGV-9963 - ..." ou "📝🔎 SGV-7935 - ...") — cada emoji reconhecido
+    na sequência gera seu próprio item de ledger, independentemente."""
     m = re.search(r"## Atividades\n(.*?)\n## ", texto, re.S)
     if not m:
         return texto
     afazer = re.findall(r"^> - \[.\] (.+)$", texto, re.M)
     for ln in m.group(1).split("\n"):
-        am = re.match(r"^- (💭|📝|📤|💡|🐛|🗑️|✅|🔁|🔴|⚪) (.+)$", ln)
+        am = re.match(rf"^- ({_PREFIXO_ALT}+) (.+)$", ln)
         if not am:
             continue
-        emoji, resto = am.group(1), am.group(2)
+        emojis = re.findall(_EMOJI_ALT, am.group(1))
+        resto = am.group(2)
         idm = re.search(r"SGV[- ]?\d+|MEL-\d{4}", resto)
         rid = norm_id(idm.group(0)).replace("SGV ", "SGV-") if idm else None
         chave = rid if rid else resto.split(":")[-1].split("(")[0].strip()[:25]
-        for e2, kws, modelo in LEDGER:
-            if e2 != emoji:
-                continue
-            coberto = any(
-                (chave.lower() in norm_id(a).lower()) and any(k in a.lower() for k in kws)
-                for a in afazer)
-            if coberto:
+        for emoji in emojis:
+            for e2, kws, modelo in LEDGER:
+                if e2 != emoji:
+                    continue
+                coberto = any(
+                    (chave.lower() in norm_id(a).lower()) and any(k in a.lower() for k in kws)
+                    for a in afazer)
+                if coberto:
+                    break
+                item = modelo.format(rid=rid) if rid else f"Registrar: {chave} (feito)"
+                texto = re.sub(r"(> \*\*A fazer hoje:\*\*\n)",
+                               rf"\g<1>> - [x] {item} → registrado\n", texto, count=1)
+                afazer.append(item)
+                acoes.append(f"ledger: [x] {item[:55]}")
                 break
-            item = modelo.format(rid=rid) if rid else f"Registrar: {chave} (feito)"
-            texto = re.sub(r"(> \*\*A fazer hoje:\*\*\n)",
-                           rf"\g<1>> - [x] {item} → registrado\n", texto, count=1)
-            afazer.append(item)
-            acoes.append(f"ledger: [x] {item[:55]}")
-            break
     return texto
 
 
