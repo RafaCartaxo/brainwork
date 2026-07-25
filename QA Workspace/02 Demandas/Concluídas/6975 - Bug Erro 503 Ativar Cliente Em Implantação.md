@@ -71,6 +71,6 @@ Então o sistema retorna erro 503 e a ativação não é concluída
 ### Informações adicionais
 
 - Demanda relacionada: SGV-6975
-- Observações: Card criado retroativamente no momento do registro da validação (aprovada em homologação). Origem: triagem [[QA Workspace/05 Refinar/Triagem - SP15|Triagem SP15]] (Sanidade-006, prioridade Média, dev Matheus Godoi). Material de reprodução detalhado não foi fornecido — descrição/passo a passo destilados do título; quem reabrir no futuro deve reconstituir o passo a passo pela task no Notion.
+- Observações: Card criado retroativamente no momento do registro da validação (aprovada em homologação). Origem: triagem [[QA Workspace/Planejamento/SP15|Triagem SP15]] (Sanidade-006, prioridade Média, dev Matheus Godoi). Material de reprodução detalhado não foi fornecido — descrição/passo a passo destilados do título; quem reabrir no futuro deve reconstituir o passo a passo pela task no Notion.
 - Histórico:
     - 2026-07-21 - ✅ Aprovada em homologação

@@ -114,7 +114,7 @@ Depois (agrupado, com idade e bloqueio):
 - [ ] SGV-9036 - Confirmar critérios no Notion
 
 ### 📋 Planejamento
-- [ ] [[Planejamento SP15]] - Bater os cards
+- [ ] [[Planejamento/SP15|Planejamento SP15]] - Bater os cards
 - [ ] Planejamento SP15 - Reexportar view
 
 ### 🚦 Aguardando deploy

@@ -118,6 +118,6 @@ O sistema deve concluir a edição das regras de tramitação com sucesso, indep
 ### Informações adicionais
 
 - Demanda relacionada: [MR !505](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/505) (Washington Junior — squad API)
-- Observações: **Esteira 3f** ([[Sistema/Contexto/FLUXOS|FLUXOS]]) — task de API, correção já implementada; próximo passo de QA é a validação real com volume alto de setores (item mais importante, pois nenhum teste automatizado mede isso). Relação levantada na triagem com a [[QA Workspace/05 Refinar/Triagem - SP15|SGV-9692]] (mesmo padrão de fix N+1→lote, módulo distinto).
+- Observações: **Esteira 3f** ([[Sistema/Contexto/FLUXOS|FLUXOS]]) — task de API, correção já implementada; próximo passo de QA é a validação real com volume alto de setores (item mais importante, pois nenhum teste automatizado mede isso). Relação levantada na triagem com a [[QA Workspace/Planejamento/SP15|SGV-9692]] (mesmo padrão de fix N+1→lote, módulo distinto).
 - Histórico:
     - 2026-07-20 - 🐛 Bug cadastrado (a partir da revisão do MR !505 — escopo bate com o problema relatado, critérios de aceite atualizados conforme o que foi implementado, incluindo a divergência do timeout 30s→10s)

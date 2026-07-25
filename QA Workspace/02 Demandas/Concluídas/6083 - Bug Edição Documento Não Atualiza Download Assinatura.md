@@ -85,7 +85,7 @@ Após editar um documento, o download e a assinatura refletem o conteúdo atuali
 
 ### Informações adicionais
 
-- Demanda relacionada: SGV-6083 (Matheus Godoi; Sprint SP15/SP16). **Problema em comum** com [[QA Workspace/05 Refinar/Triagem - SP15|SGV-6873 e SGV-6348]] (edição não refletida no download).
+- Demanda relacionada: SGV-6083 (Matheus Godoi; Sprint SP15/SP16). **Problema em comum** com [[QA Workspace/Planejamento/SP15|SGV-6873 e SGV-6348]] (edição não refletida no download).
 - **Relação entre os fixes** (confirmada no git):
     - `fix/6083` original (`96dcb249`) — atualiza o conteúdo do documento para download e assinatura após edição;
     - **`fix/6873` foi mergeado dentro de `fix/6083`** (`bd8d86a6 fix(SGV-6083): Merge branch 'fix/6873' into fix/6083`) — a SGV-6873 ("download de documento temporário não refletia a edição") é a correção da raiz comum, e foi a que destravou o 6083;
