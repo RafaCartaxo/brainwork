@@ -82,6 +82,8 @@ Cada pasta tem um ícone Lucide + cor própria, escolhidos pra remeter ao que a 
 | `QA Workspace` | beaker | `#0d9488` |
 | `Dashboard/` (pasta e nota) | layout-dashboard | `#eab308` |
 | `00 Inbox` | list-todo | `#2563eb` |
+| `Dashboard` | layout-dashboard | `#eab308` |
+| `00 Inbox` | inbox | `#2563eb` |
 | `01 Daily` | calendar-days | `#d97706` |
 | `01 Daily/2026-07` (dar ícone igual à pasta de cada mês novo) | calendar | `#d97706` |
 | `02 Demandas` | clipboard-list | `#7c3aed` |
@@ -96,6 +98,8 @@ Cada pasta tem um ícone Lucide + cor própria, escolhidos pra remeter ao que a 
 | `04 Conhecimento/Fluxos` | route | `#0891b2` |
 | `04 Conhecimento/Referências` | library | `#ca8a04` |
 | `05 Refinar` | gem | `#db2777` |
+| `06 Estudos` | graduation-cap | `#ca8a04` |
+| `Planejamento` | target | `#0d9488` |
 | `99 Arquivo` | archive | `#78350f` |
 | `Evidências` | video | `#16a34a` |
 | `Evidências/Desenvolvimento` | code-2 | `#059669` |
@@ -117,6 +121,9 @@ Em Settings → Graph View (ou no ícone de grafo), os seguintes grupos por quer
 | Query | Cor |
 |---|---|
 | `path:"QA Workspace/01 Daily"` | `#d97706` |
+| `path:"QA Workspace/Planejamento"` | `#0d9488` |
+| `path:"QA Workspace/05 Refinar"` | `#db2777` |
+| `path:"QA Workspace/06 Estudos"` | `#ca8a04` |
 | `tag:#bug` | `#7c3aed` |
 | `path:"Sistema"` | `#475569` |
 | `path:"QA Workspace/Dashboard"` | `#eab308` |

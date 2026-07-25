@@ -72,8 +72,16 @@ QA Workspace/
     │   ├── SKILL_BUGS.md
     │   ├── SKILL_CASOS_DE_TESTE.md
     │   ├── SKILL_INBOX.md
+    │   ├── SKILL_INICIAR_AUTOMACAO.md
+    │   ├── SKILL_LIMPEZA_EXPORT.md
+    │   ├── SKILL_MELHORIA.md
     │   ├── SKILL_PADRONIZACAO.md
-    │   └── SKILL_PLANO_DE_TESTE.md
+    │   ├── SKILL_PLANO_DE_TESTE.md
+    │   ├── SKILL_REFINAMENTO.md
+    │   ├── SKILL_REVISAO_AUTOMACAO_E2E.md
+    │   ├── SKILL_REVISAO_ESCOPO_MR.md
+    │   ├── SKILL_TRIAGEM_SPRINT.md
+    │   └── SKILL_VERIFICACAO_DOC.md
     ├── Specs/
     │   └── YYYY-MM-DD-<tópico>-design.md (documentos de design/spec de melhorias do próprio vault)
     └── Templates/
