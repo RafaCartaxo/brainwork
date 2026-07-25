@@ -81,8 +81,6 @@ Cada pasta tem um ícone Lucide + cor própria, escolhidos pra remeter ao que a 
 |---|---|---|
 | `QA Workspace` | beaker | `#0d9488` |
 | `Dashboard/` (pasta e nota) | layout-dashboard | `#eab308` |
-| `00 Inbox` | list-todo | `#2563eb` |
-| `Dashboard` | layout-dashboard | `#eab308` |
 | `00 Inbox` | inbox | `#2563eb` |
 | `01 Daily` | calendar-days | `#d97706` |
 | `01 Daily/2026-07` (dar ícone igual à pasta de cada mês novo) | calendar | `#d97706` |

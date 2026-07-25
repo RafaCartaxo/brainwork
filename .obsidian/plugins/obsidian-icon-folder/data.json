@@ -52,7 +52,7 @@
     "iconColor": "#eab308"
   },
   "QA Workspace/00 Inbox": {
-    "iconName": "LiListTodo",
+    "iconName": "LiInbox",
     "iconColor": "#2563eb"
   },
   "QA Workspace/01 Daily": {
@@ -130,6 +130,14 @@
   "QA Workspace/05 Refinar": {
     "iconName": "LiGem",
     "iconColor": "#db2777"
+  },
+  "QA Workspace/06 Estudos": {
+    "iconName": "LiGraduationCap",
+    "iconColor": "#ca8a04"
+  },
+  "QA Workspace/Planejamento": {
+    "iconName": "LiTarget",
+    "iconColor": "#0d9488"
   },
   "QA Workspace/04 Conhecimento/Módulos": {
     "iconName": "LiPuzzle",

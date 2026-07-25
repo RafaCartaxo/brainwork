@@ -2,7 +2,7 @@
 tags:
   - qa
   - inbox-capture
-status: pendente
+status: aguardando-estrutura
 ---
 # Despacho sigiloso aparece mesmo com config desativada
 
