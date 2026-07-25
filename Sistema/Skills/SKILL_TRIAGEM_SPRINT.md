@@ -46,48 +46,66 @@ Divergências viram item em `## Anotações` da daily pra alinhar com o time.
 
 ### 4. Criar página de planejamento
 
-Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Organizada por estágio QA na ordem do fluxo real:
+Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Seções colapsáveis — só a "Ação imediata" fica expandida por padrão.
 
 ```markdown
 # Planejamento SP<N>
 
-> [!info] Sprint D/M → D/M | Progresso: X/Y batidos
-> A revisar: X/Y · Ação imediata: X/Y · Em validação: X/Y · Aguardando deploy: X/Y · Aguardando dev: X/Y · Acompanhamento: X/Y
+> [!info] Sprint D/M → D/M | ⚡X/Y ⚙️X/Y 🚦X/Y ⏳X/Y 📋X/Y ✅X/Y
+> Fontes: Notion D/M...
 
-## A revisar (n)            ← decidir antes de agir
-### Revisar MR
-### Refinar / definir critérios
-### Alertas
+---
 
-## Ação imediata (n)         ← testar AGORA
-### 🔴 Homologação
-### 🟡 DEV
+> [!note]- 📋 A revisar (n) · X batidos
+> Cards que precisam de decisão antes de entrar em validação.
+>
+> ### Revisar MR (n)
+> - [ ] **SGV-XXXX** — título curto · prioridade · dev · squad
+> ### Refinar / definir critérios (n)
+> - [x] **SGV-XXXX** — título curto · prioridade · dev · squad
+> ### Alertas (n)
+> - [x] **SGV-XXXX** — título curto · prioridade · dev · squad
 
-## Em validação (n)          ← testes em andamento
-### DEV
-### HML
+## ⚡ Ação imediata (n) · X batidos
+### 🔴 Homologação (n)
+- [ ] **SGV-XXXX** — título curto · prioridade · dev · squad
+### 🟡 DEV (n)
+- [ ] **SGV-XXXX** — título curto · prioridade · dev · squad
 
-## Aguardando deploy (n)     ← aprovado, esperando subir
-### ⏳ Subir pra HML
-### ⏳ Release
+> [!note]- ⚙️ Em validação (n) · X batidos
+> ### DEV / HML
+> ...
 
-## Aguardando dev (n)        ← bloqueado por terceiros
-### Em desenvolvimento
-### Impedimento / CX
+> [!note]- 🚦 Aguardando deploy (n) · X batidos
+> ### ⏳ Subir pra HML / ⏳ Release
+> ...
 
-## Acompanhamento (n)        ← concluídos, sem ação
-### Concluído / Produção
-### Não reproduzido / Descartado
-### Duplicados
-### Outro QA aprovou
-### Órfãos do export
-### Backlog
+> [!note]- ⏳ Aguardando dev (n) · X batidos
+> ### Em desenvolvimento / Impedimento / CX
+> ...
+
+> [!note]- ✅ Acompanhamento (n) · X batidos
+> ### Concluído / Produção (n)
+> > [!note]- 🗑️ Não reproduzido / Descartado (n)
+> > [!note]- 👥 Outro QA aprovou (n)
+> > [!note]- 👻 Órfãos do export (n)
+> ### Duplicados (n) · Concluídos com card (n) · Backlog (n)
 
 ## Decisões recentes
 ## Registro
 ```
 
-A ordem segue o pipeline QA real: primeiro decide, depois testa, depois acompanha. "Não reproduzido" vai pra Acompanhamento — bug que não reproduz mais é concluído (provavelmente corrigido por outra feature), não gera pendência.
+**Princípios aplicados** (UX do nexus-platform):
+- Carga cognitiva baixa: 5 de 6 seções colapsadas, ~30 linhas visíveis ao abrir
+- Informação crítica sempre visível: progresso + Ação imediata expandidos
+- Progressão natural: ordem do pipeline QA (decidir → agir → validar → deploy → aguardar → acompanhar)
+- Cards compactados: 1 linha por card (prioridade + dev + squad inline)
+- Sub-seções do Acompanhamento colapsadas (menor relevância, maior volume)
+
+**Regras de classificação**:
+- "Não reproduzido" → Acompanhamento (bug não reproduz = concluído, sem pendência)
+- "Decididos/duplicados" → Acompanhamento (já decididos, sem ação)
+- Apenas "Em desenvolvimento" e "Impedimento/CX" → Aguardando dev
 
 ### 5. Pendências e daily
 
@@ -99,10 +117,10 @@ A ordem segue o pipeline QA real: primeiro decide, depois testa, depois acompanh
 ## Copy na daily
 
 ```
-📋 [[Planejamento/SP15|Planejamento SP15]] - 44/82 cards batidos
-  (Ação imediata: 14 · Em validação: 5 · Aguardando deploy: 5 · A revisar: 18 · Aguardando terceiros: 12 · Acompanhamento: 32)
+📋 [[../../QA Workspace/Planejamento/SP15|Planejamento SP15]] - 50/82 cards batidos
+  (Ação imediata: 8/14 · Em validação: 2/3 · Aguardando deploy: 5/5 · A revisar: 6/9 · Aguardando dev: 0/5 · Acompanhamento: 29/46)
 ```
 
 ## Resultado Esperado
 
-Página de planejamento criada como página única por sprint, cards cruzados com o vault, divergências identificadas e anotadas, pendências de acompanhamento na fila. O callout do topo agrega o progresso geral. Exemplo: [[../../QA Workspace/Planejamento/SP15|Planejamento SP15]].
+Página de planejamento criada como página única por sprint, com seções colapsáveis na ordem do fluxo QA. Cards cruzados com o vault, divergências identificadas, pendências na fila. Exemplo: [[../../QA Workspace/Planejamento/SP15|Planejamento SP15]].
