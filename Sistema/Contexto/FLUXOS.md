@@ -27,7 +27,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
 | Exportei documentação do projeto | 8 | Limpar → classificar → template Conhecimento.md → `04 Conhecimento/` |
 | Quero estudar/pesquisar algo (fonte externa) | — | Nota por tópico (template Estudo.md) → [[../../QA Workspace/06 Estudos/README\|06 Estudos]]; gradua pra `04 Conhecimento` quando vira regra estável |
-| Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `05 Refinar/Triagem - <sprint>` |
+| Exportei view de sprint do Notion | 9 | Agrupar por status, cruzar com vault, divergências → `Planejamento/SP<N>` → [[../Skills/SKILL_TRIAGEM_SPRINT\|SKILL_TRIAGEM_SPRINT]] |
 | Exportei .md do Notion (não sei o tipo) | — | Pedir "processa o material novo" — o [[../Agentes/AGENTE_PROCESSAR_EXPORT\|agente]] classifica e roteia |
 | Tenho um MR do GitLab pra revisar o escopo | — | Colar o link (+ problema original, se tiver) → [[../Skills/SKILL_REVISAO_ESCOPO_MR\|SKILL_REVISAO_ESCOPO_MR]] |
 | Tenho um teste e2e pronto pra subir | — | Revisar padrão + coerência de asserts → [[../Skills/SKILL_REVISAO_AUTOMACAO_E2E\|SKILL_REVISAO_AUTOMACAO_E2E]] |
@@ -134,6 +134,6 @@ Regra de ouro: **importar ≠ copiar tudo**. Trazer só o que ajuda a testar (re
 
 ## 9. Triagem de sprint
 
-Export da view de sprint do Notion (dezenas de cards num arquivo) → [[../Skills/SKILL_TRIAGEM_SPRINT\|SKILL_TRIAGEM_SPRINT]]. Pipeline: agrupar por status → cruzar com cards existentes no vault → identificar divergências Notion × vault → criar documento em `05 Refinar/Triagem - <sprint>`. Na daily: `📋 Triagem <sprint> - <n>/<total> cards batidos` em Planejamento.
+Export da view de sprint do Notion (dezenas de cards num arquivo) → [[../Skills/SKILL_TRIAGEM_SPRINT\|SKILL_TRIAGEM_SPRINT]]. Pipeline: agrupar por status → cruzar com cards existentes no vault → identificar divergências Notion × vault → criar página em `Planejamento/SP<N>.md`. Na daily: `📋 Planejamento <sprint> - <n>/<total> cards batidos` em Planejamento.
 
 O agente [[../Agentes/AGENTE_PROCESSAR_EXPORT\|AGENTE_PROCESSAR_EXPORT]] automatiza a classificação e o roteamento — você dropa o .md e ele decide o caminho.

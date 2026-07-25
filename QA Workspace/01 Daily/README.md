@@ -86,7 +86,7 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Rodada de análise numa mesa de refinamento | `🔎 SGV-XXXX - Análise (Nª — <status simples>)` — ex.: `(1ª — travada: aguardando decisão do responsável sobre a regra)`, `(1ª — problema entendido, rascunho do card pronto)` |
 | Demanda refinada (card criado) | `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` |
 | Análise/critérios levados pro Notion | `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (análise/critérios registrados na task)` |
-| Batida de triagem de sprint | `📋 Triagem <sprint> - <n>/<total> cards batidos (<resultado curto>)` |
+| Batida de planejamento de sprint | `📋 Planejamento <sprint> - <n>/<total> cards batidos (<resultado curto>)` |
 | Documentação importada/atualizada em 04 Conhecimento | `📚 <Doc> - Documentação importada/atualizada (<escopo curto do que entrou>)` |
 
 As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço.

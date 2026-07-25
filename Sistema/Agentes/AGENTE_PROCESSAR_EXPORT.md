@@ -96,7 +96,7 @@ incompleta → modo A → envelopada no Refinamento.md →
 ### Triagem de sprint (SP15, dia 17/07)
 ```
 Export sprint-15.md (Downloads, 53 cards) → classificada como
-triagem → SKILL_TRIAGEM_SPRINT → 05 Refinar/Triagem - SP15 →
+triagem → SKILL_TRIAGEM_SPRINT → Planejamento/SP15 →
 53 cards agrupados, 7 com link pro vault, 2 divergências anotadas
 ```
 

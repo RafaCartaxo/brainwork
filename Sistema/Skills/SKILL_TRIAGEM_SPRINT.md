@@ -44,24 +44,44 @@ Comparar o status no Notion com o status real do card no vault:
 
 Divergências viram item em `## Anotações` da daily pra alinhar com o time.
 
-### 4. Criar documento de triagem
+### 4. Criar página de planejamento
 
-Criar uma **pasta** `05 Refinar/Triagem - <sprint>/` com a estrutura abaixo, organizada por estágio QA (não por status do Notion):
+Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Organizada por estágio QA (não por status do Notion):
 
 ```markdown
-Triagem - SP<N>/
-├── README.md                   ← visão geral, progresso, decisões recentes
-├── 01-acao-imediata.md         ← cards testáveis agora (Homologação + Teste dev)
-├── 02-em-validacao.md          ← cards com QA ativa (CTs em execução)
-├── 03-aguardando-deploy.md     ← aprovado, aguardando fix subir de ambiente
-├── 04-a-revisar.md             ← Revisar MR, sem critérios, investigar descarte
-├── 05-aguardando-terceiros.md  ← Em dev, impedimento, CX, aguardando sprint
-└── 06-acompanhamento.md        ← Produção, outro QA aprovou, decididos, órfãos
+# Planejamento SP<N> — Engenharia (BUG'S)
+
+> [!info] Sprint D/M → D/M | Progresso: X/Y batidos | Fontes: Notion D/M
+
+## Ação imediata
+### 🔴 Homologação (n)
+- [ ] **SGV-XXXX** — título · prioridade · dev
+### 🟡 DEV (n)
+- ...
+
+## Em validação (n)
+- ...
+
+## Aguardando deploy (n)
+### ⏳ Subir pra HML (n)
+### ⏳ Release (n)
+
+## A revisar (n)
+### Revisar MR
+### Investigar descarte
+### Refinar
+
+## Aguardando terceiros (n)
+## Acompanhamento (n)
+### Em produção
+### Aprovado por outro QA
+### Órfãos do export
+
+## Decisões recentes
+## Registro
 ```
 
-Cada arquivo contém apenas os cards daquele estágio, com checkboxes, wikilinks e sublinhas (prioridade/dev/origem) preservados. O README agrega o progresso geral e as decisões recentes.
-
-**Por que estágio QA, não status Notion**: um card "Disponível para homologação", um "Pronto pra teste em dev" e um "Aprovado no Dev" têm a mesma ação pendente de QA (validar). Separar por estágio QA responde "o que eu preciso fazer agora" em vez de "onde está no backlog do dev".
+Cada seção é um estágio QA — abre a página, rola, vê de relance o que importa. Checkboxes, wikilinks e sublinhas (prioridade/dev/origem) preservados. Progresso geral no callout do topo.
 
 ### 5. Pendências e daily
 
@@ -73,10 +93,10 @@ Cada arquivo contém apenas os cards daquele estágio, com checkboxes, wikilinks
 ## Copy na daily
 
 ```
-📋 [[05 Refinar/Triagem - SP15/README|Triagem SP15]] - 44/82 cards batidos
-  (01 Ação imediata: 8/20 · 03 Aguardando deploy: 5/5 · 04 A revisar: 6/18 · 06 Acompanhamento: 27/32)
+📋 [[Planejamento/SP15|Planejamento SP15]] - 44/82 cards batidos
+  (Ação imediata: 14 · Em validação: 5 · Aguardando deploy: 5 · A revisar: 18 · Aguardando terceiros: 12 · Acompanhamento: 32)
 ```
 
 ## Resultado Esperado
 
-Documento de triagem criado como pasta com 6 arquivos por estágio QA, cards cruzados com o vault, divergências identificadas e anotadas, pendências de acompanhamento na fila. O README da pasta agrega o progresso geral.
+Página de planejamento criada como página única por sprint, cards cruzados com o vault, divergências identificadas e anotadas, pendências de acompanhamento na fila. O callout do topo agrega o progresso geral. Exemplo: [[../../QA Workspace/Planejamento/SP15|Planejamento SP15]].

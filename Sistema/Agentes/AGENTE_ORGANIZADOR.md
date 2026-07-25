@@ -107,11 +107,11 @@ Quando o flag é removido do frontmatter (deploy confirmado), o organizador dete
 
 ## Invariante da Triagem confiável
 
-**Toda entrada de uma Triagem de sprint (`05 Refinar/Triagem - <sprint>.md`) marcada "já refinado"/"critérios no card" **sem wikilink** pro card precisa ter a pendência de confirmação rastreada** — não necessariamente um card no vault. "Card" aqui pode ser a **task do Notion**, não o arquivo local — Rafael confirmou isso em 2026-07-20. Não presumir inconsistência automaticamente; presumir **pendência de confirmação**.
+**Toda entrada de uma página de planejamento (`Planejamento/SP*.md`) marcada "já refinado"/"critérios no card" **sem wikilink** pro card precisa ter a pendência de confirmação rastreada** — não necessariamente um card no vault. "Card" aqui pode ser a **task do Notion**, não o arquivo local — Rafael confirmou isso em 2026-07-20. Não presumir inconsistência automaticamente; presumir **pendência de confirmação**.
 
 Gap encontrado em 2026-07-20: SGV-8977 e SGV-9036 estavam marcadas `✅ → já refinado, critérios no card` desde 17/07, sem wikilink. A SGV-8977 de fato não tinha card local (confirmado ao revisar o MR — [[../Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]] — e resolvido criando o card). A SGV-9036 pode estar correta como está (critérios só no Notion) — **sem material/MR em mãos pra confirmar, não se cria card no escuro.**
 
-Verificação (varredura de `05 Refinar/Triagem - *.md`):
+Verificação (varredura de `Planejamento/SP*.md`):
 - Linha com `✅` e "já refinado"/"critérios no card"/"card criado" **sem wikilink** → checar se existe card em `02 Demandas/` pelo SGV.
   - Existe → só faltava o link; adicionar.
   - Não existe **e** há material/MR disponível pra confirmar → seguir [[../Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]] (card direto ou revisão).

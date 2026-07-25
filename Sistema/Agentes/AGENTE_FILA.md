@@ -30,7 +30,7 @@ Cada item da fila é classificado pelo verbo de ação:
 | 🔎 **Refinamento** | "Refinar", "Revisar cenários", "Analisar", "Investigar" |
 | 📤 **Cadastro** | "Cadastrar no Notion", "Atualizar no Notion", "Levar análise", "Registrar" |
 | 👁️ **Acompanhamento** | "Acompanhar", "Verificar task", "Confirmar critérios", itens sem verbo de ação claro |
-| 📋 **Triagem** | "Triagem", "Bater os cards", "Reexportar" |
+| 📋 **Planejamento** | "Planejamento", "Triagem", "Bater os cards", "Reexportar" |
 | 🚦 **Aguardando deploy** | "aguardando deploy", "aguardando release", "fix não subiu" |
 
 ### 2. Sinaliza idade
@@ -79,8 +79,8 @@ Antes (14 itens, plano):
 
 ```
 - [ ] SGV-9610 - Validar em DEV
-- [ ] Triagem SP15 - Bater os 53 cards
-- [ ] Triagem SP15 - Reexportar a view completa
+- [ ] Planejamento SP15 - Bater os 53 cards
+- [ ] Planejamento SP15 - Reexportar a view completa
 - [ ] SGV-4873 - Refinar
 - [ ] SGV-9963 - Revisar cenários de teste
 - [ ] MEL-0001 - Cadastrar melhoria no Notion
@@ -113,9 +113,9 @@ Depois (agrupado, com idade e bloqueio):
 - [ ] [[SGV-9977]] - Acompanhar
 - [ ] SGV-9036 - Confirmar critérios no Notion
 
-### 📋 Triagem
-- [ ] [[Triagem SP15]] - Bater os cards
-- [ ] Triagem SP15 - Reexportar view
+### 📋 Planejamento
+- [ ] [[Planejamento SP15]] - Bater os cards
+- [ ] Planejamento SP15 - Reexportar view
 
 ### 🚦 Aguardando deploy
 - [ ] [[SGV-9610]] - Aguardando deploy HML ⏳ aguardando deploy

@@ -26,6 +26,9 @@ QA Workspace/
 │   ├── Dashboard.md
 │   ├── Bugs.base
 │   └── Demandas.base
+├── Planejamento/
+│   ├── README.md (visão geral das sprints ativas)
+│   └── SP<N>.md (página da sprint — como a daily note, tudo num lugar)
 ├── 00 Inbox/
 │   └── README.md (backlog do próprio vault/ferramenta — não é captura do dia a dia, ver [[Sistema/Skills/SKILL_INBOX.md|SKILL_INBOX.md]])
 ├── 01 Daily/
