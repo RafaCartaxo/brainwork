@@ -46,42 +46,48 @@ Divergências viram item em `## Anotações` da daily pra alinhar com o time.
 
 ### 4. Criar página de planejamento
 
-Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Organizada por estágio QA (não por status do Notion):
+Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Organizada por estágio QA na ordem do fluxo real:
 
 ```markdown
-# Planejamento SP<N> — Engenharia (BUG'S)
+# Planejamento SP<N>
 
-> [!info] Sprint D/M → D/M | Progresso: X/Y batidos | Fontes: Notion D/M
+> [!info] Sprint D/M → D/M | Progresso: X/Y batidos
+> A revisar: X/Y · Ação imediata: X/Y · Em validação: X/Y · Aguardando deploy: X/Y · Aguardando dev: X/Y · Acompanhamento: X/Y
 
-## Ação imediata
-### 🔴 Homologação (n)
-- [ ] **SGV-XXXX** — título · prioridade · dev
-### 🟡 DEV (n)
-- ...
-
-## Em validação (n)
-- ...
-
-## Aguardando deploy (n)
-### ⏳ Subir pra HML (n)
-### ⏳ Release (n)
-
-## A revisar (n)
+## A revisar (n)            ← decidir antes de agir
 ### Revisar MR
-### Investigar descarte
-### Refinar
+### Refinar / definir critérios
+### Alertas
 
-## Aguardando terceiros (n)
-## Acompanhamento (n)
-### Em produção
-### Aprovado por outro QA
+## Ação imediata (n)         ← testar AGORA
+### 🔴 Homologação
+### 🟡 DEV
+
+## Em validação (n)          ← testes em andamento
+### DEV
+### HML
+
+## Aguardando deploy (n)     ← aprovado, esperando subir
+### ⏳ Subir pra HML
+### ⏳ Release
+
+## Aguardando dev (n)        ← bloqueado por terceiros
+### Em desenvolvimento
+### Impedimento / CX
+
+## Acompanhamento (n)        ← concluídos, sem ação
+### Concluído / Produção
+### Não reproduzido / Descartado
+### Duplicados
+### Outro QA aprovou
 ### Órfãos do export
+### Backlog
 
 ## Decisões recentes
 ## Registro
 ```
 
-Cada seção é um estágio QA — abre a página, rola, vê de relance o que importa. Checkboxes, wikilinks e sublinhas (prioridade/dev/origem) preservados. Progresso geral no callout do topo.
+A ordem segue o pipeline QA real: primeiro decide, depois testa, depois acompanha. "Não reproduzido" vai pra Acompanhamento — bug que não reproduz mais é concluído (provavelmente corrigido por outra feature), não gera pendência.
 
 ### 5. Pendências e daily
 
