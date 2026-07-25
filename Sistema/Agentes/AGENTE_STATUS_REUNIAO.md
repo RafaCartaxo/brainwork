@@ -76,6 +76,7 @@ Considera trava:
 - `🔴 Reaberta` sem correção disponível ainda
 - Menção explícita a bloqueio por outro time/responsável
 - Card sem dono claro ("definir com dev/produto")
+- Pendência com `⚠️ gate de doc` ou `⚠️ SGV-XXXX sem gate de doc` — gerada pelo [[AGENTE_VALIDACAO_DOC]] (card aprovado sem cruzamento contra documentação)
 
 ### 6. O que NÃO entra
 
@@ -88,6 +89,7 @@ Considera trava:
 
 - **AGENTE_ORGANIZADOR**: Alimenta as Atividades e a fila que este agente lê
 - **AGENTE_MIGRACAO_CARDS**: Cards migrados hoje aparecem no Fiz
+- **AGENTE_VALIDACAO_DOC**: Pendências `⚠️ gate de doc` e `📚 Importar doc` detectadas pelo validador entram em Travas (gate pendente) ou Foco (doc ausente)
 
 ## Marca de geração
 

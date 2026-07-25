@@ -24,8 +24,8 @@ Ideia: uma central de operações única, onde dá pra trabalhar a partir de um 
 - [x] Mapear [[Sistema/Agentes/AGENTE_ORGANIZADOR|AGENTE_ORGANIZADOR]] como comando `/organiza-daily` no opencode (junto com `/processa-export` e `/status-reuniao`)
 
 ### 🟡 Em breve
-- [ ] [[Sistema/Skills/SKILL_MELHORIA|SKILL_MELHORIA]] — ciclo completo do fluxo 4 (checklist → refinar → card → Notion → esteira normal)
-- [ ] Expandir [[Sistema/Agentes/AGENTE_VALIDACAO_DOC|AGENTE_VALIDACAO_DOC]] — detecção automática de módulo e integração com Travas do Status — reunião
+- [x] [[Sistema/Skills/SKILL_MELHORIA|SKILL_MELHORIA]] — ciclo completo do fluxo 4 (checklist → refinar → card → Notion → esteira normal)
+- [x] Expandir [[Sistema/Agentes/AGENTE_VALIDACAO_DOC|AGENTE_VALIDACAO_DOC]] — detecção automática de módulo e integração com Travas do Status — reunião
 - [ ] Avaliar viabilidade de MCP Notion pra sincronização bidirecional (hoje tudo manual: cadastrar, renomear, atualizar)
 
 ### 🟢 Um dia

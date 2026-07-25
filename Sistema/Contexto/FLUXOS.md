@@ -21,7 +21,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Bug investigado não reproduz / cenário não existe | 3e | [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|Regra de descarte]] → `🗑️` na daily |
 | Chegou task só de API | 3f | Definir critérios no card; validação pula DEV, direto em homologação |
 | Validação reprovou **e** abriu bug novo (SGV próprio) | 3g | Marcar a pendência com `(reprovada em <ambiente>, bug SGV-YYYY aberto)` — o organizador completa o resto |
-| Tive ideia de melhoria do produto | 4 | Checkbox `**MEL-NNNN · Título**` em Melhorias propostas (próximo número: Dashboard) |
+| Tive ideia de melhoria do produto | 4 | Checkbox `**MEL-NNNN · Título**` em Melhorias propostas (próximo número: Dashboard) → [[../Skills/SKILL_MELHORIA\|SKILL_MELHORIA]] |
 | Gravei um vídeo de validação | 5 | [[../../QA Workspace/Evidências/README\|Evidências/README]] — renomear e mover **no mesmo dia** |
 | Chegou demanda já cadastrada pra refinar | 6 | Conduzir a mesa → [[../Skills/SKILL_REFINAMENTO\|SKILL_REFINAMENTO]] (material → `05 Refinar/` → Destilado → gate de doc → CTs → card) |
 | Fechando o dia | 7 | Anotar resultado curto nos checkboxes feitos → Pendente para amanhã → 🔄 Atualizar |
@@ -95,10 +95,13 @@ Fecha a ponte validação → automação. Card aprovado (idealmente em HML) e c
 
 ## 4. Melhoria: da ideia ao cadastro
 
+Orquestrado pela [[../Skills/SKILL_MELHORIA|SKILL_MELHORIA]] (7 passos: ideia → refinar → plano → CTs → card → Notion → esteira).
+
 1. Checkbox `**MEL-NNNN · Título**` em Melhorias propostas + `💭 MEL-NNNN - Melhoria proposta` em Atividades
-2. Refinar → card [[../Templates/Demanda.md|Demanda]] em `02 Demandas/DEV/`
-3. Cadastrar no Notion → ganha SGV → renomear arquivo → `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)`
-4. Segue esteira normal. Regras completas: [[../../QA Workspace/01 Daily/README#Regra de Melhorias propostas\|01 Daily/README]].
+2. Refinar escopo + regras de negócio ([[../Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]] como sub-passo) → plano de teste ([[../Skills/SKILL_PLANO_DE_TESTE|SKILL_PLANO_DE_TESTE]]) → CTs ([[../Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]])
+3. Criar card hub [[../Templates/Demanda.md|Demanda]] em `02 Demandas/DEV/` → `📝 MEL-NNNN - Melhoria refinada (card criado)`
+4. Cadastrar no Notion → ganha SGV → renomear arquivo → `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)`
+5. Segue esteira normal. Regras completas: [[../../QA Workspace/01 Daily/README#Regra de Melhorias propostas\|01 Daily/README]].
 
 ## 5. Evidência
 
