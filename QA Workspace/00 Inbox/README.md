@@ -26,6 +26,7 @@ Ideia: uma central de operações única, onde dá pra trabalhar a partir de um 
 ### 🟡 Em breve
 - [x] [[Sistema/Skills/SKILL_MELHORIA|SKILL_MELHORIA]] — ciclo completo do fluxo 4 (checklist → refinar → card → Notion → esteira normal)
 - [x] Expandir [[Sistema/Agentes/AGENTE_VALIDACAO_DOC|AGENTE_VALIDACAO_DOC]] — detecção automática de módulo e integração com Travas do Status — reunião
+- [x] Agentes reconhecerem "aguardando deploy" (Fase 2) — AGENTE_MIGRACAO_CARDS, AGENTE_ORGANIZADOR e AGENTE_FILA
 - [ ] Avaliar viabilidade de MCP Notion pra sincronização bidirecional (hoje tudo manual: cadastrar, renomear, atualizar)
 
 ### 🟢 Um dia

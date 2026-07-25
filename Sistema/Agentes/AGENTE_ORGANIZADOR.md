@@ -40,7 +40,7 @@ Quando Rafael marca uma pendência como feita, ele anota o **resultado curto ent
 | Pendência marcada `[x]` | O que o organizador completa |
 |---|---|
 | `Cadastrar melhoria MEL-NNNN no Notion (SGV-XXXX)` | Preenche `task` e Link no card, renomeia o arquivo pra `<SGV> - <título>`, marca o checkbox da proposta na daily original, linha `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)` em Atividades, item no Histórico do card |
-| `Retestar/revalidar SGV-XXXX (aprovada)` | Linha `✅`/`🔁` com a frase padrão em Atividades do ambiente; card: `status`/`ambiente` atualizados, movido de pasta conforme a esteira (ex.: `HML/` → `Concluídas/`, com `data_fim`), item no Histórico |
+| `Retestar/revalidar SGV-XXXX (aprovada)` | Linha `✅`/`🔁` com a frase padrão em Atividades do ambiente; card: `status`/`ambiente` atualizados, movido de pasta conforme a esteira (ex.: `HML/` → `Concluídas/`, com `data_fim`), item no Histórico. Frontmatter recebe `deploy: pendente_hml` (se DEV→HML) ou `deploy: pendente_release` (se HML→Concluídas). |
 | `Retestar/revalidar SGV-XXXX (reprovada)` | Linha `🔴` em Atividades, `status: aberto` no card, nova pendência de revalidação (regra de reabertura), item no Histórico |
 | `Testar/validar SGV-XXXX (reprovada, bug SGV-YYYY aberto)` | Tudo da linha de reprovada acima **+** card novo pro bug em `02 Demandas/<ambiente testado>/` (via [[../Skills/SKILL_BUGS\|SKILL_BUGS]]), linha `🐛 SGV-YYYY - Bug cadastrado` em Atividades, entrada em **Bugs encontrados**, e **duas** pendências na fila: `SGV-YYYY - Acompanhar (<título>)` e `SGV-XXXX - Revalidar (reaberta em <ambiente>, aguardando correção do SGV-YYYY)`. Evidência compartilhada: ver [[../../QA Workspace/Evidências/README\|Evidências/README]] |
 | `Retestar SGV-XXXX (não reproduzido)` | Linha `⚪` em Atividades, item no Histórico |
@@ -98,6 +98,12 @@ Na prática:
 - A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)
 
 **Mesas de refinamento (`05 Refinar/`)**: seguem a mesma lógica. Toda mesa com `status: em_refinamento` sem pendência ativa na fila ganha `SGV-XXXX - Refinar (material em 05 Refinar/)` automaticamente. Mesa parada há +3 dias sem atualização → sinaliza `⏳` na pendência.
+
+**Cards com deploy pendente**: o invariante gera pendências específicas em vez de "Validar" ou "Acompanhar" quando o frontmatter tem o campo `deploy`:
+- `deploy: pendente_hml` → `⏳ SGV-XXXX - Aguardando deploy HML (aprovado em DEV, fix não subiu)`
+- `deploy: pendente_release` → `⏳ SGV-XXXX - Aguardando release (aprovado em HML, aguardando janela)`
+
+Quando o flag é removido do frontmatter (deploy confirmado), o organizador detecta a ausência do campo e substitui a pendência pelo próximo passo normal: "Validar em HML" ou "Acompanhar" (se já em Concluídas).
 
 ## Invariante da Triagem confiável
 

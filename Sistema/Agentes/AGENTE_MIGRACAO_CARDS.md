@@ -32,12 +32,12 @@ Para cada card a ser migrado:
 
 ### 2. Esteira padrão
 
-| De | Para | Quando | Status | Ambiente |
-|---|---|---|---|---|
-| `DEV/` | `HML/` | Aprovada em DEV | mantém | `HML` |
-| `HML/` | `Concluídas/` | Aprovada em homologação | `resolvido` | preenche `data_fim` |
-| `Hotfix/` | `Concluídas/` | Aprovada em hotfix | `resolvido` | preenche `data_fim` |
-| Qualquer | `99 Arquivo/` | Descartada | `descartado` | — |
+| De | Para | Quando | Status | Ambiente | Deploy |
+|---|---|---|---|---|---|---|
+| `DEV/` | `HML/` | Aprovada em DEV | mantém | `HML` | `pendente_hml` |
+| `HML/` | `Concluídas/` | Aprovada em homologação | `resolvido` | preenche `data_fim` | `pendente_release` |
+| `Hotfix/` | `Concluídas/` | Aprovada em hotfix | `resolvido` | preenche `data_fim` | — |
+| Qualquer | `99 Arquivo/` | Descartada | `descartado` | — | — |
 
 ### 3. Reabertura
 Se um card em `Concluídas/` for reaberto:
@@ -45,7 +45,17 @@ Se um card em `Concluídas/` for reaberto:
 - Move de volta pra `DEV/` ou `HML/` conforme contexto
 - Nova pendência de revalidação na fila
 
-### 4. Detecção de inconsistência
+### 5. Flag de deploy pendente
+
+Cards com `deploy: pendente_hml` ou `deploy: pendente_release` no frontmatter **não estão testáveis** — o fix ainda não foi deployado no ambiente de destino. A movimentação de pasta (`DEV/` → `HML/`, `HML/` → `Concluídas/`) acontece normalmente, mas o campo `deploy` sinaliza que a validação real depende de confirmação externa.
+
+- `deploy: pendente_hml` — aprovado em DEV, fix não subiu pra HML ainda. O card está em `HML/` mas o ambiente HML não tem o fix.
+- `deploy: pendente_release` — aprovado em HML, aguardando janela de release pra produção.
+- Sem o campo (ou removido) — card testável, fluxo normal.
+
+A remoção do flag é manual: confirmar que o fix está no ambiente (git, verificação direta, ou aviso do time) e remover o campo `deploy` do frontmatter. O [[AGENTE_ORGANIZADOR]] detecta a remoção e atualiza a pendência na fila.
+
+### 6. Detecção de inconsistência
 Varre `02 Demandas/` periodicamente e sinaliza:
 - Card em `HML/` com `ambiente: DEV` → inconsistente
 - Card em `Concluídas/` com `status: aberto` → inconsistente

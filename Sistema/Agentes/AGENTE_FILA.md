@@ -31,6 +31,7 @@ Cada item da fila é classificado pelo verbo de ação:
 | 📤 **Cadastro** | "Cadastrar no Notion", "Atualizar no Notion", "Levar análise", "Registrar" |
 | 👁️ **Acompanhamento** | "Acompanhar", "Verificar task", "Confirmar critérios", itens sem verbo de ação claro |
 | 📋 **Triagem** | "Triagem", "Bater os cards", "Reexportar" |
+| 🚦 **Aguardando deploy** | "aguardando deploy", "aguardando release", "fix não subiu" |
 
 ### 2. Sinaliza idade
 
@@ -52,6 +53,7 @@ Se o texto do item indica bloqueio, adiciona o motivo:
 | Padrão | Marca |
 |---|---|
 | "aguardando dev", "MR em revisão", "quando o dev entregar" | `⏳ aguardando dev` |
+| "aguardando deploy", "aguardando release", "fix não subiu" | `⏳ aguardando deploy` |
 | "aguardando responsável", "aguardando retorno", "aguardando decisão" | `⏳ aguardando externo` |
 | "bloqueada", "impedimento" | `⏳ bloqueado` |
 | Sem indicação de bloqueio | (sem marca) — assume-se que depende de você |
@@ -114,6 +116,9 @@ Depois (agrupado, com idade e bloqueio):
 ### 📋 Triagem
 - [ ] [[Triagem SP15]] - Bater os cards
 - [ ] Triagem SP15 - Reexportar view
+
+### 🚦 Aguardando deploy
+- [ ] [[SGV-9610]] - Aguardando deploy HML ⏳ aguardando deploy
 
 ### ⚠️ Parado (sem ação há 6+ dias)
 - [ ] Detalhar captura despacho sigiloso 🕐 6d ⚠️
