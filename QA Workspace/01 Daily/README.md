@@ -57,6 +57,14 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Suspeita investigada e descartada sem card | `🗑️ Suspeita descartada: <título> (não é bug: <motivo curto>)` |
 | Bug/suspeita com card, investigada e descartada (não ocorre) | `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)` (ver [[Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]]) |
 
+**Tasks de API** (fluxo 3f — sem esteira DEV, validação direto em homologação; regras completas em [[Sistema/Contexto/PADROES_QA#Tasks de API (fluxo 3f)\|PADROES_QA]]):
+
+| Situação | Copy |
+|---|---|
+| Revisão de cenários/contratos | `🔎 SGV-XXXX - Revisão de cenários (API) (<resultado>)` |
+| Aprovada em homologação | `✅ SGV-XXXX - API aprovada em homologação` |
+| Reprovada em homologação | `🔴 SGV-XXXX - API reaberta em homologação` |
+
 **Melhoria** (antes do cadastro é `MEL-NNNN`; depois, a frase leva a palavra "Melhoria" pra diferenciar da esteira de bug só lendo a daily):
 
 | Situação | Copy |

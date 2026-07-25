@@ -44,8 +44,11 @@ Quando Rafael marca uma pendência como feita, ele anota o **resultado curto ent
 | `Retestar/revalidar SGV-XXXX (reprovada)` | Linha `🔴` em Atividades, `status: aberto` no card, nova pendência de revalidação (regra de reabertura), item no Histórico |
 | `Testar/validar SGV-XXXX (reprovada, bug SGV-YYYY aberto)` | Tudo da linha de reprovada acima **+** card novo pro bug em `02 Demandas/<ambiente testado>/` (via [[../Skills/SKILL_BUGS\|SKILL_BUGS]]), linha `🐛 SGV-YYYY - Bug cadastrado` em Atividades, entrada em **Bugs encontrados**, e **duas** pendências na fila: `SGV-YYYY - Acompanhar (<título>)` e `SGV-XXXX - Revalidar (reaberta em <ambiente>, aguardando correção do SGV-YYYY)`. Evidência compartilhada: ver [[../../QA Workspace/Evidências/README\|Evidências/README]] |
 | `Retestar SGV-XXXX (não reproduzido)` | Linha `⚪` em Atividades, item no Histórico |
+| `Descartar SGV-XXXX (não reproduz: <motivo>)` | `status: descartado`, CTs marcados Sim conforme [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]], move pra `99 Arquivo/` (via [[AGENTE_MIGRACAO_CARDS]]), linha `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)` em Atividades, item no Histórico |
 | `Cadastrar bug ... no Notion (SGV-XXXX)` | Preenche `task` no card (e renomeia se ainda estava sem número), linha `🐛 SGV-XXXX - Bug cadastrado` em Atividades |
 | `Revisar cenários de teste do SGV-XXXX (<resultado>)` | Linha em Atividades com o resultado anotado, item no Histórico do card |
+| `Revisar cenários do SGV-XXXX (API aprovada)` | Linha `✅ SGV-XXXX - API aprovada em homologação` em Atividades, card: `status: resolvido`, move pra `Concluídas/`, `data_fim` preenchida, item no Histórico. API não tem esteira DEV — vai direto pra homologação; aprovação já conclui. |
+| `Revisar cenários do SGV-XXXX (API reprovada)` | Linha `🔴 SGV-XXXX - API reaberta em homologação` em Atividades, `status: aberto` no card, nova pendência de revalidação, item no Histórico |
 | `Atualizar/levar análise do SGV-XXXX pro Notion (feito)` | Linha `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (...)` em Atividades, item no Histórico do card. Se existir mesa em `05 Refinar/` com esse SGV (`status: em_refinamento`): renomeia pra `<SGV> - Refinamento <título curto>.md`, muda status pra `refinado`, move pra `04 Conhecimento/`, cross-link no card |
 | `Refinar SGV-XXXX (card criado, critérios prontos)` | Lê o Destilado da mesa em `05 Refinar/SGV-XXXX.md` → cria card em `02 Demandas/<ambiente>/` (template [[../Templates/Bug Report.md\|Bug Report]] pra bug, [[../Templates/Demanda.md\|Demanda]] pra melhoria/funcionalidade), preenche frontmatter (task, status, ambiente, data_inicio), cross-link mesa ↔ card (Observações: "Análise completa: [[04 Conhecimento/<SGV> - Refinamento <título>]]" no card, wikilink reverso na mesa), linha `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` em Atividades → Planejamento, item no Histórico do card, cria pendência `SGV-XXXX - Atualizar no Notion (levar análise/critérios pra task)`. Aplica regra de links: toda menção ao SGV na daily vira wikilink pro card |
 | `Investigar suspeita: <título> (descartada: <motivo>)` | Linha `🗑️ Suspeita descartada: <título> (não é bug: <motivo>)` em Atividades |
@@ -77,7 +80,7 @@ Uma linha já processada carrega o sufixo ` → ...` (seta + resultado). O organ
 
 ## Reconciliação de Atividades (o fim implica os passos anteriores)
 
-Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à mão sem passar por pendência nenhuma. O botão reconcilia os cards com o que a daily de hoje declara — pra cada linha `✅ 🔁 🔴 ⚪ 📤 🗑️` com SGV cujo card não reflete o estado, ele aplica a esteira completa.
+Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à mão sem passar por pendência nenhuma. O botão reconcilia os cards com o que a daily de hoje declara — pra cada linha `✅ 🔁 🔴 ⚪ 📤 🗑️` com SGV cujo card não reflete o estado, ele aplica a esteira completa. **Tasks de API** (sufixo `(API)` na frase) seguem reconciliação própria: `✅ SGV - API aprovada em homologação` move direto pra `Concluídas/` sem passar por HML; `🔴 SGV - API reaberta` mantém na pasta atual com `status: aberto`.
 
 **O fim implica os passos anteriores**: registrar direto o estágio final (card ainda em DEV, atividade diz "aprovada em homologação") não trava nada — o card avança até o estado declarado e o Histórico registra `(etapas anteriores concluídas implicitamente)`. Idempotente: estado já refletido não é reaplicado.
 
@@ -87,7 +90,11 @@ Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à m
 
 Na prática:
 - Pendência que nasce durante o dia entra em **A fazer hoje**
-- O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão
+- O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão conforme o tipo de card:
+  - Card com `task` preenchido → `SGV-XXXX - Acompanhar (<título>)`
+  - Card sem `task`, template Bug Report → `Cadastrar bug <título> no Notion`
+  - Card sem `task`, template Demanda com campo `mel` → `Cadastrar melhoria MEL-NNNN no Notion`
+  - Card sem `task`, outros casos → `SGV-XXXX - Acompanhar (<título>)` (fallback seguro)
 - A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)
 
 **Mesas de refinamento (`05 Refinar/`)**: seguem a mesma lógica. Toda mesa com `status: em_refinamento` sem pendência ativa na fila ganha `SGV-XXXX - Refinar (material em 05 Refinar/)` automaticamente. Mesa parada há +3 dias sem atualização → sinaliza `⏳` na pendência.
@@ -112,7 +119,7 @@ Criar o card/checkbox no vault não fecha o ciclo — Bug e Melhoria ainda preci
 
 ## Copy padronizada (obrigatória pro organizador)
 
-Tudo que o organizador escreve segue a copy já padronizada do vault — nunca inventar redação própria. As frases oficiais estão no [[../../QA Workspace/01 Daily/README\|01 Daily/README]] (catálogo completo: bug, melhoria, planejamento).
+Tudo que o organizador escreve segue a copy já padronizada do vault — nunca inventar redação própria. As frases oficiais estão no [[../../QA Workspace/01 Daily/README\|01 Daily/README]] (catálogo completo: bug, melhoria, planejamento). Frases de tasks de API estão no [[../Contexto/PADROES_QA#Tasks de API (fluxo 3f)\|PADROES_QA]].
 
 ## Registro na daily
 
