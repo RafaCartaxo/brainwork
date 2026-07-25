@@ -46,22 +46,22 @@ Divergências viram item em `## Anotações` da daily pra alinhar com o time.
 
 ### 4. Criar documento de triagem
 
-Arquivo em `05 Refinar/Triagem - <sprint>.md` com:
+Criar uma **pasta** `05 Refinar/Triagem - <sprint>/` com a estrutura abaixo, organizada por estágio QA (não por status do Notion):
 
 ```markdown
-# Triagem - SP<N>
-
-> [!info] Export do Notion em YYYY-MM-DD — <n>/<total> cards
-
-## Por status
-
-### Homologação (<n>)
-- [[card|SGV-XXXX]] — <título>
-- SGV-YYYY — <título> (sem card no vault)
-
-### Teste DEV (<n>)
-...
+Triagem - SP<N>/
+├── README.md                   ← visão geral, progresso, decisões recentes
+├── 01-acao-imediata.md         ← cards testáveis agora (Homologação + Teste dev)
+├── 02-em-validacao.md          ← cards com QA ativa (CTs em execução)
+├── 03-aguardando-deploy.md     ← aprovado, aguardando fix subir de ambiente
+├── 04-a-revisar.md             ← Revisar MR, sem critérios, investigar descarte
+├── 05-aguardando-terceiros.md  ← Em dev, impedimento, CX, aguardando sprint
+└── 06-acompanhamento.md        ← Produção, outro QA aprovou, decididos, órfãos
 ```
+
+Cada arquivo contém apenas os cards daquele estágio, com checkboxes, wikilinks e sublinhas (prioridade/dev/origem) preservados. O README agrega o progresso geral e as decisões recentes.
+
+**Por que estágio QA, não status Notion**: um card "Disponível para homologação", um "Pronto pra teste em dev" e um "Aprovado no Dev" têm a mesma ação pendente de QA (validar). Separar por estágio QA responde "o que eu preciso fazer agora" em vez de "onde está no backlog do dev".
 
 ### 5. Pendências e daily
 
@@ -73,10 +73,10 @@ Arquivo em `05 Refinar/Triagem - <sprint>.md` com:
 ## Copy na daily
 
 ```
-📋 [[05 Refinar/Triagem - SP15|Triagem SP15]] - 12/53 cards batidos
-  (6 com critérios, 4 já refinados no vault, 1 refinado hoje, 1 em construção)
+📋 [[05 Refinar/Triagem - SP15/README|Triagem SP15]] - 44/82 cards batidos
+  (01 Ação imediata: 8/20 · 03 Aguardando deploy: 5/5 · 04 A revisar: 6/18 · 06 Acompanhamento: 27/32)
 ```
 
 ## Resultado Esperado
 
-Documento de triagem criado, cards cruzados com o vault, divergências identificadas e anotadas, pendências de acompanhamento na fila.
+Documento de triagem criado como pasta com 6 arquivos por estágio QA, cards cruzados com o vault, divergências identificadas e anotadas, pendências de acompanhamento na fila. O README da pasta agrega o progresso geral.

@@ -2,12 +2,24 @@
 tags:
   - qa
   - triagem
+  - legado
 sprint: SP15
-status: em_andamento
+status: arquivado
 data: 2026-07-17
 responsavel: Rafael
 ---
-# Triagem SP15 — Engenharia (BUG'S)
+# Triagem SP15 — Engenharia (BUG'S) ⚠️ LEGADO
+
+> [!warning] Este arquivo foi reorganizado em 2026-07-25
+> A triagem agora está na pasta [[Triagem - SP15/README|Triagem - SP15/]], separada em 6 arquivos por estágio QA:
+> - [[Triagem - SP15/01-acao-imediata|01 - Ação imediata]]
+> - [[Triagem - SP15/02-em-validacao|02 - Em validação]]
+> - [[Triagem - SP15/03-aguardando-deploy|03 - Aguardando deploy]]
+> - [[Triagem - SP15/04-a-revisar|04 - A revisar]]
+> - [[Triagem - SP15/05-aguardando-terceiros|05 - Aguardando terceiros]]
+> - [[Triagem - SP15/06-acompanhamento|06 - Acompanhamento]]
+>
+> Este arquivo permanece como referência histórica. **Não editar** — usar a nova estrutura.
 
 > [!info]- Lista de acompanhamento — bater ponto a ponto com o time
 > Fonte: view `[SP15 - 2026] Engenharia (BUG'S)` do Notion, exportada em 17/07, **reconciliada com novo export de 22/07 13:25** e com a view `Release: 23/07/2026 12.35.36.2` (41 itens, exportada 24/07 15:17 — status de release/homologação, cruza com itens que outros QAs também testam). Sprint 14/07 → 28/07, em andamento (29,33%).

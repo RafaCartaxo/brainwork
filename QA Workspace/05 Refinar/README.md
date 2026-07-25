@@ -5,9 +5,12 @@ tags:
 ---
 # 05 Refinar
 
-**Mesa de trabalho do refinamento** — exports `.md` do Notion, texto colado de outra ferramenta, qualquer material que precise virar card no padrão do vault ([[../../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada|fluxo 6]]). Não é só fila de passagem: é aqui que a análise acontece, em quantas rodadas precisar, **antes** do card existir — pro card nascer limpo, só com o problema.
+**Mesa de trabalho do refinamento** e **triagem de sprint**. Duas funções:
 
-## Como usar
+- **Refinamento**: exports `.md` do Notion, texto colado, qualquer material que precise virar card no padrão do vault ([[../../Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada|fluxo 6]]). Arquivos `<SGV>.md` envelopados no template [[../../Sistema/Templates/Refinamento.md|Refinamento.md]].
+- **Triagem**: view de sprint do Notion processada em pasta `Triagem - <sprint>/` com 6 arquivos por estágio QA ([[../../Sistema/Skills/SKILL_TRIAGEM_SPRINT|SKILL_TRIAGEM_SPRINT]]). Exemplo: [[Triagem - SP15/README|Triagem SP15]].
+
+## Como usar (refinamento)
 
 1. **Jogar o arquivo aqui**, do jeito que veio — export cru do Notion, com lixo de site e tudo, sem arrumar nada. Sempre com o número no nome (`<SGV> - <qualquer coisa>.md` ou só `<SGV>.md`).
 
