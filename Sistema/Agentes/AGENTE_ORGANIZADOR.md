@@ -46,7 +46,7 @@ Quando Rafael marca uma pendência como feita, ele anota o **resultado curto ent
 | `Retestar SGV-XXXX (não reproduzido)` | Linha `⚪` em Atividades, item no Histórico |
 | `Descartar SGV-XXXX (não reproduz: <motivo>)` | `status: descartado`, CTs marcados Sim conforme [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]], move pra `99 Arquivo/` (via [[AGENTE_MIGRACAO_CARDS]]), linha `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)` em Atividades, item no Histórico |
 | `Cadastrar bug ... no Notion (SGV-XXXX)` | Preenche `task` no card (e renomeia se ainda estava sem número), linha `🐛 SGV-XXXX - Bug cadastrado` em Atividades |
-| `Revisar cenários de teste do SGV-XXXX (<resultado>)` | Linha em Atividades com o resultado anotado, item no Histórico do card |
+| `Revisar cenários de teste do SGV-XXXX (<resultado>)` | Linha em Atividades com o resultado anotado, item no Histórico do card. Se o resultado contiver `(API`, aplicar a esteira reduzida de API (aprovação → Concluídas, reprovação → reabertura). |
 | `Revisar cenários do SGV-XXXX (API aprovada)` | Linha `✅ SGV-XXXX - API aprovada em homologação` em Atividades, card: `status: resolvido`, move pra `Concluídas/`, `data_fim` preenchida, item no Histórico. API não tem esteira DEV — vai direto pra homologação; aprovação já conclui. |
 | `Revisar cenários do SGV-XXXX (API reprovada)` | Linha `🔴 SGV-XXXX - API reaberta em homologação` em Atividades, `status: aberto` no card, nova pendência de revalidação, item no Histórico |
 | `Atualizar/levar análise do SGV-XXXX pro Notion (feito)` | Linha `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (...)` em Atividades, item no Histórico do card. Se existir mesa em `05 Refinar/` com esse SGV (`status: em_refinamento`): renomeia pra `<SGV> - Refinamento <título curto>.md`, muda status pra `refinado`, move pra `04 Conhecimento/`, cross-link no card |
@@ -80,7 +80,7 @@ Uma linha já processada carrega o sufixo ` → ...` (seta + resultado). O organ
 
 ## Reconciliação de Atividades (o fim implica os passos anteriores)
 
-Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à mão sem passar por pendência nenhuma. O botão reconcilia os cards com o que a daily de hoje declara — pra cada linha `✅ 🔁 🔴 ⚪ 📤 🗑️` com SGV cujo card não reflete o estado, ele aplica a esteira completa. **Tasks de API** (sufixo `(API)` na frase) seguem reconciliação própria: `✅ SGV - API aprovada em homologação` move direto pra `Concluídas/` sem passar por HML; `🔴 SGV - API reaberta` mantém na pasta atual com `status: aberto`.
+Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à mão sem passar por pendência nenhuma. O botão reconcilia os cards com o que a daily de hoje declara — pra cada linha `✅ 🔁 🔴 ⚪ 📤 🗑️` com SGV cujo card não reflete o estado, ele aplica a esteira completa. **Tasks de API** (sufixo `(API)` na frase) seguem reconciliação própria: `✅ SGV - API aprovada em homologação` move direto pra `Concluídas/` sem passar por HML; `🔴 SGV - API reaberta` mantém na pasta atual com `status: aberto`. **Descarte** (`🗑️`): card vai pra `99 Arquivo/` com `status: descartado` (via [[AGENTE_MIGRACAO_CARDS]]).
 
 **O fim implica os passos anteriores**: registrar direto o estágio final (card ainda em DEV, atividade diz "aprovada em homologação") não trava nada — o card avança até o estado declarado e o Histórico registra `(etapas anteriores concluídas implicitamente)`. Idempotente: estado já refletido não é reaplicado.
 
@@ -93,7 +93,7 @@ Na prática:
 - O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão conforme o tipo de card:
   - Card com `task` preenchido → `SGV-XXXX - Acompanhar (<título>)`
   - Card sem `task`, template Bug Report → `Cadastrar bug <título> no Notion`
-  - Card sem `task`, template Demanda com campo `mel` → `Cadastrar melhoria MEL-NNNN no Notion`
+  - Card sem `task`, template Demanda com campo `mel` preenchido (não vazio) → `Cadastrar melhoria MEL-NNNN no Notion`
   - Card sem `task`, outros casos → `SGV-XXXX - Acompanhar (<título>)` (fallback seguro)
 - A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)
 
@@ -116,6 +116,10 @@ Quando disparar: no botão 🔄 Atualizar (parte mecânica: só reporta a ausên
 ## Pendência até o cadastro externo
 
 Criar o card/checkbox no vault não fecha o ciclo — Bug e Melhoria ainda precisam ser registrados na ferramenta externa (Notion ou equivalente). Todo item roteado como Bug ou Melhoria também gera uma linha em **A fazer hoje** da daily do dia.
+
+## Status — reunião (sempre ao final)
+
+Após processar a daily (qualquer modo — 🔄 Atualizar, sessão interativa ou agendado), o organizador dispara o [[AGENTE_STATUS_REUNIAO]] pra regenerar o bloco **Status — reunião** no topo da daily. O Status reflete o estado pós-organização: Atividades do dia viram Fiz, a fila reorganizada vira Foco, novas pendências com `⏳` e `⚠️ gate de doc` viram Travas. No modo 🔄 (script determinístico), esta etapa é delegada ao comando `/status-reuniao` do opencode — o script Python sozinho não gera o bloco.
 
 ## Copy padronizada (obrigatória pro organizador)
 

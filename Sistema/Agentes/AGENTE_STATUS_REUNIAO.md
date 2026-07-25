@@ -15,9 +15,9 @@ O bloco Status — reunião é "regenerado, não acumulado" — ele deve refleti
 
 | Gatilho | Quando dispara |
 |---|---|
-| **🔄 Atualizar** | Junto com o script `qa-atualiza.py`, ao clicar o botão na Dashboard |
+| **Organização da daily** | O [[AGENTE_ORGANIZADOR]] dispara este agente ao final do processamento (qualquer modo: 🔄 Atualizar, sessão interativa "organiza a daily", ou agendado 7h). No modo 🔄 (script), esta etapa é delegada ao comando `/status-reuniao`. |
 | **Sessão interativa** | "gera meu status da reunião" |
-| **Abertura da daily** | Ao abrir a daily de hoje e o bloco estiver vazio ou desatualizado |
+| **Comando opencode** | `/status-reuniao` |
 
 ## O que faz
 
