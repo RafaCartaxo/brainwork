@@ -46,66 +46,39 @@ Divergências viram item em `## Anotações` da daily pra alinhar com o time.
 
 ### 4. Criar página de planejamento
 
-Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Seções colapsáveis — só a "Ação imediata" fica expandida por padrão.
+Criar uma **página única** `Planejamento/SP<N>.md` — como a daily note, mas no escopo da sprint. Status em ordem cronológica do pipeline QA:
 
 ```markdown
 # Planejamento SP<N>
 
-> [!info] Sprint D/M → D/M | ⚡X/Y ⚙️X/Y 🚦X/Y ⏳X/Y 📋X/Y ✅X/Y
-> Fontes: Notion D/M...
+> [!info] Sprint D/M → D/M | Progresso: X/Y batidos
 
----
-
-> [!note]- 📋 A revisar (n) · X batidos
-> Cards que precisam de decisão antes de entrar em validação.
->
-> ### Revisar MR (n)
-> - [ ] **SGV-XXXX** — título curto · prioridade · dev · squad
-> ### Refinar / definir critérios (n)
-> - [x] **SGV-XXXX** — título curto · prioridade · dev · squad
-> ### Alertas (n)
-> - [x] **SGV-XXXX** — título curto · prioridade · dev · squad
-
-## ⚡ Ação imediata (n) · X batidos
-### 🔴 Homologação (n)
-- [ ] **SGV-XXXX** — título curto · prioridade · dev · squad
-### 🟡 DEV (n)
-- [ ] **SGV-XXXX** — título curto · prioridade · dev · squad
-
-> [!note]- ⚙️ Em validação (n) · X batidos
-> ### DEV / HML
-> ...
-
-> [!note]- 🚦 Aguardando deploy (n) · X batidos
-> ### ⏳ Subir pra HML / ⏳ Release
-> ...
-
-> [!note]- ⏳ Aguardando dev (n) · X batidos
-> ### Em desenvolvimento / Impedimento / CX
-> ...
-
-> [!note]- ✅ Acompanhamento (n) · X batidos
-> ### Concluído / Produção (n)
-> > [!note]- 🗑️ Não reproduzido / Descartado (n)
-> > [!note]- 👥 Outro QA aprovou (n)
-> > [!note]- 👻 Órfãos do export (n)
-> ### Duplicados (n) · Concluídos com card (n) · Backlog (n)
-
-## Decisões recentes
-## Registro
+## Backlog (n)
+## Em desenvolvimento (n)
+## Refinamento (n)
+## Revisar MR (n)
+## Pronto pra teste em dev (n)     ← dev finalizou, aguardando deploy DEV
+## Em teste (n)                    ← fix no ambiente, QA testando
+## Aguardando deploy HML (n)       ← aprovado DEV, fix não subiu
+## Pronto pra homologação (n)      ← Notion "disponível", aguardando deploy HML
+## Aguardando release (n)          ← aprovado HML, release
+## Impedimento / CX (n)
+## Em produção / Concluído (n)
+## Não reproduzido / Descartado (n)
+## Duplicados (n)
+## Outro QA aprovou (n)
+## 👻 Órfãos do export (n)
 ```
 
-**Princípios aplicados** (UX do nexus-platform):
-- Carga cognitiva baixa: 5 de 6 seções colapsadas, ~30 linhas visíveis ao abrir
-- Informação crítica sempre visível: progresso + Ação imediata expandidos
-- Progressão natural: ordem do pipeline QA (decidir → agir → validar → deploy → aguardar → acompanhar)
-- Cards compactados: 1 linha por card (prioridade + dev + squad inline)
-- Sub-seções do Acompanhamento colapsadas (menor relevância, maior volume)
+Cada card em 1 linha: `- [ ] **SGV-XXXX** — título curto · prioridade · dev · squad`. Notas e alertas em sub-bullet.
 
-**Regras de classificação**:
-- "Não reproduzido" → Acompanhamento (bug não reproduz = concluído, sem pendência)
-- "Decididos/duplicados" → Acompanhamento (já decididos, sem ação)
-- Apenas "Em desenvolvimento" e "Impedimento/CX" → Aguardando dev
+**Regras**:
+- "Pronto pra teste em dev" ≠ está em DEV — dev finalizou, aguardando deploy
+- "Pronto pra homologação" ≠ está em HML — Notion disponível, aguardando deploy
+- Só "Em teste" = fix no ambiente, testando
+- "Não reproduzido" nasce `[x]` — bug não reproduz mais = concluído
+- Duplicados nascem `[x]`
+- Apenas Órfãos do export usa callout colapsável (`> [!note]-`)
 
 ### 5. Pendências e daily
 

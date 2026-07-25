@@ -11,7 +11,7 @@ Acompanhamento de sprints ativas — como a daily note, mas no escopo de sprint.
 
 | Sprint | Período | Progresso | Página |
 |--------|---------|-----------|--------|
-| SP15 — Engenharia (BUG'S) | 14/07 → 28/07 | 50/82 | [[SP15\|Planejamento SP15]] |
+| SP15 — Engenharia (BUG'S) | 14/07 → 28/07 | 51/82 | [[SP15\|Planejamento SP15]] |
 | SP16 | — | — | — |
 
 > [!tip] Como usar
