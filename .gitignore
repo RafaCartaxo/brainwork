@@ -9,3 +9,7 @@ QA Workspace/Evidências/*
 
 # Gravações cruas do OBS ainda não organizadas (ficam na raiz de Evidências até o fluxo 5)
 QA Workspace/Evidências/*.mp4
+
+# Bytecode do qa-atualiza.py — regerado a cada execução/py_compile, gerava diff
+# espúrio em todo commit (inclusive nos automáticos do Obsidian Git)
+.obsidian/scripts/__pycache__/
