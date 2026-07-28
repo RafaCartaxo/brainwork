@@ -573,6 +573,57 @@ def ledger_do_dia(texto):
     return texto
 
 
+CATEGORIAS = [
+    ("🎯 Validação", ["valida", "retest", "revalida", "test", "verificar se reproduz", "verificar se corr"]),
+    ("🔎 Refinamento", ["refinar", "revisar cenários", "revisar cenário", "analisar", "investigar"]),
+    ("📤 Cadastro", ["cadastrar", "atualizar no notion", "levar análise", "registrar", "notion"]),
+    ("📋 Planejamento", ["planejamento", "triagem", "bater", "reexportar"]),
+    ("🚦 Aguardando deploy", ["aguardando deploy", "aguardando release", "fix não subiu", "aguardando disponibilização", "aguardando disponibilizac"]),
+    ("👁️ Acompanhamento", []),  # fallback
+]
+
+def categorizar(item):
+    # extrai só o verbo principal: texto antes de "(", "—", ":" descritivo, ou ";"
+    # evita que "validar" no meio de "aguardando responsável validar regra" contamine
+    verbo = re.split(r"\s*[\(—:;]\s*", item)[0].lower()
+    for cat, kws in CATEGORIAS:
+        if not kws:
+            continue
+        if any(k in verbo for k in kws):
+            return cat
+    return "👁️ Acompanhamento"
+
+
+def reorganiza_afazer(texto):
+    """Extrai itens de 'A fazer hoje', categoriza por natureza e reescreve
+    o bloco com cabeçalhos de grupo. Mantém a ordem de prioridade:
+    Validação → Refinamento → Cadastro → Planejamento → Deploy → Acompanhamento."""
+    m = re.search(r"(> \*\*A fazer hoje:\*\*\n)((?:> - \[[ x]\] .*\n?)+)", texto)
+    if not m:
+        return texto
+    prefixo = m.group(1)
+    linhas = re.findall(r"^> (- \[[ x]\] .+)$", m.group(2), re.M)
+    if not linhas:
+        return texto
+    grupos = {}
+    ordem = [c[0] for c in CATEGORIAS]
+    for cat in ordem:
+        grupos[cat] = []
+    for l in linhas:
+        cat = categorizar(l)
+        grupos.setdefault(cat, []).append(l)
+    saida = [prefixo.strip()]
+    for cat in ordem:
+        items = grupos.get(cat, [])
+        if not items:
+            continue
+        saida.append(f"> **{cat}**")
+        for item in items:
+            saida.append(f"> {item}")
+    bloco = "\n".join(saida) + "\n"
+    return texto.replace(m.group(0), bloco)
+
+
 def linkifica_ids(texto):
     """Regra de links estendida: numeração citada em linha de fila (A fazer,
     Pendências, Pendente para amanhã) vira wikilink quando o card existe.
@@ -643,6 +694,7 @@ def main():
     reconcilia_atividades(d, hoje)
     d = sincroniza_demandas_ativas(d)
     d = ledger_do_dia(d)
+    d = reorganiza_afazer(d)
     d = linkifica_ids(d)
     d = bloco_registro(d, hoje)
     gravar(hoje_p, d)
