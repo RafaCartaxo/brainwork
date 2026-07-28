@@ -80,6 +80,20 @@ date: {hoje:%Y-%m-%d}
 ---
 # Daily QA — {hoje:%d/%m/%Y}
 
+## Status — reunião
+> [!abstract] Lista do que foi feito hoje
+> **Fiz**
+> - 
+>
+> **Foco de hoje**
+> - 
+>
+> **Travas**
+> - 
+<!-- gerado em {hoje:%Y-%m-%d} -->
+
+---
+
 ## Pendências de ontem
 > [!info]- Carregado de {origem}
 {call}
@@ -87,7 +101,12 @@ date: {hoje:%Y-%m-%d}
 > **A fazer hoje:**
 {afazer}
 
+---
+
 ## Atividades
+
+### Planejamento
+-
 
 ### DEV
 -
@@ -105,7 +124,8 @@ date: {hoje:%Y-%m-%d}
 - [ ]
 
 ## Anotações
--
+> [!note]- Anotações do dia
+> -
 
 ## Pendente para amanhã
 - [ ]
@@ -559,6 +579,8 @@ def ledger_do_dia(texto):
             for e2, kws, modelo in LEDGER:
                 if e2 != emoji:
                     continue
+                if not any(k in resto.lower() for k in kws):
+                    continue
                 coberto = any(
                     (chave.lower() in norm_id(a).lower()) and any(k in a.lower() for k in kws)
                     for a in afazer)
@@ -598,7 +620,7 @@ def reorganiza_afazer(texto):
     """Extrai itens de 'A fazer hoje', categoriza por natureza e reescreve
     o bloco com cabeçalhos de grupo. Mantém a ordem de prioridade:
     Validação → Refinamento → Cadastro → Planejamento → Deploy → Acompanhamento."""
-    m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:> .*\n?)+?)(?=\n## |\n> \[!|\Z)", texto)
+    m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:> .*\n?)+?)(?=\n-|## |$)", texto)
     if not m:
         return texto
     bloco_inteiro = m.group(0)
