@@ -598,11 +598,11 @@ def reorganiza_afazer(texto):
     """Extrai itens de 'A fazer hoje', categoriza por natureza e reescreve
     o bloco com cabeçalhos de grupo. Mantém a ordem de prioridade:
     Validação → Refinamento → Cadastro → Planejamento → Deploy → Acompanhamento."""
-    m = re.search(r"(> \*\*A fazer hoje:\*\*\n)((?:> - \[[ x]\] .*\n?)+)", texto)
+    m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:> .*\n?)+?)(?=\n## |\n> \[!|\Z)", texto)
     if not m:
         return texto
-    prefixo = m.group(1)
-    linhas = re.findall(r"^> (- \[[ x]\] .+)$", m.group(2), re.M)
+    bloco_inteiro = m.group(0)
+    linhas = re.findall(r"^> (- \[[ x]\] .+)$", m.group(1), re.M)
     if not linhas:
         return texto
     grupos = {}
@@ -612,7 +612,7 @@ def reorganiza_afazer(texto):
     for l in linhas:
         cat = categorizar(l)
         grupos.setdefault(cat, []).append(l)
-    saida = [prefixo.strip()]
+    saida = ["> **A fazer hoje:**"]
     for cat in ordem:
         items = grupos.get(cat, [])
         if not items:
@@ -621,7 +621,7 @@ def reorganiza_afazer(texto):
         for item in items:
             saida.append(f"> {item}")
     bloco = "\n".join(saida) + "\n"
-    return texto.replace(m.group(0), bloco)
+    return texto.replace(bloco_inteiro, bloco)
 
 
 def linkifica_ids(texto):
