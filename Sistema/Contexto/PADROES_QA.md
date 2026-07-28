@@ -129,6 +129,7 @@ QA Workspace/
 | [[Sistema/Contexto/FLUXOS.md\|FLUXOS.md]] | Passo a passo prático de cada fluxo (dia, bug, melhoria, evidência) — linkado na Dashboard |
 | [[Sistema/Contexto/PADROES_QA.md\|PADROES_QA.md]] | Este arquivo — padrões técnicos e de documentação |
 | [[Sistema/Contexto/Plugins Instalados.md\|Plugins Instalados.md]] | Setup completo do vault: plugins, atalhos, ícones/cores, Daily Notes, Graph View — necessário pra replicar em outro computador ou com outra IA |
+| [[Sistema/Contexto/REGRAS_IA.md\|REGRAS_IA.md]] | **Conduta de sessões de IA no vault** — data, git/commit, fronteira com o `qa-atualiza.py`, propor antes de alterar doc de processo, não presumir SGV/ambiente. Ler antes de mexer |
 
 ## Agentes
 | Arquivo | Finalidade |

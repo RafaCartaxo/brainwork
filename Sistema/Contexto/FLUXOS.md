@@ -7,6 +7,9 @@ tags:
 
 Guia prático de execução: a ordem certa de fazer cada coisa. Cada fluxo aponta pro documento canônico com a regra completa — este índice não duplica regra, só encadeia e linka. Validação destes fluxos: [[../Specs/2026-07-14-cts-fluxos-vault|CTs dos fluxos do vault]].
 
+> [!warning] Sessão de IA? Leia [[REGRAS_IA]] antes
+> Estes fluxos dizem **o que** fazer; o [[REGRAS_IA]] diz **como se comportar** ao fazer — resolver a data pelo relógio, commitar arquivo por arquivo, o que é do script e o que é do agente, propor antes de alterar doc de processo, e não presumir SGV nem ambiente.
+
 ## Mapa de atuação — aconteceu X, uso qual fluxo?
 
 Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **ação imediata** é o primeiro passo concreto — o resto está no fluxo linkado.
