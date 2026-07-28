@@ -529,13 +529,18 @@ def reconcilia_atividades(texto, hoje):
             acoes.append(f"SGV-{num} → card sincronizado: descartado (99 Arquivo)")
 
 
+# kws = radicais que identificam a PENDÊNCIA equivalente na fila (usados só no
+# teste `coberto`, contra as linhas de "A fazer hoje": "Validar", "Refinar",
+# "Cadastrar"...). NÃO servem pra casar contra a copy de Atividades, que usa
+# outro vocabulário ("Aprovada em homologação", "Melhoria refinada") — usar
+# radicais, não palavras inteiras, senão "refinar" não casa "refinada".
 LEDGER = [
     ("💭", ("propor", "proposta", "suspeita"), "{rid} - Propor (proposta registrada)"),
-    ("📝", ("refinar",), "{rid} - Refinar (card criado, critérios prontos)"),
+    ("📝", ("refin",), "{rid} - Refinar (card criado, critérios prontos)"),
     ("📤", ("notion",), "{rid} - Atualizar no Notion (análise/critérios registrados)"),
-    ("💡", ("cadastrar",), "{rid} - Cadastrar no Notion (feito)"),
-    ("🐛", ("cadastrar", "card do bug", "confirmad"), "{rid} - Cadastrar (feito)"),
-    ("🗑️", ("descartar", "investigar", "suspeita"), "{rid} - Descartar (feito)"),
+    ("💡", ("cadastr",), "{rid} - Cadastrar no Notion (feito)"),
+    ("🐛", ("cadastr", "card do bug", "confirmad"), "{rid} - Cadastrar (feito)"),
+    ("🗑️", ("descart", "investigar", "suspeita"), "{rid} - Descartar (feito)"),
     ("✅", ("valida", "retest", "revalida", "test", "revis", "companhar"), "{rid} - Validar (aprovada)"),
     ("🔁", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (aprovada)"),
     ("🔴", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (reprovada)"),
@@ -569,6 +574,13 @@ def ledger_do_dia(texto):
     for ln in m.group(1).split("\n"):
         am = re.match(rf"^- ({_PREFIXO_ALT}+) (.+)$", ln)
         if not am:
+            # linha de atividade com conteúdo mas SEM emoji de status conhecido:
+            # não se inventa checkbox, mas também não se engole calado — o README
+            # manda toda linha de Atividades começar com o emoji do catálogo.
+            solta = re.match(r"^- (?!\s*$)(?!\[)(.{6,})$", ln)
+            if solta and "[!note]" not in ln:
+                avisos.append(
+                    f"sem checkbox de ledger (copy fora do catálogo?): {solta.group(1)[:60]}")
             continue
         emojis = re.findall(_EMOJI_ALT, am.group(1))
         resto = am.group(2)
@@ -578,8 +590,6 @@ def ledger_do_dia(texto):
         for emoji in emojis:
             for e2, kws, modelo in LEDGER:
                 if e2 != emoji:
-                    continue
-                if not any(k in resto.lower() for k in kws):
                     continue
                 coberto = any(
                     (chave.lower() in norm_id(a).lower()) and any(k in a.lower() for k in kws)
@@ -595,55 +605,100 @@ def ledger_do_dia(texto):
     return texto
 
 
-CATEGORIAS = [
-    ("🎯 Validação", ["valida", "retest", "revalida", "test", "verificar se reproduz", "verificar se corr"]),
-    ("🔎 Refinamento", ["refinar", "revisar cenários", "revisar cenário", "analisar", "investigar"]),
-    ("📤 Cadastro", ["cadastrar", "atualizar no notion", "levar análise", "registrar", "notion"]),
-    ("📋 Planejamento", ["planejamento", "triagem", "bater", "reexportar"]),
-    ("🚦 Aguardando deploy", ["aguardando deploy", "aguardando release", "fix não subiu", "aguardando disponibilização", "aguardando disponibilizac"]),
-    ("👁️ Acompanhamento", []),  # fallback
-]
+def coleta_concluidos(texto):
+    """Junta os itens JÁ MARCADOS da fila sob o header '✅ Concluídos hoje',
+    no fim do bloco 'A fazer hoje'.
 
-def categorizar(item):
-    # extrai só o verbo principal: texto antes de "(", "—", ":" descritivo, ou ";"
-    # evita que "validar" no meio de "aguardando responsável validar regra" contamine
-    verbo = re.split(r"\s*[\(—:;]\s*", item)[0].lower()
-    for cat, kws in CATEGORIAS:
-        if not kws:
-            continue
-        if any(k in verbo for k in kws):
-            return cat
-    return "👁️ Acompanhamento"
-
-
-def reorganiza_afazer(texto):
-    """Extrai itens de 'A fazer hoje', categoriza por natureza e reescreve
-    o bloco com cabeçalhos de grupo. Mantém a ordem de prioridade:
-    Validação → Refinamento → Cadastro → Planejamento → Deploy → Acompanhamento."""
-    m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:> .*\n?)+?)(?=\n-|## |$)", texto)
+    Escopo deliberadamente estreito: NÃO agrupa por natureza (🎯/🔎/📤/👁️/📋/🚨)
+    — esse agrupamento é julgamento e pertence ao AGENTE_FILA (camada de IA).
+    Aqui só se mexe no que é mecânico e inequívoco: `[x]` vai pro fim, sob o
+    header, preservando na ordem original tudo o que a IA escreveu (headers de
+    categoria inclusive). Idempotente: rodar 2x não duplica header nem reordena.
+    """
+    m = re.search(r"(> \*\*A fazer hoje:\*\*\n)((?:>.*\n)*)", texto)
     if not m:
         return texto
-    bloco_inteiro = m.group(0)
-    linhas = re.findall(r"^> (- \[[ x]\] .+)$", m.group(1), re.M)
-    if not linhas:
+    linhas = m.group(2).rstrip("\n").split("\n")
+    HEADER = "> **✅ Concluídos hoje**"
+
+    feitos = [l for l in linhas if re.match(r"^> - \[x\] ", l)]
+    if not feitos:
         return texto
-    grupos = {}
-    ordem = [c[0] for c in CATEGORIAS]
-    for cat in ordem:
-        grupos[cat] = []
-    for l in linhas:
-        cat = categorizar(l)
-        grupos.setdefault(cat, []).append(l)
-    saida = ["> **A fazer hoje:**"]
-    for cat in ordem:
-        items = grupos.get(cat, [])
-        if not items:
-            continue
-        saida.append(f"> **{cat}**")
-        for item in items:
-            saida.append(f"> {item}")
-    bloco = "\n".join(saida) + "\n"
-    return texto.replace(bloco_inteiro, bloco)
+
+    # idempotência: se os concluídos já estão todos no fim, sob o header, sai
+    idx = next((i for i, l in enumerate(linhas) if l.strip() == HEADER.strip()), None)
+    if idx is not None:
+        depois = [l for l in linhas[idx + 1:] if re.match(r"^> - \[.\] ", l)]
+        if depois and len(depois) == len(feitos):
+            return texto
+
+    resto = [l for l in linhas
+             if not re.match(r"^> - \[x\] ", l) and l.strip() != HEADER.strip()]
+
+    # descarta header de categoria que ficou órfão (só tinha itens concluídos)
+    limpo = []
+    for i, ln in enumerate(resto):
+        if re.match(r"^> \*\*.+\*\*$", ln):
+            prox = next((s for s in resto[i + 1:] if s.strip() not in ("", ">")), None)
+            if prox is None or re.match(r"^> \*\*.+\*\*$", prox):
+                continue
+        limpo.append(ln)
+
+    bloco = (m.group(1) + "\n".join(limpo).rstrip("\n")
+             + "\n>\n" + HEADER + "\n" + "\n".join(feitos) + "\n")
+    acoes.append(f"fila: {len(feitos)} concluído(s) agrupado(s) em '✅ Concluídos hoje'")
+    return texto.replace(m.group(0), bloco)
+
+
+def sem_idade(s):
+    """Texto do item sem a marca de idade — base de comparação do carry-over.
+    Sem isso, envelhecer '🕐 10d' -> '🕐 11d' faz o item deixar de casar com a
+    versão já presente na daily e ele entra duplicado (itens sem SGV/MEL não
+    têm o dedup por ID como rede)."""
+    return re.sub(r"\s*🕐\s*\d+d(?:\s*(?:⚠️|🚨))?", "", s).strip()
+
+
+def envelhece_fila(itens, dias):
+    """Incrementa a idade dos itens herdados no carry-over e reaplica os
+    limiares do AGENTE_FILA: 1-2d sem marca · 3-4d '🕐 Nd' · 5-6d '🕐 Nd ⚠️'
+    · 7d+ '🕐 Nd 🚨'.
+
+    `dias` é a diferença REAL de datas entre a daily anterior e hoje — nunca um
+    +1 fixo: um fim de semana sem daily vale +3 (precedente de 27/07, quando a
+    sexta 24/07 emendou na segunda 27/07). Item que chega sem marca de idade é
+    tratado como tendo 1 dia de fila.
+    """
+    def marca(n):
+        if n >= 7:
+            return f" 🕐 {n}d 🚨"
+        if n >= 5:
+            return f" 🕐 {n}d ⚠️"
+        if n >= 3:
+            return f" 🕐 {n}d"
+        return ""
+
+    saida, envelhecidos, zumbis = [], 0, []
+    for item in itens:
+        m = re.search(r"🕐\s*(\d+)d", item)
+        novo = (int(m.group(1)) if m else 1) + dias
+        limpo = re.sub(r"\s*🕐\s*\d+d(?:\s*(?:⚠️|🚨))?", "", item)
+        # a marca de idade vive antes de eventual bloqueio ⏳ — leitura estável
+        bm = re.search(r"\s(⏳.*)$", limpo)
+        if bm:
+            novo_item = limpo[: bm.start()] + marca(novo) + " " + bm.group(1)
+        else:
+            novo_item = limpo + marca(novo)
+        novo_item = novo_item.strip()
+        if novo >= 7 and (int(m.group(1)) if m else 1) < 7:
+            zumbis.append(novo_item[:45])
+        if marca(novo):
+            envelhecidos += 1
+        saida.append(novo_item)
+    if envelhecidos:
+        acoes.append(f"fila: idade recalculada (+{dias}d) em {envelhecidos} item(ns)")
+    for z in zumbis:
+        avisos.append(f"🚨 cruzou 7 dias de fila hoje: {z}")
+    return saida
 
 
 def linkifica_ids(texto):
@@ -685,25 +740,32 @@ def main():
     hoje_p = daily_path(hoje)
 
     pendentes_ontem = itens_nao_finalizados(ler(ontem[1])) if ontem else []
+    # intervalo REAL entre as duas dailies: fim de semana/feriado sem daily vale
+    # mais de 1 dia. Envelhecer só o que de fato entra na daily de hoje — nunca
+    # antes do dedup, senão a marca nova impede o item de casar com o já presente.
+    dias = (hoje - ontem[0]).days if ontem else 0
 
     if not os.path.exists(hoje_p):
         os.makedirs(os.path.dirname(hoje_p), exist_ok=True)
-        gravar(hoje_p, template_daily(hoje, ontem[0] if ontem else None, pendentes_ontem))
-        acoes.append(f"daily de hoje criada ({len(pendentes_ontem)} pendência(s) carregada(s))")
+        itens = envelhece_fila(pendentes_ontem, dias) if pendentes_ontem else []
+        gravar(hoje_p, template_daily(hoje, ontem[0] if ontem else None, itens))
+        acoes.append(f"daily de hoje criada ({len(itens)} pendência(s) carregada(s))")
     else:
         # carry-over pra daily já existente, sem duplicar (por texto exato ou por SGV/MEL)
         d = ler(hoje_p)
         existentes = re.findall(r"^>? ?- \[.\] (.+)$", d, re.M)
+        existentes_norm = {sem_idade(e) for e in existentes}
         ids_hoje = set()
         for e in existentes:
             ids_hoje |= ids_de(e)
         novos = []
         for item in pendentes_ontem:
-            if any(item == e for e in existentes):
+            if sem_idade(item) in existentes_norm:
                 continue
             if ids_de(item) & ids_hoje:
                 continue
             novos.append(item)
+        novos = envelhece_fila(novos, dias) if novos else []
         if novos:
             call_novo = "\n".join(f"> - {i}" for i in novos)
             afazer_novo = "\n".join(f"> - [ ] {i}" for i in novos)
@@ -716,7 +778,7 @@ def main():
     reconcilia_atividades(d, hoje)
     d = sincroniza_demandas_ativas(d)
     d = ledger_do_dia(d)
-    d = reorganiza_afazer(d)
+    d = coleta_concluidos(d)
     d = linkifica_ids(d)
     d = bloco_registro(d, hoje)
     gravar(hoje_p, d)
