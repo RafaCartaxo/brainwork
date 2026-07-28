@@ -58,8 +58,10 @@ A daily de hoje se acessa pelo botão "✏️ Escrever na daily de hoje" da pró
 ## Versionamento (git + Obsidian Git)
 O vault inteiro (`BrainWork/`, incluindo `.obsidian/` com plugins, scripts e snippets) é um repositório git — **clonar em outra máquina traz o ambiente completo**, não só as notas. Remoto: repositório **privado pessoal** no GitHub (o vault é método de trabalho/insights do QA; código do projeto é da empresa e não entra aqui).
 
-- **Fora do git**: `QA Workspace/Evidências/` (vídeos, 600MB+ — ficam locais por máquina; o registro oficial da evidência é a task do Notion) e `workspace.json` (layout volátil).
-- **Sincronização**: Obsidian Git com pull ao abrir o vault, commit+push automáticos a cada 10 min, pull antes de push (merge). Mensagens `vault: <timestamp>`.
+- **Fora do git** (ver `.gitignore` na raiz): `QA Workspace/Evidências/` (vídeos, 600MB+ — ficam locais por máquina; o registro oficial da evidência é a task do Notion), `workspace.json` (layout volátil) e `.obsidian/scripts/__pycache__/` (bytecode do `qa-atualiza.py`, regerado a cada execução — gerava diff espúrio em todo commit).
+- **Sincronização**: Obsidian Git com pull ao abrir o vault, commit+push automáticos a cada 10 min, pull antes de push (merge). Mensagens `vault backup: <timestamp>`.
+- **O auto-commit varre trabalho em andamento**: ele não distingue "arquivo pronto" de "arquivo no meio da edição" — qualquer coisa modificada na hora do tick entra num commit com a mensagem genérica. Consequência prática pra quem edita muito arquivo de uma vez (sessão de IA, principalmente): **commitar cada arquivo assim que fica pronto**, com mensagem própria, senão o histórico perde a descrição do que mudou. Regra completa em [[REGRAS_IA#Git e commits]].
+- **Identidade do autor varia**: os commits automáticos aparecem ora como `Rafael Cartaxo <rafael.borges@sogo.com.br>`, ora como `RafaCartaxo <Rafael.cartaxo@hotmail.com>`, dependendo do que dispara o commit. Commit feito à mão deve fixar a conta sogo (`git -c user.name=... -c user.email=...`).
 - **Nova máquina**: `git clone <repo>` → abrir a pasta como vault no Obsidian → ativar community plugins quando perguntado → configurar credencial GitHub (HTTPS + token) → recriar só o que é do SO (esquema `evidencia://`, ver seção própria).
 
 ## Botão "🔄 Atualizar" da Dashboard (script local, sem plugin)
