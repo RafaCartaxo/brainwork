@@ -22,21 +22,13 @@ A lista "A fazer hoje" acumula itens sem distinção de natureza, urgência ou i
 
 ### 1. Agrupa por natureza
 
-Cada item da fila é classificado pelo verbo de ação:
+> [!important] Os grupos são definidos no `01 Daily/README`, não aqui
+> A tabela oficial dos 7 grupos vive em [[../../QA Workspace/01 Daily/README#Grupos da fila ("A fazer hoje")|01 Daily/README → Grupos da fila]], junto do catálogo de copies. Este agente **executa** o agrupamento; ele não é a fonte da verdade do vocabulário.
+> Motivo: até 28/07 os grupos existiam só aqui, a prática das dailies usava outros nomes (`📋 Triagem` vs `📋 Planejamento`, `🚨 Parado (7+)` vs `⚠️ Parado (6+)`) e nada cruzava os dois — uma sessão de IA seguiu este doc à risca e produziu uma fila fora do padrão. Ao mexer em grupo, mexer **no README**.
 
-| Grupo | Padrão de reconhecimento |
-|---|---|
-| 🎯 **Validação** | "Validar", "Retestar", "Revalidar", "Testar", "Verificar se reproduz" |
-| 🔎 **Refinamento** | "Refinar", "Revisar cenários", "Analisar", "Investigar" |
-| 📤 **Cadastro** | "Cadastrar no Notion", "Atualizar no Notion", "Levar análise", "Registrar" |
-| 👁️ **Acompanhamento** | "Acompanhar", "Verificar task", "Confirmar critérios", itens sem verbo de ação claro |
-| 📋 **Triagem** | "Triagem", "Bater os cards", "Reexportar" |
-| 🚨 **Parado (7+ dias)** | Qualquer item que cruzou o limiar de 7 dias (ver §2) — a idade manda mais que o verbo |
-| ✅ **Concluídos hoje** | Itens já marcados `[x]` (ver §4) |
+Resumo operacional (detalhe e casos de borda no README): 🎯 Validação · 🔎 Refinamento · 📤 Cadastro · 👁️ Acompanhamento · 📋 Triagem · 🚨 Parado (7+ dias) · ✅ Concluídos hoje.
 
-> [!warning] Ordem importa na classificação
-> O item cai no **primeiro** grupo cujo padrão casar, e o casamento é pelo **verbo da ação** (o texto antes do primeiro `(`, `—` ou `;`) — não pela linha toda. Sem isso, "Triagem SP15 - Reexportar a view do **Notion**" cai em 📤 Cadastro pela palavra "Notion", que é o que aconteceu em 28/07.
-> `🚨 Parado` e `✅ Concluídos hoje` são exceções: valem por **estado** (idade / `[x]`), não por verbo, e por isso ganham do agrupamento por natureza.
+Classificar pelo **verbo da ação** — o texto antes do primeiro `(`, `—` ou `;` — nunca pela linha toda. E `🚨`/`✅` valem por **estado** (idade / `[x]`), ganhando do verbo.
 
 ### 2. Sinaliza idade
 

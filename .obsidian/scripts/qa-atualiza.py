@@ -374,7 +374,20 @@ def processa_continuacoes(daily, hoje):
             num = sgv.group(1)
             card = achar_card(num)
             if not card:
-                avisos.append(f"⚠️ card do SGV-{num} não encontrado")
+                # resultado de validação registrado pra demanda que ainda não tem
+                # card: não se inventa card (título/CTs/módulo são julgamento — ver
+                # "Fronteira com o script" no AGENTE_FILA), mas o resultado NÃO pode
+                # se perder em silêncio. Vira aviso + pendência explícita.
+                avisos.append(f"⚠️ SGV-{num} validado ({anot}) mas sem card no vault "
+                              f"— pendência de criação enfileirada")
+                pend = (f"SGV-{num} - Criar card (validação '{anot}' registrada em "
+                        f"{hoje:%d/%m}, sem card no vault)")
+                daily2 = "\n".join(linhas)
+                if pend not in daily2:
+                    # add_pendencia_afazer → fila de HOJE (o trabalho já foi feito, o
+                    # card falta agora); add_pendencia joga pra "Pendente para amanhã"
+                    linhas = add_pendencia_afazer(daily2, pend).split("\n")
+                    acoes.append(f"fila: pendência de criar card do SGV-{num}")
                 continue
             t = ler(card)
             amb = (re.search(r"^ambiente: *(\S+)", t, re.M) or [None, "HML"])[1].upper()
@@ -481,6 +494,14 @@ def reconcilia_atividades(texto, hoje):
         emoji, num, frase = lm.group(1), lm.group(2), lm.group(3).strip()
         card = achar_card(num)
         if not card:
+            # A daily DECLARA um estado que nenhum card reflete. Antes era `continue`
+            # mudo — o 🔄 dizia "tudo em dia" e o trabalho ficava sem esteira.
+            # Mas só avisa se a linha AFIRMA ter card (wikilink): SGV em texto puro é
+            # a convenção documentada de "sem card local" (regra de links; precedentes
+            # SGV-9633 e SGV-6136) e avisar nesses casos seria ruído em todo run.
+            if "[[" in ln:
+                avisos.append(f"⚠️ Atividades linka um card do SGV-{num} que não existe "
+                              f"('{emoji} {frase[:40]}') — link quebrado?")
             continue
         t = ler(card)
         if f"- {hoje:%Y-%m-%d} - {emoji}" in t:
@@ -650,6 +671,100 @@ def coleta_concluidos(texto):
     return texto.replace(m.group(0), bloco)
 
 
+EVIDENCIAS = os.path.join(WS, "Evidências")
+# ambiente do card -> subpasta de Evidências (tabela do Evidências/README)
+EVID_PASTA = {
+    "DEV": "Desenvolvimento",
+    "HML": "Homologação",
+    "HOTFIX": "Hotfix",
+    "PROD": "Produção",
+}
+EVID_EXTS = (".mp4", ".mov", ".mkv", ".webm", ".gif", ".png", ".jpg", ".jpeg")
+
+
+def _slug_titulo(card):
+    """Descrição curta pro nome do arquivo, a partir do H1 do card.
+    Sem acento/pontuação, minúsculo — igual ao padrão já usado à mão em
+    `Evidências/` (ex.: '9405 - link e qr code alinhados ...')."""
+    m = re.search(r"^# (.+)$", ler(card), re.M)
+    t = (m.group(1) if m else os.path.basename(card)).lower()
+    t = re.sub(r"^\[[^\]]*\]\s*", "", t)          # tira prefixo tipo "[melhoria-cx]"
+    for a, b in (("á", "a"), ("â", "a"), ("ã", "a"), ("à", "a"), ("é", "e"),
+                 ("ê", "e"), ("í", "i"), ("ó", "o"), ("ô", "o"), ("õ", "o"),
+                 ("ú", "u"), ("ü", "u"), ("ç", "c")):
+        t = t.replace(a, b)
+    t = re.sub(r"[^a-z0-9 ]", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    if len(t) <= 55:
+        return t
+    return t[:55].rsplit(" ", 1)[0]  # corta em palavra inteira, não no meio
+
+
+def roteia_evidencias():
+    """Fluxo 5 (gravar → renomear → mover → embedar), na parte mecânica.
+
+    O QA grava com o OBS já nomeando o arquivo com o número do card
+    (`9405.mp4`) — é o único dado que o script precisa. A partir dele:
+    renomeia pro padrão `<num> - <descrição>.mp4`, move pra subpasta do
+    ambiente do card e insere o embed na seção `### Evidências` se faltar.
+
+    Deliberadamente conservador: arquivo cujo nome NÃO começa com número de
+    card não é tocado — vira aviso. Adivinhar destino de gravação sem
+    identificação é como evidência se perde.
+    """
+    if not os.path.isdir(EVIDENCIAS):
+        return
+    for nome in sorted(os.listdir(EVIDENCIAS)):
+        origem = os.path.join(EVIDENCIAS, nome)
+        if not os.path.isfile(origem):
+            continue
+        base, ext = os.path.splitext(nome)
+        if ext.lower() not in EVID_EXTS:
+            continue
+        # nome de timestamp do OBS ("2026-07-28 15-11-13") NÃO é número de card —
+        # sem esta guarda o ano vira "SGV-2026" e o aviso sai enganoso
+        parece_data = re.match(r"^\d{4}-\d{2}-\d{2}", base.strip())
+        m = None if parece_data else re.match(r"^(\d{3,6})(?:\s*-\s*(.+))?$", base.strip())
+        if not m:
+            avisos.append(f"evidência sem número de card na raiz, não movida: {nome} "
+                          f"— renomear pra '<SGV> - <descrição>' e rodar de novo")
+            continue
+        num, desc = m.group(1), (m.group(2) or "").strip()
+        card = achar_card(num)
+        if not card:
+            avisos.append(f"evidência {nome}: card do SGV-{num} não existe ainda "
+                          f"(criar card e rodar de novo)")
+            continue
+        t = ler(card)
+        amb = (re.search(r"^ambiente: *(\S+)", t, re.M) or [None, ""])[1].upper()
+        tem_task = bool((re.search(r'^task: *"?(\d+)', t, re.M)))
+        sub = EVID_PASTA.get(amb) if tem_task else "Cadastrar"
+        if not sub:
+            avisos.append(f"evidência {nome}: ambiente '{amb or '—'}' do card não "
+                          f"mapeia pra subpasta — mover à mão")
+            continue
+        # nome final: preserva descrição existente; senão usa o título do card
+        final = f"{num} - {desc or _slug_titulo(card)}{ext}"
+        destino_dir = os.path.join(EVIDENCIAS, sub)
+        os.makedirs(destino_dir, exist_ok=True)
+        destino = os.path.join(destino_dir, final)
+        if os.path.exists(destino):
+            avisos.append(f"evidência {nome}: já existe {sub}/{final} — resolver à mão")
+            continue
+        os.rename(origem, destino)
+        acoes.append(f"evidência: {nome} → {sub}/{final}")
+        # embed na seção de Evidências do card, se ainda não estiver lá
+        if f"![[{final}]]" not in t:
+            novo, ok = re.subn(r"(### Evidências[^\n]*\n)", rf"\g<1>\n![[{final}]]\n",
+                               t, count=1)
+            if ok:
+                gravar(card, novo)
+                acoes.append(f"evidência embedada no card do SGV-{num}")
+            else:
+                avisos.append(f"evidência {final} movida, mas o card do SGV-{num} "
+                              f"não tem seção '### Evidências' — embedar à mão")
+
+
 def sem_idade(s):
     """Texto do item sem a marca de idade — base de comparação do carry-over.
     Sem isso, envelhecer '🕐 10d' -> '🕐 11d' faz o item deixar de casar com a
@@ -774,6 +889,7 @@ def main():
             gravar(hoje_p, d)
             acoes.append(f"{len(novos)} pendência(s) de ontem carregada(s) pro A fazer hoje")
 
+    roteia_evidencias()
     d = processa_continuacoes(ler(hoje_p), hoje)
     reconcilia_atividades(d, hoje)
     d = sincroniza_demandas_ativas(d)
@@ -783,13 +899,17 @@ def main():
     d = bloco_registro(d, hoje)
     gravar(hoje_p, d)
 
-    cont = len([a for a in acoes if "→" in a])
     partes = []
     if acoes:
         partes.append(f"{len(acoes)} ação(ões)")
     if avisos:
-        partes.append(f"{len(avisos)} aviso(s)")
-    print("✅ " + (", ".join(partes) if partes else "nada a fazer — tudo em dia"))
+        partes.append(f"{len(avisos)} aviso(s) — precisam de você")
+    if partes:
+        # ⚠️ na frente quando há aviso: "nada a fazer" e "não entendi X linhas"
+        # não podem sair com a mesma cara.
+        print(("⚠️ " if avisos else "✅ ") + ", ".join(partes))
+    else:
+        print("✅ nada a fazer — tudo em dia")
     for a in acoes:
         print("  •", a)
     for a in avisos:

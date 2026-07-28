@@ -44,8 +44,13 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Passou no reteste, depois de já ter sido reaberto antes | `🔁 SGV-XXXX - Retestada e aprovada em <ambiente>` |
 | Falhou / voltou a falhar | `🔴 SGV-XXXX - Reaberta em <ambiente>` (usar "reaberta novamente" só da 2ª reabertura em diante) |
 | Não foi possível reproduzir | `⚪ SGV-XXXX - Retestado, não reproduzido` |
+| Não reproduzido, **com desdobramento pendente** de dev/produto | `⚪ SGV-XXXX - Retestado, não reproduzido (aguardando decisão do dev: <o que se espera>)` |
 | Sem mudança desde o último dia | `⏳ SGV-XXXX - Sem novidades, aguardando retorno de dev` |
 | Investiguei/analisei sem validar (não é aprovação nem reprovação) | `🔎 SGV-XXXX - Análise em <ambiente> (<resultado curto>)`; análise de código/causa raiz sem ambiente específico: `🔎 SGV-XXXX - Análise (<resultado curto>)` |
+
+> [!warning] "Não reproduzido" não é descarte
+> `⚪` é **resultado de teste**; `🗑️` é **decisão de encerramento**. Enquanto o desdobramento depende de alguém (dev vai ver se sobe o fix, produto vai decidir a regra), o item fica em limbo e **nada é arquivado**: card não vai pra `99 Arquivo/`, a numeração não é dada como resolvida, a entrada da Triagem fica **sem marcar**, e entra pendência de acompanhamento na fila (`⏳ aguardando dev`). Só quando a decisão chega é que se usa `🗑️` e a [[Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]].
+> Registrar também **por que** um ambiente não foi testado, quando for decisão: comportamento de instância específica não se reproduz em DEV, e sem essa nota alguém lê como cobertura faltando depois (precedente: SGV-6136, 28/07).
 
 **Ciclo do bug** (espelho do ciclo da melhoria — trilha: `❓ → 🐛 → 📤/esteira` ou `❓ → 🗑️`):
 
@@ -92,6 +97,48 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço.
 
 **O parêntese é em linguagem simples**: descreve o que aconteceu e o que falta, pra qualquer pessoa entender sem conhecer o processo — nada de jargão do fluxo (destilado, mesa, rodada). Os termos técnicos vivem na mesa de refinamento e no callout de Detalhes, onde o contexto os explica.
+
+## Grupos da fila ("A fazer hoje")
+
+**Este é o vocabulário oficial** — o [[../../Sistema/Agentes/AGENTE_FILA|AGENTE_FILA]] executa o agrupamento, mas a lista de grupos mora aqui, junto do catálogo de copies. (Antes ela existia só no doc do agente, e a prática das dailies divergiu sem ninguém notar — foi o que deu errado em 28/07.)
+
+| Grupo | Entra aqui |
+|---|---|
+| 🎯 **Validação** | "Validar", "Retestar", "Revalidar", "Testar", "Verificar se reproduz" |
+| 🔎 **Refinamento** | "Refinar", "Revisar cenários", "Analisar", "Investigar" |
+| 📤 **Cadastro** | "Cadastrar no Notion", "Atualizar no Notion", "Levar análise", "Criar card" |
+| 👁️ **Acompanhamento** | "Acompanhar", "Confirmar critérios", e todo item sem verbo de ação claro |
+| 📋 **Triagem** | "Triagem", "Bater os cards", "Reexportar" |
+| 🚨 **Parado (7+ dias)** | Qualquer item que cruzou 7 dias de fila |
+| ✅ **Concluídos hoje** | Itens já marcados `[x]` |
+
+Duas regras que evitam item no grupo errado:
+
+- **Classificar pelo verbo da ação**, não pela linha toda — o verbo é o texto antes do primeiro `(`, `—` ou `;`. Sem isso, "Triagem SP15 - Reexportar a view do **Notion**" cai em 📤 Cadastro pela palavra "Notion".
+- **`🚨` e `✅` valem por estado** (idade / `[x]`) e **ganham** do agrupamento por verbo: item de validação parado há 8 dias vai pra 🚨, não pra 🎯.
+
+Quem preenche o quê: **idade** (`🕐`/`⚠️`/`🚨`) e a **coleta dos `[x]`** em ✅ são do `qa-atualiza.py`; o agrupamento por natureza é do agente. Detalhe em [[../../Sistema/Agentes/AGENTE_FILA|AGENTE_FILA]] → "Fronteira com o script".
+
+## Pendência ↔ copy de Atividades
+
+A fila fala em **verbo de ação** ("Validar em HML") e as Atividades falam em **resultado** ("Aprovada em homologação"). São vocabulários diferentes de propósito, e esta tabela liga os dois — é o que evita inventar frase ao fechar uma pendência, e é a mesma tabela que o `LEDGER` do `qa-atualiza.py` implementa.
+
+| Pendência na fila | Resultado anotado | Copy que vai pra Atividades |
+|---|---|---|
+| `Validar em <ambiente>` | `(aprovada)` | `✅ SGV-XXXX - Aprovada em <ambiente>` |
+| `Revalidar` / `Retestar` (já tinha reaberto) | `(aprovada)` | `🔁 SGV-XXXX - Retestada e aprovada em <ambiente>` |
+| `Validar` / `Revalidar` | `(reprovada)` | `🔴 SGV-XXXX - Reaberta em <ambiente>` + pendência de revalidação |
+| `Validar` / `Revalidar` | `(não reproduzido)` | `⚪ SGV-XXXX - Retestado, não reproduzido` |
+| `Refinar` | `(card criado, critérios prontos)` | `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` |
+| `Atualizar no Notion` / `Levar análise` | `(feito)` | `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (...)` |
+| `Cadastrar melhoria MEL-NNNN no Notion` | `(SGV-XXXX)` | `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)` |
+| `Cadastrar bug no Notion` | `(SGV-XXXX)` | `🐛 SGV-XXXX - Bug cadastrado` |
+| `Criar card` (bug confirmado sem SGV) | — | `🐛 Bug confirmado (card criado): [[card]]` |
+| `Investigar suspeita: <título>` | `(descartada: <motivo>)` | `🗑️ Suspeita descartada: <título> (não é bug: <motivo>)` |
+| `Revisar cenários` | `(<resultado>)` | `🔎 SGV-XXXX - Análise (...)` ou `🔎 ... Revisão de cenários (API) (...)` |
+| `Triagem` / `Bater os cards` | `(<resultado curto>)` | `📋 Planejamento <sprint> - <n>/<total> cards batidos (...)` |
+
+Tipo na frase segue a regra transversal: bug não leva prefixo, os outros tipos sim (`Melhoria aprovada`, `Funcionalidade aprovada`) — exceto refinamento (`📝`), que é sempre tipado.
 
 ## Status — reunião (primeira seção da daily)
 

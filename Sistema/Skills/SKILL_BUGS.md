@@ -94,6 +94,18 @@ Então...
 
 ## Regras
 
+### Nome do arquivo do card
+
+| Situação | Nome do arquivo | `task` |
+|---|---|---|
+| Bug já cadastrado no Notion (tem SGV) | `<SGV> - Bug <Título>` | `"XXXX"` |
+| **Bug confirmado sem SGV ainda** | `Bug <Título>` (sem prefixo numérico) | `""` |
+
+No caso sem SGV: evidência vai pra `Evidências/Cadastrar/` (não pra subpasta de ambiente — ver [[../../QA Workspace/Evidências/README|Evidências/README]]), copy da daily é `🐛 Bug confirmado (card criado): [[card]]`, e **entra pendência obrigatória** "obter o SGV, preencher `task` e renomear o card". Quando o número chegar, o botão 🔄 renomeia e reescreve os links sozinho (mesmo mecanismo do `MEL-NNNN → SGV`).
+
+> [!tip] Peça o número antes de criar
+> Se a demanda já está no Notion, **pedir o SGV** custa uma pergunta; criar sem ele custa renomear card, `task`, evidência, link `evidencia://`, copy da daily e todos os wikilinks. Só usar a forma sem número quando o bug realmente ainda não foi cadastrado (precedente: SGV-10404, 28/07).
+
 ### Título
 
 Deve descrever claramente o problema.
@@ -126,11 +138,25 @@ Evitar:
 
 ### Passos
 
-Preferencialmente no padrão:
+**Sempre em BDD** — não é preferência, é o formato:
 
-Dado que...
-Quando...
-Então...
+```
+Dado que ...
+E ...
+Quando ...
+Então ...
+```
+
+O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[../Templates/Casos de teste|Casos de teste]].
+
+Nunca usar lista numerada (`1. 2. 3.`) nem texto corrido: o passo a passo é o que o dev executa pra reproduzir, e a forma BDD deixa explícito o que é pré-condição, o que é ação e o que é o defeito observado.
+
+Diferença de foco entre as duas seções, que é fácil de trocar:
+
+| Seção | O `Então` descreve |
+|---|---|
+| **Passo a passo para reproduzir** | o **defeito** — "Então verifico que o arquivo vem sem a página extra" |
+| **Casos de Teste** | o **comportamento esperado** — "Então o arquivo vem com a página extra" (e o CT fica marcado `Não` enquanto falha) |
 
 Os passos devem permitir reprodução do problema.
 
