@@ -30,12 +30,18 @@ Cada item da fila é classificado pelo verbo de ação:
 | 🔎 **Refinamento** | "Refinar", "Revisar cenários", "Analisar", "Investigar" |
 | 📤 **Cadastro** | "Cadastrar no Notion", "Atualizar no Notion", "Levar análise", "Registrar" |
 | 👁️ **Acompanhamento** | "Acompanhar", "Verificar task", "Confirmar critérios", itens sem verbo de ação claro |
-| 📋 **Planejamento** | "Planejamento", "Triagem", "Bater os cards", "Reexportar" |
-| 🚦 **Aguardando deploy** | "aguardando deploy", "aguardando release", "fix não subiu" |
+| 📋 **Triagem** | "Triagem", "Bater os cards", "Reexportar" |
+| 🚨 **Parado (7+ dias)** | Qualquer item que cruzou o limiar de 7 dias (ver §2) — a idade manda mais que o verbo |
+| ✅ **Concluídos hoje** | Itens já marcados `[x]` (ver §4) |
+
+> [!warning] Ordem importa na classificação
+> O item cai no **primeiro** grupo cujo padrão casar, e o casamento é pelo **verbo da ação** (o texto antes do primeiro `(`, `—` ou `;`) — não pela linha toda. Sem isso, "Triagem SP15 - Reexportar a view do **Notion**" cai em 📤 Cadastro pela palavra "Notion", que é o que aconteceu em 28/07.
+> `🚨 Parado` e `✅ Concluídos hoje` são exceções: valem por **estado** (idade / `[x]`), não por verbo, e por isso ganham do agrupamento por natureza.
 
 ### 2. Sinaliza idade
 
-Todo item que veio do carry-over (carregado das "Pendências de ontem") ganha o marcador de idade:
+> [!important] Isto é do script, não do agente (desde 28/07)
+> O incremento de idade e os limiares abaixo são executados por `envelhece_fila()` no `.obsidian/scripts/qa-atualiza.py`, no momento do carry-over. **O agente não recalcula idade** — só lê o que já está marcado. Ver "Fronteira com o script" no fim deste documento.
 
 | Dias arrastado | Marca |
 |---|---|
@@ -44,7 +50,7 @@ Todo item que veio do carry-over (carregado das "Pendências de ontem") ganha o 
 | 5-6 dias | `🕐 Nd ⚠️` |
 | 7+ dias | `🕐 Nd 🚨` + alerta no Auto-organização |
 
-A idade é calculada a partir da primeira aparição do item em qualquer daily (não da daily de hoje).
+A idade é calculada a partir da primeira aparição do item em qualquer daily (não da daily de hoje). O incremento usa o **intervalo real entre as duas dailies**, não +1 fixo: sexta → segunda vale +3 dias (precedente de 27/07).
 
 ### 3. Sinaliza bloqueio
 
@@ -60,7 +66,10 @@ Se o texto do item indica bloqueio, adiciona o motivo:
 
 ### 4. Move concluídos do dia
 
-Itens marcados `[x]` hoje (concluídos nesta daily) vão pra subseção `### ✅ Concluídos hoje` no fim da lista, com separador visual. Itens marcados em dias anteriores não reaparecem — o carry-over já os removeu.
+> [!important] Isto é do script, não do agente (desde 28/07)
+> Quem move os `[x]` pro fim, sob o header `✅ Concluídos hoje`, é `coleta_concluidos()` no `qa-atualiza.py`. É operação mecânica e idempotente; o agente não precisa refazer.
+
+Itens marcados `[x]` hoje (concluídos nesta daily) vão pra subseção `✅ Concluídos hoje` no fim da lista, com separador visual. Itens marcados em dias anteriores não reaparecem — o carry-over já os removeu.
 
 ### 5. Alerta zumbis
 
@@ -113,21 +122,31 @@ Depois (agrupado, com idade e bloqueio):
 - [ ] [[SGV-9977]] - Acompanhar
 - [ ] SGV-9036 - Confirmar critérios no Notion
 
-### 📋 Planejamento
-- [ ] [[Planejamento/SP15|Planejamento SP15]] - Bater os cards
-- [ ] Planejamento SP15 - Reexportar view
+### 📋 Triagem
+- [ ] [[Planejamento/SP15|Triagem SP15]] - Bater os cards
+- [ ] Triagem SP15 - Reexportar view
 
-### 🚦 Aguardando deploy
-- [ ] [[SGV-9610]] - Aguardando deploy HML ⏳ aguardando deploy
-
-### ⚠️ Parado (sem ação há 6+ dias)
-- [ ] Detalhar captura despacho sigiloso 🕐 6d ⚠️
+### 🚨 Parado (7+ dias)
+- [ ] Detalhar captura despacho sigiloso 🕐 7d 🚨
 
 ### ✅ Concluídos hoje
 - [x] [[SGV-9750]] - Revisar cenários (ok)
 - [x] [[SGV-5273]] - Validar em HML (aprovada)
 - [x] [[SGV-3413]] - Verificar se reproduz (descartado)
 ```
+
+## Fronteira com o script (definida em 28/07)
+
+Em 28/07 uma sessão de IA moveu o agrupamento por natureza pra dentro do `qa-atualiza.py` (função `reorganiza_afazer`). Deu ruim: a fila passou a ser reescrita em todo 🔄 por keywords, com os efeitos colaterais registrados na daily de [[QA Workspace/01 Daily/2026-07/28-07|28/07]] (item caindo no grupo errado, `🚨 Parado` e `✅ Concluídos hoje` sumindo). A função foi **revertida** e a divisão de trabalho ficou assim:
+
+| Responsabilidade | Dono | Por quê |
+|---|---|---|
+| Agrupar por natureza (🎯 🔎 📤 👁️ 📋) | **Este agente (IA)** | É julgamento: depende de ler a intenção do item, não dá pra decidir por keyword — "Reexportar a view do Notion" não é Cadastro |
+| Idade `🕐`/`⚠️`/`🚨` | **`qa-atualiza.py`** (`envelhece_fila`) | Aritmética de data; determinístico e roda sempre, sem depender da IA lembrar |
+| Mover `[x]` pra `✅ Concluídos hoje` | **`qa-atualiza.py`** (`coleta_concluidos`) | Mecânico e idempotente |
+| Ledger (Atividades → `[x]` na fila) | **`qa-atualiza.py`** (`ledger_do_dia`) | Já era do script |
+
+Regra prática: **se dá pra decidir com uma conta ou um regex seguro, é do script; se precisa entender o que o item quer dizer, é do agente.** Ao mexer no `.py`, conferir se a mudança não invade a coluna do agente — e vice-versa.
 
 ## Relação com outros agentes
 
