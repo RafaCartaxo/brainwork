@@ -66,7 +66,7 @@ Mudança **apenas de regra** (origem: SGV-8962): se o setor responsável já enc
 ### Ações de destino na emissão de despacho (SGV-9042)
 
 > [!info] Procedência: **Figma — Tramitação/Handoff** (lido em 29/07/2026), fonte mais atual que o Notion
-> A spec do Notion usa "Encerrar no Setor / Encerrar na Mesa"; o Figma usa **"Encerrar para meu setor" / "Encerrar para mim" / "Continuar aberto"**. **Nomenclatura final a confirmar com o time** — refinamento em [[QA Workspace/05 Refinar/SGV-9042 - Ações de Tramitação e Encerramento na Emissão de Despacho|05 Refinar/SGV-9042]].
+> A spec do Notion usa "Encerrar no Setor / Encerrar na Mesa"; o Figma usa **"Encerrar para meu setor" / "Encerrar para mim" / "Continuar aberto"**. **Nomenclatura final a confirmar com o time** — análise completa na [[QA Workspace/04 Conhecimento/9042 - Refinamento Ações de Tramitação e Encerramento na Emissão de Despacho|mesa de refinamento arquivada]].
 
 Na emissão de despacho passa a existir o contêiner **"Próximo passo do documento"**, que permite definir o destino no mesmo ato da emissão.
 
@@ -114,7 +114,7 @@ Anexos do despacho passam a ser **exibidos mesmo com o conteúdo recolhido** —
 ## Cards relacionados
 
 - [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]] — setores das regras de tramitação não mantidos ao navegar etapas na criação de A&S
-- [[QA Workspace/05 Refinar/SGV-9042 - Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho (em refinamento)
+- [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho (refinada 29/07, em validação em homologação)
 
 ## Referências
 
