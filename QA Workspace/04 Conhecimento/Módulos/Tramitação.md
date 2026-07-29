@@ -105,16 +105,18 @@ Anexos do despacho passam a ser **exibidos mesmo com o conteúdo recolhido** —
 ## Comportamentos observados em teste
 
 - **SGV-6373** (reaberta em DEV, 27/07): os setores das Regras de tramitação **não são mantidos** ao avançar/retroceder etapas na criação de A&S — ver [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|card]].
+- **SGV-10451** (aberta em HML, 29/07): ao **encerrar para mim** um documento com fluxo de trabalho, a toolbar exibe só "Reabrir documento" — sem histórico nem baixar documento, obrigando a reabrir o documento pra consultá-lo — ver [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|card]].
 
 ## Dúvidas em aberto
 
 - **Documento sem abertura externa pode envolver o cidadão?** Resposta do time em 18/07/2024: "deve ser possível envolver o cidadão, e os setores que podem interagir com ele são todos aqueles que fazem parte do documento". Vale confirmar se segue válido depois das atualizações de 2026 — a regra de "interações externas" só existe com abertura externa, o que aparenta conflitar.
-- **Encerramento no setor responsável**: a doc manda "averiguar design no protótipo para visualizar nova toolbar para setores dono" — o comportamento da toolbar não está descrito em texto.
+- **Encerramento no setor responsável**: a doc manda "averiguar design no protótipo para visualizar nova toolbar para setores dono" — o comportamento da toolbar não está descrito em texto. **Essa lacuna já produziu bug**: a [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|SGV-10451]] (29/07) é exatamente uma toolbar de documento encerrado sem as ações esperadas, e não há regra escrita pra apontar. A fonte que fecharia isso é a **tabela de permissões de encerramento** que o Rafael tem — exportação pendente.
 
 ## Cards relacionados
 
 - [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]] — setores das regras de tramitação não mantidos ao navegar etapas na criação de A&S
 - [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho (refinada 29/07, em validação em homologação)
+- [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|SGV-10451]] — toolbar de documento encerrado "para mim" sem histórico nem baixar documento. Vizinho da 9042 (mesma família "Encerrar para mim / para meu setor"), mas coisa distinta: a 9042 é o **ato** de encerrar na emissão de despacho, a 10451 é o **estado** da toolbar depois de encerrado. Se um fix mexer no outro, vale reteste cruzado
 
 ## Referências
 

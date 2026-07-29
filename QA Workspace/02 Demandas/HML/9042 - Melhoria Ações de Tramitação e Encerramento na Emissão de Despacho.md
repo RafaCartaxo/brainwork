@@ -247,6 +247,8 @@ Análise completa (rodadas de refinamento, gate de doc, regras extraídas do Fig
 
 **Gate de doc** (2026-07-29): cruzado contra [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]] e [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]]. As regras desta melhoria foram **incorporadas à doc de Tramitação** na mesma data — a doc respalda os critérios acima.
 
+**Vizinhança com a [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|SGV-10451]]** (aberta em 29/07): mesma família de ações ("Encerrar para mim" / "Encerrar para meu setor"), e esta melhoria declara que essas regras seguem o que **já está implementado na plataforma**. São coisas distintas — aqui é o **ato** de encerrar na emissão de despacho, lá é o **estado** da toolbar depois de encerrado — mas se o fix de um tocar o outro vale **reteste cruzado**.
+
 ---
 
 ## Histórico
