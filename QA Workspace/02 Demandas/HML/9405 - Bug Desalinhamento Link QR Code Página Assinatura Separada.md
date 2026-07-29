@@ -67,7 +67,7 @@ No documento assinado com página de assinatura separada, o link de verificaçã
 
 - Demanda relacionada: SGV-9405 (origem Notion). Sem card/registro prévio no vault e **sem entrada na [[QA Workspace/Planejamento/SP15|Triagem SP15]]** — primeira aparição aqui; chegou direto pela validação.
 - Sem export completo — card criado a partir do título do ticket + narrativa da validação.
-- **Gate de doc — resolvido em 2026-07-29**: o gap apontado em 28/07 foi fechado. A doc [[QA Workspace/04 Conhecimento/Módulos/Assinaturas#Página extra de assinaturas (28/04/2026)|Assinaturas § Página extra de assinaturas]] agora traz a **especificação do QR Code**, que é exatamente o critério objetivo que faltava pra julgar "desalinhamento":
+- **Gate de doc — resolvido em 2026-07-29**: o gap apontado em 28/07 foi fechado. A doc [[QA Workspace/04 Conhecimento/Módulos/Assinaturas#Página extra de assinaturas (28/04/2026)|Assinaturas § Página extra de assinaturas]] agora traz a **especificação de handoff do QR Code** — referência de implementação que ajuda a localizar o que está fora de lugar (não critério de aceite; ver nota abaixo):
 
     | Propriedade | Valor esperado |
     |---|---|
@@ -77,7 +77,8 @@ No documento assinado com página de assinatura separada, o link de verificaçã
     | Espaçamento até o texto de verificação | 8px |
 
     A doc também define que o QR Code + texto de autenticidade valem **inclusive no posicionamento manual** (regra transversal), e que o cabeçalho da página é dinâmico ("Página de Assinaturas - Despacho nº X" / "- Anexo: arquivo.pdf"), replicado na quebra de página.
-- ⚠️ **Consequência pra revalidação em HML**: a aprovação em DEV (28/07) foi feita **sem** esses números em mãos — foi julgada "alinhado" a olho. Na validação em homologação, conferir contra a especificação (8px/8px/20px), porque "parece alinhado" e "está na spec" podem divergir.
-- **Outro elemento do mesmo rodapé caiu em 29/07**: a [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] é o link da **parte inferior** — este aqui era o link na **vertical** — com espaçamento fora da spec, mais a numeração de páginas se sobrepondo a ele no download personalizado. **Não é reincidência desta**, é elemento distinto; mas levanta a pergunta de o fix daqui ter sido **pontual** onde a especificação é **transversal** a todo o rodapé. Reforça a ressalva do item acima: medir, não olhar.
+    A tabela é **referência de implementação** (handoff pro dev), não critério de aceite de QA — medir pixel em PDF não é verificação de caixa preta. Serve pra sustentar a conversa se o dev alegar conformidade.
+- ⚠️ **Consequência pra revalidação em HML**: a aprovação em DEV (28/07) olhou **um elemento** — o link na vertical que originou o ticket. Na validação em homologação, conferir o **rodapé inteiro** (link, QR Code e texto de autenticidade), e nos **dois cenários de paginação**, porque a doc trata o rodapé como regra transversal e não como um elemento isolado.
+- **Outro elemento do mesmo rodapé caiu em 29/07**: a [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] é o link da **parte inferior** — este aqui era o link na **vertical** — com espaçamento errado, mais a numeração de páginas se sobrepondo a ele no download personalizado com páginas enumeradas. **Não é reincidência desta**, é elemento distinto; mas levanta a pergunta de o ajuste daqui ter sido **pontual** onde a doc trata o rodapé como transversal. Se o link de baixo estava quebrado o tempo todo, "aprovado em DEV" aqui significou aprovado parcialmente.
 - Histórico:
     - 2026-07-28 - ✅ Aprovada em DEV (link e QR Code alinhados na página de assinatura separada; segue pra homologação)
