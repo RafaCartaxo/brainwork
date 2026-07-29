@@ -78,5 +78,6 @@ No documento assinado com página de assinatura separada, o link de verificaçã
 
     A doc também define que o QR Code + texto de autenticidade valem **inclusive no posicionamento manual** (regra transversal), e que o cabeçalho da página é dinâmico ("Página de Assinaturas - Despacho nº X" / "- Anexo: arquivo.pdf"), replicado na quebra de página.
 - ⚠️ **Consequência pra revalidação em HML**: a aprovação em DEV (28/07) foi feita **sem** esses números em mãos — foi julgada "alinhado" a olho. Na validação em homologação, conferir contra a especificação (8px/8px/20px), porque "parece alinhado" e "está na spec" podem divergir.
+- **Outro elemento do mesmo rodapé caiu em 29/07**: a [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] é o link da **parte inferior** — este aqui era o link na **vertical** — com espaçamento fora da spec, mais a numeração de páginas se sobrepondo a ele no download personalizado. **Não é reincidência desta**, é elemento distinto; mas levanta a pergunta de o fix daqui ter sido **pontual** onde a especificação é **transversal** a todo o rodapé. Reforça a ressalva do item acima: medir, não olhar.
 - Histórico:
     - 2026-07-28 - ✅ Aprovada em DEV (link e QR Code alinhados na página de assinatura separada; segue pra homologação)

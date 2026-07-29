@@ -328,14 +328,17 @@ Os fluxos (SOGOV, ICP e recusa) **não mudam** — muda só a apresentação dos
 
 ## Comportamentos observados em teste (QA)
 <!-- Divergências entre esta doc e o sistema real, pegadinhas, efeitos colaterais — com data e ambiente -->
-- 
+- **SGV-10457** (aberta em HML, 29/07): a especificação numérica do QR Code **não está sendo respeitada** no link da parte inferior do rodapé, e no **download personalizado com páginas enumeradas** a numeração fica **sobreposta ao link** de autenticidade. A spec de espaçamento é regra escrita (8px/8px/20px) — divergência confirmada; o **posicionamento da numeração** não é descrito em lugar nenhum — ver [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|card]].
 
 ## Dúvidas em aberto
 - [ ] As três atualizações de 2026 (Página Extra, Reposicionamento de selos, PJ sem responsável legal) vieram só como título no export — buscar o conteúdo no Notion e completar aqui
 - [ ] Regras do documento Pausado × assinatura dependem do doc "Pausar documento" do Notion — importar também?
 - [ ] Assinatura em instância **Em Implantação** × numeração e limpeza da implantação: a doc não cobre a regra de que a implantação apaga documentos "Sem numeração", nem como a numeração é atribuída no contexto Em Implantação (gap detectado em 2026-07-22, HML — ver [[QA Workspace/02 Demandas/HML/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]). Importar doc que descreva o comportamento da implantação (fluxo 8)
+- [ ] **Posicionamento da numeração de páginas × rodapé de autenticidade**: a doc afirma que "se o usuário paginar, a numeração inclui as páginas de assinatura", mas **não define onde a numeração é desenhada** nem como resolver colisão com o QR Code e o texto de autenticidade — que têm posição fixa por spec (8px das margens inferior e esquerda). O gap virou bug em 29/07: [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] (download personalizado com páginas enumeradas sobrepõe a numeração ao link). Buscar a regra de layout da paginação no Notion/Figma (fluxo 8)
 - [ ] **Encerramento de documento × cancelamento de assinaturas pendentes**: a doc não descreve se/como encerrar um documento cancela solicitações de assinatura pendentes de despachos vinculados. Comportamento corrigido e validado em 2026-07-23 (HML — ver [[QA Workspace/02 Demandas/Concluídas/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]): encerrar **para todos** cancela todas as pendências (documento + despachos); encerrar **para mim**/**para meu setor** não cancela; retificação com troca de anexo já cancelava. Importar a regra pra doc (fluxo 8)
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
 - Bug em refinamento: assinaturas em anexos de documentos retificados não são canceladas corretamente (export em `~/Downloads`, candidato ao fluxo 6 — 05 Refinar)
+- [[QA Workspace/02 Demandas/HML/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]] — link e QR Code **na vertical** desalinhados na página de assinatura separada (aprovada em DEV a olho, antes desta spec existir no vault; medir contra os 8px em HML)
+- [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] — link da **parte inferior** com espaçamento fora da spec + numeração sobreposta no download personalizado. Elemento distinto da 9405; juntos levantam se a spec foi aplicada **pontualmente** onde ela é transversal ao rodapé
