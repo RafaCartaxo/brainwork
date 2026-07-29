@@ -67,6 +67,16 @@ No documento assinado com página de assinatura separada, o link de verificaçã
 
 - Demanda relacionada: SGV-9405 (origem Notion). Sem card/registro prévio no vault e **sem entrada na [[QA Workspace/Planejamento/SP15|Triagem SP15]]** — primeira aparição aqui; chegou direto pela validação.
 - Sem export completo — card criado a partir do título do ticket + narrativa da validação.
-- **Gate de doc** (2026-07-28, fluxo 8): [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] documenta o layout da página PAdES (hash ao lado do QR code, margens, selos — ajustes de 29/05/2024), mas **não cobre a página de assinatura separada**: ela aparece só como item da seção "Atualizações posteriores (conteúdo não veio no export)" — *"Atualização Página Extra de Assinaturas — 28/04/2026"* e *"Reposicionamento de selos de assinatura — 28/05/2026"*. Sem divergência de regra; é **gap de documentação com candidato nomeado** — esses dois itens são exatamente o que falta importar pra doc cobrir este comportamento.
+- **Gate de doc — resolvido em 2026-07-29**: o gap apontado em 28/07 foi fechado. A doc [[QA Workspace/04 Conhecimento/Módulos/Assinaturas#Página extra de assinaturas (28/04/2026)|Assinaturas § Página extra de assinaturas]] agora traz a **especificação do QR Code**, que é exatamente o critério objetivo que faltava pra julgar "desalinhamento":
+
+    | Propriedade | Valor esperado |
+    |---|---|
+    | Proporção | 20px × 20px |
+    | Margem inferior | fixo a 8px |
+    | Margem esquerda | fixo a 8px |
+    | Espaçamento até o texto de verificação | 8px |
+
+    A doc também define que o QR Code + texto de autenticidade valem **inclusive no posicionamento manual** (regra transversal), e que o cabeçalho da página é dinâmico ("Página de Assinaturas - Despacho nº X" / "- Anexo: arquivo.pdf"), replicado na quebra de página.
+- ⚠️ **Consequência pra revalidação em HML**: a aprovação em DEV (28/07) foi feita **sem** esses números em mãos — foi julgada "alinhado" a olho. Na validação em homologação, conferir contra a especificação (8px/8px/20px), porque "parece alinhado" e "está na spec" podem divergir.
 - Histórico:
     - 2026-07-28 - ✅ Aprovada em DEV (link e QR Code alinhados na página de assinatura separada; segue pra homologação)

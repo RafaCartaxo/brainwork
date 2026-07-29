@@ -263,11 +263,66 @@ Relacionada à task "Carregar documentos" (Notion).
 
 Removido background da página PAdES e bordas dos selos; hash abaixo da identificação do documento ao lado do QR code; paginação removida; rodapé removido (infos no cabeçalho); nome do signatário sem bold; selos menores (até 3 por linha); margens da folha PAdES ajustadas; imagem do selo SoGov modificada. Figma: [Handoff Virtus 7](https://www.figma.com/design/EyAXgFj9QWOTxMZBy5syIR/Handoff-Virtus-7?node-id=6144-220).
 
-### Atualizações posteriores (conteúdo não veio no export)
+### Página extra de assinaturas (28/04/2026)
 
-- Atualização Página Extra de Assinaturas — 28/04/2026
-- Reposicionamento de selos de assinatura — 28/05/2026
-- Tratativa para assinatura de documentos por cidadão PJ sem responsável legal vinculado — 30/06/2026
+**Objetivo**: eliminar o esforço manual de posicionar selos. Ativada, o sistema gera automaticamente uma **página adicional ao final do documento** com todas as assinaturas e um **QR Code de autenticidade**.
+
+**Configuração e herança** — dois níveis:
+
+1. **Módulo filho** — precisa do **CX ativar o parâmetro técnico** ("ativação mestre"). Sem isso, as opções nem aparecem na edição do módulo. Ativo, todos os assuntos/serviços do módulo **herdam por padrão**.
+2. **Assunto/serviço** — a seção passou a se chamar **Numeração e Assinaturas**. Se o módulo pai está ligado, o checkbox aparece **marcado por padrão mas pode ser desmarcado**. Copy: *"Documentos possuem página de assinaturas separada — Define que os documentos, despachos e anexos vinculados a este módulo gerem sempre uma página própria para assinaturas."*
+
+**Regras de download e impressão** — a página extra **não é apenas visual: torna-se parte integrante do arquivo PDF**.
+
+- **Escalabilidade**: signatários que não cabem numa folha extra geram páginas subsequentes automaticamente (pág. 3, 4...).
+- **Paginação** (arquivos ≤ 2GB): se o usuário paginar, a numeração inclui as páginas de assinatura.
+- **Comentários no despacho**: entram depois do documento, mas a página de assinaturas continua sendo **o fechamento oficial**.
+
+**Estrutura da página**:
+
+- **Cabeçalho dinâmico** referenciando explicitamente o item assinado — ex.: "Página de Assinaturas - Despacho nº 123/2026", "Página de Assinaturas - Anexo: Contrato_Social.pdf".
+- **Quebra de página**: excedendo a área útil, o cabeçalho é **replicado** na página seguinte.
+
+**QR Code de autenticidade — especificação** (é o critério objetivo pra julgar desalinhamento):
+
+| Propriedade | Valor |
+|---|---|
+| Proporção | 20px × 20px |
+| Margem inferior | fixo a 8px |
+| Margem esquerda | fixo a 8px |
+| Espaçamento até o texto | 8px |
+
+Acompanha o texto padrão de verificação (ex.: "Para verificar a autenticidade deste documento, acesse...").
+
+> [!important] Regra transversal (global update)
+> O QR Code e o texto de autenticidade no rodapé valem **também para o posicionamento manual** — independente de a assinatura ter sido posicionada à mão ou gerada na página extra, o QR Code deve estar presente conforme a especificação acima.
+
+> [!warning] Pontos de atenção
+> - Aplica-se a **todos os modelos** de assinatura (direta, sequencial, solicitada).
+> - Com o parâmetro ativo, **o editor de posicionamento manual nunca aparece**.
+> - Toda alteração da configuração é registrada no histórico do módulo/serviço/assunto: "Ativou/Desativou a funcionalidade de página extra para assinaturas".
+
+### Reposicionamento de selos de assinatura (28/05/2026)
+
+Antes, os selos ficavam automaticamente na **última página**. A entrega permite reposicionar em qualquer página, por um **painel flutuante dedicado**, com dois caminhos: **arrastar** o selo sobre o documento ou **informar a página** no painel. O aviso da tela foi atualizado pra comunicar que os selos são posicionados automaticamente ao final.
+
+**Comportamento ao acessar o documento**: o painel já **aparece aberto**, sem ação do usuário; e o usuário é levado **diretamente pra página que contém os selos** (se ocupam duas, a primeira delas). Isso repete a cada novo documento aberto pela primeira vez na lista de posicionamento.
+
+### Cidadão PJ sem responsável legal vinculado (30/06/2026)
+
+**Problema**: usuário CNPJ com cadastro incompleto (sem responsável legal ou outra info obrigatória) continuava disponível pra assinar.
+
+**Regra**: mesmo que o CNPJ tenha sido **pré-cadastrado por um servidor**, ele precisa **concluir o cadastro** pra poder receber solicitação de assinatura.
+
+**UI**: na pesquisa/listagem, o CNPJ recebe a tag **"Cadastro incompleto"** com a info *"Este usuário só poderá receber solicitações de assinatura ao completar seu cadastro."* — e a opção fica **disabled**.
+
+### Assinatura eletrônica no mobile — SGV-9878 (Melhoria-CX)
+
+Os fluxos (SOGOV, ICP e recusa) **não mudam** — muda só a apresentação dos componentes no celular.
+
+- **Toolbar → footer fixo** no rodapé, independente da rolagem; botões `large` (52px de altura) pra prevenir erro de toque; drop shadow acima do container. Contém seletor de tipo de assinatura, primário "Assinar documento" e secundário "Recusar", sempre visíveis.
+- Mesmo padrão nas variações: "Confirmar posicionamento" (Voltar / Confirmar posicionamento) e "Assinar" sem solicitação prévia (Voltar / Assinar).
+- **Input de senha** na versão `large`, com área de toque ampliada.
 
 ---
 

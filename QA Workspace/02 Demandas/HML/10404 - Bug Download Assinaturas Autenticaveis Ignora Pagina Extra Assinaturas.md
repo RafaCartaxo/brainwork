@@ -94,6 +94,13 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 
 - Demanda relacionada: **SGV-10404** (Rafael, 28/07). Referência no Notion: [Árvore de processo](https://app.notion.com/p/alfa-group/rvore-de-processo-17b4b88221184bdeac9d503e57b1c10e?source=copy_link#3502aec67d3080a7b864df708cd5c226).
 - **Relacionado**: [[QA Workspace/02 Demandas/HML/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]] — mesma área (página extra/separada de assinaturas), problema diferente: lá era desalinhamento do link e QR Code **dentro** da página extra (aprovado em DEV hoje), aqui a página extra **nem é gerada** no download de autenticáveis.
-- **Gate de doc** (2026-07-28, fluxo 8): [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] **não cobre as opções de download** (autenticáveis / personalizado / compactado) nem a página extra de assinaturas — esta só aparece listada em "Atualizações posteriores (conteúdo não veio no export)" (*"Atualização Página Extra de Assinaturas — 28/04/2026"*). Sem divergência de regra; **gap de doc**, mesmo candidato de importação levantado na SGV-9405.
+- **Gate de doc — reclassificado em 2026-07-29: de "gap" para DIVERGÊNCIA CONFIRMADA.** Com a importação da doc, [[QA Workspace/04 Conhecimento/Módulos/Assinaturas#Página extra de assinaturas (28/04/2026)|Assinaturas § Página extra de assinaturas]] define explicitamente, nas Regras de download e impressão:
+
+    > "A página extra **não é apenas visual; ela se torna parte integrante do arquivo PDF**."
+
+    E complementa que a paginação inclui as páginas de assinatura, e que mesmo com comentários no despacho "a página de assinaturas [continua] como o **fechamento oficial**".
+
+    Ou seja: o comportamento observado (download de "versão com assinaturas autenticáveis" trazendo o PDF **sem** a página extra) **contraria regra documentada** — não é lacuna de especificação. Isso fortalece o card: há regra escrita pra apontar, e o esperado não é interpretação da QA.
+- ⚠️ **Ponto pra confirmar com o dev**: a doc diz que, com o parâmetro ativo, a página extra é parte do PDF **em todos os modelos de assinatura** (direta, sequencial, solicitada) e que o editor de posicionamento manual nem aparece. Vale checar se o gerador da versão "autenticáveis" usa um caminho de renderização próprio que não passa pela regra da página extra — seria a explicação técnica de personalizado/compactado saírem certos e só esse não.
 - Histórico:
     - 2026-07-28 - 🐛 SGV-10404 - Bug cadastrado (confirmado em homologação; card criado)
