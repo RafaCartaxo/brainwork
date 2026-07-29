@@ -66,6 +66,10 @@ modulo: tramitacao
 - [ ] **MR da entrega** — o export não cita MR e o Notion já marca "Testando em homologação". Confirmar com os devs qual MR entrega isso, pra poder revisar escopo antes de validar.
 - [ ] **Interação com a SGV-6373** — validar se o bug de setores não mantidos ao avançar/retroceder afeta este novo ponto de entrada.
 
+> [!tip] Fonte a consultar antes da próxima rodada
+> **[Figma — Tramitação/Handoff](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=8765-2765)** (indicado pelo Rafael em 29/07): os tooltips e anotações do Figma **são mais atualizados que o Notion** e referenciam boa parte das regras desta mesa. É a fonte mais promissora pra fechar os 4 pontos declarados pela spec e definir "Encerrar na Mesa".
+> Ao trazer conteúdo de lá, **marcar a procedência** (Figma vs Notion) — se um dia divergirem, tem que ser rastreável qual regra veio de onde.
+
 ---
 
 ## Destilado (rascunho do card)
