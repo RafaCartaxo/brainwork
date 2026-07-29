@@ -63,6 +63,28 @@ Pré-seleção do **sigilo**: vêm marcados os de "recebem automaticamente", o s
 
 Mudança **apenas de regra** (origem: SGV-8962): se o setor responsável já encerrou suas demandas no documento, ele pode **encerrar no seu setor sem encerrar a tramitação do documento como um todo** — passando a ter o mesmo comportamento de um setor participante. Objetivo é enxugar a quantidade de documentos em tramitação exibidos nas mesas.
 
+### Ações de destino na emissão de despacho (SGV-9042)
+
+> [!info] Procedência: **Figma — Tramitação/Handoff** (lido em 29/07/2026), fonte mais atual que o Notion
+> A spec do Notion usa "Encerrar no Setor / Encerrar na Mesa"; o Figma usa **"Encerrar para meu setor" / "Encerrar para mim" / "Continuar aberto"**. **Nomenclatura final a confirmar com o time** — refinamento em [[QA Workspace/05 Refinar/SGV-9042 - Ações de Tramitação e Encerramento na Emissão de Despacho|05 Refinar/SGV-9042]].
+
+Na emissão de despacho passa a existir o contêiner **"Próximo passo do documento"**, que permite definir o destino no mesmo ato da emissão.
+
+**Elegibilidade** — o contêiner só existe em documento com fluxo de trabalho **configurado e já iniciado**. Fluxo **não iniciado** não pode ser movimentado nem encerrado: o contêiner não aparece e vale a toolbar de fluxo não iniciado. Documento **sem** workflow segue o layout padrão do despacho, sem o contêiner.
+
+**Bloqueio por pendência** (regra central):
+
+- Qualquer ação obrigatória pendente na etapa — **despacho customizado não emitido** ou **assinatura não concluída** — desabilita o select de movimentação, que fica fixo em **"Permanecer na etapa atual"** com tooltip informando a pendência.
+- O bloqueio é **total**: inclui avançar, retroceder e **todos os atalhos, nas duas direções**. Não é permitido movimentar etapa com pendência **mesmo que a intenção seja retroceder**.
+- Nesse estado, **retroceder ou encerrar só pela toolbar do documento**.
+- O select habilita quando **todas** as pendências forem cumpridas.
+
+**Assinatura muda o número de cliques**: o split button mantém "Emitir / Emitir e Assinar", mas se o despacho exigir assinaturas o **avanço não se conclui no mesmo clique** — as solicitações são disparadas *após* a emissão.
+
+**Movimentação × encerramento são independentes e combináveis**: dá pra "Avançar etapa" + "Encerrar para mim" na mesma emissão. As regras de continuar aberto / encerrar para mim / encerrar para meu setor seguem o que **já está implementado na plataforma**.
+
+**Sigilo**: o grupo de sigilo só aparece quando o despacho tem opções de sigilo. Em despacho customizado de etapa, é **herdado da configuração do módulo/serviço/assunto** — **o fluxo de trabalho não configura sigilo**.
+
 ### Modal de revisão pré-emissão (~16/03/2026)
 
 As regras do sistema **não exigem mais o crivo da revisão** pra seguir com emissão ou tramitação — então as copies dos modais que orientavam o usuário ficaram desalinhadas da realidade. A entrega é **só atualização de copy**, sem mudança visual. Combinações de situação que têm esse ponto de interação: `Revisão → Assinaturas → Emissão → Publicação`, `Revisão → Assinaturas → Emissão`, `Revisão → Emissão`, `Assinaturas → Emissão`, `Revisão → Emissão → Publicação`, `Assinaturas → Emissão → Publicação`, `Emissão → Publicação`.
