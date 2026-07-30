@@ -66,7 +66,7 @@ Mudança **apenas de regra** (origem: SGV-8962): se o setor responsável já enc
 ### Ações de destino na emissão de despacho (SGV-9042)
 
 > [!info] Procedência: **Figma — Tramitação/Handoff** (lido em 29/07/2026), fonte mais atual que o Notion
-> A spec do Notion usa "Encerrar no Setor / Encerrar na Mesa"; o Figma usa **"Encerrar para meu setor" / "Encerrar para mim" / "Continuar aberto"**. **Nomenclatura final a confirmar com o time** — análise completa na [[QA Workspace/04 Conhecimento/9042 - Refinamento Ações de Tramitação e Encerramento na Emissão de Despacho|mesa de refinamento arquivada]].
+> A spec do Notion usa "Encerrar no Setor / Encerrar na Mesa"; o Figma usa **"Encerrar para meu setor" / "Encerrar para mim" / "Continuar aberto"**. ✅ **Nomenclatura definida em 30/07: valem os rótulos do Figma** — a spec do Notion está desatualizada nesse ponto — análise completa na [[QA Workspace/04 Conhecimento/9042 - Refinamento Ações de Tramitação e Encerramento na Emissão de Despacho|mesa de refinamento arquivada]].
 
 Na emissão de despacho passa a existir o contêiner **"Próximo passo do documento"**, que permite definir o destino no mesmo ato da emissão.
 

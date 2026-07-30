@@ -117,7 +117,7 @@ E o mais importante: o Figma diz que essas regras **já estão implementadas na 
 
 **Ainda abertos:**
 
-- [ ] **Confirmar a nomenclatura final com o time** — Notion diz "Encerrar no Setor / na Mesa", Figma diz "Encerrar para meu setor / para mim" + "Continuar aberto". Qual vai pra tela? O CT precisa do rótulo correto, e a doc de Tramitação precisa registrar o vocabulário oficial.
+- [x] ~~**Confirmar a nomenclatura final com o time**~~ — Notion diz "Encerrar no Setor / na Mesa", Figma diz "Encerrar para meu setor / para mim" + "Continuar aberto". Qual vai pra tela? O CT precisa do rótulo correto, e a doc de Tramitação precisa registrar o vocabulário oficial. → **RESOLVIDO em 30/07: permanecem os rótulos do Figma** ('Continuar aberto' / 'Encerrar para mim' / 'Encerrar para meu setor'); o Notion está desatualizado nesse ponto
 - [ ] **MR da entrega** — nem o export nem o Figma citam MR, e o Notion já marca "Testando em homologação". Confirmar com Gabriel Desidério / Lucas Cabral.
 - [ ] **Interação com a SGV-6373** — validar se o bug de setores não mantidos ao avançar/retroceder afeta este novo ponto de entrada.
 - [ ] **Combinações de encerramento × movimentação** — o Figma garante que são independentes e combináveis ("Avançar etapa" + "Encerrar para mim"). Mapear a matriz de combinações válidas pros CTs, porque "todas as regras já implementadas" é uma remissão genérica que não lista os casos.
