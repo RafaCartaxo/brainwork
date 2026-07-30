@@ -243,10 +243,10 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não ✅ 2026-07-30
 
 **Evidências de Testes:**
-
+não está sendo possível retroceder, está ficando bloqueado no despacho, mas na toolbar é possível retroceder.
 ---
 
 ### C. Movimentação de etapa pelo contêiner
