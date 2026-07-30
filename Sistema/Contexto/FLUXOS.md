@@ -70,6 +70,13 @@ Quando o Rafael diz **"processa"**, **"processa o dia"** ou **"organiza a daily"
 >
 > Apertar o botão e parar deixa a fila sem grupos e o Status vazio. Foi exatamente o que aconteceu em 28/07 — e a "correção" de então foi pior: mover o agrupamento pra dentro do script.
 
+Os cinco passos são de **uma sessão só**, em sequência — não é rodar o script hoje e agrupar a fila amanhã. Quem para no passo 1 deixa a daily pela metade, e quem retoma depois não tem como saber o que já foi feito.
+
+> [!tip] Abriu o vault com um ou mais dias sem processar?
+> **Não tem protocolo especial — o script já trata.** Ele carrega as pendências da **daily mais recente** (não "de ontem" literal) e envelhece pelo **delta real de datas**: fim de semana sem daily vale +3 dias, não +1 (`dias = (hoje - ontem[0]).days`, precedente de 27/07). Basta rodar os cinco passos normalmente.
+>
+> O que **não** é automático: as Atividades do dia que ficou sem processar continuam sem classificação. Se havia registro cru lá, abrir aquela daily e rodar o passo 4 nela também.
+
 Depois de processar, **conferir**: os 4 callouts da daily íntegros (nenhuma linha sem `>` dentro de um `[!...]`), e rodar o 🔄 **duas vezes** — a segunda não deve mudar nada. Se mudar, algo não é idempotente e vale investigar antes de seguir.
 
 ## 2. Registrar algo durante o dia
@@ -85,7 +92,7 @@ Regra de bolso: **escreveu? foi na daily. quer ver? foi na Dashboard.**
 | Lembrete pra depois | `## Pendente para amanhã` |
 | Não sei classificar | `## Anotações`, cru, sem pensar |
 
-O que cair em **Anotações** ou **Bugs encontrados** sem estrutura, o auto-organizador ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) roteia. Três gatilhos: 🔄 Atualizar (mecânica), "organiza a daily" (IA, tudo) e 7h (agendado).
+O que cair em **Anotações** ou **Bugs encontrados** sem estrutura, o auto-organizador ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) roteia. Dois caminhos reais: o 🔄 cobre só a **mecânica** (não classifica nada), e a classificação acontece numa **sessão de IA** ("organiza a daily" / "processa o dia"). O modo agendado das 7h é ⚠️ **previsto, sem cron ativo**.
 
 ## 3. Esteira do bug (DEV → HML → Concluída)
 
