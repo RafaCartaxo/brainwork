@@ -115,7 +115,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 - [x] **CA14** — "Continuar aberto" mantém o documento **aberto** após a emissão
 - [x] **CA15** — "Encerrar para mim" põe o documento em **Encerrado**, remove da fila de pendências gerais e arquiva na **mesa do usuário logado**
 - [x] **CA16** — "Encerrar para meu setor" põe o documento em **Encerrado no setor**, e o documento **segue em tramitação nos demais setores envolvidos**
-- [ ] **CA17** — Servidor **sem** permissão de encerrar na etapa **não recebe** a opção de encerrar para o setor *(pendente — exige segundo usuário)*
+- [x] **CA17** — Servidor **sem** permissão de encerrar na etapa **não recebe** a opção de encerrar para o setor
 - [x] **CA18** — Encerrar **para mim** ou **para meu setor** pelo contêiner **não cancela** solicitações de assinatura pendentes
 
 **E. Sigilo**
@@ -414,13 +414,12 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que a opção de encerrar para o setor **não é oferecida**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
-> [!warning] Não executado — falta evidência
-> Único CT ativo sem execução. Exige **segundo usuário**, sem a permissão de encerrar na etapa — não dá pra cobrir com o mesmo login. É o cenário negativo da permissão; sem ele, a regra do fluxo fica verificada só pelo lado positivo (CT-015).
-
 **Evidências de Testes:**
+
+![[9042 - CT-016 - servidor sem permissao de encerrar na etapa nao recebe a opcao.mp4]]
 
 ---
 
@@ -570,5 +569,5 @@ Análise completa (rodadas de refinamento, gate de doc, regras extraídas do Fig
 ## Histórico
 
 - 2026-07-29 - 📝 Melhoria refinada (critérios de aceite prontos; card destilado da mesa em `05 Refinar/`)
-- 2026-07-30 - 🔁 Validada em homologação: **21 de 23 critérios aprovados**, 20 CTs aprovados, **nenhum reprovado**, 1 não se aplica (CT-003), 1 pendente de segundo usuário (CT-016). 3 casos movidos pro registro por decisão do Rafael.
+- 2026-07-30 - 🔁 Validada em homologação: **22 de 23 critérios aprovados**, **21 CTs aprovados, nenhum reprovado**, 1 não se aplica (CT-003). O CA3 restante está satisfeito por construção. 3 casos movidos pro registro por decisão do Rafael.
 - 2026-07-29 - ℹ️ Contexto: **aprovada em DEV por outro QA** (não pelo Rafael) — por isso não há registro de validação em DEV na daily dele. Validação em homologação em andamento.
