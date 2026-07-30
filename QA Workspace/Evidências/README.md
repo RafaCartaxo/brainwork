@@ -20,6 +20,24 @@ Renomear pro padrão: `<número do card> - <breve descrição>.mp4`
 
 Ex.: `9971 - solicitar assinatura para servidor com cadastro incompleto.mp4`
 
+#### Evidência de caso de teste
+
+Quando a gravação é a execução de um **CT específico** (típico de melhoria/funcionalidade, onde se roda caso por caso), o padrão ganha o CT no meio:
+
+`<número do card> - CT-<NNN> - <breve descrição>.mp4`
+
+Uma gravação que cobre **mais de um CT** lista todos, separados por vírgula:
+
+`9042 - CT-001, CT-005, CT-007 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4`
+
+Ela é **embedada em cada CT** que cobre, com a nota `*Mesma gravação cobre CT-005, CT-007.*` — um arquivo só no disco, referenciado de vários lugares. Diferente do compartilhamento entre **cards**, que exige cópia (seção abaixo).
+
+> [!warning] O número do card vem primeiro, sempre
+> Gravar como `001.mp4` ou `004, 006.mp4` **não funciona**: o roteador do 🔄 procura o número do **card** no começo do nome. `002.mp4` seria lido como SGV-002 e `004, 006.mp4` não casa com padrão nenhum — os dois ficam parados na raiz. Precedente: 30/07, 11 arquivos renomeados à mão na SGV-9042.
+
+> [!important] Número de CT é identificador, não posição
+> Depois que existe evidência nomeada com `CT-NNN`, **renumerar os CTs do card quebra o vínculo em silêncio** — o arquivo segue apontando pro número antigo e ninguém percebe. CT removido deixa o número **vago**, com lápide explicando; nunca reciclado num cenário diferente, nunca usado pra fechar a sequência. Precedente: 30/07, eu renumerei a cauda dos CTs da SGV-9042 no meio da gravação de evidências do Rafael e tive que reverter.
+
 ### 3. Mover pra subpasta do ambiente
 Mover o arquivo pra subpasta correspondente:
 
