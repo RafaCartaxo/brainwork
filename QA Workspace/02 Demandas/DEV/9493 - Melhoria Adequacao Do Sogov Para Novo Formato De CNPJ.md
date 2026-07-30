@@ -38,9 +38,19 @@ Não é mudança de fluxo — é mudança de **máscara, sanitização e valida�
 
 ## Regras de negócio
 
-**Formato** — máscara passa de `00.000.000/0000-00` (só dígitos) para aceitar letras. Estrutura visual **inalterada**: `XX.XXX.XXX/XXXX-XX`, **14 caracteres úteis** e **18 com a formatação**. Letras de A a Z e números de 0 a 9, normalizadas para **maiúsculas**.
+**Formato** — estrutura visual **inalterada**: `XX.XXX.XXX/XXXX-XX`, **14 caracteres úteis** e **18 com a formatação**, mesma pontuação. Letras de A a Z e números de 0 a 9, normalizadas para **maiúsculas**.
 
-**Onde o alfanumérico vale e onde não** — as **12 primeiras** posições aceitam letra; os **2 últimos** caracteres são os **dígitos verificadores** e seguem **numéricos**. Na implementação a máscara é `SS.SSS.SSS/SSSS-99` (`S` alfanumérico, `9` numérico).
+**Onde o alfanumérico vale e onde não** — as **12 primeiras** posições aceitam letra **e** número; os **2 últimos** são os **dígitos verificadores** e aceitam **somente número**. Máscara de aceitação: `SS.SSS.SSS/SSSS-99` (`S` alfanumérico ×12, `9` numérico ×2).
+
+> [!important] A máscara nova é **superconjunto** da antiga — e é isso que faz a retrocompatibilidade funcionar
+> Como as 12 primeiras posições também aceitam número, um CNPJ antigo (`12.345.678/0001-95`) encaixa **inteiro** na máscara nova. Não existe "modo antigo" e "modo novo": é o **mesmo campo, a mesma máscara**, aceitando os dois formatos.
+>
+> Consequência pro teste: o regressivo **não** é validar dois modos, é validar que o mesmo campo aceita as duas formas — o que também significa que uma quebra na máscara derruba os dois de uma vez.
+
+> [!note] `placeholder` ≠ `máscara` — não reabrir isso como bug
+> O **placeholder** exibido é `XX.XXX.XXX/XXXX-XX`, com `X` uniforme nas 14 posições. A **máscara de aceitação** é `SS.SSS.SSS/SSSS-99`. A diferença é **intencional**: placeholder é dica visual, máscara é regra de aceitação. **Validado com o time de design pelo Rafael em 30/07** — o placeholder fica assim.
+>
+> Registrado porque é armadilha: eu mesmo tratei isso como divergência Figma × implementação e como "ajuste de copy a reportar" antes de perguntar. **Não é defeito.** São dois critérios distintos e ambos válidos (CT-001 confere o placeholder, CT-002 e CT-003 conferem a aceitação).
 
 **Validação de DV passou a ser real** — as mutations `citizenInternalRegister` e `finishCitizenRegistry` **rejeitam CNPJ com dígito verificador inválido**; antes só checavam o **comprimento**. É mudança de comportamento, não só de formato.
 
@@ -73,18 +83,19 @@ Regras completas de PJ: [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadã
 
 > [!warning] Pontos de atenção
 
-Os quatro primeiros saíram do **gate de doc** e do Figma, antes de escrever qualquer critério — cada um muda o que testar.
+Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda o que testar. Ordem = risco real.
 
-- 🔴 **Razão Social é preenchida por API e não é editável — se a API não aceitar CNPJ alfanumérico, o cadastro PJ trava sem workaround.** [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] é explícita: *"CNPJ → API retorna a **razão social** automaticamente (não editável)"* e Razão Social é **obrigatória**. O card não menciona a consulta externa em nenhum lugar — nem nas telas, nem nos endpoints. **Se a API de CNPJ ainda não devolve dados pro formato novo, não há como concluir o cadastro**, porque o campo obrigatório não pode ser digitado à mão. É o primeiro cenário a exercitar (CT-012); se falhar, é bloqueio de escopo, não bug de máscara.
-- ⚠️ **Divergência Figma × implementação nos 2 últimos caracteres.** O Figma diz que a máscara nova *"utiliza X como coringa para indicar caractere alfanumérico, aceitando letras de A a Z e números de 0 a 9"* e mostra `XX.XXX.XXX/XXXX-XX` — o que, lido ao pé da letra, autoriza **letra também nos dígitos verificadores**. A implementação usa `SS.SSS.SSS/SSSS-99` (12 alfanuméricos + 2 numéricos), que é o que a regra da RFB manda e o que o próprio objetivo do card diz. **A implementação está certa; o Figma está impreciso.** Consequência prática: o **placeholder exibido ao usuário** (`XX.XXX.XXX/XXXX-XX`) informa que cabe letra nas duas últimas posições, e não cabe — **ajuste de copy a reportar**, não bug de validação. Não reprovar a máscara por causa disso.
-- ⚠️ **Base legada com CNPJ inválido pode travar na edição.** A validação de DV **passou a ser real** (antes só comprimento), então qualquer PJ cadastrado com CNPJ numericamente inválido — que passou pela regra antiga — pode ficar **impossível de salvar** ao ser editado. Não está no escopo declarado e é o risco mais caro: atinge base existente, não cadastro novo. CT-024 cobre.
-- ⚠️ **`Rastrear Documento` não está na lista de telas impactadas, mas busca por CNPJ.** A doc do módulo define: *"Input-search: busca ampla por CPF, **CNPJ**, nome…"* com **regra de máscara própria** — *"o campo deve suportar CPF/CNPJ com pontuação; o sistema preserva visualmente o que foi digitado, mas a busca funciona independente da presença de pontuação"*. Se a sanitização mudou, essa busca precisa achar PJ com CNPJ alfanumérico, com e sem pontuação. CT-025.
-- **Unicidade × normalização de caixa**: a doc diz *"só existe **um** usuário por CNPJ"*, e o `sanitizeCnpj` normaliza para maiúsculas. Se a normalização falhar em algum ponto de entrada, `12abc…` e `12ABC…` podem virar **dois** usuários pro mesmo CNPJ. CT-013.
+- 🔴 **Razão Social vem de API, é obrigatória e não é editável — e a consulta externa não aparece no MR.** [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] é explícita: *"CNPJ → API retorna a **razão social** automaticamente (não editável)"*, e Razão Social é **obrigatória** (o Nome Fantasia tem fallback manual; a Razão Social **não**). No MR !657, os arquivos de backend tocados são **só geração de PDF e `api/src/shared/utils.ts`** — **nenhum arquivo de consulta externa de CNPJ**. Se o lookup precisava ser adaptado pro formato alfanumérico, **não foi neste MR**. Se a API não devolver dados, **o cadastro PJ não conclui e não há workaround**. É o teste de maior valor da entrega — **CT-008**, com o **CT-007** como controle.
+    *Ressalva honesta*: o lookup pode viver em outro serviço/repo que a lista de arquivos não mostra — a evidência é forte, não é prova.
+- ⚠️ **`Rastrear Documento` não está na lista de telas declaradas, mas busca por CNPJ.** Confirmado pelo Rafael em 30/07: a busca por CNPJ existe e retorna os documentos relacionados. A doc do módulo tem **regra de máscara própria** — *"o campo deve suportar CPF/CNPJ com pontuação; o sistema preserva visualmente o que foi digitado, mas a busca funciona independente da presença de pontuação"*. Se a sanitização mudou, essa busca precisa achar PJ com CNPJ alfanumérico, com e sem pontuação. **CT-027**.
+- ⚠️ **Base legada com CNPJ inválido: risco rebaixado, mas não zerado.** A validação de DV passou a ser real (antes só comprimento), o que em teoria deixaria PJ legada impossível de salvar. **Na prática provavelmente não existe** — raciocínio do Rafael, que se sustenta: se a Razão Social vem de API e é obrigatória, um CNPJ inexistente nunca completou cadastro, independente de o campo validar DV ou não. **O que sobra**: o cadastro de **órgão/instância não tem doc nenhuma no vault**, então não se sabe se consulta API. Se não consultar, ali o campo só validava comprimento e o risco permanece. **CT-026** cobre, focado em instância.
+- **Unicidade × normalização de caixa**: a doc diz *"só existe **um** usuário por CNPJ"*, e o `sanitizeCnpj` normaliza para maiúsculas. Se a normalização falhar em algum ponto de entrada, `12abc…` e `12ABC…` podem virar **dois** usuários pro mesmo CNPJ. **CT-013**.
 - **O Figma ilustra 1 das 11+ telas** (o modal "Cadastrar novo usuário" → Pessoa Jurídica). As outras seguem "a mesma regra", sem referência de design — a conferência de cada uma é por conta da QA.
-- **Assinatura ICP e o match do certificado**: [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] registra que *"PJ com ICP: aceita certificados vinculados diretamente ao CNPJ ou ao responsável legal"*. Certificado de teste com CNPJ alfanumérico provavelmente não existe — se não houver massa, registrar como cobertura em aberto em vez de dar por testado.
-- **Biblioteca**: o dev subiu `brazilian-values` de 0.12.0 → 0.14.0. O comentário de 23/06 (Marcos Vinicius) alertava que a lib estava defasada e sugeria trocar por `cpf-cnpj-validator` ou implementar internamente; a 0.14.0 resolveu. Vale saber que a validação vem de **dependência de terceiro**, não de código próprio — regressão pode vir de update de lib.
-- **Anexo não veio no export**: `new-cnpj-report.pdf` (227,8 KiB), citado no comentário do dev como "principais anotações" do novo padrão. Se tiver detalhe de regra que não está aqui, vale importar.
-- **Prazo confuso no Notion**: o campo "Data prevista de conclusão" traz **três** datas (25/08, 31/07 e 04/08). Confirmar qual vale.
+- **Assinatura ICP e o match do certificado**: [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] registra que *"PJ com ICP: aceita certificados vinculados diretamente ao CNPJ ou ao responsável legal"*. Certificado de teste com CNPJ alfanumérico provavelmente não existe — se não houver massa, registrar como **cobertura em aberto** em vez de dar por testado.
+- **Validação vem de dependência de terceiro**: o dev subiu `brazilian-values` 0.12.0 → 0.14.0. O comentário de 23/06 (Marcos Vinicius) alertava que a lib estava defasada e sugeria trocar por `cpf-cnpj-validator` ou implementar internamente; a 0.14.0 resolveu. Regressão futura pode vir de update de lib, não de código próprio.
+- **Anexo não veio no export**: `new-cnpj-report.pdf` (227,8 KiB), citado pelo dev como "principais anotações" do novo padrão. Se tiver detalhe de regra que não está aqui, vale importar.
+- **Prazo confuso no Notion**: "Data prevista de conclusão" traz **três** datas (25/08, 31/07 e 04/08). Confirmar qual vale.
+- **Dois gaps de doc descobertos ao escrever os CTs**: não existe doc de **órgão/instância** nem de **construtor de formulários** em `04 Conhecimento/Módulos/`. Por isso 5 CTs nascem provisórios — ver aviso na seção de casos de teste.
 
 ---
 
@@ -105,55 +116,59 @@ Os quatro primeiros saíram do **gate de doc** e do Figma, antes de escrever qua
 
 **Critérios de aceite**
 
-**A. Regra da máscara**
+*Agrupados na mesma ordem dos casos de teste. `placeholder` e `máscara` são critérios **separados** — um é exibição, o outro é aceitação, e podem falhar independentemente.*
 
-- [ ] **CA1** — O input de CNPJ aceita **letras de A a Z** nas 12 primeiras posições
-- [ ] **CA2** — O input aceita **somente dígitos** nos 2 últimos caracteres (dígitos verificadores)
-- [ ] **CA3** — A estrutura visual permanece `XX.XXX.XXX/XXXX-XX`: 14 caracteres úteis, 18 com formatação, mesma pontuação
-- [ ] **CA4** — Letra digitada em **minúscula** é normalizada para maiúscula
-- [ ] **CA5** — CNPJ alfanumérico com **DV inválido** é rejeitado, com mensagem que permita entender o erro
+**A. Máscara e validação** — *locais: rodam com CNPJ gerado, não dependem de API*
 
-**B. Cadastro, edição e exibição de cidadão PJ**
+- [ ] **CA1** — O campo **exibe** o placeholder `XX.XXX.XXX/XXXX-XX`
+- [ ] **CA2** — A máscara **aceita letras (A–Z)** nas 12 primeiras posições
+- [ ] **CA3** — A máscara aceita **somente dígitos** nos 2 últimos caracteres (dígitos verificadores)
+- [ ] **CA4** — A estrutura visual se mantém: **14 caracteres úteis**, **18 com a formatação**, mesma pontuação
+- [ ] **CA5** — Letra digitada em **minúscula** é normalizada para maiúscula
+- [ ] **CA6** — CNPJ alfanumérico com **DV inválido** é rejeitado, com mensagem que permita entender o erro
 
-- [ ] **CA6** — Cadastro público (Signup PJ) conclui com CNPJ alfanumérico
-- [ ] **CA7** — Finalização de cadastro do cidadão aceita CNPJ alfanumérico
-- [ ] **CA8** — Novo usuário PJ pelo admin conclui com CNPJ alfanumérico
-- [ ] **CA9** — Edição de cidadão PJ preserva e aceita CNPJ alfanumérico
-- [ ] **CA10** — Modal de visualização da listagem exibe o CNPJ alfanumérico formatado
-- [ ] **CA11** — Meu perfil (cidadão PJ) exibe o CNPJ alfanumérico corretamente
-- [ ] **CA12** — A **Razão Social** segue sendo preenchida pela API para CNPJ alfanumérico, mantendo o campo não editável
+**B. Cidadão PJ — cadastro, edição e exibição** — *dependem de CNPJ **real**, porque Razão Social é obrigatória e vem da API*
+
+- [ ] **CA7** — **Controle**: CNPJ **numérico real** preenche a Razão Social pela API (prova que a consulta funciona no ambiente)
+- [ ] **CA8** — CNPJ **alfanumérico real** preenche a Razão Social pela API, mantendo o campo não editável
+- [ ] **CA9** — Cadastro público (Signup PJ) conclui com CNPJ alfanumérico
+- [ ] **CA10** — Finalização de cadastro do cidadão aceita CNPJ alfanumérico
+- [ ] **CA11** — Novo usuário PJ pelo admin conclui com CNPJ alfanumérico
+- [ ] **CA12** — Edição de cidadão PJ preserva e aceita CNPJ alfanumérico
 - [ ] **CA13** — Unicidade respeitada **independente de caixa**: CNPJ já cadastrado não aceita segundo usuário, nem digitado em minúscula
+- [ ] **CA14** — Modal de visualização da listagem exibe o CNPJ alfanumérico formatado
+- [ ] **CA15** — Meu perfil (cidadão PJ) exibe o CNPJ alfanumérico formatado
 
 **C. Login e recuperação de acesso**
 
-- [ ] **CA14** — Login do cidadão autentica com CNPJ alfanumérico
-- [ ] **CA15** — Recuperação de acesso aceita CNPJ alfanumérico
+- [ ] **CA16** — Login do cidadão autentica com CNPJ alfanumérico
+- [ ] **CA17** — Recuperação de acesso aceita CNPJ alfanumérico
 
 **D. Órgão / instância**
 
-- [ ] **CA16** — Cadastro de órgão conclui com CNPJ alfanumérico
-- [ ] **CA17** — Edição de órgão preserva o CNPJ alfanumérico
+- [ ] **CA18** — Cadastro de órgão conclui com CNPJ alfanumérico
+- [ ] **CA19** — Edição de órgão preserva o CNPJ alfanumérico
 
 **E. Saída em documento e assinatura**
 
-- [ ] **CA18** — CNPJ alfanumérico sai **formatado corretamente** no PDF de despacho, na capa de documento e no modelo base
-- [ ] **CA19** — Assinatura por código aceita o CNPJ alfanumérico do signatário
-- [ ] **CA20** — O fluxo de assinatura formata/anonimiza o CNPJ alfanumérico sem corromper o valor
+- [ ] **CA20** — CNPJ alfanumérico sai **formatado corretamente** no PDF de despacho, na capa de documento e no modelo base
+- [ ] **CA21** — Assinatura por código aceita o CNPJ alfanumérico do signatário
+- [ ] **CA22** — O fluxo de assinatura formata/anonimiza o CNPJ alfanumérico **sem corromper o valor**
 
 **F. Construtor de formulários**
 
-- [ ] **CA21** — Campo com máscara CNPJ no construtor (módulo principal, módulo cliente, assunto/serviço) aceita alfanumérico
-- [ ] **CA22** — Campo com máscara CNPJ em **despacho personalizado de fluxo de trabalho** aceita alfanumérico
+- [ ] **CA23** — Campo com máscara CNPJ no construtor (módulo principal, módulo cliente, assunto/serviço) aceita alfanumérico
+- [ ] **CA24** — Campo com máscara CNPJ em **despacho personalizado de fluxo de trabalho** aceita alfanumérico
 
 **G. Retrocompatibilidade**
 
-- [ ] **CA23** — CNPJ **numérico** existente segue funcionando em login, edição, exibição e PDF
-- [ ] **CA24** — PJ com CNPJ numérico **inválido já na base** tem comportamento definido na edição — não trava sem aviso nem perde o registro
+- [ ] **CA25** — CNPJ **numérico** existente segue funcionando em login, edição, exibição e PDF
+- [ ] **CA26** — Órgão/instância com CNPJ **inválido legado** tem comportamento definido na edição — não trava sem aviso nem perde o registro
 
 **H. Superfícies fora da lista declarada**
 
-- [ ] **CA25** — Busca por CNPJ no [[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento|Rastrear Documento]] encontra PJ com CNPJ alfanumérico, **com e sem** pontuação
-- [ ] **CA26** — Listagem/pesquisa de cidadãos exibe o CNPJ alfanumérico corretamente, inclusive na tag "Cadastro incompleto"
+- [ ] **CA27** — Busca por CNPJ no [[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento|Rastrear Documento]] encontra a PJ alfanumérica e seus documentos, **com e sem** pontuação
+- [ ] **CA28** — Listagem/pesquisa de cidadãos exibe o CNPJ alfanumérico corretamente, inclusive na tag "Cadastro incompleto"
 
 ---
 
