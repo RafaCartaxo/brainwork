@@ -83,6 +83,16 @@ Situação que a automação não sabe tratar vira **aviso visível + item na fi
 
 **Precedentes** (todos no `qa-atualiza.py`): 2026-07-24, o `LEDGER` não reconhecia os emojis 🔎/📋 e ignorava linhas de Atividades caladamente. 2026-07-28, um guard comparava keywords de *pendência* contra copy de *Atividades* e desativou o ledger quase inteiro; e o `reconcilia_atividades` fazia `continue` sem aviso quando o card não existia, com o script imprimindo "nada a fazer — tudo em dia".
 
+## Editar a daily por seção, nunca por `replace` global
+
+A daily repete texto entre seções **por desenho**: a mesma frase aparece no **Status — reunião** (que é derivado), em **Atividades**, na fila e no log do `[!organizacao]`. Então `texto.replace("- ✅ SGV-1234 ...", ...)` casa na **primeira** ocorrência, que quase nunca é a que se quer — e o conteúdo cai na seção errada **sem erro nenhum**.
+
+Antes de editar: localizar os limites da seção (`## X` até o próximo `## `, ou `### X` até o próximo `###`/`##`) e trabalhar **dentro deles**. Depois de editar: conferir que nenhum callout foi rompido — linha sem `>` dentro de um `[!abstract]`/`[!info]`/`[!note]`/`[!organizacao]` significa que o bloco quebrou ali.
+
+O **Status — reunião** tem regra própria: é *derivado* do que está registrado embaixo e se **reescreve por inteiro** ([[../../QA Workspace/01 Daily/README#Status — reunião (primeira seção da daily)|01 Daily/README]]). Remendar linha a linha nele acumula duplicata; o certo é regenerar.
+
+**Precedente**: 2026-07-30. Ao longo do dia eu editei a daily dezenas de vezes com âncora curta. O resultado: o callout do Status partido ao meio, três blocos de Atividades despejados dentro dele, uma atividade (SGV-5783) que **nunca chegou a ser registrada** — existia só no log do script — e duplicatas de 10437 e da suspeita descartada. Nada disso deu erro; só ficou ilegível, e foi o Rafael que viu. Diagnóstico e conserto na daily do dia.
+
 ## Anotações = canal IA → Rafael
 
 Aviso, dúvida não bloqueante ou coisa pra ele validar depois vai em `## Anotações` da daily do dia: linha autocontida, com SGV/link quando houver, **sem** a marca ` → ` (essa é de quem processa). Recado em chat se perde quando a sessão fecha.

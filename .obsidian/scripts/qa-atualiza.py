@@ -909,10 +909,33 @@ def linkifica_ids(texto):
 
 
 def bloco_registro(daily, hoje):
+    """Anexa ao callout de Auto-organização o que aconteceu nesta execução.
+
+    **Não repete linha que já está no bloco.** Aviso pendente (evidência sem
+    número na raiz, card que falta criar) sai igual em toda execução — sem esta
+    guarda, o bloco cresce uma linha por rodada do 🔄 e engole a daily: em
+    30/07 chegou a **75 linhas com 25 únicas**, o mesmo aviso 25 vezes, porque
+    o dia teve muitas execuções.
+
+    Ação nova continua sendo registrada; o que se descarta é a **repetição
+    literal**. Mesmo princípio de `sem_idade` e `sem_ledger`: o script tem que
+    reconhecer o próprio trabalho anterior em vez de reescrevê-lo.
+    """
     if not acoes and not avisos:
         return daily
+    ja_registrado = set()
+    m = re.search(r"> \[!organizacao\]- Auto-organização\n((?:>.*\n?)*)", daily)
+    if m:
+        ja_registrado = {l.rstrip() for l in m.group(1).splitlines() if l.startswith("> - ")}
     linhas_bloco = [f"> - {a}" for a in acoes] + [f"> - {a}" for a in avisos]
-    corpo = "\n".join(linhas_bloco)
+    novas = []
+    for l in linhas_bloco:
+        if l in ja_registrado or l in novas:
+            continue
+        novas.append(l)
+    if not novas:
+        return daily
+    corpo = "\n".join(novas)
     if "[!organizacao]- Auto-organização" in daily:
         return daily.rstrip() + "\n" + corpo + "\n"
     return daily.rstrip() + f"\n\n> [!organizacao]- Auto-organização\n{corpo}\n"
