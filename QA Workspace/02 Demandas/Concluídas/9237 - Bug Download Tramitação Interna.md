@@ -56,16 +56,17 @@ O download realizado por um cidadão não deve conter, em nenhuma hipótese, con
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Validar que download do cidadão não exibe tramitação interna**
-    Dado que um cidadão realize o download de um documento público
-    Quando o download for concluído
-    Então o conteúdo de tramitação interna não deve estar presente no arquivo baixado
+#### **CT-B01 Validar que download do cidadão não exibe tramitação interna**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um cidadão realize o download de um documento público
+**Quando** o download for concluído
+**Então** o conteúdo de tramitação interna não deve estar presente no arquivo baixado
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

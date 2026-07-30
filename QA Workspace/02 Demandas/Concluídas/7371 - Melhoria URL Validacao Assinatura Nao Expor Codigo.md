@@ -54,16 +54,19 @@ A URL de validação de assinatura não deve expor o código de validação.
 
 ### Casos de Teste Básicos
 
-- **CT-B01 URL de validação de assinatura não expõe o código**
-    Dado que uma assinatura seja realizada
-    Quando a URL de validação da assinatura for acessada/exibida
-    Então o código de validação não deve estar exposto na URL
+#### **CT-B01 URL de validação de assinatura não expõe o código**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que uma assinatura seja realizada
+**Quando** a URL de validação da assinatura for acessada/exibida
+**Então** o código de validação não deve estar exposto na URL
 
-    - Evidências de Testes: ![[7371 - alterar url validacao assinatura nao expor codigo aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[7371 - alterar url validacao assinatura nao expor codigo aprovado em homologacao.mp4]]
 
 ---
 

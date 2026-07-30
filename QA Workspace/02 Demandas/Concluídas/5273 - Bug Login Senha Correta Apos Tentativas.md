@@ -63,49 +63,65 @@ Quando o usuário digitar as credenciais de acesso corretas — mesmo após ter 
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Login com senha correta após esgotar tentativas (cenário do bug)**
-    Dado que o usuário tenha errado a senha o número de vezes que antecede o bloqueio
-    Quando informar a senha correta na tentativa seguinte
-    Então o login deve ser efetuado com sucesso
+#### **CT-B01 Login com senha correta após esgotar tentativas (cenário do bug)**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário tenha errado a senha o número de vezes que antecede o bloqueio
+**Quando** informar a senha correta na tentativa seguinte
+**Então** o login deve ser efetuado com sucesso
 
-    - Evidências de Testes: ![[5273 - login com senha correta aprovado em homologação.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Regressão: bloqueio continua funcionando com senha errada no limite**
-    Dado que o usuário atinja o limite máximo de tentativas
-    Quando errar a senha novamente (sem nunca acertar)
-    Então a conta deve ser bloqueada e o e-mail de recuperação deve ser disparado, como antes do fix
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[5273 - login com senha correta aprovado em homologação.mp4]]
 
-    - Evidências de Testes: ver evidência do CT-B01 (mesma gravação)
+---
 
-- **CT-B03 Regressão: contador de tentativas dentro do limite**
-    Dado que o usuário erre a senha uma vez, dentro do limite
-    Quando visualizar a mensagem de erro
-    Então deve ser informado corretamente quantas tentativas restam
+#### **CT-B02 Regressão: bloqueio continua funcionando com senha errada no limite**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário atinja o limite máximo de tentativas
+**Quando** errar a senha novamente (sem nunca acertar)
+**Então** a conta deve ser bloqueada e o e-mail de recuperação deve ser disparado, como antes do fix
 
-    - Evidências de Testes: ver evidência do CT-B01 (mesma gravação)
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B04 Validação em Produção**
-    Dado o mesmo cenário do CT-B01
-    Quando reproduzido em ambiente de Produção
-    Então o login com senha correta deve funcionar igualmente
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+ver evidência do CT-B01 (mesma gravação)
 
-    - Evidências de Testes:
+---
+
+#### **CT-B03 Regressão: contador de tentativas dentro do limite**
+
+**Dado** que o usuário erre a senha uma vez, dentro do limite
+**Quando** visualizar a mensagem de erro
+**Então** deve ser informado corretamente quantas tentativas restam
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+ver evidência do CT-B01 (mesma gravação)
+
+---
+
+#### **CT-B04 Validação em Produção**
+
+**Dado** o mesmo cenário do CT-B01
+**Quando** reproduzido em ambiente de Produção
+**Então** o login com senha correta deve funcionar igualmente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

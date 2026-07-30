@@ -41,16 +41,17 @@ Editar um documento "Em elaboração" e baixá-lo reflete o conteúdo atualizado
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Download de documento "Em elaboração" reflete a edição**
-    Dado um documento "Em elaboração" editado
-    Quando o servidor faz o download
-    Então o arquivo baixado reflete a última edição
+#### **CT-B01 Download de documento "Em elaboração" reflete a edição**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span> (coberto pela correção comum de 6083/6873 — ver ressalva)
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um documento "Em elaboração" editado
+**Quando** o servidor faz o download
+**Então** o arquivo baixado reflete a última edição
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim (coberto pela correção comum de 6083/6873 — ver ressalva)
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

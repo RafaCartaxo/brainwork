@@ -48,16 +48,19 @@ Então o sistema retorna erro 503 e a ativação não é concluída
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Ativar cliente com status "Em implantação"**
-    Dado que existe um cliente com status "Em implantação"
-    Quando o cliente é ativado
-    Então a ativação é concluída com sucesso, sem erro 503
+#### **CT-B01 Ativar cliente com status "Em implantação"**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que existe um cliente com status "Em implantação"
+**Quando** o cliente é ativado
+**Então** a ativação é concluída com sucesso, sem erro 503
 
-    - Evidências de Testes: ![[6975 - erro 503 ao ativar cliente em implantacao aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[6975 - erro 503 ao ativar cliente em implantacao aprovado em homologacao.mp4]]
 
 ---
 

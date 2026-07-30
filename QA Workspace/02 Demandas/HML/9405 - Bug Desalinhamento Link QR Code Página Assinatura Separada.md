@@ -42,17 +42,19 @@ No documento assinado com página de assinatura separada, o link de verificaçã
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Link e QR Code alinhados na página de assinatura separada**
-    Dado um documento configurado com página de assinatura separada
-    Quando o documento é assinado e a página de assinaturas é gerada
-    Então o link de verificação e o QR Code aparecem alinhados, sem deslocamento
+#### **CT-B01 Link e QR Code alinhados na página de assinatura separada**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um documento configurado com página de assinatura separada
+**Quando** o documento é assinado e a página de assinaturas é gerada
+**Então** o link de verificação e o QR Code aparecem alinhados, sem deslocamento
 
-    - Evidências de Testes:
-        ![[9405 - link e qr code alinhados pagina assinatura separada aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[9405 - link e qr code alinhados pagina assinatura separada aprovado em dev.mp4]]
 
 ---
 

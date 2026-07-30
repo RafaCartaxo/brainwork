@@ -48,17 +48,18 @@ O botão flutuante de ancoragem deve aparecer na posição correta desde o iníc
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Validar posicionamento do botão de ancoragem durante carregamento**
-    Dado que a página esteja carregando
-    E o botão flutuante de ancoragem for renderizado
-    Quando o carregamento avançar
-    Então ele deve aparecer na posição correta desde o início
+#### **CT-B01 Validar posicionamento do botão de ancoragem durante carregamento**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que a página esteja carregando
+**E** o botão flutuante de ancoragem for renderizado
+**Quando** o carregamento avançar
+**Então** ele deve aparecer na posição correta desde o início
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

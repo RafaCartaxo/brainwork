@@ -49,16 +49,19 @@ Então a referência da resposta deve apontar corretamente para o despacho respo
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Referência de resposta exibida corretamente na cadeia de respostas**
-    Dado que um despacho tenha uma resposta associada
-    Quando a cadeia de respostas for exibida
-    Então a referência da resposta aponta corretamente para o despacho respondido
+#### **CT-B01 Referência de resposta exibida corretamente na cadeia de respostas**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um despacho tenha uma resposta associada
+**Quando** a cadeia de respostas for exibida
+**Então** a referência da resposta aponta corretamente para o despacho respondido
 
-    - Evidências de Testes: ![[8380 - referencia resposta despacho cadeia respostas aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[8380 - referencia resposta despacho cadeia respostas aprovado em homologacao.mp4]]
 
 ---
 

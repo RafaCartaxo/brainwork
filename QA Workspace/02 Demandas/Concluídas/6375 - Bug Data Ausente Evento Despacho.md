@@ -49,16 +49,17 @@ A data deve ser exibida corretamente em todos os eventos de despacho.
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Exibir data corretamente no evento de despacho**
-    Dado que um despacho seja realizado
-    Quando o evento do despacho for exibido
-    Então a data do evento deve ser exibida corretamente
+#### **CT-B01 Exibir data corretamente no evento de despacho**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um despacho seja realizado
+**Quando** o evento do despacho for exibido
+**Então** a data do evento deve ser exibida corretamente
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

@@ -41,17 +41,19 @@ Ao ordenar a listagem de clientes em Z-A, o ícone exibido reflete corretamente 
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Ordenação Z-A exibe ícone correto**
-    Dado a listagem de clientes
-    Quando o usuário ordena por Z-A
-    Então o ícone exibido corresponde ao sentido de ordenação decrescente
+#### **CT-B01 Ordenação Z-A exibe ícone correto**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** a listagem de clientes
+**Quando** o usuário ordena por Z-A
+**Então** o ícone exibido corresponde ao sentido de ordenação decrescente
 
-    - Evidências de Testes:
-        ![[8386 - ordenacao za clientes icone corrigido aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[8386 - ordenacao za clientes icone corrigido aprovado em homologacao.mp4]]
 
 ---
 

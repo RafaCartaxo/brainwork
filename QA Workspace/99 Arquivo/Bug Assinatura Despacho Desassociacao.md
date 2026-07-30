@@ -57,16 +57,17 @@ Deve ser possível assinar um despacho de desassociação de documentos sem ocor
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Assinar despacho de desassociação de documentos**
-    Dado um despacho de desassociação de documentos ([[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]])
-    Quando o usuário assinar o despacho
-    Então a assinatura deve ser concluída sem erro
+#### **CT-B01 Assinar despacho de desassociação de documentos**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um despacho de desassociação de documentos ([[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]])
+**Quando** o usuário assinar o despacho
+**Então** a assinatura deve ser concluída sem erro
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

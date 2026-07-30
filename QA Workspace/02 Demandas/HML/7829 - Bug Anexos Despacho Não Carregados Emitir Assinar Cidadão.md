@@ -42,29 +42,35 @@ Ao emitir e assinar um despacho como cidadão, todos os anexos — independente 
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Anexo PDF carrega corretamente**
-    Dado um despacho com anexo em PDF
-    Quando o cidadão emitir e assinar o despacho
-    Então o anexo PDF carrega corretamente
+#### **CT-B01 Anexo PDF carrega corretamente**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um despacho com anexo em PDF
+**Quando** o cidadão emitir e assinar o despacho
+**Então** o anexo PDF carrega corretamente
 
-    - Evidências de Testes:
-        ![[7829 - anexos despacho pdf ok imagem nao carrega reaberta em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Anexo do tipo imagem carrega corretamente**
-    Dado um despacho com anexo em imagem (ex.: JPG/PNG)
-    Quando o cidadão emitir e assinar o despacho
-    Então o anexo de imagem carrega corretamente
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+![[7829 - anexos despacho pdf ok imagem nao carrega reaberta em homologacao.mp4]]
 
-    - Evidências de Testes:
-        ![[7829 - anexos despacho pdf ok imagem nao carrega reaberta em homologacao.mp4]]
+---
+
+#### **CT-B02 Anexo do tipo imagem carrega corretamente**
+
+**Dado** um despacho com anexo em imagem (ex.: JPG/PNG)
+**Quando** o cidadão emitir e assinar o despacho
+**Então** o anexo de imagem carrega corretamente
+
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
+
+**Evidências de Testes:**
+
+![[7829 - anexos despacho pdf ok imagem nao carrega reaberta em homologacao.mp4]]
 
 ---
 

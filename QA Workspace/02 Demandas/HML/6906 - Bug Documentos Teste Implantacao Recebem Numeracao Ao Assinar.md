@@ -52,17 +52,20 @@ Documentos de teste criados durante a implantação **não devem permanecer como
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Documento de teste assinado durante a implantação não permanece válido após implantar**
-    Dado que a prefeitura esteja Em Implantação
-    E um documento de teste tenha sido assinado nesse período
-    Quando a implantação da prefeitura é concluída (limpeza de documentos "Sem numeração")
-    Então o documento de teste não deve permanecer na base do cliente como documento válido
+#### **CT-B01 Documento de teste assinado durante a implantação não permanece válido após implantar**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** que a prefeitura esteja Em Implantação
+**E** um documento de teste tenha sido assinado nesse período
+**Quando** a implantação da prefeitura é concluída (limpeza de documentos "Sem numeração")
+**Então** o documento de teste não deve permanecer na base do cliente como documento válido
 
-    - Evidências de Testes: ![[6906 - documentos de teste da implantacao ganham numeracao reaberto em homologacao.mp4]]
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
+
+**Evidências de Testes:**
+
+![[6906 - documentos de teste da implantacao ganham numeracao reaberto em homologacao.mp4]]
 
 ---
 

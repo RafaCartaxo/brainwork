@@ -32,7 +32,6 @@ Então (suspeita) o conteúdo do despacho não é exibido para ele mesmo sendo o
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://9499)
 
-
 ---
 
 ### Resultado Esperado
@@ -50,16 +49,17 @@ O cidadão autor de um despacho sigiloso na própria resposta de Processo Admini
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Visualizar conteúdo do próprio despacho sigiloso como autor (cidadão)**
-    Dado que um cidadão crie um despacho de resposta com a opção "Com Sigilo" marcada, no próprio Processo Administrativo
-    Quando ele mesmo visualizar o despacho na linha do tempo do documento
-    Então o conteúdo do despacho deve ser exibido normalmente para ele
+#### **CT-B01 Visualizar conteúdo do próprio despacho sigiloso como autor (cidadão)**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um cidadão crie um despacho de resposta com a opção "Com Sigilo" marcada, no próprio Processo Administrativo
+**Quando** ele mesmo visualizar o despacho na linha do tempo do documento
+**Então** o conteúdo do despacho deve ser exibido normalmente para ele
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

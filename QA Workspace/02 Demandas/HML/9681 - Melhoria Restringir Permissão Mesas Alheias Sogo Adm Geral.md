@@ -60,41 +60,51 @@ Histórico da reabertura (27/07, mantida como registro):
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Adm SOGO e adm geral conseguem conceder "Mesas Alheias"**
-    Dado a tela de gerenciamento de permissões
-    Quando o usuário logado é adm SOGO ou adm geral
-    Então consegue conceder a permissão "Mesas Alheias" e vê o toggle de setores
+#### **CT-B01 Adm SOGO e adm geral conseguem conceder "Mesas Alheias"**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** a tela de gerenciamento de permissões
+**Quando** o usuário logado é adm SOGO ou adm geral
+**Então** consegue conceder a permissão "Mesas Alheias" e vê o toggle de setores
 
-    - Evidências de Testes:
-        ![[9681 - restringir permissao mesas alheias aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Perfil sem nível de acesso não consegue conceder**
-    Dado a tela de gerenciamento de permissões
-    Quando o usuário logado não é adm SOGO nem adm geral
-    Então a concessão de "Mesas Alheias" é bloqueada
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[9681 - restringir permissao mesas alheias aprovado em dev.mp4]]
 
-    - Evidências de Testes:
-        ![[9681 - restringir permissao mesas alheias aprovado em dev.mp4]]
+---
 
-- **CT-B03 Indicação visual pra quem não tem permissão**
-    Dado o usuário sem nível de acesso pra conceder "Mesas Alheias"
-    Quando ele abre a configuração de permissões
-    Então em vez do toggle de setores ele vê a tag informativa / tooltip explicando por que a configuração está bloqueada
+#### **CT-B02 Perfil sem nível de acesso não consegue conceder**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** a tela de gerenciamento de permissões
+**Quando** o usuário logado não é adm SOGO nem adm geral
+**Então** a concessão de "Mesas Alheias" é bloqueada
 
-    - Evidências de Testes:
-        ![[9681 - restringir permissao mesas alheias aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[9681 - restringir permissao mesas alheias aprovado em dev.mp4]]
+
+---
+
+#### **CT-B03 Indicação visual pra quem não tem permissão**
+
+**Dado** o usuário sem nível de acesso pra conceder "Mesas Alheias"
+**Quando** ele abre a configuração de permissões
+**Então** em vez do toggle de setores ele vê a tag informativa / tooltip explicando por que a configuração está bloqueada
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[9681 - restringir permissao mesas alheias aprovado em dev.mp4]]
 
 ---
 

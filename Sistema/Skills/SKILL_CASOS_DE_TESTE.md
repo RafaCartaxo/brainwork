@@ -107,6 +107,47 @@ Antes de dar os CTs por prontos, casar **CT ↔ critério** do card:
 - **Critério com estado que liga/desliga o defeito rende um CT por estado**, e cada um recebe **sua própria evidência** — regra completa em [[SKILL_BUGS#Critérios de Aceite|SKILL_BUGS]]. Precedente: SGV-10457, com um CT sem páginas enumeradas e outro com, cada um embedando a gravação do seu cenário.
 - **CT não verifica medida de handoff** (px, hex, token de espaçamento): o `Então` diz "íntegro e legível, sem sobreposição", não "a 8px da margem". Medida de especificação é referência pro dev, não passo de teste de caixa preta.
 
+### Três estados de execução
+
+O "Execução Passou?" tem **três** opções, não duas:
+
+```markdown
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [x] Não se aplica
+```
+
+**"Não se aplica"** é para CT cuja **pré-condição é inalcançável** — não é "não testei ainda" (isso é deixar em branco) nem "passou". Ao marcar, explicar em callout fechado logo abaixo **por que** é inalcançável e o que aconteceria se o produto mudasse:
+
+```markdown
+> [!info]- Por que não se aplica
+> <o que torna a pré-condição impossível>. O critério segue válido como regra —
+> está satisfeito **por construção**, não por teste. Se <mudança no produto>,
+> este CT volta a ser executável.
+```
+
+O critério de aceite correspondente **não é marcado como aprovado**: ele fica desmarcado com a nota `*(satisfeito por construção — ver CT-NNN)*`. Aprovar critério que não foi exercitado é registro falso.
+
+Precedente: SGV-9042, CT-003 — documento com fluxo não iniciado não emite despacho, então a tela onde o contêiner apareceria não existe.
+
+### Caso retirado do escopo — grupo de registro
+
+CT **retirado ou adiado** depois de escrito não vira buraco na numeração nem desaparece. Vai pra uma seção no **fim** do card, com tabela de caso × decisão × motivo:
+
+```markdown
+### G. Fora de execução — registro
+
+*Casos considerados e deliberadamente não executados nesta rodada. Ficam aqui pra
+não sumirem do histórico e pra não abrirem buraco na numeração dos ativos.*
+
+| Caso | Decisão | Motivo |
+|---|---|---|
+| <título do caso> | **Retirado** / **Adiado** / **Removido — não se aplica** (quem, quando) | <por que, com o que muda se voltar> |
+```
+
+Os CTs ativos são **renumerados pra ficarem contíguos** — e as evidências são renomeadas **no mesmo movimento** ([[../../QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]]). Precedente: SGV-9042, grupo G com 4 casos e renumeração de 26 → 21 CTs.
+
 ### Evidências de Testes
 
 Mesmo processo de qualquer evidência do vault — ver [[../../QA Workspace/Evidências/README|Evidências/README]]. Vale pra caso de teste tanto quanto pra bug.

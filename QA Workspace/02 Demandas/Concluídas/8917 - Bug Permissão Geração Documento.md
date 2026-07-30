@@ -55,29 +55,33 @@ O botão "Gerar documento" não deve ser exibido quando o setor em que o servido
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Bloquear geração de documento vinculado ao Módulo quando setor não tem permissão**
-    Dado que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
-    E o documento automatizado esteja vinculado diretamente ao Módulo
-    Quando ele tentar gerar o documento
-    Então o botão "Gerar documento" não deve ser exibido
+#### **CT-B01 Bloquear geração de documento vinculado ao Módulo quando setor não tem permissão**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
+**E** o documento automatizado esteja vinculado diretamente ao Módulo
+**Quando** ele tentar gerar o documento
+**Então** o botão "Gerar documento" não deve ser exibido
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Bloquear geração de documento vinculado ao Assunto e Serviço quando setor não tem permissão**
-    Dado que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
-    E o documento automatizado esteja vinculado ao Assunto e Serviço
-    Quando ele tentar gerar o documento
-    Então o botão "Gerar documento" não deve ser exibido
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Bloquear geração de documento vinculado ao Assunto e Serviço quando setor não tem permissão**
+
+**Dado** que o servidor esteja atuando por um setor sem permissão de criação (canCreate) no módulo do documento
+**E** o documento automatizado esteja vinculado ao Assunto e Serviço
+**Quando** ele tentar gerar o documento
+**Então** o botão "Gerar documento" não deve ser exibido
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

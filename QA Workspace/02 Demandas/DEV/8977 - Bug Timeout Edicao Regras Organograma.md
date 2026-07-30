@@ -62,49 +62,59 @@ O sistema deve concluir a edição das regras de tramitação com sucesso, indep
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Editar regra de tramitação em ambiente de grande volume**
-    Dado um ambiente com grande quantidade de setores vinculados aos módulos
-    Quando editar e salvar as regras de tramitação de um setor pelo Organograma
-    Então a operação deve concluir com sucesso, sem erro nem timeout
+#### **CT-B01 Editar regra de tramitação em ambiente de grande volume**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um ambiente com grande quantidade de setores vinculados aos módulos
+**Quando** editar e salvar as regras de tramitação de um setor pelo Organograma
+**Então** a operação deve concluir com sucesso, sem erro nem timeout
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B02 Tempo de conclusão dentro do novo limite (10s)**
-    Dado o mesmo ambiente de grande volume
-    Quando salvar as regras de tramitação
-    Então a operação deve concluir dentro de 10s (cronometrar) — se exceder, o critério original "(30s)" e o novo valor entregue estão ambos em risco
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Tempo de conclusão dentro do novo limite (10s)**
 
-- **CT-B03 Persistência das alterações**
-    Dado que a edição de regras foi concluída sem erro
-    Quando reabrir o setor no Organograma
-    Então as regras salvas devem refletir exatamente o que foi configurado
+**Dado** o mesmo ambiente de grande volume
+**Quando** salvar as regras de tramitação
+**Então** a operação deve concluir dentro de 10s (cronometrar) — se exceder, o critério original "(30s)" e o novo valor entregue estão ambos em risco
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
 
-- **CT-B04 Regressão em ambiente de menor volume**
-    Dado um ambiente com poucos setores/módulos
-    Quando editar e salvar regras de tramitação pelo Organograma
-    Então a operação deve continuar rápida e sem erro, sem piora perceptível em relação ao comportamento anterior
+---
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+#### **CT-B03 Persistência das alterações**
 
-    - Evidências de Testes:
+**Dado** que a edição de regras foi concluída sem erro
+**Quando** reabrir o setor no Organograma
+**Então** as regras salvas devem refletir exatamente o que foi configurado
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B04 Regressão em ambiente de menor volume**
+
+**Dado** um ambiente com poucos setores/módulos
+**Quando** editar e salvar regras de tramitação pelo Organograma
+**Então** a operação deve continuar rápida e sem erro, sem piora perceptível em relação ao comportamento anterior
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

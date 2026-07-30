@@ -51,28 +51,33 @@ Após editar um documento, o download e a assinatura refletem o conteúdo atuali
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Download reflete a edição**
-    Dado um documento editado
-    Quando o servidor faz o download
-    Então o arquivo baixado mostra o conteúdo atualizado (última edição)
+#### **CT-B01 Download reflete a edição**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um documento editado
+**Quando** o servidor faz o download
+**Então** o arquivo baixado mostra o conteúdo atualizado (última edição)
 
-    - Evidências de Testes:
-        ![[6083 - edicao documento reflete download assinatura aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Assinatura reflete a edição**
-    Dado um documento editado
-    Quando o servidor assina o documento
-    Então o documento assinado mostra o conteúdo atualizado
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[6083 - edicao documento reflete download assinatura aprovado em homologacao.mp4]]
 
-    - Evidências de Testes:
+---
+
+#### **CT-B02 Assinatura reflete a edição**
+
+**Dado** um documento editado
+**Quando** o servidor assina o documento
+**Então** o documento assinado mostra o conteúdo atualizado
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

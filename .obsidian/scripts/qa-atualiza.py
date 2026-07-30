@@ -609,16 +609,43 @@ LEDGER = [
     ("⚪", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (não reproduzido)"),
     ("🔎", ("revis", "análise", "escopo", "cenári"), "{rid} - Revisar cenários/análise (concluída)"),
     ("📋", ("triagem", "bater"), "{rid} - Triagem (item batido)"),
+    # 📚 existia no catálogo do 01 Daily/README desde sempre, mas não aqui: linha de
+    # documentação importada/atualizada não gerava checkbox de ledger e o dia fechava
+    # com a atividade registrada e a fila sem ela. Aviso disparado em 29/07, corrigido
+    # em 30/07. `rid` aqui é o nome da doc, não um SGV — o ledger aceita os dois.
+    ("📚", ("document", "doc ", "importa", "atualiz"), "{rid} - Documentar (importada/atualizada)"),
 ]
 
 # Emojis reconhecidos como prefixo de linha em Atividades (ordem não importa aqui;
 # usados em alternação, nunca como character class solto — 🗑️ é 2 codepoints).
-_EMOJI_ALT = "💭|📝|📤|💡|🐛|🗑️|✅|🔁|🔴|⚪|🔎|📋"
+_EMOJI_ALT = "💭|📝|📤|💡|🐛|🗑️|✅|🔁|🔴|⚪|🔎|📋|📚"
 # Modificadores que podem aparecer colados a um emoji da lista acima (ex.: "🔎👍",
 # "🔒" sozinho) — não geram item de ledger próprio, só não podem quebrar o
 # reconhecimento dos emojis "de verdade" ao lado deles na mesma linha.
 _MODIFICADOR_ALT = "👍|🔒"
 _PREFIXO_ALT = rf"(?:{_EMOJI_ALT}|{_MODIFICADOR_ALT})"
+
+
+def _chave_sem_id(resto):
+    """Assunto de uma linha de Atividades que **não tem SGV/MEL** — usado como
+    identificador do item de ledger.
+
+    Pega o texto **antes do primeiro ' - '**, que na copy oficial é o assunto
+    (`📚 <Doc> - Documentação importada...` → a doc). Só cai no texto depois do
+    último ':' quando não há ' - ' (`🗑️ Suspeita descartada: <título>`).
+
+    Sem isso, a linha `📚 SKILL_BUGS e SKILL_CASOS_DE_TESTE - Regra nova:
+    critério de aceite...` gerava o ledger `Registrar: critério de aceite por co
+    (feito)` — pega o predicado e corta no meio da palavra. Precedente: 30/07.
+    """
+    if " - " in resto:
+        bruto = resto.split(" - ")[0]
+    else:
+        bruto = resto.split(":")[-1].split("(")[0]
+    # wikilink vira o alias legível: [[caminho/longo|Alias]] -> Alias
+    bruto = re.sub(r"\[\[[^\]|]*\|([^\]]+)\]\]", r"\1", bruto)
+    bruto = re.sub(r"\[\[([^\]]+)\]\]", r"\1", bruto)
+    return re.sub(r"[`*]", "", bruto).strip()[:40]
 
 
 def ledger_do_dia(texto):
@@ -648,7 +675,7 @@ def ledger_do_dia(texto):
         resto = am.group(2)
         idm = re.search(r"SGV[- ]?\d+|MEL-\d{4}", resto)
         rid = norm_id(idm.group(0)).replace("SGV ", "SGV-") if idm else None
-        chave = rid if rid else resto.split(":")[-1].split("(")[0].strip()[:25]
+        chave = rid if rid else _chave_sem_id(resto)
         for emoji in emojis:
             for e2, kws, modelo in LEDGER:
                 if e2 != emoji:

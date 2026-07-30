@@ -55,17 +55,20 @@ Ao retroceder uma etapa que foi avançada por atalho, o cluster de seleção do 
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Retroceder etapa avançada por atalho exibindo cluster de setor responsável**
-    Dado que exista um fluxo de trabalho com atalho da etapa inicial para a última etapa
-    E o usuário tenha avançado para a última etapa pelo atalho
-    Quando o usuário retroceder a etapa
-    Então o cluster de seleção do setor responsável deve ser exibido e a etapa deve retroceder com sucesso
+#### **CT-B01 Retroceder etapa avançada por atalho exibindo cluster de setor responsável**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que exista um fluxo de trabalho com atalho da etapa inicial para a última etapa
+**E** o usuário tenha avançado para a última etapa pelo atalho
+**Quando** o usuário retroceder a etapa
+**Então** o cluster de seleção do setor responsável deve ser exibido e a etapa deve retroceder com sucesso
 
-    - Evidências de Testes: ![[10123 - retrocesso de etapa após atalho aprovado em homologação.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[10123 - retrocesso de etapa após atalho aprovado em homologação.mp4]]
 
 ---
 

@@ -56,39 +56,47 @@ A toolbar de um documento encerrado "para mim" exibe, além de **Reabrir documen
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Toolbar após encerrar para mim, documento com fluxo de trabalho**
-    Dado que eu tenho um documento com fluxo de trabalho configurado e iniciado
-    Quando eu encerro o documento para mim
-    Então verifico que a toolbar exibe Reabrir documento, histórico e baixar documento
+#### **CT-B01 Toolbar após encerrar para mim, documento com fluxo de trabalho**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho um documento com fluxo de trabalho configurado e iniciado
+**Quando** eu encerro o documento para mim
+**Então** verifico que a toolbar exibe Reabrir documento, histórico e baixar documento
 
-    - Evidências de Testes:
-        ![[10451 - toolbar de documento encerrado para mim mostra so reabrir sem historico e baixar.mp4]]
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
 
-- **CT-B02 Toolbar após encerrar para mim, documento sem fluxo de trabalho**
-    Dado que eu tenho um documento **sem** fluxo de trabalho
-    Quando eu encerro o documento para mim
-    Então verifico que a toolbar exibe Reabrir documento, histórico e baixar documento
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[10451 - toolbar de documento encerrado para mim mostra so reabrir sem historico e baixar.mp4]]
 
-    - Evidências de Testes:
+---
 
-- **CT-B03 Toolbar após encerrar para meu setor**
-    Dado que eu tenho um documento com fluxo de trabalho configurado e iniciado
-    Quando eu encerro o documento para meu setor
-    Então verifico que a toolbar exibe as ações de consulta esperadas (histórico e baixar documento), além de Reabrir documento
+#### **CT-B02 Toolbar após encerrar para mim, documento sem fluxo de trabalho**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho um documento **sem** fluxo de trabalho
+**Quando** eu encerro o documento para mim
+**Então** verifico que a toolbar exibe Reabrir documento, histórico e baixar documento
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B03 Toolbar após encerrar para meu setor**
+
+**Dado** que eu tenho um documento com fluxo de trabalho configurado e iniciado
+**Quando** eu encerro o documento para meu setor
+**Então** verifico que a toolbar exibe as ações de consulta esperadas (histórico e baixar documento), além de Reabrir documento
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

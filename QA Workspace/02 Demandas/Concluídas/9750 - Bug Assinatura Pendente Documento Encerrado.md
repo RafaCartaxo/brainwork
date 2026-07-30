@@ -64,61 +64,75 @@ Ao encerrar um documento **para todos**, **todas as pendências de assinatura s�
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Encerrar para todos cancela assinatura pendente de despacho**
-    Dado que um documento tenha um despacho com solicitação de assinatura pendente
-    Quando o documento for encerrado para todos
-    Então a solicitação de assinatura do despacho deve ser cancelada
+#### **CT-B01 Encerrar para todos cancela assinatura pendente de despacho**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um documento tenha um despacho com solicitação de assinatura pendente
+**Quando** o documento for encerrado para todos
+**Então** a solicitação de assinatura do despacho deve ser cancelada
 
-    - Evidências de Testes:
-        ![[9750 - encerrar documento para todos cancela assinatura pendente aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Servidor não vê pendência de documento encerrado**
-    Dado que um documento com solicitação de assinatura pendente tenha sido encerrado para todos
-    Quando o servidor acessar a página inicial e a mesa de trabalho
-    Então nenhuma assinatura pendente do documento encerrado deve ser exibida, e não deve haver caminho pra tentar assiná-la
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[9750 - encerrar documento para todos cancela assinatura pendente aprovado em homologacao.mp4]]
 
-    - Evidências de Testes:
+---
 
-- **CT-B03 Regressão: retificação com troca de anexo segue cancelando assinatura**
-    Dado que um documento tenha uma solicitação de assinatura pendente
-    Quando o documento for retificado com troca de anexo
-    Então a solicitação de assinatura pendente deve ser cancelada (comportamento atual preservado)
+#### **CT-B02 Servidor não vê pendência de documento encerrado**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um documento com solicitação de assinatura pendente tenha sido encerrado para todos
+**Quando** o servidor acessar a página inicial e a mesa de trabalho
+**Então** nenhuma assinatura pendente do documento encerrado deve ser exibida, e não deve haver caminho pra tentar assiná-la
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B04 Regressão: assinatura em documento aberto funciona**
-    Dado que um documento aberto tenha uma solicitação de assinatura pendente
-    Quando o servidor assinar digitando a senha
-    Então a assinatura deve ser efetivada normalmente
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B03 Regressão: retificação com troca de anexo segue cancelando assinatura**
 
-- **CT-B05 Encerramentos parciais não cancelam assinaturas**
-    Dado que um documento tenha um despacho com solicitação de assinatura pendente
-    Quando um envolvido encerrar o documento **para mim** (e, em novo cenário, **para meu setor**)
-    Então as solicitações de assinatura pendentes permanecem inalteradas
+**Dado** que um documento tenha uma solicitação de assinatura pendente
+**Quando** o documento for retificado com troca de anexo
+**Então** a solicitação de assinatura pendente deve ser cancelada (comportamento atual preservado)
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
+
+---
+
+#### **CT-B04 Regressão: assinatura em documento aberto funciona**
+
+**Dado** que um documento aberto tenha uma solicitação de assinatura pendente
+**Quando** o servidor assinar digitando a senha
+**Então** a assinatura deve ser efetivada normalmente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B05 Encerramentos parciais não cancelam assinaturas**
+
+**Dado** que um documento tenha um despacho com solicitação de assinatura pendente
+**Quando** um envolvido encerrar o documento **para mim** (e, em novo cenário, **para meu setor**)
+**Então** as solicitações de assinatura pendentes permanecem inalteradas
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

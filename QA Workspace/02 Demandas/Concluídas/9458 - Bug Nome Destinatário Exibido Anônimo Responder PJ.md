@@ -41,17 +41,19 @@ Ao responder uma PJ, o nome do destinatário é exibido corretamente, sem cair n
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Nome do destinatário correto ao responder PJ**
-    Dado uma resposta destinada a uma Pessoa Jurídica
-    Quando o destinatário é exibido na tela
-    Então o nome real é mostrado, sem cair em "Anônimo"
+#### **CT-B01 Nome do destinatário correto ao responder PJ**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** uma resposta destinada a uma Pessoa Jurídica
+**Quando** o destinatário é exibido na tela
+**Então** o nome real é mostrado, sem cair em "Anônimo"
 
-    - Evidências de Testes:
-        ![[9458 - nome destinatario exibido corretamente resposta pj aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[9458 - nome destinatario exibido corretamente resposta pj aprovado em homologacao.mp4]]
 
 ---
 

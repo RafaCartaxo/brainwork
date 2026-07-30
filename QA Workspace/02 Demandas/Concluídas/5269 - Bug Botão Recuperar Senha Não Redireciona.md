@@ -41,17 +41,19 @@ Ao clicar no botão de recuperar senha, o usuário é redirecionado corretamente
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Botão de recuperar senha redireciona corretamente**
-    Dado a tela de login
-    Quando o usuário clica no botão de recuperar senha
-    Então é redirecionado para o fluxo de esqueci senha, sem erros
+#### **CT-B01 Botão de recuperar senha redireciona corretamente**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** a tela de login
+**Quando** o usuário clica no botão de recuperar senha
+**Então** é redirecionado para o fluxo de esqueci senha, sem erros
 
-    - Evidências de Testes:
-        ![[5269 - botao recuperar senha redireciona esqueci senha aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[5269 - botao recuperar senha redireciona esqueci senha aprovado em homologacao.mp4]]
 
 ---
 

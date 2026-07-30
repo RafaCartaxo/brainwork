@@ -41,17 +41,19 @@ Ao avançar ou retroceder entre as etapas da criação de A&S, os setores config
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Setores mantidos ao navegar entre etapas**
-    Dado a criação de A&S com setores configurados nas Regras de tramitação
-    Quando o usuário avança e depois retrocede entre as etapas do wizard
-    Então os setores configurados permanecem selecionados
+#### **CT-B01 Setores mantidos ao navegar entre etapas**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** a criação de A&S com setores configurados nas Regras de tramitação
+**Quando** o usuário avança e depois retrocede entre as etapas do wizard
+**Então** os setores configurados permanecem selecionados
 
-    - Evidências de Testes:
-        ![[6373 - setores regras tramitacao nao mantidos avancar retroceder etapas criacao as reaberta em dev.mp4]]
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
+
+**Evidências de Testes:**
+
+![[6373 - setores regras tramitacao nao mantidos avancar retroceder etapas criacao as reaberta em dev.mp4]]
 
 ---
 

@@ -50,16 +50,19 @@ Então, ao término do carregamento da nova consulta, os filtros aplicados anter
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Filtros são reiniciados ao realizar novo rastreio**
-    Dado que o usuário realizou um rastreamento e aplicou filtros na tela de resultados
-    Quando realiza um novo rastreamento
-    Então, ao término do carregamento, os filtros voltam ao estado inicial e o resultado corresponde à nova consulta sem filtro residual
+#### **CT-B01 Filtros são reiniciados ao realizar novo rastreio**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário realizou um rastreamento e aplicou filtros na tela de resultados
+**Quando** realiza um novo rastreamento
+**Então** , ao término do carregamento, os filtros voltam ao estado inicial e o resultado corresponde à nova consulta sem filtro residual
 
-    - Evidências de Testes: ![[9464 - filtros reiniciados ao realizar novo rastreio aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[9464 - filtros reiniciados ao realizar novo rastreio aprovado em homologacao.mp4]]
 
 ---
 

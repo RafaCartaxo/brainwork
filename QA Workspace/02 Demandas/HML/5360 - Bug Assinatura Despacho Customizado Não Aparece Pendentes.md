@@ -41,17 +41,19 @@ Solicitação de assinatura em despacho customizado aparece normalmente na tela 
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Assinatura de despacho customizado aparece nas pendências**
-    Dado um despacho customizado com solicitação de assinatura pendente para um servidor
-    Quando o servidor acessa a tela inicial / "Assinaturas pendentes"
-    Então a solicitação do despacho customizado aparece normalmente na lista
+#### **CT-B01 Assinatura de despacho customizado aparece nas pendências**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um despacho customizado com solicitação de assinatura pendente para um servidor
+**Quando** o servidor acessa a tela inicial / "Assinaturas pendentes"
+**Então** a solicitação do despacho customizado aparece normalmente na lista
 
-    - Evidências de Testes:
-        ![[5360 - assinatura despacho customizado aparece pendentes aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[5360 - assinatura despacho customizado aparece pendentes aprovado em dev.mp4]]
 
 ---
 

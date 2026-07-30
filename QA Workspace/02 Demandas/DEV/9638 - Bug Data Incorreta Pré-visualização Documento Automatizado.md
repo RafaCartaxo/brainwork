@@ -50,27 +50,31 @@ Ao pré-visualizar um documento automatizado com a configuração de data de ger
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Pré-visualização usa a data atual (não a do pai)**
-    Dado um documento automatizado com campo de data de abertura do documento gerado
-    Quando o servidor pré-visualiza o documento
-    Então a data exibida é a data atual (posterior à data de criação do documento pai)
+#### **CT-B01 Pré-visualização usa a data atual (não a do pai)**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um documento automatizado com campo de data de abertura do documento gerado
+**Quando** o servidor pré-visualiza o documento
+**Então** a data exibida é a data atual (posterior à data de criação do documento pai)
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B02 Botão de pré-visualizar só em documentos automatizados**
-    Dado documentos automatizados e não automatizados
-    Quando o servidor abre a toolbar/ações do documento
-    Então o botão de pré-visualizar aparece **apenas** para documentos automatizados
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Botão de pré-visualizar só em documentos automatizados**
+
+**Dado** documentos automatizados e não automatizados
+**Quando** o servidor abre a toolbar/ações do documento
+**Então** o botão de pré-visualizar aparece **apenas** para documentos automatizados
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

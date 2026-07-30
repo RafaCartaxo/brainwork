@@ -35,16 +35,17 @@ Ao baixar um documento (inclusive temporário) após edição, o arquivo reflete
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Download reflete a edição (documento temporário)**
-    Dado um documento temporário editado
-    Quando o servidor faz o download
-    Então o arquivo baixado reflete a última edição
+#### **CT-B01 Download reflete a edição (documento temporário)**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span> (por herança — mesmo fix validado na SGV-6083)
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um documento temporário editado
+**Quando** o servidor faz o download
+**Então** o arquivo baixado reflete a última edição
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim (por herança — mesmo fix validado na SGV-6083)
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

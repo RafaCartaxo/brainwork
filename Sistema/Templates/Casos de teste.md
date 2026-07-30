@@ -17,6 +17,7 @@ data: <% tp.date.now("YYYY-MM-DD") %>
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
+- [ ] Não se aplica
 
 **Evidências de Testes:**
 
@@ -35,3 +36,7 @@ data: <% tp.date.now("YYYY-MM-DD") %>
 **Evidências de Testes:**
 
 ---
+
+<!-- "Não se aplica" é pra pré-condição inalcançável, não pra "não testei ainda" (esse fica em branco).
+     Ao marcar, explicar em callout fechado o porquê — ver SKILL_CASOS_DE_TESTE § Três estados de execução.
+     Caso retirado do escopo vai pra uma seção "Fora de execução — registro" no fim, não deixa buraco na numeração. -->

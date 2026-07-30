@@ -41,17 +41,19 @@ Ao cadastrar uma instância, o campo de telefone aceita número fixo normalmente
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Cadastro de instância aceita telefone fixo**
-    Dado a tela de cadastro de instância
-    Quando o usuário informa um número de telefone fixo no campo de telefone
-    Então o cadastro é aceito sem erro de validação
+#### **CT-B01 Cadastro de instância aceita telefone fixo**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** a tela de cadastro de instância
+**Quando** o usuário informa um número de telefone fixo no campo de telefone
+**Então** o cadastro é aceito sem erro de validação
 
-    - Evidências de Testes:
-        ![[9548 - campo telefone cadastro instancia aceita numero fixo aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[9548 - campo telefone cadastro instancia aceita numero fixo aprovado em homologacao.mp4]]
 
 ---
 

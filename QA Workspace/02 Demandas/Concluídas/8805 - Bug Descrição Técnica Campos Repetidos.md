@@ -52,16 +52,17 @@ O evento de retificação deve exibir o nome amigável do campo e o número da r
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Exibir nome amigável e número da repetição no evento de retificação**
-    Dado que um campo com repetição habilitada seja retificado
-    Quando o evento de retificação for exibido
-    Então deve mostrar o nome amigável do campo e o número da repetição, sem identificador técnico
+#### **CT-B01 Exibir nome amigável e número da repetição no evento de retificação**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um campo com repetição habilitada seja retificado
+**Quando** o evento de retificação for exibido
+**Então** deve mostrar o nome amigável do campo e o número da repetição, sem identificador técnico
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

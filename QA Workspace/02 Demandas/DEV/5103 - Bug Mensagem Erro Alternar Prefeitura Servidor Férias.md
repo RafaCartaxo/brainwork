@@ -41,17 +41,19 @@ Ao alternar para uma prefeitura onde o servidor está de férias, o sistema trat
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Alternância de prefeitura com servidor de férias não gera erro**
-    Dado um servidor de férias com acesso a múltiplas prefeituras
-    Quando o usuário alterna para a prefeitura onde esse servidor está de férias
-    Então o sistema não exibe mensagem de erro
+#### **CT-B01 Alternância de prefeitura com servidor de férias não gera erro**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** um servidor de férias com acesso a múltiplas prefeituras
+**Quando** o usuário alterna para a prefeitura onde esse servidor está de férias
+**Então** o sistema não exibe mensagem de erro
 
-    - Evidências de Testes:
-        ![[5103 - mensagem erro alternar prefeitura servidor ferias reaberta em dev.mp4]]
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
+
+**Evidências de Testes:**
+
+![[5103 - mensagem erro alternar prefeitura servidor ferias reaberta em dev.mp4]]
 
 ---
 

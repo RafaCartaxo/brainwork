@@ -52,41 +52,48 @@ O nome do servidor, setor ou cidadão adicionado como cópia deve ser exibido co
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Exibir nome do servidor em cópia no despacho emitido**
-    Dado que o usuário crie um despacho
-    E adicione um servidor como cópia
-    Quando o despacho for emitido
-    Então o nome do servidor deve ser exibido corretamente no componente do despacho
+#### **CT-B01 Exibir nome do servidor em cópia no despacho emitido**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário crie um despacho
+**E** adicione um servidor como cópia
+**Quando** o despacho for emitido
+**Então** o nome do servidor deve ser exibido corretamente no componente do despacho
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B02 Exibir nome do setor em cópia no despacho emitido**
-    Dado que o usuário crie um despacho
-    E adicione um setor como cópia
-    Quando o despacho for emitido
-    Então o nome do setor deve ser exibido corretamente no componente do despacho
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Exibir nome do setor em cópia no despacho emitido**
 
-- **CT-B03 Exibir nome do cidadão em cópia no despacho emitido**
-    Dado que o usuário crie um despacho
-    E adicione um cidadão como cópia
-    Quando o despacho for emitido
-    Então o nome do cidadão deve ser exibido corretamente no componente do despacho
+**Dado** que o usuário crie um despacho
+**E** adicione um setor como cópia
+**Quando** o despacho for emitido
+**Então** o nome do setor deve ser exibido corretamente no componente do despacho
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
+
+---
+
+#### **CT-B03 Exibir nome do cidadão em cópia no despacho emitido**
+
+**Dado** que o usuário crie um despacho
+**E** adicione um cidadão como cópia
+**Quando** o despacho for emitido
+**Então** o nome do cidadão deve ser exibido corretamente no componente do despacho
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

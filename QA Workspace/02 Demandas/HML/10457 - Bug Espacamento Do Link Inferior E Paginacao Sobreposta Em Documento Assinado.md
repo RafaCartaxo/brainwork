@@ -85,75 +85,93 @@ Os dois primeiros critérios são o par que fecha o escopo: **sem paginação** 
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Rodapé de autenticidade sem páginas enumeradas**
-    Dado que eu tenho um documento assinado com o bloco de autenticidade no rodapé
-    E que a opção de páginas enumeradas **não** está ativada
-    Quando eu baixo o documento e abro o arquivo gerado
-    Então verifico que o link de verificação e o QR Code aparecem íntegros e legíveis, afastados da borda da folha e do conteúdo acima, sem corte
+#### **CT-B01 Rodapé de autenticidade sem páginas enumeradas**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho um documento assinado com o bloco de autenticidade no rodapé
+**E** que a opção de páginas enumeradas **não** está ativada
+**Quando** eu baixo o documento e abro o arquivo gerado
+**Então** verifico que o link de verificação e o QR Code aparecem íntegros e legíveis, afastados da borda da folha e do conteúdo acima, sem corte
 
-    - Evidências de Testes:
-        ![[10457 - cenario 1.mp4]]
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
 
-- **CT-B02 Rodapé de autenticidade com páginas enumeradas (download personalizado)**
-    Dado que eu tenho um documento assinado
-    E que eu baixo pela opção "personalizado" com páginas enumeradas ativada
-    Quando o arquivo é gerado com a numeração automática (`1/4`, `2/4`…)
-    Então verifico que a numeração e o bloco de autenticidade não se sobrepõem, e que os dois permanecem legíveis no arquivo
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+![[10457 - cenario 1.mp4]]
 
-    - Evidências de Testes:
-        ![[10457 - cenario 2.mp4]]
+---
 
-- **CT-B03 QR Code funcional nos dois cenários**
-    Dado que eu tenho os dois arquivos gerados (com e sem páginas enumeradas)
-    Quando eu escaneio o QR Code de cada um
-    Então verifico que ambos abrem a verificação de autenticidade do documento
+#### **CT-B02 Rodapé de autenticidade com páginas enumeradas (download personalizado)**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho um documento assinado
+**E** que eu baixo pela opção "personalizado" com páginas enumeradas ativada
+**Quando** o arquivo é gerado com a numeração automática (`1/4`, `2/4`…)
+**Então** verifico que a numeração e o bloco de autenticidade não se sobrepõem, e que os dois permanecem legíveis no arquivo
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
 
-- **CT-B04 Regressão — numeração inclui as páginas de assinatura**
-    Dado que eu tenho um documento com página extra de assinaturas
-    Quando eu baixo em personalizado com páginas enumeradas
-    Então verifico que a contagem total inclui as páginas de assinatura, conforme a doc do módulo
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[10457 - cenario 2.mp4]]
 
-    - Evidências de Testes:
+---
 
-- **CT-B05 Assinaturas posicionadas manualmente**
-    Dado que eu tenho um documento com assinaturas **posicionadas manualmente**, sem página extra
-    Quando o documento é assinado e eu baixo o arquivo, com e sem páginas enumeradas
-    Então verifico que o rodapé de autenticidade se comporta igual ao da página extra, sem sobreposição e sem corte
+#### **CT-B03 QR Code funcional nos dois cenários**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho os dois arquivos gerados (com e sem páginas enumeradas)
+**Quando** eu escaneio o QR Code de cada um
+**Então** verifico que ambos abrem a verificação de autenticidade do documento
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B06 Arquivo impresso**
-    Dado que eu tenho o documento assinado baixado nos dois cenários
-    Quando eu imprimo o arquivo
-    Então verifico que o rodapé de autenticidade sai íntegro e legível também no impresso, sem corte na margem
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B04 Regressão — numeração inclui as páginas de assinatura**
+
+**Dado** que eu tenho um documento com página extra de assinaturas
+**Quando** eu baixo em personalizado com páginas enumeradas
+**Então** verifico que a contagem total inclui as páginas de assinatura, conforme a doc do módulo
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B05 Assinaturas posicionadas manualmente**
+
+**Dado** que eu tenho um documento com assinaturas **posicionadas manualmente**, sem página extra
+**Quando** o documento é assinado e eu baixo o arquivo, com e sem páginas enumeradas
+**Então** verifico que o rodapé de autenticidade se comporta igual ao da página extra, sem sobreposição e sem corte
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B06 Arquivo impresso**
+
+**Dado** que eu tenho o documento assinado baixado nos dois cenários
+**Quando** eu imprimo o arquivo
+**Então** verifico que o rodapé de autenticidade sai íntegro e legível também no impresso, sem corte na margem
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

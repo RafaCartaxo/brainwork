@@ -44,53 +44,67 @@ A opção "Selecionar todos" reflete corretamente o estado da seleção (desmarc
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Exibir "Selecionar todos" desmarcado quando nenhum documento estiver selecionado**
-    Dado que eu acesse a tela de download de documentos personalizados
-    Quando nenhum documento estiver selecionado
-    Então a opção "Selecionar todos" deve ser exibida em estado desmarcado
+#### **CT-B01 Exibir "Selecionar todos" desmarcado quando nenhum documento estiver selecionado**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que eu acesse a tela de download de documentos personalizados
+**Quando** nenhum documento estiver selecionado
+**Então** a opção "Selecionar todos" deve ser exibida em estado desmarcado
 
-    - Evidências de Testes:
-        ![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Exibir "Selecionar todos" em estado parcial quando parte dos documentos estiver selecionada**
-    Dado que eu acesse a tela de download de documentos personalizados
-    Quando eu selecionar apenas parte dos documentos e despachos disponíveis
-    Então a opção "Selecionar todos" deve ser exibida em estado parcial (indeterminado)
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
 
-    - Evidências de Testes:
-        ![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
+---
 
-- **CT-B03 Exibir "Selecionar todos" marcado quando todos os documentos estiverem selecionados**
-    Dado que eu acesse a tela de download de documentos personalizados
-    Quando eu selecionar manualmente todos os documentos e despachos disponíveis
-    Então a opção "Selecionar todos" deve ser exibida em estado marcado
+#### **CT-B02 Exibir "Selecionar todos" em estado parcial quando parte dos documentos estiver selecionada**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que eu acesse a tela de download de documentos personalizados
+**Quando** eu selecionar apenas parte dos documentos e despachos disponíveis
+**Então** a opção "Selecionar todos" deve ser exibida em estado parcial (indeterminado)
 
-    - Evidências de Testes:
-        ![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B04 Selecionar e desmarcar todos os documentos ao clicar em "Selecionar todos"**
-    Dado que eu acesse a tela de download de documentos personalizados
-    Quando eu clicar na opção "Selecionar todos"
-    Então todos os documentos e despachos disponíveis devem ser selecionados, e ao clicar novamente, todos devem ser desmarcados
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
 
-    - Evidências de Testes:
-        ![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
+---
+
+#### **CT-B03 Exibir "Selecionar todos" marcado quando todos os documentos estiverem selecionados**
+
+**Dado** que eu acesse a tela de download de documentos personalizados
+**Quando** eu selecionar manualmente todos os documentos e despachos disponíveis
+**Então** a opção "Selecionar todos" deve ser exibida em estado marcado
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
+
+---
+
+#### **CT-B04 Selecionar e desmarcar todos os documentos ao clicar em "Selecionar todos"**
+
+**Dado** que eu acesse a tela de download de documentos personalizados
+**Quando** eu clicar na opção "Selecionar todos"
+**Então** todos os documentos e despachos disponíveis devem ser selecionados, e ao clicar novamente, todos devem ser desmarcados
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[6628 - selecionar todos download documentos personalizados aprovado em dev.mp4]]
 
 ---
 

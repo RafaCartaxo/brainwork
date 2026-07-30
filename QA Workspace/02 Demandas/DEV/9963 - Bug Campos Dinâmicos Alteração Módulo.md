@@ -59,49 +59,59 @@ Os campos dinâmicos (@) continuam funcionando normalmente após **qualquer** al
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Campos (@) continuam funcionando após alteração de módulo**
-    Dado que um modelo automatizado com campos (@) esteja vinculado a um Assunto/Serviço do módulo X
-    Quando o módulo do Assunto/Serviço for alterado pra Y e um documento for gerado a partir do modelo
-    Então todos os campos dinâmicos devem resolver normalmente, com os dados vigentes
+#### **CT-B01 Campos (@) continuam funcionando após alteração de módulo**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um modelo automatizado com campos (@) esteja vinculado a um Assunto/Serviço do módulo X
+**Quando** o módulo do Assunto/Serviço for alterado pra Y e um documento for gerado a partir do modelo
+**Então** todos os campos dinâmicos devem resolver normalmente, com os dados vigentes
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B02 Trocas múltiplas de módulo mantêm os campos funcionando**
-    Dado que um Assunto/Serviço com modelo automatizado vinculado passe por uma sequência de trocas de módulo (ex.: X→Y→X, depois X→Z)
-    Quando um documento for gerado após cada troca
-    Então os campos dinâmicos devem resolver normalmente em todas as gerações, sem corrupção residual em nenhum ponto
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Trocas múltiplas de módulo mantêm os campos funcionando**
 
-- **CT-B03 Documentos gerados antes da alteração permanecem íntegros**
-    Dado que um documento automatizado tenha sido gerado antes da alteração de módulo
-    Quando o módulo do Assunto/Serviço for alterado
-    Então o conteúdo do documento já gerado permanece exatamente como foi resolvido na geração
+**Dado** que um Assunto/Serviço com modelo automatizado vinculado passe por uma sequência de trocas de módulo (ex.: X→Y→X, depois X→Z)
+**Quando** um documento for gerado após cada troca
+**Então** os campos dinâmicos devem resolver normalmente em todas as gerações, sem corrupção residual em nenhum ponto
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
 
-- **CT-B04 Fluxo normal sem regressão (todas as variáveis)**
-    Dado que um modelo novo seja criado com campos do formulário e as variáveis fixas (número/data de abertura do doc emissor, tipo do usuário externo, setor responsável, número/data de abertura do doc gerado)
-    Quando um documento for gerado a partir dele
-    Então cada variável resolve pro valor vigente no momento da geração, sem nenhuma variável crua ou identificador técnico no resultado
+---
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+#### **CT-B03 Documentos gerados antes da alteração permanecem íntegros**
 
-    - Evidências de Testes:
+**Dado** que um documento automatizado tenha sido gerado antes da alteração de módulo
+**Quando** o módulo do Assunto/Serviço for alterado
+**Então** o conteúdo do documento já gerado permanece exatamente como foi resolvido na geração
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B04 Fluxo normal sem regressão (todas as variáveis)**
+
+**Dado** que um modelo novo seja criado com campos do formulário e as variáveis fixas (número/data de abertura do doc emissor, tipo do usuário externo, setor responsável, número/data de abertura do doc gerado)
+**Quando** um documento for gerado a partir dele
+**Então** cada variável resolve pro valor vigente no momento da geração, sem nenhuma variável crua ou identificador técnico no resultado
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

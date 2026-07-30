@@ -43,17 +43,19 @@ O cidadão consegue emitir um despacho e assiná-lo no mesmo fluxo ("emitir e as
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Cidadão emite e assina despacho com sucesso**
-    Dado um cidadão com permissão de assinatura num despacho
-    Quando ele emitir o despacho e assinar no mesmo fluxo ("emitir e assinar")
-    Então a ação é concluída sem erros, com o despacho emitido e a assinatura realizada
+#### **CT-B01 Cidadão emite e assina despacho com sucesso**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um cidadão com permissão de assinatura num despacho
+**Quando** ele emitir o despacho e assinar no mesmo fluxo ("emitir e assinar")
+**Então** a ação é concluída sem erros, com o despacho emitido e a assinatura realizada
 
-    - Evidências de Testes:
-        ![[10246 - assinatura emitir e assinar cidadao aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[10246 - assinatura emitir e assinar cidadao aprovado em homologacao.mp4]]
 
 ---
 

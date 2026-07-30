@@ -46,51 +46,62 @@ Ao recusar uma assinatura num fluxo sequencial, as assinaturas pendentes posteri
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Cancelar assinaturas pendentes ao recusar assinatura em fluxo sequencial**
-    Dado que exista uma solicitação de assinatura sequencial com múltiplos servidores
-    Quando um servidor recusar sua assinatura
-    Então as assinaturas pendentes dos servidores posteriores devem ser canceladas
+#### **CT-B01 Cancelar assinaturas pendentes ao recusar assinatura em fluxo sequencial**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que exista uma solicitação de assinatura sequencial com múltiplos servidores
+**Quando** um servidor recusar sua assinatura
+**Então** as assinaturas pendentes dos servidores posteriores devem ser canceladas
 
-    - Evidências de Testes:
-        ![[9959 - status drawer x evento apos recusa assinatura sequencial aprovado em homologacao.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Permitir nova solicitação de assinatura para servidor após cancelamento**
-    Dado que a assinatura de um servidor tenha sido cancelada após recusa em um fluxo sequencial
-    Quando uma nova solicitação de assinatura for criada para esse servidor
-    Então a nova solicitação deve ser exibida com status "Pendente" no drawer de solicitação de assinaturas
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[9959 - status drawer x evento apos recusa assinatura sequencial aprovado em homologacao.mp4]]
 
-    - Evidências de Testes:
+---
 
-- **CT-B03 Manter histórico de recusa e cancelamento no evento da solicitação anterior**
-    Dado que uma assinatura tenha sido recusada e as demais assinaturas da solicitação tenham sido canceladas
-    Quando eu acessar o evento da assinatura referente a essa solicitação
-    Então o status deve permanecer exibido como "Recusado"/"Cancelado", preservando o histórico
-    E esse registro não deve ser alterado por uma nova solicitação criada posteriormente
+#### **CT-B02 Permitir nova solicitação de assinatura para servidor após cancelamento**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que a assinatura de um servidor tenha sido cancelada após recusa em um fluxo sequencial
+**Quando** uma nova solicitação de assinatura for criada para esse servidor
+**Então** a nova solicitação deve ser exibida com status "Pendente" no drawer de solicitação de assinaturas
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B04 Assinar normalmente em nova solicitação após cancelamento anterior**
-    Dado que exista uma nova solicitação de assinatura pendente para um servidor cuja assinatura anterior foi cancelada
-    Quando o servidor assinar a nova solicitação
-    Então a assinatura deve ser concluída normalmente, sem erros ou bloqueios
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B03 Manter histórico de recusa e cancelamento no evento da solicitação anterior**
+
+**Dado** que uma assinatura tenha sido recusada e as demais assinaturas da solicitação tenham sido canceladas
+**Quando** eu acessar o evento da assinatura referente a essa solicitação
+**Então** o status deve permanecer exibido como "Recusado"/"Cancelado", preservando o histórico
+**E** esse registro não deve ser alterado por uma nova solicitação criada posteriormente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B04 Assinar normalmente em nova solicitação após cancelamento anterior**
+
+**Dado** que exista uma nova solicitação de assinatura pendente para um servidor cuja assinatura anterior foi cancelada
+**Quando** o servidor assinar a nova solicitação
+**Então** a assinatura deve ser concluída normalmente, sem erros ou bloqueios
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

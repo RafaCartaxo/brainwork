@@ -55,31 +55,37 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Versão com assinaturas autenticáveis respeita a página extra**
-    Dado que eu tenho um cliente com documento com a função de assinatura em página extra ativada
-    E Assino o documento
-    Quando baixo o documento pela opção "versão com assinaturas autenticáveis"
-    Então verifico que o arquivo vem com a página extra de assinaturas
+#### **CT-B01 Versão com assinaturas autenticáveis respeita a página extra**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho um cliente com documento com a função de assinatura em página extra ativada
+**E** Assino o documento
+**Quando** baixo o documento pela opção "versão com assinaturas autenticáveis"
+**Então** verifico que o arquivo vem com a página extra de assinaturas
 
-    - Evidências de Testes:
-        ![[10404 - download versao assinaturas autenticaveis ignora pagina extra de assinaturas.mp4]]
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
 
-- **CT-B02 Personalizado e compactado seguem corretos (sem regressão)**
-    Dado que eu tenho um cliente com documento com a função de assinatura em página extra ativada
-    E Assino o documento
-    Quando baixo o documento pelas opções "personalizado" e "compactado"
-    Então verifico que ambos os arquivos vêm com a página extra de assinaturas
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[10404 - download versao assinaturas autenticaveis ignora pagina extra de assinaturas.mp4]]
 
-    - Evidências de Testes:
-        ![[10404 - download versao assinaturas autenticaveis ignora pagina extra de assinaturas.mp4]]
+---
+
+#### **CT-B02 Personalizado e compactado seguem corretos (sem regressão)**
+
+**Dado** que eu tenho um cliente com documento com a função de assinatura em página extra ativada
+**E** Assino o documento
+**Quando** baixo o documento pelas opções "personalizado" e "compactado"
+**Então** verifico que ambos os arquivos vêm com a página extra de assinaturas
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[10404 - download versao assinaturas autenticaveis ignora pagina extra de assinaturas.mp4]]
 
 ---
 

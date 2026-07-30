@@ -53,16 +53,17 @@ O Processo Urbanístico deve ser carregado e exibido corretamente na lista de se
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Validar carregamento de Processo Urbanístico para seleção no Fluxo de Trabalho**
-    Dado que o usuário acesse o Fluxo de Trabalho para selecionar um Processo Urbanístico
-    Quando a lista de processos for carregada
-    Então o Processo Urbanístico deve aparecer disponível para seleção
+#### **CT-B01 Validar carregamento de Processo Urbanístico para seleção no Fluxo de Trabalho**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário acesse o Fluxo de Trabalho para selecionar um Processo Urbanístico
+**Quando** a lista de processos for carregada
+**Então** o Processo Urbanístico deve aparecer disponível para seleção
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

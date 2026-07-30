@@ -53,38 +53,45 @@ A última página de um documento com assinatura ICP deve ser exibida corretamen
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Validar impressão de documento com assinatura ICP**
-    Dado que o documento contenha assinatura ICP na última página
-    Quando o usuário imprimir o documento
-    Então a última página deve ser exibida corretamente com o selo e o conteúdo
+#### **CT-B01 Validar impressão de documento com assinatura ICP**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o documento contenha assinatura ICP na última página
+**Quando** o usuário imprimir o documento
+**Então** a última página deve ser exibida corretamente com o selo e o conteúdo
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Validar visualização mobile de documento com assinatura ICP**
-    Dado que o documento contenha assinatura ICP
-    Quando visualizado em dispositivo mobile
-    Então o conteúdo da última página deve ser exibido completamente, não apenas a assinatura
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Validar visualização mobile de documento com assinatura ICP**
 
-- **CT-B03 Validar impressão em documentos grandes com assinatura ICP**
-    Dado que o documento contenha assinatura ICP e seja um documento muito grande
-    Quando o usuário imprimir o documento
-    Então todas as páginas devem ser exibidas corretamente
+**Dado** que o documento contenha assinatura ICP
+**Quando** visualizado em dispositivo mobile
+**Então** o conteúdo da última página deve ser exibido completamente, não apenas a assinatura
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
+
+---
+
+#### **CT-B03 Validar impressão em documentos grandes com assinatura ICP**
+
+**Dado** que o documento contenha assinatura ICP e seja um documento muito grande
+**Quando** o usuário imprimir o documento
+**Então** todas as páginas devem ser exibidas corretamente
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

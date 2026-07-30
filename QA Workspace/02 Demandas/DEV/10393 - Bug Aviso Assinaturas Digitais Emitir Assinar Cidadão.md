@@ -56,53 +56,63 @@ Ao selecionar "Emitir e assinar" como cidadão, nenhum aviso de confirmação é
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Emitir e assinar como cidadão não exibe aviso de confirmação**
-    Dado que o usuário esteja logado como cidadão
-    E crie um novo despacho com descrição preenchida
-    Quando selecionar "Emitir e assinar"
-    Então nenhum aviso de confirmação é exibido e a tela de "Realização de assinaturas" é aberta
+#### **CT-B01 Emitir e assinar como cidadão não exibe aviso de confirmação**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário esteja logado como cidadão
+**E** crie um novo despacho com descrição preenchida
+**Quando** selecionar "Emitir e assinar"
+**Então** nenhum aviso de confirmação é exibido e a tela de "Realização de assinaturas" é aberta
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B02 Assinatura do despacho é concluída pelo cidadão**
-    Dado que o cidadão tenha selecionado "Emitir e assinar" em um despacho com anexo
-    E esteja na tela de "Realização de assinaturas"
-    Quando escolher o tipo de assinatura e confirmar em "Assinar"
-    Então a assinatura é realizada no despacho e nos anexos selecionados
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Assinatura do despacho é concluída pelo cidadão**
 
-- **CT-B03 Emitir simples como cidadão segue sem aviso (regressão)**
-    Dado que o usuário esteja logado como cidadão
-    E crie um novo despacho com descrição preenchida
-    Quando selecionar "Emitir"
-    Então o despacho é emitido sem aviso de confirmação e sem abrir a tela de assinaturas
+**Dado** que o cidadão tenha selecionado "Emitir e assinar" em um despacho com anexo
+**E** esteja na tela de "Realização de assinaturas"
+**Quando** escolher o tipo de assinatura e confirmar em "Assinar"
+**Então** a assinatura é realizada no despacho e nos anexos selecionados
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
 
-- **CT-B04 Emitir e assinar como servidor segue sem aviso (regressão)**
-    Dado que o usuário esteja logado como servidor
-    E crie um novo despacho com descrição preenchida
-    Quando selecionar "Emitir e assinar"
-    Então nenhum aviso de confirmação é exibido e a tela de "Realização de assinaturas" é aberta
+---
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+#### **CT-B03 Emitir simples como cidadão segue sem aviso (regressão)**
 
-    - Evidências de Testes:
+**Dado** que o usuário esteja logado como cidadão
+**E** crie um novo despacho com descrição preenchida
+**Quando** selecionar "Emitir"
+**Então** o despacho é emitido sem aviso de confirmação e sem abrir a tela de assinaturas
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B04 Emitir e assinar como servidor segue sem aviso (regressão)**
+
+**Dado** que o usuário esteja logado como servidor
+**E** crie um novo despacho com descrição preenchida
+**Quando** selecionar "Emitir e assinar"
+**Então** nenhum aviso de confirmação é exibido e a tela de "Realização de assinaturas" é aberta
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

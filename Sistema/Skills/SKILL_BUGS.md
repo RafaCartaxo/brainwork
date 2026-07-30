@@ -188,7 +188,7 @@ O título da seção leva dois links de atalho: `### Evidências [📁](file:///
 
 Detalhar os cenários de validação no padrão Dado/Quando/Então (CT-B01, CT-B02...), com "Execução Passou?" e "Evidências de Testes" por caso.
 
-**Cada CT é um cabeçalho `#### **CT-BNN Título**`**, não um item de lista — assim entra no outline do card e dobra sozinho. O `####` é deliberado: mantém o CT **aninhado** sob `### Casos de Teste Básicos` em vez de virar irmão de Descrição/Evidências. Palavras-chave em negrito (`**Dado**`, `**E**`, `**Quando**`, `**Então**`), uma por linha, sem bullet e sem indentação. `**Execução Passou?**` seguido de `- [ ] Sim` / `- [ ] Não` em **texto puro, sem `<span>` colorido**. `---` entre CTs. Formato completo e o porquê da mudança (30/07/2026) em [[SKILL_CASOS_DE_TESTE#Estrutura Padrão|SKILL_CASOS_DE_TESTE]].
+**Cada CT é um cabeçalho `#### **CT-BNN Título**`**, não um item de lista — assim entra no outline do card e dobra sozinho. O `####` é deliberado: mantém o CT **aninhado** sob `### Casos de Teste Básicos` em vez de virar irmão de Descrição/Evidências. Palavras-chave em negrito (`**Dado**`, `**E**`, `**Quando**`, `**Então**`), uma por linha, sem bullet e sem indentação. `**Execução Passou?**` seguido de `- [ ] Sim` / `- [ ] Não` em **texto puro, sem `<span>` colorido**. `---` entre CTs. Formato completo e o porquê da mudança (30/07/2026) em [[SKILL_CASOS_DE_TESTE#Estrutura Padrão|SKILL_CASOS_DE_TESTE]], que traz também os **três estados de execução** (`Sim` / `Não` / `Não se aplica`) e o **grupo de registro** pra caso retirado do escopo.
 
 ### Informações adicionais
 

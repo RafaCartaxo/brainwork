@@ -63,74 +63,91 @@ Documento ao qual o servidor tem acesso — **por qualquer setor do qual partici
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Associar na abertura documento de setor em que não está atuando**
-    Dado que um servidor esteja cadastrado nos setores A e B
-    E esteja atuando pelo setor A
-    Quando buscar, na abertura de um novo documento, um documento acessível pelo setor B
-    Então o documento deve aparecer na listagem e permitir a associação
+#### **CT-B01 Associar na abertura documento de setor em que não está atuando**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um servidor esteja cadastrado nos setores A e B
+**E** esteja atuando pelo setor A
+**Quando** buscar, na abertura de um novo documento, um documento acessível pelo setor B
+**Então** o documento deve aparecer na listagem e permitir a associação
 
-    - Evidências de Testes:
-        ![[9610 - abertura associa documento de setor nao ativo aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Associar na abertura documento do setor ativo**
-    Dado que um servidor esteja atuando pelo setor A
-    Quando buscar, na abertura de um novo documento, um documento acessível pelo próprio setor A
-    Então o documento deve aparecer na listagem e permitir a associação
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[9610 - abertura associa documento de setor nao ativo aprovado em dev.mp4]]
 
-    - Evidências de Testes:
+---
 
-- **CT-B03 Paridade entre a busca da abertura e a busca via despacho**
-    Dado que um servidor tenha acesso a um documento
-    E esse documento seja encontrado na busca de associação via despacho
-    Quando o mesmo servidor buscar o mesmo documento na associação da abertura
-    Então o documento deve ser encontrado nas duas buscas
+#### **CT-B02 Associar na abertura documento do setor ativo**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que um servidor esteja atuando pelo setor A
+**Quando** buscar, na abertura de um novo documento, um documento acessível pelo próprio setor A
+**Então** o documento deve aparecer na listagem e permitir a associação
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B04 Documento sem acesso continua fora da listagem**
-    Dado que um servidor não tenha acesso a um documento por nenhum dos seus setores
-    Quando buscar esse documento na associação da abertura
-    Então o documento não deve aparecer na listagem para associação
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B03 Paridade entre a busca da abertura e a busca via despacho**
 
-- **CT-B05 Regressão: associação via despacho**
-    Dado que um servidor multi-setor esteja num documento em tramitação
-    Quando associar um documento através de um despacho
-    Então a associação deve ser concluída normalmente
+**Dado** que um servidor tenha acesso a um documento
+**E** esse documento seja encontrado na busca de associação via despacho
+**Quando** o mesmo servidor buscar o mesmo documento na associação da abertura
+**Então** o documento deve ser encontrado nas duas buscas
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
 
-- **CT-B06 Regressão: assinatura via toolbar**
-    Dado que um servidor multi-setor esteja num documento com locais passíveis de assinatura
-    Quando acionar a assinatura pela toolbar e concluir o fluxo
-    Então a assinatura deve ser realizada normalmente
+---
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+#### **CT-B04 Documento sem acesso continua fora da listagem**
 
-    - Evidências de Testes:
+**Dado** que um servidor não tenha acesso a um documento por nenhum dos seus setores
+**Quando** buscar esse documento na associação da abertura
+**Então** o documento não deve aparecer na listagem para associação
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B05 Regressão: associação via despacho**
+
+**Dado** que um servidor multi-setor esteja num documento em tramitação
+**Quando** associar um documento através de um despacho
+**Então** a associação deve ser concluída normalmente
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B06 Regressão: assinatura via toolbar**
+
+**Dado** que um servidor multi-setor esteja num documento com locais passíveis de assinatura
+**Quando** acionar a assinatura pela toolbar e concluir o fluxo
+**Então** a assinatura deve ser realizada normalmente
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

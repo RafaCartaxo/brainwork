@@ -52,38 +52,45 @@ Ao emitir pela toolbar, o evento de emissão é registrado com sucesso e **exibi
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Emitir pela toolbar registra o evento de emissão**
-    Dado um documento oficial "Em elaboração"
-    Quando o servidor emite pela toolbar (status vai de rascunho para emitido)
-    Então um evento de emissão é criado no documento (com autor, setor e assinatura textual do emissor)
+#### **CT-B01 Emitir pela toolbar registra o evento de emissão**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** um documento oficial "Em elaboração"
+**Quando** o servidor emite pela toolbar (status vai de rascunho para emitido)
+**Então** um evento de emissão é criado no documento (com autor, setor e assinatura textual do emissor)
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-B02 Evento de emissão aparece na timeline**
-    Dado um documento emitido pela toolbar
-    Quando o servidor abre a timeline do documento
-    Então o evento de emissão é exibido corretamente (card do evento renderizado)
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+#### **CT-B02 Evento de emissão aparece na timeline**
 
-- **CT-B03 Não duplicar/registrar emissão indevida**
-    Dado um documento que não passou por emissão pela toolbar (ou já emitido)
-    Quando a mudança de status não é a emissão inicial
-    Então nenhum evento de emissão indevido é criado
+**Dado** um documento emitido pela toolbar
+**Quando** o servidor abre a timeline do documento
+**Então** o evento de emissão é exibido corretamente (card do evento renderizado)
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-    - Evidências de Testes:
+**Evidências de Testes:**
+
+---
+
+#### **CT-B03 Não duplicar/registrar emissão indevida**
+
+**Dado** um documento que não passou por emissão pela toolbar (ou já emitido)
+**Quando** a mudança de status não é a emissão inicial
+**Então** nenhum evento de emissão indevido é criado
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 

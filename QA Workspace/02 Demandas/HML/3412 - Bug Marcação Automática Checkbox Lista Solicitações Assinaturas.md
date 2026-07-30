@@ -48,16 +48,19 @@ Nenhum checkbox da Lista de Solicitações de Assinaturas deve ser marcado autom
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Checkbox não deve ser marcado automaticamente na Lista de Solicitações de Assinaturas**
-    Dado que o usuário acesse a Lista de Solicitações de Assinaturas
-    Quando a lista for exibida
-    Então nenhum checkbox deve estar marcado sem ação do usuário
+#### **CT-B01 Checkbox não deve ser marcado automaticamente na Lista de Solicitações de Assinaturas**
 
-    - Execução Passou?
-        - [x] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** que o usuário acesse a Lista de Solicitações de Assinaturas
+**Quando** a lista for exibida
+**Então** nenhum checkbox deve estar marcado sem ação do usuário
 
-    - Evidências de Testes: ![[3412 - marcacao automatica checkbox lista solicitacoes assinaturas aprovado em dev.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+![[3412 - marcacao automatica checkbox lista solicitacoes assinaturas aprovado em dev.mp4]]
 
 ---
 
