@@ -168,6 +168,15 @@ Descrever claramente o comportamento correto. Ao defini-lo, cruzar contra a doc 
 
 Utilizar quando houver regra de negócio associada. Cada critério é um checkbox (`- [ ] <critério>`), marcado quando confirmado atendido na validação — mesma lógica do "Execução Passou?" dos CTs, mas por critério.
 
+**Critério é o que a QA consegue observar e o que o usuário perde.** Escrever pelo comportamento verificável em caixa preta — "o link aparece íntegro e legível, sem sobreposição", não "o link está a 8px da margem".
+
+**Medida de handoff não é critério de aceite.** Número de especificação (px, hex, token de espaçamento, duração de animação) vem do Figma/Notion pro **dev** implementar. Como critério ele fica inverificável — a QA não mede pixel dentro de um PDF — e desloca a discussão pra aritmética de margem em vez da função quebrada do produto. Registrar a medida em **Informações adicionais como referência**: serve pra localizar o ajuste e pra sustentar a conversa se o dev alegar conformidade.
+
+**Variável que liga e desliga o defeito rende um critério por estado.** Se um estado pode passar e o outro falhar, os dois não cabem no mesmo checkbox — e cada um puxa o seu CT. Ex.: rodapé **sem** paginação isola o espaçamento; **com** paginação isola a colisão.
+
+> [!example]- Precedente: SGV-10457 (29/07/2026)
+> O card nasceu com critérios em pixel, copiados da tabela de handoff do QR Code que tinha acabado de entrar na doc de Assinaturas — inclusive porque a importação rotulou aquela tabela como "o critério objetivo pra julgar desalinhamento", glosa que também foi corrigida. Rafael perguntou "de onde vieram os pixels?" e mandou usar critério que reflita caso de uso. Refeito: link íntegro e legível, QR escaneável, sem sobreposição, no arquivo baixado e impresso — tudo ancorado em regra escrita da doc ("a página de assinaturas torna-se parte integrante do arquivo PDF" e o rodapé de autenticidade como regra transversal).
+
 ### Evidências
 
 Referenciar vídeos, imagens ou links utilizados na validação. O guia completo de evidências (gravar → renomear → mover → embed, subpastas, links 📁/🔍, gravação compartilhada) está em [[../../QA Workspace/Evidências/README|Evidências/README]].

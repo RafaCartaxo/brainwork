@@ -35,7 +35,11 @@ Não especificado no material disponível — ver a task original no Notion (SGV
 ![[3413 - nao reproduz mais assinatura em despacho de desassociacao.mp4]]
 
 > [!note]- Por que essa evidência ficou 10 dias solta
-> A gravação ficou na **raiz de `Evidências/`** de 20/07 a 30/07, e este card dizia "sem cópia local no vault" — afirmação falsa, com o arquivo a uma pasta de distância. O roteador de evidências do `qa-atualiza.py` procura o card só em `02 Demandas/`, e este já estava em `99 Arquivo/` desde o descarte; então ele avisava "card do SGV-3413 não existe" em toda execução, todos os dias. Anexada à mão em 30/07.
+> A gravação ficou na **raiz de `Evidências/`** de 20/07 a 30/07, e este card dizia "sem cópia local no vault" — afirmação falsa, com o arquivo a uma pasta de distância.
+>
+> **Causa**: o `achar_card()` do `qa-atualiza.py` localizava card **só pelo nome do arquivo** (`<num> - ...`). Este card se chama `Bug Assinatura Despacho Desassociacao.md`, com o `3413` apenas no `task:` do frontmatter — então o roteador de evidências concluía "card do SGV-3413 não existe" e avisava isso **em toda execução, por 10 dias**. Aviso que se repete todo dia é aviso que se aprende a ignorar; e a pendência "conferir os vídeos crus" era **impossível de fechar**, porque pedia criar um card que já existia.
+>
+> Corrigido em 30/07: o `achar_card()` ganhou segunda passada pelo frontmatter `task:`. Nome de arquivo é convenção, `task:` é o dado. Evidência anexada à mão na mesma data.
 
 ---
 

@@ -159,10 +159,28 @@ def tipo_do_card(texto_card):
 
 
 def achar_card(num):
-    for base in (DEMANDAS, os.path.join(WS, "99 Arquivo")):
-        for p in glob.glob(os.path.join(base, "**", "*.md"), recursive=True):
-            if os.path.basename(p).startswith(f"{num} - "):
-                return p
+    """Localiza o card de um SGV. Duas passadas, nesta ordem:
+
+    1. **Nome do arquivo** começando com `<num> - ` — o padrão do vault.
+    2. **Frontmatter `task:`** — rede pra card cujo nome não segue o padrão.
+       Acontece com card nascido sem SGV (`Bug <Título>`, ver SKILL_BUGS) e
+       com card antigo. Sem esta passada o roteador de evidências avisou
+       "card do SGV-3413 não existe" **todos os dias por 10 dias**, com o
+       card existindo em `99 Arquivo/` e afirmando "sem cópia local no
+       vault" enquanto o vídeo ficava parado na raiz de `Evidências/`
+       (precedente: 30/07). O nome do arquivo é convenção; o `task:` é o
+       dado. Casar só pela convenção gera pendência falsa que ninguém
+       consegue fechar, porque a coisa que ela pede já existe.
+    """
+    caminhos = [p
+                for base in (DEMANDAS, os.path.join(WS, "99 Arquivo"))
+                for p in glob.glob(os.path.join(base, "**", "*.md"), recursive=True)]
+    for p in caminhos:
+        if os.path.basename(p).startswith(f"{num} - "):
+            return p
+    for p in caminhos:
+        if re.search(rf'^task: *"?{num}"? *$', ler(p), re.M):
+            return p
     return None
 
 
@@ -773,6 +791,26 @@ def sem_idade(s):
     return re.sub(r"\s*🕐\s*\d+d(?:\s*(?:⚠️|🚨))?", "", s).strip()
 
 
+def sem_ledger(s):
+    """Texto do item sem a marca de conclusão do ledger.
+
+    `ledger_do_dia` fecha uma pendência escrevendo '<item> → registrado', e a
+    convenção do 01 Daily/README permite anotar entre parênteses o que foi
+    feito ('- [x] SGV-XXXX - Refinar (card criado) → registrado'). Sem tirar os
+    dois na comparação, o item anotado não casa com a versão carregada de
+    ontem e **volta como pendência nova** — a fila foi de 41 pra 42 em 30/07
+    por isso. É a mesma cegueira do bug de idade, com outro gatilho, e só
+    morde item **sem SGV/MEL**, que não tem o dedup por ID como rede.
+
+    O parêntese só é descartado quando acompanhado do '→ registrado': muitas
+    pendências legítimas terminam em parêntese que faz parte da identidade
+    delas ('Validar em HML (aprovada em DEV, segue pra homologação)'), e
+    cortá-lo sempre faria pendências distintas colidirem — aí o defeito
+    deixaria de duplicar e passaria a **engolir** item, que é pior.
+    """
+    return re.sub(r"\s*(?:\([^()]*\))?\s*→\s*registrado\s*$", "", s).strip()
+
+
 def envelhece_fila(itens, dias):
     """Incrementa a idade dos itens herdados no carry-over e reaplica os
     limiares do AGENTE_FILA: 1-2d sem marca · 3-4d '🕐 Nd' · 5-6d '🕐 Nd ⚠️'
@@ -869,13 +907,13 @@ def main():
         # carry-over pra daily já existente, sem duplicar (por texto exato ou por SGV/MEL)
         d = ler(hoje_p)
         existentes = re.findall(r"^>? ?- \[.\] (.+)$", d, re.M)
-        existentes_norm = {sem_idade(e) for e in existentes}
+        existentes_norm = {sem_idade(sem_ledger(e)) for e in existentes}
         ids_hoje = set()
         for e in existentes:
             ids_hoje |= ids_de(e)
         novos = []
         for item in pendentes_ontem:
-            if sem_idade(item) in existentes_norm:
+            if sem_idade(sem_ledger(item)) in existentes_norm:
                 continue
             if ids_de(item) & ids_hoje:
                 continue

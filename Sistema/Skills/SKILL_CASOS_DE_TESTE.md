@@ -88,6 +88,8 @@ Antes de dar os CTs por prontos, casar **CT ↔ critério** do card:
 - **Cada critério de aceite** tem ao menos **1 CT** que o exercita.
 - **Cada CT** amarra em pelo menos um critério (CT que não valida nenhum critério: remover ou justificar).
 - Nenhum critério fica descoberto — se faltar, escrever o CT antes de seguir pra validação.
+- **Critério com estado que liga/desliga o defeito rende um CT por estado**, e cada um recebe **sua própria evidência** — regra completa em [[SKILL_BUGS#Critérios de Aceite|SKILL_BUGS]]. Precedente: SGV-10457, com um CT sem páginas enumeradas e outro com, cada um embedando a gravação do seu cenário.
+- **CT não verifica medida de handoff** (px, hex, token de espaçamento): o `Então` diz "íntegro e legível, sem sobreposição", não "a 8px da margem". Medida de especificação é referência pro dev, não passo de teste de caixa preta.
 
 ### Evidências de Testes
 
