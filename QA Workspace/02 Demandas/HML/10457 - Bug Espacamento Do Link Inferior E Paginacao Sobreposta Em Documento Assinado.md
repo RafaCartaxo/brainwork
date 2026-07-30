@@ -48,10 +48,15 @@ Então verifico que a numeração da página fica sobreposta ao link de autentic
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://10457)
 
-> [!warning] Evidência pendente
-> Não havia gravação nova na raiz de `Evidências/` quando este card foi criado, e o Rafael não indicou arquivo. Gravar/nomear como `10457 - <descrição>.mp4` e rodar o 🔄 — o roteador move e embeda aqui sozinho. **Evidência é o que sustenta o card na discussão com o dev; sem ela o bug depende de memória.**
->
-> Capturar **os dois cenários**, porque são critérios separados: (a) documento assinado baixado **sem** páginas enumeradas, mostrando o link/QR encostado ou cortado no rodapé, e (b) o mesmo documento baixado em **personalizado com páginas enumeradas**, mostrando a numeração por cima do link. Se der, tentar **escanear o QR Code** nos dois — QR ilegível prova o impacto de uso melhor que qualquer descrição.
+Gravadas em 30/07, uma por cenário — os dois critérios que fecham o escopo têm evidência própria.
+
+**Cenário 1 — espaçamento do link inferior** (sem páginas enumeradas)
+
+![[10457 - cenario 1.mp4]]
+
+**Cenário 2 — paginação sobreposta** (download personalizado com páginas enumeradas)
+
+![[10457 - cenario 2.mp4]]
 
 ---
 
@@ -91,6 +96,7 @@ Os dois primeiros critérios são o par que fecha o escopo: **sem paginação** 
         - [x] <span style="color:#e74c3c">Não</span>
 
     - Evidências de Testes:
+        ![[10457 - cenario 1.mp4]]
 
 - **CT-B02 Rodapé de autenticidade com páginas enumeradas (download personalizado)**
     Dado que eu tenho um documento assinado
@@ -103,6 +109,7 @@ Os dois primeiros critérios são o par que fecha o escopo: **sem paginação** 
         - [x] <span style="color:#e74c3c">Não</span>
 
     - Evidências de Testes:
+        ![[10457 - cenario 2.mp4]]
 
 - **CT-B03 QR Code funcional nos dois cenários**
     Dado que eu tenho os dois arquivos gerados (com e sem páginas enumeradas)
