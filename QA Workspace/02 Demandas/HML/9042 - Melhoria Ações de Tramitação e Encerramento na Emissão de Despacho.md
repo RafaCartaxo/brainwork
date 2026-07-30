@@ -162,7 +162,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 ---
 
-#### **CT-003 Fluxo não iniciado não movimenta nem encerra** *(CA3)*
+#### **CT-003 Fluxo não iniciado não movimenta nem encerra** *(CA3)* - não aplica, documento com fluxo não iniciado não emite despacho.
 
 **Dado** que eu tenho um documento com fluxo de trabalho configurado mas **não iniciado**
 **Quando** eu acesso a emissão de despacho
