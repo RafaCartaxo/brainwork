@@ -35,8 +35,14 @@ Ela é **embedada em cada CT** que cobre, com a nota `*Mesma gravação cobre CT
 > [!warning] O número do card vem primeiro, sempre
 > Gravar como `001.mp4` ou `004, 006.mp4` **não funciona**: o roteador do 🔄 procura o número do **card** no começo do nome. `002.mp4` seria lido como SGV-002 e `004, 006.mp4` não casa com padrão nenhum — os dois ficam parados na raiz. Precedente: 30/07, 11 arquivos renomeados à mão na SGV-9042.
 
-> [!important] Número de CT é identificador, não posição
-> Depois que existe evidência nomeada com `CT-NNN`, **renumerar os CTs do card quebra o vínculo em silêncio** — o arquivo segue apontando pro número antigo e ninguém percebe. CT removido deixa o número **vago**, com lápide explicando; nunca reciclado num cenário diferente, nunca usado pra fechar a sequência. Precedente: 30/07, eu renumerei a cauda dos CTs da SGV-9042 no meio da gravação de evidências do Rafael e tive que reverter.
+> [!important] Renumerar CT e renomear evidência é uma operação só
+> Depois que existe evidência nomeada com `CT-NNN`, **renumerar os CTs sozinho quebra o vínculo em silêncio** — o arquivo segue apontando pro número antigo e nada acusa.
+>
+> Renumerar **é permitido** (fila de CT com buracos e casos cancelados no meio fica ilegível), mas card e arquivos mudam **juntos, na mesma operação**. Nunca um sem o outro, e nunca no meio de uma sessão de gravação.
+>
+> Caso já executado e retirado do escopo **não vira buraco na numeração**: vai pra uma seção de registro no fim do card (`### G. Fora de execução`), com caso × decisão × motivo. O histórico fica, a numeração ativa segue contígua.
+>
+> Precedentes, os dois em 30/07 na SGV-9042: renumerei a cauda no meio da gravação e tive que reverter; depois renumerei 26 → 22 CTs **renomeando as 14 evidências no mesmo movimento**, que é a forma certa.
 
 ### 3. Mover pra subpasta do ambiente
 Mover o arquivo pra subpasta correspondente:

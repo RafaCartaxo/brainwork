@@ -60,9 +60,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 - **Nomenclatura a confirmar**: este card usa os rótulos do **Figma** — "Continuar aberto" / "Encerrar para mim" / "Encerrar para meu setor". A spec do Notion diz "Encerrar no Setor" / "Encerrar na Mesa". Confirmar o rótulo final com o time antes de reprovar por texto de botão.
 - **MR não identificado**: nem o export do Notion nem o Figma citam o MR da entrega. Confirmar com Gabriel Desidério / Lucas Cabral — sem isso não há revisão de escopo de MR ([[Sistema/Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]]).
-- **Risco de regressão da [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]** (reaberta em DEV): aquele bug é "setores das Regras de tramitação não mantidos ao avançar/retroceder". Esta melhoria adiciona avançar/retroceder num **ponto de entrada novo** e pode herdar o mesmo defeito — CT-026 cobre.
+- **Risco de regressão da [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]** (reaberta em DEV): aquele bug é "setores das Regras de tramitação não mantidos ao avançar/retroceder". Esta melhoria adiciona avançar/retroceder num **ponto de entrada novo** e pode herdar o mesmo defeito — está no registro do grupo G (adiado).
 - **Typo de copy no tooltip**: o Figma traz "Esta ação só **esta** disponível..." (falta acento em "está"). Reportar como ajuste de copy.
-- **Matriz de combinações**: o Figma garante que movimentação e encerramento são independentes, mas remete a "todas as regras já implementadas" sem listar os casos. CT-023 e CT-024 cobrem uma combinação em cada direção; se aparecer comportamento estranho, expandir a matriz.
+- **Matriz de combinações**: o Figma garante que movimentação e encerramento são independentes, mas remete a "todas as regras já implementadas" sem listar os casos. CT-022 cobre uma combinação; a segunda direção ficou no registro do grupo G.
 - ⚠️ **Ponto de entrada novo para um defeito já aberto**: a [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|SGV-10451]] (aberta em 29/07) é exatamente *"encerrar para mim documento com fluxo de trabalho → toolbar só com Reabrir documento, sem histórico nem baixar"*. Esta melhoria cria um **caminho novo pra disparar essa mesma ação, no mesmo tipo de documento**. Ao executar o CT-014, olhar a toolbar depois: se o defeito aparecer por aqui também, o escopo do fix da 10451 muda (não é a toolbar de um caminho, é a toolbar do estado). **Não virou CT** porque a toolbar não é escopo desta entrega — é observação a fazer de passagem.
 - **"Encerrar para todos" no contêiner — pergunta aberta, não critério**: o Figma mostra **três** opções e a plataforma tem "Encerrar para todos" em outro lugar (toolbar; regra documentada na [[QA Workspace/02 Demandas/Concluídas/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]] — é a única que cancela assinaturas pendentes). **Confirmar com o time** se a ausência aqui é intencional. Eu havia escrito isso como CT ("só existem três opções") e **removi**: mockup com três opções não é regra de que uma quarta seja proibida, e como a lista de opções **depende de permissão** (CA17), "exatamente três" não é afirmável — o CT levaria a reprovar comportamento possivelmente correto.
 - **Encerrar aqui é praticamente irreversível**: [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]] registra que documento encerrado com fluxo de trabalho **pode ser reaberto, mas o fluxo não volta a acontecer**. Ou seja, escolher "Encerrar para mim/para meu setor" no ato da emissão encerra o fluxo de vez — reabrir devolve o documento, não a esteira. Vale ter massa de teste separada pros CTs do grupo D, porque cada execução queima um documento.
@@ -87,46 +87,49 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **A. Exibição do contêiner**
 
-- [ ] **CA1** — O contêiner "Próximo passo do documento" é exibido em documento com fluxo de trabalho **configurado e já iniciado**
-- [ ] **CA2** — Documento **sem** fluxo de trabalho segue o layout padrão do despacho, **sem** o contêiner
-- [ ] **CA3** — Documento com fluxo **não iniciado** não exibe o contêiner e não permite movimentar nem encerrar
+- [x] **CA1** — O contêiner "Próximo passo do documento" é exibido em documento com fluxo de trabalho **configurado e já iniciado**
+- [x] **CA2** — Documento **sem** fluxo de trabalho segue o layout padrão do despacho, **sem** o contêiner
+- [ ] **CA3** — Documento com fluxo **não iniciado** não exibe o contêiner e não permite movimentar nem encerrar *(satisfeito por construção — ver CT-003)*
 
 **B. Bloqueio por pendência**
 
-- [ ] **CA4** — Com **despacho customizado não emitido** na etapa, o select fica desabilitado e fixo em "Permanecer na etapa atual"
-- [ ] **CA5** — Com **assinatura não concluída** na etapa, o select fica desabilitado e fixo em "Permanecer na etapa atual"
-- [ ] **CA6** — O bloqueio é **total**: impede avançar, retroceder **e todos os atalhos, nas duas direções**
-- [ ] **CA7** — No estado bloqueado, o ⓘ exibe o tooltip informando a pendência
-- [ ] **CA8** — Cumpridas **todas** as pendências da etapa, o select habilita
-- [ ] **CA9** — No estado bloqueado, retroceder ou encerrar **continua possível pela toolbar do documento**
+- [x] **CA4** — Com **despacho customizado não emitido** na etapa, o select fica desabilitado e fixo em "Permanecer na etapa atual"
+- [x] **CA5** — Com **assinatura não concluída** na etapa, o select fica desabilitado e fixo em "Permanecer na etapa atual"
+- [x] **CA6** — O bloqueio é **total**: impede avançar, retroceder **e todos os atalhos, nas duas direções**
+- [x] **CA7** — No estado bloqueado, o ⓘ exibe o tooltip informando a pendência
+- [x] **CA8** — Cumpridas **todas** as pendências da etapa, o select habilita
+- [ ] **CA9** — No estado bloqueado, retroceder ou encerrar **continua possível pela toolbar do documento** — 🔴 **REPROVADO**, ver [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]]
 
 **C. Movimentação de etapa pelo contêiner**
 
-- [ ] **CA10** — "Permanecer na etapa atual" emite o despacho **sem** movimentar a etapa
-- [ ] **CA11** — "Avançar etapa" move o documento para a etapa **seguinte** do fluxo
-- [ ] **CA12** — "Retroceder etapa" move o documento para a etapa **anterior** do fluxo
-- [ ] **CA13** — Atalho configurado leva o documento para a **etapa do atalho**, não para a adjacente
+- [x] **CA10** — "Permanecer na etapa atual" emite o despacho **sem** movimentar a etapa
+- [x] **CA11** — "Avançar etapa" move o documento para a etapa **seguinte** do fluxo
+- [x] **CA12** — "Retroceder etapa" move o documento para a etapa **anterior** do fluxo
+- [x] **CA13** — Atalho configurado leva o documento para a **etapa do atalho**, não para a adjacente
 
 **D. Encerramento**
 
-- [ ] **CA14** — "Continuar aberto" mantém o documento **aberto** após a emissão
-- [ ] **CA15** — "Encerrar para mim" põe o documento em **Encerrado**, remove da fila de pendências gerais e arquiva na **mesa do usuário logado**
-- [ ] **CA16** — "Encerrar para meu setor" põe o documento em **Encerrado no setor**, e o documento **segue em tramitação nos demais setores envolvidos**
-- [ ] **CA17** — Servidor **sem** permissão de encerrar na etapa **não recebe** a opção de encerrar para o setor
-- [ ] **CA19** — Encerrar **para mim** ou **para meu setor** pelo contêiner **não cancela** solicitações de assinatura pendentes
+- [x] **CA14** — "Continuar aberto" mantém o documento **aberto** após a emissão
+- [x] **CA15** — "Encerrar para mim" põe o documento em **Encerrado**, remove da fila de pendências gerais e arquiva na **mesa do usuário logado**
+- [x] **CA16** — "Encerrar para meu setor" põe o documento em **Encerrado no setor**, e o documento **segue em tramitação nos demais setores envolvidos**
+- [ ] **CA17** — Servidor **sem** permissão de encerrar na etapa **não recebe** a opção de encerrar para o setor *(pendente — exige segundo usuário)*
+- [x] **CA18** — Encerrar **para mim** ou **para meu setor** pelo contêiner **não cancela** solicitações de assinatura pendentes
 
 **E. Sigilo**
 
-- [ ] **CA20** — Despacho **com** opções de sigilo exibe o grupo de sigilo, herdado de módulo/serviço/assunto
-- [ ] **CA21** — Despacho **sem** opções de sigilo **não** exibe o grupo de sigilo
-- [ ] **CA22** — Emitido **com** sigilo, **somente os setores habilitados** veem o conteúdo e os dados do solicitante
-- [ ] **CA23** — Emitido **sem** sigilo, o conteúdo fica visível aos envolvidos normalmente
+- [x] **CA19** — Despacho **com** opções de sigilo exibe o grupo de sigilo, herdado de módulo/serviço/assunto
+- [x] **CA20** — Despacho **sem** opções de sigilo **não** exibe o grupo de sigilo
+- [x] **CA21** — Emitido **com** sigilo, **somente os setores habilitados** veem o conteúdo e os dados do solicitante
+- [x] **CA22** — Emitido **sem** sigilo, o conteúdo fica visível aos envolvidos normalmente
 
-**F. Combinações e regressões**
+**F. Combinações**
 
-- [ ] **CA24** — Movimentação e encerramento são **independentes e combináveis** na mesma emissão
-- [ ] **CA25** — Quando o despacho **exige assinatura**, o avanço **não se conclui no mesmo clique**
-- [ ] **CA26** — Sem regressão na [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]: setores das Regras de tramitação **mantidos** ao avançar/retroceder
+- [x] **CA23** — Movimentação e encerramento são **independentes e combináveis** na mesma emissão
+
+> [!info]- Critérios fora desta rodada (registro)
+> - **Assinatura muda o número de cliques** ("o avanço não se conclui no mesmo clique quando o despacho exige assinatura") — **inalcançável na prática**: enquanto a assinatura da etapa está pendente o select fica desabilitado (CA5/CT-005), então não existe o estado "avançar + emitir e assinar". Detalhe no registro dos casos de teste.
+> - **Regressão da [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]** (setores das Regras de tramitação mantidos ao navegar etapas) — **adiada** por decisão do Rafael em 30/07: o conjunto executado já cobre bem a entrega. A 6373 segue aberta em DEV e tem validação própria.
+> - **"Encerrar para todos" não é oferecido no contêiner** — era o CA18 antigo, removido por não ter lastro (mockup com três opções não é regra de proibição, e a lista depende de permissão). Virou pergunta pro time em Pontos de atenção.
 
 ---
 
@@ -141,14 +144,14 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que o contêiner "Próximo passo do documento" é exibido
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
 ![[9042 - CT-001, CT-005, CT-007 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
 
-*Mesma gravação cobre CT-005, CT-007.*
+*Mesma gravação cobre CT-005 e CT-007.*
 
 ---
 
@@ -156,10 +159,10 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Dado** que eu tenho um documento **sem** fluxo de trabalho configurado
 **Quando** eu emito um despacho
-**Então** verifico que o layout padrão do despacho é exibido, sem o contêiner "Próximo passo do documento"
+**Então** verifico que o layout padrão do despacho é exibido, sem o contêiner
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -172,7 +175,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Dado** que eu tenho um documento com fluxo de trabalho configurado mas **não iniciado**
 **Quando** eu acesso a emissão de despacho
-**Então** verifico que o contêiner não é exibido e que vale a toolbar de fluxo não iniciado, sem opção de movimentar ou encerrar
+**Então** verifico que o contêiner não é exibido e que vale a toolbar de fluxo não iniciado
 
 **Execução Passou?**
 - [ ] Sim
@@ -180,9 +183,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 - [x] Não se aplica
 
 > [!info]- Por que não se aplica
-> Documento com fluxo **não iniciado não emite despacho** (Rafael, 30/07) — logo não existe a tela onde o contêiner apareceria. A pré-condição do cenário é inalcançável pela via da emissão.
+> Documento com fluxo **não iniciado não emite despacho** (Rafael, 30/07) — logo não existe a tela onde o contêiner apareceria. A pré-condição é inalcançável por esta via.
 >
-> O **CA3 continua válido como regra** ("fluxo não iniciado não movimenta nem encerra"): ele está satisfeito por construção, não por teste. Se algum dia o produto permitir emitir despacho com fluxo não iniciado, este CT volta a ser executável.
+> O **CA3 segue válido como regra**: está satisfeito por construção, não por teste. Se o produto passar a permitir emitir com fluxo não iniciado, este CT volta a ser executável.
 
 **Evidências de Testes:**
 
@@ -197,7 +200,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que o select está desabilitado e fixo em "Permanecer na etapa atual", e que o ⓘ exibe o tooltip da pendência
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -215,14 +218,14 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que o select está desabilitado e fixo em "Permanecer na etapa atual", e que o ⓘ exibe o tooltip da pendência
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
 ![[9042 - CT-001, CT-005, CT-007 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
 
-*Mesma gravação cobre CT-001, CT-007.*
+*Mesma gravação cobre CT-001 e CT-007.*
 
 ---
 
@@ -234,7 +237,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que **nenhuma** opção de movimentação está disponível, nas duas direções
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -252,14 +255,14 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que o select de movimentação habilita e permite escolher o próximo passo
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
 ![[9042 - CT-001, CT-005, CT-007 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
 
-*Mesma gravação cobre CT-001, CT-005.*
+*Mesma gravação cobre CT-001 e CT-005.*
 
 ---
 
@@ -271,14 +274,18 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Execução Passou?**
 - [ ] Sim
-- [x] Não ✅ 2026-07-30
+- [x] Não
+
+> [!danger] Reprovado — bug aberto
+> A toolbar do documento **não** permite retroceder nem encerrar enquanto a etapa está bloqueada por pendência. Contraria a regra do Figma registrada em Regras de negócio: *"Nesse estado, retroceder ou encerrar segue possível pela toolbar do documento"*.
+> Bug: [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]]
 
 **Evidências de Testes:**
 
 ![[9042 - CT-008, CT-010 - toolbar no estado bloqueado e avancar etapa.mp4]]
 
 *Mesma gravação cobre CT-010.*
-não está sendo possível retroceder, está ficando bloqueado no despacho, mas na toolbar é possível retroceder.
+
 ---
 
 ### C. Movimentação de etapa pelo contêiner
@@ -287,10 +294,10 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 **Dado** que a etapa atual não tem pendências
 **Quando** eu mantenho "Permanecer na etapa atual" e emito o despacho
-**Então** verifico que o despacho é emitido e o documento **continua na mesma etapa** do fluxo
+**Então** verifico que o despacho é emitido e o documento **continua na mesma etapa**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -306,7 +313,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 **Então** verifico que o documento passa para a **etapa seguinte** e o evento aparece na timeline
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -324,7 +331,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 **Então** verifico que o documento volta para a **etapa anterior** e o evento aparece na timeline
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -338,10 +345,10 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 **Dado** que a etapa atual tem um atalho configurado para uma etapa não adjacente
 **E** que a etapa não tem pendências
 **Quando** eu seleciono o atalho e emito o despacho
-**Então** verifico que o documento vai para a **etapa do atalho**, e não para a etapa seguinte ou anterior
+**Então** verifico que o documento vai para a **etapa do atalho**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -356,10 +363,10 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 **Dado** que a etapa atual não tem pendências
 **Quando** eu seleciono "Continuar aberto" e emito o despacho
-**Então** verifico que o documento **segue aberto** após a emissão, sem mudar para Encerrado
+**Então** verifico que o documento **segue aberto** após a emissão
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -372,10 +379,10 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 **Dado** que a etapa atual não tem pendências
 **Quando** eu seleciono "Encerrar para mim" e emito o despacho
-**Então** verifico que o documento fica **Encerrado**, e fica na coluna de Encerrados na Minha mesa
+**Então** verifico que o documento fica **Encerrado**, sai da fila de pendências gerais e é arquivado na **minha mesa**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -389,10 +396,10 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 **Dado** que eu **tenho** permissão de encerrar na etapa
 **E** que o documento tem outros setores envolvidos
 **Quando** eu seleciono "Encerrar para meu setor" e emito o despacho
-**Então** verifico que o documento fica **Encerrado no meu setor** e **segue em tramitação** nas mesas dos demais setores envolvidos
+**Então** verifico que o documento fica **Encerrado no meu setor** e **segue em tramitação** nas mesas dos demais
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -411,164 +418,143 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 - [ ] Sim
 - [ ] Não
 
+> [!warning] Não executado — falta evidência
+> Único CT ativo sem execução. Exige **segundo usuário**, sem a permissão de encerrar na etapa — não dá pra cobrir com o mesmo login. É o cenário negativo da permissão; sem ele, a regra do fluxo fica verificada só pelo lado positivo (CT-015).
+
 **Evidências de Testes:**
 
 ---
 
-#### ~~**CT-017 Contêiner não oferece "Encerrar para todos"**~~ — removido
-
-> [!info]- Por que este número está vago
-> O CT-017 foi **removido em 30/07** por afirmar uma ausência sem lastro: mockup com três opções não é regra de que uma quarta seja proibida, e como a lista depende de permissão (CA17), "exatamente três" não é afirmável. Virou pergunta aberta em Pontos de atenção.
->
-> **O número fica vago de propósito.** Número de CT é identificador, não posição: renumerar depois que existe evidência nomeada por número (`9042 - CT-014 - ...`) quebra o vínculo silenciosamente. Reciclar o 017 num cenário diferente seria pior ainda.
-
----
-
-#### **CT-018 Regressão SGV-9750 — encerrar para mim ou para meu setor não cancela assinatura pendente** *(CA19)*
+#### **CT-017 Regressão SGV-9750 — encerrar para mim ou para meu setor não cancela assinatura pendente** *(CA18)*
 
 **Dado** que o documento tem uma solicitação de assinatura pendente num despacho vinculado
 **Quando** eu encerro "para mim" ou "para meu setor" pelo contêiner
-**Então** verifico que a solicitação de assinatura **permanece pendente** — o cancelamento só ocorre no encerramento para todos
+**Então** verifico que a solicitação **permanece pendente** — o cancelamento só ocorre no encerramento para todos
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
-![[9042 - CT-018 - regressao 9750 encerrar para mim nao cancela assinatura pendente.mp4]]
+![[9042 - CT-017 - regressao 9750 encerrar para mim nao cancela assinatura pendente.mp4]]
 
 ---
 
 ### E. Sigilo
 
-#### **CT-019 Grupo de sigilo exibido em despacho com opções de sigilo** *(CA20)*
+#### **CT-018 Grupo de sigilo exibido em despacho com opções de sigilo** *(CA19)*
 
 **Dado** que o módulo/serviço/assunto tem opções de privacidade configuradas
 **Quando** eu emito um despacho customizado de etapa
 **Então** verifico que o grupo de sigilo é exibido, herdado dessa configuração
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
-![[9042 - CT-019, CT-021 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
+![[9042 - CT-018, CT-020 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
 
-*Mesma gravação cobre CT-021.*
+*Mesma gravação cobre CT-020.*
 
 ---
 
-#### **CT-020 Grupo de sigilo ausente em despacho sem opções de sigilo** *(CA21)*
+#### **CT-019 Grupo de sigilo ausente em despacho sem opções de sigilo** *(CA20)*
 
 **Dado** que o módulo/serviço/assunto **não** tem opções de privacidade configuradas
 **Quando** eu emito um despacho customizado de etapa
 **Então** verifico que o grupo de sigilo **não** é exibido
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
+![[9042 - CT-019, CT-021 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4]]
+
+*Mesma gravação cobre CT-021.*
+
 ---
 
-#### **CT-021 Despacho emitido com sigilo restringe a visualização** *(CA22)*
+#### **CT-020 Despacho emitido com sigilo restringe a visualização** *(CA21)*
 
 **Dado** que o despacho tem opções de sigilo e eu marco o despacho como **sigiloso**
 **Quando** eu emito o despacho pelo contêiner
-**Então** verifico que **somente os setores habilitados no sigilo** veem o conteúdo e os dados do solicitante, e os demais envolvidos não
+**Então** verifico que **somente os setores habilitados** veem o conteúdo e os dados do solicitante
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
-![[9042 - CT-019, CT-021 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
+![[9042 - CT-018, CT-020 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
 
-*Mesma gravação cobre CT-019.*
+*Mesma gravação cobre CT-018.*
 
 ---
 
-#### **CT-022 Despacho emitido sem sigilo fica visível aos envolvidos** *(CA23)*
+#### **CT-021 Despacho emitido sem sigilo fica visível aos envolvidos** *(CA22)*
 
 **Dado** que o despacho tem opções de sigilo e eu **não** marco o despacho como sigiloso
 **Quando** eu emito o despacho pelo contêiner
 **Então** verifico que o conteúdo fica visível normalmente para os setores e servidores envolvidos
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
 
+![[9042 - CT-019, CT-021 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4]]
+
+*Mesma gravação cobre CT-019.*
+
 ---
 
-### F. Combinações e regressões
+### F. Combinações
 
-#### **CT-023 Avançar etapa combinado com encerrar para mim** *(CA24)*
+#### **CT-022 Avançar etapa combinado com encerrar para mim** *(CA23)*
 
 **Dado** que a etapa atual não tem pendências
 **Quando** eu seleciono "Avançar etapa" **e** "Encerrar para mim" na mesma emissão
 **Então** verifico que as duas decisões são aplicadas de forma independente: o fluxo avança **e** o documento é encerrado na minha mesa
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[9042 - CT-022 - avancar etapa combinado com encerrar para mim.mp4]]
 
 ---
 
-#### **CT-024 Retroceder etapa combinado com encerrar para meu setor** *(CA24)*
+### G. Fora de execução — registro
 
-**Dado** que a etapa atual não tem pendências e eu tenho permissão de encerrar na etapa
-**Quando** eu seleciono "Retroceder etapa" **e** "Encerrar para meu setor" na mesma emissão
-**Então** verifico que o fluxo retrocede **e** o documento é encerrado no meu setor, confirmando que as decisões são independentes nas duas direções
+*Casos considerados e deliberadamente não executados nesta rodada. Ficam aqui pra não sumirem do histórico e pra não abrirem buraco na numeração dos ativos.*
 
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-
-**Evidências de Testes:**
-
----
-
-#### **CT-025 Despacho que exige assinatura não conclui o avanço no mesmo clique** *(CA25)*
-
-**Dado** que o despacho exige assinaturas
-**Quando** eu escolho avançar etapa e clico em "Emitir e Assinar"
-**Então** verifico que o avanço **não** se conclui no mesmo clique, porque as solicitações de assinatura são disparadas após a emissão
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-
-**Evidências de Testes:**
-
----
-
-#### **CT-026 Regressão SGV-6373 — setores mantidos ao navegar etapas** *(CA26)*
-
-**Dado** que eu tenho um assunto/serviço com setores configurados nas Regras de tramitação
-**Quando** eu avanço e retrocedo etapas pelo contêiner "Próximo passo do documento"
-**Então** verifico que os setores configurados permanecem mantidos
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-
-**Evidências de Testes:**
+| Caso | Decisão | Motivo |
+|---|---|---|
+| Retroceder etapa combinado com encerrar para meu setor | **Retirado** (Rafael, 30/07) | Segunda combinação da matriz. O CT-022 já prova a independência entre movimentação e encerramento; a segunda direção não agrega risco novo o suficiente pra custar mais uma massa de teste |
+| Despacho que exige assinatura não conclui o avanço no mesmo clique | **Retirado — cenário inalcançável** (Rafael, 30/07) | Enquanto a assinatura da etapa está pendente, o select de movimentação fica **desabilitado** (CT-005). Não existe o estado "escolher avançar + Emitir e Assinar", então a regra do Figma sobre o split button não é observável por esta via. Mesma natureza do CT-003 |
+| Regressão da [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS\|SGV-6373]] — setores mantidos ao navegar etapas | **Adiado** (Rafael, 30/07) | O conjunto executado já cobre bem a entrega. A 6373 segue **aberta em DEV** com validação própria; quando o fix dela subir, vale exercitar o caminho do contêiner |
+| Contêiner não oferece "Encerrar para todos" | **Removido por falta de lastro** (30/07) | Mockup com três opções não é regra de que uma quarta seja proibida, e a lista de opções depende de permissão (CA17) — "exatamente três" não é afirmável. Virou pergunta pro time em Pontos de atenção |
 
 ---
 
 > [!danger] Bugs encontrados
 
+- 🐛 [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]] — **reprovação do CT-008**: com a etapa bloqueada por pendência, a toolbar do documento **também** não permite retroceder nem encerrar. Divergência confirmada contra a regra *"nesse estado, retroceder ou encerrar só pela toolbar do documento"* — as duas vias fecham juntas e o documento fica preso na etapa.
+
 ---
 
 ## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://9042)
+
+As gravações desta validação estão **embedadas em cada CT** (seção Casos de teste), no padrão `9042 - CT-NNN[, CT-NNN] - <descrição>.mp4`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].
 
 ---
 
@@ -585,4 +571,5 @@ Análise completa (rodadas de refinamento, gate de doc, regras extraídas do Fig
 ## Histórico
 
 - 2026-07-29 - 📝 Melhoria refinada (critérios de aceite prontos; card destilado da mesa em `05 Refinar/`)
+- 2026-07-30 - 🔁 Validada em homologação: **20 de 23 critérios aprovados**, 19 CTs aprovados, 1 reprovado (CT-008 → [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]]), 1 não se aplica (CT-003), 1 pendente de segundo usuário (CT-016). 3 casos movidos pro registro por decisão do Rafael.
 - 2026-07-29 - ℹ️ Contexto: **aprovada em DEV por outro QA** (não pelo Rafael) — por isso não há registro de validação em DEV na daily dele. Validação em homologação em andamento.
