@@ -46,6 +46,9 @@ O contêiner oferece a escolha do **próximo passo do fluxo** (permanecer na eta
 - Nesse estado, **retroceder ou encerrar segue possível pela toolbar do documento**.
 - O select habilita quando **todas** as pendências forem cumpridas.
 
+> [!info] Não confundir com a regra do Workflow
+> O [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]] diz que com pendência *"só retroceder ou encerrar"* — isso é sobre o que é **permitido no documento**, e o caminho é a **toolbar**. O bloqueio total aqui é sobre o que **este contêiner oferece**. Retroceder é permitido; não por aqui. Conciliação detalhada em [[QA Workspace/04 Conhecimento/Módulos/Tramitação#Ações de destino na emissão de despacho (SGV-9042)|Tramitação]].
+
 **Assinatura muda o número de cliques** — o split button mantém "Emitir / Emitir e Assinar", mas se o despacho exigir assinaturas o **avanço não se conclui no mesmo clique**: as solicitações são disparadas *após* a emissão.
 
 **Movimentação × encerramento são independentes e combináveis** — dá pra "Avançar etapa" + "Encerrar para mim" na mesma emissão. As regras de continuar aberto / encerrar para mim / encerrar para meu setor seguem o que **já está implementado na plataforma**.
@@ -98,7 +101,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 - [x] **CA6** — O bloqueio é **total**: impede avançar, retroceder **e todos os atalhos, nas duas direções**
 - [x] **CA7** — No estado bloqueado, o ⓘ exibe o tooltip informando a pendência
 - [x] **CA8** — Cumpridas **todas** as pendências da etapa, o select habilita
-- [ ] **CA9** — No estado bloqueado, retroceder ou encerrar **continua possível pela toolbar do documento** — 🔴 **REPROVADO**, ver [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]]
+- [x] **CA9** — No estado bloqueado, retroceder ou encerrar **continua possível pela toolbar do documento**
 
 **C. Movimentação de etapa pelo contêiner**
 
@@ -273,12 +276,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Então** verifico que retroceder e encerrar seguem disponíveis por esse caminho
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
-
-> [!danger] Reprovado — bug aberto
-> A toolbar do documento **não** permite retroceder nem encerrar enquanto a etapa está bloqueada por pendência. Contraria a regra do Figma registrada em Regras de negócio: *"Nesse estado, retroceder ou encerrar segue possível pela toolbar do documento"*.
-> Bug: [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]]
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
@@ -548,7 +547,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 > [!danger] Bugs encontrados
 
-- 🐛 [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]] — **reprovação do CT-008**: com a etapa bloqueada por pendência, a toolbar do documento **também** não permite retroceder nem encerrar. Divergência confirmada contra a regra *"nesse estado, retroceder ou encerrar só pela toolbar do documento"* — as duas vias fecham juntas e o documento fica preso na etapa.
+Nenhum. A única reprovação da rodada (CT-006) foi revista: o bloqueio total é comportamento intencional, confirmado no Figma e com o time em 30/07 — o card aberto na hora ([[QA Workspace/99 Arquivo/10489 - Bug Conteiner De Despacho Nao Permite Retroceder Etapa Com Acao Obrigatoria Pendente|SGV-10489]]) foi **descartado**.
 
 ---
 
@@ -571,5 +570,5 @@ Análise completa (rodadas de refinamento, gate de doc, regras extraídas do Fig
 ## Histórico
 
 - 2026-07-29 - 📝 Melhoria refinada (critérios de aceite prontos; card destilado da mesa em `05 Refinar/`)
-- 2026-07-30 - 🔁 Validada em homologação: **20 de 23 critérios aprovados**, 19 CTs aprovados, 1 reprovado (CT-008 → [[QA Workspace/02 Demandas/HML/10489 - Bug Toolbar Do Documento Nao Permite Retroceder Nem Encerrar Com Etapa Bloqueada|SGV-10489]]), 1 não se aplica (CT-003), 1 pendente de segundo usuário (CT-016). 3 casos movidos pro registro por decisão do Rafael.
+- 2026-07-30 - 🔁 Validada em homologação: **21 de 23 critérios aprovados**, 20 CTs aprovados, **nenhum reprovado**, 1 não se aplica (CT-003), 1 pendente de segundo usuário (CT-016). 3 casos movidos pro registro por decisão do Rafael.
 - 2026-07-29 - ℹ️ Contexto: **aprovada em DEV por outro QA** (não pelo Rafael) — por isso não há registro de validação em DEV na daily dele. Validação em homologação em andamento.

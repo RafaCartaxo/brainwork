@@ -79,6 +79,20 @@ Na emissão de despacho passa a existir o contêiner **"Próximo passo do docume
 - Nesse estado, **retroceder ou encerrar só pela toolbar do documento**.
 - O select habilita quando **todas** as pendências forem cumpridas.
 
+> [!important] Isto **não** contradiz o Workflow — e a conciliação é o que engana
+> A doc de [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]] diz que com ação obrigatória pendente *"a etapa só avança quando o despacho for emitido (**sem ele, só retroceder ou encerrar**)"*. Lido isolado, parece autorizar retroceder pelo contêiner.
+>
+> As duas regras falam de coisas diferentes:
+>
+> | Regra | Sobre o quê |
+> |---|---|
+> | **Workflow** — "sem ele, só retroceder ou encerrar" | O que é **possível no documento** nesse estado: retroceder e encerrar seguem permitidos |
+> | **Tramitação/9042** — bloqueio total do select | O que o **contêiner de despacho oferece**: nada de movimentação. O caminho para retroceder/encerrar é a **toolbar** |
+>
+> Ou seja: retroceder **é permitido**, mas **não pelo contêiner**. Confirmado no Figma em 30/07 (duas leituras) e pelo time.
+>
+> Precedente de 30/07: eu tratei essa aparente contradição como defeito e cheguei a abrir bug (descartado). Antes de reprovar por aqui, separar **"a ação é permitida?"** de **"este ponto de entrada a oferece?"** — são perguntas diferentes com respostas diferentes.
+
 **Assinatura muda o número de cliques**: o split button mantém "Emitir / Emitir e Assinar", mas se o despacho exigir assinaturas o **avanço não se conclui no mesmo clique** — as solicitações são disparadas *após* a emissão.
 
 **Movimentação × encerramento são independentes e combináveis**: dá pra "Avançar etapa" + "Encerrar para mim" na mesma emissão. As regras de continuar aberto / encerrar para mim / encerrar para meu setor seguem o que **já está implementado na plataforma**.
