@@ -30,7 +30,12 @@ Não especificado no material disponível — ver a task original no Notion (SGV
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://3413)
 
-- Última evidência gravada relacionada, citada por Rafael: "[BUG] Erro ao assinar despacho de desassociação de documentos" — sem cópia local no vault.
+**Evidência do descarte** — gravação de 20/07 mostrando que o cenário **não reproduz mais** (a assinatura em despacho de desassociação funciona). É o lastro do `status: descartado`: se o defeito reaparecer, este vídeo é o registro de que em 20/07 o comportamento estava correto.
+
+![[3413 - nao reproduz mais assinatura em despacho de desassociacao.mp4]]
+
+> [!note]- Por que essa evidência ficou 10 dias solta
+> A gravação ficou na **raiz de `Evidências/`** de 20/07 a 30/07, e este card dizia "sem cópia local no vault" — afirmação falsa, com o arquivo a uma pasta de distância. O roteador de evidências do `qa-atualiza.py` procura o card só em `02 Demandas/`, e este já estava em `99 Arquivo/` desde o descarte; então ele avisava "card do SGV-3413 não existe" em toda execução, todos os dias. Anexada à mão em 30/07.
 
 ---
 
