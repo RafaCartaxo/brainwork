@@ -328,7 +328,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 **Dado** que a etapa atual não tem pendências
 **Quando** eu seleciono "Encerrar para mim" e emito o despacho
-**Então** verifico que o documento fica **Encerrado**, sai da fila de pendências gerais e é arquivado na **minha mesa**
+**Então** verifico que o documento fica **Encerrado**, e fica na coluna de Encerrados na Minha mesa
 
 **Execução Passou?**
 - [ ] Sim
