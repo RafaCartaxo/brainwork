@@ -13,11 +13,18 @@ O bloco Status — reunião é "regenerado, não acumulado" — ele deve refleti
 
 ## Gatilhos
 
-| Gatilho | Quando dispara |
-|---|---|
-| **Organização da daily** | O [[AGENTE_ORGANIZADOR]] dispara este agente ao final do processamento (qualquer modo: 🔄 Atualizar, sessão interativa "organiza a daily", ou agendado 7h). No modo 🔄 (script), esta etapa é delegada ao comando `/status-reuniao`. |
-| **Sessão interativa** | "gera meu status da reunião" |
-| **Comando opencode** | `/status-reuniao` |
+| Gatilho | Executor | O que acontece |
+|---|---|---|
+| **🔄 Atualizar** (Dashboard) | Script (`qa-atualiza.py`) | **Nada além do esqueleto.** Ao criar a daily do dia, o script escreve o callout vazio com `Fiz`/`Foco de hoje`/`Travas`. Ele **não gera conteúdo** — não lê Atividades nem deriva nada |
+| **Sessão de IA** | Este agente | Gera e **regenera por inteiro** o bloco, derivando de Atividades + fila. "organiza a daily", "gera meu status da reunião" ou "processa o dia" |
+| **Comando** `/status-reuniao` | Este agente | Mesmo trabalho, invocado direto |
+> [!warning] O botão 🔄 **não** dispara este agente — e confundir isso já custou caro
+> O 🔄 executa `.obsidian/scripts/qa-atualiza.py`, que é **Python**: ele não invoca agente de IA. Só prepara a parte mecânica.
+>
+> Até 30/07 esta tabela listava o botão como gatilho do agente. Uma sessão de IA leu isso, entendeu que apertar o botão fazia o trabalho todo — e em 28/07 outra sessão foi além: **moveu o agrupamento pra dentro do script** (`reorganiza_afazer`) pra fazer a promessa virar verdade. A fila quebrou. **A doc não descreveu o bug; ela o causou.**
+>
+> Por isso a tabela agora tem coluna **Executor**: gatilho sem executor é promessa.
+
 
 ## O que faz
 

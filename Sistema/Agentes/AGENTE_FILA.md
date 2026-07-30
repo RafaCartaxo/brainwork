@@ -13,10 +13,17 @@ A lista "A fazer hoje" acumula itens sem distinção de natureza, urgência ou i
 
 ## Gatilhos
 
-| Gatilho | Quando dispara |
-|---|---|
-| **🔄 Atualizar** | Junto com o script `qa-atualiza.py`, ao clicar o botão na Dashboard |
-| **Sessão interativa** | "organiza a fila" |
+| Gatilho | Executor | O que acontece |
+|---|---|---|
+| **🔄 Atualizar** (Dashboard) | Script (`qa-atualiza.py`) | **Prepara, não agrupa**: calcula idade (`🕐`/`⚠️`/`🚨`), recolhe os `[x]` em ✅ Concluídos hoje e mantém a fila viva. Os grupos por natureza **não são tocados** — o docstring de `coleta_concluidos()` diz isso explicitamente |
+| **Sessão de IA** | Este agente | O agrupamento por natureza nos 7 grupos. **Só acontece aqui** — "organiza a fila", "processa o dia" ou qualquer pedido de organização da daily |
+> [!warning] O botão 🔄 **não** dispara este agente — e confundir isso já custou caro
+> O 🔄 executa `.obsidian/scripts/qa-atualiza.py`, que é **Python**: ele não invoca agente de IA. Só prepara a parte mecânica.
+>
+> Até 30/07 esta tabela listava o botão como gatilho do agente. Uma sessão de IA leu isso, entendeu que apertar o botão fazia o trabalho todo — e em 28/07 outra sessão foi além: **moveu o agrupamento pra dentro do script** (`reorganiza_afazer`) pra fazer a promessa virar verdade. A fila quebrou. **A doc não descreveu o bug; ela o causou.**
+>
+> Por isso a tabela agora tem coluna **Executor**: gatilho sem executor é promessa.
+
 
 ## O que faz
 

@@ -16,7 +16,7 @@ tags:
 |---|---|---|
 | Parte mecânica (rápido, offline) | Clicar **🔄 Atualizar** na [[../../QA Workspace/Dashboard/Dashboard\|Dashboard]] | Carry-over, conclusão de pendências anotadas, reconciliação de Atividades, fila viva |
 | Tudo (classificação de registros crus + mecânica) | Pedir numa sessão: "organiza a daily" | Tudo acima + classificar Anotações e Bugs encontrados sem card |
-| Automático | Agendado às 7h (via cron, opcional) | Tudo, com palpite automático |
+| Automático | Agendado às 7h (via cron, opcional) | Tudo, com palpite automático ⚠️ **previsto, sem cron ativo** — hoje só 🔄 e sessão de IA |
 
 ### O que acontece
 

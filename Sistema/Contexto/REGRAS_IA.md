@@ -83,6 +83,12 @@ Situação que a automação não sabe tratar vira **aviso visível + item na fi
 
 **Precedentes** (todos no `qa-atualiza.py`): 2026-07-24, o `LEDGER` não reconhecia os emojis 🔎/📋 e ignorava linhas de Atividades caladamente. 2026-07-28, um guard comparava keywords de *pendência* contra copy de *Atividades* e desativou o ledger quase inteiro; e o `reconcilia_atividades` fazia `continue` sem aviso quando o card não existia, com o script imprimindo "nada a fazer — tudo em dia".
 
+## "Processa o dia" são cinco passos, não um botão
+
+Pedido de "processa", "processa o dia" ou "organiza a daily" = rodar o 🔄 **e** os quatro passos de IA que vêm depois: agrupar a fila, regenerar o Status — reunião, classificar registro cru e agir nos avisos do log. Sequência completa em [[FLUXOS#O que "processa" significa|FLUXOS → O que "processa" significa]].
+
+O botão é Python e **não dispara agente nenhum**. Apertar e parar deixa a fila sem grupos e o Status vazio — precedente 28/07, quando a "correção" foi mover o agrupamento pra dentro do script e quebrar a fila.
+
 ## Editar a daily por seção, nunca por `replace` global
 
 A daily repete texto entre seções **por desenho**: a mesma frase aparece no **Status — reunião** (que é derivado), em **Atividades**, na fila e no log do `[!organizacao]`. Então `texto.replace("- ✅ SGV-1234 ...", ...)` casa na **primeira** ocorrência, que quase nunca é a que se quer — e o conteúdo cai na seção errada **sem erro nenhum**.

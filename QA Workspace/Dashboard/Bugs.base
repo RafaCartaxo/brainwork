@@ -3,8 +3,8 @@ filters:
     - file.hasTag("bug")
     - file.ext == "md"
 formulas:
-  status_icone: if(status == "resolvido", "✅", if(status == "em_validacao", "🟡", if(status == "aberto", "🔴", "⚪")))
-  prioridade_icone: if(prioridade == "critica", "🔴", if(prioridade == "alta", "🟠", if(prioridade == "media", "🟡", "🟢")))
+  status_icone: if(status == "resolvido", "✅", if(status == "em_validacao", "🟡", if(status == "aberto", "🔴", if(status == "descartado", "🗑️", "⚪"))))
+  prioridade_icone: if(prioridade == "altíssima", "🔴", if(prioridade == "critica", "🔴", if(prioridade == "alta", "🟠", if(prioridade == "media", "🟡", if(prioridade == "baixa", "🟢", "⚪")))))
   dias_aberto: if(status == "aberto", if(data_inicio, (today() - date(data_inicio)).days, if(data, (today() - date(data)).days, "")), "")
 properties:
   ambiente:

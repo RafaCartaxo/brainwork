@@ -42,6 +42,17 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Comecei a testar/validar | `🚀 SGV-XXXX - Início de validação` |
 | Passou no teste (1ª validação, sem reabertura anterior) | `✅ SGV-XXXX - Aprovada em <ambiente>` |
 | Passou no reteste, depois de já ter sido reaberto antes | `🔁 SGV-XXXX - Retestada e aprovada em <ambiente>` |
+
+> [!important] Como saber se é `✅` ou `🔁`: **ler o Histórico do card**
+> As duas frases descrevem "passou" — o que as separa é a **história**, não o resultado de hoje. A regra de decisão:
+>
+> 1. Abrir o card e olhar a lista `- Histórico:` em Informações adicionais.
+> 2. Existe alguma entrada `🔴 Reaberta em <ambiente>` **antes** de hoje? → use **`🔁 Retestada e aprovada`**.
+> 3. Não existe? É a primeira validação → use **`✅ Aprovada`**.
+>
+> Não dá pra decidir pela memória de quem escreve, nem pela pasta onde o card está: card em `HML/` pode nunca ter sido reaberto, e card reaberto volta pra `DEV/`. **A fonte é o Histórico.**
+>
+> Registrado em 30/07: uma sessão de IA simulada sem contexto acertou as duas copies mas **não tinha como saber qual usar** — a tabela descrevia os dois casos e não dizia como identificar em qual você está.
 | Falhou / voltou a falhar | `🔴 SGV-XXXX - Reaberta em <ambiente>` (usar "reaberta novamente" só da 2ª reabertura em diante) |
 | Não foi possível reproduzir | `⚪ SGV-XXXX - Retestado, não reproduzido` |
 | Não reproduzido, **com desdobramento pendente** de dev/produto | `⚪ SGV-XXXX - Retestado, não reproduzido (aguardando decisão do dev: <o que se espera>)` |

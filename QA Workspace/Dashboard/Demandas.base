@@ -4,8 +4,8 @@ filters:
     - file.ext == "md"
 formulas:
   dias_em_andamento: if(data_inicio, (today() - date(data_inicio)).days, "")
-  status_icone: if(status == "concluida", "✅", if(status == "hml", "🟡", if(status == "dev", "🔵", "⚪")))
-  prioridade_icone: if(prioridade == "alta", "🔴", if(prioridade == "media", "🟡", "🟢"))
+  status_icone: if(status == "resolvido", "✅", if(status == "em_validacao", "🟡", if(status == "aberto", "🔵", if(status == "descartado", "🗑️", if(status == "refinado", "📝", "⚪")))))
+  prioridade_icone: if(prioridade == "altíssima", "🔴", if(prioridade == "alta", "🔴", if(prioridade == "media", "🟡", if(prioridade == "baixa", "🟢", "⚪"))))
 properties:
   modulo:
     displayName: Módulo

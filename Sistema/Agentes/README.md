@@ -15,7 +15,7 @@ Diferente de [[../Skills/README|Skills]] (que são instruções de referência p
 |---|---|---|
 | [[AGENTE_PROCESSAR_EXPORT]] | "processa o material novo" / "processa o export SGV-XXXX" | Pipeline completo: classifica .md bruto do Notion (task? triagem? doc?) → limpa → roteia pro destino (mesa/card/conhecimento/triagem) |
 | [[AGENTE_FILA]] | 🔄 Atualizar / "organiza a fila" | Reorganiza "A fazer hoje": agrupa por natureza (🎯🔎📤👁️📋), sinaliza idade (🕐) e bloqueio (⏳), move concluídos, alerta zumbis +7d |
-| [[AGENTE_ORGANIZADOR]] | 🔄 Atualizar (Dashboard) / "organiza a daily" (IA) / 7h (agendado) | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards, mantém a fila viva |
+| [[AGENTE_ORGANIZADOR]] | 🔄 Atualizar (Dashboard) / "organiza a daily" (IA) / 7h (agendado) ⚠️ **previsto, sem cron ativo** — hoje só 🔄 e sessão de IA | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards, mantém a fila viva |
 | [[AGENTE_MIGRACAO_CARDS]] | Conclusão de pendência / "move o card" (IA) / verificação diária | Move cards entre pastas da esteira atualizando wikilinks, frontmatter e Histórico atomicamente |
 | [[AGENTE_STATUS_REUNIAO]] | Organização da daily (disparado pelo AGENTE_ORGANIZADOR) / "status da reunião" (IA) / `/status-reuniao` | Lê Atividades + fila da daily e gera o bloco Status — reunião (Fiz/Foco/Travas) |
 | [[AGENTE_VALIDACAO_DOC]] | 🔄 Atualizar / "organiza a daily" (IA) | Rede de segurança do gate de doc: sinaliza cards aprovados sem cruzamento contra a doc do módulo (levanta pendência ⏳) |

@@ -20,11 +20,15 @@ Mas é um passo humano, sujeito a ser pulado na pressa do dia. Este agente é a 
 
 ## Gatilho
 
-| Gatilho | Quando |
-|---|---|
-| 🔄 Atualizar (Dashboard) / "organiza a daily" (IA) | Junto do [[AGENTE_ORGANIZADOR]], na varredura da daily |
+| Gatilho | Executor | O que acontece |
+|---|---|---|
+| **🔄 Atualizar** (Dashboard) | — | **Nada.** O `qa-atualiza.py` não faz gate de doc: não há uma linha sequer sobre `04 Conhecimento/` ou módulo no script. Este agente **não roda** pelo botão |
+| **Sessão de IA** | Este agente | Varredura da daily, detecção de aprovação sem gate registrado e sugestão de módulo. É o **único** caminho de execução hoje |
 
-No modo 🔄 (script): a parte do agente que é mecânica — varredura e detecção de ausência. No modo IA ("organiza a daily"): varredura + sugestão de módulo inferido.
+> [!warning] Corrigido em 30/07 — a tabela anterior era falsa
+> Ela dizia que "no modo 🔄 (script)" este agente fazia "a parte mecânica — varredura e detecção de ausência". **O script não faz nada disso** — verificado por busca direta: zero ocorrências de gate, módulo ou `04 Conhecimento` no `qa-atualiza.py`.
+>
+> Uma sessão nova lia isso e assumia que o gate de doc já tinha sido conferido pelo botão. Como este agente é justamente a **rede de segurança** contra o gate ser pulado, a rede não existia — e ninguém sabia.
 
 ## Pipeline
 

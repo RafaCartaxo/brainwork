@@ -19,7 +19,7 @@ Três gatilhos, mesma lógica — o que muda é quem executa e o que cobre:
 |---|---|---|---|
 | **Botão 🔄 Atualizar** (Dashboard) | Script determinístico (`.obsidian/scripts/qa-atualiza.py`, sem IA, offline, instantâneo) | Só a parte **mecânica**: cria a daily de hoje, carry-over sem duplicar, continuação de pendências concluídas **com resultado anotado**, reconciliação de Atividades, fila viva (invariante), marca ` → `, bloco de registro | Não existe: o que não casa com os padrões vira `⏳ aguardando resultado` ou fica intocado |
 | **Sessão interativa** (Rafael pede "organiza a daily") | IA | Tudo: parte mecânica **+ classificação de registros crus** (Anotações/Bugs encontrados) | Pergunta antes de decidir |
-| **Agendado 7h** (tarefa cron, opcional) | IA | Tudo | Palpite mais provável com marca `(auto)`; na dúvida entre "registro do dia" e processável, deixa como está |
+| **Agendado 7h** (tarefa cron, opcional) | IA | Tudo | Palpite mais provável com marca `(auto)`; na dúvida entre "registro do dia" e processável, deixa como está ⚠️ **previsto, sem cron ativo** — hoje só 🔄 e sessão de IA |
 
 O botão é o gatilho principal do dia a dia e **não depende de IA nem de internet**.
 

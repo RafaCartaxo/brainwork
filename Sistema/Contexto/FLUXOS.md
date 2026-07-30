@@ -53,6 +53,25 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 
 A partir daqui, o dia inteiro acontece dentro da daily.
 
+### O que "processa" significa
+
+Quando o Rafael diz **"processa"**, **"processa o dia"** ou **"organiza a daily"**, ele está pedindo os cinco passos abaixo — **não só apertar o botão**. Essa ambiguidade já custou um dia de fila fora do padrão (28/07).
+
+| # | Passo | Executor |
+|---|---|---|
+| 1 | Rodar o **🔄 Atualizar** (ou `python3 .obsidian/scripts/qa-atualiza.py`) | Script |
+| 2 | **Agrupar a fila** nos 7 grupos de [[../../QA Workspace/01 Daily/README#Grupos da fila ("A fazer hoje")\|01 Daily/README]] | [[../Agentes/AGENTE_FILA\|AGENTE_FILA]] — **sessão de IA** |
+| 3 | **Regenerar o Status — reunião** por inteiro (derivado de Atividades + fila) | [[../Agentes/AGENTE_STATUS_REUNIAO\|AGENTE_STATUS_REUNIAO]] — **sessão de IA** |
+| 4 | **Classificar registro cru**, se houver linha em Anotações/Bugs encontrados sem a marca ` → ` | [[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]] — **sessão de IA** |
+| 5 | **Ler os avisos** do callout `[!organizacao]- Auto-organização` e agir em cada um (ou registrar por que não) | Sessão de IA |
+
+> [!warning] O botão sozinho **não** fecha o processamento
+> O `qa-atualiza.py` é Python: cria a daily, faz carry-over, envelhece a fila, recolhe os `[x]`, reconcilia cards, roteia evidência e escreve o log. Ele **não agrupa a fila**, **não gera o Status** e **não faz gate de doc** — isso é julgamento, e julgamento é da camada de IA ([[../Agentes/AGENTE_FILA#Fronteira com o script\|fronteira]]).
+>
+> Apertar o botão e parar deixa a fila sem grupos e o Status vazio. Foi exatamente o que aconteceu em 28/07 — e a "correção" de então foi pior: mover o agrupamento pra dentro do script.
+
+Depois de processar, **conferir**: os 4 callouts da daily íntegros (nenhuma linha sem `>` dentro de um `[!...]`), e rodar o 🔄 **duas vezes** — a segunda não deve mudar nada. Se mudar, algo não é idempotente e vale investigar antes de seguir.
+
 ## 2. Registrar algo durante o dia
 
 Regra de bolso: **escreveu? foi na daily. quer ver? foi na Dashboard.**
