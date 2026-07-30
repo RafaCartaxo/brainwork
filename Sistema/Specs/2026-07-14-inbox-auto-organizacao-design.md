@@ -5,6 +5,9 @@ tags:
 ---
 # Design — Auto-organização (daily como lugar único de escrita)
 
+> [!warning] Spec de 14/07 — o modo agendado das 7h **nunca foi configurado**
+> Este documento descreve o desenho original, incluindo uma "tarefa cron às 7h". Verificado em 30/07: **não existe cron nem agendamento rodando**. Os dois caminhos reais hoje são o botão 🔄 (mecânico) e uma sessão de IA. Ler como registro de design, não como estado do sistema.
+
 > [!note] Revisão no mesmo dia (14/07)
 > A primeira versão deste design usava arquivos de captura soltos em `00 Inbox/` como fonte. Na prática, isso criava **dois lugares de escrita** (Inbox e daily) e Rafael relatou a fricção de decidir onde anotar cada coisa. O design foi revisado no mesmo dia: **a daily é o único lugar de escrita; a Dashboard é o único lugar de leitura; o Inbox vira só backlog do vault/ferramenta**. As capturas soltas viraram mecanismo legado (processadas até zerar).
 

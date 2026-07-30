@@ -25,7 +25,7 @@ O botão é o gatilho principal do dia a dia e **não depende de IA nem de inter
 
 ## Fonte (o que é processado)
 
-Na daily mais recente até hoje (na execução agendada das 7h, isso normalmente significa a daily de ontem; no modo manual, a de hoje):
+Na daily mais recente até hoje (na execução agendada das 7h — ⚠️ prevista, sem cron ativo — isso significaria a daily de ontem; no modo manual, a de hoje):
 
 - **`## Anotações`**: linhas cruas ainda sem a marca de organizado
 - **`## Bugs encontrados`**: itens em texto puro que ainda não têm card (sem wikilink pra card em `02 Demandas/`)
@@ -125,7 +125,7 @@ Criar o card/checkbox no vault não fecha o ciclo — Bug e Melhoria ainda preci
 
 ## Status — reunião (sempre ao final)
 
-Após processar a daily (qualquer modo — 🔄 Atualizar, sessão interativa ou agendado), o organizador dispara o [[AGENTE_STATUS_REUNIAO]] pra regenerar o bloco **Status — reunião** no topo da daily. O Status reflete o estado pós-organização: Atividades do dia viram Fiz, a fila reorganizada vira Foco, novas pendências com `⏳` e `⚠️ gate de doc` viram Travas. No modo 🔄 (script determinístico), esta etapa é delegada ao comando `/status-reuniao` do opencode — o script Python sozinho não gera o bloco.
+Após processar a daily **numa sessão de IA**, o organizador dispara o [[AGENTE_STATUS_REUNIAO]] pra regenerar o bloco **Status — reunião** no topo da daily. O Status reflete o estado pós-organização: Atividades do dia viram Fiz, a fila reorganizada vira Foco, novas pendências com `⏳` e `⚠️ gate de doc` viram Travas. No modo 🔄 (script determinístico), esta etapa é delegada ao comando `/status-reuniao` do opencode — o script Python sozinho não gera o bloco.
 
 ## Copy padronizada (obrigatória pro organizador)
 
