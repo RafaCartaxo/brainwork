@@ -45,9 +45,9 @@ O resultado é uma incoerência entre dois caminhos para a mesma ação: retroce
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://10489)
 
-![[10489 - conteiner nao permite retroceder com acao obrigatoria pendente.mp4]]
+![[9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
 
-*Evidência compartilhada com a [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — mesmo vídeo, cópia renomeada. Lá é a gravação do CT-004/CT-006.*
+*Aponta direto pra evidência da [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] (EV-03). A cópia com o número deste card foi **apagada** no descarte — card descartado não justifica duplicar arquivo de 5 MB. Precedente 30/07: o embed ficou quebrado por algumas horas até a varredura pegar.*
 
 ---
 
@@ -88,7 +88,7 @@ O bloqueio é da **direção de avanço**, não do select inteiro.
 
 **Evidências de Testes:**
 
-![[10489 - conteiner nao permite retroceder com acao obrigatoria pendente.mp4]]
+![[9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
 
 ---
 
@@ -147,7 +147,7 @@ O bloqueio é da **direção de avanço**, não do select inteiro.
 
 **Evidências de Testes:**
 
-![[10489 - conteiner nao permite retroceder com acao obrigatoria pendente.mp4]]
+![[9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
 
 ---
 
