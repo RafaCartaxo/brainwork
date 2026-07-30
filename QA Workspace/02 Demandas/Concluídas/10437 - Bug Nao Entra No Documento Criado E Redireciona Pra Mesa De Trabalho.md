@@ -5,9 +5,9 @@ tags:
   - documento
 task: "10437"
 prioridade: altíssima
-status: aberto
+status: resolvido
 data_inicio: 2026-07-29
-data_fim: ""
+data_fim: "2026-07-30"
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: documento
@@ -38,6 +38,8 @@ Então verifico que não consigo entrar no documento criado e sou redirecionado 
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://10437)
 
+![[10437 - corrigido entra no documento criado sem redirecionar pra mesa.mp4]]
+
 ![[10437 - nao entra no documento criado e redireciona pra mesa de trabalho.mp4]]
 
 ---
@@ -50,36 +52,48 @@ Ao finalizar a criação de um documento novo, o usuário é **direcionado pro d
 
 ### Critérios de aceite
 
-- [ ] Ao criar um documento novo, o usuário consegue entrar no documento criado
-- [ ] O redirecionamento após a criação leva **ao documento**, não à mesa de trabalho
-- [ ] A flash message de sucesso é exibida ao finalizar a criação
+- [x] Ao criar um documento novo, o usuário consegue entrar no documento criado
+- [x] O redirecionamento após a criação leva **ao documento**, não à mesa de trabalho
+- [x] A flash message de sucesso é exibida ao finalizar a criação
 
 ---
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Acesso ao documento após a criação**
-    Dado que eu tenho permissão pra criar documento no módulo
-    Quando eu crio um documento novo e finalizo a criação
-    Então verifico que sou direcionado pro documento criado, com flash message de sucesso, e consigo acessá-lo
+#### **CT-B01 Acesso ao documento após a criação**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [x] <span style="color:#e74c3c">Não</span>
+**Dado** que eu tenho permissão pra criar documento no módulo
+**Quando** eu crio um documento novo e finalizo a criação
+**Então** verifico que sou direcionado pro documento criado, com flash message de sucesso, e consigo acessá-lo
 
-    - Evidências de Testes:
-        ![[10437 - nao entra no documento criado e redireciona pra mesa de trabalho.mp4]]
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
 
-- **CT-B02 Documento gerado a partir de outro (fluxo "Gerar documento")**
-    Dado que eu estou num documento e uso a ação "Gerar documento"
-    Quando eu confirmo e finalizo a criação do novo documento
-    Então verifico que há redirecionamento automático pro documento gerador, conforme a doc do módulo — e não pra mesa de trabalho
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+![[10437 - corrigido entra no documento criado sem redirecionar pra mesa.mp4]]
 
-    - Evidências de Testes:
+Reprovação original de 29/07, mantida como histórico do defeito:
+
+![[10437 - nao entra no documento criado e redireciona pra mesa de trabalho.mp4]]
+
+---
+
+#### **CT-B02 Documento gerado a partir de outro (fluxo "Gerar documento")**
+
+**Dado** que eu estou num documento e uso a ação "Gerar documento"
+**Quando** eu confirmo e finalizo a criação do novo documento
+**Então** verifico que há redirecionamento automático pro documento gerador, conforme a doc do módulo — e não pra mesa de trabalho
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+> [!warning] Não executado
+> Este CT cobre o fluxo "Gerar documento" (documento criado a partir de outro), que era a **dúvida de escopo do diagnóstico**: o defeito era em toda criação ou só nesse caminho? O CT-B01 aprovado responde pela criação comum; este caminho não foi exercitado.
 
 ---
 
@@ -103,3 +117,4 @@ Ao finalizar a criação de um documento novo, o usuário é **direcionado pro d
 - **A confirmar no diagnóstico**: o defeito ocorre em **toda** criação de documento ou só no fluxo "Gerar documento" (documento gerado a partir de outro)? O CT-B01 cobre a criação comum e o CT-B02 o fluxo gerador — a resposta muda o escopo do fix.
 - Histórico:
     - 2026-07-29 - 🐛 SGV-10437 - Bug cadastrado (impeditivo; divergência confirmada contra a doc de Gerar Documento)
+    - 2026-07-30 - ✅ Aprovada em homologação (impeditivo resolvido: entra no documento criado sem redirecionar pra mesa de trabalho)

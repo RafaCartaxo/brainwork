@@ -133,12 +133,35 @@ date: {hoje:%Y-%m-%d}
 
 
 def itens_nao_finalizados(texto):
-    """Itens '- [ ]' do A fazer hoje (callout) e do Pendente para amanhã, sem vazios."""
+    """Itens '- [ ]' do A fazer hoje (callout) e do Pendente para amanhã, sem vazios.
+
+    **Recorte por seção, de propósito.** A versão anterior varria o arquivo
+    inteiro, então QUALQUER checkbox virava pendência de amanhã:
+
+    - rascunho de CT escrito em `## Anotações` entrou na fila como item
+      chamado "Não", do `- [ ] Não` do "Execução Passou?" (precedente: 30/07);
+    - checkbox de `## Melhorias propostas` era recopiado todo dia, contra a
+      regra explícita do 01 Daily/README ("aqui **não se recopia**" — a
+      Dashboard agrega os não marcados de todas as dailies sozinha).
+
+    O docstring já dizia "A fazer hoje e Pendente para amanhã" desde sempre; a
+    implementação é que nunca respeitou o próprio contrato. Divergência
+    doc × código é pior que doc ausente: dá falsa confiança na leitura.
+    """
+    regioes = []
+    m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:>.*\n)*)", texto)
+    if m:
+        regioes.append(m.group(1))
+    m = re.search(r"## Pendente para amanhã\n(.*?)(?=\n## |\n> \[!organizacao\]|\Z)",
+                  texto, re.S)
+    if m:
+        regioes.append(m.group(1))
     out = []
-    for m in re.finditer(r"^>? ?- \[ \] (.+)$", texto, re.M):
-        item = m.group(1).strip()
-        if item:
-            out.append(item)
+    for regiao in regioes:
+        for mm in re.finditer(r"^>? ?- \[ \] (.+)$", regiao, re.M):
+            item = mm.group(1).strip()
+            if item:
+                out.append(item)
     return out
 
 

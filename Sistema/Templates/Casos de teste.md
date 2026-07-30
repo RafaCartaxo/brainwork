@@ -7,25 +7,31 @@ data: <% tp.date.now("YYYY-MM-DD") %>
 ---
 # Casos de Teste
 
-- **CT-001 Título do caso de teste**
-    Dado que ...
-    E ...
-    Quando ...
-    Então ...
+### **CT-001 Título do caso de teste**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** ...
+**E** ...
+**Quando** ...
+**Então** ...
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-- **CT-002 Título do caso de teste**
-    Dado que ...
-    Quando ...
-    Então ...
+**Evidências de Testes:**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+---
 
-    - Evidências de Testes:
+### **CT-002 Título do caso de teste**
+
+**Dado** ...
+**Quando** ...
+**Então** ...
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
