@@ -22,15 +22,21 @@ Ex.: `9971 - solicitar assinatura para servidor com cadastro incompleto.mp4`
 
 #### Evidência de caso de teste
 
-Quando a gravação é a execução de um **CT específico** (típico de melhoria/funcionalidade, onde se roda caso por caso), o padrão ganha o CT no meio:
+Quando a gravação é a execução de **CTs** (típico de melhoria/funcionalidade, onde se roda caso por caso), o padrão ganha **dois** identificadores:
 
-`<número do card> - CT-<NNN> - <breve descrição>.mp4`
+`<número do card> - EV-<NN> - CT-<NNN>[, CT-<NNN>...] - <breve descrição>.mp4`
 
-Uma gravação que cobre **mais de um CT** lista todos, separados por vírgula:
+Ex.: `9042 - EV-01 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4`
 
-`9042 - CT-001, CT-005, CT-007 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4`
+- **`EV-NN`** — sequência da **gravação**, contígua e sem buraco, na ordem dos CTs que ela cobre. É o que dá ordenação limpa na pasta.
+- **`CT-NNN`** — quais casos aquela gravação cobre. Uma gravação multi-CT é **um arquivo só**, embedado em cada CT com a nota `*Mesma gravação cobre CT-004, CT-006.*` (diferente do compartilhamento entre **cards**, que exige cópia — seção abaixo).
 
-Ela é **embedada em cada CT** que cobre, com a nota `*Mesma gravação cobre CT-005, CT-007.*` — um arquivo só no disco, referenciado de vários lugares. Diferente do compartilhamento entre **cards**, que exige cópia (seção abaixo).
+> [!important] Por que a evidência tem numeração própria
+> **A contagem de gravações não é a contagem de CTs** — a SGV-9042 fechou com 21 CTs em 15 gravações. Numerar o arquivo só pelo CT faz a pasta ordenar `001, 002, 003, 007, 008, 010…`: parece cheia de buraco, porque o 004 está escondido dentro do primeiro arquivo. Quem precisa passar evidência uma a uma pra ferramenta externa fica caçando arquivo e pulando número.
+>
+> Com `EV-NN` a pasta ordena 01 → 15 direto, e o trecho `CT-NNN` do nome diz o que cada uma cobre. **Forçar um identificador a servir dois propósitos de cardinalidade diferente é o erro** — precedente: 30/07, renomeei as 15 evidências da 9042 duas vezes antes de perceber isso.
+>
+> No card, vale a tabela **CT → EV** na seção de Evidências: é por CT que se confere cobertura, e por EV que se arrasta arquivo.
 
 > [!warning] O número do card vem primeiro, sempre
 > Gravar como `001.mp4` ou `004, 006.mp4` **não funciona**: o roteador do 🔄 procura o número do **card** no começo do nome. `002.mp4` seria lido como SGV-002 e `004, 006.mp4` não casa com padrão nenhum — os dois ficam parados na raiz. Precedente: 30/07, 11 arquivos renomeados à mão na SGV-9042.

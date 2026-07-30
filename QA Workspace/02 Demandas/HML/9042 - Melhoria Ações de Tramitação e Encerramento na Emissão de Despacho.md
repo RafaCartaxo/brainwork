@@ -151,7 +151,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
+![[9042 - EV-01 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
 
 *Mesma gravação cobre CT-004 e CT-006.*
 
@@ -169,7 +169,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-002 - documento sem fluxo nao exibe o conteiner.mp4]]
+![[9042 - EV-02 - CT-002 - documento sem fluxo nao exibe o conteiner.mp4]]
 
 ---
 
@@ -187,7 +187,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
+![[9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
 
 *Mesma gravação cobre CT-005.*
 
@@ -205,7 +205,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
+![[9042 - EV-01 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
 
 *Mesma gravação cobre CT-001 e CT-006.*
 
@@ -224,7 +224,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
+![[9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
 
 *Mesma gravação cobre CT-003.*
 
@@ -242,7 +242,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
+![[9042 - EV-01 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4]]
 
 *Mesma gravação cobre CT-001 e CT-004.*
 
@@ -260,7 +260,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-007, CT-009 - toolbar no estado bloqueado e avancar etapa.mp4]]
+![[9042 - EV-04 - CT-007, CT-009 - toolbar no estado bloqueado e avancar etapa.mp4]]
 
 *Mesma gravação cobre CT-009.*
 
@@ -280,7 +280,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-008 - permanecer na etapa atual emite sem movimentar.mp4]]
+![[9042 - EV-05 - CT-008 - permanecer na etapa atual emite sem movimentar.mp4]]
 
 ---
 
@@ -296,7 +296,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-007, CT-009 - toolbar no estado bloqueado e avancar etapa.mp4]]
+![[9042 - EV-04 - CT-007, CT-009 - toolbar no estado bloqueado e avancar etapa.mp4]]
 
 *Mesma gravação cobre CT-007.*
 
@@ -314,7 +314,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-010 - retroceder etapa pelo conteiner.mp4]]
+![[9042 - EV-06 - CT-010 - retroceder etapa pelo conteiner.mp4]]
 
 ---
 
@@ -331,7 +331,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-011 - atalho leva a etapa do atalho.mp4]]
+![[9042 - EV-07 - CT-011 - atalho leva a etapa do atalho.mp4]]
 
 ---
 
@@ -349,7 +349,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-012 - continuar aberto mantem o documento aberto.mp4]]
+![[9042 - EV-08 - CT-012 - continuar aberto mantem o documento aberto.mp4]]
 
 ---
 
@@ -365,7 +365,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-013 - encerrar para mim arquiva na mesa do usuario.mp4]]
+![[9042 - EV-09 - CT-013 - encerrar para mim arquiva na mesa do usuario.mp4]]
 
 ---
 
@@ -382,7 +382,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-014 - encerrar para meu setor mantem tramitacao nos demais.mp4]]
+![[9042 - EV-10 - CT-014 - encerrar para meu setor mantem tramitacao nos demais.mp4]]
 
 ---
 
@@ -398,7 +398,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-015 - servidor sem permissao de encerrar na etapa nao recebe a opcao.mp4]]
+![[9042 - EV-11 - CT-015 - servidor sem permissao de encerrar na etapa nao recebe a opcao.mp4]]
 
 ---
 
@@ -414,7 +414,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-016 - regressao 9750 encerrar para mim nao cancela assinatura pendente.mp4]]
+![[9042 - EV-12 - CT-016 - regressao 9750 encerrar para mim nao cancela assinatura pendente.mp4]]
 
 ---
 
@@ -432,7 +432,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-017, CT-019 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
+![[9042 - EV-13 - CT-017, CT-019 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
 
 *Mesma gravação cobre CT-019.*
 
@@ -450,7 +450,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-018, CT-020 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4]]
+![[9042 - EV-14 - CT-018, CT-020 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4]]
 
 *Mesma gravação cobre CT-020.*
 
@@ -468,7 +468,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-017, CT-019 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
+![[9042 - EV-13 - CT-017, CT-019 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4]]
 
 *Mesma gravação cobre CT-017.*
 
@@ -486,7 +486,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-018, CT-020 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4]]
+![[9042 - EV-14 - CT-018, CT-020 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4]]
 
 *Mesma gravação cobre CT-018.*
 
@@ -506,7 +506,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 **Evidências de Testes:**
 
-![[9042 - CT-021 - avancar etapa combinado com encerrar para mim.mp4]]
+![[9042 - EV-15 - CT-021 - avancar etapa combinado com encerrar para mim.mp4]]
 
 ---
 
@@ -532,7 +532,55 @@ Nenhum. A única reprovação da rodada (CT-005) foi revista: o bloqueio total �
 
 ## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://9042)
 
-As gravações desta validação estão **embedadas em cada CT** (seção Casos de teste), no padrão `9042 - CT-NNN[, CT-NNN] - <descrição>.mp4`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].
+As gravações estão **embedadas em cada CT** (seção Casos de teste), no padrão `9042 - EV-NN - CT-NNN[, CT-NNN] - <descrição>.mp4`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].
+**Índice de evidências** — 21 CTs em **15 gravações**, porque uma gravação pode cobrir mais de um caso. Por isso a evidência tem numeração própria (`EV-NN`), **contígua e sem buraco**: dá pra percorrer EV-01 → EV-15 sem procurar arquivo nem pular número.
+
+| CT | Gravação |
+|---|---|
+| CT-001 | EV-01 |
+| CT-002 | EV-02 |
+| CT-003 | EV-03 |
+| CT-004 | EV-01 |
+| CT-005 | EV-03 |
+| CT-006 | EV-01 |
+| CT-007 | EV-04 |
+| CT-008 | EV-05 |
+| CT-009 | EV-04 |
+| CT-010 | EV-06 |
+| CT-011 | EV-07 |
+| CT-012 | EV-08 |
+| CT-013 | EV-09 |
+| CT-014 | EV-10 |
+| CT-015 | EV-11 |
+| CT-016 | EV-12 |
+| CT-017 | EV-13 |
+| CT-018 | EV-14 |
+| CT-019 | EV-13 |
+| CT-020 | EV-14 |
+| CT-021 | EV-15 |
+
+<details><summary>Ordem de arrasto (EV-01 → EV-15)</summary>
+
+| EV | Cobre | Arquivo |
+|---|---|---|
+| EV-01 | CT-001, CT-004, CT-006 | `9042 - EV-01 - CT-001, CT-004, CT-006 - conteiner exibido, assinatura pendente bloqueia e select habilita.mp4` |
+| EV-02 | CT-002 | `9042 - EV-02 - CT-002 - documento sem fluxo nao exibe o conteiner.mp4` |
+| EV-03 | CT-003, CT-005 | `9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4` |
+| EV-04 | CT-007, CT-009 | `9042 - EV-04 - CT-007, CT-009 - toolbar no estado bloqueado e avancar etapa.mp4` |
+| EV-05 | CT-008 | `9042 - EV-05 - CT-008 - permanecer na etapa atual emite sem movimentar.mp4` |
+| EV-06 | CT-010 | `9042 - EV-06 - CT-010 - retroceder etapa pelo conteiner.mp4` |
+| EV-07 | CT-011 | `9042 - EV-07 - CT-011 - atalho leva a etapa do atalho.mp4` |
+| EV-08 | CT-012 | `9042 - EV-08 - CT-012 - continuar aberto mantem o documento aberto.mp4` |
+| EV-09 | CT-013 | `9042 - EV-09 - CT-013 - encerrar para mim arquiva na mesa do usuario.mp4` |
+| EV-10 | CT-014 | `9042 - EV-10 - CT-014 - encerrar para meu setor mantem tramitacao nos demais.mp4` |
+| EV-11 | CT-015 | `9042 - EV-11 - CT-015 - servidor sem permissao de encerrar na etapa nao recebe a opcao.mp4` |
+| EV-12 | CT-016 | `9042 - EV-12 - CT-016 - regressao 9750 encerrar para mim nao cancela assinatura pendente.mp4` |
+| EV-13 | CT-017, CT-019 | `9042 - EV-13 - CT-017, CT-019 - grupo de sigilo exibido e despacho emitido com sigilo restringe visualizacao.mp4` |
+| EV-14 | CT-018, CT-020 | `9042 - EV-14 - CT-018, CT-020 - grupo de sigilo ausente e despacho emitido sem sigilo.mp4` |
+| EV-15 | CT-021 | `9042 - EV-15 - CT-021 - avancar etapa combinado com encerrar para mim.mp4` |
+
+</details>
+
 
 ---
 
