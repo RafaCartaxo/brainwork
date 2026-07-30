@@ -630,12 +630,21 @@ def ledger_do_dia(texto):
             for e2, kws, modelo in LEDGER:
                 if e2 != emoji:
                     continue
+                item = modelo.format(rid=rid) if rid else f"Registrar: {chave} (feito)"
+                # rede contra re-adicionar o próprio item a cada execução: o
+                # `coberto` abaixo exige a palavra-chave do verbo na linha, e o
+                # fallback genérico "Registrar: <chave> (feito)" não tem verbo
+                # nenhum. Resultado: atividade **sem SGV** ganhava uma linha de
+                # ledger nova em TODA execução do 🔄 (precedente: 30/07, a
+                # suspeita descartada duplicou 2x na mesma sessão). O `coberto`
+                # segue valendo pra casar com pendência escrita à mão.
+                if any(a.startswith(item) for a in afazer):
+                    break
                 coberto = any(
                     (chave.lower() in norm_id(a).lower()) and any(k in a.lower() for k in kws)
                     for a in afazer)
                 if coberto:
                     break
-                item = modelo.format(rid=rid) if rid else f"Registrar: {chave} (feito)"
                 texto = re.sub(r"(> \*\*A fazer hoje:\*\*\n)",
                                rf"\g<1>> - [x] {item} → registrado\n", texto, count=1)
                 afazer.append(item)
