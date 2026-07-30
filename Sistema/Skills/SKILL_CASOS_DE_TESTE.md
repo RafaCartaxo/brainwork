@@ -18,18 +18,34 @@ Criar e organizar casos de teste seguindo o padrão utilizado pelo QA. ([Templat
 
 Mesmo formato dos CTs embutidos em cards de bug ([[SKILL_BUGS|SKILL_BUGS]]) — um padrão único de CT em todo o vault, o que muda é só a numeração (CT-001 na nota avulsa, CT-B01 no card de bug):
 
-- **CT-001 Nome do Cenário**
-    Dado que...
-    Quando...
-    Então...
+```markdown
+### **CT-001 Nome do Cenário**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** ...
+**Quando** ...
+**Então** ...
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
 
-Cada caso é um item de lista (`- **CT-001 Título**`) com o Dado/E/Quando/Então **sem bullet própria** — linhas soltas, indentadas como continuação do item. O "Execução Passou?" é uma to-do list com "Sim" em verde e "Não" em vermelho.
+**Evidências de Testes:**
+
+---
+```
+
+**Cada CT é um cabeçalho, não um item de lista.** Isso é o que faz ele aparecer no outline da nota, dobrar/desdobrar sozinho e ser linkável por `[[nota#CT-001 ...]]`.
+
+| Elemento | Regra |
+|---|---|
+| Cabeçalho | `### **CT-NNN Título**` em **nota avulsa**; `#### **CT-BNN Título**` dentro de card, pra ficar **aninhado** sob `### Casos de Teste Básicos` em vez de virar irmão de Descrição/Evidências |
+| Palavra-chave | `**Dado**` / `**E**` / `**Quando**` / `**Então**` em **negrito**, uma por linha, sem bullet e sem indentação |
+| Execução | `**Execução Passou?**` em negrito, seguido de `- [ ] Sim` / `- [ ] Não` — **texto puro, sem `<span>` colorido** |
+| Evidências | `**Evidências de Testes:**` em negrito; o embed vem depois, em linha própria |
+| Separador | `---` entre CTs |
+
+> [!note]- Por que mudou (30/07/2026)
+> O formato anterior era um item de lista com tudo indentado como continuação (`- **CT-001 ...**` + linhas indentadas + `<span>` verde/vermelho). Funcionava, mas: não entrava no outline, dificultava dobrar CT por CT numa nota com 12 casos, e o HTML inline atrapalhava a leitura no modo edição. Rafael passou o formato desejado em 30/07 e o padrão foi trocado. Amostra viva: [[QA Workspace/02 Demandas/Concluídas/10437 - Bug Nao Entra No Documento Criado E Redireciona Pra Mesa De Trabalho|SGV-10437]].
 
 ---
 

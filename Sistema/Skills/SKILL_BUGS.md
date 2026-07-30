@@ -64,17 +64,18 @@ Então...
 
 ### Casos de Teste Básicos
 
-- **CT-B01 Título do caso de teste**
-    Dado que...
-    E...
-    Quando...
-    Então...
+#### **CT-B01 Título do caso de teste**
 
-    - Execução Passou?
-        - [ ] <span style="color:#2ecc71">Sim</span>
-        - [ ] <span style="color:#e74c3c">Não</span>
+**Dado** ...
+**E** ...
+**Quando** ...
+**Então** ...
 
-    - Evidências de Testes:
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 
@@ -185,7 +186,9 @@ O título da seção leva dois links de atalho: `### Evidências [📁](file:///
 
 ### Casos de Teste Básicos
 
-Detalhar os cenários de validação no padrão Dado/Quando/Então (CT-B01, CT-B02...), com "Execução Passou?" e "Evidências de Testes" por caso. Estruturar cada caso como um item de lista (`- **CT-B01 Título**`) com o Dado/E/Quando/Então **sem bullet própria** — linhas soltas, só indentadas, como continuação do mesmo item (fica menos poluído visualmente e ainda recolhe o CT inteiro de uma vez no Obsidian, já que a dobra segue o item pai). O "Execução Passou?" deve ser uma to-do list com "Sim" em verde e "Não" em vermelho, para facilitar a visualização do resultado.
+Detalhar os cenários de validação no padrão Dado/Quando/Então (CT-B01, CT-B02...), com "Execução Passou?" e "Evidências de Testes" por caso.
+
+**Cada CT é um cabeçalho `#### **CT-BNN Título**`**, não um item de lista — assim entra no outline do card e dobra sozinho. O `####` é deliberado: mantém o CT **aninhado** sob `### Casos de Teste Básicos` em vez de virar irmão de Descrição/Evidências. Palavras-chave em negrito (`**Dado**`, `**E**`, `**Quando**`, `**Então**`), uma por linha, sem bullet e sem indentação. `**Execução Passou?**` seguido de `- [ ] Sim` / `- [ ] Não` em **texto puro, sem `<span>` colorido**. `---` entre CTs. Formato completo e o porquê da mudança (30/07/2026) em [[SKILL_CASOS_DE_TESTE#Estrutura Padrão|SKILL_CASOS_DE_TESTE]].
 
 ### Informações adicionais
 
