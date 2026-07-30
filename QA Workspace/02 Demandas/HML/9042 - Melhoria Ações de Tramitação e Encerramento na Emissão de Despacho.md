@@ -60,10 +60,11 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 - **Nomenclatura a confirmar**: este card usa os rótulos do **Figma** — "Continuar aberto" / "Encerrar para mim" / "Encerrar para meu setor". A spec do Notion diz "Encerrar no Setor" / "Encerrar na Mesa". Confirmar o rótulo final com o time antes de reprovar por texto de botão.
 - **MR não identificado**: nem o export do Notion nem o Figma citam o MR da entrega. Confirmar com Gabriel Desidério / Lucas Cabral — sem isso não há revisão de escopo de MR ([[Sistema/Skills/SKILL_REVISAO_ESCOPO_MR|SKILL_REVISAO_ESCOPO_MR]]).
-- **Risco de regressão da [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]** (reaberta em DEV): aquele bug é "setores das Regras de tramitação não mantidos ao avançar/retroceder". Esta melhoria adiciona avançar/retroceder num **ponto de entrada novo** e pode herdar o mesmo defeito — CT-012 cobre.
+- **Risco de regressão da [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]** (reaberta em DEV): aquele bug é "setores das Regras de tramitação não mantidos ao avançar/retroceder". Esta melhoria adiciona avançar/retroceder num **ponto de entrada novo** e pode herdar o mesmo defeito — CT-025 cobre.
 - **Typo de copy no tooltip**: o Figma traz "Esta ação só **esta** disponível..." (falta acento em "está"). Reportar como ajuste de copy.
-- **Matriz de combinações**: o Figma garante que movimentação e encerramento são independentes, mas remete a "todas as regras já implementadas" sem listar os casos. CT-023 e CT-024 cobrem uma combinação em cada direção; se aparecer comportamento estranho, expandir a matriz.
+- **Matriz de combinações**: o Figma garante que movimentação e encerramento são independentes, mas remete a "todas as regras já implementadas" sem listar os casos. CT-022 e CT-023 cobrem uma combinação em cada direção; se aparecer comportamento estranho, expandir a matriz.
 - ⚠️ **Ponto de entrada novo para um defeito já aberto**: a [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|SGV-10451]] (aberta em 29/07) é exatamente *"encerrar para mim documento com fluxo de trabalho → toolbar só com Reabrir documento, sem histórico nem baixar"*. Esta melhoria cria um **caminho novo pra disparar essa mesma ação, no mesmo tipo de documento**. Ao executar o CT-014, olhar a toolbar depois: se o defeito aparecer por aqui também, o escopo do fix da 10451 muda (não é a toolbar de um caminho, é a toolbar do estado). **Não virou CT** porque a toolbar não é escopo desta entrega — é observação a fazer de passagem.
+- **"Encerrar para todos" no contêiner — pergunta aberta, não critério**: o Figma mostra **três** opções e a plataforma tem "Encerrar para todos" em outro lugar (toolbar; regra documentada na [[QA Workspace/02 Demandas/Concluídas/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]] — é a única que cancela assinaturas pendentes). **Confirmar com o time** se a ausência aqui é intencional. Eu havia escrito isso como CT ("só existem três opções") e **removi**: mockup com três opções não é regra de que uma quarta seja proibida, e como a lista de opções **depende de permissão** (CA17), "exatamente três" não é afirmável — o CT levaria a reprovar comportamento possivelmente correto.
 - **Encerrar aqui é praticamente irreversível**: [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]] registra que documento encerrado com fluxo de trabalho **pode ser reaberto, mas o fluxo não volta a acontecer**. Ou seja, escolher "Encerrar para mim/para meu setor" no ato da emissão encerra o fluxo de vez — reabrir devolve o documento, não a esteira. Vale ter massa de teste separada pros CTs do grupo D, porque cada execução queima um documento.
 
 ---
@@ -112,21 +113,20 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 - [ ] **CA15** — "Encerrar para mim" põe o documento em **Encerrado**, remove da fila de pendências gerais e arquiva na **mesa do usuário logado**
 - [ ] **CA16** — "Encerrar para meu setor" põe o documento em **Encerrado no setor**, e o documento **segue em tramitação nos demais setores envolvidos**
 - [ ] **CA17** — Servidor **sem** permissão de encerrar na etapa **não recebe** a opção de encerrar para o setor
-- [ ] **CA18** — O contêiner oferece **apenas as três** opções (continuar aberto / para mim / para meu setor) — **"Encerrar para todos" não aparece** aqui
-- [ ] **CA19** — Encerrar **para mim** ou **para meu setor** pelo contêiner **não cancela** solicitações de assinatura pendentes
+- [ ] **CA18** — Encerrar **para mim** ou **para meu setor** pelo contêiner **não cancela** solicitações de assinatura pendentes
 
 **E. Sigilo**
 
-- [ ] **CA20** — Despacho **com** opções de sigilo exibe o grupo de sigilo, herdado de módulo/serviço/assunto
-- [ ] **CA21** — Despacho **sem** opções de sigilo **não** exibe o grupo de sigilo
-- [ ] **CA22** — Emitido **com** sigilo, **somente os setores habilitados** veem o conteúdo e os dados do solicitante
-- [ ] **CA23** — Emitido **sem** sigilo, o conteúdo fica visível aos envolvidos normalmente
+- [ ] **CA19** — Despacho **com** opções de sigilo exibe o grupo de sigilo, herdado de módulo/serviço/assunto
+- [ ] **CA20** — Despacho **sem** opções de sigilo **não** exibe o grupo de sigilo
+- [ ] **CA21** — Emitido **com** sigilo, **somente os setores habilitados** veem o conteúdo e os dados do solicitante
+- [ ] **CA22** — Emitido **sem** sigilo, o conteúdo fica visível aos envolvidos normalmente
 
 **F. Combinações e regressões**
 
-- [ ] **CA24** — Movimentação e encerramento são **independentes e combináveis** na mesma emissão
-- [ ] **CA25** — Quando o despacho **exige assinatura**, o avanço **não se conclui no mesmo clique**
-- [ ] **CA26** — Sem regressão na [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]: setores das Regras de tramitação **mantidos** ao avançar/retroceder
+- [ ] **CA23** — Movimentação e encerramento são **independentes e combináveis** na mesma emissão
+- [ ] **CA24** — Quando o despacho **exige assinatura**, o avanço **não se conclui no mesmo clique**
+- [ ] **CA25** — Sem regressão na [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]]: setores das Regras de tramitação **mantidos** ao avançar/retroceder
 
 ---
 
@@ -162,7 +162,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 
 ---
 
-#### **CT-003 Fluxo não iniciado não movimenta nem encerra** *(CA3)* - não aplica, documento com fluxo não iniciado não emite despacho.
+#### **CT-003 Fluxo não iniciado não movimenta nem encerra** *(CA3)*
 
 **Dado** que eu tenho um documento com fluxo de trabalho configurado mas **não iniciado**
 **Quando** eu acesso a emissão de despacho
@@ -171,6 +171,12 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Tramitaçã
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
+- [x] Não se aplica
+
+> [!info]- Por que não se aplica
+> Documento com fluxo **não iniciado não emite despacho** (Rafael, 30/07) — logo não existe a tela onde o contêiner apareceria. A pré-condição do cenário é inalcançável pela via da emissão.
+>
+> O **CA3 continua válido como regra** ("fluxo não iniciado não movimenta nem encerra"): ele está satisfeito por construção, não por teste. Se algum dia o produto permitir emitir despacho com fluxo não iniciado, este CT volta a ser executável.
 
 **Evidências de Testes:**
 
@@ -367,21 +373,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-017 Contêiner não oferece "Encerrar para todos"** *(CA18)*
-
-**Dado** que eu tenho um documento com fluxo configurado e iniciado, sem pendências
-**Quando** eu abro as opções de encerramento do contêiner
-**Então** verifico que só existem **três** opções — "Continuar aberto", "Encerrar para mim" e "Encerrar para meu setor" — e que **"Encerrar para todos" não aparece**
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-
-**Evidências de Testes:**
-
----
-
-#### **CT-018 Regressão SGV-9750 — encerrar para mim ou para meu setor não cancela assinatura pendente** *(CA19)*
+#### **CT-017 Regressão SGV-9750 — encerrar para mim ou para meu setor não cancela assinatura pendente** *(CA18)*
 
 **Dado** que o documento tem uma solicitação de assinatura pendente num despacho vinculado
 **Quando** eu encerro "para mim" ou "para meu setor" pelo contêiner
@@ -397,7 +389,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ### E. Sigilo
 
-#### **CT-019 Grupo de sigilo exibido em despacho com opções de sigilo** *(CA20)*
+#### **CT-018 Grupo de sigilo exibido em despacho com opções de sigilo** *(CA19)*
 
 **Dado** que o módulo/serviço/assunto tem opções de privacidade configuradas
 **Quando** eu emito um despacho customizado de etapa
@@ -411,7 +403,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-020 Grupo de sigilo ausente em despacho sem opções de sigilo** *(CA21)*
+#### **CT-019 Grupo de sigilo ausente em despacho sem opções de sigilo** *(CA20)*
 
 **Dado** que o módulo/serviço/assunto **não** tem opções de privacidade configuradas
 **Quando** eu emito um despacho customizado de etapa
@@ -425,7 +417,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-021 Despacho emitido com sigilo restringe a visualização** *(CA22)*
+#### **CT-020 Despacho emitido com sigilo restringe a visualização** *(CA21)*
 
 **Dado** que o despacho tem opções de sigilo e eu marco o despacho como **sigiloso**
 **Quando** eu emito o despacho pelo contêiner
@@ -439,7 +431,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-022 Despacho emitido sem sigilo fica visível aos envolvidos** *(CA23)*
+#### **CT-021 Despacho emitido sem sigilo fica visível aos envolvidos** *(CA22)*
 
 **Dado** que o despacho tem opções de sigilo e eu **não** marco o despacho como sigiloso
 **Quando** eu emito o despacho pelo contêiner
@@ -455,7 +447,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ### F. Combinações e regressões
 
-#### **CT-023 Avançar etapa combinado com encerrar para mim** *(CA24)*
+#### **CT-022 Avançar etapa combinado com encerrar para mim** *(CA23)*
 
 **Dado** que a etapa atual não tem pendências
 **Quando** eu seleciono "Avançar etapa" **e** "Encerrar para mim" na mesma emissão
@@ -469,7 +461,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-024 Retroceder etapa combinado com encerrar para meu setor** *(CA24)*
+#### **CT-023 Retroceder etapa combinado com encerrar para meu setor** *(CA23)*
 
 **Dado** que a etapa atual não tem pendências e eu tenho permissão de encerrar na etapa
 **Quando** eu seleciono "Retroceder etapa" **e** "Encerrar para meu setor" na mesma emissão
@@ -483,7 +475,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-025 Despacho que exige assinatura não conclui o avanço no mesmo clique** *(CA25)*
+#### **CT-024 Despacho que exige assinatura não conclui o avanço no mesmo clique** *(CA24)*
 
 **Dado** que o despacho exige assinaturas
 **Quando** eu escolho avançar etapa e clico em "Emitir e Assinar"
@@ -497,7 +489,7 @@ não está sendo possível retroceder, está ficando bloqueado no despacho, mas 
 
 ---
 
-#### **CT-026 Regressão SGV-6373 — setores mantidos ao navegar etapas** *(CA26)*
+#### **CT-025 Regressão SGV-6373 — setores mantidos ao navegar etapas** *(CA25)*
 
 **Dado** que eu tenho um assunto/serviço com setores configurados nas Regras de tramitação
 **Quando** eu avanço e retrocedo etapas pelo contêiner "Próximo passo do documento"
