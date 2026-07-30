@@ -174,7 +174,461 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 
 ## Casos de teste
 
-*A escrever após a preparação da massa. A ordem segue os grupos dos critérios; a numeração das evidências é independente (`EV-NN`), conforme [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].*
+> [!tip] Ordem de execução importa em dois pontos
+> **O grupo A é local** — máscara, DV e normalização não passam pela API, então rodam com CNPJ **gerado**. Comece por ele: se a máscara estiver quebrada, o resto não se sustenta.
+>
+> **O CT-007 vem antes do CT-008, de propósito.** O CT-007 usa CNPJ **numérico real** e prova que a consulta de Razão Social funciona no ambiente. Sem esse controle, uma Razão Social vazia no CT-008 tem duas causas indistinguíveis — "a API não suporta o formato novo" ou "esse CNPJ não existe na Receita" — e o resultado não conclui nada.
+
+### A. Máscara e validação
+
+#### **CT-001 Placeholder do campo de CNPJ** *(CA1)*
+
+**Dado** que eu estou numa tela com campo de CNPJ (ex.: novo usuário PJ)
+**Quando** o campo está vazio
+**Então** verifico que o placeholder exibido é `XX.XXX.XXX/XXXX-XX`
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*Comportamento aprovado pelo design em 30/07 — o `X` uniforme é intencional e **não** indica que o DV aceita letra. Ver a nota `placeholder ≠ máscara` em Regras de negócio.*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-002 Máscara aceita letras nas 12 primeiras posições** *(CA2)*
+
+**Dado** que eu estou num campo de CNPJ
+**Quando** eu digito letras de A a Z nas 12 primeiras posições
+**Então** verifico que as letras são aceitas e exibidas na máscara
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-003 Máscara aceita somente dígitos nos 2 últimos caracteres** *(CA3)*
+
+**Dado** que eu estou num campo de CNPJ com as 12 primeiras posições preenchidas
+**Quando** eu tento digitar uma **letra** em qualquer um dos 2 últimos caracteres
+**Então** verifico que a letra **não é aceita**, e que dígitos de 0 a 9 são
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-004 Estrutura visual e contagem de caracteres** *(CA4)*
+
+**Dado** que eu preenchi um CNPJ alfanumérico completo
+**Quando** eu confiro o valor exibido no campo
+**Então** verifico a estrutura `XX.XXX.XXX/XXXX-XX` — **14 caracteres úteis** e **18 com a formatação** — com a mesma pontuação do formato antigo
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-005 Letra minúscula é normalizada para maiúscula** *(CA5)*
+
+**Dado** que eu estou num campo de CNPJ
+**Quando** eu digito as letras em **minúsculas**
+**Então** verifico que são convertidas para **maiúsculas** no campo, e que o valor salvo também está em maiúsculas
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-006 CNPJ alfanumérico com DV inválido é rejeitado** *(CA6)*
+
+**Dado** que eu tenho um CNPJ alfanumérico com **dígito verificador incorreto**
+**Quando** eu preencho o campo e tento avançar
+**Então** verifico que o valor é rejeitado, com mensagem que permita entender que o problema é o dígito verificador
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+### B. Cidadão PJ — cadastro, edição e exibição
+
+#### **CT-007 Controle — CNPJ numérico real preenche a Razão Social** *(CA7)*
+
+**Dado** que eu estou no cadastro de novo usuário PJ
+**Quando** eu informo um CNPJ **numérico de empresa real** (que existe na base da Receita)
+**Então** verifico que a **Razão Social é preenchida automaticamente** pela API e fica não editável
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*Este é o **controle** do CT-008. Se ele falhar, a consulta está indisponível no ambiente e o CT-008 não pode ser interpretado — resolver isto antes de seguir.*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-008 Razão Social preenchida com CNPJ alfanumérico real** *(CA8)*
+
+**Dado** que o CT-007 passou (a consulta funciona no ambiente)
+**E** que eu tenho um CNPJ **alfanumérico de empresa real**
+**Quando** eu informo esse CNPJ no cadastro de novo usuário PJ
+**Então** verifico que a **Razão Social é preenchida automaticamente** e o campo segue não editável
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*⚠️ **Teste de maior valor da entrega.** Nenhum arquivo de consulta externa de CNPJ aparece no MR !657 — se a Razão Social não vier, o cadastro PJ **não conclui e não há workaround**, porque o campo é obrigatório e não editável. Nesse caso é **bloqueio de escopo**, não bug de máscara.*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-009 Cadastro público (Signup PJ)** *(CA9)*
+
+**Dado** que eu acesso o cadastro público em `/cadastro/{instanceId}`
+**E** que escolho o tipo Pessoa Jurídica
+**Quando** eu preencho o CNPJ alfanumérico e concluo o cadastro
+**Então** verifico que o cadastro é criado e o CNPJ fica salvo no formato alfanumérico
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-010 Finalização de cadastro do cidadão** *(CA10)*
+
+**Dado** que existe um cidadão PJ com cadastro pendente de conclusão
+**Quando** eu concluo o cadastro em `/finalizar-cadastro-cidadao` informando o CNPJ alfanumérico
+**Então** verifico que a conclusão é aceita e o CNPJ é gravado corretamente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-011 Novo usuário PJ pelo admin** *(CA11)*
+
+**Dado** que eu estou em `/cliente/{id}/cidadaos/criar` como admin
+**Quando** eu cadastro um cidadão PJ com CNPJ alfanumérico
+**Então** verifico que o cadastro conclui e o CNPJ aparece formatado na listagem
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-012 Edição de cidadão PJ** *(CA12)*
+
+**Dado** que existe um cidadão PJ com CNPJ alfanumérico
+**Quando** eu abro a edição em `/cliente/{id}/cidadaos/editar/{citizenId}` e salvo
+**Então** verifico que o CNPJ é exibido corretamente no campo e que o salvamento conclui sem erro de validação
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-013 Unicidade independente de caixa** *(CA13)*
+
+**Dado** que existe um cidadão PJ cadastrado com CNPJ alfanumérico (letras em maiúsculas)
+**Quando** eu tento cadastrar outro usuário com o **mesmo** CNPJ, digitando as letras em **minúsculas**
+**Então** verifico que o sistema **impede** o cadastro por duplicidade — a normalização de caixa não permite dois usuários pro mesmo CNPJ
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*A doc de [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] é explícita: "só existe **um** usuário por CNPJ".*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-014 Modal de visualização na listagem de cidadãos** *(CA14)*
+
+**Dado** que existe um cidadão PJ com CNPJ alfanumérico
+**Quando** eu abro o modal de visualização em `/cliente/{id}/cidadaos`
+**Então** verifico que o CNPJ é exibido formatado, com letras em maiúsculas e a pontuação correta
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-015 Meu perfil do cidadão PJ** *(CA15)*
+
+**Dado** que eu estou logado como cidadão PJ com CNPJ alfanumérico
+**Quando** eu acesso `/cidadao/meu-perfil`
+**Então** verifico que o CNPJ é exibido formatado corretamente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+### C. Login e recuperação de acesso
+
+#### **CT-016 Login do cidadão com CNPJ alfanumérico** *(CA16)*
+
+**Dado** que existe um cidadão PJ ativo com CNPJ alfanumérico
+**Quando** eu informo esse CNPJ e a senha em `/login/cidadao/{id}`
+**Então** verifico que o login é concluído com sucesso
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*O card registra que o campo de login **rejeitava qualquer CNPJ com letra** por depender de uma checagem `isNaN` — este CT é a verificação direta daquele conserto.*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-017 Recuperação de acesso com CNPJ alfanumérico** *(CA17)*
+
+**Dado** que eu tenho um cidadão PJ com CNPJ alfanumérico
+**Quando** eu uso o fluxo de recuperação de acesso informando esse CNPJ
+**Então** verifico que o CNPJ é aceito e o fluxo segue normalmente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+### D. Órgão / instância
+
+#### **CT-018 Cadastro de órgão com CNPJ alfanumérico** *(CA18)*
+
+**Dado** que eu estou em `/admin/instancias/criar`
+**Quando** eu cadastro um órgão informando CNPJ alfanumérico
+**Então** verifico que o cadastro conclui e o CNPJ é gravado no formato alfanumérico
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+> [!warning]- Provisório — refinar após a primeira observação
+> O `Então` está no nível de precisão possível **sem doc e sem ter visto a tela**: não existe doc de **órgão/instância** em `04 Conhecimento/Módulos/`, então não se sabe quais campos são obrigatórios nem **se o cadastro de órgão consulta a API** de CNPJ (a doc de consulta cobre só cidadão). Ao rodar, ajustar o texto pro comportamento real.
+>
+> **O número deste CT não muda** quando for refinado — renumerar depois que existe evidência nomeada quebra o vínculo `CT-NNN` ↔ arquivo (precedente de 30/07 na SGV-9042).
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-019 Edição de órgão preserva o CNPJ alfanumérico** *(CA19)*
+
+**Dado** que existe um órgão com CNPJ alfanumérico
+**Quando** eu abro `/admin/instancias/editar/{id}` e salvo
+**Então** verifico que o CNPJ é exibido corretamente e o salvamento conclui sem erro
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+> [!warning]- Provisório — refinar após a primeira observação
+> O `Então` está no nível de precisão possível **sem doc e sem ter visto a tela**: mesma razão do CT-018 — sem doc de instância, não se sabe o comportamento esperado dos campos ao editar. Ao rodar, ajustar o texto pro comportamento real.
+>
+> **O número deste CT não muda** quando for refinado — renumerar depois que existe evidência nomeada quebra o vínculo `CT-NNN` ↔ arquivo (precedente de 30/07 na SGV-9042).
+
+**Evidências de Testes:**
+
+---
+
+### E. Saída em documento e assinatura
+
+#### **CT-020 CNPJ alfanumérico no PDF gerado** *(CA20)*
+
+**Dado** que existe um documento de uma PJ com CNPJ alfanumérico
+**Quando** eu gero o PDF (despacho, capa de documento e modelo base)
+**Então** verifico que o CNPJ aparece **formatado corretamente** em cada um, com letras em maiúsculas e a pontuação certa
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+> [!warning]- Provisório — refinar após a primeira observação
+> O `Então` está no nível de precisão possível **sem doc e sem ter visto a tela**: o card cita "funções internas de formatação de CNPJ" nos três geradores, mas **não diz onde** o CNPJ aparece em cada saída — falta identificar a posição exata no despacho, na capa e no modelo base. Ao rodar, ajustar o texto pro comportamento real.
+>
+> **O número deste CT não muda** quando for refinado — renumerar depois que existe evidência nomeada quebra o vínculo `CT-NNN` ↔ arquivo (precedente de 30/07 na SGV-9042).
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-021 Assinatura por código com CNPJ alfanumérico** *(CA21)*
+
+**Dado** que existe uma solicitação de assinatura para um signatário PJ com CNPJ alfanumérico
+**Quando** eu acesso `/cliente/{id}/solicitacao-assinatura/{moduleCode}/{eventId}` e informo o CNPJ
+**Então** verifico que o CNPJ é aceito e a assinatura segue o fluxo
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-022 Formatação e anonimização no fluxo de assinatura** *(CA22)*
+
+**Dado** que uma PJ com CNPJ alfanumérico assinou um documento
+**Quando** eu confiro o registro da assinatura e o documento assinado
+**Então** verifico que o CNPJ aparece formatado e **sem corrupção do valor** (nenhuma letra trocada, removida ou substituída)
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*A [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|doc de Assinaturas]] registra que "PJ com ICP aceita certificados vinculados diretamente ao CNPJ ou ao responsável legal". Se **não houver certificado de teste** com CNPJ alfanumérico, registrar como **cobertura em aberto** em vez de dar por testado.*
+
+**Evidências de Testes:**
+
+---
+
+### F. Construtor de formulários
+
+#### **CT-023 Campo com máscara CNPJ no construtor de formulários** *(CA23)*
+
+**Dado** que eu configuro um campo de número com máscara CNPJ no construtor (módulo principal, módulo cliente e assunto/serviço)
+**Quando** um usuário preenche esse campo com CNPJ alfanumérico
+**Então** verifico que o valor é aceito, mascarado e salvo corretamente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+> [!warning]- Provisório — refinar após a primeira observação
+> O `Então` está no nível de precisão possível **sem doc e sem ter visto a tela**: não existe doc do **construtor de formulários** em `04 Conhecimento/Módulos/`, então não se sabe como o campo com máscara CNPJ é configurado nem onde o valor é exibido depois. Ao rodar, ajustar o texto pro comportamento real.
+>
+> **O número deste CT não muda** quando for refinado — renumerar depois que existe evidência nomeada quebra o vínculo `CT-NNN` ↔ arquivo (precedente de 30/07 na SGV-9042).
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-024 Campo com máscara CNPJ em despacho personalizado de workflow** *(CA24)*
+
+**Dado** que existe um despacho personalizado de etapa com campo de máscara CNPJ
+**Quando** eu preencho esse campo com CNPJ alfanumérico e emito o despacho
+**Então** verifico que o valor é aceito e aparece correto no despacho emitido
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+> [!warning]- Provisório — refinar após a primeira observação
+> O `Então` está no nível de precisão possível **sem doc e sem ter visto a tela**: mesma razão do CT-023, e ainda depende de saber como o campo se comporta dentro do fluxo de trabalho. Ao rodar, ajustar o texto pro comportamento real.
+>
+> **O número deste CT não muda** quando for refinado — renumerar depois que existe evidência nomeada quebra o vínculo `CT-NNN` ↔ arquivo (precedente de 30/07 na SGV-9042).
+
+**Evidências de Testes:**
+
+---
+
+### G. Retrocompatibilidade
+
+#### **CT-025 CNPJ numérico existente segue funcionando** *(CA25)*
+
+**Dado** que existe um cidadão PJ com CNPJ **numérico** já cadastrado
+**Quando** eu faço login, abro a edição, vejo a listagem e gero um PDF com esse cidadão
+**Então** verifico que tudo funciona como antes, sem erro de validação e com o CNPJ exibido no formato numérico
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*Este é o regressivo central. Como a máscara nova é **superconjunto** da antiga (12 posições alfanuméricas aceitam número), é o **mesmo campo** servindo os dois formatos — uma quebra aqui derruba os dois de uma vez.*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-026 Órgão com CNPJ inválido legado na edição** *(CA26)*
+
+**Dado** que existe um órgão/instância cadastrado com CNPJ numérico **inválido** (aceito pela regra antiga, que só checava comprimento)
+**Quando** eu abro a edição desse órgão e tento salvar
+**Então** verifico que há comportamento definido — mensagem clara ou permissão de salvar — sem travar sem aviso nem perder o registro
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*Risco **rebaixado**: para **cidadão PJ** a Razão Social vem de API obrigatória, então CNPJ inexistente nunca completou cadastro. Sobra a instância, que não tem doc e pode não consultar API. **Se não houver órgão inválido na base, marcar como não se aplica** em vez de forçar o cenário.*
+
+**Evidências de Testes:**
+
+---
+
+### H. Superfícies fora da lista declarada
+
+#### **CT-027 Busca por CNPJ no Rastrear Documento** *(CA27)*
+
+**Dado** que existe uma PJ com CNPJ alfanumérico que tem documentos no sistema
+**Quando** eu busco por esse CNPJ no input-search do Rastrear Documento, **com** e **sem** pontuação
+**Então** verifico que a PJ e seus documentos são retornados nas duas formas
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+*Tela **não declarada** na lista de impactos do card, mas confirmada pelo Rafael. A doc do módulo tem regra própria: "o campo deve suportar CPF/CNPJ com pontuação; a busca funciona independente da presença de pontuação".*
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-028 Listagem e pesquisa de cidadãos** *(CA28)*
+
+**Dado** que existe uma PJ com CNPJ alfanumérico, inclusive alguma com cadastro incompleto
+**Quando** eu pesquiso e listo cidadãos
+**Então** verifico que o CNPJ alfanumérico é exibido corretamente, inclusive na linha com a tag "Cadastro incompleto"
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+
+**Evidências de Testes:**
 
 ---
 
