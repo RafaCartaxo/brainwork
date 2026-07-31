@@ -11,7 +11,8 @@ data_fim: ""
 responsavel: Rafael
 cadastrado_por: ""
 modulo: usuario-cidadao
-ambiente: DEV
+ambiente: HML
+deploy: pendente_hml
 ---
 # CNPJ alfanumérico aceita letra minúscula sem normalizar no campo
 
@@ -54,13 +55,13 @@ E verifico que o CNPJ segue **exibido em minúsculas** depois de gravado
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://10511)
 
-Uma gravação por cenário, na mesma ordem do passo a passo. Cada uma está embedada também no CT correspondente.
+Duas gravações por cenário — o defeito e a correção aprovada. Todas embedadas também no CT correspondente.
 
-| Gravação | Cenário | CT |
-|---|---|---|
-| `10511 - cenário 1.mp4` | Cadastro de cidadão PJ pelo servidor | CT-B01 |
-| `10511 - cenário 2.mp4` | Cadastro público (signup PJ) | CT-B02 |
-| `10511 - cenário 3.mp4` | Campo com máscara CNPJ no construtor de formulários | CT-B03 |
+| Cenário | CT | Defeito | Correção aprovada |
+|---|---|---|---|
+| Cadastro de cidadão PJ pelo servidor | CT-B01 | `10511 - cenário 1.mp4` | `10511 - cenário 1 ok.mp4` |
+| Cadastro público (signup PJ) | CT-B02 | `10511 - cenário 2.mp4` | `10511 - cenário 2 ok.mp4` |
+| Campo com máscara CNPJ no construtor | CT-B03 | `10511 - cenário 3.mp4` | `10511 - cenário 3 ok.mp4` |
 
 ---
 
@@ -74,10 +75,10 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 
 ### Critérios de aceite
 
-- [ ] No cadastro de cidadão PJ **pelo servidor**, a letra digitada em minúscula aparece em maiúscula no próprio campo, antes de salvar
-- [ ] No **cadastro público** (signup PJ), a letra digitada em minúscula aparece em maiúscula no próprio campo, antes de concluir
-- [ ] No campo com máscara CNPJ do **construtor de formulários**, a letra minúscula é normalizada e o valor é exibido em maiúscula — inclusive depois de salvo e reaberto
-- [ ] Nas três superfícies, o **valor gravado** permanece em maiúscula (regressão: nos cenários 1 e 2 isso já funciona hoje e não pode quebrar)
+- [x] No cadastro de cidadão PJ **pelo servidor**, a letra digitada em minúscula aparece em maiúscula no próprio campo, antes de salvar
+- [x] No **cadastro público** (signup PJ), a letra digitada em minúscula aparece em maiúscula no próprio campo, antes de concluir
+- [x] No campo com máscara CNPJ do **construtor de formulários**, a letra minúscula é normalizada e o valor é exibido em maiúscula — inclusive depois de salvo e reaberto
+- [x] Nas três superfícies, o **valor gravado** permanece em maiúscula (regressão: nos cenários 1 e 2 isso já funciona hoje e não pode quebrar)
 
 ---
 
@@ -92,8 +93,8 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 **E** o valor gravado permanece em maiúsculas
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -101,6 +102,10 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 ![[10511 - cenário 1.mp4]]
 
 *Mesma gravação copiada para a [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] como `9493 - EV-01 - CT-019 - ...`, onde reprova o CT-019.*
+
+![[10511 - cenário 1 ok.mp4]]
+
+*Correção aprovada em DEV (31/07). A gravação acima é o defeito; esta é o comportamento corrigido.*
 
 ---
 
@@ -113,13 +118,17 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 **E** o valor gravado permanece em maiúsculas
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
 ![[10511 - cenário 2.mp4]]
+
+![[10511 - cenário 2 ok.mp4]]
+
+*Correção aprovada em DEV (31/07). A gravação acima é o defeito; esta é o comportamento corrigido.*
 
 ---
 
@@ -132,8 +141,8 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 **E** ao reabrir o registro o CNPJ é exibido em maiúsculas
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 > [!warning]- Este cenário falha diferente dos outros dois
@@ -144,6 +153,10 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 ![[10511 - cenário 3.mp4]]
 
 *Foi a primeira gravação da sessão — nasceu com nome genérico e foi renomeada pro padrão `cenário N` quando o Rafael confirmou a qual cenário pertencia.*
+
+![[10511 - cenário 3 ok.mp4]]
+
+*Correção aprovada em DEV (31/07). A gravação acima é o defeito; esta é o comportamento corrigido.*
 
 ---
 
@@ -166,3 +179,4 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 
 - Histórico:
     - 2026-07-31 - 🐛 Bug cadastrado
+    - 2026-07-31 - ✅ Aprovada em DEV (os 3 cenários retestados e aprovados; card segue pra HML com `deploy: pendente_hml`)

@@ -124,7 +124,7 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 - [x] **CA2** — A máscara **aceita letras (A–Z)** nas 12 primeiras posições
 - [ ] **CA3** — A máscara aceita **somente dígitos** nos 2 últimos caracteres (dígitos verificadores)
 - [x] **CA4** — A estrutura visual se mantém: **14 caracteres úteis**, **18 com a formatação**, mesma pontuação
-- [ ] **CA5** — Letra digitada em **minúscula** é normalizada para maiúscula *(**reprovado** — CT-019: converte só ao salvar, não no campo; bug [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]])*
+- [ ] **CA5** — Letra digitada em **minúscula** é normalizada para maiúscula *(**reprovado** — CT-019: converte só ao salvar, não no campo; bug [[QA Workspace/02 Demandas/HML/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]])*
 - [ ] **CA6** — CNPJ alfanumérico com **DV inválido** é rejeitado, com mensagem que permita entender o erro
 
 **B. Cidadão PJ — cadastro, edição e exibição** — *dependem de CNPJ **real**, porque Razão Social é obrigatória e vem da API*
@@ -563,7 +563,7 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 - [x] Não
 - [ ] Não se aplica
 
-> [!danger]- Reprovado em DEV — bug [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] aberto
+> [!danger]- Reprovado em DEV — bug [[QA Workspace/02 Demandas/HML/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] aberto
 > **A segunda metade do `Então` passa, a primeira não.** O valor salvo fica em maiúsculas, mas o campo **não converte durante a digitação** — a normalização só acontece ao finalizar o cadastro.
 >
 > Encontrado em execução exploratória (31/07) em três superfícies: cadastro de cidadão PJ pelo servidor, cadastro público (signup) e **campo com máscara CNPJ do construtor de formulários**. Neste último é pior — não há normalização em camada nenhuma e o valor fica **exibido em minúsculas** depois de gravado, o que também respinga no **CT-027** (ainda não executado).
@@ -574,7 +574,7 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 
 ![[9493 - EV-01 - CT-019 - letra minuscula nao normalizada no campo de cadastro.mp4]]
 
-*Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] — mesmo vídeo do **cenário 1** daquele card, cópia renomeada. Os cenários 2 e 3 do bug estão só lá: o 3 (construtor de formulários) falha também na segunda metade do `Então` deste CT e é assunto do **CT-027**, ainda não executado.*
+*Evidência compartilhada com [[QA Workspace/02 Demandas/HML/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] — mesmo vídeo do **cenário 1** daquele card, cópia renomeada. Os cenários 2 e 3 do bug estão só lá: o 3 (construtor de formulários) falha também na segunda metade do `Então` deste CT e é assunto do **CT-027**, ainda não executado.*
 
 ---
 
@@ -804,7 +804,7 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 ---
 
 > [!danger] Bugs encontrados
-> - [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] — **CNPJ alfanumérico aceita letra minúscula sem normalizar no campo**, reprovando o **CT-019** (CA5). Achado em execução exploratória em DEV (31/07), em três superfícies: cadastro pelo servidor, cadastro público e campo do construtor de formulários. Nas duas primeiras o dado final fica certo e a falha é de digitação; na terceira **não há normalização em camada nenhuma** e o valor fica exibido em minúsculas — o que também respinga no **CT-027** (CA23), ainda não executado.
+> - [[QA Workspace/02 Demandas/HML/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] — **CNPJ alfanumérico aceita letra minúscula sem normalizar no campo**, reprovando o **CT-019** (CA5). Achado em execução exploratória em DEV (31/07), em três superfícies: cadastro pelo servidor, cadastro público e campo do construtor de formulários. Nas duas primeiras o dado final fica certo e a falha é de digitação; na terceira **não há normalização em camada nenhuma** e o valor fica exibido em minúsculas — o que também respinga no **CT-027** (CA23), ainda não executado.
 > - **Busca por CNPJ alfanumérico não retorna resultado (o item existe)** — encontrado pelo **Waldemar** na execução do `TC-712` (CT-016), reprovando o CA28. Defeito **já aberto por ele no Notion**; o SGV ainda não é conhecido aqui no vault, então segue sem card próprio.
 >     > [!note]- Alcance do defeito
 >     > Atinge as três superfícies de busca por CNPJ do escopo: a **pesquisa de cidadãos** (CT-016, reprovado), a **listagem** com a tag "Cadastro incompleto" (CT-031, não executado) e a busca no **Rastrear Documento** com e sem pontuação (CT-030, não executado).
@@ -830,5 +830,5 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 ## Histórico
 
 - 2026-07-30 - 📝 Melhoria refinada (export do Notion + Figma processados; 26 critérios de aceite, 4 riscos levantados no gate de doc)
-- 2026-07-31 - 🔴 Reaberta em DEV (CT-019 reprovado: o campo não normaliza a letra minúscula durante a digitação — bug [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] aberto). Evidência compartilhada com o card do bug — mesmo vídeo, cópia renomeada
+- 2026-07-31 - 🔴 Reaberta em DEV (CT-019 reprovado: o campo não normaliza a letra minúscula durante a digitação — bug [[QA Workspace/02 Demandas/HML/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] aberto). Evidência compartilhada com o card do bug — mesmo vídeo, cópia renomeada
 - 2026-07-31 - 🔎 Análise (o plano que o Waldemar executou foi cruzado com os nossos casos: os 16 dele viraram a primeira parte da lista, com os resultados dele; os 15 que faltavam entraram depois. 12 critérios já aprovados, 1 não se aplica, 1 reprovado pelo defeito da busca, 13 ainda por testar)
