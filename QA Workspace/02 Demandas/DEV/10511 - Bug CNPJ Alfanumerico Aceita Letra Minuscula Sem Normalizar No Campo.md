@@ -54,7 +54,13 @@ E verifico que o CNPJ segue **exibido em minúsculas** depois de gravado
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://10511)
 
-![[10511 - cnpj alfanumerico aceita letra minuscula sem.mp4]]
+Uma gravação por cenário, na mesma ordem do passo a passo. Cada uma está embedada também no CT correspondente.
+
+| Gravação | Cenário | CT |
+|---|---|---|
+| `10511 - cenário 1.mp4` | Cadastro de cidadão PJ pelo servidor | CT-B01 |
+| `10511 - cenário 2.mp4` | Cadastro público (signup PJ) | CT-B02 |
+| `10511 - cenário 3.mp4` | Campo com máscara CNPJ no construtor de formulários | CT-B03 |
 
 ---
 
@@ -92,6 +98,10 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 
 **Evidências de Testes:**
 
+![[10511 - cenário 1.mp4]]
+
+*Mesma gravação copiada para a [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] como `9493 - EV-01 - CT-019 - ...`, onde reprova o CT-019.*
+
 ---
 
 #### **CT-B02 Normalização no campo — cadastro público (signup PJ)**
@@ -108,6 +118,8 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10511 - cenário 2.mp4]]
 
 ---
 
@@ -129,6 +141,10 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 
 **Evidências de Testes:**
 
+![[10511 - cenário 3.mp4]]
+
+*Foi a primeira gravação da sessão — nasceu com nome genérico e foi renomeada pro padrão `cenário N` quando o Rafael confirmou a qual cenário pertencia.*
+
 ---
 
 ### Ambiente
@@ -145,7 +161,7 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 - Observações:
     - O caso que este bug reprova é o **CT-019** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] (critério **CA5**), que afirma a conversão **no campo** e o valor salvo em maiúsculas — a segunda metade passa, a primeira não.
     - O cenário 3 toca também o **CT-027** da 9493 (campo com máscara CNPJ no construtor, critério **CA23**), que segue **não executado**: o defeito foi observado de forma exploratória, não numa execução completa daquele CT nas três configurações que ele cobre (módulo principal, módulo cliente e assunto/serviço).
-    - Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — mesmo vídeo, cópia renomeada (`9493 - EV-01 - CT-019 - ...`), embedada no CT-019 daquele card.
+    - Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — o **cenário 1** foi copiado como `9493 - EV-01 - CT-019 - ...` e embedado no CT-019 daquele card. É o cenário certo pra lá: o CT-019 afirma a normalização no campo **e** o valor salvo em maiúsculas, que é exatamente o meio-sucesso do cadastro. O cenário 3 falha nas duas metades e pertence ao CT-027, que ainda não foi executado.
     - Rafael relatou que provavelmente **1 ou 2 ajustes** resolvem os três cenários — os dois primeiros compartilham a mesma causa (normalização só no submit), o terceiro é uma superfície que ficou de fora.
 
 - Histórico:

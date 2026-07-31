@@ -572,9 +572,9 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 
 **Evidências de Testes:**
 
-![[9493 - EV-01 - CT-019 - cnpj alfanumerico aceita letra minuscula sem normalizar no campo.mp4]]
+![[9493 - EV-01 - CT-019 - letra minuscula nao normalizada no campo de cadastro.mp4]]
 
-*Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] — mesmo vídeo, cópia renomeada.*
+*Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/10511 - Bug CNPJ Alfanumerico Aceita Letra Minuscula Sem Normalizar No Campo|SGV-10511]] — mesmo vídeo do **cenário 1** daquele card, cópia renomeada. Os cenários 2 e 3 do bug estão só lá: o 3 (construtor de formulários) falha também na segunda metade do `Então` deste CT e é assunto do **CT-027**, ainda não executado.*
 
 ---
 
