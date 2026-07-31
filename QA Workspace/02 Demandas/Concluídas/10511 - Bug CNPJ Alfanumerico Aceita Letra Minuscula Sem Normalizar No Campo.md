@@ -5,9 +5,9 @@ tags:
   - usuario-cidadao
 task: "10511"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-07-31
-data_fim: ""
+data_fim: "2026-07-31"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: usuario-cidadao
@@ -180,3 +180,4 @@ A regra já existe: o **CA5** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria 
 - Histórico:
     - 2026-07-31 - 🐛 Bug cadastrado
     - 2026-07-31 - ✅ Aprovada em DEV (os 3 cenários retestados e aprovados; card segue pra HML com `deploy: pendente_hml`)
+    - 2026-07-31 - ✅ Aprovada em homologação
