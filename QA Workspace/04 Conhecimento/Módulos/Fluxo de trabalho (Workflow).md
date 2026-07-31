@@ -350,6 +350,16 @@ Quebra a tramitação estritamente linear: cada etapa pode ser configurada com *
 - 
 
 ## Dúvidas em aberto
+- [ ] **Quem pode iniciar o fluxo? A doc se contradiz** (levantado em 2026-07-31, a partir de um caso real em DEV). Dois trechos desta mesma página dizem coisas diferentes:
+	- [[#Documento já criado]]: *"o fluxo não inicia automático — usuário com permissão precisa iniciar; **somente o setor dono pode iniciar**"*
+	- [[#E-mail 03/07/2024 (dúvidas Virtus × respostas SOGO)]], na lista de "decisões que viraram regra": *"**Iniciar o fluxo**: setor dono **e também o responsável da etapa**, quando já definido na configuração"*
+	
+	O e-mail é **posterior** e está rotulado como decisão que virou regra, então provavelmente o trecho de "Documento já criado" ficou desatualizado — mas isso não está escrito em lugar nenhum, e as duas versões mudam o veredito de um teste. **Confirmar com produto qual vale** e corrigir o trecho perdedor.
+	
+	> [!important] O que os dois trechos concordam: **"avançar/retroceder" não dá direito de iniciar**
+	> Não existe configuração "setores que podem iniciar" nas [[#Regras de tramitação da etapa|regras de tramitação da etapa]]. O que existe é *"setores que podem avançar ou retroceder"*, e isso governa o movimento **entre etapas depois** que o fluxo começou. Então um setor participante, com permissão de avançar, **legitimamente não consegue iniciar** — não é bug, é o desenho.
+	>
+	> Caso que originou a dúvida: servidor atuando por um setor participante cria o documento, consegue **encerrar no setor** e **encerrar para mim**, mas o botão de iniciar o fluxo não aparece, mesmo com "avançar etapa" marcado na configuração da etapa. Bate com a regra. O que **decide se é bug** é outra coisa: se aquele setor for o **setor dono** do documento, aí deveria iniciar pelos dois trechos — ver [[#Documento já criado]], *"criador que não é dono (direcionamento automático) fica só como envolvido"*.
 - [ ] Seção **"Repetição da etapa"** segue **vazia mesmo no export expandido** (2026-07-17) — a configuração nunca foi especificada no Notion? Confirmar com produto se a feature existe/foi descartada
 - [ ] Perguntas da doc ainda de fato sem resposta: setor envolvido num flow desativado; acompanhamento (modo visualizar) de etapas seguintes pelos envolvidos de etapas anteriores; UX da seleção quando responsável = "setor na hora de avançar"
 - [ ] **Retificação em qualquer etapa × assinaturas**: a update diz que assinaturas vinculadas a eventos do fluxo vão pra "Cancelado" no reinício. E as assinaturas **fora** dos eventos de etapa (abertura/anexos, solicitadas avulsas)? Cruzar com a decisão pendente da [[../../05 Refinar/SGV-4873|mesa SGV-4873]]
