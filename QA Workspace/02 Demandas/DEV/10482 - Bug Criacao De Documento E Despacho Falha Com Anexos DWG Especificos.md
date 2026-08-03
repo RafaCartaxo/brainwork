@@ -47,11 +47,11 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 
 ### Critérios de aceite
 
-- [ ] Criar documento anexando cada um dos 3 arquivos DWG da evidência conclui com sucesso, sem erro na geração
-- [ ] Criar despacho com os mesmos 3 arquivos DWG conclui com sucesso
-- [ ] Anexo DWG que já era aceito antes continua criando documento e despacho normalmente (sem regressão)
-- [ ] O DWG anexado continua abrindo no revisor de anexos e aceitando selo, carimbo e anotação (sem regressão da SGV-8698)
-- [ ] Arquivo DWG que não respeita as regras de negócio é recusado com mensagem clara ao usuário, em vez de erro na geração do documento *(depende da regra de aceitação do campo, que não existe escrita — ver o gate de doc em Observações; sem ela a QA não sabe montar o arquivo inválido)*
+- [ ] **Documento** com anexo `.dwg` é criado sem erro na geração — inclusive com os arquivos da evidência, que hoje falham
+- [ ] **Despacho** com anexo `.dwg` é emitido sem erro, tanto no ambiente **interno** (servidor) quanto no **externo** (cidadão), como a doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]] determina
+- [ ] O cidadão consegue **reencaminhar** um `.dwg` depois de ter o anexo reprovado na abertura do processo — é o caso de uso que a regra existe pra garantir
+- [ ] **Nenhum** arquivo `.dwg` produz erro na geração do documento: ou o arquivo é aceito, ou é recusado **no upload**, com mensagem ao usuário
+- [ ] **Sem regressão**: `.dwg` que já era aceito segue criando documento e despacho, e o anexo criado continua abrindo no revisor de anexos com selo, carimbo e anotação (SGV-8698)
 
 ---
 
@@ -59,8 +59,8 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 
 #### **CT-B01 Documento é criado com os anexos DWG que falhavam**
 
-**Dado** que o usuário esteja na tela de criação de um novo documento de Licenciamento Urbano
-**E** anexe no campo de anexo DWG um dos três arquivos da evidência
+**Dado** que o servidor esteja na tela de criação de um novo documento de Licenciamento Urbano
+**E** anexe no campo de anexo DWG um dos arquivos da evidência
 **Quando** submeter a criação do documento
 **Então** o documento é criado com sucesso, sem mensagem de erro, com o anexo DWG presente
 
@@ -73,12 +73,12 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 
 ---
 
-#### **CT-B02 Despacho é criado com os mesmos anexos DWG**
+#### **CT-B02 Despacho é emitido com anexo DWG pelo servidor (ambiente interno)**
 
-**Dado** que o usuário esteja criando um despacho em um documento
-**E** anexe no campo de anexo DWG um dos três arquivos da evidência
+**Dado** que o servidor esteja criando um despacho em um documento
+**E** anexe no campo de anexo DWG um dos arquivos da evidência
 **Quando** emitir o despacho
-**Então** o despacho é criado com sucesso, sem mensagem de erro, com o anexo DWG presente
+**Então** o despacho é emitido com sucesso, sem mensagem de erro, com o anexo DWG presente
 
 **Execução Passou?**
 - [ ] Sim
@@ -89,7 +89,23 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 
 ---
 
-#### **CT-B03 Selo, carimbo e anotação seguem funcionando no DWG (regressão da SGV-8698)**
+#### **CT-B03 Cidadão reencaminha o DWG após o anexo ser reprovado (ambiente externo)**
+
+**Dado** que o cidadão tenha um anexo reprovado na abertura do processo
+**E** precise reencaminhar o arquivo em uma resposta ou despacho
+**Quando** anexar o arquivo `.dwg` e enviar
+**Então** o anexo é aceito e o envio conclui sem erro — é o caminho que a regra de aceitação do DWG existe pra garantir
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-B04 Selo, carimbo e anotação seguem funcionando no DWG (regressão da SGV-8698)**
 
 **Dado** que exista um documento criado com um dos anexos DWG da evidência
 **E** o usuário abra esse anexo no revisor de anexos
@@ -124,7 +140,7 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 - Demanda relacionada: SGV-8698 — *[MELHORIA-CX] Permitir aplicação de selos, carimbos e anotações em arquivos DWG* ([task no Notion](https://app.notion.com/p/alfa-group/MELHORIA-CX-Permitir-aplica-o-de-selos-carimbos-e-anota-es-em-arquivos-DWG-3642aec67d308185ba03e55016e5ff0c)). A task 10482 é marcada como **Impactando** essa melhoria; a melhoria está "Aprovado por QA", aprovada em homologação na versão 12.36.38.2, e não tem card no vault. O defeito foi encontrado na execução do plano de testes dela: [Execução Plano de testes: SGV-8698 01](https://app.notion.com/p/Execu-o-Plano-de-testes-SGV-8698-01-3ab2aec67d30803d8d54c2efec2b4a6e) (Waldemar, 30/07).
 
 - Observações:
-    - **Cobertura de CT deliberadamente enxuta**: 3 CT-B para 5 critérios, por decisão do Rafael em 03/08/2026. A regra do vault é um CT por critério ([[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]), então fica registrado o que ficou de fora: o **3º critério** (DWG que já funcionava — regressão) e o **5º** (arquivo fora das regras recusado com mensagem) não têm CT próprio. O 3º se valida junto do CT-B01, usando um arquivo que já passava; o 5º está bloqueado pela lacuna de doc abaixo. **Não é lacuna esquecida.**
+    - **Cobertura de CT deliberadamente enxuta**: 4 CT-B para 5 critérios, por decisão do Rafael em 03/08/2026 (a regra do vault é um CT por critério — [[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]). Mapa: CA1→CT-B01, CA2→CT-B02 (interno) e CT-B03 (externo), CA3→CT-B03, CA5→CT-B04. O **CA4** ("nenhum `.dwg` produz erro na geração") não tem CT próprio de propósito: é uma asserção transversal, verificada **em todos** os CTs acima — a cada arquivo testado, a resposta aceitável é criar ou recusar no upload, nunca estourar na geração. A parte do CA5 sobre o arquivo que já funcionava se valida no CT-B01, trocando o insumo. **Não é lacuna esquecida.**
     - **Gate de doc — reclassificado em 2026-08-03: de "lacuna" para DIVERGÊNCIA CONFIRMADA.** Com a importação da doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]], existe regra escrita, na seção "Extensão DWG":
 
         > "O sistema deve reconhecer e aceitar arquivos no formato `.dwg` na funcionalidade de despacho. […] a lista de tipos de arquivo permitidos passa a incluir o `.dwg`, garantindo que o cidadão consiga anexá-lo com sucesso."
@@ -133,8 +149,8 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 
         A doc registra ainda o **caso de uso que motivou a regra**: quando um anexo é reprovado na abertura do processo, o cidadão precisa reencaminhar o arquivo — sem suporte à extensão ele fica impedido. Vale conferir esse caminho na validação, porque é o cenário que a regra existe pra proteger.
 
-        **O que continua sem respaldo** (e por isso o 5º critério segue bloqueado): a doc **não** define *quais* arquivos `.dwg` são válidos — nada sobre tamanho ou versão do formato. Sem isso, não há como montar um arquivo "fora das regras" pra testar a recusa com mensagem. Registrado nas Dúvidas em aberto da doc do módulo.
-    - **O Revisor de Anexos segue sem doc.** A doc de Despachos cobre a **aceitação** do DWG como anexo, não a aplicação de selos, carimbos e anotações sobre ele (o que a SGV-8698 entregou) — que é o 4º critério. Nenhum módulo do vault cobre essa funcionalidade; a pendência de importar segue aberta, agora com esse escopo residual.
+        **O que continua sem respaldo**: a doc **não** define *quais* arquivos `.dwg` são válidos — nada sobre tamanho ou versão do formato. Registrado nas Dúvidas em aberto da doc do módulo. Isso **não bloqueia mais nenhum critério**: o CA4 foi reescrito pra afirmar o que é verificável sem essa regra — erro na geração não é resposta aceitável pra nenhum arquivo; ou aceita, ou recusa no upload com mensagem. Saber o limite exato continua útil pra cobrir o caso negativo com precisão, não pra executar o critério.
+    - **O Revisor de Anexos segue sem doc.** A doc de Despachos cobre a **aceitação** do DWG como anexo, não a aplicação de selos, carimbos e anotações sobre ele (o que a SGV-8698 entregou) — que é a segunda metade do **CA5**. Nenhum módulo do vault cobre essa funcionalidade; a pendência de importar segue aberta, com esse escopo residual.
     - Dev responsável no Notion: Washington Junior. Status no Notion: "Em desenvolvimento" (sprint SP16 - 2026, previsão de conclusão 11/08/2026). Squad 1 - Rogue One.
     - A task foi criada no Notion em 01/07/2025 (campo "Resumo automático"); o card no vault nasce hoje, com os critérios de aceite.
     - O defeito **não foi impeditivo** para a aprovação da SGV-8698 — decisão registrada na própria task da melhoria, de tratar em paralelo.
@@ -142,3 +158,4 @@ Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecim
 - Histórico:
     - 2026-08-03 - 📝 Bug refinado (critérios de aceite prontos)
     - 2026-08-03 - 📚 Gate de doc reclassificado para divergência confirmada, com a importação da doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]] (seção "Extensão DWG")
+    - 2026-08-03 - 📝 Critérios reescritos: passaram a afirmar a regra documentada (aceitação do `.dwg` no interno e no externo, e o reenvio pelo cidadão) em vez de contar os arquivos da evidência; entrou o CT-B03 do cidadão e o critério da recusa foi reformulado pra ser verificável sem a regra de validade dos arquivos
