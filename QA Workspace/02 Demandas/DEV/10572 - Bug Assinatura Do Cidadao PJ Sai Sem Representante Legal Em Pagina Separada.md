@@ -137,3 +137,4 @@ E a página separada não é detalhe de exibição: pela doc de [[QA Workspace/0
 
 - Histórico:
     - 2026-08-03 - 🐛 Bug confirmado (card criado)
+    - 2026-08-03 - 🐛 Cadastrado no Notion como SGV-10572
