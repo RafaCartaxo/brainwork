@@ -11,7 +11,7 @@ data_inicio: 2026-08-03
 data_fim: ""
 responsavel: Rafael
 cadastrado_por: ""
-modulo: anexo
+modulo: documento
 ambiente: DEV
 ---
 # Criação de documento e despacho falha ao anexar arquivos DWG específicos
@@ -105,8 +105,13 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 
 ### Ambiente
 
-- Versão: 12.36.38.2 (versão em que o defeito foi registrado)
-- Ambiente: Homologação — detectado na rodada de homologação da SGV-8698, conforme registro do Waldemar em 30/07/2026. **A confirmar com o Rafael**: a task não declara o ambiente no próprio campo, e o card ainda não foi reproduzido por nós.
+- Versão: 12.36.38.2
+- Ambiente: Desenvolvimento (posição na esteira de correção — o fix está com o dev)
+
+> [!info]- Origem: homologação, versão 12.36.38.2
+> O defeito foi observado em **homologação**, na rodada da SGV-8698, conforme registro do Waldemar em 30/07/2026 — confirmado pelo Rafael em 03/08/2026.
+>
+> O card mora em `DEV/` com `ambiente: DEV` porque o campo reflete a **posição na esteira**, não o último ambiente testado: bug de homologação em sustentação nasce na posição de correção e sobe de novo pela esteira ([[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|módulo]] ainda sem regra de anexos — ver o gate de doc em Observações; regra da esteira em [[Sistema/Contexto/PADROES_QA|PADROES_QA]] → Organização de Bugs).
 
 ---
 
