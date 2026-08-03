@@ -49,7 +49,7 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 - [ ] Criar despacho com os mesmos 3 arquivos DWG conclui com sucesso
 - [ ] Anexo DWG que já era aceito antes continua criando documento e despacho normalmente (sem regressão)
 - [ ] O DWG anexado continua abrindo no revisor de anexos e aceitando selo, carimbo e anotação (sem regressão da SGV-8698)
-- [ ] Arquivo DWG que não respeita as regras de negócio é recusado com mensagem clara ao usuário, em vez de erro na geração do documento
+- [ ] Arquivo DWG que não respeita as regras de negócio é recusado com mensagem clara ao usuário, em vez de erro na geração do documento *(depende da regra de aceitação do campo, que não existe escrita — ver o gate de doc em Observações; sem ela a QA não sabe montar o arquivo inválido)*
 
 ---
 
@@ -65,6 +65,7 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
+- [ ] Não se aplica
 
 **Evidências de Testes:**
 
@@ -80,6 +81,7 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
+- [ ] Não se aplica
 
 **Evidências de Testes:**
 
@@ -95,6 +97,7 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
+- [ ] Não se aplica
 
 **Evidências de Testes:**
 
@@ -114,6 +117,7 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 - Demanda relacionada: SGV-8698 — *[MELHORIA-CX] Permitir aplicação de selos, carimbos e anotações em arquivos DWG* ([task no Notion](https://app.notion.com/p/alfa-group/MELHORIA-CX-Permitir-aplica-o-de-selos-carimbos-e-anota-es-em-arquivos-DWG-3642aec67d308185ba03e55016e5ff0c)). A task 10482 é marcada como **Impactando** essa melhoria; a melhoria está "Aprovado por QA", aprovada em homologação na versão 12.36.38.2, e não tem card no vault. O defeito foi encontrado na execução do plano de testes dela: [Execução Plano de testes: SGV-8698 01](https://app.notion.com/p/Execu-o-Plano-de-testes-SGV-8698-01-3ab2aec67d30803d8d54c2efec2b4a6e) (Waldemar, 30/07).
 
 - Observações:
+    - **Cobertura de CT deliberadamente enxuta**: 3 CT-B para 5 critérios, por decisão do Rafael em 03/08/2026. A regra do vault é um CT por critério ([[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]), então fica registrado o que ficou de fora: o **3º critério** (DWG que já funcionava — regressão) e o **5º** (arquivo fora das regras recusado com mensagem) não têm CT próprio. O 3º se valida junto do CT-B01, usando um arquivo que já passava; o 5º está bloqueado pela lacuna de doc abaixo. **Não é lacuna esquecida.**
     - **Gate de doc: lacuna.** Nenhum módulo em `04 Conhecimento/Módulos/` cobre anexos DWG nem o **Revisor de Anexos** — o vault não tem uma única menção a DWG. O resultado esperado acima está ancorado só na task do Notion e no comportamento observado, **sem respaldo de doc**, e em especial não há regra escrita dizendo **quais** arquivos o campo deve aceitar (tamanho, versão do formato). Entrou pendência de importar a doc do módulo (fluxo 8).
     - Dev responsável no Notion: Washington Junior. Status no Notion: "Em desenvolvimento" (sprint SP16 - 2026, previsão de conclusão 11/08/2026). Squad 1 - Rogue One.
     - A task foi criada no Notion em 01/07/2025 (campo "Resumo automático"); o card no vault nasce hoje, com os critérios de aceite.
