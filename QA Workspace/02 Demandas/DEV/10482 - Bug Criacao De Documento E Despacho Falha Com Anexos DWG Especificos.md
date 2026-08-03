@@ -41,6 +41,8 @@ Evidência **externa, na task do Notion** (sem cópia local): `Evidência Bug 1.
 
 O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo respeita todas as regras de negócio do campo, então a submissão conclui normalmente — e um arquivo que não as respeite é recusado com mensagem ao usuário, não com erro na geração do documento.
 
+Isso está **respaldado por regra escrita**: a doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]], na seção "Extensão DWG", determina que `.dwg` seja aceito como anexo em despacho, no ambiente interno e no externo.
+
 ---
 
 ### Critérios de aceite
@@ -123,10 +125,20 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 
 - Observações:
     - **Cobertura de CT deliberadamente enxuta**: 3 CT-B para 5 critérios, por decisão do Rafael em 03/08/2026. A regra do vault é um CT por critério ([[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]), então fica registrado o que ficou de fora: o **3º critério** (DWG que já funcionava — regressão) e o **5º** (arquivo fora das regras recusado com mensagem) não têm CT próprio. O 3º se valida junto do CT-B01, usando um arquivo que já passava; o 5º está bloqueado pela lacuna de doc abaixo. **Não é lacuna esquecida.**
-    - **Gate de doc: lacuna.** Nenhum módulo em `04 Conhecimento/Módulos/` cobre anexos DWG nem o **Revisor de Anexos** — o vault não tem uma única menção a DWG. O resultado esperado acima está ancorado só na task do Notion e no comportamento observado, **sem respaldo de doc**, e em especial não há regra escrita dizendo **quais** arquivos o campo deve aceitar (tamanho, versão do formato). Entrou pendência de importar a doc do módulo (fluxo 8).
+    - **Gate de doc — reclassificado em 2026-08-03: de "lacuna" para DIVERGÊNCIA CONFIRMADA.** Com a importação da doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]], existe regra escrita, na seção "Extensão DWG":
+
+        > "O sistema deve reconhecer e aceitar arquivos no formato `.dwg` na funcionalidade de despacho. […] a lista de tipos de arquivo permitidos passa a incluir o `.dwg`, garantindo que o cidadão consiga anexá-lo com sucesso."
+
+        E vale explicitamente pro **ambiente interno e externo**. Ou seja: um `.dwg` que passa no upload e faz a criação do documento/despacho falhar **contraria regra documentada** — não é lacuna de especificação. Isso fortalece o card: o resultado esperado não é interpretação da QA, e o dev não pode alegar "formato não suportado".
+
+        A doc registra ainda o **caso de uso que motivou a regra**: quando um anexo é reprovado na abertura do processo, o cidadão precisa reencaminhar o arquivo — sem suporte à extensão ele fica impedido. Vale conferir esse caminho na validação, porque é o cenário que a regra existe pra proteger.
+
+        **O que continua sem respaldo** (e por isso o 5º critério segue bloqueado): a doc **não** define *quais* arquivos `.dwg` são válidos — nada sobre tamanho ou versão do formato. Sem isso, não há como montar um arquivo "fora das regras" pra testar a recusa com mensagem. Registrado nas Dúvidas em aberto da doc do módulo.
+    - **O Revisor de Anexos segue sem doc.** A doc de Despachos cobre a **aceitação** do DWG como anexo, não a aplicação de selos, carimbos e anotações sobre ele (o que a SGV-8698 entregou) — que é o 4º critério. Nenhum módulo do vault cobre essa funcionalidade; a pendência de importar segue aberta, agora com esse escopo residual.
     - Dev responsável no Notion: Washington Junior. Status no Notion: "Em desenvolvimento" (sprint SP16 - 2026, previsão de conclusão 11/08/2026). Squad 1 - Rogue One.
     - A task foi criada no Notion em 01/07/2025 (campo "Resumo automático"); o card no vault nasce hoje, com os critérios de aceite.
     - O defeito **não foi impeditivo** para a aprovação da SGV-8698 — decisão registrada na própria task da melhoria, de tratar em paralelo.
 
 - Histórico:
     - 2026-08-03 - 📝 Bug refinado (critérios de aceite prontos)
+    - 2026-08-03 - 📚 Gate de doc reclassificado para divergência confirmada, com a importação da doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]] (seção "Extensão DWG")
