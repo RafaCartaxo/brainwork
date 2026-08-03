@@ -16,10 +16,14 @@ date: 2026-07-16
 - [ ]
 
 ## Acessos rápidos
+
+> [!tip] Os ambientes estão todos em [[Referências/Ambientes e Links de Trabalho|Ambientes e Links de Trabalho]]
+> Lá tem o **padrão de URL** (`/login`, `/login/servidor/1`, `/login/cidadao/1`, `/admin`), a tabela de subdomínio por dev — que é o nome da branch — e o arquivo `favoritos-sogov.html` pronto pra importar em qualquer navegador. Fonte única: não recopiar URL aqui.
+
 - [ ] GitLab —
-- [ ] Ambiente DEV —
-- [ ] Ambiente HML —
-- [ ] Ambiente PROD —
+- [x] Ambiente DEV — `dev-<nome>.d10fnl6gn002xw.amplifyapp.com`, um por dev ([[Referências/Ambientes e Links de Trabalho#Desenvolvimento (ambientes por dev)|tabela]])
+- [x] Ambiente HML — `homolog.sogov.com.br` e `test.sogov.com.br` (são **dois** ambientes distintos de homologação)
+- [x] Ambiente PROD — `www.sogov.com.br`
 - [ ]
 
 ## Estudos / a revisar
