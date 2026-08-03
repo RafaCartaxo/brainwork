@@ -135,3 +135,4 @@ Ao informar uma senha incorreta, o sistema exibe mensagem de erro dizendo que a 
 - Histórico:
     - 2026-08-03 - 🐛 Bug confirmado (card criado)
     - 2026-08-03 - 📝 Cenário corrigido pelo Rafael: o ator é o **servidor** editando o cadastro do cidadão PJ, não o cidadão alterando o próprio e-mail (versão inicial do card estava errada nesse ponto). Descrição, passos, critérios e os 3 CTs reescritos
+    - 2026-08-03 - 📝 Ordem do fluxo corrigida pelo Rafael: a senha vem **antes** e é o que **libera o campo de e-mail** — não é confirmação no final. Caiu o critério que falava em "não perder o e-mail já digitado", porque nesse ponto não existe e-mail digitado
