@@ -17,17 +17,18 @@ ambiente: DEV
 
 ### Descrição
 
-Durante validação foi identificado que, ao alterar o e-mail de um cidadão PJ, o sistema pede a senha do usuário atual antes de concluir a alteração — e, quando a senha informada está **incorreta**, nenhum feedback é exibido. Não há mensagem de erro, nem indicação no campo, nem aviso de que a senha está errada: o fluxo simplesmente não conclui. Para quem está usando, a tela parece quebrada, quando o único problema é a senha estar incorreta.
+Durante validação foi identificado que, quando um **servidor** edita o cadastro de um **cidadão PJ** e tenta alterar o e-mail, o sistema pede a **senha do usuário atual** (a do próprio servidor) para confirmar a alteração — e, quando essa senha é informada **incorretamente**, nenhum feedback é exibido. Não há mensagem de erro, nem indicação no campo, nem aviso de que a senha está errada: **nada acontece**. Para o servidor, a tela parece quebrada, quando o único problema é a senha estar incorreta.
 
 ---
 
 ### Passo a passo para reproduzir
 
-Dado que o usuário esteja logado como cidadão PJ
-E acesse a alteração do e-mail do seu cadastro
-E o sistema solicite a senha do usuário atual
+Dado que o usuário esteja logado como **servidor**
+E acesse a área de cadastro de um **cidadão PJ**
+E entre na edição desse cadastro para alterar o e-mail
+E o sistema solicite a senha do usuário atual para confirmar
 Quando informar uma senha **incorreta** e confirmar
-Então verifico que nenhum feedback é exibido — sem mensagem de erro e sem indicação de que a senha está incorreta — e a alteração não é concluída
+Então verifico que nada acontece — sem mensagem de erro e sem indicação de que a senha está incorreta — e a alteração não é concluída
 
 ---
 
@@ -40,7 +41,7 @@ Então verifico que nenhum feedback é exibido — sem mensagem de erro e sem in
 
 ### Resultado Esperado
 
-Ao informar uma senha incorreta na confirmação da alteração de e-mail, o sistema exibe mensagem de erro dizendo que a senha está incorreta e mantém o usuário na etapa da senha, com o novo e-mail já digitado preservado, para tentar novamente. É o mesmo tratamento que o **Login** já dá a credencial inválida: a doc do módulo registra que a mensagem de erro é exibida (com o e-mail anonimizado) e que 5 erros bloqueiam a conta — ou seja, senha errada nesse produto **tem** retorno visível; esta tela é a exceção.
+Ao informar uma senha incorreta na confirmação, o sistema exibe mensagem de erro dizendo que a senha está incorreta e mantém o servidor na etapa da senha, com o novo e-mail já digitado preservado, para tentar novamente. É o mesmo tratamento que o **Login** já dá a credencial inválida: a doc do módulo registra que a mensagem de erro é exibida (com o e-mail anonimizado) e que 5 erros bloqueiam a conta — ou seja, senha errada nesse produto **tem** retorno visível; esta tela é a exceção.
 
 ---
 
