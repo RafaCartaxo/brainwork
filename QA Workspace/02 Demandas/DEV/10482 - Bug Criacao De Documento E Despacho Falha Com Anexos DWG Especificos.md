@@ -109,7 +109,9 @@ O documento e o despacho são criados com sucesso com o anexo DWG. O arquivo res
 
 ### Informações adicionais
 
-- Demanda relacionada: SGV-8698 — *[MELHORIA-CX] Permitir aplicação de selos, carimbos e anotações em arquivos DWG* (a task 10482 é marcada como **Impactando** essa melhoria; a melhoria está "Aprovado por QA", aprovada em homologação na versão 12.36.38.2, e não tem card no vault)
+- Referência no Notion: [SGV-10482 no Notion](https://app.notion.com/p/alfa-group/BUG-Erro-na-cria-o-de-documento-despacho-com-anexo-dwg-espec-fico-3ad2aec67d3080cbb48cec6688878887) — é lá que moram a evidência (`Evidência Bug 1.mp4`) e os arquivos `.dwg` que reproduzem o defeito.
+
+- Demanda relacionada: SGV-8698 — *[MELHORIA-CX] Permitir aplicação de selos, carimbos e anotações em arquivos DWG* ([task no Notion](https://app.notion.com/p/alfa-group/MELHORIA-CX-Permitir-aplica-o-de-selos-carimbos-e-anota-es-em-arquivos-DWG-3642aec67d308185ba03e55016e5ff0c)). A task 10482 é marcada como **Impactando** essa melhoria; a melhoria está "Aprovado por QA", aprovada em homologação na versão 12.36.38.2, e não tem card no vault. O defeito foi encontrado na execução do plano de testes dela: [Execução Plano de testes: SGV-8698 01](https://app.notion.com/p/Execu-o-Plano-de-testes-SGV-8698-01-3ab2aec67d30803d8d54c2efec2b4a6e) (Waldemar, 30/07).
 
 - Observações:
     - **Gate de doc: lacuna.** Nenhum módulo em `04 Conhecimento/Módulos/` cobre anexos DWG nem o **Revisor de Anexos** — o vault não tem uma única menção a DWG. O resultado esperado acima está ancorado só na task do Notion e no comportamento observado, **sem respaldo de doc**, e em especial não há regra escrita dizendo **quais** arquivos o campo deve aceitar (tamanho, versão do formato). Entrou pendência de importar a doc do módulo (fluxo 8).
