@@ -121,7 +121,7 @@ Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos pres
 - Na tela de verificação de autenticidade, onde haveria o botão de acesso ao documento, aparece **aviso de que o despacho foi cancelado**.
 - No drawer de solicitações de assinatura, despacho e anexos aparecem **desabilitados e com a tag de cancelamento**.
 
-**Impressão e download:** o despacho cancelado exibe **tarja "Sem efeito"** sem validade. Em **PADES** (assinaturas autenticáveis), o arquivo mantém as assinaturas marcadas como inválidas, já que foram invalidadas no cancelamento.
+**Impressão e download:** o despacho cancelado exibe **tarja `SEM EFEITO`** — caixa alta, marca d'água **diagonal** sobre o despacho, com o bloco contornado por borda tracejada (grafia e forma confirmadas no Figma em 04/08/2026). No **drawer de download personalizado** o despacho e cada anexo dele levam a tag **`Anulado`** — elemento diferente da tarja e da tag da timeline. Em **PADES** (assinaturas autenticáveis), o arquivo mantém as assinaturas marcadas como inválidas, já que foram invalidadas no cancelamento.
 
 **Notificações:** todos os servidores envolvidos recebem notificação na central; e **e-mail** oficial de cancelamento vai a todos os participantes, **com link para a justificativa**.
 

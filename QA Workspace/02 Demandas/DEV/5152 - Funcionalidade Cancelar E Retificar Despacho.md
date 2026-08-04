@@ -120,6 +120,31 @@ Alterou '$nome-do-campo' de '$valor-antigo' para '$valor-novo'.
 
 Na concepção da feature notou-se que o subdespacho de resposta não dizia **qual** despacho estava sendo respondido — mostrava só "neste despacho". A referência ao despacho de origem foi incrementada, e o mesmo vale para as ações de **prazo**, **assinatura**, **cancelamento** e **retificação**, que passam a informar de onde a solicitação parte. São **quatro** tipos de evento a assertar, além da própria resposta (tema da [[QA Workspace/02 Demandas/Concluídas/8380 - Bug Referencia Resposta Despacho Cadeia Respostas|SGV-8380]]).
 
+### Copys confirmadas no Figma (04/08/2026)
+
+Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] Cancelar despacho` e `[SGV-7450] Retificar despacho`. São **resultado esperado literal** — asserção de texto pode usar estas.
+
+| Onde | Copy |
+|---|---|
+| **Diálogo de aviso — cancelar** | "**Cancelar despacho**" · "Ao cancelar, os prazos e solicitações de assinatura deste despacho serão cancelados. Essa ação é irreversível." · "Deseja mesmo continuar?" · `Voltar` / `Continuar` |
+| **Diálogo de aviso — retificar** | "**Retificar despacho**" · "Ao retificar este documento, todas as ações anteriores realizadas no mesmo deverão ser refeitas, **incluindo as assinaturas realizadas**. Deseja mesmo continuar?" · `Voltar` / `Continuar` |
+| **Notificação na central** | Título "**Despacho cancelado!**" · "O despacho `$Nome_nro_desp`, referente ao documento `$nome_nro_doc`, foi cancelado. Veja a justificativa!" |
+| **E-mail** | Assunto/título "**`$Assinatura_textual`, um despacho foi cancelado!**" · "O despacho `$nome_despacho_nro`, referente ao documento `$Nome_nro_doc`, do qual você é participante, foi cancelado." · "Caso deseje mais informações, acesse o documento para visualizar a justificativa." · botão **`Acessar documento`** |
+| **Tarja no PDF (impressão e download)** | **`SEM EFEITO`** — caixa alta, marca d'água **diagonal** sobre o despacho, com o bloco do despacho contornado por borda tracejada |
+| **Tag no drawer de download personalizado** | **`Anulado`** — no despacho **e** em cada anexo dele |
+| **Tela de autenticidade** | Banner "**O cancelamento do despacho torna as assinaturas sem efeito legal.**" · na linha do despacho, "Este despacho foi cancelado e as assinaturas invalidadas" · coluna Situação = **`Inválida`** em todas as assinaturas |
+
+**Três coisas que essas copys resolveram, e que estavam em aberto:**
+
+1. **A grafia da tarja é `SEM EFEITO`, em caixa alta** — a task estava certa e a doc do módulo estava errada ("Sem efeito"). Ponto de atenção correspondente já corrigido.
+2. **Existe uma terceira copy que ninguém tinha registrado**: a tag **`Anulado`** no drawer de download personalizado. Não é a tarja do PDF nem a tag "Despacho cancelado" da timeline — são **três** elementos distintos, em três lugares.
+3. **"Ações refeitas" inclui as assinaturas realizadas** — o diálogo da retificação diz isso explicitamente, fechando a ambiguidade que a task deixou.
+
+> [!danger]- Defeito de copy no próprio design da retificação
+> O diálogo diz "Ao retificar este **documento**" quando a ação é sobre o **despacho**. Como retificar documento e retificar despacho são features distintas no produto, a frase induz o usuário a achar que vai retificar o processo inteiro. Se o produto tiver implementado assim, **é bug de copy** — e vale checar antes, porque a correção é barata e o risco de confusão é alto.
+
+**O que o Figma não tem**: **toast de sucesso** depois de concluir o cancelamento ou a retificação. Os frames trazem o diálogo *antes* da ação, notificação, e-mail e os artefatos de saída — nenhuma mensagem posterior. Se aparecer toast na execução, é copy nova e precisa ser registrada.
+
 ---
 
 > [!warning] Pontos de atenção
@@ -129,9 +154,10 @@ Na concepção da feature notou-se que o subdespacho de resposta não dizia **qu
 	- **Retificar** — doc: **apenas o criador original**. Task: "a partir do Nível Usuário Básico". São regras **incompatíveis**, não graus da mesma regra.
 	- Existe uma **terceira formulação**: [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] descreve a retificação **geral** como N1/Adm/Adm setorial do setor dono, com N2 restrito ao que ele criou. **As três precisam ser reconciliadas com produto** — detalhe em "Divergências task × doc" na doc de [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]].
 - ⚠️ **A retificação depende do cancelamento.** Retificar obriga o cancelamento de **todos os despachos de resposta** ao retificado. Se o cancelamento estiver defeituoso, a retificação reprova por arrasto e o diagnóstico fica ambíguo — por isso os CTs de cancelamento vêm **antes** (grupos B a E) dos de retificação (F a H).
-- **Duas grafias da tarja.** A doc registra **"Sem efeito"**; a task grafa **"SEM EFEITO"** em caixa alta. **Confirmar no produto antes de assertar literalmente** — os CTs de impressão e download falam em "tarja de sem efeito" de propósito. E **não confundir a tarja do PDF com a tag "Despacho cancelado" da timeline**: são elementos diferentes, em lugares diferentes.
+- ✅ **Grafia da tarja: resolvida.** O Figma mostra **`SEM EFEITO`** em caixa alta, marca d'água diagonal — a **task estava certa** e a doc do módulo estava errada. Já corrigido na doc. E são **três** elementos distintos, a não confundir: a **tarja `SEM EFEITO`** no PDF, a tag **`Anulado`** no drawer de download personalizado, e a tag **"Despacho cancelado"** da timeline.
 - **Provável typo na task:** um critério fala em "tag de identificação para o despacho **notificado**". Quase certamente é "**retificado**" — confirmar com análise/produto antes de escrever qualquer asserção em cima disso.
-- ⚠️ **Toasts não confirmados — não inventar copy.** Os resultados esperados de confirmação estão nos nós do Figma (`7316-14888` cancelamento, `7316-21817` retificação), e o **Figma não é acessível por automação**. Todo CT cujo **Então** dependesse de texto de toast foi escrito pelo **estado observável** (tag aplicada, campo bloqueado, item na timeline) e leva nota explícita de **copy a confirmar**: CT-007, CT-025. Nenhum texto de toast foi inventado neste card.
+- ✅ **Copys lidas no Figma em 04/08** — ver "Copys confirmadas no Figma" acima. Os CTs seguem escritos pelo **estado observável**, mas agora existe copy literal pra assertar mensagem onde ela existe. Nenhum texto foi inventado em momento nenhum. **Não há toast de sucesso no design** — se aparecer na execução, é copy nova.
+- 🔎 **As páginas do Figma são nomeadas por SGV, e não é o 5152.** São `[SGV-7448] Cancelar despacho` e `[SGV-7450] Retificar despacho`. Como a 5152 está com **62,07% de subitens** e o escopo dela é "dividido em 2 entregas", o mais provável é que **7448 e 7450 sejam os subitens** — o que explicaria o progresso parcial. Vale confirmar: se for isso, o acompanhamento fino da entrega (e os retornos da reabertura de 30/07) mora nesses dois números, não no 5152.
 - ⚠️ **Os subitens da task não vieram no export.** O progresso é **62,07%** e os retornos da reabertura de **30/07** foram registrados **como subitens** — sem eles não se sabe **o que já foi corrigido** e o que ainda está aberto na entrega. **Reexportar a task (com os subitens expandidos) antes de fechar a suíte**, sob risco de reprovar o que já era retorno conhecido ou aprovar o que ainda não subiu.
 - **Ruído da task, a não usar como regra:** o campo Observação ainda diz "há intenção de fazer, mas não há definição de prazos" — contradito pelo próprio status "Testando em Dev" e pelo deadline de 11/08/2026.
 - **Campo "Versão para deploy" vazio:** o que for aprovado aqui vale **em DEV**. Não assumir o comportamento em homologação nem em produção.
@@ -330,8 +356,17 @@ Na concepção da feature notou-se que o subdespacho de resposta não dizia **qu
 - [ ] Não
 - [ ] Não se aplica
 
-> [!warning]- Copy a confirmar
-> O resultado esperado do **toast de confirmação** está no Figma (nó `7316-14888`), **inacessível por automação**. Este CT assere o **estado observável** (botão desabilitado/habilitado e tag aplicada). O texto do toast **não deve ser assertado literalmente** sem antes conferir a copy com design.
+> [!success]- Copy confirmada no Figma (04/08/2026)
+> **Diálogo de aviso do cancelamento** — página `[SGV-7448] Cancelar despacho`, frame "Dialog de aviso":
+>
+> > ⚠️ **Cancelar despacho**
+> > Ao cancelar, os prazos e solicitações de assinatura deste despacho serão cancelados. Essa ação é irreversível.
+> > Deseja mesmo continuar?
+> > `Voltar` · `Continuar`
+>
+> Confirma a doc em dois pontos: o diálogo **detalha as consequências** e **reforça a irreversibilidade**, e o botão de avanço é **"Continuar"**.
+>
+> ⚠️ **O que eu não achei**: um **toast de sucesso** após concluir o cancelamento. O Figma traz o diálogo *antes* da ação e nenhum frame da página mostra mensagem posterior. Este CT segue assertando o **estado observável**; se aparecer toast na execução, é copy nova a registrar.
 
 **Evidências de Testes:**
 
@@ -614,8 +649,16 @@ Na concepção da feature notou-se que o subdespacho de resposta não dizia **qu
 - [ ] Não
 - [ ] Não se aplica
 
-> [!warning]- Copy a confirmar
-> O resultado esperado do **toast de confirmação da retificação** está no Figma (nó `7316-21817`), **inacessível por automação**. O Então acima assere o **estado observável** (campos editados e alterações aplicadas). **Não assertar texto de toast** sem conferir a copy com design.
+> [!success]- Copy confirmada no Figma (04/08/2026) — e ela tem um defeito
+> **Diálogo de aviso da retificação** — página `[SGV-7450] Retificar despacho`, frame "Dialog de aviso":
+>
+> > ⚠️ **Retificar despacho**
+> > Ao retificar este **documento**, todas as ações anteriores realizadas no mesmo deverão ser refeitas, **incluindo as assinaturas realizadas**. Deseja mesmo continuar?
+> > `Voltar` · `Continuar`
+>
+> 🔴 **Defeito de copy no próprio design**: o texto diz "este **documento**" quando a ação é sobre o **despacho**. Num produto em que retificar documento e retificar despacho são features distintas, isso induz o usuário a achar que vai retificar o processo inteiro. **Vale abrir como bug de copy** se o produto tiver implementado assim.
+>
+> Do lado bom, o diálogo resolve uma ambiguidade que a task deixou: "ações refeitas" **inclui as assinaturas realizadas** — era o que estava sem enumeração.
 
 **Evidências de Testes:**
 
