@@ -3,14 +3,18 @@ tags:
   - qa
   - conhecimento
 tipo: modulo
-revisado: 2026-08-03
+revisado: 2026-08-04
 ---
 # Despachos
 
-> [!warning] Leia antes de testar: parte desta doc é especificação, não comportamento atual
-> O **Cancelar despacho** está documentado em detalhe aqui e **ainda não foi implementado** (informado pelo Rafael em 03/08/2026). A seção existe porque é a regra que vai valer — não porque o produto se comporta assim hoje. Cada seção nessa condição está marcada.
+> [!warning] Cancelar e retificar despacho: **em teste em DEV**, não em produção (situação em 04/08/2026)
+> As duas seções deixaram de ser especificação futura. A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] cobre **as duas** ("escopo dividido em 2 entregas") e está com status **Testando em Dev**: MR aprovado em 28/07/2026 (revisores Bruno Clementino e Lucas Cabral) e **reaberta em DEV em 30/07/2026**, com os retornos registrados como subitens. Progresso de subitens 62,07%; QA responsável **Rafael**; deadline firmado com cliente **11/08/2026** (Prefeitura de Paulo Afonso).
 >
-> Origem: export da página **Despachos** do Notion (`(9+)-despachos-notion.md`, baixado 03/08/2026; página criada 17/09/2024, última edição 30/07/2026 por Flávio Oliveira). Página filha de **Tramitação** — ver [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]].
+> Vale como comportamento esperado **em DEV**. Não assumir em homologação nem em produção — o campo "Versão para deploy" da task está vazio.
+>
+> **A task diverge desta doc em permissões**, e a doc é a regra: ver "Divergências task × doc" em Comportamentos observados.
+>
+> Origem: export da página **Despachos** do Notion (`(9+)-despachos-notion.md`, reexportado 04/08/2026; página criada 17/09/2024, última edição 30/07/2026 por Flávio Oliveira). Página filha de **Tramitação** — ver [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]].
 
 ## Visão geral
 
@@ -84,8 +88,8 @@ O motivo registrado na doc é um caso de uso concreto: quando um anexo é **repr
 
 ### Cancelar despacho
 
-> [!warning] ⚠️ NÃO IMPLEMENTADO (situação em 03/08/2026)
-> Toda esta seção é **especificação de uma feature que ainda não existe no produto** — informado pelo Rafael em 03/08/2026. Documentada no Notion em **23/04/2026**, e ainda listada como item de backlog da página (`[UI/UX] Cancelar despacho`). **Não usar como comportamento esperado em validação** até que a implementação seja confirmada.
+> [!note]- Em teste em DEV pela [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] (04/08/2026)
+> Documentada no Notion em **23/04/2026**. Deixou de ser especificação futura: MR aprovado em 28/07/2026, reaberta em DEV em 30/07/2026. Vale como comportamento esperado **em DEV**. O item `[UI/UX] Cancelar despacho` segue no backlog da página, mas o backlog não reflete o status de implementação.
 
 Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos preservando rastreabilidade e segurança jurídica.
 
@@ -121,14 +125,16 @@ Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos pres
 
 **Notificações:** todos os servidores envolvidos recebem notificação na central; e **e-mail** oficial de cancelamento vai a todos os participantes, **com link para a justificativa**.
 
-**Referência de origem nos eventos:** na concepção da feature notou-se que o subdespacho de resposta não dizia **qual** despacho estava sendo respondido (mostrava só "neste despacho"). Foi incrementada a referência ao despacho respondido — e o mesmo vale para as ações de **prazo** e **assinatura**, que passam a informar a qual despacho se referem.
+**Referência de origem nos eventos:** na concepção da feature notou-se que o subdespacho de resposta não dizia **qual** despacho estava sendo respondido (mostrava só "neste despacho"). Foi incrementada a referência ao despacho respondido — e o mesmo vale para as ações de **prazo**, **assinatura**, **cancelamento** e **retificação**, que passam a informar de onde a solicitação parte. São **quatro** tipos de evento a assertar, não dois.
 
 ### Retificar despacho
 
-> [!note]- Situação de implementação a confirmar
-> Documentada no Notion em **19/05/2026** e também listada no backlog da página (`[UI/UX] Retificar despacho`, e um item "Cancelar e retificar despacho"). O Rafael confirmou que **o cancelar** não está implementado; **sobre o retificar não há confirmação** — ver Dúvidas em aberto.
+> [!note]- Em teste em DEV pela [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] (04/08/2026)
+> Documentada no Notion em **19/05/2026**. Mesmo card do cancelar — a SGV-5152 entrega as duas e tem um status só, então tratar uma como implementada e a outra como pendente não se sustenta. Vale como comportamento esperado **em DEV**.
+>
+> ⚠️ **Dependência entre as duas features**: a retificação obriga o cancelamento de todos os despachos de resposta ao retificado ("Impactos", abaixo), ou seja **retificar depende do cancelar funcionar**. Testar o cancelamento primeiro.
 
-Permite **corrigir erros de preenchimento** em despacho já emitido e em tramitação, gerando **versionamento automático** no histórico.
+Permite **corrigir erros de preenchimento** em despacho já emitido e em tramitação, gerando **versionamento automático** no histórico, "assegurando que todas as partes envolvidas tenham visibilidade das mudanças realizadas **a menos que seja retirado na retificação**" — ou seja, a própria retificação pode **suprimir** essa visibilidade. Regra que muda a expectativa de teste sobre o histórico de versões.
 
 | Regra | Detalhe |
 |---|---|
