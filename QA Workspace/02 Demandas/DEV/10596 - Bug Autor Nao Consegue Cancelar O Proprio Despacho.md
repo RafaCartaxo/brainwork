@@ -100,11 +100,17 @@ Ser ou não o **criador do documento** não aparece na regra em momento nenhum �
 
 ---
 
-#### **CT-B03 Quem não satisfaz nenhuma trilha segue sem permissão (regressão)**
+#### **CT-B03 Destinatário Adm de outro setor NÃO pode cancelar despacho alheio (permissão indevida)**
 
-**Dado** o mesmo documento com setor responsável CIM
-**Quando** um servidor de **outro setor**, que não é autor do despacho e não tem cargo no CIM, abrir o menu do despacho
-**Então** a opção de cancelar **não** é oferecida, ou a operação é negada — a restrição continua valendo
+**Dado** um documento criado pelo **Servidor 1**, Administrador do setor **PJ**, com setor responsável **PJ**
+**E** que o Servidor 1 emita um despacho **para o Servidor 2**, Administrador do setor **CG**
+**Quando** o Servidor 2, como **destinatário** do despacho, abrir o menu dele
+**Então** a opção de cancelar **não** é oferecida, ou a operação é negada — ser destinatário não concede a permissão, e ser Adm de outro setor não dá poder sobre documento do PJ
+
+> [!warning]- Este CT testa o lado oposto do defeito — e a hipótese de causa
+> O CT-B01 e o CT-B02 verificam **permissão faltante** (quem deveria poder, não pode). Este verifica **permissão indevida** (quem não deveria poder, pode) — que é a falha mais grave das duas, porque significaria um setor anulando ato administrativo de outro.
+>
+> Serve também como teste da hipótese de causa: se a checagem usa **criador do documento**, o Servidor 2 não é criador e deve ser negado. **Negado** → a hipótese se sustenta. **Permitido** → a hipótese cai e a implementação é mais frouxa que qualquer uma das três regras escritas no vault, o que é defeito novo e de gravidade maior que este card.
 
 **Execução Passou?**
 - [ ] Sim
