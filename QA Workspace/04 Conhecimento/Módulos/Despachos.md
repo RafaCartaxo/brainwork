@@ -188,15 +188,47 @@ Menção de servidores em campos de texto de processos (despacho, respostas).
 
 ## Comportamentos observados em teste
 
-- **2026-08-03 — Cancelar despacho documentado mas não implementado.** A doc do Notion descreve a feature por completo (23/04/2026) e o produto não a tem. Registrado aqui porque a doc, lida isolada, induz quem for testar a tratar a especificação como comportamento atual. Informado pelo Rafael.
+### Divergências task × doc — SGV-5152 (04/08/2026)
+
+A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] traz critérios de aceite escritos na **análise da Bruna Machado em 02/12/2025** — **anteriores** a esta doc (cancelar 23/04/2026, retificar 19/05/2026). É o que explica as divergências. **Esta doc é a regra**; a task, quando conflita, está defasada.
+
+| Ponto | Esta doc | A task | Como testar |
+|---|---|---|---|
+| **Permissão de cancelar** | N1, Administrador ou Adm Setorial **do setor dono**; N2 **só despacho de autoria própria** | "apenas para usuários **a partir do Nível Usuário Básico**" | **Pela doc.** A task abre pra todos acima de Somente Leitura, sem recorte de setor dono nem de autoria. Se o produto seguir a task, é **bug de permissão** |
+| **Permissão de retificar** | **Apenas o criador original** | "apenas para usuários **a partir do Nível Usuário Básico**" | **Pela doc.** É a divergência mais grave: são regras incompatíveis, não graus da mesma regra |
+
+⚠️ Existe uma **terceira formulação** no vault: [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] descreve a retificação **geral** como N1/Adm/Adm setorial do setor dono, com N2 restrito ao que ele criou. A regra do **despacho** (só o criador) é a mais específica e a mais recente — mas as três precisam ser reconciliadas com produto.
+
+**Regras que só a task tem** (não estão nesta doc, e são testáveis):
+
+- **Anexos aprovados voltam a pendentes de aprovação** quando o despacho é retificado. Encaixa na lacuna do revisor de anexos, que segue sem doc no vault.
+- **Despacho sigiloso**: a opção de cancelar/retificar só aparece **para quem tem permissão de visualizar** o despacho. Derivável das regras de visibilidade do sigilo, mas o *gating da opção de menu* não está escrito aqui.
+- "Todas as ações realizadas precisarão ser **refeitas**" (retificação) × "serão **desfeitas**" (cancelamento) — a task não enumera quais ações. Ver Dúvidas em aberto.
+
+**Ruído da task, a não usar como regra**: o campo Observação ainda diz "há intenção de fazer, mas não há definição de prazos", contradito pelo próprio status e pelo deadline de 11/08. E um critério fala em "tag de identificação para o despacho **notificado**" — quase certamente erro de digitação de "retificado"; confirmar antes de escrever asserção.
+
+### Outros
+
+- **2026-08-04 — a copy da tarja no download tem duas grafias.** Esta doc registra **"Sem efeito"** (da página do módulo); a task grafa **"SEM EFEITO"** em caixa alta. Conferir qual é a real no produto antes de assertar literalmente. E não confundir a **tarja** no PDF com a **tag** "Despacho cancelado" da timeline — são elementos diferentes.
 - **2026-08-03 (DEV e homologação) — `.dwg` aceito no upload faz a criação do documento/despacho falhar** em 3 arquivos específicos: [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Contradiz a regra de "Extensão DWG" acima, que manda aceitar `.dwg` como anexo em despacho no interno e no externo.
 
 ## Dúvidas em aberto
-- [ ] **O "Retificar despacho" está implementado?** A doc é de 19/05/2026 e o item segue no backlog da página. O Rafael confirmou apenas que o **cancelar** não está — o retificar ficou sem resposta. Isso muda o que é validável hoje
-- [ ] **A menção via "@" está implementada?** Mesma situação: doc de 13/05/2026 e item de backlog `[Melhoria-CX]` aberto
+- [x] ~~**O "Retificar despacho" está implementado?**~~ **Respondido em 04/08/2026**: sim, em DEV — mesmo card do cancelar, a SGV-5152, status "Testando em Dev"
+- [ ] **A menção via "@" está implementada?** Mesma situação: doc de 13/05/2026 e item de backlog `[Melhoria-CX]` aberto. **Não** está coberta pela SGV-5152, que é só cancelar/retificar
+- [ ] **Qual a regra de permissão que vale?** Três formulações no vault (só o criador, aqui; N1/Adm/Adm setorial + N2 na própria autoria, no Fluxo de trabalho; "a partir do Nível Usuário Básico", na task). Reconciliar com produto — é o primeiro cenário a testar
+- [ ] **Cancelar/retificar despacho que movimentou etapa de fluxo de trabalho** é permitido? A lista de restrições de origem não inclui "movimentou etapa", e nada define o que acontece com a etapa já avançada nem com o contêiner "Próximo passo do documento"
+- [ ] **Profundidade da cascata de cancelamento.** A retificação manda cancelar os despachos **de resposta**; não define respostas **das respostas** (N níveis), nem se cancelar um despacho-pai cancela a sub-thread
+- [ ] **Retificar duas vezes, retificar cancelado, cancelar retificado.** O histórico "da mais recente para a mais antiga" sugere N versões, mas nada afirma que um despacho já retificado pode ser retificado de novo. E a elegibilidade "em tramitação" só está escrita para o cancelamento
+- [ ] **Página extra de assinaturas × cancelamento.** Se todas as assinaturas viram "Cancelado"/"Inválida", a página extra ainda é gerada? Com que marcação? O QR Code aponta pra uma verificação que dirá "Inválida"? Nenhuma fonte cruza as duas features — ver [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]]
+- [ ] **Assinatura pendente: "status Cancelado" ≠ "solicitação removida".** A doc diz que a pendente exibe status "Cancelado" e fica desabilitada no drawer; não diz se **sai** da lista de pendências do signatário e da assinatura em massa
+- [ ] **Alterar sigilo na retificação colide com as proibições do sigiloso.** Sigilo é campo editável, mas despacho sigiloso não pode ter processo associado, solicitação de assinatura nem assinar. Retificar um despacho não sigiloso que **já tem** essas coisas para sigiloso: bloqueia, remove ou passa? E o caminho inverso expõe conteúdo retroativamente?
+- [ ] **Cidadão.** A notificação interna fala em "servidores envolvidos" e o e-mail em "participantes". Cidadão em documento com abertura externa recebe o e-mail com link da justificativa? Vê a tarja "Sem efeito" no ambiente externo?
+- [ ] **O que entra em "ações desfeitas/refeitas"?** Comentários, menções via "@", solicitações de assinatura criadas depois pelo meatball — nenhuma fonte enumera o conjunto
+- [ ] **Numeração de despacho cancelado.** Preservação está escrita só para a retificação. Cancelado mantém o número (deixando buraco na sequência) ou é reaproveitado?
 - [ ] **Quais arquivos `.dwg` são válidos?** A regra diz que a extensão é aceita, mas não define tamanho nem versão do formato — é exatamente a lacuna que deixa o 5º critério da [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]] inexecutável (não dá pra montar um arquivo "inválido" sem saber a regra)
 - [ ] **Revisor de anexos (selos, carimbos, anotações em DWG) não está coberto por esta doc.** A SGV-8698 entregou isso e a regra não mora aqui nem em módulo nenhum do vault — falta identificar onde a doc oficial dessa funcionalidade vive
-- [ ] O export trouxe "1 more…" na lista de itens do backlog da página — **um item ficou de fora**; reexportar rolando a lista se for preciso fechar a triagem do módulo
+- [ ] O export trouxe "1 more…" na lista de itens do backlog da página — **um item ficou de fora**. O reexport de 04/08 **cortou no mesmo lugar**, então o 6º item segue desconhecido; pra fechar é preciso expandir a lista no Notion **antes** de exportar
+- [ ] ⚠️ **O export está truncado no fim, e existe um callout que nunca chegou ao vault.** A última linha dos dois exports é um `>` solitário, logo depois da seção "Extensão DWG" — é o início de um callout cujo conteúdo não veio. **É o candidato mais provável a conter a regra de quais `.dwg` são válidos** (tamanho, versão), que é justamente a lacuna acima e o que bloqueia o caso negativo da [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Vale abrir a página no Notion e ler esse bloco
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
