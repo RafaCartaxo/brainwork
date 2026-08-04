@@ -99,8 +99,9 @@ Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos pres
 |---|---|
 | Elegibilidade | Só despacho **em tramitação** pode ser cancelado |
 | Restrição de origem | **Não** é permitido cancelar despacho gerado por ação sistêmica (Retificou, Associou, Desassociou, Cancelou, Revogou, Suspendeu, Pausou, Retomou) |
-| Permissão | **Duas trilhas alternativas** — basta satisfazer uma: **(a)** ser **N1**, **Administrador** ou **Administrador Setorial** do **setor dono do documento**; **ou (b)** ser **autor do despacho** |
-| Permissão — autoria | A trilha de autoria vale para **qualquer nível**, não só N2: o autor cancela o próprio despacho mesmo sem vínculo com o setor dono. **Confirmado em validação (DEV, 04/08/2026)** — a redação original da página do módulo dizia "Usuário básico cancela apenas despacho de sua própria autoria", o que fazia parecer que a autoria era exclusividade do N2 |
+| Permissão | Servidor **N1**, **Administrador** ou **Administrador Setorial** do **setor dono do documento** |
+| Permissão (N2) | Usuário básico cancela **apenas despacho de sua própria autoria** |
+| ⚠️ Divergência | **O produto não implementa esta regra.** O comportamento observado indica que a checagem olha **quem criou o documento** — ignorando tanto a autoria do despacho quanto o cargo no setor dono. É a [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]]; ver a tabela de cenários em Comportamentos observados |
 | Irreversibilidade | Cancelado **não** pode ser reaberto nem retomado |
 | Justificativa | **Obrigatória** (texto) para concluir |
 
@@ -207,24 +208,30 @@ A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Desp
 
 **Ruído da task, a não usar como regra**: o campo Observação ainda diz "há intenção de fazer, mas não há definição de prazos", contradito pelo próprio status e pelo deadline de 11/08. E um critério fala em "tag de identificação para o despacho **notificado**" — quase certamente erro de digitação de "retificado"; confirmar antes de escrever asserção.
 
-### Permissão de cancelar — regra real confirmada em validação (DEV, 04/08/2026)
+### Permissão de cancelar — o produto não segue a regra (DEV, 04/08/2026)
 
-Validado pelo Rafael em três cenários, todos com documento de **setor dono CIM** e despacho criado pelo **Servidor 2**:
+Cinco cenários validados pelo Rafael, todos em documento com **setor dono CIM**:
 
-| Quem | Do setor dono? | Autor? | Comportamento observado |
-|---|---|---|---|
-| Adm multissetor **atuando pelo CIM** | Sim | Não | Opção de cancelar **aparece** |
-| O mesmo, **atuando por outro setor** | Não | Não | **Não aparece** |
-| Adm do **GP**, **destinatário** do despacho | Não | Não | **Não aparece** |
-| **Autor** do despacho, sendo **Adm** (não N2) | Não | Sim | **Aparece** |
+| # | Criador do **documento**? | Autor do **despacho**? | Cargo no setor dono? | Observado |
+|---|---|---|---|---|
+| 1 | **Sim** | Não | Adm, atuando pelo CIM | Opção **aparece** |
+| 2 | Sim | Não | Adm, atuando por **outro setor** | **Não aparece** |
+| 3 | Não | Não | Adm do GP, **destinatário** | **Não aparece** |
+| 4 | **Sim** | Sim | Adm | Opção **aparece** |
+| 5 | **Não** | **Sim** | **Adm do CIM** (setor dono) | **Negado**: "não possuo permissão para realizar a operação" |
 
-Daí sai a regra real: **`setor dono` OU `autoria`**, com a autoria valendo para **qualquer nível**. O produto está coerente nos quatro casos — e a **redação da página do módulo é que estava errada**, ao amarrar a autoria ao "usuário básico". Tabela de permissão acima corrigida.
+O único critério que explica os cinco é **"é o criador do documento?"** — avaliado no setor ativo. E isso **contraria a regra documentada em duas frentes**:
 
-**Consequências:**
+- **Ignora a autoria do despacho.** No cenário 5 o servidor criou o próprio despacho e não consegue cancelá-lo. A regra dá essa permissão explicitamente.
+- **Ignora o cargo no setor dono.** Ainda no 5, ele é **Administrador do CIM**, que é o setor dono. Deveria passar pela trilha principal, independente da autoria.
 
-- A "inversão autoria × nível" que eu havia registrado como lacuna (um N2 autor poderia cancelar e um Adm autor não) **não existe no produto**. Era artefato da redação.
-- O caso **SGV-10596** foi investigado a partir do 1º cenário e **descartado**: comportamento conforme a regra. Ver [[QA Workspace/99 Arquivo/10596 - Bug Opcao De Cancelar Despacho Nao Aparece Para Adm Atuando Por Outro Setor|card em 99 Arquivo]].
-- Reduz a divergência com a task da [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]: lida como **piso de nível** ("a partir do N2") somada ao vínculo desta doc, a task passa a ser compatível com o observado no **cancelamento**. Segue divergente na **retificação** — ver abaixo.
+O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilhas e é negado nas duas. Virou a [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]].
+
+> [!warning]- Correção de rota: o que eu havia registrado aqui mais cedo estava errado
+> Na primeira versão desta seção (manhã de 04/08) eu concluí, a partir do cenário 4 isolado, que a regra real era "setor dono **ou** autoria, com autoria valendo para qualquer nível" — e cheguei a reescrever a tabela de permissão por causa disso. O cenário 5 falsificou essa leitura: no 4 o autor conseguia cancelar porque **também era o criador do documento**, não porque era autor. A tabela de permissão foi restaurada para o texto da doc oficial, e a divergência passou a ser registrada como defeito do produto, que é o que ela é.
+>
+> Lição de método: **um cenário só não estabelece regra.** O que parecia confirmação era coincidência de duas variáveis não separadas.
+
 
 ### Outros
 
