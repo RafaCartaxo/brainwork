@@ -99,8 +99,8 @@ Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos pres
 |---|---|
 | Elegibilidade | Só despacho **em tramitação** pode ser cancelado |
 | Restrição de origem | **Não** é permitido cancelar despacho gerado por ação sistêmica (Retificou, Associou, Desassociou, Cancelou, Revogou, Suspendeu, Pausou, Retomou) |
-| Permissão | Servidor **N1**, **Administrador** ou **Administrador Setorial** do setor dono do documento |
-| Permissão (N2) | Usuário básico cancela **apenas despacho de sua própria autoria** |
+| Permissão | **Duas trilhas alternativas** — basta satisfazer uma: **(a)** ser **N1**, **Administrador** ou **Administrador Setorial** do **setor dono do documento**; **ou (b)** ser **autor do despacho** |
+| Permissão — autoria | A trilha de autoria vale para **qualquer nível**, não só N2: o autor cancela o próprio despacho mesmo sem vínculo com o setor dono. **Confirmado em validação (DEV, 04/08/2026)** — a redação original da página do módulo dizia "Usuário básico cancela apenas despacho de sua própria autoria", o que fazia parecer que a autoria era exclusividade do N2 |
 | Irreversibilidade | Cancelado **não** pode ser reaberto nem retomado |
 | Justificativa | **Obrigatória** (texto) para concluir |
 
@@ -207,6 +207,25 @@ A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Desp
 
 **Ruído da task, a não usar como regra**: o campo Observação ainda diz "há intenção de fazer, mas não há definição de prazos", contradito pelo próprio status e pelo deadline de 11/08. E um critério fala em "tag de identificação para o despacho **notificado**" — quase certamente erro de digitação de "retificado"; confirmar antes de escrever asserção.
 
+### Permissão de cancelar — regra real confirmada em validação (DEV, 04/08/2026)
+
+Validado pelo Rafael em três cenários, todos com documento de **setor dono CIM** e despacho criado pelo **Servidor 2**:
+
+| Quem | Do setor dono? | Autor? | Comportamento observado |
+|---|---|---|---|
+| Adm multissetor **atuando pelo CIM** | Sim | Não | Opção de cancelar **aparece** |
+| O mesmo, **atuando por outro setor** | Não | Não | **Não aparece** |
+| Adm do **GP**, **destinatário** do despacho | Não | Não | **Não aparece** |
+| **Autor** do despacho, sendo **Adm** (não N2) | Não | Sim | **Aparece** |
+
+Daí sai a regra real: **`setor dono` OU `autoria`**, com a autoria valendo para **qualquer nível**. O produto está coerente nos quatro casos — e a **redação da página do módulo é que estava errada**, ao amarrar a autoria ao "usuário básico". Tabela de permissão acima corrigida.
+
+**Consequências:**
+
+- A "inversão autoria × nível" que eu havia registrado como lacuna (um N2 autor poderia cancelar e um Adm autor não) **não existe no produto**. Era artefato da redação.
+- O caso **SGV-10596** foi investigado a partir do 1º cenário e **descartado**: comportamento conforme a regra. Ver [[QA Workspace/99 Arquivo/10596 - Bug Opcao De Cancelar Despacho Nao Aparece Para Adm Atuando Por Outro Setor|card em 99 Arquivo]].
+- Reduz a divergência com a task da [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]: lida como **piso de nível** ("a partir do N2") somada ao vínculo desta doc, a task passa a ser compatível com o observado no **cancelamento**. Segue divergente na **retificação** — ver abaixo.
+
 ### Outros
 
 - **2026-08-04 — a grafia da tarja foi resolvida no Figma, e esta doc estava errada.** A página do módulo escreve "Sem efeito"; o design mostra **`SEM EFEITO`** em caixa alta, e a **task estava certa**. Corrigido acima. Ficou claro também que são **três** elementos distintos, que vinham sendo confundidos: a **tarja `SEM EFEITO`** (marca d'água diagonal no PDF), a tag **`Anulado`** (drawer de download personalizado, no despacho e em cada anexo) e a tag **"Despacho cancelado"** (timeline).
@@ -217,7 +236,8 @@ A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Desp
 ## Dúvidas em aberto
 - [x] ~~**O "Retificar despacho" está implementado?**~~ **Respondido em 04/08/2026**: sim, em DEV — mesmo card do cancelar, a SGV-5152, status "Testando em Dev"
 - [ ] **A menção via "@" está implementada?** Mesma situação: doc de 13/05/2026 e item de backlog `[Melhoria-CX]` aberto. **Não** está coberta pela SGV-5152, que é só cancelar/retificar
-- [ ] **Qual a regra de permissão que vale?** Três formulações no vault (só o criador, aqui; N1/Adm/Adm setorial + N2 na própria autoria, no Fluxo de trabalho; "a partir do Nível Usuário Básico", na task). Reconciliar com produto — é o primeiro cenário a testar
+- [x] ~~**Qual a regra de permissão de cancelar que vale?**~~ **Resolvido por validação em 04/08/2026**: é **setor dono OU autoria**, com a autoria valendo para qualquer nível — ver "Permissão de cancelar" em Comportamentos observados. A redação desta página estava errada, não o produto
+- [ ] **Qual a regra de permissão de RETIFICAR vale?** Esta continua aberta, e as três fontes seguem incompatíveis: **"apenas o criador original"** (aqui), **N1/Adm/Adm setorial do setor dono, N2 só o que criou** ([[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho]], retificação geral) e **"a partir do Nível Usuário Básico"** (task). O cenário que separa as três: **Adm do setor dono que NÃO criou o despacho** — pela regra daqui não pode, pelas outras duas pode. Não dá pra reconciliar por leitura: "apenas o criador" e "Adm do setor dono pode" se contradizem
 - [ ] **Cancelar/retificar despacho que movimentou etapa de fluxo de trabalho** é permitido? A lista de restrições de origem não inclui "movimentou etapa", e nada define o que acontece com a etapa já avançada nem com o contêiner "Próximo passo do documento"
 - [ ] **Profundidade da cascata de cancelamento.** A retificação manda cancelar os despachos **de resposta**; não define respostas **das respostas** (N níveis), nem se cancelar um despacho-pai cancela a sub-thread
 - [ ] **Retificar duas vezes, retificar cancelado, cancelar retificado.** O histórico "da mais recente para a mais antiga" sugere N versões, mas nada afirma que um despacho já retificado pode ser retificado de novo. E a elegibilidade "em tramitação" só está escrita para o cancelamento
