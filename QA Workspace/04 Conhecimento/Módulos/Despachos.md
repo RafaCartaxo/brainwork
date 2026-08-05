@@ -151,7 +151,7 @@ Permite **corrigir erros de preenchimento** em despacho já emitido e em tramita
 **Impactos:**
 
 - Tag **"Retificado"** na timeline e em todas as visualizações.
-- **Todas as assinaturas** (concluídas ou pendentes) do despacho original **e dos anexos** são canceladas, por alteração de conteúdo.
+- **Todas as assinaturas** (concluídas ou pendentes) do despacho original **e dos anexos** são canceladas, por alteração de conteúdo. ⚠️ **O produto não faz isso na saída impressa**: ao retificar uma resposta já assinada, a assinatura segue aparecendo na impressão sem sinalização de invalidada — [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]].
 - Justificativa exibida ao **final da subthread** do despacho retificado.
 - Notificações internas e e-mails automáticos para todos os envolvidos.
 - **Todos os despachos de resposta ao despacho retificado devem ser cancelados**, seguindo a regra de despacho cancelado.
@@ -235,12 +235,15 @@ O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilh
 
 ### Outros
 
+- **2026-08-04 (DEV) — retificar resposta assinada não invalida a assinatura na impressão.** A regra manda cancelar **todas** as assinaturas por alteração de conteúdo, e o diálogo do Figma avisa o usuário disso antes de confirmar. Na prática a assinatura segue saindo no papel **como se valesse**: [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]]. Segundo defeito da mesma rodada de validação da 5152 — o outro é no cancelamento.
+
 - **2026-08-04 — a grafia da tarja foi resolvida no Figma, e esta doc estava errada.** A página do módulo escreve "Sem efeito"; o design mostra **`SEM EFEITO`** em caixa alta, e a **task estava certa**. Corrigido acima. Ficou claro também que são **três** elementos distintos, que vinham sendo confundidos: a **tarja `SEM EFEITO`** (marca d'água diagonal no PDF), a tag **`Anulado`** (drawer de download personalizado, no despacho e em cada anexo) e a tag **"Despacho cancelado"** (timeline).
 - **2026-08-04 — copys de notificação e e-mail lidas no Figma** (páginas `[SGV-7448]` e `[SGV-7450]` do arquivo Tramitação — Handoff). Estão transcritas no card da [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]], em "Copys confirmadas no Figma". Dois pontos que mudam expectativa de teste: **(a)** o e-mail traz o botão **"Acessar documento"** e o texto "acesse o documento para visualizar a justificativa" — ou seja o link leva ao **documento**, não direto à justificativa, ao contrário do que esta doc afirmava; **(b)** o diálogo da retificação diz "Ao retificar este **documento**" quando a ação é sobre o **despacho** — provável **defeito de copy no design**.
 - **2026-08-04 — o design não tem toast de sucesso.** Nem para cancelar nem para retificar: existem o diálogo de confirmação *antes* da ação, a notificação na central, o e-mail e os artefatos de saída. Se aparecer toast na execução, é copy nova e não especificada.
 - **2026-08-03 (DEV e homologação) — `.dwg` aceito no upload faz a criação do documento/despacho falhar** em 3 arquivos específicos: [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Contradiz a regra de "Extensão DWG" acima, que manda aceitar `.dwg` como anexo em despacho no interno e no externo.
 
 ## Dúvidas em aberto
+- [ ] **Como a assinatura invalidada deve aparecer na saída do despacho RETIFICADO?** A doc garante que as assinaturas são canceladas, mas descreve o tratamento visual só para o **cancelado** (sinalização de sem efeito, tarja `SEM EFEITO`). Para o retificado define a tag "Retificado" nas visualizações, sem dizer o que acontece com a assinatura no papel. É a lacuna que faz o critério da [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] aceitar "marcada como inválida" **ou** "ausente"
 - [x] ~~**O "Retificar despacho" está implementado?**~~ **Respondido em 04/08/2026**: sim, em DEV — mesmo card do cancelar, a SGV-5152, status "Testando em Dev"
 - [ ] **A menção via "@" está implementada?** Mesma situação: doc de 13/05/2026 e item de backlog `[Melhoria-CX]` aberto. **Não** está coberta pela SGV-5152, que é só cancelar/retificar
 - [x] ~~**Qual a regra de permissão de cancelar que vale?**~~ **Resolvido por validação em 04/08/2026**: é **setor dono OU autoria**, com a autoria valendo para qualquer nível — ver "Permissão de cancelar" em Comportamentos observados. A redação desta página estava errada, não o produto
