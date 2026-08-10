@@ -13,7 +13,7 @@ modulo: mesa-de-trabalho
 > [!info]- Mesa de trabalho — [[Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada|fluxo 6]]
 > Análise e suposição vivem aqui — o card em `02 Demandas/` nasce do **Destilado**, limpo. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (`status: refinado`).
 >
-> **Arquivado** — card destilado em [[QA Workspace/02 Demandas/DEV/10151 - Melhoria Filtros Criados Por Mim Ou Pelo Setor|SGV-10151]].
+> **Arquivado** — card destilado em [[QA Workspace/02 Demandas/HML/10151 - Melhoria Filtros Criados Por Mim Ou Pelo Setor|SGV-10151]].
 
 ## O problema (task no Notion)
 

@@ -8,18 +8,19 @@ task: "10151"
 mel: ""
 status: aberto
 prioridade: media
+deploy: pendente_hml
 data_inicio: 2026-08-10
 data_fim: ""
 responsavel: Rafael
 cadastrado_por: ""
 modulo: mesa-de-trabalho
-ambiente: DEV
+ambiente: HML
 ---
 # Demanda: [DEV][PARTE 4] Funcionalidade: Filtros "Criados por mim" / "Criados pelo setor"
 
 > [!info] Informações
 > - **Tipo:** Melhoria
-> - **Status:** DEV (em ambiente teste/dev)
+> - **Status:** HML (aprovada em DEV; `deploy: pendente_hml` — o fix ainda não subiu pra homologação)
 > - **Responsável QA:** Rafael
 > - **Link:** [SGV-10151 no Notion](https://app.notion.com/p/alfa-group/DEV-PARTE-4-Funcionalidade-Filtros-Criados-por-mim-Criados-pelo-setor-3a02aec67d3080e0a69bcfd3f7e6796e) · [Figma — Mesa de Trabalho/Handoff](https://www.figma.com/design/57GnUc1cTERzuMCdea2eQa/Mesa-de-Trabalho---Handoff?node-id=957-2978)
 > - **Dev:** B. Luan ([MR !666](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/666))
@@ -63,7 +64,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 |---|---|
 | **Demanda** | SGV-10151 — Melhoria-CX (Parte 4) |
 | **Responsável** | Rafael |
-| **Ambiente** | DEV |
+| **Ambiente** | DEV (rodada executada) → HML (próxima rodada) |
 | **Escopo** | Botão de filtro "Criados por mim" / "Criados pelo setor" na barra de filtros da mesa (lista e painel): rótulo por aba, filtro por criador/setor, toggle, reset ao trocar de aba, consistência de contagem, documento migrado sem criador |
 | **Fora de escopo** | Demais partes da melhoria de layout da mesa (abas, colunas do painel, filtros avançados) — cards próprios quando existirem |
 | **Tipos de teste** | Funcional |
@@ -75,29 +76,30 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 
 **A. Rótulo e filtro por aba**
 
-- [ ] **CA1** — Na aba "Meus documentos", o botão exibe o rótulo "Criados por mim"; ativo, a listagem (lista e painel) mostra só documentos criados pelo usuário logado
-- [ ] **CA2** — Na aba "Documentos do setor", o botão exibe o rótulo "Criados pelo setor"; ativo, a listagem mostra só documentos criados pelo setor ativo no switch
+- [x] **CA1** — Na aba "Meus documentos", o botão exibe o rótulo "Criados por mim"; ativo, a listagem (lista e painel) mostra só documentos criados pelo usuário logado
+- [x] **CA2** — Na aba "Documentos do setor", o botão exibe o rótulo "Criados pelo setor"; ativo, a listagem mostra só documentos criados pelo setor ativo no switch
 
 **B. Anatomia e posição do botão**
 
-- [ ] **CA3** — O botão segue os 3 estados da anatomia vigente (Default contornado, Hover contornado destacado, Active preenchido com rótulo em negrito), ícone `PaperPlaneIcon` — mesma linguagem do botão Favoritos, ao lado do qual fica na barra
+- [x] **CA3** — O botão segue os 3 estados da anatomia vigente (Default contornado, Hover contornado destacado, Active preenchido com rótulo em negrito), ícone `PaperPlaneIcon` — mesma linguagem do botão Favoritos, ao lado do qual fica na barra
 
 **C. Toggle e troca de aba**
 
-- [ ] **CA4** — Clicar no botão ativo desativa o filtro; a listagem volta ao estado padrão (sem filtro de criador)
-- [ ] **CA5** — Trocar de aba (Meus documentos ↔ Documentos do setor) reseta o filtro de criador pra desativado, mesmo se estava ativo antes da troca
+- [x] **CA4** — Clicar no botão ativo desativa o filtro; a listagem volta ao estado padrão (sem filtro de criador)
+- [x] **CA5** — Trocar de aba (Meus documentos ↔ Documentos do setor) reseta o filtro de criador pra desativado, mesmo se estava ativo antes da troca
 
 **D. Dados e consistência**
 
-- [ ] **CA6** — Documento migrado sem criador identificado não quebra a listagem nem aparece indevidamente com o filtro ativo (nem por `createdById` nem por `createdBySectorId`)
-- [ ] **CA7** — Com o filtro ativo, a contagem exibida no modo Painel (por coluna) é consistente com a contagem do modo Lista
+- [x] **CA6** — Documento migrado sem criador identificado não quebra a listagem nem aparece indevidamente com o filtro ativo (nem por `createdById` nem por `createdBySectorId`)
+- [x] **CA7** — Com o filtro ativo, a contagem exibida no modo Painel (por coluna) é consistente com a contagem do modo Lista
 
 **E. Estado desabilitado**
 
-- [ ] **CA8** — Quando não há setor disponível pra filtrar, o botão "Criados pelo setor" aparece com tratamento visual de desabilitado, sem interação
+- [ ] **CA8** — Quando não há setor disponível pra filtrar, o botão "Criados pelo setor" aparece com tratamento visual de desabilitado, sem interação *(satisfeito por construção — ver CT-008)*
 
 > [!info]- Critérios fora desta rodada (registro)
-> - Nenhum descartado. O **CA8** fica aberto (não é lacuna esquecida): falta confirmar com o dev o cenário exato do gatilho antes de executar — ver Pontos de atenção.
+> - **CA8** (botão desabilitado sem setor pra filtrar) — **satisfeito por construção**, não por teste: o cenário é inalcançável (o switch sempre carrega um setor ativo na aba "Documentos do setor"). Fica **desmarcado** de propósito — aprovar critério não exercitado é registro falso ([[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]). Precedente do mesmo tratamento: SGV-9042/CT-003.
+> - Nenhum critério descartado. Aprovação em DEV com **7 de 8** critérios exercitados.
 
 ---
 
@@ -112,7 +114,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** a listagem (lista e painel) passa a exibir somente documentos criados por mim
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -127,7 +129,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** a listagem (lista e painel) passa a exibir somente documentos criados por qualquer servidor do setor ativo
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -144,7 +146,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** ele aparece imediatamente depois do botão "Favoritos" na barra de filtros, com ícone `PaperPlaneIcon` contornado em Default/Hover e preenchido com rótulo em negrito em Active
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -161,7 +163,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** o filtro desativa e a listagem volta a exibir todos os documentos da aba, sem o filtro de criador
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -176,7 +178,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** o filtro de criador aparece desativado na aba de destino, mesmo tendo ficado ativo na aba de origem
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -193,7 +195,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** a listagem carrega sem erro, e o documento migrado não aparece no resultado filtrado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -208,7 +210,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Então** os números são consistentes entre os dois modos
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -220,8 +222,9 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 
 #### **CT-008 Botão "Criados pelo setor" desabilitado sem setor pra filtrar** *(CA8)*
 
-> [!warning]- Cenário do gatilho não confirmado
-> O dev cita "desabilitado quando não há setor para filtrar", mas não há mockup Figma nem regra de doc que definam esse estado, e não ficou claro em que situação a aba "Documentos do setor" existiria sem setor ativo (o switch sempre carrega com um setor selecionado). **Confirmar com o dev antes de executar** — o `Dado` abaixo é a melhor hipótese até a confirmação, não fato estabelecido.
+> [!info]- Por que não se aplica
+> O cenário não existe: a aba "Documentos do setor" sempre carrega com um setor ativo pelo switch, então **não há estado alcançável** em que o botão "Criados pelo setor" exista sem setor pra filtrar. Confirmado com o Rafael em 10/08/2026, na validação em DEV. O critério segue válido como regra — está satisfeito **por construção**, não por teste. Se o produto passar a permitir a aba sem setor ativo (ou exibir o botão fora dela), este CT volta a ser executável.
+> O estado desabilitado **existe no código** (chave `created-by-disabled`, citada pelo dev no MR !666) sem cenário que o alcance — vale levar ao dev, ver pendência na fila.
 
 **Dado** que eu esteja num cenário sem setor disponível pra filtrar (a confirmar com o dev)
 **Quando** observo o botão "Criados pelo setor"
@@ -230,13 +233,17 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica
 
 **Evidências de Testes:**
 
 ---
 
-## Evidências
+## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10151)
+
+![[10151 - filtros criados por mim e criados pelo setor ok.mp4]]
+
+*Gravação da validação em DEV. **Cobertura por CT ainda não mapeada** — quando o mapa CT → EV estiver definido, renomear pro padrão `10151 - EV-01 - CT-NNN, ... - <descrição>.mp4` e embedar em cada "Evidências de Testes" ([[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]]). Pendência na fila.*
 
 ---
 
@@ -247,3 +254,4 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 ## Histórico
 
 - 2026-08-10 - 📝 Melhoria refinada (critérios de aceite prontos)
+- 2026-08-10 - ✅ Melhoria aprovada em DEV (7 de 8 critérios; CA8 satisfeito por construção)
