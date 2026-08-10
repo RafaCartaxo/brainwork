@@ -156,7 +156,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 
 #### **CT-004 Clicar no botão ativo desativa o filtro** *(CA4)*
 
-**Dado** que o filtro "Criados por mim" ou "Criados pelo setor" está ativo
+**Dado** que o filtro "Criados pelo setor" está ativo
 **Quando** clico no botão novamente
 **Então** o filtro desativa e a listagem volta a exibir todos os documentos da aba, sem o filtro de criador
 
@@ -186,10 +186,10 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 
 ### D. Dados e consistência
 
-#### **CT-006 Documento migrado sem criador não quebra o filtro** *(CA6)*
+#### **CT-006 Documento importado não quebra o filtro** *(CA6)*
 
-**Dado** que existe um documento migrado sem `createdById`/`createdBySectorId` preenchido
-**Quando** ativo o filtro "Criados por mim" ou "Criados pelo setor"
+**Dado** que existe um documento importado sem `createdById`/`createdBySectorId` preenchido
+**Quando** ativo o filtro "Criados pelo setor"
 **Então** a listagem carrega sem erro, e o documento migrado não aparece no resultado filtrado
 
 **Execução Passou?**
