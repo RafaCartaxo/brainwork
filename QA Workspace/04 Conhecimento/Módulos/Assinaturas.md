@@ -6,7 +6,7 @@ tags:
   - sogov
   - assinaturas
 tipo: modulo
-revisado: 2026-07-17
+revisado: 2026-08-10
 fonte: https://app.notion.com/p/alfa-group/Assinaturas-3a34ab9f797643bbb1792b9a3d90cb8e
 fonte_criado: 2024-07-08 (Rafael)
 fonte_ultima_edicao: 2026-06-30 (Vinícius)
@@ -331,9 +331,11 @@ Os fluxos (SOGOV, ICP e recusa) **não mudam** — muda só a apresentação dos
 
 ## Comportamentos observados em teste (QA)
 <!-- Divergências entre esta doc e o sistema real, pegadinhas, efeitos colaterais — com data e ambiente -->
+- **SGV-10267** (reaberta em DEV, 10/08): o **link de verificação de assinatura sai parcialmente oculto e incorreto** em documento com **anexo de imagem grande** — em alguns casos não aparece. Contraria a **regra transversal** do QR Code/texto de autenticidade ("deve estar presente conforme a especificação", acima) e atinge a **função de verificação** do documento. Ainda **sem card no vault**. O que a doc **não** cobre: como um anexo cujo conteúdo extrapola a página afeta o layout do rodapé — ver Dúvidas em aberto.
 - **SGV-10457** (aberta em HML, 29/07): no rodapé de autenticidade, o **link da parte inferior sai com espaçamento errado** (encostado/cortado) e, no **download personalizado com páginas enumeradas**, a **numeração fica sobreposta ao link**. Dois cenários distintos — sem e com paginação — porque o primeiro independe da opção e o segundo só ocorre com ela ativada. Atinge a **função de verificação** do documento (QR Code ilegível), e viaja no PDF baixado/impresso, já que a página de assinaturas é parte integrante do arquivo — ver [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|card]].
 
 ## Dúvidas em aberto
+- [ ] **Anexo com imagem grande × rodapé de autenticidade**: a doc especifica as margens fixas do QR Code e do texto de verificação, mas **não define o comportamento quando o conteúdo do anexo extrapola a página** — se o rodapé é preservado, reposicionado ou sobreposto. Lacuna detectada em 10/08/2026 (DEV) no gate de doc da SGV-10267. Buscar a regra de layout no Notion/Figma (fluxo 8)
 - [ ] As três atualizações de 2026 (Página Extra, Reposicionamento de selos, PJ sem responsável legal) vieram só como título no export — buscar o conteúdo no Notion e completar aqui
 - [ ] Regras do documento Pausado × assinatura dependem do doc "Pausar documento" do Notion — importar também?
 - [ ] Assinatura em instância **Em Implantação** × numeração e limpeza da implantação: a doc não cobre a regra de que a implantação apaga documentos "Sem numeração", nem como a numeração é atribuída no contexto Em Implantação (gap detectado em 2026-07-22, HML — ver [[QA Workspace/02 Demandas/HML/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]). Importar doc que descreva o comportamento da implantação (fluxo 8)
@@ -344,4 +346,4 @@ Os fluxos (SOGOV, ICP e recusa) **não mudam** — muda só a apresentação dos
 <!-- SGVs validados que tocam este módulo -->
 - Bug em refinamento: assinaturas em anexos de documentos retificados não são canceladas corretamente (export em `~/Downloads`, candidato ao fluxo 6 — 05 Refinar)
 - [[QA Workspace/02 Demandas/HML/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]] — link e QR Code **na vertical** desalinhados na página de assinatura separada (aprovada em DEV olhando só esse elemento; ao validar em HML, conferir o rodapé inteiro)
-- [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] — link da **parte inferior** com espaçamento errado + numeração sobreposta no download personalizado com páginas enumeradas. Elemento distinto da 9405; juntos levantam se o ajuste do rodapé foi **pontual** onde a doc o trata como regra transversal
+- [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] — link da **parte inferior** com espaçamento errado + numeração sobreposta no download personalizado com páginas enumeradas. Elemento distinto da 9405; juntos levantam se o ajuste do rodapé foi **pontual** onde a doc o trata como regra transversal. **Atualização 10/08/2026**: com a **SGV-10267** (link oculto em anexo com imagem grande) são **três bugs no mesmo rodapé**, em três gatilhos diferentes — deixa de ser coincidência e passa a indicar que o ajuste tratou casos pontuais em vez da regra transversal. Levar pro dev/produto
