@@ -16,7 +16,7 @@ ambiente: DEV
 # Achados na retificação de despacho e documento (aviso, botão e copy)
 
 > [!info] Card de registro — três achados na mesma rodada
-> Card agrupado de propósito: são três problemas pequenos e independentes, encontrados na validação da retificação em DEV ([[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]). Registro rápido de atuação; cada item tem seu critério e seu CT.
+> Card agrupado de propósito: são três problemas pequenos e independentes, encontrados na validação da retificação em DEV ([[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]). Registro rápido de atuação; cada item tem seu critério e seu CT.
 
 ### Descrição
 
@@ -130,7 +130,7 @@ Então verifico que a copy exibida é a de **despacho cancelado**, e não a de r
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] — **defeitos de melhoria em DEV**, os três achados na validação da retificação.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] — **defeitos de melhoria em DEV**, os três achados na validação da retificação.
 
 - **Relacionados** (mesma rodada): [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]] (permissão no cancelamento) e [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] (assinatura na impressão).
 

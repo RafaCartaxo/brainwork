@@ -18,7 +18,7 @@ ambiente: DEV
 
 ### Descrição
 
-Durante validação da retificação de despacho em DEV ([[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]) foi identificado que, ao **retificar uma resposta que já havia sido assinada**, a assinatura **continua sendo trazida na impressão do documento** — sem sinalização de que foi invalidada.
+Durante validação da retificação de despacho em DEV ([[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]) foi identificado que, ao **retificar uma resposta que já havia sido assinada**, a assinatura **continua sendo trazida na impressão do documento** — sem sinalização de que foi invalidada.
 
 A retificação deveria ter cancelado essa assinatura, já que o conteúdo do despacho mudou.
 
@@ -118,7 +118,7 @@ Como a assinatura foi cancelada, ela precisa chegar à impressão **marcada como
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] — **defeito de melhoria em DEV**, achado na validação da retificação de despacho.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] — **defeito de melhoria em DEV**, achado na validação da retificação de despacho.
 
 - **Relacionado**: [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]] — segundo defeito da mesma rodada de validação, no cancelamento.
 

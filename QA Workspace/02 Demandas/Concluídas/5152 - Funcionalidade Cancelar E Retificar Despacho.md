@@ -4,11 +4,11 @@ tags:
   - qa
   - despacho
 task: "5152"
-status: dev
+status: concluida
 prioridade: media
 mel: ""
 data_inicio: 2026-08-04
-data_fim: ""
+data_fim: 2026-08-11
 responsavel: Rafael
 modulo: despacho
 ---
@@ -16,7 +16,7 @@ modulo: despacho
 
 > [!info] Informações
 > - **Tipo:** Funcionalidade
-> - **Status:** DEV (Testando em Dev)
+> - **Status:** Concluída (aprovada em homologação em 11/08/2026)
 > - **Responsável QA:** Rafael
 > - **Link:** [SGV-5152 no Notion](https://app.notion.com/p/alfa-group/Cancelar-e-retificar-despacho-2502aec67d30814f9cddc0d96b993bb9) · Figma — Tramitação/Handoff: [Design Figma](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=7316-15502) · [handoff retificação](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=7316-21817) · [handoff cancelamento](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=7316-14888)
 > - **Devs:** Gabriel Alves, Marcos Vinicius · **Design:** Fernando Junior, Ivo Costa, Vinícius
@@ -170,7 +170,7 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 |---|---|
 | **Demanda** | SGV-5152 — Funcionalidade (escopo dividido em 2 entregas: cancelar e retificar) |
 | **Responsável** | Rafael |
-| **Ambiente** | Desenvolvimento |
+| **Ambiente** | Homologação — a execução de 11/08/2026 foi em HML; a passagem por DEV não chegou a ser executada |
 | **Escopo** | Cancelar despacho e retificar despacho no menu de opções do despacho: permissão, elegibilidade, restrições de origem, fluxo de confirmação, justificativa, impactos na thread, prazos, documentos associados, anexos, assinaturas, autenticidade, impressão/download, versionamento, notificações e referência de origem nos eventos |
 | **Fora de escopo** | Cancelar/retificar **documento** (comportamento já existente na plataforma) · menção de servidores via "@" (não é desta entrega) · revisor de anexos |
 | **Tipos de teste** | Funcional · Permissão · Negativo · Integração (assinaturas, autenticidade, notificações) |
@@ -182,68 +182,68 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 
 **A. Permissão (cancelar e retificar)**
 
-- [ ] **CA1** — A opção **"Cancelar despacho"** é oferecida a servidor **N1, Administrador ou Adm Setorial do setor dono** do documento, e ao **N2 apenas no despacho de autoria própria**; para os demais a opção **não aparece**
-- [ ] **CA2** — A opção **"Retificar despacho"** é oferecida **apenas ao criador original** do despacho; para qualquer outro usuário a opção **não aparece**
+- [x] **CA1** — A opção **"Cancelar despacho"** é oferecida a servidor **N1, Administrador ou Adm Setorial do setor dono** do documento, e ao **N2 apenas no despacho de autoria própria**; para os demais a opção **não aparece**
+- [x] **CA2** — A opção **"Retificar despacho"** é oferecida **apenas ao criador original** do despacho; para qualquer outro usuário a opção **não aparece**
 
 **B. Cancelar — elegibilidade, restrições e fluxo**
 
-- [ ] **CA3** — Só despacho **em tramitação** pode ser cancelado
-- [ ] **CA4** — Despacho gerado por **ação sistêmica** (Retificou, Associou, Desassociou, Cancelou, Revogou, Suspendeu, Pausou, Retomou) **não** oferece a opção de cancelar
-- [ ] **CA5** — "Cancelar despacho" abre **pop-up de confirmação** que detalha as consequências e reforça a irreversibilidade; "Continuar" **ancora o usuário no final da thread** daquele despacho e abre o campo de justificativa
-- [ ] **CA6** — A **justificativa é obrigatória**: o botão de confirmar fica **desabilitado até o texto ser digitado**
-- [ ] **CA7** — O cancelamento é **irreversível**: despacho cancelado **não** pode ser reaberto nem retomado
-- [ ] **CA8** — A **justificativa** é exibida na timeline **identada ao despacho original**, como registro final do trâmite
+- [x] **CA3** — Só despacho **em tramitação** pode ser cancelado
+- [x] **CA4** — Despacho gerado por **ação sistêmica** (Retificou, Associou, Desassociou, Cancelou, Revogou, Suspendeu, Pausou, Retomou) **não** oferece a opção de cancelar
+- [x] **CA5** — "Cancelar despacho" abre **pop-up de confirmação** que detalha as consequências e reforça a irreversibilidade; "Continuar" **ancora o usuário no final da thread** daquele despacho e abre o campo de justificativa
+- [x] **CA6** — A **justificativa é obrigatória**: o botão de confirmar fica **desabilitado até o texto ser digitado**
+- [x] **CA7** — O cancelamento é **irreversível**: despacho cancelado **não** pode ser reaberto nem retomado
+- [x] **CA8** — A **justificativa** é exibida na timeline **identada ao despacho original**, como registro final do trâmite
 
 **C. Cancelar — impactos na thread e no documento**
 
-- [ ] **CA9** — No despacho cancelado, **Comentar, Responder e o menu de opções deixam de existir**, e no lugar aparece a **tag fixa "Despacho cancelado"**
-- [ ] **CA10** — **Todos os prazos** do despacho são removidos, e a tag de cancelamento substitui as ações de prazo
-- [ ] **CA11** — Processos/documentos associados pelo despacho **passam a constar como desassociados** e **saem da head** do documento
+- [x] **CA9** — No despacho cancelado, **Comentar, Responder e o menu de opções deixam de existir**, e no lugar aparece a **tag fixa "Despacho cancelado"**
+- [x] **CA10** — **Todos os prazos** do despacho são removidos, e a tag de cancelamento substitui as ações de prazo
+- [x] **CA11** — Processos/documentos associados pelo despacho **passam a constar como desassociados** e **saem da head** do documento
 
 **D. Cancelar — anexos, assinaturas e autenticidade**
 
-- [ ] **CA12** — Nos downloads do documento (compactado, autenticável ou personalizado), os anexos vêm com as assinaturas realizadas **todas sinalizadas como "Sem efeito"**; o arquivo íntegro só é obtido no local do despacho, por **"baixar original"**
-- [ ] **CA13** — Todas as assinaturas do despacho, **realizadas ou pendentes**, passam a exibir status **"Cancelado"**
-- [ ] **CA14** — A consulta de autenticidade reporta **"Inválida"** para todos os itens, e no lugar do botão de acesso ao documento aparece **aviso de que o despacho foi cancelado**
-- [ ] **CA15** — No **drawer de solicitações de assinatura**, o despacho e seus anexos aparecem **desabilitados e com a tag de cancelamento**
+- [x] **CA12** — Nos downloads do documento (compactado, autenticável ou personalizado), os anexos vêm com as assinaturas realizadas **todas sinalizadas como "Sem efeito"**; o arquivo íntegro só é obtido no local do despacho, por **"baixar original"**
+- [x] **CA13** — Todas as assinaturas do despacho, **realizadas ou pendentes**, passam a exibir status **"Cancelado"**
+- [x] **CA14** — A consulta de autenticidade reporta **"Inválida"** para todos os itens, e no lugar do botão de acesso ao documento aparece **aviso de que o despacho foi cancelado**
+- [x] **CA15** — No **drawer de solicitações de assinatura**, o despacho e seus anexos aparecem **desabilitados e com a tag de cancelamento**
 
 **E. Cancelar — impressão, download e notificações**
 
-- [ ] **CA16** — Na **impressão**, o despacho cancelado exibe a **tarja de sem efeito**, sem validade
-- [ ] **CA17** — No **download**, o despacho cancelado exibe a **tarja de sem efeito**, sem validade
-- [ ] **CA18** — Em **PADES**, o arquivo mantém as assinaturas do despacho cancelado marcadas como **inválidas**
-- [ ] **CA19** — Todos os servidores envolvidos recebem **notificação na central**
-- [ ] **CA20** — Todos os participantes recebem **e-mail** oficial de cancelamento, **com link para a justificativa**
+- [x] **CA16** — Na **impressão**, o despacho cancelado exibe a **tarja de sem efeito**, sem validade
+- [x] **CA17** — No **download**, o despacho cancelado exibe a **tarja de sem efeito**, sem validade
+- [x] **CA18** — Em **PADES**, o arquivo mantém as assinaturas do despacho cancelado marcadas como **inválidas**
+- [x] **CA19** — Todos os servidores envolvidos recebem **notificação na central**
+- [x] **CA20** — Todos os participantes recebem **e-mail** oficial de cancelamento, **com link para a justificativa**
 
 **F. Retificar — restrições, fluxo e campos**
 
-- [ ] **CA21** — Despacho gerado por **ação sistêmica** (mesma lista de 8 do cancelamento) **não** oferece a opção de retificar
-- [ ] **CA22** — "Retificar despacho" abre **pop-up alertando as consequências**, incluindo a invalidação imediata das assinaturas; "Continuar" leva à página **"Retificar - Despacho [número]"** e "Cancelar" volta ao documento **sem aplicar nada**
-- [ ] **CA23** — São editáveis na retificação: **destinatários, servidores em cópia, descrição da demanda, anexos e nível de sigilo**
-- [ ] **CA24** — A **numeração original do despacho permanece a mesma** após a retificação
-- [ ] **CA25** — A **justificativa é obrigatória** para concluir a retificação, e é exibida ao **final da subthread** do despacho retificado
-- [ ] **CA26** — Destinatário ou servidor em cópia **removido na retificação perde o acesso** à visualização do documento
+- [x] **CA21** — Despacho gerado por **ação sistêmica** (mesma lista de 8 do cancelamento) **não** oferece a opção de retificar
+- [x] **CA22** — "Retificar despacho" abre **pop-up alertando as consequências**, incluindo a invalidação imediata das assinaturas; "Continuar" leva à página **"Retificar - Despacho [número]"** e "Cancelar" volta ao documento **sem aplicar nada**
+- [x] **CA23** — São editáveis na retificação: **destinatários, servidores em cópia, descrição da demanda, anexos e nível de sigilo**
+- [x] **CA24** — A **numeração original do despacho permanece a mesma** após a retificação
+- [x] **CA25** — A **justificativa é obrigatória** para concluir a retificação, e é exibida ao **final da subthread** do despacho retificado
+- [x] **CA26** — Destinatário ou servidor em cópia **removido na retificação perde o acesso** à visualização do documento
 
 **G. Retificar — impactos**
 
-- [ ] **CA27** — A tag **"Retificado"** aparece na timeline **e em todas as visualizações** do despacho
-- [ ] **CA28** — **Todas as assinaturas** (concluídas ou pendentes) **do despacho e dos anexos** são canceladas pela retificação
-- [ ] **CA29** — **Todos os despachos de resposta** ao despacho retificado são **cancelados**, seguindo a regra de despacho cancelado
-- [ ] **CA30** — O container **"Ações realizadas"** no despacho de justificativa exibe as copys previstas, conforme a alteração feita (as 9 formulações da doc)
+- [x] **CA27** — A tag **"Retificado"** aparece na timeline **e em todas as visualizações** do despacho
+- [x] **CA28** — **Todas as assinaturas** (concluídas ou pendentes) **do despacho e dos anexos** são canceladas pela retificação
+- [x] **CA29** — **Todos os despachos de resposta** ao despacho retificado são **cancelados**, seguindo a regra de despacho cancelado
+- [x] **CA30** — O container **"Ações realizadas"** no despacho de justificativa exibe as copys previstas, conforme a alteração feita (as 9 formulações da doc)
 
 **H. Retificar — histórico de versões, autenticidade e notificações**
 
-- [ ] **CA31** — O **histórico de versões** fica acessível no menu do despacho retificado para **todos que têm acesso ao documento**
-- [ ] **CA32** — O histórico abre em **modal de tela cheia**, listando as versões **da mais recente para a mais antiga**
-- [ ] **CA33** — A consulta de **autenticidade em versão antiga** retificada segue o mesmo comportamento já existente para **documento retificado**
-- [ ] **CA34** — Todos os envolvidos recebem **notificação interna e e-mail** automático da retificação
+- [x] **CA31** — O **histórico de versões** fica acessível no menu do despacho retificado para **todos que têm acesso ao documento**
+- [x] **CA32** — O histórico abre em **modal de tela cheia**, listando as versões **da mais recente para a mais antiga**
+- [x] **CA33** — A consulta de **autenticidade em versão antiga** retificada segue o mesmo comportamento já existente para **documento retificado**
+- [x] **CA34** — Todos os envolvidos recebem **notificação interna e e-mail** automático da retificação
 
 **I. Transversal — referência de origem nos eventos**
 
-- [ ] **CA35** — O evento de **prazo** informa **de qual despacho** a solicitação parte
-- [ ] **CA36** — O evento de **assinatura** informa **de qual despacho** a solicitação parte
-- [ ] **CA37** — O evento de **cancelamento** informa **qual despacho** foi cancelado
-- [ ] **CA38** — O evento de **retificação** informa **qual despacho** foi retificado
+- [x] **CA35** — O evento de **prazo** informa **de qual despacho** a solicitação parte
+- [x] **CA36** — O evento de **assinatura** informa **de qual despacho** a solicitação parte
+- [x] **CA37** — O evento de **cancelamento** informa **qual despacho** foi cancelado
+- [x] **CA38** — O evento de **retificação** informa **qual despacho** foi retificado
 
 ---
 
@@ -260,11 +260,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que "Cancelar despacho" aparece nos três primeiros perfis e **não aparece** para o N2 que não é autor nem para o servidor de outro setor
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -275,11 +278,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que "Retificar despacho" aparece **somente** para o criador original
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -292,11 +298,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que a opção de cancelar é oferecida **apenas** no despacho em tramitação
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -307,11 +316,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **nenhum** oferece a opção de cancelar
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -322,11 +334,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que abre um pop-up de confirmação que **descreve as consequências** do cancelamento e **reforça que a ação é irreversível**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -337,11 +352,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que a tela me leva ao **final da thread daquele despacho** e o **campo de justificativa** fica visível e pronto para digitação
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -352,7 +370,7 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o botão está **desabilitado** com o campo vazio e **habilita** quando o texto é digitado, e que o cancelamento se conclui com o despacho passando a exibir a tag de cancelado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -370,6 +388,9 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 
 **Evidências de Testes:**
 
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
+
 ---
 
 #### **CT-008 Despacho cancelado não pode ser reaberto nem retomado** *(CA7)*
@@ -379,11 +400,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **não existe** caminho para desfazer o cancelamento
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -394,11 +418,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que a justificativa aparece **identada ao despacho original**, como registro final daquele trâmite
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -411,11 +438,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **Comentar, Responder e o menu de opções não existem mais** e que no lugar aparece a **tag fixa "Despacho cancelado"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -426,11 +456,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todos os prazos foram removidos** e que a tag de cancelamento aparece no lugar das ações de prazo
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -441,11 +474,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o item passa a constar como **desassociado** e **deixa de aparecer na head** do documento
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -458,11 +494,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que os anexos vêm com as assinaturas realizadas, **todas sinalizadas como "Sem efeito"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -473,11 +512,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o arquivo vem **sem a sinalização de sem efeito**, diferente do que os downloads do documento entregam
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -488,11 +530,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **as duas** passam a exibir o status **"Cancelado"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -503,11 +548,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que todos os itens são reportados como **"Inválida"** e que, no lugar do botão de acesso ao documento, aparece **aviso de que o despacho foi cancelado**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -518,11 +566,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o despacho e os anexos aparecem **desabilitados e com a tag de cancelamento**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -535,7 +586,7 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o despacho cancelado sai com a **tarja de sem efeito**, indicando que não tem validade
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -543,6 +594,9 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 > A doc do módulo registra **"Sem efeito"** e a task **"SEM EFEITO"**. Conferir no produto qual é a real **antes** de reprovar por texto — a divergência está em Pontos de atenção. E não confundir esta **tarja** com a **tag "Despacho cancelado"** da timeline (CT-010).
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -553,11 +607,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o despacho cancelado sai com a **tarja de sem efeito** no arquivo, indicando que não tem validade
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -568,11 +625,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que as assinaturas **continuam no arquivo, marcadas como inválidas**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -583,11 +643,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todos os servidores envolvidos** recebem a notificação do cancelamento na central de notificações
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -598,11 +661,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todos os participantes** recebem o e-mail oficial de cancelamento e que o **link da justificativa** no e-mail abre a justificativa registrada
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -615,11 +681,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **nenhum** oferece a opção de retificar
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -630,11 +699,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o pop-up **alerta as consequências, incluindo a invalidação imediata das assinaturas**, que "Cancelar" **volta ao documento sem aplicar nada** e que "Continuar" abre a página **"Retificar - Despacho [número]"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -645,7 +717,7 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que os cinco campos eram editáveis e que as alterações aparecem aplicadas no despacho retificado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -662,6 +734,9 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 
 **Evidências de Testes:**
 
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
+
 ---
 
 #### **CT-026 Numeração do despacho preservada após a retificação** *(CA24)*
@@ -671,11 +746,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o despacho **mantém exatamente o mesmo número**, na timeline e na impressão
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -686,11 +764,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **sem justificativa não é possível concluir** e que, concluída, a justificativa aparece ao **final da subthread** do despacho retificado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -701,11 +782,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que, logado como cada um deles, **o documento não é mais acessível**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -718,11 +802,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que a tag **"Retificado"** aparece em **todas** essas visualizações
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -733,11 +820,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todas** essas assinaturas aparecem **canceladas**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -748,11 +838,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todos os despachos de resposta ficam cancelados**, com a tag de cancelado e sem Comentar/Responder/menu, como no cancelamento direto
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -763,11 +856,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o container **"Ações realizadas"** lista uma linha por alteração, no texto previsto na doc ("Alterou a descrição do despacho.", "Adicionou destinatário '…'", "Removeu destinatário '…'", "Adicionou cópia para '…'", "Removeu cópia para '…'", "Adicionou anexo '…'", "Removeu anexo '…'", "Alterou sigilo para '…'", "Alterou '…' de '…' para '…'")
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -780,11 +876,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todos** encontram o histórico de versões e conseguem abri-lo
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -795,11 +894,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que ele abre em **modal de tela cheia** e que as versões estão listadas **da mais recente para a mais antiga**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -810,11 +912,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o retorno é o **mesmo comportamento já existente para documento retificado**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -825,11 +930,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que **todos os envolvidos** recebem a notificação interna **e** o e-mail automático da retificação
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -842,11 +950,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o evento **identifica o despacho de origem**, e não apenas "neste despacho"
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -857,11 +968,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o evento **identifica o despacho de origem** da solicitação
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -872,11 +986,14 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o evento **identifica qual despacho foi cancelado**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
 
 ---
 
@@ -887,23 +1004,36 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 **Então** verifico que o evento **identifica qual despacho foi retificado**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
+![[5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4]]
+*Mesma gravação cobre CT-001 a CT-040.*
+
 ---
 
 > [!danger] Bugs encontrados
 
-Nenhum registrado ainda — validação em DEV começando em 04/08/2026.
+Nenhum bug novo aberto na validação de 11/08/2026 — os 40 CTs passaram em homologação.
+
+Os achados anteriores da feature seguem em cards próprios e **não foram encerrados por esta aprovação**: [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]], [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] e [[QA Workspace/02 Demandas/DEV/10608 - Bug Achados Na Retificacao De Despacho E Documento|SGV-10608]].
 
 ---
 
-## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://5152)
+## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Homologa%C3%A7%C3%A3o/) [🔍](evidencia://5152)
 
-As gravações vão **embedadas em cada CT**, no padrão `5152 - EV-NN - CT-NNN[, CT-NNN] - <descrição>.mp4`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]]. O índice CT × EV entra aqui ao fim da execução.
+As gravações vão **embedadas em cada CT**, no padrão `5152 - EV-NN - CT-NNN[, CT-NNN] - <descrição>.mp4`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].
+
+**Índice CT × EV** (execução de 11/08/2026, em homologação):
+
+| EV | Arquivo | CTs cobertos |
+|---|---|---|
+| **EV-01** | `5152 - EV-01 - CT-001 a CT-040 - retificar e cancelar despacho.mp4` | CT-001 a CT-040 (os 40) |
+
+Gravação única cobrindo a suíte inteira — cancelamento (grupos B a E), retificação (F a H) e a referência de origem nos eventos (I).
 
 ---
 
@@ -933,4 +1063,6 @@ As gravações vão **embedadas em cada CT**, no padrão `5152 - EV-NN - CT-NNN[
 
 ## Histórico
 
+- 2026-07-30 - 🔴 Reaberta em DEV (retornos de Flávio Oliveira registrados como subitens da task — **retro-registrado em 11/08/2026**: o evento é anterior ao card e não constava desta lista, só do bloco de Informações)
 - 2026-08-04 - Card criado para a validação em DEV (task em "Testando em Dev", reaberta em 30/07)
+- 2026-08-11 - 🔁 Retestada e aprovada em homologação (40/40 CTs e 38/38 critérios, evidência EV-01) — card movido de `DEV/` para `Concluídas/` sem passar pela validação em DEV

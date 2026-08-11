@@ -8,7 +8,7 @@ revisado: 2026-08-04
 # Despachos
 
 > [!warning] Cancelar e retificar despacho: **em teste em DEV**, não em produção (situação em 04/08/2026)
-> As duas seções deixaram de ser especificação futura. A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] cobre **as duas** ("escopo dividido em 2 entregas") e está com status **Testando em Dev**: MR aprovado em 28/07/2026 (revisores Bruno Clementino e Lucas Cabral) e **reaberta em DEV em 30/07/2026**, com os retornos registrados como subitens. Progresso de subitens 62,07%; QA responsável **Rafael**; deadline firmado com cliente **11/08/2026** (Prefeitura de Paulo Afonso).
+> As duas seções deixaram de ser especificação futura. A [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] cobre **as duas** ("escopo dividido em 2 entregas") e está com status **Testando em Dev**: MR aprovado em 28/07/2026 (revisores Bruno Clementino e Lucas Cabral) e **reaberta em DEV em 30/07/2026**, com os retornos registrados como subitens. Progresso de subitens 62,07%; QA responsável **Rafael**; deadline firmado com cliente **11/08/2026** (Prefeitura de Paulo Afonso).
 >
 > Vale como comportamento esperado **em DEV**. Não assumir em homologação nem em produção — o campo "Versão para deploy" da task está vazio.
 >
@@ -88,7 +88,7 @@ O motivo registrado na doc é um caso de uso concreto: quando um anexo é **repr
 
 ### Cancelar despacho
 
-> [!note]- Em teste em DEV pela [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] (04/08/2026)
+> [!note]- Em teste em DEV pela [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] (04/08/2026)
 > Documentada no Notion em **23/04/2026**. Deixou de ser especificação futura: MR aprovado em 28/07/2026, reaberta em DEV em 30/07/2026. Vale como comportamento esperado **em DEV**. O item `[UI/UX] Cancelar despacho` segue no backlog da página, mas o backlog não reflete o status de implementação.
 
 Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos preservando rastreabilidade e segurança jurídica.
@@ -130,7 +130,7 @@ Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos pres
 
 ### Retificar despacho
 
-> [!note]- Em teste em DEV pela [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] (04/08/2026)
+> [!note]- Em teste em DEV pela [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] (04/08/2026)
 > Documentada no Notion em **19/05/2026**. Mesmo card do cancelar — a SGV-5152 entrega as duas e tem um status só, então tratar uma como implementada e a outra como pendente não se sustenta. Vale como comportamento esperado **em DEV**.
 >
 > ⚠️ **Dependência entre as duas features**: a retificação obriga o cancelamento de todos os despachos de resposta ao retificado ("Impactos", abaixo), ou seja **retificar depende do cancelar funcionar**. Testar o cancelamento primeiro.
@@ -191,7 +191,7 @@ Menção de servidores em campos de texto de processos (despacho, respostas).
 
 ### Divergências task × doc — SGV-5152 (04/08/2026)
 
-A [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] traz critérios de aceite escritos na **análise da Bruna Machado em 02/12/2025** — **anteriores** a esta doc (cancelar 23/04/2026, retificar 19/05/2026). É o que explica as divergências. **Esta doc é a regra**; a task, quando conflita, está defasada.
+A [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] traz critérios de aceite escritos na **análise da Bruna Machado em 02/12/2025** — **anteriores** a esta doc (cancelar 23/04/2026, retificar 19/05/2026). É o que explica as divergências. **Esta doc é a regra**; a task, quando conflita, está defasada.
 
 | Ponto | Esta doc | A task | Como testar |
 |---|---|---|---|
@@ -238,7 +238,7 @@ O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilh
 - **2026-08-04 (DEV) — retificar resposta assinada não invalida a assinatura na impressão.** A regra manda cancelar **todas** as assinaturas por alteração de conteúdo, e o diálogo do Figma avisa o usuário disso antes de confirmar. Na prática a assinatura segue saindo no papel **como se valesse**: [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]]. Segundo defeito da mesma rodada de validação da 5152 — o outro é no cancelamento.
 
 - **2026-08-04 — a grafia da tarja foi resolvida no Figma, e esta doc estava errada.** A página do módulo escreve "Sem efeito"; o design mostra **`SEM EFEITO`** em caixa alta, e a **task estava certa**. Corrigido acima. Ficou claro também que são **três** elementos distintos, que vinham sendo confundidos: a **tarja `SEM EFEITO`** (marca d'água diagonal no PDF), a tag **`Anulado`** (drawer de download personalizado, no despacho e em cada anexo) e a tag **"Despacho cancelado"** (timeline).
-- **2026-08-04 — copys de notificação e e-mail lidas no Figma** (páginas `[SGV-7448]` e `[SGV-7450]` do arquivo Tramitação — Handoff). Estão transcritas no card da [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]], em "Copys confirmadas no Figma". Dois pontos que mudam expectativa de teste: **(a)** o e-mail traz o botão **"Acessar documento"** e o texto "acesse o documento para visualizar a justificativa" — ou seja o link leva ao **documento**, não direto à justificativa, ao contrário do que esta doc afirmava; **(b)** o diálogo da retificação diz "Ao retificar este **documento**" quando a ação é sobre o **despacho** — provável **defeito de copy no design**.
+- **2026-08-04 — copys de notificação e e-mail lidas no Figma** (páginas `[SGV-7448]` e `[SGV-7450]` do arquivo Tramitação — Handoff). Estão transcritas no card da [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]], em "Copys confirmadas no Figma". Dois pontos que mudam expectativa de teste: **(a)** o e-mail traz o botão **"Acessar documento"** e o texto "acesse o documento para visualizar a justificativa" — ou seja o link leva ao **documento**, não direto à justificativa, ao contrário do que esta doc afirmava; **(b)** o diálogo da retificação diz "Ao retificar este **documento**" quando a ação é sobre o **despacho** — provável **defeito de copy no design**.
 - **2026-08-04 — o design não tem toast de sucesso.** Nem para cancelar nem para retificar: existem o diálogo de confirmação *antes* da ação, a notificação na central, o e-mail e os artefatos de saída. Se aparecer toast na execução, é copy nova e não especificada.
 - **2026-08-03 (DEV e homologação) — `.dwg` aceito no upload faz a criação do documento/despacho falhar** em 3 arquivos específicos: [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Contradiz a regra de "Extensão DWG" acima, que manda aceitar `.dwg` como anexo em despacho no interno e no externo.
 

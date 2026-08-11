@@ -17,7 +17,7 @@ ambiente: DEV
 
 ### Descrição
 
-Durante validação do cancelamento de despacho em DEV ([[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]) foi identificado que um servidor **não consegue cancelar o despacho que ele mesmo criou**: ao tentar, o sistema informa que **não possui permissão para realizar a operação**.
+Durante validação do cancelamento de despacho em DEV ([[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]]) foi identificado que um servidor **não consegue cancelar o despacho que ele mesmo criou**: ao tentar, o sistema informa que **não possui permissão para realizar a operação**.
 
 O caso é forte porque esse servidor satisfaz **as duas trilhas** de permissão previstas na regra, e é negado nas duas — ele é o **autor do despacho** e é **Administrador do setor dono do documento**. A única coisa que ele não é: **o criador do documento**, que foi criado por outro servidor do mesmo setor.
 
@@ -130,7 +130,7 @@ Ser ou não o **criador do documento** não aparece na regra em momento nenhum �
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] — o defeito nasceu da validação do cancelamento de despacho, que é entrega dessa funcionalidade. É **defeito de melhoria em DEV**, não bug de produção.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]] — o defeito nasceu da validação do cancelamento de despacho, que é entrega dessa funcionalidade. É **defeito de melhoria em DEV**, não bug de produção.
 
 - Observações:
     - **Hipótese de causa, para o dev**: a checagem parece usar **o criador do documento** como critério de permissão. Foi o único critério que explicou os cinco cenários testados:
