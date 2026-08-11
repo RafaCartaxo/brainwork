@@ -4,7 +4,7 @@ tags:
   - qa
   - despacho
 task: "5152"
-status: concluida
+status: resolvido
 prioridade: media
 mel: ""
 data_inicio: 2026-08-04
