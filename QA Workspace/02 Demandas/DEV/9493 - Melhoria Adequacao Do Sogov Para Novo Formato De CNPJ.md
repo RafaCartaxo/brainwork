@@ -823,7 +823,7 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 
 **Figma lido em 30/07** — página `[SGV-9493]` da Tramitação/Handoff, com 3 cards de especificação e 1 tela de exemplo. Página inteira capturada; não há outras seções.
 
-**Card criado direto, sem mesa de refinamento** — rota do [[Sistema/Skills/SKILL_LIMPEZA_EXPORT#B — Card direto (task completa)|SKILL_LIMPEZA_EXPORT modo B]], autorizada pela regra "quando PULAR a mesa" da [[Sistema/Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]]: a spec do Notion está completa (objetivo, telas, endpoints, alterações, arquivos, MR) e não declara regra pendente de validação — diferente da [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]], que precisou de mesa porque a spec listava 4 regras sem conteúdo.
+**Card criado direto, sem mesa de refinamento** — rota do [[Sistema/Skills/SKILL_LIMPEZA_EXPORT#B — Card direto (task completa)|SKILL_LIMPEZA_EXPORT modo B]], autorizada pela regra "quando PULAR a mesa" da [[Sistema/Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]]: a spec do Notion está completa (objetivo, telas, endpoints, alterações, arquivos, MR) e não declara regra pendente de validação — diferente da [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]], que precisou de mesa porque a spec listava 4 regras sem conteúdo.
 
 ---
 

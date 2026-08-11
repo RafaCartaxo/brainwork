@@ -129,7 +129,7 @@ Anexos do despacho passam a ser **exibidos mesmo com o conteúdo recolhido** —
 ## Cards relacionados
 
 - [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]] — setores das regras de tramitação não mantidos ao navegar etapas na criação de A&S
-- [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho (refinada 29/07, em validação em homologação)
+- [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho (refinada 29/07, em validação em homologação)
 - [[QA Workspace/02 Demandas/HML/10451 - Bug Toolbar De Documento Encerrado Para Mim Nao Exibe Historico Nem Baixar|SGV-10451]] — toolbar de documento encerrado "para mim" sem histórico nem baixar documento. Vizinho da 9042 (mesma família "Encerrar para mim / para meu setor"), mas coisa distinta: a 9042 é o **ato** de encerrar na emissão de despacho, a 10451 é o **estado** da toolbar depois de encerrado. Se um fix mexer no outro, vale reteste cruzado
 
 ## Referências

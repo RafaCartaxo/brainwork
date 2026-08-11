@@ -6,20 +6,20 @@ tags:
   - tramitacao
 task: "9042"
 mel: ""
-status: aberto
+status: resolvido
 prioridade: ""
 data_inicio: 2026-07-29
-data_fim: ""
+data_fim: 2026-08-11
 responsavel: Rafael
 cadastrado_por: ""
 modulo: tramitacao
-ambiente: HML
+ambiente: PROD
 ---
 # Demanda: [Melhoria-CX] Ações de tramitação e encerramento na emissão de despacho
 
 > [!info] Informações
 > - **Tipo:** Melhoria
-> - **Status:** HML (em validação)
+> - **Status:** Concluída (entrega em produção; card encerrado em 11/08/2026)
 > - **Responsável QA:** Rafael
 > - **Link:** [SGV-9042 no Notion](https://app.notion.com/p/alfa-group/MELHORIA-CX-Adicionar-tarefas-na-barra-de-ferramentas-na-cria-o-de-um-despacho-3722aec67d3081d8ba12d56fc6387c5b) · [Figma — Tramitação/Handoff](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=8765-2765)
 > - **Devs:** Gabriel Desidério, Lucas Cabral · **Design:** Ivo Costa, Edu, Vinícius
@@ -599,3 +599,4 @@ Análise completa (rodadas de refinamento, gate de doc, regras extraídas do Fig
 - 2026-07-29 - 📝 Melhoria refinada (critérios de aceite prontos; card destilado da mesa em `05 Refinar/`)
 - 2026-07-30 - 🔁 Validada em homologação: **22 de 22 critérios e 21 de 21 CTs aprovados — nenhum reprovado**. Nomenclatura dos botões definida (rótulos do Figma permanecem). 4 casos no registro do grupo G. Aberto só o **MR da entrega**, não identificado.
 - 2026-07-29 - ℹ️ Contexto: **aprovada em DEV por outro QA** (não pelo Rafael) — por isso não há registro de validação em DEV na daily dele. Validação em homologação em andamento.
+- 2026-08-11 - ✅ Entrega confirmada em produção; card encerrado (validação de homologação em 30/07: 22/22 critérios e 21/21 CTs, nenhum reprovado). O **MR da entrega nunca foi identificado** — encerrado assim mesmo, por decisão de 11/08.

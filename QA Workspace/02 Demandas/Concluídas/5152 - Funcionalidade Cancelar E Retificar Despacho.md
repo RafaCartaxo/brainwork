@@ -1047,7 +1047,7 @@ Gravação única cobrindo a suíte inteira — cancelamento (grupos B a E), ret
 
 **Lacunas — nem a task nem a doc definem.** Cada uma está registrada em [[QA Workspace/04 Conhecimento/Módulos/Despachos#Dúvidas em aberto|Despachos → Dúvidas em aberto]]; aqui só a lista do que trava asserção nesta rodada, para levar a produto:
 
-- Despacho que **movimentou etapa de fluxo de trabalho** pode ser cancelado/retificado? O que acontece com a etapa já avançada e com o contêiner "Próximo passo do documento" ([[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]], [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]]).
+- Despacho que **movimentou etapa de fluxo de trabalho** pode ser cancelado/retificado? O que acontece com a etapa já avançada e com o contêiner "Próximo passo do documento" ([[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]], [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Workflow]]).
 - **Profundidade da cascata** de cancelamento (respostas das respostas, N níveis; despacho-pai × sub-thread) — o CT-031 cobre **um** nível de propósito.
 - **Retificar duas vezes, retificar cancelado, cancelar retificado.**
 - **Página extra de assinaturas × cancelamento**: a página ainda é gerada? Com que marcação? ([[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]]).

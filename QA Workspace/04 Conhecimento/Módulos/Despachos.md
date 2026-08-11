@@ -265,7 +265,7 @@ O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilh
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
 - [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]] — anexo DWG em documento/despacho (aberto; divergência com a regra de Extensão DWG)
-- [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho
+- [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho
 - [[QA Workspace/02 Demandas/HML/7829 - Bug Anexos Despacho Não Carregados Emitir Assinar Cidadão|SGV-7829]] — anexos do despacho ao emitir e assinar como cidadão
 - [[QA Workspace/02 Demandas/HML/5360 - Bug Assinatura Despacho Customizado Não Aparece Pendentes|SGV-5360]] — solicitação de assinatura em despacho customizado
 - [[QA Workspace/02 Demandas/DEV/9977 - Bug Nome Oculto Cópia Despacho|SGV-9977]] — servidor em cópia no despacho

@@ -47,7 +47,7 @@ O resultado é uma incoerência entre dois caminhos para a mesma ação: retroce
 
 ![[9042 - EV-03 - CT-003, CT-005 - despacho customizado nao emitido bloqueia inclusive atalhos.mp4]]
 
-*Aponta direto pra evidência da [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] (EV-03). A cópia com o número deste card foi **apagada** no descarte — card descartado não justifica duplicar arquivo de 5 MB. Precedente 30/07: o embed ficou quebrado por algumas horas até a varredura pegar.*
+*Aponta direto pra evidência da [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] (EV-03). A cópia com o número deste card foi **apagada** no descarte — card descartado não justifica duplicar arquivo de 5 MB. Precedente 30/07: o embed ficou quebrado por algumas horas até a varredura pegar.*
 
 ---
 
@@ -161,7 +161,7 @@ O bloqueio é da **direção de avanço**, não do select inteiro.
 ### Informações adicionais
 
 - Demanda relacionada: **SGV-10489** (número informado pelo Rafael em 30/07).
-- **Origem**: validação da [[QA Workspace/02 Demandas/HML/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] em homologação. O CA6 e o CT-006 daquele card apontam pra cá.
+- **Origem**: validação da [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] em homologação. O CA6 e o CT-006 daquele card apontam pra cá.
 - **Gate de doc** (2026-07-30, fluxo 8): **divergência confirmada** contra [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]], que condiciona **apenas o avanço** ao cumprimento das ações obrigatórias — em quatro pontos independentes:
 
     | Onde | O que diz |
