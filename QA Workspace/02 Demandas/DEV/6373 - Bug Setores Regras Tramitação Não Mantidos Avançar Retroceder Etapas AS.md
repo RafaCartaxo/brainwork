@@ -29,6 +29,8 @@ Ao avançar ou retroceder entre as etapas da criação de A&S, os setores config
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://6373)
 
+![[6373 - avançar e retornar está mantendo salvo.mp4]]
+
 ![[6373 - setores regras tramitacao nao mantidos avancar retroceder etapas criacao as reaberta em dev.mp4]]
 
 ---
