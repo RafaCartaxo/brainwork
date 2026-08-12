@@ -6,7 +6,7 @@ tags:
 task: "10784"
 prioridade: media
 status: aberto
-data_inicio: 2026-08-11
+data_inicio: 2026-08-12
 data_fim: ""
 responsavel: Rafael
 cadastrado_por: Rafael
@@ -116,4 +116,4 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
     - 🔎 **Observação fora de escopo, a confirmar**: comparando as duas imagens, o `e mais N` do produto também parece não trazer a palavra *"destinatário(s)"* nem o tratamento de link azul que o protótipo mostra. Não foi validado nesta rodada e **não entrou nos critérios** — mas se for confirmado, é a mesma família de divergência.
     - Mesma tela da [[QA Workspace/02 Demandas/DEV/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (divergências de protótipo na exibição do despacho) — vale tratar as duas na mesma passada de ajuste.
 - Histórico:
-    - 2026-08-11 - 🐛 Bug cadastrado (identificado em homologação e produção, versão 12.39.44.2)
+    - 2026-08-12 - 🐛 Bug cadastrado (identificado em homologação e produção, versão 12.39.44.2)
