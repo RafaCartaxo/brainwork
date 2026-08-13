@@ -118,8 +118,14 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] **CA20** — Na **página da feature**, o menu contextual substitui a edição inline e a hierarquia etiqueta/subetiqueta é preservada
 - [ ] **CA21** — O **filtro de etiquetas da Mesa de Trabalho** tem **barra de pesquisa**, subetiquetas indentadas, botões **"Cancelar"** e **"Filtrar"** ao final, e clusters com contagem e expansão/retração
 - [ ] **CA22** — Na **página de criação**, os seletores de **cor da etiqueta** e **cor do texto** são **independentes**, cada um acionado pelo `+` do seu campo, com **branco pré-selecionado** no texto
-- [ ] **CA23** — O **preview da página de criação** exibe nome, número do documento, setor responsável e última atividade, atualizando **em tempo real** conforme as cores mudam
-- [ ] **CA24** — O texto do **accordion de subetiquetas no card da Mesa** está legível, resolvendo o relato de "muito pequeno"
+- [ ] **CA23** — O **preview** exibe nome, número do documento e **setor responsável**, atualizando **em tempo real** conforme as cores mudam ~~e última atividade~~
+- [ ] **CA24** — O texto do **accordion de subetiquetas no menu de aplicação** está legível, resolvendo o relato de "muito pequeno"
+
+> [!warning]- Dois critérios corrigidos em 13/08, durante a execução
+> Os dois estavam escritos de um jeito que reprovaria o dev por engano. A correção veio de conferir o Figma e o produto, não de flexibilizar o critério:
+>
+> - **CA23** — "última atividade" **não existe nem no design**: o container `pre-visualizacao` tem **altura fixa de 160px** e corta o card do documento por desenho (medido 167px na implementação — bate). O que restou do critério é o **setor responsável**, que o Figma mostra (`Responsável: SIGLA - SIGLA`) e o produto não renderiza — virou o **Defeito 3**.
+> - **CA24** — dizia "no card da Mesa", mas o accordion vive no **menu de aplicação aberto pelo card**. O relato original é *"na **aplicação** das etiquetas no card da mesa"*, o que confirma a leitura. Medido lá: subetiqueta em **Inter Bold 11px**, idêntica à etiqueta-pai — a redução que motivou o relato não existe mais.
 
 **G. Estados, validações e feedback**
 
@@ -144,7 +150,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que os três exibem o **mesmo componente novo**, com o padrão visual atualizado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -163,6 +169,13 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não
 - [ ] Não se aplica
 
+> [!warning]- Não executado em 13/08 — bloqueio de ambiente, não de escopo
+> Exige um segundo perfil, e a extensão do navegador não enxerga a guia anônima (é preciso liberar em `chrome://extensions` e reabrir a janela, ou logar o perfil B na janela normal).
+>
+> **O cenário que interessa** não é "o perfil B consegue criar etiqueta": a doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] diz que **todos** os usuários podem criar, editar e excluir. O que precisa ser observado é o **usuário B abrindo o menu contextual de uma etiqueta compartilhada criada por A** — se Editar e Excluir aparecem, considerando que excluir "afeta todos os setores e servidores que a utilizam".
+>
+> O post-it do handoff confirma a regra em aberto: *"As opções são exibidas de acordo com as permissões do usuário, assim como no fluxo principal"* — remete ao fluxo principal sem enumerar as permissões.
+
 **Evidências de Testes:**
 
 ---
@@ -174,7 +187,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que **"Nova subetiqueta" aparece apenas na etiqueta-pai**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -191,7 +204,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que o **drawer de criação** é aberto
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -206,7 +219,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que há **estado de hover** e que **qualquer ponto do header** expande/recolhe o container
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -221,7 +234,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que o container mantém o padrão de 10 e exibe **barra de rolagem** para as demais
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -236,7 +249,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que sem seleção vale a ordem de cadastro/edição e que, **com seleção, as selecionadas sobem dentro do seu cluster**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -251,7 +264,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que ela está **fixa no topo**, que **não oferece editar nem excluir**, e que exibe **tooltip** no hover
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -266,7 +279,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que as subetiquetas aparecem com **ícone próprio e indentação**, deixando a hierarquia evidente
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -283,7 +296,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que a **contagem do cluster passa a refletir o número encontrado** e que o termo aparece **destacado** no resultado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -299,7 +312,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -314,7 +327,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -330,7 +343,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que as duas ações se completam **sem navegar para a página da feature**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -345,7 +358,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que a etiqueta **já aparece aplicada ao documento**, sem que eu precise voltar ao menu e selecioná-la
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -360,7 +373,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que **não há seção de compartilhamento** no drawer e que a subetiqueta nasce **compartilhada com os mesmos setores da pai**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -375,7 +388,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que ele exibe **"Etiqueta-pai / Nome"**, na ordem hierárquica
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -391,7 +404,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -408,7 +421,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -422,7 +435,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que o botão de etiquetas **aparece nos dois casos**, **sempre no início do container** (não ao final das etiquetas), com estados default e hover distintos
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -439,7 +452,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que a **edição inline foi substituída pelo menu contextual** e que a hierarquia etiqueta/subetiqueta segue preservada
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -454,7 +467,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que existe **barra de pesquisa**, que as subetiquetas aparecem indentadas, que os clusters têm **contagem e expansão/retração** e que há os botões **"Cancelar"** e **"Filtrar"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -472,7 +485,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que os dois seletores são **independentes**, cada um acionado pelo `+` do seu campo, e que a **cor branca já vem pré-selecionada** no texto
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -488,21 +501,26 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
 ---
 
-#### **CT-024 Texto do accordion de subetiquetas legível no card da Mesa** *(CA24)*
+#### **CT-024 Texto do accordion de subetiquetas legível no menu de aplicação** *(CA24)*
 
 **Dado** que um documento na Mesa de Trabalho tem etiqueta-pai com subetiquetas aplicadas
-**Quando** eu expando o accordion de subetiquetas no card
+**Quando** eu abro o menu de etiquetas **pelo card** e expando o accordion de subetiquetas
 **Então** verifico que o texto está **legível**, sem a redução que motivou o relato
 
+> [!note]- Enunciado corrigido em 13/08 e resultado medido
+> O texto dizia "expando o accordion de subetiquetas **no card**". O card da Mesa não tem accordion — as etiquetas aplicadas aparecem como tags, e a subetiqueta vira uma tag com o caminho completo (`Pai / Sub`). O accordion está no **menu de aplicação**, com três níveis: etiquetas compartilhadas, minhas etiquetas e as subetiquetas de cada pai.
+>
+> Medição no menu de aplicação aberto pelo card: título do cluster **14px/500**, tag da etiqueta-pai **11px/700**, tag da subetiqueta **11px/700**. A subetiqueta tem **exatamente a mesma tipografia da pai**, e 11px Inter Bold é o valor do handoff. Aprovado.
+
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -520,7 +538,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -534,7 +552,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que ele estava **desabilitado** e **habilita após a primeira edição**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -549,12 +567,14 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que existe **contador visível** e que o campo **respeita o limite de 25**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
-> [!warning]- Comportamento no estouro não está especificado
-> A doc define o limite e o contador, mas **não diz** se a digitação é bloqueada ou se aparece mensagem de erro ao exceder. Registrar o que o produto fizer, sem reprovar por isso — está em Dúvidas em aberto na doc do módulo.
+> [!success]- Comportamento no estouro — observado em 13/08
+> A doc definia o limite e o contador, mas **não dizia** se a digitação seria bloqueada ou se apareceria mensagem de erro. **Observado**: digitando 31 caracteres, o campo aceita apenas os 25 primeiros, o contador trava em `25/25` e **não há mensagem de erro** — bloqueio silencioso.
+>
+> Aprovado sem ressalva: o critério exigia limite e contador, e os dois estão corretos. A lacuna era da doc, não do produto — item fechado em [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] → Dúvidas em aberto.
 
 **Evidências de Testes:**
 
@@ -567,7 +587,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que ambos apresentam o checkbox **"Não quero receber este alerta novamente"** e os botões de cancelar e confirmar/excluir
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -583,7 +603,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -602,7 +622,22 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 > [!danger] Bugs encontrados
 
-Nenhum registrado ainda — validação em DEV começando em 12/08/2026.
+**7 defeitos** na 1ª rodada de validação em DEV (13/08/2026), registrados no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]]. Como a entrega está em desenvolvimento, vão como **defeitos de melhoria**, não como bugs com SGV próprio.
+
+| # | Sev | Defeito | CT que reprovou |
+|---|---|---|---|
+| 1 | Alta | "Criar e aplicar" só habilita depois de escolher Compartilhamento, não só com o nome | CT-025, CT-012 |
+| 2 | Média | Busca pela etiqueta-pai não retorna o cluster completo | CT-011 |
+| 3 | Média | Preview não renderiza a linha "Responsável: \<setor\>" | CT-023 |
+| 4 | Baixa | Box "Criar etiqueta [termo]" não acompanha a largura do campo de busca | CT-012 |
+| 5 | Baixa | Toasts de criação e edição divergem da copy especificada | CT-029 |
+| 6 | Média | Seletor de setores sem a linha "Selecionados:", sem `+qtd` e sem limpar todos | CT-017 |
+| 7 | Alta | Menu de contexto do card cobre o "Nova etiqueta", tornando-o não clicável | CT-018 |
+
+> [!tip]- Dois falsos positivos descartados nesta rodada
+> Os dois só não viraram defeito porque foram conferidos no produto antes do registro:
+> - **"Limpar filtro"** no filtro da Mesa — **existe**; é condicional a haver etiqueta selecionada, e na primeira passada eu abri o filtro vazio. CT-021 aprovado.
+> - **Accordion de subetiquetas** — **existe**, no menu de aplicação (não no card, como o enunciado do CT-024 dizia). Medido: subetiqueta em Inter Bold 11px, igual à pai. CT-024 aprovado.
 
 ---
 
@@ -635,3 +670,7 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 - 2026-08-12 - 🔎 Análise (1ª — escopo reconciliado: a spec cobre 4 dos 5 itens do detalhamento original; a descrição consolidada subestimava o escopo)
 - 2026-08-12 - 🔎 Gate de doc: **doc respalda** — os critérios derivam da doc de design de 07/05, agora importada como doc do módulo. Lacunas registradas em Dúvidas em aberto (comportamento ao exceder 25 caracteres; alcance do checkbox "não receber este alerta"; e o "modal não fecha", sem spec)
 - 2026-08-12 - 📝 Melhoria refinada (critérios de aceite prontos; 29 critérios e 29 CTs, mais 1 caso em registro)
+- 2026-08-13 - 🚀 Início de validação em DEV (`dev-lucas-cabral`, v12.38.39.2) — **28 dos 29 CTs executados**: 21 aprovados e 7 reprovados. CT-002 não executado por bloqueio de ambiente (falta 2º perfil)
+- 2026-08-13 - 🐛 Bug confirmado (card criado): [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]] — 7 defeitos agrupados, `CT-B01` a `CT-B07`
+- 2026-08-13 - ✏️ **CA23 e CA24 corrigidos durante a execução**: o CA23 cobrava "última atividade", que o Figma não tem (container de 160px fixos); o CA24 apontava o accordion no card, quando ele vive no menu de aplicação. Os dois, executados ao pé da letra, reprovariam o dev indevidamente
+- 2026-08-13 - 📚 **Dúvida em aberto resolvida**: exceder 25 caracteres no nome **bloqueia a digitação**, sem mensagem de erro (contador trava em `25/25`)
