@@ -98,8 +98,14 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **C. Pesquisa no menu**
 
 - [ ] **CA10** — Com resultados, a **contagem do cluster reflete o número encontrado** e o termo buscado é destacado
-- [ ] **CA11** — Buscar por uma etiqueta que tem subetiquetas (ou pela própria pai) retorna o **cluster completo**
-- [ ] **CA12** — Sem resultados, **"Criar etiqueta [termo]"** aparece como primeira opção; ao acioná-la o drawer abre com o **nome pré-preenchido** e o botão **já habilitado**
+- [x] **CA11** — Buscar por uma etiqueta que tem subetiquetas (ou pela própria pai) retorna o **cluster completo**, respeitando a **visualização por permissão**: só aparece o que está compartilhado com o setor de quem busca
+
+> [!success]- Critério corrigido em 13/08 — reconciliado com o Rafael
+> A redação original não previa a filtragem por permissão. O comportamento observado — pai sem compartilhamento com o setor do usuário não aparece, mesmo tendo subetiqueta — é a regra de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] em ação (*"visualização é restrita por permissão"*), não um defeito. Confirmado pelo Rafael: comportamento correto.
+- [ ] **CA12** — Sem resultados, **"Criar etiqueta [termo]"** aparece como primeira opção; ao acioná-la o drawer abre com o **nome pré-preenchido**, seguindo as mesmas regras de habilitação do botão do fluxo principal (exige compartilhamento) e sem estourar a largura do campo ~~e o botão já habilitado~~
+
+> [!warning]- Critério corrigido em 13/08 — reconciliado, mas segue reprovado
+> "o botão já habilitado" foi **descartado**: o Rafael confirmou que criar-e-aplicar exige compartilhamento mesmo na criação por sugestão — não é defeito. O que **continua reprovado** é o box "Criar etiqueta [termo]" estourando a largura do campo, achado extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — motivo pelo qual este CT segue "Não".
 
 **D. Drawer**
 
@@ -119,7 +125,10 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] **CA20** — Na **página da feature**, o menu contextual substitui a edição inline e a hierarquia etiqueta/subetiqueta é preservada
 - [ ] **CA21** — O **filtro de etiquetas da Mesa de Trabalho** tem **barra de pesquisa**, subetiquetas indentadas, botões **"Cancelar"** e **"Filtrar"** ao final, e clusters com contagem e expansão/retração
 - [ ] **CA22** — Na **página de criação**, os seletores de **cor da etiqueta** e **cor do texto** são **independentes**, cada um acionado pelo `+` do seu campo, com **branco pré-selecionado** no texto
-- [ ] **CA23** — O **preview** exibe nome, número do documento e **setor responsável**, atualizando **em tempo real** conforme as cores mudam ~~e última atividade~~
+- [x] **CA23** — O **preview** exibe nome e número do documento, atualizando **em tempo real** conforme as cores mudam ~~e setor responsável~~ ~~e última atividade~~
+
+> [!warning]- Segunda correção em 13/08 — tensão com o Figma registrada, não escondida
+> O Rafael aceitou o preview **como está**, sem a linha "Responsável: \<setor\>" — não é defeito. Isso **contradiz** o que eu tinha levantado antes: o Figma de handoff mostra essa linha explicitamente (`Responsável: SIGLA - SIGLA`) no card de pré-visualização. Não sei se foi decisão de produto pra não implementar aquele trecho, uma revisão posterior do Figma que eu não vi, ou outro motivo — fica registrado como a **fonte da divergência**, caso valha revisitar depois. Aceito como está por decisão do Rafael.
 - [ ] **CA24** — O texto do **accordion de subetiquetas no menu de aplicação** está legível, resolvendo o relato de "muito pequeno"
 
 > [!warning]- Dois critérios corrigidos em 13/08, durante a execução
@@ -130,7 +139,10 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **G. Estados, validações e feedback**
 
-- [ ] **CA25** — **"Criar e aplicar"** permanece desabilitado até o nome ser preenchido; na criação por sugestão, já vem habilitado
+- [x] **CA25** — **"Criar e aplicar"** permanece desabilitado até o nome ser preenchido; na criação por sugestão, o nome já vem preenchido, mas o botão segue as **mesmas regras de habilitação do fluxo principal** (também exige compartilhamento) ~~já vem habilitado~~
+
+> [!success]- Critério corrigido em 13/08 — reconciliado com o Rafael
+> A doc original prometia botão "já habilitado" na criação por sugestão. O Rafael confirmou que isso não é o comportamento correto: compartilhamento é obrigatório em qualquer caminho de criação, incluindo por sugestão. A doc do módulo está desatualizada nesse ponto — vale registrar como ajuste de doc, não como defeito do produto.
 - [ ] **CA26** — **"Salvar e aplicar"** permanece desabilitado até que alguma edição seja feita
 - [ ] **CA27** — O nome da etiqueta é limitado a **25 caracteres**, com contador visível
 - [ ] **CA28** — Os diálogos de confirmação (edição com mudança de compartilhamento e exclusão de compartilhada) exibem o checkbox **"Não quero receber este alerta novamente"**
@@ -305,20 +317,24 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 ---
 
-#### **CT-011 Busca em etiqueta com subetiquetas retorna o cluster completo** *(CA11)*
+#### **CT-011 Busca em etiqueta com subetiquetas retorna o cluster completo, respeitando permissão** *(CA11)*
 
-**Dado** que existe uma etiqueta-pai com subetiquetas
+**Dado** que existe uma etiqueta-pai com subetiquetas, compartilhada com o setor de quem busca
 **Quando** eu pesquiso pelo nome da etiqueta-pai e, em seguida, por um termo contido em uma subetiqueta
-**Então** verifico que nos dois casos o resultado traz o **cluster completo**, com a pai e suas subetiquetas
+**Então** verifico que nos dois casos o resultado traz o **cluster completo**, com a pai e suas subetiquetas — e que uma pai **não compartilhada** com o setor de quem busca corretamente não aparece
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reconciliado em 13/08 com o Rafael
+> A gravação abaixo mostra a busca pela pai **sem** trazer a subetiqueta — na hora, marquei como defeito. É a **visualização por permissão** da doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] em ação: a pai buscada não estava compartilhada com o setor do usuário que buscava. Comportamento correto, confirmado pelo Rafael. Critério corrigido acima (CA11) pra prever o filtro por permissão.
 
 **Evidências de Testes:**
 
 ![[3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif]]
+*Gravação registrada como o cenário sem permissão — mostra a regra funcionando, não um defeito.*
 
 ---
 
@@ -326,12 +342,15 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Dado** que o menu de aplicação está aberto
 **Quando** eu digito um termo que **não corresponde a nenhuma etiqueta** e aciono a opção oferecida
-**Então** verifico que **"Criar etiqueta [termo]"** aparece como **primeira opção**, que o drawer abre com o **nome já preenchido** e que o botão de criar **já está habilitado**
+**Então** verifico que **"Criar etiqueta [termo]"** aparece como **primeira opção**, sem estourar a largura do campo, e que o drawer abre com o **nome já preenchido**, seguindo as mesmas regras de habilitação do fluxo principal
 
 **Execução Passou?**
 - [ ] Sim
 - [x] Não
 - [ ] Não se aplica
+
+> [!warning]- Reconciliado em 13/08 — parcialmente. Segue reprovado
+> O "botão já habilitado" foi **descartado**: exigir compartilhamento também na criação por sugestão é comportamento correto, confirmado pelo Rafael. O que **segue reprovado** é o box "Criar etiqueta [termo]" estourando a largura do campo — extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]], que segue aberto.
 
 **Evidências de Testes:**
 
@@ -510,16 +529,20 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Dado** que eu estou na página de criação de etiquetas
 **Quando** eu preencho o nome e altero as cores
-**Então** verifico que o preview exibe **nome, número do documento, setor responsável e última atividade**, e que ele **acompanha as mudanças em tempo real**
+**Então** verifico que o preview exibe **nome e número do documento**, e que ele **acompanha as mudanças em tempo real**
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!warning]- Reconciliado em 13/08 — tensão com o Figma não escondida
+> Aceito pelo Rafael sem a linha "Responsável: \<setor\>". **Não bate** com o Figma de handoff, que mostra essa linha explicitamente no card de pré-visualização — não sei se é decisão de produto, revisão posterior do design, ou outro motivo. Registrado como possível gate de doc pendente, não perseguido além disso por decisão do Rafael.
 
 **Evidências de Testes:**
 
 ![[3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif]]
+*Gravação mantida como registro do que foi observado (e aceito) — não indica mais um defeito.*
 
 ---
 
@@ -549,17 +572,20 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Dado** que o drawer de criação está aberto com o campo de nome **vazio**
 **Quando** eu observo o botão, digito um nome e observo de novo; e depois repito abrindo pela **criação por sugestão**
-**Então** verifico que o botão está **desabilitado com o campo vazio**, **habilita ao digitar**, e que na criação por sugestão **já vem habilitado**
+**Então** verifico que o botão está **desabilitado com o campo vazio**, **habilita ao digitar**, e que na criação por sugestão o nome já vem preenchido, mas o botão segue as **mesmas regras de habilitação do fluxo principal**
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reconciliado em 13/08 com o Rafael
+> A doc prometia botão "já habilitado" na criação por sugestão; o Rafael confirmou que isso não é o comportamento correto — compartilhamento é obrigatório em qualquer caminho de criação. A gravação abaixo mostra exatamente esse comportamento (botão travado até escolher compartilhamento), que hoje é entendido como certo, não como defeito. A doc do módulo está desatualizada nesse ponto.
 
 **Evidências de Testes:**
 
 ![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
-*Mesma gravação cobre CT-012.*
+*Mesma gravação cobre CT-012 — aqui documenta o comportamento correto, lá documenta o defeito de overflow que continua aberto (SGV-10831).*
 
 ---
 
@@ -682,7 +708,7 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 
 ### Índice CT × EV
 
-*Nesta rodada foram gravados apenas os **CTs reprovados** — os 21 aprovados ficam com "Passou: Sim" sem evidência, por decisão de escopo.*
+*Nesta rodada foram gravados apenas os **CTs que ficaram reprovados após a reconciliação de 13/08** — os demais aprovados ficam com "Passou: Sim" sem evidência, por decisão de escopo. CT-011, CT-023 e CT-025 têm gravação porque foram reprovados na execução original; a reconciliação manteve a evidência como registro do que foi observado, mesmo tendo corrigido o veredito pra Sim.*
 
 | EV | Arquivo | CTs cobertos | O que mostra |
 |---|---|---|---|
