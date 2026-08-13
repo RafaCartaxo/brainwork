@@ -102,10 +102,12 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 > [!success]- Critério corrigido em 13/08 — reconciliado com o Rafael
 > A redação original não previa a filtragem por permissão. O comportamento observado — pai sem compartilhamento com o setor do usuário não aparece, mesmo tendo subetiqueta — é a regra de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] em ação (*"visualização é restrita por permissão"*), não um defeito. Confirmado pelo Rafael: comportamento correto.
+
 - [ ] **CA12** — Sem resultados, **"Criar etiqueta [termo]"** aparece como primeira opção; ao acioná-la o drawer abre com o **nome pré-preenchido**, seguindo as mesmas regras de habilitação do botão do fluxo principal (exige compartilhamento) e sem estourar a largura do campo ~~e o botão já habilitado~~
 
 > [!warning]- Critério corrigido em 13/08 — reconciliado, mas segue reprovado
 > "o botão já habilitado" foi **descartado**: o Rafael confirmou que criar-e-aplicar exige compartilhamento mesmo na criação por sugestão — não é defeito. O que **continua reprovado** é o box "Criar etiqueta [termo]" estourando a largura do campo, achado extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — motivo pelo qual este CT segue "Não".
+
 
 **D. Drawer**
 
@@ -129,12 +131,13 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 > [!warning]- Segunda correção em 13/08 — tensão com o Figma registrada, não escondida
 > O Rafael aceitou o preview **como está**, sem a linha "Responsável: \<setor\>" — não é defeito. Isso **contradiz** o que eu tinha levantado antes: o Figma de handoff mostra essa linha explicitamente (`Responsável: SIGLA - SIGLA`) no card de pré-visualização. Não sei se foi decisão de produto pra não implementar aquele trecho, uma revisão posterior do Figma que eu não vi, ou outro motivo — fica registrado como a **fonte da divergência**, caso valha revisitar depois. Aceito como está por decisão do Rafael.
+
 - [ ] **CA24** — O texto do **accordion de subetiquetas no menu de aplicação** está legível, resolvendo o relato de "muito pequeno"
 
 > [!warning]- Dois critérios corrigidos em 13/08, durante a execução
 > Os dois estavam escritos de um jeito que reprovaria o dev por engano. A correção veio de conferir o Figma e o produto, não de flexibilizar o critério:
 >
-> - **CA23** — "última atividade" **não existe nem no design**: o container `pre-visualizacao` tem **altura fixa de 160px** e corta o card do documento por desenho (medido 167px na implementação — bate). O que restou do critério é o **setor responsável**, que o Figma mostra (`Responsável: SIGLA - SIGLA`) e o produto não renderiza — virou o **Defeito 3**.
+> - **CA23** — "última atividade" **não existe nem no design**: o container `pre-visualizacao` tem **altura fixa de 160px** e corta o card do documento por desenho (medido 167px na implementação — bate). *(Atualização de 13/08: o "setor responsável" que restou desta correção foi, por sua vez, aceito pelo Rafael como está — ver o segundo callout logo acima, no CA23. Não virou mais o Defeito 3; a divergência com o Figma segue registrada lá.)*
 > - **CA24** — dizia "no card da Mesa", mas o accordion vive no **menu de aplicação aberto pelo card**. O relato original é *"na **aplicação** das etiquetas no card da mesa"*, o que confirma a leitura. Medido lá: subetiqueta em **Inter Bold 11px**, idêntica à etiqueta-pai — a redução que motivou o relato não existe mais.
 
 **G. Estados, validações e feedback**
@@ -758,3 +761,4 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 - 2026-08-13 - 🗑️📝 **Reconciliação dos achados**: itens 1, 2 e 3 **descartados** (comportamento correto — compartilhar é obrigatório, busca por permissão, preview aceito); achado 5 virou [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc|SGV-10844]] (copy dos toasts; modal de confirmação ao salvar edição verificado **correto**); achado 7 **fechado como duplicata do SGV-10832** (mesmo ponto de entrada — meatball do card na Mesa); achado 8 extraído para o [[QA Workspace/02 Demandas/DEV/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball|SGV-10833]]
 - 2026-08-13 - ✏️ **CA23 e CA24 corrigidos durante a execução**: o CA23 cobrava "última atividade", que o Figma não tem (container de 160px fixos); o CA24 apontava o accordion no card, quando ele vive no menu de aplicação. Os dois, executados ao pé da letra, reprovariam o dev indevidamente
 - 2026-08-13 - 📚 **Dúvida em aberto resolvida**: exceder 25 caracteres no nome **bloqueia a digitação**, sem mensagem de erro (contador trava em `25/25`)
+- 2026-08-13 - ✏️✅ **CA11, CA23 e CA25 corrigidos após a reconciliação, e 3 CTs flipados pra Sim**: CT-011 (busca por permissão, não "cluster sempre completo"), CT-023 (preview aceito sem "setor responsável" — **diverge do Figma**, tensão registrada no CT) e CT-025 (criação por sugestão também exige compartilhamento, doc desatualizada nesse ponto). CT-012 segue "Não": a parte do botão foi descartada, mas o overflow do box (SGV-10831) continua reprovando o CT. **Contagem corrigida: 24 aprovados, 4 reprovados** (era 21/7)
