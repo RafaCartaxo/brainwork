@@ -78,9 +78,8 @@ Durante validação foi identificado que, ao iniciar a criação de uma nova eti
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV.
 
 - Observações:
-    - Relacionado ao seletor de setores do drawer (o **Defeito 6** do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] cobre itens do mesmo campo — "Selecionados:", contador `+qtd` e limpar todos — mas a **ocultação por volume da lista** é um sintoma distinto).
+    - Relacionado ao seletor de setores do drawer — nota de **vizinhança** (não duplicata) adicionada no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] (o **Defeito 6** cobre "Selecionados:", contador `+qtd` e limpar todos; a **ocultação por volume da lista** deste card é um sintoma distinto).
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
-    - Sem evidência por enquanto — captura dedicada pendente.
 
 - Histórico:
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10842; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])

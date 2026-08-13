@@ -81,8 +81,8 @@ Durante validação foi identificado que, ao acessar o submenu **"Etiquetas >"**
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV.
     
 - Observações:
+    - ✅ **Registrado como o Defeito 8** do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] (novo, não relacionado aos itens 1–7) e cruzado na tabela "Bugs encontrados" da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]].
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
-    - Sem evidência por enquanto — captura dedicada pendente.
 
 - Histórico:
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10833; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])

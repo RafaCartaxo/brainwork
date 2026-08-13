@@ -79,9 +79,8 @@ Durante validação foi identificado que, ao acionar **"Etiqueta >"** pelo meatb
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV.
     
 - Observações:
-    - Corresponde ao **Defeito 7** do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] ("menu de contexto do card não fecha ao abrir o painel de etiquetas pela Mesa"), que também cobre a variante em que o menu cobre o botão "Nova etiqueta". Pode ser a **mesma causa** — vale tratar junto e reconciliar os dois registros.
+    - ✅ **Fechou o Defeito 7** do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] como **duplicata deste card** (reconciliado em 13/08/2026): mesmo ponto de entrada — o meatball/ellipsis do card na Mesa — e mesmo sintoma (menu não fecha ao abrir o painel de etiquetas). O registro lá fica como referência; a correção é deste ticket.
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
-    - Sem evidência por enquanto — captura dedicada pendente.
 
 - Histórico:
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10832; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])
