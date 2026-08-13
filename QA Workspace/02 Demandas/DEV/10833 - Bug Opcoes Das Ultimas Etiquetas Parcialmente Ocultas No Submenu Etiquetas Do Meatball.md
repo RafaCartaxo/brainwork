@@ -32,6 +32,8 @@ Durante validação foi identificado que, ao acessar o submenu **"Etiquetas >"**
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10833)
 
+![[10833 - botão de opções de etiqueta esta ficando oculto.mp4]]
+
 
 ---
 
