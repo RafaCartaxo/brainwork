@@ -31,6 +31,8 @@ Durante validação foi identificado que, ao iniciar a criação de uma nova eti
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10842)
 
+![[10842 - select setores parcialmente oculto.mp4]]
+
 
 ---
 

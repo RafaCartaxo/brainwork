@@ -72,6 +72,9 @@ Durante a validação foi identificado que:
 **Quando** eu escolho "Compartilhar com setores específicos" e seleciono setores
 **Então** verifico que os chips ficam **dentro do campo**, sem a linha **"Selecionados:"**, sem o contador **`+qtd`** e **sem o botão de limpar todos**
 
+> [!info]- Item vizinho, não duplicata: SGV-10842
+> [[QA Workspace/02 Demandas/DEV/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] (cadastrado pelo Rafael, 13/08) é o **mesmo campo de setores**, mas um **sintoma distinto**: com uma lista de setores grande, o *select* fica parcialmente oculto — problema de exibição por volume, diferente da falta de "Selecionados:"/`+qtd`/limpar todos registrada aqui. O próprio card do 10842 já faz essa distinção. Os dois seguem como itens separados.
+
 **Defeito 7 — menu do card não fecha ao abrir o painel**
 
 **Dado** que estou na Mesa de Trabalho

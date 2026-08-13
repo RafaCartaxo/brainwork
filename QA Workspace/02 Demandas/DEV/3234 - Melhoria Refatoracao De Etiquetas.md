@@ -652,10 +652,18 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 | 4 | Média | Busca e sugestão sem truncamento; nome herda mais de 25 caracteres na criação | CT-012 | [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao\|SGV-10831]] |
 | 5 | Baixa | Toasts de criação e edição divergem da copy especificada | CT-029 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
 | 6 | Média | Seletor de setores sem a linha "Selecionados:", sem `+qtd` e sem limpar todos | CT-017 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
-| 7 | Alta | Menu de contexto do card cobre o "Nova etiqueta", tornando-o não clicável | CT-018 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+| 7 | Alta | Menu de contexto do card cobre o "Nova etiqueta", tornando-o não clicável | CT-018 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] ⚠️ |
 
 > [!info]- Achado 4 extraído em 13/08
 > O achado 4 tinha severidade baixa quando era só "box quebrando visualmente". A descrição da task SGV-10831 (já existente no Notion) revelou um segundo problema — o nome herdado ultrapassa os 25 caracteres permitidos na criação — que eu não tinha testado. Subiu a severidade pra **média** e ganhou ticket próprio.
+
+**+ 3 achados cadastrados diretamente pelo Rafael** (13/08), fora dos 28 CTs que eu executei — não têm CT numerado nesta suíte:
+
+| SGV | Sev | Achado | Relação com os 7 achados |
+|---|---|---|---|
+| [[QA Workspace/02 Demandas/DEV/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas\|SGV-10832]] | Alta | Menu do card permanece aberto sobre o modal de Etiquetas, via **"Etiqueta >" no meatball** | ⚠️ **Possível duplicata do achado 7** — mesmo sintoma (menu não fecha), caminho de entrada diferente (meatball × ellipsis). Não reconciliado — decisão do Rafael |
+| [[QA Workspace/02 Demandas/DEV/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball\|SGV-10833]] | Média | Opções das últimas etiquetas parcialmente ocultas no submenu "Etiquetas >" do meatball | Achado novo, fora dos 7 |
+| [[QA Workspace/02 Demandas/DEV/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos\|SGV-10842]] | Média | Select de setores fica parcialmente oculto com lista grande, ao compartilhar com setores específicos | Vizinho do achado 6 (mesmo campo), mas **sintoma distinto** — 6 é sobre "Selecionados:"/`+qtd`/limpar todos; este é sobre o select cortar com volume grande |
 
 > [!tip]- Dois falsos positivos descartados nesta rodada
 > Os dois só não viraram defeito porque foram conferidos no produto antes do registro:
@@ -718,5 +726,6 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 - 2026-08-13 - 🚀 Início de validação em DEV (`dev-lucas-cabral`, v12.38.39.2) — **28 dos 29 CTs executados**: 21 aprovados e 7 reprovados. CT-002 não executado por bloqueio de ambiente (falta 2º perfil)
 - 2026-08-13 - 🐛 Bug confirmado (card criado): [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]] — 7 defeitos agrupados, `CT-B01` a `CT-B07`
 - 2026-08-13 - ✂️ Achado 4 extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — já existia como task no Notion, com causa em CSS e um achado novo (herança do nome >25 caracteres); severidade subiu de baixa pra média
+- 2026-08-13 - 🐛 Rafael cadastrou 3 achados próprios da validação: [[QA Workspace/02 Demandas/DEV/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas|SGV-10832]] (possível duplicata do achado 7, não reconciliada), [[QA Workspace/02 Demandas/DEV/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball|SGV-10833]] (novo, fora dos 7) e [[QA Workspace/02 Demandas/DEV/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] (vizinho do achado 6, sintoma distinto)
 - 2026-08-13 - ✏️ **CA23 e CA24 corrigidos durante a execução**: o CA23 cobrava "última atividade", que o Figma não tem (container de 160px fixos); o CA24 apontava o accordion no card, quando ele vive no menu de aplicação. Os dois, executados ao pé da letra, reprovariam o dev indevidamente
 - 2026-08-13 - 📚 **Dúvida em aberto resolvida**: exceder 25 caracteres no nome **bloqueia a digitação**, sem mensagem de erro (contador trava em `25/25`)
