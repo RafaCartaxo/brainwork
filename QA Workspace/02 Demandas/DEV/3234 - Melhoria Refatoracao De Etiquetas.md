@@ -338,6 +338,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 ![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
 *Mesma gravação cobre CT-025.*
 
+> [!note]- Reprovação com dois defeitos por trás, em cards diferentes
+> O botão "Criar e aplicar" não vir habilitado é o **Defeito 1** em [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]. O box "Criar etiqueta [termo]" estourando a largura é [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — extraído em 13/08 por já existir como task própria no Notion, com causa em CSS e um achado novo (herança do nome >25 caracteres) que este CT sozinho não cobria.
+
 ---
 
 ### D. Drawer

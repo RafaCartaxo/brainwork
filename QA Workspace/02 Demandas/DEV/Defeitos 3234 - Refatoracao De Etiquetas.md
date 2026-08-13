@@ -16,8 +16,10 @@ ambiente: DEV
 ---
 # Defeitos na refatoração de etiquetas (drawer, pesquisa, preview e menu pelo card)
 
-> [!info] Card de registro — sete defeitos na mesma rodada
-> Card agrupado de propósito: são sete problemas independentes, encontrados na **primeira validação em DEV** da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] em 13/08/2026. A entrega ainda está em desenvolvimento, então vão como **defeitos de melhoria**, não como bugs com SGV próprio. Cada item tem seu critério e seu CT.
+> [!info] Card de registro — seis defeitos ativos + 1 extraído
+> Card agrupado de propósito: problemas independentes, encontrados na **primeira validação em DEV** da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] em 13/08/2026. A entrega ainda está em desenvolvimento, então vão como **defeitos de melhoria**, não como bugs com SGV próprio. Cada item tem seu critério e seu CT.
+>
+> **O antigo Defeito 4 foi extraído** pra [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] em 13/08/2026 — já existia como task no Notion, com descrição mais precisa (causa em CSS) e um comportamento novo (herança do nome >25 caracteres) que não tinha sido testado. **A numeração 1–7 não mudou**: o slot 4 fica como registro do que saiu daqui, e os demais (5, 6, 7) mantêm o número — evita quebrar o vínculo com as evidências `EV-04/05/06`, já nomeadas com esses CTs ([[QA Workspace/Evidências/README|regra de não renumerar]]).
 >
 > **Nome sem o prefixo `3234`** de propósito: o `achar_card()` do `qa-atualiza.py` localiza card pelo primeiro arquivo que começa com `"3234 - "`, e um segundo card com esse prefixo faria o roteador de evidências escolher entre os dois de forma imprevisível. Pelo mesmo motivo o `task:` está vazio e o vínculo mora em `relacionado:` e no wikilink.
 
@@ -28,7 +30,7 @@ Durante a validação foi identificado que:
 1. **"Criar e aplicar" não habilita só com o nome** — o drawer de criação exige também que se escolha uma opção de Compartilhamento.
 2. **A pesquisa por etiqueta-pai não retorna o cluster completo** — a pai volta sozinha, sem as subetiquetas.
 3. **O preview não exibe a linha "Responsável: \<setor\>"** — o slot existe no DOM, vazio.
-4. **O box "Criar etiqueta [termo]" não acompanha a largura** do campo de busca e quebra o texto em duas linhas.
+4. ~~O box "Criar etiqueta [termo]" não acompanha a largura do campo de busca~~ — **extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]]**.
 5. **Os toasts de criação e edição divergem da copy** especificada na doc.
 6. **O seletor de setores não tem a linha "Selecionados:"**, o contador `+qtd` nem o botão de limpar todos.
 7. **O menu de contexto do card não fecha** ao abrir o painel de etiquetas pela Mesa e, dependendo da posição do card, chega a cobrir o botão "Nova etiqueta".
@@ -56,11 +58,7 @@ Durante a validação foi identificado que:
 **Quando** eu observo o card de pré-visualização
 **Então** verifico que ele exibe a tag, o nome e o número do documento, **mas não a linha "Responsável: \<setor\>"**, mesmo havendo espaço em branco no card
 
-**Defeito 4 — box da sugestão com largura quebrada**
-
-**Dado** que o menu de aplicação está aberto
-**Quando** eu digito um termo que não corresponde a nenhuma etiqueta
-**Então** verifico que a opção **"Criar etiqueta '[termo]'"** aparece num box **mais estreito que o campo de busca**, com o texto quebrado em duas linhas
+**Defeito 4 (extraído)** — ver [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]].
 
 **Defeito 5 — copy dos toasts**
 
@@ -101,12 +99,10 @@ Durante a validação foi identificado que:
 | **Defeito 1** | `EV-01` | CT-025, CT-012 |
 | **Defeito 2** | `EV-02` | CT-011 |
 | **Defeito 3** | `EV-03` | CT-023 |
-| **Defeito 4** | `EV-01` | CT-012 |
+| **Defeito 4** | *extraído — ver [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao\|SGV-10831]]* | CT-012 |
 | **Defeito 5** | `EV-04` | CT-029 |
 | **Defeito 6** | `EV-05` | CT-017 |
 | **Defeito 7** | `EV-06` | CT-018 |
-
-*Os Defeitos 1 e 4 compartilham a EV-01 — foram observados no mesmo fluxo.*
 
 ---
 
@@ -115,7 +111,7 @@ Durante a validação foi identificado que:
 1. **Botão condicionado só ao nome** — a doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] é explícita: *"Botão primário habilitado só após preencher o nome"*, e a tabela de estados registra `Criar e aplicar | Desabilitado por padrão; habilita ao preencher o nome`. O drawer de **subetiqueta**, que não tem campo de compartilhamento, já se comporta assim — é a prova de que a regra é essa.
 2. **Cluster completo na busca pela pai** — *"se o termo estiver numa etiqueta com subetiquetas (ou for a pai), retorna o cluster completo"*.
 3. **Preview com o setor responsável** — o Figma de handoff mostra a linha `Responsável: SIGLA - SIGLA` no card de pré-visualização do drawer.
-4. **Sugestão legível em uma linha** — o Figma ancora o box ao campo de busca **com a largura do campo**; o passo 4 do fluxo de handoff descreve a opção como *"a primeira opção da lista de resultados"*.
+4. *(extraído — ver [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]])*
 5. **Copy literal da doc** — `Etiqueta criada! A etiqueta foi criada e aplicada com sucesso` e `Etiqueta editada! A etiqueta foi editada e aplicada com sucesso`. O toast de exclusão (`Etiqueta excluída com sucesso!`) já está correto e serve de referência.
 6. **Seletor completo** — o Figma especifica a linha `↳ Selecionados:` com os chips `$sigla ×`, o excedente em `+ qtd` e o **botão de limpar todos** (ícone de lixeira) à direita.
 7. **Menu de contexto fecha ao abrir o painel** — os fluxos de drawer devem funcionar **igualmente** pela toolbar e pelo card da Mesa; hoje o caminho pelo card não permite acionar "Nova etiqueta".
@@ -127,7 +123,7 @@ Durante a validação foi identificado que:
 - [ ] **(1)** Com o nome preenchido e o Compartilhamento intocado, **"Criar e aplicar" está habilitado**
 - [ ] **(2)** Pesquisar pelo nome da etiqueta-pai retorna **pai + subetiquetas**, com contador e chevron preservados
 - [ ] **(3)** O preview do drawer e o da página de criação exibem a linha **"Responsável: \<setor\>"**
-- [ ] **(4)** O box "Criar etiqueta '[termo]'" ocupa a **largura do campo de busca** e o texto cabe em uma linha
+- [ ] ~~**(4)**~~ *(extraído — ver critério próprio em [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]])*
 - [ ] **(5)** Os toasts de criação e edição exibem exatamente os títulos **"Etiqueta criada!"** e **"Etiqueta editada!"**
 - [ ] **(6)** Com setores selecionados, aparecem a linha **"Selecionados:"**, o contador **`+qtd`** quando houver excedente e o **botão de limpar todos**, que esvazia a seleção
 - [ ] **(7)** Ao abrir o painel de etiquetas pelo card da Mesa, o menu de contexto **fecha**; o botão "Nova etiqueta" fica clicável **em qualquer posição do card** na coluna
@@ -152,7 +148,7 @@ Durante a validação foi identificado que:
 **Evidências de Testes:**
 
 ![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
-*Mesma gravação cobre o Defeito 4.*
+*Mesma gravação também aparece (cópia renomeada) em [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]], como evidência parcial do defeito que foi extraído pra lá.*
 
 ---
 
@@ -190,21 +186,9 @@ Durante a validação foi identificado que:
 
 ---
 
-#### **CT-B04 Box da sugestão acompanha a largura do campo** *(4)*
+#### **CT-B04 (movido)** *(4 — extraído)*
 
-**Dado** que o menu de aplicação está aberto
-**Quando** eu digito um termo sem correspondência
-**Então** o box "Criar etiqueta '[termo]'" tem a largura do campo de busca e o texto ocupa **uma linha**
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
-![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
-*Mesma gravação cobre o Defeito 1.*
+Extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] em 13/08/2026 — ver aquele card para reprodução, critério e evidência (renomeados `CT-B01`–`CT-B03` lá).
 
 ---
 
@@ -271,7 +255,7 @@ Durante a validação foi identificado que:
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — **defeitos de melhoria em DEV**, os sete achados na primeira rodada de validação (28 dos 29 CTs executados).
 
-- **Fonte de cada veredito**: os defeitos **1, 3, 6 e 7** foram confirmados contra o [Figma — Etiquetas / Handoff](https://www.figma.com/design/3KcRVaH0yYJqpiZ3VAGL9d/Etiquetas----Handoff?node-id=4013-24202); os defeitos **2 e 5** contra a doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]]; o **4** contra os dois.
+- **Fonte de cada veredito**: os defeitos **1, 3, 6 e 7** foram confirmados contra o [Figma — Etiquetas / Handoff](https://www.figma.com/design/3KcRVaH0yYJqpiZ3VAGL9d/Etiquetas----Handoff?node-id=4013-24202); os defeitos **2 e 5** contra a doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]]. O antigo defeito 4 (fonte cruzada com os dois) está agora em [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]].
 
 - Observações:
     - 🚨 **Os subitens da task estão em 87,50% e não vieram no export.** Enquanto não forem reexportados, qualquer um destes sete pode ser algo que **ainda não subiu** — é a razão de estarem registrados como defeito de melhoria e não como bug cadastrado. Confirmar antes de mandar pro dev.
@@ -283,3 +267,4 @@ Durante a validação foi identificado que:
 
 - Histórico:
     - 2026-08-13 - 🐛 Bug confirmado (card de registro com 7 defeitos da 1ª rodada de validação em DEV da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])
+    - 2026-08-13 - ✂️ Defeito 4 extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — já existia como task própria no Notion; numeração 1–7 preservada, slot 4 fica como registro do que saiu
