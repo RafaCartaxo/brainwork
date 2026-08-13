@@ -159,15 +159,22 @@ Opções: **Editar** (abre drawer) · **Nova subetiqueta** (só em etiqueta-pai)
 
 ## Comportamentos observados em teste
 
-- *(a preencher durante a validação da SGV-3234)*
+*Registrado na 1ª rodada de validação em DEV da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], em 13/08/2026 (v12.38.39.2).*
+
+- **Limite de 25 caracteres**: bloqueio **silencioso**. O campo aceita só os 25 primeiros, o contador trava em `25/25` e **não há mensagem de erro**.
+- **Visibilidade de etiqueta compartilhada**: etiqueta compartilhada com um setor do qual o usuário **não** participa não aparece no menu de aplicação — mas **aparece** na página da feature (para quem criou) e no filtro da Mesa. Criar uma assim pelo drawer a aplica ao documento e exibe o toast de sucesso, embora ela fique invisível no menu. É a regra de visualização por permissão, não defeito.
+- **"Limpar filtro"** no filtro da Mesa é **condicional**: só aparece quando há ao menos uma etiqueta selecionada.
+- **Container de 10 etiquetas**: com mais de 10, o cluster exibe os 10 primeiros e um botão **"Exibir mais (n)"**; com os dois clusters expandidos, surge barra de rolagem (`overflow-y: auto`).
+- **Subetiqueta no card da Mesa** não usa accordion: vira uma tag com o caminho completo (`Pai / Sub`), na mesma tipografia das demais (Inter Bold 11px).
+- **Medidas do componente tag** conferidas nos três contextos: altura 20px, Inter Bold 11px, texto `#FFFFFF` — batem com o handoff.
 
 ---
 
 ## Dúvidas em aberto
 
-- [ ] **"Modal de etiquetas não fecha ao aplicar na mesa"** — relatado no detalhamento original da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], mas **não há especificação** na doc de design de 07/05. Confirmar com produto/design se entrou na entrega.
-- [ ] A doc não define o que acontece ao **exceder 25 caracteres** no nome (bloqueia a digitação ou exibe erro?).
-- [ ] O checkbox "Não quero receber este alerta novamente" é **por usuário, por diálogo, ou global**? E onde se desfaz essa escolha?
+- [ ] **"Modal de etiquetas não fecha ao aplicar na mesa"** — relatado no detalhamento original da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], mas **não há especificação** na doc de design de 07/05. Confirmar com produto/design se entrou na entrega. **Pista de 13/08**: o menu de contexto do card **não fecha** ao abrir o painel de etiquetas e chega a cobrir o botão "Nova etiqueta" (Defeito 7 em [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]) — pode ser a mesma causa.
+- [x] ~~A doc não define o que acontece ao **exceder 25 caracteres** no nome (bloqueia a digitação ou exibe erro?).~~ **Resolvido em 13/08**: bloqueia a digitação, sem mensagem de erro. Registrado em Comportamentos observados.
+- [ ] O checkbox "Não quero receber este alerta novamente" é **por usuário, por diálogo, ou global**? E onde se desfaz essa escolha? *(13/08: confirmado que o checkbox **existe** nos dois diálogos — edição com mudança de compartilhamento e exclusão de compartilhada — mas o alcance segue indefinido.)*
 
 ---
 
