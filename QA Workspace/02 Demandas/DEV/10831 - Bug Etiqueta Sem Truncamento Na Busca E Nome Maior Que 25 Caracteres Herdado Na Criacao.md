@@ -36,14 +36,18 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10831)
 
-> [!warning]- Evidência parcial, reaproveitada — falta gravação dedicada
+**Evidência principal** — gravação de reprodução completa (Rafael, 13/08):
+
+![[10831 - defeito 3234.mp4]]
+
+> [!info]- Evidência complementar (cópia de outro card)
 > A gravação abaixo é uma **cópia** da evidência do "Defeito 4" originalmente registrado no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]], seguindo a regra de compartilhamento entre cards do [[QA Workspace/Evidências/README|Evidências/README]] (cópia renomeada com o número deste card).
 >
-> Ela mostra o card de sugestão quebrando com um termo **curto** (`Financeiro 2026`, 15 caracteres) — evidencia o **sintoma geral de overflow**, mas **não** cobre especificamente: o campo de busca com termo ≥25 caracteres, a ausência do ellipsis, nem a herança do nome no drawer. Gravação dedicada fica pendente (fila da daily de 13/08).
-
-![[10831 - EV-01 - box da sugestao quebrado (evidencia parcial, reaproveitada da SGV-3234).gif]]
-
-*Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] — mesmo vídeo, cópia renomeada.*
+> Mostra o card de sugestão quebrando com um termo **curto** (`Financeiro 2026`, 15 caracteres) — o mesmo sintoma de overflow, mas antes de eu saber que o termo precisava ter 25+ caracteres pra também expor a herança do nome. Fica como registro de como o defeito apareceu na validação original da SGV-3234.
+>
+> ![[10831 - EV-01 - box da sugestao quebrado (evidencia parcial, reaproveitada da SGV-3234).gif]]
+>
+> *Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] — mesmo vídeo, cópia renomeada.*
 
 ---
 
@@ -80,6 +84,8 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 **Evidências de Testes:**
 
+*Ver evidência principal (`10831 - defeito 3234.mp4`) na seção Evidências, no topo do card.*
+
 ---
 
 #### **CT-B02 Card de sugestão quebra em múltiplas linhas** *(2)*
@@ -95,8 +101,7 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 **Evidências de Testes:**
 
-![[10831 - EV-01 - box da sugestao quebrado (evidencia parcial, reaproveitada da SGV-3234).gif]]
-*Evidência parcial — mostra o sintoma com termo de 15 caracteres, não com 25+. Ver aviso na seção Evidências.*
+*Ver evidência principal (`10831 - defeito 3234.mp4`) na seção Evidências. A gravação complementar (cópia da SGV-3234, com termo de 15 caracteres) mostra o mesmo sintoma antes de eu saber que precisava de 25+ caracteres.*
 
 ---
 
@@ -113,6 +118,8 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 **Evidências de Testes:**
 
+*Ver evidência principal (`10831 - defeito 3234.mp4`) na seção Evidências, no topo do card.*
+
 ---
 
 ### Ambiente
@@ -128,8 +135,9 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 - Observações:
     - **Prioridade ajustada pra média**: o achado original tinha severidade baixa (só o box quebrando visualmente). A herança do nome acima de 25 caracteres na criação é um problema de consistência de dado, não só visual — subiu a severidade.
-    - **CT-B01 e CT-B03 estão sem evidência** — dependem de gravação dedicada com termo ≥25 caracteres, ainda não feita (ver aviso na seção Evidências).
+    - **Evidência principal fornecida pelo Rafael** (`10831 - defeito 3234.mp4`, 13/08) — cobre os três CTs numa reprodução só. A gravação parcial reaproveitada da SGV-3234 fica como complementar, mostrando o mesmo sintoma antes do termo de 25+ caracteres.
     - O comportamento esperado (regras de CSS) veio da descrição da task no Notion. Não foi verificado contra um nó específico do Figma de handoff — se houver um, adicionar aqui.
 
 - Histórico:
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10831 já existente no Notion; card do vault criado a partir da task, extraído do agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])
+    - 2026-08-13 - 📹 Evidência principal roteada (`10831 - defeito 3234.mp4`) — gravação do Rafael, cobre os três CTs

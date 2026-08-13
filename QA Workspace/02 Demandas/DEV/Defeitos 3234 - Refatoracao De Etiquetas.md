@@ -253,12 +253,12 @@ Extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamen
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — **defeitos de melhoria em DEV**, os sete achados na primeira rodada de validação (28 dos 29 CTs executados).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — **defeitos de melhoria em DEV**, dos sete achados da primeira rodada de validação (28 dos 29 CTs executados). O achado 4 foi extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]]; os seis restantes ficam aqui.
 
 - **Fonte de cada veredito**: os defeitos **1, 3, 6 e 7** foram confirmados contra o [Figma — Etiquetas / Handoff](https://www.figma.com/design/3KcRVaH0yYJqpiZ3VAGL9d/Etiquetas----Handoff?node-id=4013-24202); os defeitos **2 e 5** contra a doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]]. O antigo defeito 4 (fonte cruzada com os dois) está agora em [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]].
 
 - Observações:
-    - 🚨 **Os subitens da task estão em 87,50% e não vieram no export.** Enquanto não forem reexportados, qualquer um destes sete pode ser algo que **ainda não subiu** — é a razão de estarem registrados como defeito de melhoria e não como bug cadastrado. Confirmar antes de mandar pro dev.
+    - 🚨 **Os subitens da task estão em 87,50% e não vieram no export.** Enquanto não forem reexportados, qualquer um dos seis defeitos que restam aqui pode ser algo que **ainda não subiu** — é a razão de estarem registrados como defeito de melhoria e não como bug cadastrado. Confirmar antes de mandar pro dev.
     - **Defeito 7 é vizinho do item "modal de etiquetas não fecha ao aplicar na mesa"**, que está no grupo H do card da melhoria como caso sem especificação. Pode ser a mesma causa — o menu de contexto do card não fechando. Vale tratar junto.
     - **Defeito 1 tem prova por contraste**: o drawer de **subetiqueta** não tem seção de compartilhamento e habilita normalmente só com o nome. Isso isola a causa no acoplamento entre o botão primário e o campo de Compartilhamento.
     - **Defeito 3 fica mascarado na página de criação**: lá o container `pre-visualizacao` tem altura fixa de 160px e corta o card por desenho, então a ausência não aparece. No **drawer**, onde há 183px de card e espaço em branco sobrando, ela fica visível. Foi o que separou o defeito real do critério mal escrito.

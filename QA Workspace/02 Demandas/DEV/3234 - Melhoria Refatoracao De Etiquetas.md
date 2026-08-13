@@ -642,17 +642,20 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 > [!danger] Bugs encontrados
 
-**7 defeitos** na 1ª rodada de validação em DEV (13/08/2026), registrados no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]]. Como a entrega está em desenvolvimento, vão como **defeitos de melhoria**, não como bugs com SGV próprio.
+**6 defeitos de melhoria** (não têm SGV próprio) **+ 1 bug com ticket já existente** na 1ª rodada de validação em DEV (13/08/2026). Os defeitos de melhoria estão agrupados em [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]], já que a entrega está em desenvolvimento e o risco de reprovar algo ainda não entregue é real. O achado 4, por já existir como task no Notion, ganhou card próprio.
 
-| # | Sev | Defeito | CT que reprovou |
-|---|---|---|---|
-| 1 | Alta | "Criar e aplicar" só habilita depois de escolher Compartilhamento, não só com o nome | CT-025, CT-012 |
-| 2 | Média | Busca pela etiqueta-pai não retorna o cluster completo | CT-011 |
-| 3 | Média | Preview não renderiza a linha "Responsável: \<setor\>" | CT-023 |
-| 4 | Baixa | Box "Criar etiqueta [termo]" não acompanha a largura do campo de busca | CT-012 |
-| 5 | Baixa | Toasts de criação e edição divergem da copy especificada | CT-029 |
-| 6 | Média | Seletor de setores sem a linha "Selecionados:", sem `+qtd` e sem limpar todos | CT-017 |
-| 7 | Alta | Menu de contexto do card cobre o "Nova etiqueta", tornando-o não clicável | CT-018 |
+| # | Sev | Achado | CT que reprovou | Card |
+|---|---|---|---|---|
+| 1 | Alta | "Criar e aplicar" só habilita depois de escolher Compartilhamento, não só com o nome | CT-025, CT-012 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+| 2 | Média | Busca pela etiqueta-pai não retorna o cluster completo | CT-011 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+| 3 | Média | Preview não renderiza a linha "Responsável: \<setor\>" | CT-023 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+| 4 | Média | Busca e sugestão sem truncamento; nome herda mais de 25 caracteres na criação | CT-012 | [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao\|SGV-10831]] |
+| 5 | Baixa | Toasts de criação e edição divergem da copy especificada | CT-029 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+| 6 | Média | Seletor de setores sem a linha "Selecionados:", sem `+qtd` e sem limpar todos | CT-017 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+| 7 | Alta | Menu de contexto do card cobre o "Nova etiqueta", tornando-o não clicável | CT-018 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] |
+
+> [!info]- Achado 4 extraído em 13/08
+> O achado 4 tinha severidade baixa quando era só "box quebrando visualmente". A descrição da task SGV-10831 (já existente no Notion) revelou um segundo problema — o nome herdado ultrapassa os 25 caracteres permitidos na criação — que eu não tinha testado. Subiu a severidade pra **média** e ganhou ticket próprio.
 
 > [!tip]- Dois falsos positivos descartados nesta rodada
 > Os dois só não viraram defeito porque foram conferidos no produto antes do registro:
@@ -673,7 +676,7 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 
 | EV | Arquivo | CTs cobertos | O que mostra |
 |---|---|---|---|
-| **EV-01** | `3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif` | CT-012, CT-025 | Defeitos 1 e 4 |
+| **EV-01** | `3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif` | CT-012, CT-025 | Defeito 1 (Defeitos 3234) + achado 4, aqui como evidência parcial (SGV-10831 tem cópia renomeada) |
 | **EV-02** | `3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif` | CT-011 | Defeito 2, com o contraste pai × sub |
 | **EV-03** | `3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif` | CT-023 | Defeito 3 |
 | **EV-04** | `3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif` | CT-029 | Defeito 5, os dois toasts |
@@ -714,5 +717,6 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 - 2026-08-12 - 📝 Melhoria refinada (critérios de aceite prontos; 29 critérios e 29 CTs, mais 1 caso em registro)
 - 2026-08-13 - 🚀 Início de validação em DEV (`dev-lucas-cabral`, v12.38.39.2) — **28 dos 29 CTs executados**: 21 aprovados e 7 reprovados. CT-002 não executado por bloqueio de ambiente (falta 2º perfil)
 - 2026-08-13 - 🐛 Bug confirmado (card criado): [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]] — 7 defeitos agrupados, `CT-B01` a `CT-B07`
+- 2026-08-13 - ✂️ Achado 4 extraído para [[QA Workspace/02 Demandas/DEV/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — já existia como task no Notion, com causa em CSS e um achado novo (herança do nome >25 caracteres); severidade subiu de baixa pra média
 - 2026-08-13 - ✏️ **CA23 e CA24 corrigidos durante a execução**: o CA23 cobrava "última atividade", que o Figma não tem (container de 160px fixos); o CA24 apontava o accordion no card, quando ele vive no menu de aplicação. Os dois, executados ao pé da letra, reprovariam o dev indevidamente
 - 2026-08-13 - 📚 **Dúvida em aberto resolvida**: exceder 25 caracteres no nome **bloqueia a digitação**, sem mensagem de erro (contador trava em `25/25`)
