@@ -12,6 +12,7 @@ data_inicio: 2026-08-12
 data_fim: ""
 responsavel: Rafael
 modulo: etiquetas
+ambiente: DEV
 ---
 # Demanda: *[Melhoria] Refatoração de etiquetas
 
@@ -317,6 +318,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif]]
+
 ---
 
 #### **CT-012 Pesquisa sem resultado oferece criação por sugestão** *(CA12)*
@@ -331,6 +334,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
+*Mesma gravação cobre CT-025.*
 
 ---
 
@@ -409,6 +415,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-05 - CT-017 - seletor de setores sem selecionados, qtd e limpar todos.gif]]
+
 ---
 
 ### E. Aplicação por contexto
@@ -425,6 +433,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-06 - CT-018 - menu de contexto do card nao fecha ao abrir o painel de etiquetas.gif]]
 
 ---
 
@@ -506,6 +516,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif]]
+
 ---
 
 #### **CT-024 Texto do accordion de subetiquetas legível no menu de aplicação** *(CA24)*
@@ -542,6 +554,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
+*Mesma gravação cobre CT-012.*
 
 ---
 
@@ -608,6 +623,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif]]
+
 ---
 
 ### H. Fora de execução — registro
@@ -643,7 +660,29 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 ## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://3234)
 
-As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[, CT-NNN] - <descrição>.mp4`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]]. O índice CT × EV entra aqui ao fim da execução.
+As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[, CT-NNN] - <descrição>.gif`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].
+
+**Formato desta rodada: GIF**, não MP4 — a captura foi feita pela automação do navegador, que exporta GIF. O `.gif` está em `EVID_EXTS` do `qa-atualiza.py`, então o 🔄 roteia normalmente.
+
+### Índice CT × EV
+
+*Nesta rodada foram gravados apenas os **CTs reprovados** — os 21 aprovados ficam com "Passou: Sim" sem evidência, por decisão de escopo.*
+
+| EV | Arquivo | CTs cobertos | O que mostra |
+|---|---|---|---|
+| **EV-01** | `3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif` | CT-012, CT-025 | Defeitos 1 e 4 |
+| **EV-02** | `3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif` | CT-011 | Defeito 2, com o contraste pai × sub |
+| **EV-03** | `3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif` | CT-023 | Defeito 3 |
+| **EV-04** | `3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif` | CT-029 | Defeito 5, os dois toasts |
+| **EV-05** | `3234 - EV-05 - CT-017 - seletor de setores sem selecionados, qtd e limpar todos.gif` | CT-017 | Defeito 6 |
+| **EV-06** | `3234 - EV-06 - CT-018 - menu de contexto do card nao fecha ao abrir o painel de etiquetas.gif` | CT-018 | Defeito 7 |
+
+> [!warning]- O 🔄 não embeda sozinho neste card — e o motivo vale pra toda demanda
+> Duas coisas travaram o roteamento automático, as duas registradas aqui porque afetam **qualquer card de melhoria**, não só este:
+> 1. **Faltava `ambiente:` no frontmatter.** O roteador mapeia a subpasta por esse campo, e o template `Demanda.md` não o traz (só o `Bug Report.md`). Sem ele o script avisa *"ambiente '—' do card não mapeia pra subpasta"* e deixa o arquivo na raiz. Campo adicionado a este card em 13/08.
+> 2. **O card usa `## Evidências` (h2)** e o roteador procura `### Evidências` (h3), então o embed entra à mão.
+>
+> É a mesma causa dos itens antigos da fila sobre a [[QA Workspace/02 Demandas/HML/10151 - Melhoria Filtros Criados Por Mim Ou Pelo Setor|SGV-10151]] e a [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]. Proposta de ajuste no template registrada nas Anotações da daily de 13/08.
 
 ---
 
