@@ -74,17 +74,39 @@ Durante a validação foi identificado que:
 **Quando** eu escolho "Compartilhar com setores específicos" e seleciono setores
 **Então** verifico que os chips ficam **dentro do campo**, sem a linha **"Selecionados:"**, sem o contador **`+qtd`** e **sem o botão de limpar todos**
 
-**Defeito 7 — menu do card cobre o "Nova etiqueta"**
+**Defeito 7 — menu do card não fecha ao abrir o painel**
 
 **Dado** que estou na Mesa de Trabalho
 **Quando** eu abro o menu de opções de um card e aciono **"Etiqueta"**
-**Então** verifico que o menu de contexto **permanece aberto sobre o header** do painel de etiquetas, cobrindo o botão **"Nova etiqueta"** e o de fechar
+**Então** verifico que o menu de contexto (**"Etiqueta" / "Copiar dados do documento"**) **permanece aberto**, sobreposto ao painel de etiquetas
+
+**E** quando o card está posicionado de modo que o painel abra **para baixo**
+**Então** o menu sobrepõe o **header** do painel e o botão **"Nova etiqueta"** fica **não clicável**
+
+> [!note]- A cobertura é condicional à posição do card
+> Reproduzido nas duas condições em 13/08:
+> - Card no **meio/fim** da coluna → o painel abre **para cima**, o menu fica sobre a área inferior e o botão segue clicável (`elementFromPoint` no centro do botão devolve o próprio `BUTTON`).
+> - Card no **topo** da coluna → o painel abre **para baixo** e o menu cobre o header; `elementFromPoint` devolve `LI :: "Copiar dados do documento"`, ou seja, o clique não chega ao botão.
+>
+> O que é **constante** nas duas é o menu de contexto **não fechar**. A cobertura é a consequência mais grave, não a causa.
 
 ---
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://3234)
 
 *As gravações são as mesmas da validação da melhoria e ficam nomeadas com o número da SGV-3234 — o roteador do 🔄 é quem as arquiva. Índice completo CT → EV no card da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]].*
+
+| Defeito | Evidência | CT do card da melhoria |
+|---|---|---|
+| **Defeito 1** | `EV-01` | CT-025, CT-012 |
+| **Defeito 2** | `EV-02` | CT-011 |
+| **Defeito 3** | `EV-03` | CT-023 |
+| **Defeito 4** | `EV-01` | CT-012 |
+| **Defeito 5** | `EV-04` | CT-029 |
+| **Defeito 6** | `EV-05` | CT-017 |
+| **Defeito 7** | `EV-06` | CT-018 |
+
+*Os Defeitos 1 e 4 compartilham a EV-01 — foram observados no mesmo fluxo.*
 
 ---
 
@@ -108,7 +130,7 @@ Durante a validação foi identificado que:
 - [ ] **(4)** O box "Criar etiqueta '[termo]'" ocupa a **largura do campo de busca** e o texto cabe em uma linha
 - [ ] **(5)** Os toasts de criação e edição exibem exatamente os títulos **"Etiqueta criada!"** e **"Etiqueta editada!"**
 - [ ] **(6)** Com setores selecionados, aparecem a linha **"Selecionados:"**, o contador **`+qtd`** quando houver excedente e o **botão de limpar todos**, que esvazia a seleção
-- [ ] **(7)** Ao abrir o painel de etiquetas pelo card da Mesa, o menu de contexto **fecha** e o botão "Nova etiqueta" fica clicável
+- [ ] **(7)** Ao abrir o painel de etiquetas pelo card da Mesa, o menu de contexto **fecha**; o botão "Nova etiqueta" fica clicável **em qualquer posição do card** na coluna
 - [ ] **Sem regressão** nos caminhos que já funcionam: criação por subetiqueta segue habilitando só com o nome, busca pela subetiqueta segue trazendo a pai, toast de exclusão segue correto, e o fluxo pela **toolbar** do documento segue íntegro
 
 ---
@@ -129,6 +151,9 @@ Durante a validação foi identificado que:
 
 **Evidências de Testes:**
 
+![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
+*Mesma gravação cobre o Defeito 4.*
+
 ---
 
 #### **CT-B02 Busca pela etiqueta-pai retorna o cluster completo** *(2)*
@@ -143,6 +168,8 @@ Durante a validação foi identificado que:
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif]]
 
 ---
 
@@ -159,6 +186,8 @@ Durante a validação foi identificado que:
 
 **Evidências de Testes:**
 
+![[3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif]]
+
 ---
 
 #### **CT-B04 Box da sugestão acompanha a largura do campo** *(4)*
@@ -173,6 +202,9 @@ Durante a validação foi identificado que:
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
+*Mesma gravação cobre o Defeito 1.*
 
 ---
 
@@ -189,6 +221,8 @@ Durante a validação foi identificado que:
 
 **Evidências de Testes:**
 
+![[3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif]]
+
 ---
 
 #### **CT-B06 Seletor de setores com "Selecionados:", contador e limpar todos** *(6)*
@@ -204,13 +238,16 @@ Durante a validação foi identificado que:
 
 **Evidências de Testes:**
 
+![[3234 - EV-05 - CT-017 - seletor de setores sem selecionados, qtd e limpar todos.gif]]
+
 ---
 
-#### **CT-B07 "Nova etiqueta" clicável pelo card da Mesa** *(7)*
+#### **CT-B07 Menu de contexto fecha e "Nova etiqueta" fica clicável pelo card** *(7)*
 
 **Dado** que estou na Mesa de Trabalho
-**Quando** abro o menu de opções de um card e aciono "Etiqueta"
-**Então** o menu de contexto fecha e o botão **"Nova etiqueta"** fica visível e clicável
+**E** que repito o caso com um card no **topo** e outro no **fim** da coluna
+**Quando** abro o menu de opções do card e aciono "Etiqueta"
+**Então** o menu de contexto **fecha** nos dois casos e o botão **"Nova etiqueta"** fica visível e clicável
 
 **Execução Passou?**
 - [ ] Sim
@@ -218,6 +255,8 @@ Durante a validação foi identificado que:
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-06 - CT-018 - menu de contexto do card nao fecha ao abrir o painel de etiquetas.gif]]
 
 ---
 
