@@ -31,6 +31,8 @@ Durante validação foi identificado que, ao compartilhar uma etiqueta com **set
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10850)
 
+![[10850 - checkbox nok.mp4]]
+
 *Sem evidência por enquanto.*
 
 ---

@@ -34,6 +34,8 @@ Durante validação foi identificado que, ao criar ou editar uma etiqueta pelo d
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10844)
 
+![[10844 - copy toast nok.mp4]]
+
 
 ---
 
