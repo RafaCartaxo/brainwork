@@ -31,7 +31,7 @@ Durante a validação foi identificado que:
 4. **O box "Criar etiqueta [termo]" não acompanha a largura** do campo de busca e quebra o texto em duas linhas.
 5. **Os toasts de criação e edição divergem da copy** especificada na doc.
 6. **O seletor de setores não tem a linha "Selecionados:"**, o contador `+qtd` nem o botão de limpar todos.
-7. **O menu de contexto do card cobre o botão "Nova etiqueta"**, tornando-o não clicável pela Mesa de Trabalho.
+7. **O menu de contexto do card não fecha** ao abrir o painel de etiquetas pela Mesa e, dependendo da posição do card, chega a cobrir o botão "Nova etiqueta".
 
 ---
 
