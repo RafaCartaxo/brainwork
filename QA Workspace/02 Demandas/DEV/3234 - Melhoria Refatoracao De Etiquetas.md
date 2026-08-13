@@ -146,6 +146,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 > [!success]- Critério corrigido em 13/08 — reconciliado com o Rafael
 > A doc original prometia botão "já habilitado" na criação por sugestão. O Rafael confirmou que isso não é o comportamento correto: compartilhamento é obrigatório em qualquer caminho de criação, incluindo por sugestão. A doc do módulo está desatualizada nesse ponto — vale registrar como ajuste de doc, não como defeito do produto.
+
 - [ ] **CA26** — **"Salvar e aplicar"** permanece desabilitado até que alguma edição seja feita
 - [ ] **CA27** — O nome da etiqueta é limitado a **25 caracteres**, com contador visível
 - [ ] **CA28** — Os diálogos de confirmação (edição com mudança de compartilhamento e exclusão de compartilhada) exibem o checkbox **"Não quero receber este alerta novamente"**
