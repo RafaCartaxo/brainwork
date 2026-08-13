@@ -88,6 +88,11 @@ Durante a validação foi identificado que:
 >
 > O que é **constante** nas duas é o menu de contexto **não fechar**. A cobertura é a consequência mais grave, não a causa.
 
+> [!warning]- Possível duplicidade com SGV-10832 — não reconciliado
+> [[QA Workspace/02 Demandas/DEV/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas|SGV-10832]] (cadastrado em paralelo, também em 13/08) descreve o mesmo sintoma — menu de contexto do card não fecha ao abrir o modal de Etiquetas — pelo caminho **"Etiqueta >" no meatball**. Este Defeito 7 foi reproduzido pelo caminho do **ellipsis do card**. Podem ser a mesma causa com dois pontos de entrada, ou dois defeitos distintos que só parecem iguais.
+>
+> **Não fundi nem fechei nenhum dos dois** — decisão de reconciliar (manter os dois, ou fechar um como duplicata do outro) é do Rafael.
+
 ---
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://3234)
