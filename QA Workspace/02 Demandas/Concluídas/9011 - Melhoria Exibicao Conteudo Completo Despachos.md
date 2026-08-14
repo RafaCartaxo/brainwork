@@ -49,7 +49,7 @@ Módulo relacionado: [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramit
 
 > [!warning] Pontos de atenção
 
-- 🔴 **Reaberta em DEV em 11/08/2026** por divergência de protótipo em **3 pontos**: posição do horário do despacho, botão "Exibir detalhes" e alinhamento de "Ver interações". Defeito cadastrado como [[QA Workspace/02 Demandas/DEV/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (fluxo [[Sistema/Contexto/FLUXOS#3g. Reprovação com bug novo (SGV próprio)|3g]]).
+- 🔴 **Reaberta em DEV em 11/08/2026** por divergência de protótipo em **3 pontos**: posição do horário do despacho, botão "Exibir detalhes" e alinhamento de "Ver interações". Defeito cadastrado como [[QA Workspace/02 Demandas/Concluídas/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (fluxo [[Sistema/Contexto/FLUXOS#3g. Reprovação com bug novo (SGV próprio)|3g]]).
 - ⚠️ **A task não tem passo a passo nem comportamento esperado preenchidos** — os campos "Passo a passo para reproduzir", "Qual o comportamento apresentado atualmente" e "Qual o comportamento esperado?" estão vazios no Notion. O escopo vive só no campo Descrição.
 - ⚠️ **Progresso de subitens em 83,33% e os subitens não vieram no export** — não dá pra saber o que já subiu e o que falta da entrega.
 - 🔎 A demanda **arrasta desde a SP11** e já passou por cinco sprints (SP11, SP12, SP15, SP16, SP17), com cinco datas previstas de conclusão sucessivas — a última em 25/08/2026.
@@ -64,13 +64,13 @@ Módulo relacionado: [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramit
 
 > [!danger] Bugs encontrados
 
-- [[QA Workspace/02 Demandas/DEV/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] - Divergências de protótipo na exibição do despacho (posição do horário, botão "Exibir detalhes" e alinhamento de "Ver interações") — **motivo da reabertura**
+- [[QA Workspace/02 Demandas/Concluídas/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] - Divergências de protótipo na exibição do despacho (posição do horário, botão "Exibir detalhes" e alinhamento de "Ver interações") — **motivo da reabertura**
 
 ---
 
 ## Evidências
 
-A evidência da reabertura mora no card do defeito: [[QA Workspace/02 Demandas/DEV/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (`10740 - divergencias de prototipo na exibicao do despacho.png`, em `Evidências/Desenvolvimento/`).
+A evidência da reabertura mora no card do defeito: [[QA Workspace/02 Demandas/Concluídas/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (`10740 - divergencias de prototipo na exibicao do despacho.png`, em `Evidências/Desenvolvimento/`).
 
 ---
 
@@ -82,6 +82,6 @@ Registro da reabertura no Notion (comentário de 11/08/2026): *"@B. Luan Reabert
 
 ## Histórico
 
-- 2026-08-11 - 🔴 Melhoria reaberta em DEV (3 divergências de protótipo; defeito [[QA Workspace/02 Demandas/DEV/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] cadastrado)
+- 2026-08-11 - 🔴 Melhoria reaberta em DEV (3 divergências de protótipo; defeito [[QA Workspace/02 Demandas/Concluídas/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] cadastrado)
 - 2026-08-11 - Card criado no vault, enxuto, para dar rastreabilidade à reabertura — a demanda existia só no Notion até aqui
 - 2026-08-14 - 🔁 Melhoria retestada e aprovada em homologação (etapas anteriores concluídas implicitamente — revalidação em DEV não registrada em separado)

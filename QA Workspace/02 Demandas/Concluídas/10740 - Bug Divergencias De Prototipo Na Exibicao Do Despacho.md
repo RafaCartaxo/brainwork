@@ -98,8 +98,8 @@ Referência de protótipo: Figma **Tramitação — Handoff**, nó [`8601-2511`]
 **Então** verifico que o "Ver interações" segue o alinhamento previsto no protótipo
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
