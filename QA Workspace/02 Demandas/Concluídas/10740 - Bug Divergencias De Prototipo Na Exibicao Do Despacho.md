@@ -5,13 +5,13 @@ tags:
   - despacho
 task: "10740"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-11
-data_fim: ""
+data_fim: "2026-08-14"
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: despacho
-ambiente: DEV
+ambiente: HML
 ---
 # Divergências de protótipo na exibição do despacho
 
@@ -50,9 +50,9 @@ Referência de protótipo: Figma **Tramitação — Handoff**, nó [`8601-2511`]
 
 ### Critérios de aceite
 
-- [ ] O horário do despacho aparece na posição definida no protótipo
-- [ ] O botão "Exibir detalhes" aparece conforme o protótipo
-- [ ] O "Ver interações" aparece alinhado conforme o protótipo
+- [x] O horário do despacho aparece na posição definida no protótipo
+- [x] O botão "Exibir detalhes" aparece conforme o protótipo
+- [x] O "Ver interações" aparece alinhado conforme o protótipo
 
 ---
 
@@ -65,8 +65,8 @@ Referência de protótipo: Figma **Tramitação — Handoff**, nó [`8601-2511`]
 **Então** verifico que o horário do despacho aparece na posição prevista no protótipo
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
@@ -81,8 +81,8 @@ Referência de protótipo: Figma **Tramitação — Handoff**, nó [`8601-2511`]
 **Então** verifico que o botão "Exibir detalhes" segue o protótipo
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
@@ -124,3 +124,4 @@ Referência de protótipo: Figma **Tramitação — Handoff**, nó [`8601-2511`]
     - O protótipo (Figma `8601-2511`) não foi lido nesta sessão — o resultado esperado remete a ele em vez de reproduzir medidas, conforme a regra de que **medida de handoff não é critério de aceite** ([[Sistema/Skills/SKILL_BUGS#Critérios de Aceite|SKILL_BUGS]]).
 - Histórico:
     - 2026-08-11 - 🐛 Bug cadastrado
+    - 2026-08-14 - ✅ Aprovada em homologação
