@@ -19,7 +19,7 @@ ambiente: DEV
 
 Durante validação foi identificado que a exibição do despacho diverge do protótipo em **três pontos**: a posição do horário do despacho, o botão de "Exibir detalhes" e o alinhamento de "Ver interações".
 
-Encontrado durante a validação da [[QA Workspace/02 Demandas/DEV/9011 - Melhoria Exibicao Conteudo Completo Despachos|SGV-9011]], que por isso foi reaberta em DEV.
+Encontrado durante a validação da [[QA Workspace/02 Demandas/Concluídas/9011 - Melhoria Exibicao Conteudo Completo Despachos|SGV-9011]], que por isso foi reaberta em DEV.
 
 ---
 
@@ -117,7 +117,7 @@ Referência de protótipo: Figma **Tramitação — Handoff**, nó [`8601-2511`]
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/9011 - Melhoria Exibicao Conteudo Completo Despachos|SGV-9011]] — a melhoria foi **reaberta em DEV** por conta deste defeito (fluxo [[Sistema/Contexto/FLUXOS#3g. Reprovação com bug novo (SGV próprio)|3g]])
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/9011 - Melhoria Exibicao Conteudo Completo Despachos|SGV-9011]] — a melhoria foi **reaberta em DEV** por conta deste defeito (fluxo [[Sistema/Contexto/FLUXOS#3g. Reprovação com bug novo (SGV próprio)|3g]])
 - Observações:
     - Defeito **visual//de layout**, sem perda de função — os três pontos são divergência de posicionamento e alinhamento contra o protótipo.
     - As três divergências foram cadastradas como **um defeito só** no Notion, com uma evidência única. Um CT por divergência mantém a rastreabilidade individual sem quebrar isso.

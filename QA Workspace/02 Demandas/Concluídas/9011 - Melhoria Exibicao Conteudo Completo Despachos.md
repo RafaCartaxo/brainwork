@@ -4,11 +4,11 @@ tags:
   - qa
   - despacho
 task: "9011"
-status: dev
+status: resolvido
 prioridade: media
 mel: ""
 data_inicio: 2026-08-11
-data_fim: ""
+data_fim: "2026-08-14"
 responsavel: Rafael
 modulo: despacho
 ---
@@ -16,7 +16,7 @@ modulo: despacho
 
 > [!info] Informações
 > - **Tipo:** Melhoria (CX)
-> - **Status:** DEV — **Reaberto** (reaberta em 11/08/2026)
+> - **Status:** Concluída (retestada e aprovada em homologação em 14/08/2026 — reaberta em DEV em 11/08/2026)
 > - **Responsável QA:** Rafael
 > - **Link:** [SGV-9011 no Notion](https://app.notion.com/p/alfa-group/Melhoria-CX-Melhoria-na-exibi-o-de-conte-do-completo-de-despachos-36f2aec67d3081cc9719c33e9ca4422d) · Figma — Tramitação/Handoff: [nó 8601-2511](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=8601-2511)
 > - **Dev:** B. Luan · **Revisores MR:** Marcos Vinicius, Gabriel Desidério
@@ -84,3 +84,4 @@ Registro da reabertura no Notion (comentário de 11/08/2026): *"@B. Luan Reabert
 
 - 2026-08-11 - 🔴 Melhoria reaberta em DEV (3 divergências de protótipo; defeito [[QA Workspace/02 Demandas/DEV/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] cadastrado)
 - 2026-08-11 - Card criado no vault, enxuto, para dar rastreabilidade à reabertura — a demanda existia só no Notion até aqui
+- 2026-08-14 - 🔁 Melhoria retestada e aprovada em homologação (etapas anteriores concluídas implicitamente — revalidação em DEV não registrada em separado)
