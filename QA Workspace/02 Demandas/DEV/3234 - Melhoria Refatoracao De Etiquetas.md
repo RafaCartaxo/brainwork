@@ -727,6 +727,56 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 > Duas coisas travaram o roteamento automático, as duas registradas aqui porque afetam **qualquer card de melhoria**, não só este:
 > 1. **Faltava `ambiente:` no frontmatter.** O roteador mapeia a subpasta por esse campo, e o template `Demanda.md` não o traz (só o `Bug Report.md`). Sem ele o script avisa *"ambiente '—' do card não mapeia pra subpasta"* e deixa o arquivo na raiz. Campo adicionado a este card em 13/08.
 > 2. **O card usa `## Evidências` (h2)** e o roteador procura `### Evidências` (h3), então o embed entra à mão.
+
+![[3234 - ct-028, 029.mp4]]
+
+![[3234 - ct-027.mp4]]
+
+![[3234 - ct-026.mp4]]
+
+![[3234 - ct-025.mp4]]
+
+![[3234 - ct-024.mp4]]
+
+![[3234 - ct-023.mp4]]
+
+![[3234 - ct-022.mp4]]
+
+![[3234 - ct-021.mp4]]
+
+![[3234 - ct-020.mp4]]
+
+![[3234 - ct-019.mp4]]
+
+![[3234 - ct-018.mp4]]
+
+![[3234 - ct-017.mp4]]
+
+![[3234 - ct-015, 016.mp4]]
+
+![[3234 - ct-014.mp4]]
+
+![[3234 - ct-013.mp4]]
+
+![[3234 - ct-012.mp4]]
+
+![[3234 - ct-011.mp4]]
+
+![[3234 - ct-010.mp4]]
+
+![[3234 - ct-009.mp4]]
+
+![[3234 - ct-008.mp4]]
+
+![[3234 - ct-007.mp4]]
+
+![[3234 - ct-006.mp4]]
+
+![[3234 - ct-005.mp4]]
+
+![[3234 - ct-004.mp4]]
+
+![[3234 - ct-003.mp4]]
 >
 > É a mesma causa dos itens antigos da fila sobre a [[QA Workspace/02 Demandas/HML/10151 - Melhoria Filtros Criados Por Mim Ou Pelo Setor|SGV-10151]] e a [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]. Proposta de ajuste no template registrada nas Anotações da daily de 13/08.
 
