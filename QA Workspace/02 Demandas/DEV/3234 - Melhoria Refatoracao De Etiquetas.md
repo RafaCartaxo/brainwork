@@ -713,9 +713,13 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que os toasts exibem as mensagens previstas: **"Etiqueta criada! A etiqueta foi criada e aplicada com sucesso"**, **"Etiqueta editada! A etiqueta foi editada e aplicada com sucesso"** e **"Etiqueta excluída com sucesso!"**
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reprovado em 13/08, aprovado no reteste de 17/08
+> A copy divergente dos dois toasts virou [[QA Workspace/02 Demandas/Concluídas/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc|SGV-10844]], foi corrigida e o Rafael confirmou o reteste em 17/08. O card do defeito está em `Concluídas/`.
+> **Sem gravação do reteste** — o GIF EV-04 abaixo é o registro do defeito original; a aprovação vem da confirmação direta, não de evidência nova.
 
 **Evidências de Testes:**
 
@@ -746,7 +750,7 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 | 2 | Média | ~~Busca pela etiqueta-pai não retorna o cluster~~ | CT-011 | 🗑️ **Descartado** — busca traz o resultado exato por permissão |
 | 3 | Média | ~~Preview sem a linha "Responsável: \<setor\>"~~ | CT-023 | 🗑️ **Descartado** — aceito como está |
 | 4 | Média | Busca e sugestão sem truncamento; nome herda mais de 25 caracteres na criação | CT-012 | [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao\|SGV-10831]] |
-| 5 | Baixa | Toasts de criação e edição com copy divergente da doc | CT-029 | [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] |
+| 5 | Baixa | Toasts de criação e edição com copy divergente da doc | CT-029 | [[QA Workspace/02 Demandas/Concluídas/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] |
 | 6 | Média | Seletor de setores sem a linha "Selecionados:", sem `+qtd` e sem limpar todos | CT-017 | [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas\|Defeitos 3234]] (vizinho da [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos\|SGV-10842]]) |
 | 7 | Alta | Menu de contexto do card não fecha ao abrir o painel de etiquetas | CT-018 | duplicata da [[QA Workspace/02 Demandas/Concluídas/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas\|SGV-10832]] (mesmo ponto de entrada: meatball do card) |
 | 8 | Média | Opções das últimas etiquetas ocultas no submenu "Etiquetas >" do meatball | — | [[QA Workspace/02 Demandas/Concluídas/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball\|SGV-10833]] |
@@ -792,7 +796,7 @@ As duas extensões estão em `EVID_EXTS` do `qa-atualiza.py`, então o 🔄 rote
 | **EV-01** | `3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif` | CT-012, CT-025 | 🗑️ Defeito 1 (descartado) + achado 4 → SGV-10831 (evidência parcial; aquele card tem cópia renomeada) |
 | **EV-02** | `3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif` | CT-011 | 🗑️ Defeito 2 (descartado — comportamento correto por permissão) |
 | **EV-03** | `3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif` | CT-023 | 🗑️ Defeito 3 (descartado — aceito como está) |
-| **EV-04** | `3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif` | CT-029 | Defeito 5 → [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] (os dois toasts) |
+| **EV-04** | `3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif` | CT-029 | Defeito 5 → [[QA Workspace/02 Demandas/Concluídas/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] (os dois toasts) |
 | **EV-05** | `3234 - EV-05 - CT-017 - seletor de setores sem selecionados, qtd e limpar todos.gif` | CT-017 | Defeito 6 (ativo — vizinho da [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos\|SGV-10842]]) |
 | **EV-06** | `3234 - EV-06 - CT-018 - menu de contexto do card nao fecha ao abrir o painel de etiquetas.gif` | CT-018 | Defeito 7 — duplicata da [[QA Workspace/02 Demandas/Concluídas/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas\|SGV-10832]] |
 | **EV-07** | `3234 - EV-07 - CT-003 - nova subetiqueta so em etiqueta-pai.mp4` | CT-003 | Execução de 17/08 |
@@ -819,7 +823,7 @@ As duas extensões estão em `EVID_EXTS` do `qa-atualiza.py`, então o 🔄 rote
 | **EV-28** | `3234 - EV-28 - CT-025 - criar e aplicar so habilita com nome preenchido.mp4` | CT-025 | Execução de 17/08 |
 | **EV-29** | `3234 - EV-29 - CT-026 - salvar e aplicar so habilita apos alguma edicao.mp4` | CT-026 | Execução de 17/08 |
 | **EV-30** | `3234 - EV-30 - CT-027 - limite de 25 caracteres com contador.mp4` | CT-027 | Execução de 17/08 |
-| **EV-31** | `3234 - EV-31 - CT-028, CT-029 - dialogos de confirmacao e toasts de criacao, edicao e exclusao.mp4` | CT-028, CT-029 | reteste do defeito → [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] |
+| **EV-31** | `3234 - EV-31 - CT-028, CT-029 - dialogos de confirmacao e toasts de criacao, edicao e exclusao.mp4` | CT-028, CT-029 | reteste do defeito → [[QA Workspace/02 Demandas/Concluídas/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] |
 
 > [!warning]- O 🔄 não embeda sozinho neste card — e o motivo vale pra toda demanda
 > Duas coisas travaram o roteamento automático, as duas registradas aqui porque afetam **qualquer card de melhoria**, não só este:
@@ -858,7 +862,7 @@ As duas extensões estão em `EVID_EXTS` do `qa-atualiza.py`, então o 🔄 rote
 - 2026-08-13 - 🐛 Bug confirmado (card criado): [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234 — Refatoração de Etiquetas]] — 7 defeitos agrupados, `CT-B01` a `CT-B07`
 - 2026-08-13 - ✂️ Achado 4 extraído para [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — já existia como task no Notion, com causa em CSS e um achado novo (herança do nome >25 caracteres); severidade subiu de baixa pra média
 - 2026-08-13 - 🐛 Rafael cadastrou 4 achados próprios da validação: [[QA Workspace/02 Demandas/Concluídas/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas|SGV-10832]] (possível duplicata do achado 7, não reconciliada), [[QA Workspace/02 Demandas/Concluídas/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball|SGV-10833]] (novo, fora dos 7), [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] (vizinho do achado 6, sintoma distinto) e [[QA Workspace/02 Demandas/DEV/10850 - Bug Checkbox Todos Os Setores Nao Acompanha Selecoes Individuais|SGV-10850]] (checkbox mestre "Todos os setores", sintoma vizinho do achado 6 e da 10842)
-- 2026-08-13 - 🗑️📝 **Reconciliação dos achados**: itens 1, 2 e 3 **descartados** (comportamento correto — compartilhar é obrigatório, busca por permissão, preview aceito); achado 5 virou [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc|SGV-10844]] (copy dos toasts; modal de confirmação ao salvar edição verificado **correto**); achado 7 **fechado como duplicata do SGV-10832** (mesmo ponto de entrada — meatball do card na Mesa); achado 8 extraído para o [[QA Workspace/02 Demandas/Concluídas/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball|SGV-10833]]
+- 2026-08-13 - 🗑️📝 **Reconciliação dos achados**: itens 1, 2 e 3 **descartados** (comportamento correto — compartilhar é obrigatório, busca por permissão, preview aceito); achado 5 virou [[QA Workspace/02 Demandas/Concluídas/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc|SGV-10844]] (copy dos toasts; modal de confirmação ao salvar edição verificado **correto**); achado 7 **fechado como duplicata do SGV-10832** (mesmo ponto de entrada — meatball do card na Mesa); achado 8 extraído para o [[QA Workspace/02 Demandas/Concluídas/10833 - Bug Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball|SGV-10833]]
 - 2026-08-13 - ✏️ **CA23 e CA24 corrigidos durante a execução**: o CA23 cobrava "última atividade", que o Figma não tem (container de 160px fixos); o CA24 apontava o accordion no card, quando ele vive no menu de aplicação. Os dois, executados ao pé da letra, reprovariam o dev indevidamente
 - 2026-08-13 - 📚 **Dúvida em aberto resolvida**: exceder 25 caracteres no nome **bloqueia a digitação**, sem mensagem de erro (contador trava em `25/25`)
 - 2026-08-13 - ✏️✅ **CA11, CA23 e CA25 corrigidos após a reconciliação, e 3 CTs flipados pra Sim**: CT-011 (busca por permissão, não "cluster sempre completo"), CT-023 (preview aceito sem "setor responsável" — **diverge do Figma**, tensão registrada no CT) e CT-025 (criação por sugestão também exige compartilhamento, doc desatualizada nesse ponto). CT-012 segue "Não": a parte do botão foi descartada, mas o overflow do box (SGV-10831) continua reprovando o CT. **Contagem corrigida: 24 aprovados, 4 reprovados** (era 21/7)

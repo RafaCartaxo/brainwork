@@ -5,9 +5,9 @@ tags:
   - etiquetas
 task: "10844"
 prioridade: baixa
-status: aberto
+status: resolvido
 data_inicio: 2026-08-13
-data_fim: ""
+data_fim: "2026-08-17"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: etiquetas
@@ -52,8 +52,8 @@ O toast de **exclusão** (`Etiqueta excluída com sucesso!`) já está correto e
 
 ### Critérios de aceite
 
-- [ ] Ao criar uma etiqueta pelo drawer, o toast exibe exatamente **"Etiqueta criada! A etiqueta foi criada e aplicada com sucesso"**
-- [ ] Ao editar uma etiqueta pelo drawer, o toast exibe exatamente **"Etiqueta editada! A etiqueta foi editada e aplicada com sucesso"**
+- [x] Ao criar uma etiqueta pelo drawer, o toast exibe exatamente **"Etiqueta criada! A etiqueta foi criada e aplicada com sucesso"**
+- [x] Ao editar uma etiqueta pelo drawer, o toast exibe exatamente **"Etiqueta editada! A etiqueta foi editada e aplicada com sucesso"**
 
 ---
 
@@ -66,7 +66,7 @@ O toast de **exclusão** (`Etiqueta excluída com sucesso!`) já está correto e
 **Então** o toast exibe **"Etiqueta criada! A etiqueta foi criada e aplicada com sucesso"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -81,7 +81,7 @@ O toast de **exclusão** (`Etiqueta excluída com sucesso!`) já está correto e
 **Então** o toast exibe **"Etiqueta editada! A etiqueta foi editada e aplicada com sucesso"**
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -106,4 +106,5 @@ O toast de **exclusão** (`Etiqueta excluída com sucesso!`) já está correto e
     - Sem evidência por enquanto — captura dedicada pendente.
 
 - Histórico:
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08). **Sem gravação de reteste**: a aprovação vem da confirmação direta do Rafael, não de evidência nova — a única gravação do card é a do defeito original (13/08)
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10844; correspondente ao Defeito 5 do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])
