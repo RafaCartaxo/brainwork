@@ -6,7 +6,7 @@ tags:
   - sogov
   - servicos-e-assuntos
 tipo: modulo
-revisado: 2026-07-20
+revisado: 2026-08-17
 fonte: https://app.notion.com/p/alfa-group/Servi-os-e-Assuntos-9273202dadcb409697ba87231de464d4
 fonte_criado: 2024-07-08 (Rafael)
 fonte_ultima_edicao: 2026-05-11 (Vinícius)
@@ -191,6 +191,14 @@ Modelo "responsável + cópias" validado com o time de CX. Protótipo: PDF anexo
 - [ ] Seção 03 (Natureza e Privacidade): o export não detalha o que muda especificamente se o módulo permitir abertura externa mas o tipo de documento não for "Processo Administrativo" (ou vice-versa) — só afirma que ambas condições precisam ser satisfeitas. Comportamento de borda não descrito.
 - [ ] Não há, no export, uma definição explícita da diferença conceitual entre "Serviço" e "Assunto" (o documento trata os dois quase sempre em conjunto/como sinônimos operacionais) — confirmar se há distinção de regra de negócio entre os dois tipos ou se é só nomenclatura conforme o módulo.
 - [ ] "Configuração para Abertura Externa" (Seção 03) menciona que a config do módulo "deve ser replicada no serviço em criação, com possibilidade de edição" — não fica claro se há alguma restrição de "igual ou mais restritivo que o módulo" (como existe explicitamente para prazos na Seção 05) ou se a edição é livre em qualquer direção.
+
+**Setores em cópia (bloco importado em 17/08/2026)** — quatro pontos que mudam o que se testa:
+
+- [ ] **A doc se contradiz sobre a posição do campo**: o corpo diz que o select de cópia fica *"posicionado logo abaixo do select de setor responsável"* (seria a **2ª** posição), mas o callout logo em seguida diz *"adicionado logo após o select de 'Somente estes setores estarão disponíveis para o cidadão enviar como setor destino' — **3ª posição** no cluster"*. Escrevi 3ª por ser a afirmação mais específica, mas o CT de layout precisa da posição certa antes de virar asserção.
+- [ ] **Setor em cópia entra na herança de "Somente estes setores poderão interagir externamente"?** Esse campo hoje herda automaticamente de "Somente este setor receberá automaticamente" e de "Somente estes setores estarão disponíveis para o cidadão enviar como setor destino" (ver Seção 04). A doc nova **não diz** se os setores em cópia também são herdados. Se forem, o cidadão passa a poder interagir com setores que só deveriam receber cópia — muda o escopo de permissão, não só a UI.
+- [ ] **Nomenclatura divergente**: a doc nova chama o pool de origem de **"Setores que recebem e tramitam"**; a Seção 04 desta página chama de **"Setores participantes"**, e é ele que restringe todos os selects seguintes. Confirmar se são o mesmo campo com dois nomes ou dois clusters distintos — se forem distintos, a regra 1 do bloco novo aponta pro lugar errado.
+- [ ] **Sem data de edição e sem SGV**: o bloco veio por colagem, não por export (o export do Notion saiu vazio — só título e nome da seção). Não sei a data em que a doc foi alterada, por isso o título diz "importado em" e não "atualização de", e o `fonte_ultima_edicao` do frontmatter segue em 11/05/2026. Também não há SGV associado registrado aqui.
+- [ ] **Linha truncada na fonte**: na tabela de papéis, a célula do "Setor responsável" vem com dois trechos colados — *"…fica como responsável direto **ou setores estarão disponíveis para o cidadão enviar como setor destino**"*. Parece resíduo de copy/paste na doc do Notion; importei só a parte coerente. Vale corrigir na origem.
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
