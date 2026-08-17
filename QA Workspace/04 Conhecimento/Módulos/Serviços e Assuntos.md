@@ -55,7 +55,7 @@ A criação de um serviço/assunto pode ser feita de duas formas:
 **Seção 04: Regras de Tramitação** — campos de setores:
 - **Setores participantes** (obrigatório): vem preenchido por padrão com os setores da configuração de tramitação do módulo (seção 1); pode excluir. Excluído, o setor volta a ficar disponível para readicionar.
 - Os campos seguintes só permitem selecionar setores dentro do conjunto de "Setores participantes":
-  - **Somente este setor receberá automaticamente** (obrigatório): seleção única.
+  - **Somente este setor receberá automaticamente** (obrigatório): seleção única. ⚠️ **Atualizado** — o cluster foi renomeado para "Setores responsáveis" e ganhou um select de **setores em cópia**: ver [[#Múltiplos setores de destino — 1 responsável + N cópias (importado em 17/08/2026)]].
   - **Somente estes setores poderão criar** (obrigatório): múltipla.
   - **Somente estes setores estarão disponíveis para o cidadão enviar como setor destino**: exibido só se "Permite abertura externa" (seção 3) estiver habilitado.
   - **Somente estes setores poderão ver dados sigilosos** (obrigatório): múltipla; exibido só se "Permite mostrar opções de privacidade" estiver habilitado.
@@ -136,6 +136,50 @@ A criação de um serviço/assunto pode ser feita de duas formas:
 ### Novos formatos de anexo — KMZ e KML (atualização de 11/05/2026)
 - No seletor "Formato(s) suportado(s)", categoria Documentos ampliada com KMZ (dados de mapas compactados) e KML (anotações geográficas e vetores).
 - Alteração aplicada tanto em nível de módulo quanto em nível de serviço/assunto.
+
+### Múltiplos setores de destino — 1 responsável + N cópias (importado em 17/08/2026)
+
+Antes, o destino automático aceitava **um único setor**. O modelo passa a ser **1 setor responsável + N setores em cópia**, para atender fluxos que dependem da atuação conjunta de setores diferentes sem tramitação manual.
+
+**Abrangência**: módulo, serviço **e** assunto. As copies são **dinâmicas** conforme a página em que o usuário está — o protótipo usa *Editar serviço* como referência, por isso o label traz "deste serviço"; nas telas de módulo e assunto o texto acompanha. As demais telas seguem o mesmo padrão, sem protótipo próprio.
+
+**Localização**: Regras de tramitação → cluster **Setores responsáveis**. Só esse cluster muda; os demais campos e clusters da tela ficam como estão.
+
+| Papel | Quantidade | Comportamento |
+|---|---|---|
+| **Setor responsável** | 1 (único) | Recebe automaticamente os documentos e fica **responsável direto** — comportamento já existente |
+| **Setores em cópia** | N (múltiplos) | Recebem **apenas como cópia**: entram como **envolvidos** no documento no momento da abertura, mas **não** ficam responsáveis. Segue a regra de cópia que já existe na plataforma |
+
+**Mudança de copy do cluster** — title e subtitle mudaram, então são asserção de teste:
+- **Title**: `Setores responsáveis`
+- **Subtitle**: `Selecione um setor do cliente que será responsável direto pelos documentos.`
+
+**Campo novo:**
+- **Label**: `Setores que receberão os documentos de abertura deste serviço em cópia (opcional)`
+- **Componente**: campo de busca + seleção múltipla, com contador `(N) Setores selecionados` e ação **Expandir Organograma** — mesmo padrão dos outros selects de setor da tela.
+- **Posição**: 3ª do cluster (ver divergência em [[#Dúvidas em aberto]] — a doc se contradiz entre 2ª e 3ª posição).
+
+**Regras:**
+1. **Pool de opções** — os setores oferecidos para cópia são ditados pela seleção de "Setores que recebem e tramitam": setor que não estiver listado lá **não aparece** como opção de cópia. Mesma regra já desenvolvida para os outros selects.
+2. **Sem duplicidade com o responsável** — o setor definido como responsável **não aparece** na listagem de setores disponíveis para cópia.
+3. **Opcional** — a seleção de setores em cópia não é obrigatória.
+4. **Aplicação (padrão SoGov)** — documentos **já criados** permanecem com a configuração vigente no momento da criação; **novos** documentos recebem as regras novas.
+
+**Histórico do assunto/serviço** — registra entrada nova a cada alteração salva do campo. Cabeçalho segue o comportamento já existente, com as variações Servidor / Usuário Sogov / Usuário logado ("Você"):
+- Adição: `Adicionou estes setores à categoria de setores que recebem os documentos de abertura em cópia`
+- Remoção: `Removeu estes setores da categoria de setores que recebem os documentos de abertura em cópia`
+- Formato do item nos dois casos: `$SIGLA/$SIGLA - $Nome_do_setor`
+
+**Evento na abertura** — **nenhum tipo novo de evento** é criado nesta entrega. Os dois eventos abaixo já existem e passam a listar **todos** os destinatários (responsável + cópias), em toda criação (cidadão) e emissão (servidor) de documento em módulo/serviço/assunto que tenha setores em cópia:
+
+| Ação | Ator | Copy do evento |
+|---|---|---|
+| Criação | Cidadão | `($cargo) $SIGLA` **criou e encaminhou** este documento para o(s) seguinte(s) destinatário(s) |
+| Emissão | Servidor | `($cargo) $SIGLA` **emitiu e encaminhou** este documento para o(s) seguinte(s) destinatário(s) |
+
+Anatomia do evento: ícone de criação de documento + `$assinatura_textual` do autor · lista de destinatários **expansível** (chevron ao fim do texto) · data e hora · ações **Comentar** e **Responder** · toggle "Ver N interações".
+
+Modelo "responsável + cópias" validado com o time de CX. Protótipo: PDF anexo à task, versão exibida **v9.3.5.2.2**.
 
 ## Comportamentos observados em teste
 <!-- Divergências entre esta doc e o sistema real, pegadinhas, efeitos colaterais — com data e ambiente -->
