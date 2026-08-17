@@ -108,7 +108,6 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 > [!warning]- Critério corrigido em 13/08 — reconciliado, mas segue reprovado
 > "o botão já habilitado" foi **descartado**: o Rafael confirmou que criar-e-aplicar exige compartilhamento mesmo na criação por sugestão — não é defeito. O que **continua reprovado** é o box "Criar etiqueta [termo]" estourando a largura do campo, achado extraído para [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — motivo pelo qual este CT segue "Não".
 
-
 **D. Drawer**
 
 - [ ] **CA13** — É possível **criar e editar** etiqueta e subetiqueta a partir do próprio documento, sem ir à página da feature
@@ -210,6 +209,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-07 - CT-003 - nova subetiqueta so em etiqueta-pai.mp4]]
+
 ---
 
 ### B. Menu de aplicação
@@ -227,6 +228,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-08 - CT-004 - botao nova etiqueta abre o drawer.mp4]]
+
 ---
 
 #### **CT-005 Header do container clicável em toda a área, com hover** *(CA5)*
@@ -241,6 +244,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-09 - CT-005 - header do container clicavel com hover.mp4]]
 
 ---
 
@@ -257,6 +262,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-10 - CT-006 - rolagem ao ultrapassar 10 etiquetas.mp4]]
+
 ---
 
 #### **CT-007 Ordenação muda com a seleção** *(CA7)*
@@ -271,6 +278,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-11 - CT-007 - ordenacao muda com a selecao.mp4]]
 
 ---
 
@@ -287,6 +296,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-12 - CT-008 - etiqueta urgente fixa, imutavel e com tooltip.mp4]]
+
 ---
 
 #### **CT-009 Subetiquetas exibidas com hierarquia clara** *(CA9)*
@@ -301,6 +312,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-13 - CT-009 - subetiquetas exibidas com hierarquia clara.mp4]]
 
 ---
 
@@ -318,6 +331,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-14 - CT-010 - pesquisa atualiza contagem e destaca o termo.mp4]]
 
 ---
 
@@ -340,6 +355,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 ![[3234 - EV-02 - CT-011 - busca pela etiqueta-pai nao retorna o cluster completo.gif]]
 *Gravação registrada como o cenário sem permissão — mostra a regra funcionando, não um defeito.*
 
+![[3234 - EV-15 - CT-011 - busca retorna o cluster completo respeitando permissao.mp4]]
+
 ---
 
 #### **CT-012 Pesquisa sem resultado oferece criação por sugestão** *(CA12)*
@@ -349,12 +366,15 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que **"Criar etiqueta [termo]"** aparece como **primeira opção**, sem estourar a largura do campo, e que o drawer abre com o **nome já preenchido**, seguindo as mesmas regras de habilitação do fluxo principal
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 > [!warning]- Reconciliado em 13/08 — parcialmente. Segue reprovado
 > O "botão já habilitado" foi **descartado**: exigir compartilhamento também na criação por sugestão é comportamento correto, confirmado pelo Rafael. O que **segue reprovado** é o box "Criar etiqueta [termo]" estourando a largura do campo — extraído para [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]], que segue aberto.
+
+> [!success]- Reprovado em 13/08, aprovado no reteste de 17/08
+> O defeito virou [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]], foi corrigido e o reteste passou — gravação da execução de 17/08 embedada abaixo, junto com o GIF que registrou o problema original. O card do defeito está em `Concluídas/`.
 
 **Evidências de Testes:**
 
@@ -363,6 +383,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 > [!note]- Reprovação com dois defeitos por trás, em cards diferentes
 > O botão "Criar e aplicar" não vir habilitado é o **Defeito 1** em [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]. O box "Criar etiqueta [termo]" estourando a largura é [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — extraído em 13/08 por já existir como task própria no Notion, com causa em CSS e um achado novo (herança do nome >25 caracteres) que este CT sozinho não cobria.
+
+![[3234 - EV-16 - CT-012 - pesquisa sem resultado oferece criacao por sugestao.mp4]]
 
 ---
 
@@ -381,6 +403,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-17 - CT-013 - criar e editar etiqueta sem sair do documento.mp4]]
+
 ---
 
 #### **CT-014 Etiqueta criada é aplicada automaticamente ao documento** *(CA14)*
@@ -395,6 +419,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-18 - CT-014 - etiqueta criada aplicada automaticamente ao documento.mp4]]
 
 ---
 
@@ -411,6 +437,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-19 - CT-015, CT-016 - subetiqueta herda os setores da pai e preview exibe a hierarquia.mp4]]
+*Mesma gravação cobre CT-016.*
+
 ---
 
 #### **CT-016 Preview da subetiqueta exibe a hierarquia** *(CA16)*
@@ -426,6 +455,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-19 - CT-015, CT-016 - subetiqueta herda os setores da pai e preview exibe a hierarquia.mp4]]
+*Mesma gravação cobre CT-015.*
+
 ---
 
 #### **CT-017 Seleção de setores com pesquisa, chips e limpar todos** *(CA17)*
@@ -435,13 +467,18 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que há **pesquisa de setores**, que cada setor vira um **chip removível** e que **limpar todos** esvazia a seleção
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reprovado em 13/08, aprovado no reteste de 17/08
+> O defeito virou [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]], foi corrigido e o reteste passou — gravação da execução de 17/08 embedada abaixo, junto com o GIF que registrou o problema original. O card do defeito está em `Concluídas/`.
 
 **Evidências de Testes:**
 
 ![[3234 - EV-05 - CT-017 - seletor de setores sem selecionados, qtd e limpar todos.gif]]
+
+![[3234 - EV-20 - CT-017 - selecao de setores com pesquisa, chips e limpar todos.mp4]]
 
 ---
 
@@ -454,13 +491,18 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Então** verifico que os fluxos de drawer se comportam **igualmente** nos dois contextos
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reprovado em 13/08, aprovado no reteste de 17/08
+> O defeito virou [[QA Workspace/02 Demandas/Concluídas/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas|SGV-10832]], foi corrigido e o reteste passou — gravação da execução de 17/08 embedada abaixo, junto com o GIF que registrou o problema original. O card do defeito está em `Concluídas/`.
 
 **Evidências de Testes:**
 
 ![[3234 - EV-06 - CT-018 - menu de contexto do card nao fecha ao abrir o painel de etiquetas.gif]]
+
+![[3234 - EV-21 - CT-018 - fluxos de drawer iguais pela toolbar e pelo card da mesa.mp4]]
 
 ---
 
@@ -476,6 +518,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-22 - CT-019 - botao de etiquetas fixo no header do documento.mp4]]
 
 ---
 
@@ -493,6 +537,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-23 - CT-020 - pagina da feature usa menu contextual.mp4]]
 
 ---
 
@@ -512,6 +558,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-24 - CT-021 - filtro de etiquetas da mesa com clusters e acoes.mp4]]
+
 ---
 
 #### **CT-022 Seletores de cor de fundo e de texto independentes** *(CA22)*
@@ -526,6 +574,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-25 - CT-022 - seletores de cor de fundo e de texto independentes.mp4]]
 
 ---
 
@@ -548,6 +598,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 ![[3234 - EV-03 - CT-023 - preview do drawer sem a linha responsavel.gif]]
 *Gravação mantida como registro do que foi observado (e aceito) — não indica mais um defeito.*
 
+![[3234 - EV-26 - CT-023 - preview da criacao atualiza em tempo real.mp4]]
+
 ---
 
 #### **CT-024 Texto do accordion de subetiquetas legível no menu de aplicação** *(CA24)*
@@ -567,6 +619,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-27 - CT-024 - accordion de subetiquetas legivel no menu de aplicacao.mp4]]
 
 ---
 
@@ -591,6 +645,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 ![[3234 - EV-01 - CT-012, CT-025 - box da sugestao quebrado e criar e aplicar travado sem compartilhamento.gif]]
 *Mesma gravação cobre CT-012 — aqui documenta o comportamento correto, lá documenta o defeito de overflow que continua aberto (SGV-10831).*
 
+![[3234 - EV-28 - CT-025 - criar e aplicar so habilita com nome preenchido.mp4]]
+
 ---
 
 #### **CT-026 "Salvar e aplicar" só habilita após alguma edição** *(CA26)*
@@ -605,6 +661,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-29 - CT-026 - salvar e aplicar so habilita apos alguma edicao.mp4]]
 
 ---
 
@@ -626,6 +684,8 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 **Evidências de Testes:**
 
+![[3234 - EV-30 - CT-027 - limite de 25 caracteres com contador.mp4]]
+
 ---
 
 #### **CT-028 Diálogos de confirmação com checkbox de não repetir alerta** *(CA28)*
@@ -640,6 +700,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[3234 - EV-31 - CT-028, CT-029 - dialogos de confirmacao e toasts de criacao, edicao e exclusao.mp4]]
+*Mesma gravação cobre CT-029.*
 
 ---
 
@@ -657,6 +720,9 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 **Evidências de Testes:**
 
 ![[3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif]]
+
+![[3234 - EV-31 - CT-028, CT-029 - dialogos de confirmacao e toasts de criacao, edicao e exclusao.mp4]]
+*Mesma gravação cobre CT-028.*
 
 ---
 
@@ -708,11 +774,18 @@ Regras completas do módulo: [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|E
 
 As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[, CT-NNN] - <descrição>.gif`. Gravação que cobre mais de um caso é **um arquivo só**, referenciado em cada CT com nota de compartilhamento — convenção em [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]].
 
-**Formato desta rodada: GIF**, não MP4 — a captura foi feita pela automação do navegador, que exporta GIF. O `.gif` está em `EVID_EXTS` do `qa-atualiza.py`, então o 🔄 roteia normalmente.
+**Duas rodadas de gravação**, e o formato muda entre elas:
+
+- **EV-01 a EV-06 — 13/08, `.gif`**: captura pela automação do navegador, que exporta GIF. Cobrem só os CTs **reprovados** na execução original; foi o registro dos 7 defeitos.
+- **EV-07 a EV-31 — 17/08, `.mp4`**: execução completa da suíte, gravada pelo OBS. Cobrem **CT-003 a CT-029**, um arquivo por CT (dois arquivos cobrem dois CTs cada).
+
+As duas extensões estão em `EVID_EXTS` do `qa-atualiza.py`, então o 🔄 roteia as duas.
 
 ### Índice CT × EV
 
-*Nesta rodada foram gravados apenas os **CTs que ficaram reprovados após a reconciliação de 13/08** — os demais aprovados ficam com "Passou: Sim" sem evidência, por decisão de escopo. CT-011, CT-023 e CT-025 têm gravação porque foram reprovados na execução original; a reconciliação manteve a evidência como registro do que foi observado, mesmo tendo corrigido o veredito pra Sim.*
+*A numeração **EV é contígua e não é renumerada entre rodadas**: EV-01 a EV-06 seguem sendo a captura de defeitos de 13/08, e a execução completa de 17/08 entra a partir de EV-07. Renumerar as seis primeiras quebraria em silêncio as referências já existentes neste card e no card da [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]] — risco que o [[QA Workspace/Evidências/README#Evidência de caso de teste|Evidências/README]] registra explicitamente.*
+
+*CT-001 e CT-002 não têm gravação: o CT-001 foi aprovado na execução de 13/08 sem evidência dedicada e o **CT-002 segue sem execução**, bloqueado por ambiente (exige um 2º perfil).*
 
 | EV | Arquivo | CTs cobertos | O que mostra |
 |---|---|---|---|
@@ -722,61 +795,37 @@ As gravações vão **embedadas em cada CT**, no padrão `3234 - EV-NN - CT-NNN[
 | **EV-04** | `3234 - EV-04 - CT-029 - toasts de criacao e edicao com copy divergente.gif` | CT-029 | Defeito 5 → [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] (os dois toasts) |
 | **EV-05** | `3234 - EV-05 - CT-017 - seletor de setores sem selecionados, qtd e limpar todos.gif` | CT-017 | Defeito 6 (ativo — vizinho da [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos\|SGV-10842]]) |
 | **EV-06** | `3234 - EV-06 - CT-018 - menu de contexto do card nao fecha ao abrir o painel de etiquetas.gif` | CT-018 | Defeito 7 — duplicata da [[QA Workspace/02 Demandas/Concluídas/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas\|SGV-10832]] |
+| **EV-07** | `3234 - EV-07 - CT-003 - nova subetiqueta so em etiqueta-pai.mp4` | CT-003 | Execução de 17/08 |
+| **EV-08** | `3234 - EV-08 - CT-004 - botao nova etiqueta abre o drawer.mp4` | CT-004 | Execução de 17/08 |
+| **EV-09** | `3234 - EV-09 - CT-005 - header do container clicavel com hover.mp4` | CT-005 | Execução de 17/08 |
+| **EV-10** | `3234 - EV-10 - CT-006 - rolagem ao ultrapassar 10 etiquetas.mp4` | CT-006 | Execução de 17/08 |
+| **EV-11** | `3234 - EV-11 - CT-007 - ordenacao muda com a selecao.mp4` | CT-007 | Execução de 17/08 |
+| **EV-12** | `3234 - EV-12 - CT-008 - etiqueta urgente fixa, imutavel e com tooltip.mp4` | CT-008 | Execução de 17/08 |
+| **EV-13** | `3234 - EV-13 - CT-009 - subetiquetas exibidas com hierarquia clara.mp4` | CT-009 | Execução de 17/08 |
+| **EV-14** | `3234 - EV-14 - CT-010 - pesquisa atualiza contagem e destaca o termo.mp4` | CT-010 | Execução de 17/08 |
+| **EV-15** | `3234 - EV-15 - CT-011 - busca retorna o cluster completo respeitando permissao.mp4` | CT-011 | Execução de 17/08 |
+| **EV-16** | `3234 - EV-16 - CT-012 - pesquisa sem resultado oferece criacao por sugestao.mp4` | CT-012 | reteste do defeito → [[QA Workspace/02 Demandas/Concluídas/10831 - Bug Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao\|SGV-10831]] |
+| **EV-17** | `3234 - EV-17 - CT-013 - criar e editar etiqueta sem sair do documento.mp4` | CT-013 | Execução de 17/08 |
+| **EV-18** | `3234 - EV-18 - CT-014 - etiqueta criada aplicada automaticamente ao documento.mp4` | CT-014 | Execução de 17/08 |
+| **EV-19** | `3234 - EV-19 - CT-015, CT-016 - subetiqueta herda os setores da pai e preview exibe a hierarquia.mp4` | CT-015, CT-016 | Execução de 17/08 |
+| **EV-20** | `3234 - EV-20 - CT-017 - selecao de setores com pesquisa, chips e limpar todos.mp4` | CT-017 | reteste do defeito → [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos\|SGV-10842]] |
+| **EV-21** | `3234 - EV-21 - CT-018 - fluxos de drawer iguais pela toolbar e pelo card da mesa.mp4` | CT-018 | reteste do defeito → [[QA Workspace/02 Demandas/Concluídas/10832 - Bug Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas\|SGV-10832]] |
+| **EV-22** | `3234 - EV-22 - CT-019 - botao de etiquetas fixo no header do documento.mp4` | CT-019 | Execução de 17/08 |
+| **EV-23** | `3234 - EV-23 - CT-020 - pagina da feature usa menu contextual.mp4` | CT-020 | Execução de 17/08 |
+| **EV-24** | `3234 - EV-24 - CT-021 - filtro de etiquetas da mesa com clusters e acoes.mp4` | CT-021 | Execução de 17/08 |
+| **EV-25** | `3234 - EV-25 - CT-022 - seletores de cor de fundo e de texto independentes.mp4` | CT-022 | Execução de 17/08 |
+| **EV-26** | `3234 - EV-26 - CT-023 - preview da criacao atualiza em tempo real.mp4` | CT-023 | Execução de 17/08 |
+| **EV-27** | `3234 - EV-27 - CT-024 - accordion de subetiquetas legivel no menu de aplicacao.mp4` | CT-024 | Execução de 17/08 |
+| **EV-28** | `3234 - EV-28 - CT-025 - criar e aplicar so habilita com nome preenchido.mp4` | CT-025 | Execução de 17/08 |
+| **EV-29** | `3234 - EV-29 - CT-026 - salvar e aplicar so habilita apos alguma edicao.mp4` | CT-026 | Execução de 17/08 |
+| **EV-30** | `3234 - EV-30 - CT-027 - limite de 25 caracteres com contador.mp4` | CT-027 | Execução de 17/08 |
+| **EV-31** | `3234 - EV-31 - CT-028, CT-029 - dialogos de confirmacao e toasts de criacao, edicao e exclusao.mp4` | CT-028, CT-029 | reteste do defeito → [[QA Workspace/02 Demandas/DEV/10844 - Bug Toasts De Criacao E Edicao Com Copy Divergente Da Doc\|SGV-10844]] |
 
 > [!warning]- O 🔄 não embeda sozinho neste card — e o motivo vale pra toda demanda
 > Duas coisas travaram o roteamento automático, as duas registradas aqui porque afetam **qualquer card de melhoria**, não só este:
 > 1. **Faltava `ambiente:` no frontmatter.** O roteador mapeia a subpasta por esse campo, e o template `Demanda.md` não o traz (só o `Bug Report.md`). Sem ele o script avisa *"ambiente '—' do card não mapeia pra subpasta"* e deixa o arquivo na raiz. Campo adicionado a este card em 13/08.
 > 2. **O card usa `## Evidências` (h2)** e o roteador procura `### Evidências` (h3), então o embed entra à mão.
 
-![[3234 - ct-028, 029.mp4]]
-
-![[3234 - ct-027.mp4]]
-
-![[3234 - ct-026.mp4]]
-
-![[3234 - ct-025.mp4]]
-
-![[3234 - ct-024.mp4]]
-
-![[3234 - ct-023.mp4]]
-
-![[3234 - ct-022.mp4]]
-
-![[3234 - ct-021.mp4]]
-
-![[3234 - ct-020.mp4]]
-
-![[3234 - ct-019.mp4]]
-
-![[3234 - ct-018.mp4]]
-
-![[3234 - ct-017.mp4]]
-
-![[3234 - ct-015, 016.mp4]]
-
-![[3234 - ct-014.mp4]]
-
-![[3234 - ct-013.mp4]]
-
-![[3234 - ct-012.mp4]]
-
-![[3234 - ct-011.mp4]]
-
-![[3234 - ct-010.mp4]]
-
-![[3234 - ct-009.mp4]]
-
-![[3234 - ct-008.mp4]]
-
-![[3234 - ct-007.mp4]]
-
-![[3234 - ct-006.mp4]]
-
-![[3234 - ct-005.mp4]]
-
-![[3234 - ct-004.mp4]]
-
-![[3234 - ct-003.mp4]]
 >
 > É a mesma causa dos itens antigos da fila sobre a [[QA Workspace/02 Demandas/HML/10151 - Melhoria Filtros Criados Por Mim Ou Pelo Setor|SGV-10151]] e a [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]. Proposta de ajuste no template registrada nas Anotações da daily de 13/08.
 
