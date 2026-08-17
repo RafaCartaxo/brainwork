@@ -5,9 +5,9 @@ tags:
   - etiquetas
 task: "10832"
 prioridade: alta
-status: aberto
+status: resolvido
 data_inicio: 2026-08-13
-data_fim: ""
+data_fim: "2026-08-17"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: etiquetas
@@ -45,7 +45,7 @@ Durante validação foi identificado que, ao acionar **"Etiqueta >"** pelo meatb
 
 ### Critérios de aceite
 
-- [ ] Ao acionar "Etiqueta >" pelo meatball do card, o menu de contexto **fecha** e o modal de Etiquetas abre **totalmente visível e acessível**, sem sobreposição
+- [x] Ao acionar "Etiqueta >" pelo meatball do card, o menu de contexto **fecha** e o modal de Etiquetas abre **totalmente visível e acessível**, sem sobreposição
 
 ---
 
@@ -59,11 +59,13 @@ Durante validação foi identificado que, ao acionar **"Etiqueta >"** pelo meatb
 **Então** o menu de contexto **fecha** e o modal de Etiquetas abre por cima, totalmente visível e acessível, sem sobreposição
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10832 - reteste ok, menu do card fecha ao abrir o modal de etiquetas.mp4]]
 
 ---
 
@@ -83,4 +85,5 @@ Durante validação foi identificado que, ao acionar **"Etiqueta >"** pelo meatb
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
 
 - Histórico:
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10832; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])

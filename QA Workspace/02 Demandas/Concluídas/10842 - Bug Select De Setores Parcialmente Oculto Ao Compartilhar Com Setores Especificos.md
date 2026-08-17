@@ -5,9 +5,9 @@ tags:
   - etiquetas
 task: "10842"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-13
-data_fim: ""
+data_fim: "2026-08-17"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: etiquetas
@@ -44,7 +44,7 @@ Durante validação foi identificado que, ao iniciar a criação de uma nova eti
 
 ### Critérios de aceite
 
-- [ ] A lista de setores do select fica **totalmente visível e selecionável** ao compartilhar com setores específicos, sem ocultação parcial mesmo com maior volume de setores
+- [x] A lista de setores do select fica **totalmente visível e selecionável** ao compartilhar com setores específicos, sem ocultação parcial mesmo com maior volume de setores
 
 ---
 
@@ -58,11 +58,13 @@ Durante validação foi identificado que, ao iniciar a criação de uma nova eti
 **Então** a lista abre **totalmente visível**, com todas as opções legíveis e selecionáveis, sem ocultação parcial
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10842 - reteste ok, select de setores totalmente visivel.mp4]]
 
 ---
 
@@ -82,4 +84,5 @@ Durante validação foi identificado que, ao iniciar a criação de uma nova eti
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
 
 - Histórico:
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10842; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])

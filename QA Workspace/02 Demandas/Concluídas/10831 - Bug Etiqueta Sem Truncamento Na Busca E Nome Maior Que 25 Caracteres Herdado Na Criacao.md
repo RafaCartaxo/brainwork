@@ -5,9 +5,9 @@ tags:
   - etiquetas
 task: "10831"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-13
-data_fim: ""
+data_fim: "2026-08-17"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: etiquetas
@@ -63,9 +63,9 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 ### Critérios de aceite
 
-- [ ] **(1)** O campo de busca trunca o texto em 1 linha com ellipsis quando o termo excede a largura do campo
-- [ ] **(2)** O card "Criar etiqueta [termo]" quebra o texto em múltiplas linhas, respeitando a largura do card, sem estourar o container
-- [ ] **(3)** Ao acionar "Criar etiqueta [termo]" com um termo de mais de 25 caracteres, o campo Nome no drawer é preenchido com, no máximo, 25 caracteres
+- [x] **(1)** O campo de busca trunca o texto em 1 linha com ellipsis quando o termo excede a largura do campo
+- [x] **(2)** O card "Criar etiqueta [termo]" quebra o texto em múltiplas linhas, respeitando a largura do card, sem estourar o container
+- [x] **(3)** Ao acionar "Criar etiqueta [termo]" com um termo de mais de 25 caracteres, o campo Nome no drawer é preenchido com, no máximo, 25 caracteres
 
 ---
 
@@ -78,11 +78,14 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 **Então** o texto trunca em uma linha, com reticências ao final, sem estourar a largura do campo
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10831 - reteste ok, truncamento na busca e nome limitado a 25 caracteres.mp4]]
+*Mesma gravação cobre CT-B01, CT-B02 e CT-B03.*
 
 *Ver evidência principal (`10831 - defeito 3234.mp4`) na seção Evidências, no topo do card.*
 
@@ -95,11 +98,14 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 **Então** o texto quebra em múltiplas linhas dentro da largura do card, sem estourar o container
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10831 - reteste ok, truncamento na busca e nome limitado a 25 caracteres.mp4]]
+*Mesma gravação cobre CT-B01, CT-B02 e CT-B03.*
 
 *Ver evidência principal (`10831 - defeito 3234.mp4`) na seção Evidências. A gravação complementar (cópia da SGV-3234, com termo de 15 caracteres) mostra o mesmo sintoma antes de eu saber que precisava de 25+ caracteres.*
 
@@ -112,11 +118,14 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 **Então** o campo Nome do drawer é preenchido com, no máximo, 25 caracteres
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10831 - reteste ok, truncamento na busca e nome limitado a 25 caracteres.mp4]]
+*Mesma gravação cobre CT-B01, CT-B02 e CT-B03.*
 
 *Ver evidência principal (`10831 - defeito 3234.mp4`) na seção Evidências, no topo do card.*
 
@@ -141,3 +150,4 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 - Histórico:
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10831 já existente no Notion; card do vault criado a partir da task, extraído do agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])
     - 2026-08-13 - 📹 Evidência principal roteada (`10831 - defeito 3234.mp4`) — gravação do Rafael, cobre os três CTs
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)
