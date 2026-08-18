@@ -73,6 +73,8 @@ Módulo relacionado: [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramit
 
 A evidência da reabertura mora no card do defeito: [[QA Workspace/02 Demandas/Concluídas/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (`10740 - divergencias de prototipo na exibicao do despacho.png`, em `Evidências/Desenvolvimento/`).
 
+![[9011 - despacho ok.mp4]]
+
 ---
 
 > [!tip] Observações
