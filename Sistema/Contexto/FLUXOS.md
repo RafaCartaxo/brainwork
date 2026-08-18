@@ -20,6 +20,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Fiz/testei/vi/pensei algo e quero registrar | 2 | Escrever na seção certa da daily (na dúvida: `## Anotações`, cru — o organizador roteia) |
 | Suspeitei de bug (ainda não confirmei) | 3a·0 | `❓ Suspeita de bug registrada: <título>` em Atividades + "Investigar suspeita" em A fazer hoje |
 | Confirmei bug novo (reproduzível) | 3a | Gravar evidência ([[../../QA Workspace/Evidências/README\|guia]]) → card via [[../Skills/SKILL_BUGS\|SKILL_BUGS]] |
+| Um **CT de uma Melhoria reprovou em DEV** | 3i | É **Defeito**, não Bug: card com `pai: "<SGV da task>"` → a pai volta a `🔴 Reaberta em DEV` |
 | Vou validar demanda em DEV / HML / hotfix | 3b / 3c / 3d | Executar os CTs do card, gravar evidência, frase padrão na daily |
 | Bug investigado não reproduz / cenário não existe | 3e | [[../Contexto/PADROES_QA#Descarte de bug/suspeita (99 Arquivo)\|Regra de descarte]] → `🗑️` na daily |
 | Chegou task só de API | 3f | Definir critérios no card; validação pula DEV, direto em homologação |
@@ -108,6 +109,8 @@ O ciclo completo de vida do bug está em [[../../QA Workspace/02 Demandas/README
 ### 3b–3d. Validar em DEV / HML / Hotfix
 Executar CTs → gravar evidência → **gate de doc (abaixo)** → frase padrão na daily. Aprovou? Mover card pra próxima pasta (DEV→HML→Concluídas) — movimentação atômica via [[../Agentes/AGENTE_MIGRACAO_CARDS\|AGENTE_MIGRACAO_CARDS]] (dispara ao marcar o checkbox com o resultado). Reprovou? Reabrir + pendência de revalidação. Regras de movimentação: [[../Contexto/PADROES_QA#Organização de Bugs\|PADROES_QA]].
 
+**Reprovou executando o CT de uma task pai, em DEV?** Aí não é bug — é **Defeito**, e o ciclo é o do fluxo 3i abaixo.
+
 **Gate obrigatório antes de ✅ e de mover o card**: cruzar o comportamento aprovado contra a doc do módulo ([[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]]) e registrar o veredito. Aprovado contradiz a doc → decisão de Produto + pendência de atualizar; doc **não existe** → pendência de importar (fluxo 8). Rede de segurança: [[../Agentes/AGENTE_VALIDACAO_DOC\|AGENTE_VALIDACAO_DOC]] sinaliza aprovações sem esse registro.
 
 ### 3e. Descartar
@@ -122,6 +125,22 @@ Duas demandas nascem: a original reaberta + card novo pro bug. Marcar a pendênc
 ### 3h. Após aprovar: preparar automação
 Fecha a ponte validação → automação. Card aprovado (idealmente em HML) e com CTs prontos → conferir os gates (card validado + fix no ambiente que o Cypress ataca) → [[../Skills/SKILL_INICIAR_AUTOMACAO\|SKILL_INICIAR_AUTOMACAO]] → escrever o teste (guia no repo `sogov-automation-test`) → revisar ([[../Skills/SKILL_REVISAO_AUTOMACAO_E2E\|SKILL_REVISAO_AUTOMACAO_E2E]]) → commit/MR + atualizar Histórico do card. Gates abertos → pendência `⏳` com o motivo, não iniciar.
 
+### 3i. Defeito (filho de task pai)
+
+CT de uma Melhoria/Funcionalidade reprovou **em DEV**? O problema é **Defeito**, não Bug — regra completa em [[../Contexto/PADROES_QA#Defeito × Bug|PADROES_QA → Defeito × Bug]].
+
+1. **Criar o card do defeito** ([[../Skills/SKILL_BUGS|SKILL_BUGS]]) com `pai: "<SGV da task>"` no frontmatter, tag `defeito` e arquivo `<SGV> - Defeito <Título>`
+2. **Apontar do CT pro defeito**: o CT do pai que reprovou linka o card do defeito
+3. **A task pai volta a `🔴 Reaberta em DEV`** (regra de reabertura) — na daily: `🐛 SGV-XXXX - Defeito cadastrado (da SGV-YYYY)`
+4. Dev corrige → **revalidar o CT afetado no card do pai**, não o defeito isolado
+5. CT passou → **callout de reconciliação** no CT ([[../Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]) + defeito fecha em `Concluídas/` com `ambiente: DEV` e o Histórico nomeando a pai
+6. **Gate**: sem defeito aberto, a Melhoria pode ser aprovada em DEV e seguir pra `HML/`
+
+> [!warning] Defeito aberto **bloqueia** a aprovação da pai em DEV
+> Identificou, resolve. Aprovar entrega cujo próprio CT reprovou é registro falso. Exceção (produto adia o fix) exige decisão explícita registrada no card do pai — o `🔄` avisa quando a aprovação chega com defeito filho ainda aberto.
+
+Na fila, o defeito **não ocupa linha própria** — aparece aninhado sob a linha da pai. E **em homologação não se reteste defeito**: valida-se a Melhoria inteira, e problema encontrado lá é **Bug** (esteira completa, sem `pai:`).
+
 ## 4. Melhoria: da ideia ao cadastro
 
 Orquestrado pela [[../Skills/SKILL_MELHORIA|SKILL_MELHORIA]] (7 passos: ideia → refinar → plano → CTs → card → Notion → esteira).
@@ -130,7 +149,8 @@ Orquestrado pela [[../Skills/SKILL_MELHORIA|SKILL_MELHORIA]] (7 passos: ideia �
 2. Refinar escopo + regras de negócio ([[../Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]] como sub-passo) → plano de teste ([[../Skills/SKILL_PLANO_DE_TESTE|SKILL_PLANO_DE_TESTE]]) → CTs ([[../Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]])
 3. Criar card hub [[../Templates/Demanda.md|Demanda]] em `02 Demandas/DEV/` → `📝 MEL-NNNN - Melhoria refinada (card criado)`
 4. Cadastrar no Notion → ganha SGV → renomear arquivo → `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)`
-5. Segue esteira normal. Regras completas: [[../../QA Workspace/01 Daily/README#Regra de Melhorias propostas\|01 Daily/README]].
+5. **Validar em DEV**: executar os CTs. CT que reprovar vira **Defeito** (fluxo 3i), não Bug — a pai reabre e só é aprovada quando não houver defeito aberto.
+6. Aprovada em DEV → `HML/`, onde se valida **a Melhoria como um todo**. Problema encontrado em homologação é **Bug** (esteira completa). Regras completas: [[../../QA Workspace/01 Daily/README#Regra de Melhorias propostas\|01 Daily/README]].
 
 ## 5. Evidência
 
