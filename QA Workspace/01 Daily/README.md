@@ -108,6 +108,8 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 
 As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço.
 
+`🔧` é reservado pra mudança no **próprio vault/processo** (script, doc, template, agente, skill) — nunca em cards do sistema testado, que usam `📚` (documentação de conhecimento) ou as copies de validação/refinamento acima. Decidido em 18/08, resolvendo uma das 5 propostas em aberto desde 31/07 — antes não havia copy oficial e o trabalho de ferramenta saía com emoji fora do catálogo (`🤖`).
+
 **O parêntese é em linguagem simples**: descreve o que aconteceu e o que falta, pra qualquer pessoa entender sem conhecer o processo — nada de jargão do fluxo (destilado, mesa, rodada). Os termos técnicos vivem na mesa de refinamento e no callout de Detalhes, onde o contexto os explica.
 
 ## Grupos da fila ("A fazer hoje")
