@@ -3,6 +3,7 @@ tags:
   - bug
   - qa
 task: ""
+pai: ""
 prioridade: media
 status: aberto
 data_inicio: <% tp.date.now("YYYY-MM-DD") %>
@@ -76,3 +77,14 @@ Então ...
     
 - Histórico:
     - <% tp.date.now("YYYY-MM-DD") %> - 🐛 Bug cadastrado
+
+<!--
+DEFEITO em vez de Bug? (reprovou o CT de uma task pai, em DEV)
+  tags:  troque `bug` por `defeito`
+  pai:   "<SGV da task pai>"   ← vazio = bug independente
+  nome do arquivo: "<SGV> - Defeito <Título>"
+  Histórico: "🐛 Defeito cadastrado (da SGV-YYYY)"
+  Fecha em Concluídas/ com ambiente: DEV, sem passar por HML.
+  Regra: Sistema/Contexto/PADROES_QA.md → "Defeito × Bug"
+-->
+
