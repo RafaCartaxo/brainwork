@@ -152,6 +152,33 @@ WHERE !completed
 
 ---
 
+## Sem dono — disponível pra pegar
+
+> [!info] O que aparece aqui
+> Cards abertos com `responsavel` **vazio**: demanda que qualquer QA do time pode pegar. Eles **não entram na fila** da daily de propósito — a fila é a lista do que é *seu* ([[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA → `responsavel`]]). É aqui que eles ficam visíveis.
+
+```dataviewjs
+const sem = dv.pages('"QA Workspace/02 Demandas"')
+  .where(p => p.file.ext === "md"
+           && p.file.name !== "README"
+           && !p.file.path.includes("/Concluídas/")
+           && (p.responsavel === null || p.responsavel === undefined
+               || String(p.responsavel).trim() === ""));
+if (sem.length === 0) {
+  dv.el("p", "✅ Nenhuma demanda sem dono — tudo com responsável definido.");
+} else {
+  dv.table(["Demanda", "Ambiente", "Status", "Deploy"],
+    sem.sort(p => p.file.name).map(p => [
+      p.file.link,
+      p.ambiente ?? "—",
+      p.status ?? "—",
+      p.deploy ? `⏳ ${p.deploy}` : "—",
+    ]));
+}
+```
+
+---
+
 ## Melhorias propostas em aberto
 
 ```dataviewjs
