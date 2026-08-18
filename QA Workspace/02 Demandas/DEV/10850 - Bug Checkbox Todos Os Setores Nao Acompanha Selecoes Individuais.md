@@ -81,7 +81,7 @@ Durante validação foi identificado que, ao compartilhar uma etiqueta com **set
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV.
 
 - Observações:
-    - Relacionado ao seletor de setores do drawer — nota de **vizinhança** (não duplicata) adicionada no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]: o **Defeito 6** cobre a ausência de "Selecionados:", contador `+qtd` e limpar todos; a [[QA Workspace/02 Demandas/Concluídas/10842 - Bug Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] cobre a ocultação do select por volume; este card cobre a **sincronização do checkbox mestre "Todos os setores"** com as seleções individuais — sintomas distintos do mesmo campo.
+    - Relacionado ao seletor de setores do drawer — nota de **vizinhança** (não duplicata) adicionada no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]: o **Defeito 6** cobre a ausência de "Selecionados:", contador `+qtd` e limpar todos; a [[QA Workspace/02 Demandas/Concluídas/10842 - Defeito Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] cobre a ocultação do select por volume; este card cobre a **sincronização do checkbox mestre "Todos os setores"** com as seleções individuais — sintomas distintos do mesmo campo.
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
 
 - Histórico:

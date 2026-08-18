@@ -1,9 +1,10 @@
 ---
 tags:
-  - bug
+  - defeito
   - qa
   - etiquetas
 task: "10831"
+pai: "3234"
 prioridade: media
 status: resolvido
 data_inicio: 2026-08-13
