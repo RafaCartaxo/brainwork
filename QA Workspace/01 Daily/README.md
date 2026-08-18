@@ -73,6 +73,20 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Suspeita investigada e descartada sem card | `🗑️ Suspeita descartada: <título> (não é bug: <motivo curto>)` |
 | Bug/suspeita com card, investigada e descartada (não ocorre) | `🗑️ Bug/SGV XXXX - Descartado (não reproduz: <motivo curto>)` (ver [[Sistema/Contexto/PADROES_QA.md#Descarte de bug/suspeita (99 Arquivo)\|regra de descarte]]) |
 
+**Ciclo do defeito** (problema que saiu da execução de um CT de uma task pai, em DEV — regra completa em [[Sistema/Contexto/PADROES_QA#Defeito × Bug\|PADROES_QA → Defeito × Bug]]):
+
+| Situação | Copy |
+|---|---|
+| Defeito encontrado na execução de um CT | `🐛 SGV-XXXX - Defeito cadastrado (da [[card pai\|SGV-YYYY]])` — registrar também em **Bugs encontrados** |
+| Defeito corrigido e o CT do pai passou no reteste | `✅ SGV-XXXX - Defeito corrigido e retestado em DEV` |
+| Defeito reprovou no reteste | `🔴 SGV-XXXX - Defeito reaberto em DEV` |
+| Defeito investigado e descartado (não procede) | `🗑️ SGV-XXXX - Defeito descartado (<motivo curto>)` |
+
+> [!important] O defeito é sempre nomeado com a pai
+> A frase de cadastro cita a task pai porque é ela que dá sentido ao defeito — sem isso, um `🐛 SGV-10831 - Defeito cadastrado` solto na daily não diz de que entrega ele saiu. O mesmo vale pro Histórico do card ([[Sistema/Contexto/PADROES_QA#Defeito × Bug\|PADROES_QA]]).
+>
+> Note que **não existe** copy de "Defeito aprovado em homologação": defeito não vai pra HML. Se você precisou dessa frase, ou não era defeito (era Bug), ou a esteira foi seguida errado.
+
 **Tasks de API** (fluxo 3f — sem esteira DEV, validação direto em homologação; regras completas em [[Sistema/Contexto/PADROES_QA#Tasks de API (fluxo 3f)\|PADROES_QA]]):
 
 | Situação | Copy |
@@ -133,6 +147,21 @@ Duas regras que evitam item no grupo errado:
 
 Quem preenche o quê: **idade** (`🕐`/`⚠️`/`🚨`) e a **coleta dos `[x]`** em ✅ são do `qa-atualiza.py`; o agrupamento por natureza é do agente. Detalhe em [[../../Sistema/Agentes/AGENTE_FILA|AGENTE_FILA]] → "Fronteira com o script".
 
+### Defeito não entra em grupo — entra embaixo da pai
+
+Item de **defeito** ([[../../Sistema/Contexto/PADROES_QA#Defeito × Bug|PADROES_QA → Defeito × Bug]]) **não é classificado por verbo** e não ocupa linha de topo: ele aparece **aninhado sob a linha da task pai**, e é a pai que entra em 🎯 Validação.
+
+```
+> 🎯 **Validação**
+> - [ ] [[card|SGV-3234]] - Validar em DEV a refatoração de etiquetas (28/29 CTs) 🕐 5d ⚠️
+>     - [ ] ↳ [[card|SGV-10831]] - Defeito (aguardando fix)
+>     - [ ] ↳ [[card|SGV-10842]] - Defeito (aguardando fix)
+```
+
+Motivo: os defeitos são **um trabalho só** com a entrega que os gerou. A 3234 sozinha ocupava **6 linhas** da fila (1 pai + 5 defeitos) para uma única validação — numa fila que passa de 100 itens, isso é ruído que esconde o resto.
+
+O aninhamento é feito pelo **script** (`sincroniza_demandas_ativas`, lendo o campo `pai:` do frontmatter), não pelo agente — é decisão determinística, não julgamento. **Bug continua item independente**, no grupo do seu verbo.
+
 ## Pendência ↔ copy de Atividades
 
 A fila fala em **verbo de ação** ("Validar em HML") e as Atividades falam em **resultado** ("Aprovada em homologação"). São vocabulários diferentes de propósito, e esta tabela liga os dois — é o que evita inventar frase ao fechar uma pendência, e é a mesma tabela que o `LEDGER` do `qa-atualiza.py` implementa.
@@ -148,11 +177,13 @@ A fila fala em **verbo de ação** ("Validar em HML") e as Atividades falam em *
 | `Cadastrar melhoria MEL-NNNN no Notion` | `(SGV-XXXX)` | `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)` |
 | `Cadastrar bug no Notion` | `(SGV-XXXX)` | `🐛 SGV-XXXX - Bug cadastrado` |
 | `Criar card` (bug confirmado sem SGV) | — | `🐛 Bug confirmado (card criado): [[card]]` |
+| `Corrigir defeito` / `Retestar CT-NNN` | `(corrigido)` | `✅ SGV-XXXX - Defeito corrigido e retestado em DEV` |
+| `Corrigir defeito` / `Retestar CT-NNN` | `(reprovado)` | `🔴 SGV-XXXX - Defeito reaberto em DEV` |
 | `Investigar suspeita: <título>` | `(descartada: <motivo>)` | `🗑️ Suspeita descartada: <título> (não é bug: <motivo>)` |
 | `Revisar cenários` | `(<resultado>)` | `🔎 SGV-XXXX - Análise (...)` ou `🔎 ... Revisão de cenários (API) (...)` |
 | `Triagem` / `Bater os cards` | `(<resultado curto>)` | `📋 Planejamento <sprint> - <n>/<total> cards batidos (...)` |
 
-Tipo na frase segue a regra transversal: bug não leva prefixo, os outros tipos sim (`Melhoria aprovada`, `Funcionalidade aprovada`) — exceto refinamento (`📝`), que é sempre tipado.
+Tipo na frase segue a regra transversal: bug não leva prefixo, os outros tipos sim (`Melhoria aprovada`, `Funcionalidade aprovada`, `Defeito corrigido`) — exceto refinamento (`📝`), que é sempre tipado.
 
 ## Status — reunião (primeira seção da daily)
 
@@ -178,7 +209,7 @@ Bater o olho na lista mostra só emoji+status; expandir mostra o resto. Parênte
 - **Cada estágio vivido no dia é uma atividade**: proposta, refinamento, atualização no Notion, cadastro, validação — cada etapa que acontecer hoje ganha a própria linha em Atividades no momento em que acontece (inclusive quando o trabalho é feito numa sessão com IA — ela registra a linha de cada estágio que executar). A daily mostra o caminho: `💭 → 📝 → 📤 → 💡 → 🚀/✅...`.
 - **A fazer hoje é o ledger completo do dia**: todo estágio executado aparece nele também como item **marcado**, com o que foi feito entre parênteses (`- [x] SGV-XXXX - Refinar (card criado, critérios prontos)`) — mesmo que a tarefa nunca tenha sido enfileirada antes; registra-se já concluída, com a marca ` → registrado`. O botão 🔄 Atualizar faz esse backfill sozinho a partir das linhas de Atividades. No fim do dia, a fila mostra tudo: o que foi feito (marcado) e o que carrega pra amanhã (aberto).
 - **A frase é a fonte da verdade**: dá pra registrar qualquer estágio direto em Atividades, à mão, mesmo pulando os anteriores — o botão 🔄 Atualizar sincroniza os cards com o que a daily declara e infere as etapas puladas ([[../../Sistema/Skills/SKILL_INBOX|SKILL_INBOX]], "Reconciliação de Atividades").
-- **Tipo na frase**: bug é o tipo padrão e não leva prefixo (`✅ SGV-XXXX - Aprovada em ...`); qualquer outro tipo leva o nome na frase (`✅ SGV-XXXX - Melhoria aprovada em ...`, `Funcionalidade aprovada`, `POC aprovada`). Exceção: a frase de **refinamento** (`📝`) é sempre tipada, inclusive pra bug — "Refinada" sozinho não diz o quê.
+- **Tipo na frase**: bug é o tipo padrão e não leva prefixo (`✅ SGV-XXXX - Aprovada em ...`); qualquer outro tipo leva o nome na frase (`✅ SGV-XXXX - Melhoria aprovada em ...`, `Funcionalidade aprovada`, `POC aprovada`, `Defeito corrigido e retestado em DEV`). Exceção: a frase de **refinamento** (`📝`) é sempre tipada, inclusive pra bug — "Refinada" sozinho não diz o quê.
 - Complemento entre parênteses com contexto curto é sempre opcional, em qualquer frase (ex.: `✅ SGV-6375 - Aprovada em homologação (data ausente no evento de despacho corrigida)`).
 - **A daily é sempre "o que EU fiz hoje"** — a frase é sua mesmo quando o card foi cadastrado por outra pessoa, e cadastrar sem testar não gera frase de validação. Autoria mora no card: campo `cadastrado_por` no frontmatter (preencher só se tiver a informação; vazio se não) e o Histórico registra quem validou cada etapa quando se sabe.
 - O item do **Histórico** do card usa a mesma frase, prefixada pela data: `- 2026-07-14 - 🔁 Retestada e aprovada em homologação`. Uma linguagem só, na daily e no card.
