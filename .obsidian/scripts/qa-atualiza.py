@@ -331,6 +331,18 @@ def sincroniza_demandas_ativas(texto):
     for card in sorted(cards, key=ordem):
         base = os.path.splitext(os.path.basename(card))[0]
         tcard = ler(card)
+        # card SEM DONO fica fora da fila (PADROES_QA → 'responsavel').
+        # A fila é a lista do que é SEU; demanda disponível pra qualquer QA
+        # pegar não ocupa linha nela. Sai da fila mas NÃO some: a Dashboard
+        # tem a seção "Sem dono — disponível pra pegar".
+        # De propósito **sem aviso**: aviso diário sobre algo que ninguém
+        # pediu pra fazer é exatamente o incômodo que esta exceção evita.
+        # Seguro por construção: em 18/08 os 42 cards abertos tinham
+        # `responsavel: Rafael`, nenhum vazio — a regra não tirou item nenhum
+        # da fila existente. Precedente: SGV-10363.
+        dono = re.search(r"^responsavel: *(.*)$", tcard, re.M)
+        if not dono or not dono.group(1).strip().strip('"'):
+            continue
         task = re.search(r'^task: *"?(\d+)"?\s*$', tcard, re.M)
         melm = re.search(r"MEL-(\d{4})", base)
         if task:
