@@ -86,7 +86,14 @@ Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à m
 
 ## Invariante da fila viva
 
-**Todo card em aberto (`02 Demandas/` fora de `Concluídas/`) tem um item ativo em "A fazer hoje"** — em qualquer estágio: a refinar, refinada, cadastrada no Notion, em validação, reaberta, aguardando dev. Vale pra bug, melhoria, funcionalidade, POC — tudo.
+**Todo card em aberto (`02 Demandas/` fora de `Concluídas/`) e COM DONO tem um item ativo em "A fazer hoje"** — em qualquer estágio: a refinar, refinada, cadastrada no Notion, em validação, reaberta, aguardando dev. Vale pra bug, melhoria, funcionalidade, POC — tudo.
+
+> [!important] Exceção: card **sem dono** fica fora da fila
+> Card com `responsavel` **vazio** está disponível pra qualquer QA pegar e **não gera item** ([[../Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]). A fila é a lista do que é **seu**; encher ela com trabalho de ninguém é o mesmo ruído que os defeitos aninhados resolveram.
+>
+> **Sai da fila, mas não some**: aparece na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]] → "Sem dono — disponível pra pegar". Nunca é aviso recorrente no `[!organizacao]` — aviso diário sobre algo que ninguém pediu pra fazer vira exatamente o incômodo que a exceção existe pra evitar.
+>
+> Precedente: SGV-10363 (18/08), aprovada em DEV com a homologação aberta pro time.
 
 Na prática:
 - Pendência que nasce durante o dia entra em **A fazer hoje**

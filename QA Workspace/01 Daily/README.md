@@ -162,6 +162,10 @@ Motivo: os defeitos são **um trabalho só** com a entrega que os gerou. A 3234 
 
 O aninhamento é feito pelo **script** (`sincroniza_demandas_ativas`, lendo o campo `pai:` do frontmatter), não pelo agente — é decisão determinística, não julgamento. **Bug continua item independente**, no grupo do seu verbo.
 
+### Card sem dono não gera item
+
+Card com `responsavel` **vazio** ([[../../Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]) está disponível pra qualquer QA pegar e **não entra na fila** — ela lista o que é *seu*, não tudo que existe. Quem quiser ver o que está sem dono olha a [[../Dashboard/Dashboard|Dashboard]], seção "Sem dono — disponível pra pegar". É a regra de bolso de sempre: **escreveu? foi na daily. quer ver? foi na Dashboard.**
+
 ## Pendência ↔ copy de Atividades
 
 A fila fala em **verbo de ação** ("Validar em HML") e as Atividades falam em **resultado** ("Aprovada em homologação"). São vocabulários diferentes de propósito, e esta tabela liga os dois — é o que evita inventar frase ao fechar uma pendência, e é a mesma tabela que o `LEDGER` do `qa-atualiza.py` implementa.
