@@ -147,6 +147,14 @@ def itens_nao_finalizados(texto):
     O docstring já dizia "A fazer hoje e Pendente para amanhã" desde sempre; a
     implementação é que nunca respeitou o próprio contrato. Divergência
     doc × código é pior que doc ausente: dá falsa confiança na leitura.
+
+    **Linha aninhada (defeito) NÃO entra no carry-over — de propósito.** O
+    regex `^>? ?- \\[ \\]` aceita no máximo um espaço depois do `>`, então o
+    filho indentado (`>     - [ ]`) não casa. Isso é o comportamento correto:
+    o defeito é recriado a partir do card pelo invariante da fila viva
+    (`sincroniza_demandas_ativas`), com o aninhamento certo. Se ele entrasse
+    aqui, voltaria como item **de topo**, achatando a hierarquia todo dia.
+    Não "consertar" este regex sem ler o aninhamento junto.
     """
     regioes = []
     m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:>.*\n)*)", texto)
@@ -169,9 +177,30 @@ def ids_de(texto):
     return set(re.findall(r"SGV-?\d+|MEL-\d{4}", texto))
 
 
+def tem_tag(texto_card, tag):
+    return (re.search(rf"^tags:\n(?:  - .*\n)*  - {tag}\b", texto_card, re.M) is not None
+            or f"\n  - {tag}\n" in texto_card)
+
+
+def eh_defeito(texto_card):
+    """Defeito = filho de uma task pai (PADROES_QA → 'Defeito × Bug').
+
+    O campo `pai` é o dado; a tag é a convenção. Aceita os dois porque card
+    migrado pode ter um sem o outro por um tempo."""
+    return bool(re.search(r'^pai: *"?\d+"? *$', texto_card, re.M)) or tem_tag(texto_card, "defeito")
+
+
+def pai_do_card(texto_card):
+    """SGV da task pai, ou None se o card é independente."""
+    m = re.search(r'^pai: *"?(\d+)"? *$', texto_card, re.M)
+    return m.group(1) if m else None
+
+
 def tipo_do_card(texto_card):
     """Bug é o padrão (sem prefixo na frase); outros tipos prefixam."""
-    if re.search(r"^tags:\n(?:  - .*\n)*  - bug", texto_card, re.M) or "\n  - bug\n" in texto_card:
+    if eh_defeito(texto_card):
+        return "Defeito "
+    if tem_tag(texto_card, "bug"):
         return ""
     m = re.search(r"\*\*Tipo:\*\* *(\w+)", texto_card)
     if m:
@@ -265,16 +294,41 @@ def norm_id(tok):
     return re.sub(r"SGV-?", "SGV-", tok)
 
 
+INDENT_FILHO = ">     "   # 4 espaços após o '>' — sublista dentro do callout da fila
+
+
+def _itens_da_fila(texto):
+    """Todos os itens de 'A fazer hoje', **de topo e aninhados**.
+
+    O dedup precisa enxergar os dois níveis. Só o regex de topo
+    (`^> - \\[ \\]`) deixaria um defeito já aninhado parecer ausente, e o
+    invariante o recriaria no topo a cada execução do 🔄 — a mesma classe de
+    bug de idempotência que duplicou pendência em 18/08."""
+    return re.findall(r"^>(?: +)?- \[.\] (.+)$", texto, re.M)
+
+
 def sincroniza_demandas_ativas(texto):
     """Invariante da fila viva: TODO card em aberto (02 Demandas fora de
     Concluídas) tem um item ativo em 'A fazer hoje' — vale pra qualquer
     estágio (a refinar, refinada, cadastrada, em validação, reaberta).
     Se a pendência está em 'Pendente para amanhã', move pra cima;
-    se não existe, cria o próximo passo padrão."""
+    se não existe, cria o próximo passo padrão.
+
+    **Defeito não ganha linha de topo** (PADROES_QA → 'Defeito × Bug'): ele
+    entra aninhado sob a linha da task pai, porque defeito e pai são um
+    trabalho só. A 3234 sozinha ocupava 6 linhas da fila (1 pai + 5 defeitos)
+    pra uma única validação. Por isso os pais são processados **primeiro** —
+    a linha do pai precisa existir antes de pendurar filho nela.
+    """
     cards = []
     for pasta in ("DEV", "HML", "Hotfix", "POCs"):
         cards += glob.glob(os.path.join(DEMANDAS, pasta, "*.md"))
-    for card in sorted(cards):
+
+    # pais primeiro, filhos depois — a ordem é o que garante o alvo do aninhamento
+    def ordem(card):
+        return (1 if eh_defeito(ler(card)) else 0, card)
+
+    for card in sorted(cards, key=ordem):
         base = os.path.splitext(os.path.basename(card))[0]
         tcard = ler(card)
         task = re.search(r'^task: *"?(\d+)"?\s*$', tcard, re.M)
@@ -286,9 +340,37 @@ def sincroniza_demandas_ativas(texto):
         else:
             continue  # card sem identificador — fora do radar automático
         titulo = base.split(" - ", 1)[1] if " - " in base else base
-        afazer = re.findall(r"^> - \[ \] (.+)$", texto, re.M)
-        if any(rid in norm_id(a) for a in afazer):
+        if any(rid in norm_id(a) for a in _itens_da_fila(texto)):
             continue
+
+        # --- defeito: pendura sob a pai, não cria item de topo ---
+        pai = pai_do_card(tcard)
+        if pai:
+            rid_pai = f"SGV-{pai}"
+            linha_filho = f"{INDENT_FILHO}- [ ] ↳ {rid} - Defeito ({titulo})\n"
+            m_pai = None
+            for m in re.finditer(r"^> - \[ \] (.+)$", texto, re.M):
+                if rid_pai in norm_id(m.group(1)):
+                    m_pai = m
+                    break
+            if m_pai:
+                # insere logo abaixo da linha da pai, depois dos filhos que já existirem
+                pos = m_pai.end() + 1
+                while True:
+                    prox = texto.find("\n", pos)
+                    linha = texto[pos:prox if prox != -1 else len(texto)]
+                    if not linha.startswith(INDENT_FILHO):
+                        break
+                    pos = (prox + 1) if prox != -1 else len(texto)
+                texto = texto[:pos] + linha_filho + texto[pos:]
+                acoes.append(f"{rid} → fila viva: aninhado sob {rid_pai}")
+                continue
+            # pai sem linha na fila (já concluída?) — não some em silêncio
+            avisos.append(f"⚠️ {rid} é defeito da {rid_pai}, mas a pai não tem item na fila "
+                          f"— defeito aberto com pai fora da esteira, conferir")
+            continue
+
+        # --- card normal: item de topo, como sempre ---
         movida = None
         for m in re.finditer(r"^- \[ \] (.+)$", texto, re.M):
             if "## Pendente para amanhã" not in texto[:m.start()]:
@@ -733,6 +815,12 @@ def coleta_concluidos(texto):
     Aqui só se mexe no que é mecânico e inequívoco: `[x]` vai pro fim, sob o
     header, preservando na ordem original tudo o que a IA escreveu (headers de
     categoria inclusive). Idempotente: rodar 2x não duplica header nem reordena.
+
+    **Pai com filho aberto não é movido.** Levar a linha da task pai pro fim
+    deixaria os defeitos aninhados órfãos no meio da fila, apontando pra nada.
+    E, pela regra do gate (PADROES_QA → 'Defeito × Bug'), pai marcada com
+    defeito ainda aberto é estado inconsistente — vira aviso, não movimentação
+    silenciosa.
     """
     m = re.search(r"(> \*\*A fazer hoje:\*\*\n)((?:>.*\n)*)", texto)
     if not m:
@@ -740,19 +828,54 @@ def coleta_concluidos(texto):
     linhas = m.group(2).rstrip("\n").split("\n")
     HEADER = "> **✅ Concluídos hoje**"
 
-    feitos = [l for l in linhas if re.match(r"^> - \[x\] ", l)]
+    # Agrupa em blocos: item de topo + os filhos aninhados que vêm logo abaixo.
+    # Pai e filhos viajam **juntos** — mover só a linha do pai deixaria os
+    # defeitos órfãos no meio da fila apontando pra nada.
+    blocos = []          # [(linha_topo, [filhos])] ou (linha_avulsa, None)
+    i = 0
+    while i < len(linhas):
+        ln = linhas[i]
+        if re.match(r"^> - \[.\] ", ln):
+            filhos = []
+            j = i + 1
+            while j < len(linhas) and linhas[j].startswith(INDENT_FILHO):
+                filhos.append(linhas[j])
+                j += 1
+            blocos.append((ln, filhos))
+            i = j
+        else:
+            blocos.append((ln, None))
+            i += 1
+
+    feitos, resto = [], []
+    for topo, filhos in blocos:
+        if filhos is None:                       # header de grupo, linha em branco
+            if topo.strip() != HEADER.strip():
+                resto.append(topo)
+            continue
+        concluido = re.match(r"^> - \[x\] ", topo) is not None
+        filho_aberto = any("- [ ] " in f for f in filhos)
+        if concluido and filho_aberto:
+            # gate: pai fechada com defeito aberto é estado inconsistente
+            rid = re.search(r"SGV-?\d+", topo)
+            avisos.append(f"⚠️ {rid.group(0) if rid else 'task'} marcada como concluída com "
+                          f"defeito filho ainda aberto — resolver o defeito antes de fechar a pai "
+                          f"(gate do PADROES_QA), ou registrar a exceção no card")
+            resto.extend([topo] + filhos)        # fica onde está, visível
+        elif concluido:
+            feitos.extend([topo] + filhos)       # pai e filhos descem juntos
+        else:
+            resto.extend([topo] + filhos)
+
     if not feitos:
         return texto
 
     # idempotência: se os concluídos já estão todos no fim, sob o header, sai
     idx = next((i for i, l in enumerate(linhas) if l.strip() == HEADER.strip()), None)
     if idx is not None:
-        depois = [l for l in linhas[idx + 1:] if re.match(r"^> - \[.\] ", l)]
+        depois = [l for l in linhas[idx + 1:] if re.match(r"^>(?: +)?- \[.\] ", l)]
         if depois and len(depois) == len(feitos):
             return texto
-
-    resto = [l for l in linhas
-             if not re.match(r"^> - \[x\] ", l) and l.strip() != HEADER.strip()]
 
     # descarta header de categoria que ficou órfão (só tinha itens concluídos)
     limpo = []
@@ -937,10 +1060,13 @@ def envelhece_fila(itens, dias):
 def linkifica_ids(texto):
     """Regra de links estendida: numeração citada em linha de fila (A fazer,
     Pendências, Pendente para amanhã) vira wikilink quando o card existe.
-    Conservador: só toca linha sem nenhum [[link]] (evita corromper paths)."""
+    Conservador: só toca linha sem nenhum [[link]] (evita corromper paths).
+
+    Aceita também a **linha aninhada** do defeito (`>     - [ ] ↳ SGV-...`),
+    senão o filho seria o único item da fila sem link clicável."""
     saida = []
     for ln in texto.split("\n"):
-        if re.match(r"^>? ?- ", ln) and "[[" not in ln:
+        if re.match(r"^>? *- ", ln) and "[[" not in ln:
             for tok in set(re.findall(r"SGV-?\d+|MEL-\d{4}", ln)):
                 rid = norm_id(tok)
                 num = rid.split("-", 1)[1]
