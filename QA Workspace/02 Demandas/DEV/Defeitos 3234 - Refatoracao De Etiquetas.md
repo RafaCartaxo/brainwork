@@ -1,9 +1,10 @@
 ---
 tags:
-  - bug
+  - defeito
   - qa
   - etiquetas
 task: ""
+pai: "3234"
 relacionado: "3234"
 prioridade: alta
 status: aberto
@@ -21,7 +22,9 @@ ambiente: DEV
 >
 > **Reconciliação de 13/08/2026**: os itens **1, 2, 3** foram **descartados** (comportamento correto confirmado pelo Rafael); o **4** foi extraído para [[QA Workspace/02 Demandas/Concluídas/10831 - Defeito Etiqueta Sem Truncamento Na Busca E Nome Maior Que 25 Caracteres Herdado Na Criacao|SGV-10831]]; o **5** virou [[QA Workspace/02 Demandas/Concluídas/10844 - Defeito Toasts De Criacao E Edicao Com Copy Divergente Da Doc|SGV-10844]]; o **7** foi fechado como **duplicata do [[QA Workspace/02 Demandas/Concluídas/10832 - Defeito Menu Do Card Permanece Aberto Sobre O Modal De Etiquetas|SGV-10832]]**; e o **8** (novo) virou [[QA Workspace/02 Demandas/Concluídas/10833 - Defeito Opcoes Das Ultimas Etiquetas Parcialmente Ocultas No Submenu Etiquetas Do Meatball|SGV-10833]]. Do campo de setores saíram ainda **sintomas vizinhos** em tickets próprios: a [[QA Workspace/02 Demandas/Concluídas/10842 - Defeito Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] (ocultação por volume) e a [[QA Workspace/02 Demandas/DEV/10850 - Bug Checkbox Todos Os Setores Nao Acompanha Selecoes Individuais|SGV-10850]] (checkbox mestre "Todos os setores"). **A numeração 1–8 não mudou**: slots descontinuados (1, 2, 3, 4, 5, 7) ficam como registro do que saiu/foi descartado, e os demais mantêm o número — evita quebrar o vínculo com as evidências `EV-01/02/04/05/06`, já nomeadas com esses CTs ([[QA Workspace/Evidências/README|regra de não renumerar]]).
 >
-> **Nome sem o prefixo `3234`** de propósito: o `achar_card()` do `qa-atualiza.py` localiza card pelo primeiro arquivo que começa com `"3234 - "`, e um segundo card com esse prefixo faria o roteador de evidências escolher entre os dois de forma imprevisível. Pelo mesmo motivo o `task:` está vazio e o vínculo mora em `relacionado:` e no wikilink.
+> **Nome sem o prefixo `3234`** de propósito: o `achar_card()` do `qa-atualiza.py` localiza card pelo primeiro arquivo que começa com `"3234 - "`, e um segundo card com esse prefixo faria o roteador de evidências escolher entre os dois de forma imprevisível. Pelo mesmo motivo o `task:` está vazio e o vínculo mora em `pai:`/`relacionado:` e no wikilink.
+>
+> **Sem `task:`, este card não entra na fila** — o invariante da fila viva ignora card sem identificador. O item **6**, que segue ativo aqui, só aparece na fila quando ganhar SGV próprio. É consequência conhecida da decisão acima, não esquecimento.
 
 ### Descrição
 
