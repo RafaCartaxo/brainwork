@@ -4,6 +4,7 @@ tags:
   - qa
 task: ""
 status: dev
+ambiente: DEV
 prioridade: media
 mel: ""
 data_inicio: <% tp.date.now("YYYY-MM-DD") %>
