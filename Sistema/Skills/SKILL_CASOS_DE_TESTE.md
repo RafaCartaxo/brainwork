@@ -131,6 +131,29 @@ O critério de aceite correspondente **não é marcado como aprovado**: ele fica
 
 Precedente: SGV-9042, CT-003 — documento com fluxo não iniciado não emite despacho, então a tela onde o contêiner apareceria não existe.
 
+### CT que reprovou e depois passou — callout de reconciliação
+
+Quando um CT vai de `Não` pra `Sim` porque o **defeito que ele encontrou foi corrigido**, a marcação nova sozinha apaga a história: quem lê o card depois vê um CT aprovado e não sabe que ele já reprovou, nem que existe um card de defeito por trás. Marcar `Sim` e seguir é perder o rastro.
+
+Ao reconciliar, **marcar `Sim` e abrir callout fechado** logo abaixo:
+
+```markdown
+> [!success]- Reprovado em <data>, aprovado no reteste de <data>
+> O defeito virou [[card|SGV-XXXX]], foi corrigido e o reteste passou —
+> gravação da execução de <data> embedada abaixo, junto com a evidência
+> que registrou o problema original. O card do defeito está em `Concluídas/`.
+```
+
+Regras:
+- O callout **linka o card do defeito** — é o que liga o CT ao registro do problema
+- Cita **as duas datas**: quando reprovou e quando passou
+- **As duas evidências convivem**: a do problema original e a do reteste. A do reteste não substitui a outra — juntas elas contam o ciclo
+- O callout é **fechado** (`-`), pelo mesmo motivo dos Detalhes: bater o olho mostra CT aprovado; expandir mostra a história
+
+**Precedente**: SGV-3234, 17/08 — CT-012, CT-017, CT-018 e CT-029 passaram de `Não` pra `Sim` depois que os defeitos SGV-10831, SGV-10842, SGV-10832 e SGV-10844 foram corrigidos. O padrão foi praticado ali antes de existir esta regra.
+
+Ciclo completo do defeito: [[../Contexto/FLUXOS#3i. Defeito (filho de task pai)|FLUXOS → 3i]] · [[../Contexto/PADROES_QA#Defeito × Bug|PADROES_QA → Defeito × Bug]].
+
 ### Caso retirado do escopo — grupo de registro
 
 CT **retirado ou adiado** depois de escrito não vira buraco na numeração nem desaparece. Vai pra uma seção no **fim** do card, com tabela de caso × decisão × motivo:

@@ -93,12 +93,32 @@ Daily: `💡 SGV-XXXX - Melhoria cadastrada (MEL-NNNN)` em Atividades.
 
 ### 7. Esteira de validação
 
-A partir do cadastro, segue o mesmo ciclo de qualquer demanda:
+A partir do cadastro, segue o ciclo de qualquer demanda ([[../Contexto/FLUXOS#3b–3d. Validar em DEV / HML / Hotfix|fluxos 3b–3d]]), com **gate de doc a cada aprovação** ([[SKILL_VERIFICACAO_DOC]]) e, depois de aprovada, automação ([[../Contexto/FLUXOS#3h. Após aprovar: preparar automação|fluxo 3h]] → [[SKILL_INICIAR_AUTOMACAO]]).
 
-- Validação em DEV → HML ([[../Contexto/FLUXOS#3b–3d. Validar em DEV / HML / Hotfix|fluxos 3b–3d]])
-- Gate de doc a cada aprovação ([[SKILL_VERIFICACAO_DOC]])
-- Após aprovada: automação ([[../Contexto/FLUXOS#3h. Após aprovar: preparar automação|fluxo 3h]] → [[SKILL_INICIAR_AUTOMACAO]])
-- Frases com tipo explícito: `✅ SGV-XXXX - Melhoria aprovada em <ambiente>`, `🔁 SGV-XXXX - Melhoria retestada e aprovada em <ambiente>`, `🔴 SGV-XXXX - Melhoria reaberta em <ambiente>`
+Frases com tipo explícito: `✅ SGV-XXXX - Melhoria aprovada em <ambiente>`, `🔁 SGV-XXXX - Melhoria retestada e aprovada em <ambiente>`, `🔴 SGV-XXXX - Melhoria reaberta em <ambiente>`.
+
+#### 7a. Em DEV: CT que reprova vira **Defeito**
+
+O que fazer quando um CT reprova é a parte que faltava aqui — e é o que separa DEV de HML.
+
+1. **Executar os CTs** do card hub em DEV, gravando evidência
+2. **CT reprovou → nasce um Defeito** (não um Bug): card com `pai: "<SGV desta Melhoria>"`, tag `defeito`, arquivo `<SGV> - Defeito <Título>`. Fluxo: [[../Contexto/FLUXOS#3i. Defeito (filho de task pai)|FLUXOS → 3i]] · criação: [[SKILL_BUGS]]
+3. **A Melhoria volta a `🔴 Melhoria reaberta em DEV`** — na daily: `🐛 SGV-XXXX - Defeito cadastrado (da SGV-YYYY)`
+4. Dev corrige → **revalidar o CT afetado neste card**, não o defeito isolado. CT passa de `Não` pra `Sim` com **callout de reconciliação** ([[SKILL_CASOS_DE_TESTE]])
+5. Defeito fecha em `Concluídas/` com `ambiente: DEV`, Histórico nomeando esta Melhoria
+
+> [!warning] Gate: não aprovar em DEV com defeito aberto
+> Identificou, resolve. Aprovar entrega cujo próprio CT reprovou é registro falso. Exceção (produto adia o fix) exige decisão explícita registrada **neste card**, dizendo quem decidiu e por quê — o `🔄` avisa quando a aprovação chega com defeito filho ainda aberto.
+
+Na fila, os defeitos aparecem **aninhados sob a linha desta Melhoria**, não como itens soltos.
+
+#### 7b. Em HML: valida-se a entrega inteira
+
+Aprovada em DEV, o card vai pra `HML/`. Aqui **não se reteste defeito** — cada um já foi validado pelo CT que o encontrou. O que se valida é **a Melhoria como um todo**.
+
+**Problema encontrado em homologação é Bug**, não Defeito: nasce sem `pai:`, com tag `bug`, e segue a esteira completa com vida própria ([[../Contexto/FLUXOS#3g. Reprovação com bug novo (SGV próprio)|fluxo 3g]]).
+
+**Precedente**: SGV-3234 (Refatoração de Etiquetas), 17/08 — 29 CTs em DEV, 5 defeitos encontrados e corrigidos, os 5 fechados sem passar por HML. Foi o caso que originou esta regra.
 
 ## Handoff
 
@@ -109,6 +129,8 @@ A partir do cadastro, segue o mesmo ciclo de qualquer demanda:
 | Passo 3–4 (plano + CTs) → | Passo 5 (card) | Plano e CTs prontos pra embarcar no hub |
 | Passo 5 (card) → | Passo 6 (Notion) | Card hub criado em `02 Demandas/DEV/` |
 | Passo 6 (Notion) → | Passo 7 (esteira) | Ganhou SGV, arquivo renomeado, checkbox marcado |
+| Passo 7a (CT reprovou em DEV) → | [[SKILL_BUGS]] (modo Defeito) | Card de defeito com `pai:` preenchido |
+| Passo 7a (sem defeito aberto) → | Passo 7b (HML) | Todos os CTs em `Sim`, gate de doc registrado |
 | Passo 7 (aprovada HML) → | [[SKILL_INICIAR_AUTOMACAO]] | Card validado, CTs executados, fix no ambiente do Cypress |
 
 ## Resultado Esperado

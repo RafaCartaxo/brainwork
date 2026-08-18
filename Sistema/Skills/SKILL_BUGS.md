@@ -15,6 +15,22 @@ Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Temp
 - Facilitar entendimento por Produto, Desenvolvimento e QA
 - Garantir rastreabilidade do defeito
 
+## Antes de tudo: é **Bug** ou **Defeito**?
+
+Primeira pergunta, antes de escolher o modo de entrada — porque muda tag, nome do arquivo, frontmatter e esteira inteira.
+
+**O problema saiu da execução de um CT de uma task pai (Melhoria/Funcionalidade), em DEV?**
+
+- **Sim → é Defeito.** Tag `defeito`, arquivo `<SGV> - Defeito <Título>`, `pai: "<SGV da task>"` preenchido. Fecha em `Concluídas/` com `ambiente: DEV`, sem passar por HML. Fluxo completo: [[../Contexto/FLUXOS#3i. Defeito (filho de task pai)|FLUXOS → 3i]].
+- **Não → é Bug.** Tag `bug`, arquivo `<SGV> - Bug <Título>`, `pai: ""` vazio. Esteira normal DEV → HML → Concluídas.
+
+Regra completa (incluindo por que o defeito não é retestado em HML): [[../Contexto/PADROES_QA#Defeito × Bug|PADROES_QA → Defeito × Bug]].
+
+> [!important] A fronteira é **origem + ambiente**, não gravidade
+> Defeito não é "bug pequeno". Um defeito pode ser grave e um bug pode ser trivial. Problema encontrado em **homologação** é Bug mesmo que a task pai seja a mesma — em HML valida-se a entrega inteira, e o que aparece lá tem vida própria.
+
+Tudo abaixo (modos de entrada, estrutura, regras de escrita) vale para os dois, exceto onde estiver dito o contrário.
+
 ## Modos de entrada
 
 Como a task pode chegar, e o que fazer em cada caso antes de aplicar a Estrutura Padrão abaixo:
@@ -97,10 +113,11 @@ Então...
 
 ### Nome do arquivo do card
 
-| Situação | Nome do arquivo | `task` |
-|---|---|---|
-| Bug já cadastrado no Notion (tem SGV) | `<SGV> - Bug <Título>` | `"XXXX"` |
-| **Bug confirmado sem SGV ainda** | `Bug <Título>` (sem prefixo numérico) | `""` |
+| Situação | Nome do arquivo | `task` | `pai` | Tag |
+|---|---|---|---|---|
+| Bug já cadastrado no Notion (tem SGV) | `<SGV> - Bug <Título>` | `"XXXX"` | `""` | `bug` |
+| **Bug confirmado sem SGV ainda** | `Bug <Título>` (sem prefixo numérico) | `""` | `""` | `bug` |
+| **Defeito** (reprovou o CT de uma task pai, em DEV) | `<SGV> - Defeito <Título>` | `"XXXX"` | `"<SGV da pai>"` | `defeito` |
 
 No caso sem SGV: evidência vai pra `Evidências/Cadastrar/` (não pra subpasta de ambiente — ver [[../../QA Workspace/Evidências/README|Evidências/README]]), copy da daily é `🐛 Bug confirmado (card criado): [[card]]`, e **entra pendência obrigatória** "obter o SGV, preencher `task` e renomear o card". Quando o número chegar, o botão 🔄 renomeia e reescreve os links sozinho (mesmo mecanismo do `MEL-NNNN → SGV`).
 
