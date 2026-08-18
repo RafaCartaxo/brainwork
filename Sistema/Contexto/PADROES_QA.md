@@ -153,6 +153,9 @@ QA Workspace/
 - **Hotfix**: correção urgente é validada num ambiente de homologação que carrega a versão de produção + a hotfix. O card vive em `02 Demandas/Hotfix/` durante a validação (`ambiente: HOTFIX`) e, aprovado, vai pra `Concluídas/` como qualquer bug. Evidências na subpasta `Evidências/Hotfix/`.
 - **Bug de produção em sustentação** (relatado/analisado em produção, correção **não urgente** — se urgente, é Hotfix acima): não existe pasta `Produção/` em `02 Demandas/` de propósito — o card nasce em `DEV/` com `ambiente: DEV`, representando a **posição na esteira de correção**, e a origem/análise em produção fica registrada na Descrição e no Histórico. Daí segue a esteira normal (ou a variação 3f, se for task de API). Precedentes: SGV-9963, SGV-9750.
 - `cadastrado_por` (opcional): quem cadastrou o card, quando não foi o próprio responsável pela validação. Se tem a informação, preenche; se não, deixa vazio — não inventar.
+- `responsavel`: o QA que vai validar. **Vazio = sem dono** — demanda disponível pra quem pegar. Card sem dono **não entra na fila viva**: a fila é a lista do que é *seu*, não o inventário de tudo que existe no vault. Ele continua visível na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]], na seção "Sem dono — disponível pra pegar". Deixar vazio é **decisão**, não esquecimento: ao criar card sem dono, dizer o porquê no próprio card.
+  - **Precedente**: SGV-10363, aprovada em DEV em 18/08 — a validação em homologação ficou aberta pra qualquer QA do time, então não podia ocupar linha na fila do Rafael.
+  - Não confundir com o caso da **SGV-8867**, cujo QA responsável é o Lucas: aquela **não virou card** (o vault guarda as nossas atividades). A diferença é que na 10363 o trabalho de DEV *foi* nosso — o que falta dono é a etapa seguinte.
 - Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
 
 ## Defeito × Bug
@@ -174,7 +177,10 @@ Duas coisas diferentes que até 18/08 tinham o mesmo nome, o mesmo template e a 
 
 ### Por que o defeito fecha em DEV
 
-Ele já foi validado **pelo CT do pai** que o encontrou. Retestá-lo isoladamente em homologação seria executar duas vezes a mesma verificação: em HML valida-se **a Melhoria como um todo**, não cada defeito que apareceu no caminho.
+Ele já foi validado **pela execução da pai** que o encontrou — pelo **CT** quando houver, ou pelo **registro da validação** quando a task não tiver CTs formais (demanda visual, exploratória ou de mapeamento). Retestá-lo isoladamente em homologação seria executar duas vezes a mesma verificação: em HML valida-se **a Melhoria como um todo**, não cada defeito que apareceu no caminho.
+
+> [!note] Nem toda pai tem CT — e a regra continua valendo
+> A primeira redação desta regra dizia "validado pelo CT do pai", o que deixava de fora demanda sem CTs. O que sustenta o fechamento em DEV não é o artefato (o CT), é o **fato de a validação da pai cobrir a homologação**. Precedente: SGV-10363 (layout da mesa de trabalho mobile), registrada em 18/08 para mapeamento, sem casos de teste, com 4 defeitos fechados assim.
 
 O campo `ambiente` **permanece `DEV`** no card concluído — não é descuido, é o marcador da exceção. Todo card fechado pela esteira normal termina com `ambiente: HML`, então `status: resolvido` + `ambiente: DEV` identifica um defeito de forma greppável, sem depender de ler o Histórico.
 
