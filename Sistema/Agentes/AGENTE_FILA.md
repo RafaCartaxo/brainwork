@@ -51,6 +51,9 @@ Classificar pelo **verbo da ação** — o texto antes do primeiro `(`, `—` ou
 
 A idade é calculada a partir da primeira aparição do item em qualquer daily (não da daily de hoje). O incremento usa o **intervalo real entre as duas dailies**, não +1 fixo: sexta → segunda vale +3 dias (precedente de 27/07).
 
+> [!info] Decidido em 18/08: sem teto além de `7d 🚨`
+> Uma das 5 propostas em aberto desde 31/07 perguntava se o `🚨` devia escalar depois dos 7 dias (item que, sem decisão, chegou a **34 dias** na fila). Decisão do Rafael: **deixar como está** — sem segundo limiar, sem marca mais forte. O item antigo continua visível pela idade crescente (`🕐 34d 🚨`), e cabe a quem lê a fila decidir revisar ou descartar; não há escalonamento automático.
+
 ### 3. Sinaliza bloqueio
 
 Se o texto do item indica bloqueio, adiciona o motivo:
