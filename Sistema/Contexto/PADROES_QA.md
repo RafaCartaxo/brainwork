@@ -142,6 +142,10 @@ QA Workspace/
 | [[Sistema/Agentes/AGENTE_VALIDACAO_DOC\|AGENTE_VALIDACAO_DOC]] | Rede de segurança do gate de doc: sinaliza cards aprovados sem cruzamento contra doc do módulo (levanta pendência ⏳) |
 
 ## Organização de Bugs
+
+> [!important] Antes: é **Bug** ou **Defeito**?
+> Problema que saiu da execução de um CT de uma task pai, em DEV, é **Defeito** — outro ciclo de vida, outra esteira, outra tag. Ver [[#Defeito × Bug]] logo abaixo. As regras desta seção valem para os dois, exceto onde a seção do Defeito diz o contrário.
+
 - Todo bug usa o [[Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
 - `status` reflete o ciclo de vida do bug: `aberto` (ainda com problema) → `em_validacao` → `resolvido`. Não usar `dev`/`hml`/`prod` nesse campo — isso é o que o campo `ambiente` já representa.
 - `ambiente` reflete a **posição do card na esteira** (DEV/HML/HOTFIX/PROD) — a pasta onde ele vive em `02 Demandas/`. **Não é "o último ambiente testado"**: aprovado em DEV, o card já vai pra `HML/` com `ambiente: HML` *antes* de ser testado em homologação. É o mesmo sentido usado no bug de produção em sustentação, mais abaixo ("posição na esteira de correção").
@@ -150,6 +154,52 @@ QA Workspace/
 - **Bug de produção em sustentação** (relatado/analisado em produção, correção **não urgente** — se urgente, é Hotfix acima): não existe pasta `Produção/` em `02 Demandas/` de propósito — o card nasce em `DEV/` com `ambiente: DEV`, representando a **posição na esteira de correção**, e a origem/análise em produção fica registrada na Descrição e no Histórico. Daí segue a esteira normal (ou a variação 3f, se for task de API). Precedentes: SGV-9963, SGV-9750.
 - `cadastrado_por` (opcional): quem cadastrou o card, quando não foi o próprio responsável pela validação. Se tem a informação, preenche; se não, deixa vazio — não inventar.
 - Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
+
+## Defeito × Bug
+
+Duas coisas diferentes que até 18/08 tinham o mesmo nome, o mesmo template e a mesma esteira. Separar os dois é o que permite a Melhoria fechar sem arrastar cinco cards atrás dela.
+
+| | **Defeito** | **Bug** |
+|---|---|---|
+| Nasce | executando os **CTs de uma task pai**, em **DEV** | em **homologação/produção**, ou fora da execução de uma task pai |
+| Ciclo de vida | **atrelado ao pai** | **independente** |
+| Esteira | `DEV/` → `Concluídas/` (não passa por HML) | `DEV/` → `HML/` → `Concluídas/` |
+| `ambiente` ao concluir | permanece **`DEV`** | `HML` |
+| Frontmatter | `pai: "<SGV da task>"` preenchido | `pai: ""` vazio |
+| Tag | `defeito` | `bug` |
+| Nome do arquivo | `<SGV> - Defeito <Título>` | `<SGV> - Bug <Título>` |
+
+> [!important] A fronteira é **ambiente + origem**, nunca gravidade
+> Defeito não é "bug pequeno". Um defeito pode ser grave e um bug pode ser trivial. O que decide é **onde** e **como** o problema apareceu: saiu da execução de um CT de uma task pai em DEV → Defeito; qualquer outra origem → Bug.
+
+### Por que o defeito fecha em DEV
+
+Ele já foi validado **pelo CT do pai** que o encontrou. Retestá-lo isoladamente em homologação seria executar duas vezes a mesma verificação: em HML valida-se **a Melhoria como um todo**, não cada defeito que apareceu no caminho.
+
+O campo `ambiente` **permanece `DEV`** no card concluído — não é descuido, é o marcador da exceção. Todo card fechado pela esteira normal termina com `ambiente: HML`, então `status: resolvido` + `ambiente: DEV` identifica um defeito de forma greppável, sem depender de ler o Histórico.
+
+O Histórico do card **deve nomear a task pai**, na frase de fechamento.
+
+**Precedente**: 2026-08-17, SGV-3234 (Refatoração de Etiquetas). Os 5 defeitos encontrados na execução dos CTs — SGV-10831, SGV-10832, SGV-10833, SGV-10842 e SGV-10844 — fecharam `DEV/` → `Concluídas/` sem passar por homologação. Foi o primeiro caso do vault nesse formato (os 34 concluídos anteriores passaram todos por HML) e ficou 18 dias como decisão avulsa antes de virar esta regra.
+
+### Gate: Melhoria não é aprovada em DEV com defeito aberto
+
+Identificou, resolve. Um defeito aberto **bloqueia** a aprovação da task pai em DEV — não faz sentido aprovar uma entrega cujo próprio CT reprovou.
+
+Exceção (produto decide adiar o fix) existe, mas **não é o caminho padrão**: exige decisão explícita registrada no card do pai dizendo quem decidiu e por quê. Sem esse registro, o gate vale.
+
+O `qa-atualiza.py` sinaliza no callout `[!organizacao]` quando uma aprovação chega com defeito filho ainda aberto, em vez de mover o card em silêncio.
+
+### Ciclo completo
+
+1. Executando os CTs da Melhoria em DEV, um CT reprova → nasce o **Defeito**, com `pai:` preenchido e o CT do pai apontando pra ele
+2. A task pai volta a `🔴 Reaberta em DEV` (regra de reabertura)
+3. Dev corrige → **revalida os CTs afetados** no pai, não o defeito isolado
+4. CT passa → **callout de reconciliação** no CT (ver [[../Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]]) e o defeito fecha em `Concluídas/` com `ambiente: DEV`
+5. Sem defeito aberto → a Melhoria pode ser aprovada em DEV e seguir pra `HML/`
+6. Em HML valida-se a Melhoria inteira. **Problema encontrado aqui é Bug**, nasce sem `pai:` e segue a esteira completa
+
+Na fila, defeito **não ocupa linha própria de topo** — aparece aninhado sob a linha da task pai (ver [[../Agentes/AGENTE_FILA|AGENTE_FILA]]).
 
 ## Tasks de API (fluxo 3f)
 
