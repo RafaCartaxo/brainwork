@@ -37,6 +37,19 @@ Resumo operacional (detalhe e casos de borda no README): 🎯 Validação · �
 
 Classificar pelo **verbo da ação** — o texto antes do primeiro `(`, `—` ou `;` — nunca pela linha toda. E `🚨`/`✅` valem por **estado** (idade / `[x]`), ganhando do verbo.
 
+> [!important] Defeito **não é agrupado** — vive sob a linha da pai
+> Item de **defeito** ([[../Contexto/PADROES_QA#Defeito × Bug|PADROES_QA → Defeito × Bug]]) não entra em grupo nenhum: ele aparece **aninhado** sob a linha da task pai, e é a **pai** que é classificada por verbo (normalmente 🎯 Validação).
+>
+> ```
+> > 🎯 **Validação**
+> > - [ ] [[card|SGV-3234]] - Validar em DEV a refatoração de etiquetas 🕐 5d ⚠️
+> >     - [ ] ↳ [[card|SGV-10831]] - Defeito (aguardando fix)
+> ```
+>
+> **A indentação é do script, não sua.** `sincroniza_demandas_ativas()` lê o campo `pai:` do frontmatter e pendura o filho — decisão determinística, não julgamento. Ao reorganizar a fila, **mova pai e filhos juntos** e preserve a indentação (`>` + 4 espaços); não promova filho a item de topo.
+>
+> Motivo: a SGV-3234 sozinha ocupava **6 linhas** (1 pai + 5 defeitos) para uma única validação. **Bug continua item independente**, no grupo do seu verbo.
+
 ### 2. Sinaliza idade
 
 > [!important] Isto é do script, não do agente (desde 28/07)
@@ -147,6 +160,7 @@ Em 28/07 uma sessão de IA moveu o agrupamento por natureza pra dentro do `qa-at
 | Idade `🕐`/`⚠️`/`🚨` | **`qa-atualiza.py`** (`envelhece_fila`) | Aritmética de data; determinístico e roda sempre, sem depender da IA lembrar |
 | Mover `[x]` pra `✅ Concluídos hoje` | **`qa-atualiza.py`** (`coleta_concluidos`) | Mecânico e idempotente |
 | Ledger (Atividades → `[x]` na fila) | **`qa-atualiza.py`** (`ledger_do_dia`) | Já era do script |
+| Aninhar defeito sob a task pai | **`qa-atualiza.py`** (`sincroniza_demandas_ativas`) | Lê o campo `pai:` do frontmatter — dado explícito, sem interpretação |
 
 Regra prática: **se dá pra decidir com uma conta ou um regex seguro, é do script; se precisa entender o que o item quer dizer, é do agente.** Ao mexer no `.py`, conferir se a mudança não invade a coluna do agente — e vice-versa.
 
