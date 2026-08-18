@@ -104,6 +104,7 @@ Toda linha começa com o **emoji de status** — numa lista de Atividades, a col
 | Análise/critérios levados pro Notion | `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (análise/critérios registrados na task)` |
 | Batida de planejamento de sprint | `📋 Planejamento <sprint> - <n>/<total> cards batidos (<resultado curto>)` |
 | Documentação importada/atualizada em 04 Conhecimento | `📚 <Doc> - Documentação importada/atualizada (<escopo curto do que entrou>)` |
+| Trabalho no próprio vault/ferramenta (script, README, template, agente, skill) | `🔧 <alvo> - <o que mudou>` — ex.: `🔧 qa-atualiza.py - Radical 'analis' adicionado ao agrupamento 🔎` |
 
 As linhas `🔎`/`📝`/`📤` moram **em Planejamento** (não em DEV — refinamento não é validação em ambiente). Nada muda nas frases em si — só o endereço.
 

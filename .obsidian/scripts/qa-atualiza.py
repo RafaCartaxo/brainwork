@@ -437,8 +437,25 @@ def processa_continuacoes(daily, hoje):
             secao = "DEV" if amb == "DEV" else "HML"
             tipo = tipo_do_card(t)
             if chave.startswith("aprovada"):
-                # ambiente explícito na anotação vence a pasta do card (fast-forward)
-                if amb == "DEV" and re.search(r"em (homolog|hotfix)", chave):
+                # deploy pendente bloqueia o fechamento em silêncio (proposta de
+                # 31/07 nº3, decidida em 18/08): o campo deploy existe justamente
+                # pra dizer "este ambiente não tem o fix" — aprovação registrada
+                # nessas condições não pode mover o card como se fosse válida.
+                deploy_pend = re.search(r"^deploy: *pendente_(\w+)", t, re.M)
+                if deploy_pend:
+                    avisos.append(f"⚠️ SGV-{num} aprovada ({anot}) mas card tem "
+                                  f"deploy: pendente_{deploy_pend.group(1)} — confirmar "
+                                  f"que o fix subiu antes de mover o card, e remover o "
+                                  f"campo do frontmatter")
+                    continue
+                # ambiente explícito na anotação vence o frontmatter, nos dois
+                # sentidos (proposta de 31/07 nº3, decidida em 18/08): o campo
+                # `ambiente` reflete a posição do card na esteira, não
+                # necessariamente o último ambiente testado (PADROES_QA). Sem
+                # anotação explícita, mantém o que já vinha do frontmatter.
+                if re.search(r"em dev\b", chave):
+                    amb, amb_nome, secao = "DEV", "DEV", "DEV"
+                elif re.search(r"em (homolog|hotfix)", chave):
                     amb = "HML"
                     amb_nome = "homologação" if "homolog" in chave else "hotfix"
                     secao = "HML"
@@ -597,6 +614,7 @@ def reconcilia_atividades(texto, hoje):
 # outro vocabulário ("Aprovada em homologação", "Melhoria refinada") — usar
 # radicais, não palavras inteiras, senão "refinar" não casa "refinada".
 LEDGER = [
+    ("🚀", ("valida", "test", "início"), "{rid} - Iniciar validação (registrado)"),
     ("💭", ("propor", "proposta", "suspeita"), "{rid} - Propor (proposta registrada)"),
     ("📝", ("refin",), "{rid} - Refinar (card criado, critérios prontos)"),
     ("📤", ("notion",), "{rid} - Atualizar no Notion (análise/critérios registrados)"),
@@ -607,7 +625,7 @@ LEDGER = [
     ("🔁", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (aprovada)"),
     ("🔴", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (reprovada)"),
     ("⚪", ("valida", "retest", "revalida", "test", "companhar"), "{rid} - Retestar (não reproduzido)"),
-    ("🔎", ("revis", "análise", "escopo", "cenári"), "{rid} - Revisar cenários/análise (concluída)"),
+    ("🔎", ("revis", "analis", "análise", "escopo", "cenári"), "{rid} - Revisar cenários/análise (concluída)"),
     ("📋", ("triagem", "bater"), "{rid} - Triagem (item batido)"),
     # 📚 existia no catálogo do 01 Daily/README desde sempre, mas não aqui: linha de
     # documentação importada/atualizada não gerava checkbox de ledger e o dia fechava
@@ -618,7 +636,10 @@ LEDGER = [
 
 # Emojis reconhecidos como prefixo de linha em Atividades (ordem não importa aqui;
 # usados em alternação, nunca como character class solto — 🗑️ é 2 codepoints).
-_EMOJI_ALT = "💭|📝|📤|💡|🐛|🗑️|✅|🔁|🔴|⚪|🔎|📋|📚"
+# 🚀 (início de validação) e 🔧 (trabalho de ferramenta/processo) adicionados em
+# 18/08 — proposta de 31/07 nº2 e nº4. 🔧 não tem entrada no LEDGER de propósito:
+# é registro informativo do dia, não gera pendência de fila.
+_EMOJI_ALT = "💭|📝|📤|💡|🐛|🗑️|✅|🔁|🔴|⚪|🔎|📋|📚|🚀|🔧"
 # Modificadores que podem aparecer colados a um emoji da lista acima (ex.: "🔎👍",
 # "🔒" sozinho) — não geram item de ledger próprio, só não podem quebrar o
 # reconhecimento dos emojis "de verdade" ao lado deles na mesma linha.
