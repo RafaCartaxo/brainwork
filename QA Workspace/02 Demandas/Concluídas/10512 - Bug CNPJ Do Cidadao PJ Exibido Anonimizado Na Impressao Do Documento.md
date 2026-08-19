@@ -5,13 +5,13 @@ tags:
   - documento
 task: "10512"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-07-31
-data_fim: ""
+data_fim: 2026-08-19
 responsavel: Rafael
 cadastrado_por: ""
 modulo: documento
-ambiente: DEV
+ambiente: HML
 ---
 # CNPJ do cidadão PJ é exibido anonimizado na impressão do documento
 
@@ -54,9 +54,9 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
 
 ### Critérios de aceite
 
-- [ ] Na impressão do documento aberto pelo cidadão PJ, o CNPJ aparece **por extenso**, sem mascaramento
-- [ ] O CNPJ impresso está **formatado** no padrão `XX.XXX.XXX/XXXX-XX` e corresponde ao valor cadastrado
-- [ ] O comportamento vale para CNPJ **numérico** e **alfanumérico** — a correção não pode depender do formato
+- [x] Na impressão do documento aberto pelo cidadão PJ, o CNPJ aparece **por extenso**, sem mascaramento
+- [x] O CNPJ impresso está **formatado** no padrão `XX.XXX.XXX/XXXX-XX` e corresponde ao valor cadastrado
+- [x] O comportamento vale para CNPJ **numérico** e **alfanumérico** — a correção não pode depender do formato
 
 ---
 
@@ -71,8 +71,8 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
 **E** o valor corresponde ao CNPJ cadastrado
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -86,11 +86,9 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
 **Então** os dois CNPJs são exibidos por extenso e formatados
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
-
-*Não executado. Existe para garantir que o fix não resolva só um dos formatos — o defeito é anterior ao alfanumérico, mas a correção vai conviver com ele.*
 
 **Evidências de Testes:**
 
@@ -115,6 +113,8 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
 - Observações:
     - **O produto já usa mascaramento em outro lugar de propósito**: a doc de [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] registra o e-mail anonimizado na mensagem de erro como comportamento intencional. Vale antecipar que o dev pode alegar que a anonimização do CNPJ também é intencional — como não há regra escrita pra esta saída, essa conversa precisa de decisão de produto, e é o que a pendência de documentação resolve.
     - Reproduz em **produção**, confirmado por Rafael, e é anterior à SGV-9493.
+    - Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/10955 - Bug Resposta De Despacho Nao Sai Na Impressao Do Documento|SGV-10955]] — mesmo vídeo, cópia renomeada (bug novo encontrado durante esta validação em homologação).
 
 - Histórico:
     - 2026-07-31 - 🐛 Bug cadastrado (achado em DEV durante a execução da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção)
+    - 2026-08-19 - ✅ Aprovada em homologação (CNPJ exibido por extenso e formatado na impressão, CT-B01 e CT-B02 confirmados — numérico e alfanumérico). Validação em DEV não chegou a ser registrada separadamente; a correção já estava disponível em homologação quando retomada. Gate de doc reconfirmado: [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]] segue sem regra escrita pra esta saída — pendência de documentação de 31/07 continua aberta.

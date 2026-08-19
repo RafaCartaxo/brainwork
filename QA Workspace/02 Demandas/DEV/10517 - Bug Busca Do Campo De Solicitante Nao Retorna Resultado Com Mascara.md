@@ -120,7 +120,7 @@ A busca do campo de solicitante retorna o registro **independentemente da presen
 - Ambiente: Desenvolvimento
 
 > [!info]- Por que o card nasce em DEV se o bug está em produção e homologação
-> Bug de produção em sustentação (correção não urgente) **não tem pasta própria** — o card nasce em `DEV/` com `ambiente: DEV`, que representa a **posição na esteira de correção**, e a origem fica na Descrição e no Histórico. Regra em [[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]; precedentes SGV-9963 e SGV-9750, e hoje também a [[QA Workspace/02 Demandas/DEV/10512 - Bug CNPJ Do Cidadao PJ Exibido Anonimizado Na Impressao Do Documento|SGV-10512]].
+> Bug de produção em sustentação (correção não urgente) **não tem pasta própria** — o card nasce em `DEV/` com `ambiente: DEV`, que representa a **posição na esteira de correção**, e a origem fica na Descrição e no Histórico. Regra em [[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]; precedentes SGV-9963 e SGV-9750, e hoje também a [[QA Workspace/02 Demandas/Concluídas/10512 - Bug CNPJ Do Cidadao PJ Exibido Anonimizado Na Impressao Do Documento|SGV-10512]].
 
 ---
 
