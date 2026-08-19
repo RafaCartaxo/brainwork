@@ -5,13 +5,13 @@ tags:
   - formularios
 task: "10517"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-07-31
-data_fim: ""
+data_fim: 2026-08-19
 responsavel: Rafael
 cadastrado_por: ""
 modulo: formularios
-ambiente: DEV
+ambiente: HML
 ---
 # Busca do campo de solicitante não retorna resultado quando o valor é digitado com máscara
 
@@ -35,9 +35,10 @@ E quando eu pesquiso o **mesmo** solicitante **sem** a pontuação, verifico que
 
 ---
 
-### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://10517)
+### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://10517)
 
 ![[10517 - busca do campo de solicitante nao retorna resultado.mp4]]
+![[10517 - busca ok.mp4]]
 
 ---
 
@@ -56,9 +57,9 @@ A busca do campo de solicitante retorna o registro **independentemente da presen
 
 ### Critérios de aceite
 
-- [ ] A busca do campo de solicitante retorna o registro quando o valor é digitado **com máscara**
-- [ ] A busca continua retornando o registro quando digitado **sem** pontuação (regressão: é o caminho que funciona hoje)
-- [ ] O comportamento vale para valor **colado** e **digitado**, já que a máscara se aplica nos dois
+- [x] A busca do campo de solicitante retorna o registro quando o valor é digitado **com máscara**
+- [x] A busca continua retornando o registro quando digitado **sem** pontuação (regressão: é o caminho que funciona hoje)
+- [x] O comportamento vale para valor **colado** e **digitado**, já que a máscara se aplica nos dois
 
 ---
 
@@ -72,8 +73,8 @@ A busca do campo de solicitante retorna o registro **independentemente da presen
 **Então** o registro é retornado na busca
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -104,11 +105,11 @@ A busca do campo de solicitante retorna o registro **independentemente da presen
 **Então** o registro é retornado na busca
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
-*Não executado. O defeito foi observado durante testes de CNPJ; se a causa é o tratamento de pontuação na busca, o CPF cai no mesmo problema — mas isso não foi verificado e **não está sendo afirmado**.*
+*Confirmado em 19/08: a correção cobre CPF também, não só CNPJ.*
 
 **Evidências de Testes:**
 
@@ -134,3 +135,4 @@ A busca do campo de solicitante retorna o registro **independentemente da presen
 
 - Histórico:
     - 2026-07-31 - 🐛 Bug cadastrado (achado durante a execução da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção e homologação)
+    - 2026-08-19 - ✅ Aprovada em homologação (busca com máscara passa a retornar o registro — CNPJ e CPF, colado e digitado; CT-B01/B02/B03 confirmados). Validação em DEV não teve registro separado; correção já disponível em homologação quando retomado. Confirmação com o Waldemar sobre o TC-712 (possível mesma causa raiz) segue pendente.
