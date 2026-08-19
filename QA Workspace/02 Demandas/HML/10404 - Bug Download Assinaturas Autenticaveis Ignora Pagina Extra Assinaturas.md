@@ -38,6 +38,8 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 
 ![[10404 - download versao assinaturas autenticaveis ignora pagina extra de assinaturas.mp4]]
 
+![[10404 - pagina assinaturas separadas - impedido - não assina no ambiente.mp4]]
+
 ---
 
 ### Resultado Esperado
@@ -110,3 +112,4 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 - ⚠️ **Ponto pra confirmar com o dev**: a doc diz que, com o parâmetro ativo, a página extra é parte do PDF **em todos os modelos de assinatura** (direta, sequencial, solicitada) e que o editor de posicionamento manual nem aparece. Vale checar se o gerador da versão "autenticáveis" usa um caminho de renderização próprio que não passa pela regra da página extra — seria a explicação técnica de personalizado/compactado saírem certos e só esse não.
 - Histórico:
     - 2026-07-28 - 🐛 SGV-10404 - Bug cadastrado (confirmado em homologação; card criado)
+    - 2026-08-19 - ⏳ Impedida (tentativa de acompanhamento em homologação — ambiente não permite assinar o documento, precondição do CT-B01 inalcançável; ver evidência)
