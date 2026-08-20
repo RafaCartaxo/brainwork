@@ -5,9 +5,9 @@ tags:
   - tramitacao
 task: "10451"
 prioridade: ""
-status: aberto
+status: resolvido
 data_inicio: 2026-07-29
-data_fim: ""
+data_fim: 2026-08-20
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: tramitacao
@@ -46,11 +46,11 @@ A toolbar de um documento encerrado "para mim" exibe, além de **Reabrir documen
 
 ### Critérios de aceite
 
-- [ ] Documento com fluxo de trabalho encerrado "para mim" exibe a ação de **histórico** na toolbar
-- [ ] Documento com fluxo de trabalho encerrado "para mim" exibe a ação de **baixar documento** na toolbar
-- [ ] A ação **Reabrir documento** continua sendo exibida
-- [ ] Consultar histórico e baixar documento **não exigem reabrir** o documento
-- [ ] As ações exibidas respeitam a tabela de permissões de encerramento (ver Informações adicionais)
+- [x] Documento com fluxo de trabalho encerrado "para mim" exibe a ação de **histórico** na toolbar
+- [x] Documento com fluxo de trabalho encerrado "para mim" exibe a ação de **baixar documento** na toolbar
+- [x] A ação **Reabrir documento** continua sendo exibida
+- [x] Consultar histórico e baixar documento **não exigem reabrir** o documento
+- [x] As ações exibidas respeitam a tabela de permissões de encerramento (ver Informações adicionais)
 
 ---
 
@@ -63,12 +63,14 @@ A toolbar de um documento encerrado "para mim" exibe, além de **Reabrir documen
 **Então** verifico que a toolbar exibe Reabrir documento, histórico e baixar documento
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
 ![[10451 - toolbar de documento encerrado para mim mostra so reabrir sem historico e baixar.mp4]]
+
+![[10451 - toolbar doc fluxo de trabalho ok.mp4]]
 
 ---
 
@@ -79,7 +81,7 @@ A toolbar de um documento encerrado "para mim" exibe, além de **Reabrir documen
 **Então** verifico que a toolbar exibe Reabrir documento, histórico e baixar documento
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -93,7 +95,7 @@ A toolbar de um documento encerrado "para mim" exibe, além de **Reabrir documen
 **Então** verifico que a toolbar exibe as ações de consulta esperadas (histórico e baixar documento), além de Reabrir documento
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
@@ -116,8 +118,9 @@ A toolbar de um documento encerrado "para mim" exibe, além de **Reabrir documen
     - [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] cobre os **status** e diz que sair de **Encerrado** só acontece via Reabrir/Retomar documento — o que explica o "Reabrir documento" aparecer, mas nada afirma sobre histórico e download.
     - A doc de Mesa de trabalho só descreve toolbar para o status **Pausado**: *"Quando um documento é colocado em pausa no setor dono, possui todas as funcionalidades de tramitação na toolbar"*. Encerrado não tem equivalente escrito.
     - [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]] já registra isso como **dúvida em aberto**: a doc de origem manda *"averiguar design no protótipo para visualizar nova toolbar para setores dono"* — ou seja, o comportamento da toolbar **nunca foi descrito em texto**, ficou só no protótipo. Este bug é a materialização dessa lacuna.
-- **Fonte que fecharia o gap**: o Rafael tem uma **tabela com as permissões possíveis** de encerramento. Exportação **postergada por decisão dele em 29/07** (prioridade era agilidade). Quando entrar, ela resolve o critério de aceite em aberto e alimenta [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]].
-- **A confirmar no diagnóstico** (o que os CTs isolam): o defeito depende do **fluxo de trabalho** (CT-B02, documento sem workflow) ou vale para todo documento encerrado? E replica em **encerrar para meu setor** (CT-B03)? A resposta define o escopo do fix.
+- **Fonte que fechava o gap chegou em 20/08**: a tabela de permissões de encerramento que estava postergada foi confirmada — as ações exibidas batem com as permissões esperadas (5º critério de aceite fechado). Conteúdo da tabela ainda não foi importado pra [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]] (fluxo 8) — fica como pendência à parte, fora deste bug.
+- **Diagnóstico confirmado em 20/08**: o defeito **era específico de documento com fluxo de trabalho** — CT-B02 (sem workflow) passou sem nunca ter tido o problema, confirmando que ali a toolbar sempre exibiu as três ações corretamente. O fix cobre os dois cenários com workflow: encerrar pra mim (CT-B01) e encerrar pro meu setor (CT-B03).
 - **Vizinhança com a [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]]** — mesma família de ações ("Encerrar para mim" / "Encerrar para meu setor"), e a 9042 afirma que essas regras seguem o que **já está implementado na plataforma**. São coisas diferentes (a 9042 é o *ato* de encerrar na emissão de despacho; este bug é o *estado* da toolbar depois de encerrado), mas se o fix de um mexer no outro vale reteste cruzado.
 - Histórico:
     - 2026-07-29 - 🐛 SGV-10451 - Bug cadastrado (gap de doc: toolbar de documento encerrado não descrita em nenhuma doc; tabela de permissões postergada)
+    - 2026-08-20 - ✅ Aprovada em homologação (toolbar exibe histórico e baixar documento nos três cenários — CT-B01/B02/B03 confirmados; tabela de permissões chegou e fecha o 5º critério)
