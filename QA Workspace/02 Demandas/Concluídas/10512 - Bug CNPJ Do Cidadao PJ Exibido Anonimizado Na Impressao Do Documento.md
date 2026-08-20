@@ -33,7 +33,9 @@ E verifico que o mesmo ocorre em **produção**, sem relação com o formato alf
 
 ---
 
-### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://10512)
+### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://10512)
+
+![[10512 - máscara cnpj impressão ok.mp4]]
 
 ![[10512 - cnpj do cidadao pj e exibido anonimizado na impressao.mp4]]
 
