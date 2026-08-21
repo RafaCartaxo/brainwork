@@ -10,6 +10,7 @@ revisado: 2026-08-21
 > [!info] Sobre esta nota
 > Plano **fechado e aprovado**, ainda **não executado**. Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[../README|04 Conhecimento]] (material de fora, resumido e linkado).
 > Template: [[../../../Sistema/Templates/Conhecimento|Conhecimento.md]].
+> Par desta nota: [[NX Gest - Insights e gráficos (PLAN-080)]].
 
 ## Visão geral
 
@@ -155,6 +156,91 @@ As quatro situações mais prováveis produzem a **mesma** mensagem: `auth.error
 Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a tela é um `ErrorBanner` sem ação de saída (critério não cumprido em plano concluído); e o e-mail de convite é o **único** dos 4 templates sem prazo concreto — `reset` diz "30 minutos", `verificarEmail` "24 horas", `convite` diz "validade limitada" quando o TTL real é **7 dias** (`auth-token.service.ts:5`).
 
 **Divisão decidida.** No PLAN-085 entra só a copy **preventiva** do e-mail (string pura, 3 idiomas, zero backend): prazo real + "se receber um convite mais recente, use sempre o último — o anterior deixa de funcionar". Evita o incidente em vez de explicá-lo depois. Todo o resto vira **PLAN-086** (códigos de erro distintos, ramificação no `AtivarPage`, ativação das 6 chaves órfãs, par novo "Convite substituído", ação de saída da AC-07, BR nova, UC/CT) — é código com gates, não caberia num plano de documentação.
+
+---
+
+## Checklist de execução
+
+> [!important] Como usar
+> Ordem obrigatória: **F0 → F7**. Os vetos valem em toda a execução. O baseline (F0) já foi medido e está na seção "Baseline dos gates" acima — a comparação final (F7) tem que dar idêntico.
+
+### Vetos permanentes (conferir antes de commitar)
+
+- [ ] `git diff --name-status` tem **somente `M` e `A`** — nenhum `R` (rename) nem `D` (delete). Rename de `.md` quebra o `audit:links`
+- [ ] Nenhuma ocorrência de `nxgestao` foi renomeada (infra: `/opt/nxgestao`, volumes, rede Docker, staging DuckDNS, `~/.config/nxgestao/`)
+- [ ] `docs/plans/Lovable-*.md` e `Stitch-*.md` **intocados** (histórico, política do PLAN-084)
+- [ ] `src/modules/admin/domain/modules.ts` e o espelho frontend **intocados** — `audit:modules` idêntico ao baseline
+- [ ] `docs/product/02-BUSINESS-RULES.md` intocado; **não** foi dividido por nível
+- [ ] Nenhuma BR nova criada; `BR-107` **não** foi gasta
+- [ ] Nenhuma chave de i18n além de `lead.queroConhecerSubtitle`; `auth.tagline` intacta
+- [ ] Headers `# O que este sistema é` / `# O que este sistema não é` **não** renomeados (níveis entram como `##` dentro deles)
+- [ ] "Finanças pessoais" / "evolução pessoal" **não** entraram na Visão canônica
+
+### F0 — baseline
+
+- [ ] `npm run audit:links` → `0 erro(s)` (esperado: `0 erro(s), 5 warn(s), 196 arquivos`)
+- [ ] `npm run docs:audit` → `Nenhuma divergência encontrada.`
+- [ ] `npm run audit:modules` → `manifest coerente`
+- [ ] `npm run audit:ui` · `npm run audit:styles` · `npm test` — saídas registradas
+
+### F1 — decisão (ADR-007)
+
+- [ ] `docs/foundation/ADR-007-Identidade-Plataforma.md` criado, no formato do ADR-006 (Status/Versão/Data/Relacionados · Contexto · Decisão · Consequências · Referências)
+- [ ] Contém a frase "3 níveis conceituais, 2 de prosa, 1 fonte executável"
+- [ ] Contém a **tabela canônica de nomes** (marca, leitura, design system, artigo, slug, domínios, infra legada)
+- [ ] Contém os **6 critérios de admissão** de vertical
+- [ ] Contém a **regra de fronteira** (demanda mapeia para módulo existente ou justifica módulo novo)
+- [ ] Contém a amarração `tipo_negocio` (código, roadmap F4) × "vertical" (rótulo de doc)
+- [ ] Contém os **gatilhos A/B/C/D** para reabrir a camada de tipo de negócio
+- [ ] Contém §"Escopos futuros não comprometidos" com o custo de tenancy de pessoa física declarado
+- [ ] Contém a reserva escrita do `BR-107`
+- [ ] Registrado em `docs/foundation/README.md` (tabela + ordem de leitura)
+- [ ] Registrado em `docs/decisions/ADR-INDEX.md`
+- [ ] Registrado em `docs/INDEX.md` §Foundation — **e ADR-005/ADR-006 adicionados** (hoje a lista para no ADR-004)
+
+### F2 — canônicos
+
+- [ ] `00-NORTH-STAR.md`: Objetivo · Missão · Visão · "é" em 2 níveis · "não é" em 2 níveis + Regra de fronteira · Regra de Ouro (original preservada palavra por palavra) · versão **1.0 → 1.1** + data
+- [ ] `00-PROJECT.md`: Objetivo · Visão do Produto · Público-Alvo · Escopo → ponteiro ao manifest · Fora do Escopo em 2 níveis · Critérios de Sucesso · versão **1.1 → 1.2** + data
+- [ ] `03-PRD.md`: Objetivo · Público-Alvo · **bullets duplicados removidos (l.33-35)** · versão **1.0 → 1.1** + data
+- [ ] Nenhuma versão foi para 2.0 (o repo nunca usou; padrão é incremento menor)
+
+### F3 — secundários
+
+- [ ] `README.md:3` · `docs/README.md:3` · `docs/qa/01-VISAO-GERAL.md:9` + linha `| Produto |` (l.13)
+- [ ] `AGENTS.md:7` (stack/PostgreSQL/PLAN-070 preservados na mesma linha)
+- [ ] **Linha nova na tabela "Documentação — comece por aqui" do `AGENTS.md`** — caminho de leitura em 3 saltos: NORTH-STAR → ADR-007 → 08-UC-MODULOS
+
+### F4 — módulos/doc
+
+- [ ] Nota "Escopo e verticais" em `docs/product/08-UC-MODULOS.md`, acima de "Como validar um novo negócio", com link ao ADR-007
+
+### F5 — user-facing
+
+- [ ] `templates.ts:56-58` — `rodape[*].marca` nos 3 idiomas
+- [ ] `templates.ts:26-28` — `convite[*].seguro` nos 3 idiomas (prazo de 7 dias + aviso de que reenvio invalida o anterior)
+- [ ] Assuntos, corpos, botões e cores dos e-mails **intocados**
+- [ ] `frontend/public/manifest.webmanifest:5` — só `description`
+- [ ] `locales/{pt-BR,en,es}.json:851` — só `lead.queroConhecerSubtitle` (sai "de cobranças"; pt-BR passa a "o NX Gest")
+- [ ] `npx tsc --noEmit` · `npm run build` · `node scripts/check-dist.mjs` · `npm test` (`mailers.test.ts`)
+- [ ] Render manual dos 3 e-mails conferido
+
+### F6 — anti-drift e rastreio
+
+- [ ] Linha nova na matriz de propagação da `docs/skills/SKILL-009-documentation-sync.md` §3 (**o entregável que impede a reincidência**)
+- [ ] `docs/plans/PLAN-071-email-deliverability.md:69` — anotação de **uma linha** de que o rodapé foi atualizado pelo PLAN-085. Plano **não** reescrito
+- [ ] `docs/plans/PLAN-086-mensagens-falha-convite.md` criado como 📝 Planejado, com a investigação do incidente embutida
+- [ ] `PLAN-085` e `PLAN-086` registrados em `docs/plans/README.md`
+- [ ] `PLAN-085` contém a seção "Baseline e fatos apurados" (os fatos ficam no repo, não só na sessão)
+
+### F7 — registro e fechamento
+
+- [ ] `docs/UPDATES.md` com a entrega
+- [ ] `docs/STATUS.md` atualizado
+- [ ] Status do `PLAN-085` atualizado
+- [ ] **Re-rodar os 6 gates e comparar com F0** — `audit:links` `0 erro(s)`, `docs:audit` `Nenhuma divergência`, `audit:modules` idêntico
+- [ ] Leitura corrida do `00-NORTH-STAR.md` conferindo que os dois níveis não se contradizem
+- [ ] **Teste de pronto:** um leitor do NORTH-STAR chega à mesma conclusão de quem lê o ADR-006 + roadmap + tela de login
 
 ## Dúvidas em aberto
 
