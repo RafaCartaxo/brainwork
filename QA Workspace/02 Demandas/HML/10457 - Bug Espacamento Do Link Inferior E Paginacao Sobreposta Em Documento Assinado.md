@@ -54,6 +54,8 @@ Gravadas em 30/07, uma por cenário — os dois critérios que fecham o escopo t
 
 ![[10457 - cenario 1.mp4]]
 
+![[10457 - espaçamento link inferior divergente prototipo.mp4]]
+
 **Cenário 2 — paginação sobreposta** (download personalizado com páginas enumeradas)
 
 ![[10457 - cenario 2.mp4]]
@@ -99,6 +101,8 @@ Os dois primeiros critérios são o par que fecha o escopo: **sem paginação** 
 **Evidências de Testes:**
 
 ![[10457 - cenario 1.mp4]]
+
+![[10457 - espaçamento link inferior divergente prototipo.mp4]]
 
 ---
 
@@ -203,3 +207,4 @@ Os dois primeiros critérios são o par que fecha o escopo: **sem paginação** 
 - **Vizinhança no download personalizado**: a opção "personalizado" é a mesma família de [[QA Workspace/02 Demandas/HML/6628 - Bug Selecionar Todos Download Documentos Personalizados|SGV-6628]] (selecionar todos no download personalizado) e de [[QA Workspace/02 Demandas/Concluídas/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] (autenticáveis ignoram a página extra). **Três bugs distintos no mesmo menu de download** — se o time for mexer ali, vale olhar os três juntos.
 - Histórico:
     - 2026-07-29 - 🐛 SGV-10457 - Bug cadastrado (espaçamento do rodapé: divergência confirmada contra a spec do QR Code; sobreposição da paginação: gap de posicionamento. Evidência pendente)
+    - 2026-08-24 - 🔴 Reaberta em homologação (Cenário 1 — espaçamento do link inferior segue divergente do protótipo; Cenário 2 não mencionado neste reteste)
