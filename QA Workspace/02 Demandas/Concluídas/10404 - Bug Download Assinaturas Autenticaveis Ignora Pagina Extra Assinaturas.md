@@ -5,9 +5,9 @@ tags:
   - assinatura
 task: "10404"
 prioridade: ""
-status: aberto
+status: resolvido
 data_inicio: 2026-07-28
-data_fim: ""
+data_fim: 2026-08-24
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: assinatura
@@ -40,6 +40,8 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 
 ![[10404 - pagina assinaturas separadas - impedido - não assina no ambiente.mp4]]
 
+![[10404 - assinatua em downlaod autenticado ok.mp4]]
+
 ---
 
 ### Resultado Esperado
@@ -65,12 +67,14 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 **Então** verifico que o arquivo vem com a página extra de assinaturas
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
 ![[10404 - download versao assinaturas autenticaveis ignora pagina extra de assinaturas.mp4]]
+
+![[10404 - assinatua em downlaod autenticado ok.mp4]]
 
 ---
 
@@ -110,6 +114,8 @@ Para contraste, baixando o mesmo documento pelas opções **personalizado** e **
 
     Ou seja: o comportamento observado (download de "versão com assinaturas autenticáveis" trazendo o PDF **sem** a página extra) **contraria regra documentada** — não é lacuna de especificação. Isso fortalece o card: há regra escrita pra apontar, e o esperado não é interpretação da QA.
 - ⚠️ **Ponto pra confirmar com o dev**: a doc diz que, com o parâmetro ativo, a página extra é parte do PDF **em todos os modelos de assinatura** (direta, sequencial, solicitada) e que o editor de posicionamento manual nem aparece. Vale checar se o gerador da versão "autenticáveis" usa um caminho de renderização próprio que não passa pela regra da página extra — seria a explicação técnica de personalizado/compactado saírem certos e só esse não.
+- Achado à parte durante este reteste: o link de verificação de assinaturas também não respeita a página extra — não é o mesmo defeito (aqui o download inteiro vinha sem a página; lá é o link específico), virou bug próprio [[QA Workspace/02 Demandas/HML/11047 - Bug Link De Verificacao De Assinatura Tambem Ignora Pagina Extra|SGV-11047]]. Evidência compartilhada com SGV-11047 — mesmo vídeo, cópia renomeada (trecho 4min–5min mostra o achado).
 - Histórico:
     - 2026-07-28 - 🐛 SGV-10404 - Bug cadastrado (confirmado em homologação; card criado)
     - 2026-08-19 - ⏳ Impedida (tentativa de acompanhamento em homologação — ambiente não permite assinar o documento, precondição do CT-B01 inalcançável; ver evidência)
+    - 2026-08-24 - ✅ Aprovada em homologação (download da versão com assinaturas autenticáveis já respeita a página extra; achado novo no mesmo reteste virou SGV-11047)
