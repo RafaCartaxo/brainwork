@@ -32,6 +32,8 @@ Então, ao emitir o despacho, o nome do envolvido deve ser exibido corretamente 
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://9977)
 
+![[9977 - destinatarios em copia ok.mp4]]
+
 ![[9977 - nome do envolvido em copia oculto.mp4]]
 
 ---

@@ -37,6 +37,8 @@ Então verifico que é possível mencionar vários servidores cadastrados na pla
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://9369)
 
+![[9369 - cidadão não menciona ok.mp4]]
+
 
 ---
 
