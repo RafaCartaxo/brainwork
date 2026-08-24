@@ -268,7 +268,7 @@ O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilh
 - [[QA Workspace/02 Demandas/Concluídas/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho
 - [[QA Workspace/02 Demandas/HML/7829 - Bug Anexos Despacho Não Carregados Emitir Assinar Cidadão|SGV-7829]] — anexos do despacho ao emitir e assinar como cidadão
 - [[QA Workspace/02 Demandas/HML/5360 - Bug Assinatura Despacho Customizado Não Aparece Pendentes|SGV-5360]] — solicitação de assinatura em despacho customizado
-- [[QA Workspace/02 Demandas/DEV/9977 - Bug Nome Oculto Cópia Despacho|SGV-9977]] — servidor em cópia no despacho
+- [[QA Workspace/02 Demandas/HML/9977 - Bug Nome Oculto Cópia Despacho|SGV-9977]] — servidor em cópia no despacho
 - [[QA Workspace/02 Demandas/Concluídas/9499 - Bug Sigilo Despacho Servidor Autor|SGV-9499]] e [[QA Workspace/99 Arquivo/Bug Sigilo Despacho Cidadão Autor|Bug Sigilo Despacho Cidadão Autor]] — regras de sigilo
 - [[QA Workspace/02 Demandas/Concluídas/8380 - Bug Referencia Resposta Despacho Cadeia Respostas|SGV-8380]] — referência da resposta na cadeia, mesmo tema da seção "Referência de origem nos eventos"
 - [[QA Workspace/02 Demandas/Concluídas/6375 - Bug Data Ausente Evento Despacho|SGV-6375]] — evento do despacho

@@ -12,7 +12,8 @@ data_fim: ""
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: despachos
-ambiente: DEV
+ambiente: HML
+deploy: pendente_hml
 ---
 # Cidadão consegue mencionar servidores via "@" no campo de despacho
 
@@ -69,10 +70,12 @@ Então verifico que é possível mencionar vários servidores cadastrados na pla
 **Então** verifico que nenhuma listagem de menção é aberta e nenhum servidor é sugerido
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
+
+![[9369 - cidadão não menciona ok.mp4]]
 
 ---
 
@@ -123,3 +126,4 @@ Então verifico que é possível mencionar vários servidores cadastrados na pla
     - A doc registrava como **dúvida em aberto** se a menção via `@` estava implementada (item de fila parado há 14 dias). Este bug **responde**: está implementada e alcançável pelo ambiente cidadão.
 - Histórico:
     - 2026-08-17 - 🐛 Bug cadastrado
+    - 2026-08-24 - ✅ Aprovada em DEV (CT-B01 confirmado pela evidência; CT-B02/CT-B03 e a regra 2 seguem em aberto — ver Observações)

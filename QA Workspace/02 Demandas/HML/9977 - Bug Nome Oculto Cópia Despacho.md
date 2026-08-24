@@ -11,7 +11,8 @@ data: 2026-07-13
 responsavel: Rafael
 modulo: despacho
 data_inicio: 2026-07-13
-ambiente: DEV
+ambiente: HML
+deploy: pendente_hml
 ---
 # Nome do envolvido em cópia fica oculto no componente do despacho após emissão
 
@@ -110,5 +111,7 @@ O nome do servidor, setor ou cidadão adicionado como cópia deve ser exibido co
 
 - Demanda relacionada: SGV-9977
 - Observações:
+    - Evidência do reteste (`9977 - destinatarios em copia ok.mp4`) não identifica qual dos três tipos de envolvido (servidor/setor/cidadão) foi coberto — CT-B01/B02/B03 seguem sem "Execução Passou?" marcado individualmente. Confirmar por tipo na validação de HML.
 - Histórico:
     - 2026-07-13 - 🐛 Bug cadastrado
+    - 2026-08-24 - ✅ Aprovada em DEV
