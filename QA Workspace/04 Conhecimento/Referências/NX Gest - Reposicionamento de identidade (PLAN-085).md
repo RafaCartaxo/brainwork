@@ -3,14 +3,17 @@ tags:
   - qa
   - conhecimento
 tipo: referencia
-revisado: 2026-08-21
+revisado: 2026-08-25
 ---
 # NX Gest - Reposicionamento de identidade (PLAN-085)
 
 > [!info] Sobre esta nota
 > Plano **fechado e aprovado**, ainda **não executado**. Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[../README|04 Conhecimento]] (material de fora, resumido e linkado).
 > Template: [[../../../Sistema/Templates/Conhecimento|Conhecimento.md]].
-> Par desta nota: [[NX Gest - Insights e gráficos (PLAN-080)]].
+> Notas irmãs: [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
+
+> [!warning] Numeração provisória
+> `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — **no repo o último plano é o PLAN-084**. O número definitivo é atribuído no momento em que cada plano for criado, na ordem em que efetivamente entrar. Não pré-reservar número (de PLAN nem de BR): foi o erro corrigido em 25/08.
 
 ## Visão geral
 
@@ -75,7 +78,10 @@ Gatilhos para promover o F4 a execução (**A, B ou C disparam sozinhos**):
 
 ### Nenhuma BR nova
 
-(1) Falha o escopo do próprio `02-BUSINESS-RULES.md` — "a plataforma é modular" não governa entidade, nenhum request a viola. (2) Falha o checklist SKILL-009 §4.4 ("toda BR tem ao menos um UC/CT?") — seria a primeira BR sem CT e, sendo BR imutável, dívida permanente. (3) BR-034 não se aplica: não há código de negócio novo. **`BR-107` fica reservada por escrito** para quando a camada `tipo_negocio` existir.
+(1) Falha o escopo do próprio `02-BUSINESS-RULES.md` — "a plataforma é modular" não governa entidade, nenhum request a viola. (2) Falha o checklist SKILL-009 §4.4 ("toda BR tem ao menos um UC/CT?") — seria a primeira BR sem CT e, sendo BR imutável, dívida permanente. (3) BR-034 não se aplica: não há código de negócio novo.
+
+> [!warning] Correção de 25/08 — não pré-reservar número de BR
+> A versão anterior desta nota reservava o `BR-107` para a camada `tipo_negocio`. **Errado:** reservar número sem escrever a regra colide com a primeira BR nova que aparecer — e apareceu, no [[NX Gest - Contrato periodicidade alternada (PLAN-087)|PLAN-087]], que precisa de duas. Texto correto: a camada `tipo_negocio` **receberá um BR numerado no momento em que for escrita**, sem pré-reserva. Vale para números de PLAN também (ver nota de numeração provisória no topo).
 
 ### "Finanças pessoais" / "evolução pessoal" ficam fora da Visão
 
@@ -171,7 +177,7 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 - [ ] `docs/plans/Lovable-*.md` e `Stitch-*.md` **intocados** (histórico, política do PLAN-084)
 - [ ] `src/modules/admin/domain/modules.ts` e o espelho frontend **intocados** — `audit:modules` idêntico ao baseline
 - [ ] `docs/product/02-BUSINESS-RULES.md` intocado; **não** foi dividido por nível
-- [ ] Nenhuma BR nova criada; `BR-107` **não** foi gasta
+- [ ] Nenhuma BR nova criada por este plano (e **nenhum número de BR pré-reservado** — ver correção de 25/08)
 - [ ] Nenhuma chave de i18n além de `lead.queroConhecerSubtitle`; `auth.tagline` intacta
 - [ ] Headers `# O que este sistema é` / `# O que este sistema não é` **não** renomeados (níveis entram como `##` dentro deles)
 - [ ] "Finanças pessoais" / "evolução pessoal" **não** entraram na Visão canônica
@@ -193,7 +199,7 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 - [ ] Contém a amarração `tipo_negocio` (código, roadmap F4) × "vertical" (rótulo de doc)
 - [ ] Contém os **gatilhos A/B/C/D** para reabrir a camada de tipo de negócio
 - [ ] Contém §"Escopos futuros não comprometidos" com o custo de tenancy de pessoa física declarado
-- [ ] Contém a reserva escrita do `BR-107`
+- [ ] Diz que a camada `tipo_negocio` receberá um BR **numerado quando for escrita** — sem pré-reservar número
 - [ ] Registrado em `docs/foundation/README.md` (tabela + ordem de leitura)
 - [ ] Registrado em `docs/decisions/ADR-INDEX.md`
 - [ ] Registrado em `docs/INDEX.md` §Foundation — **e ADR-005/ADR-006 adicionados** (hoje a lista para no ADR-004)
