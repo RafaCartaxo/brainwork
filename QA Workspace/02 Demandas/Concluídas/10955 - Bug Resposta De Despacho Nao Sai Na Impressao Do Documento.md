@@ -5,13 +5,13 @@ tags:
   - documento
 task: "10955"
 prioridade: alta
-status: aberto
+status: resolvido
 data_inicio: 2026-08-19
-data_fim: ""
+data_fim: "2026-08-25"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: documento
-ambiente: DEV
+ambiente: HML
 ---
 # Resposta de despacho não sai na impressão do documento
 
@@ -36,6 +36,8 @@ Então verifico que a resposta do despacho não aparece no documento impresso
 
 ![[10955 - resposta do despacho nao sai na impressao do documento.mp4]]
 
+![[10955 - resposta cidadão visivel no download.mp4]]
+
 ---
 
 ### Resultado Esperado
@@ -51,7 +53,7 @@ A resposta do despacho aparece na impressão do documento, junto com o restante 
 
 ### Critérios de aceite
 
-- [ ] A resposta do cidadão a um despacho aparece na impressão do documento
+- [x] A resposta do cidadão a um despacho aparece na impressão do documento
 - [ ] O comportamento vale independente de quem respondeu (cidadão ou servidor) — a verificar se o defeito é geral ou específico do fluxo do cidadão
 - [ ] A resposta aparece na posição cronológica correta, junto ao despacho original
 
@@ -64,20 +66,22 @@ A resposta do despacho aparece na impressão do documento, junto com o restante 
 **Dado** que existe um documento com um despacho
 **E** o cidadão responde a esse despacho
 **Quando** o documento é impresso
-**Então** verifico que a resposta não aparece na impressão
+**Então** verifico que a resposta aparece na impressão do documento
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
+
+![[10955 - resposta cidadão visivel no download.mp4]]
 
 ---
 
 ### Ambiente
 
 - Versão:
-- Ambiente: Homologação (achado durante a validação da SGV-10512; card nasce em DEV representando a posição na esteira de correção)
+- Ambiente: Homologação
 
 ---
 
@@ -86,8 +90,10 @@ A resposta do despacho aparece na impressão do documento, junto com o restante 
 - Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/10512 - Bug CNPJ Do Cidadao PJ Exibido Anonimizado Na Impressao Do Documento|SGV-10512]] — achado incidental durante a validação em homologação daquele bug, sem relação de causa
 
 - Observações:
-    - Ainda não verificado se o defeito também ocorre com resposta de **servidor** ao despacho, ou é específico do fluxo de resposta do **cidadão** — ver critério de aceite 2
     - Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/10512 - Bug CNPJ Do Cidadao PJ Exibido Anonimizado Na Impressao Do Documento|SGV-10512]] — mesmo vídeo, cópia renomeada
+    - Aprovado pelo fluxo do **cidadão** (critério 1). **Critério 2 (resposta de servidor) e critério 3 (posição cronológica) não foram retestados especificamente** nesta rodada — a evidência `10955 - resposta cidadão visivel no download.mp4` cobre só o cenário do cidadão.
 
 - Histórico:
     - 2026-08-19 - 🐛 Bug cadastrado (achado durante a validação em homologação da [[QA Workspace/02 Demandas/Concluídas/10512 - Bug CNPJ Do Cidadao PJ Exibido Anonimizado Na Impressao Do Documento|SGV-10512]])
+    - 2026-08-25 - ✅ Aprovada em homologação (resposta do cidadão passou a aparecer na impressão do documento)
+    - 2026-08-25 - ✅ Aprovada em homologação

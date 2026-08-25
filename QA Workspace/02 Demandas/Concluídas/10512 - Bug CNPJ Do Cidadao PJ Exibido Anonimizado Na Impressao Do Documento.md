@@ -115,7 +115,7 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
 - Observações:
     - **O produto já usa mascaramento em outro lugar de propósito**: a doc de [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] registra o e-mail anonimizado na mensagem de erro como comportamento intencional. Vale antecipar que o dev pode alegar que a anonimização do CNPJ também é intencional — como não há regra escrita pra esta saída, essa conversa precisa de decisão de produto, e é o que a pendência de documentação resolve.
     - Reproduz em **produção**, confirmado por Rafael, e é anterior à SGV-9493.
-    - Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/10955 - Bug Resposta De Despacho Nao Sai Na Impressao Do Documento|SGV-10955]] — mesmo vídeo, cópia renomeada (bug novo encontrado durante esta validação em homologação).
+    - Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/10955 - Bug Resposta De Despacho Nao Sai Na Impressao Do Documento|SGV-10955]] — mesmo vídeo, cópia renomeada (bug novo encontrado durante esta validação em homologação).
 
 - Histórico:
     - 2026-07-31 - 🐛 Bug cadastrado (achado em DEV durante a execução da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção)
