@@ -3,13 +3,16 @@ tags:
   - qa
   - conhecimento
 tipo: referencia
-revisado: 2026-08-21
+revisado: 2026-08-25
 ---
 # NX Gest - Insights e gráficos (PLAN-080)
 
 > [!info] Sobre esta nota
 > Correção de direção para o **PLAN-080** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
-> Par desta nota: [[NX Gest - Reposicionamento de identidade (PLAN-085)]].
+> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-085)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
+
+> [!warning] Numeração provisória
+> `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — **no repo o último plano é o PLAN-084**. O número definitivo é atribuído quando cada plano for criado, na ordem em que efetivamente entrar. Não pré-reservar número (de PLAN nem de BR).
 
 ## Visão geral
 
