@@ -7,7 +7,7 @@ task: "10955"
 prioridade: alta
 status: resolvido
 data_inicio: 2026-08-19
-data_fim: "2026-08-25"
+data_fim: 2026-08-25
 responsavel: Rafael
 cadastrado_por: ""
 modulo: documento
@@ -96,4 +96,3 @@ A resposta do despacho aparece na impressão do documento, junto com o restante 
 - Histórico:
     - 2026-08-19 - 🐛 Bug cadastrado (achado durante a validação em homologação da [[QA Workspace/02 Demandas/Concluídas/10512 - Bug CNPJ Do Cidadao PJ Exibido Anonimizado Na Impressao Do Documento|SGV-10512]])
     - 2026-08-25 - ✅ Aprovada em homologação (resposta do cidadão passou a aparecer na impressão do documento)
-    - 2026-08-25 - ✅ Aprovada em homologação
