@@ -10,6 +10,7 @@ revisado: 2026-08-25
 > [!info] Sobre esta nota
 > Correção de direção para o **PLAN-080** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
 > Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-085)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
+> **Antes de executar:** [[NX Gest - Handoff de execução]] — ordem entre os planos, setup, baseline e colisões.
 
 > [!tip] Desacoplado do PLAN-081
 > A revisão do PLAN-081 decidiu que `insights` entra na aba **"Mais"** (a Rota fica primária). Como a Fase 1 daqui entrega `/insights` alcançável por URL **sem item de nav**, este plano **deixou de depender** do PLAN-081 para entregar — ele virou pré-requisito só de **descoberta**. Ver [[NX Gest - Navegação escalável (PLAN-081)]].
