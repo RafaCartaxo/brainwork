@@ -10,7 +10,7 @@ revisado: 2026-08-25
 > [!info] Sobre esta nota
 > Plano **fechado e aprovado**, ainda **não executado**. Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[../README|04 Conhecimento]] (material de fora, resumido e linkado).
 > Template: [[../../../Sistema/Templates/Conhecimento|Conhecimento.md]].
-> Notas irmãs: [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
+> Notas irmãs: [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
 
 > [!warning] Numeração provisória
 > `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — **no repo o último plano é o PLAN-084**. O número definitivo é atribuído no momento em que cada plano for criado, na ordem em que efetivamente entrar. Não pré-reservar número (de PLAN nem de BR): foi o erro corrigido em 25/08.
