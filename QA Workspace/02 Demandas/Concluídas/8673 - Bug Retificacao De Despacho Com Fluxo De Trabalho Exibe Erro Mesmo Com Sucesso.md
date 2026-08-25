@@ -5,9 +5,9 @@ tags:
   - despachos
 task: "8673"
 prioridade: ""
-status: aberto
+status: resolvido
 data_inicio: 2026-08-20
-data_fim: ""
+data_fim: 2026-08-25
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: despachos
@@ -37,6 +37,8 @@ E verifico que a retificação foi concluída com sucesso mesmo assim (versionam
 
 ![[8673 - retificar doc fluxo de trabalho, retorna erro e retifica com sucesso..mp4]]
 
+![[8673 - retificar doc com fluxo de trabalho ok.mp4]]
+
 ---
 
 ### Resultado Esperado
@@ -50,8 +52,8 @@ A retificação do despacho é concluída **sem exibir mensagem de erro** — o 
 
 ### Critérios de aceite
 
-- [ ] Retificar um despacho com fluxo de trabalho **não exibe** mensagem de erro quando a ação é bem-sucedida
-- [ ] O versionamento automático continua sendo registrado corretamente (sem regressão)
+- [x] Retificar um despacho com fluxo de trabalho **não exibe** mensagem de erro quando a ação é bem-sucedida
+- [x] O versionamento automático continua sendo registrado corretamente (sem regressão)
 
 ---
 
@@ -64,12 +66,14 @@ A retificação do despacho é concluída **sem exibir mensagem de erro** — o 
 **Então** a retificação é concluída sem exibir mensagem de erro, e o versionamento reflete a mudança
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
 ![[8673 - retificar doc fluxo de trabalho, retorna erro e retifica com sucesso..mp4]]
+
+![[8673 - retificar doc com fluxo de trabalho ok.mp4]]
 
 ---
 
@@ -87,3 +91,4 @@ A retificação do despacho é concluída **sem exibir mensagem de erro** — o 
     - Card criado hoje só com o que a evidência mostra e o relato de reabertura — sem mais contexto (mensagem de erro exata, se reproduz em todo tipo de despacho ou só nesse cenário, causa raiz). Completar conforme mais informação chegar.
 - Histórico:
     - 2026-08-20 - 🔴 SGV-8673 - Reaberta em homologação (card criado agora no vault; retificação de despacho com fluxo de trabalho exibe erro mesmo tendo sucesso)
+    - 2026-08-25 - 🔁 Retestada e aprovada em homologação (retificação de despacho com fluxo de trabalho não exibe mais o erro falso)
