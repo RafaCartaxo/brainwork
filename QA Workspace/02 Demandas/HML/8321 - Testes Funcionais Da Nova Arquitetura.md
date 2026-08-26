@@ -440,8 +440,10 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
+- [x] Não
+
+> [!danger]- Reprovado em 26/08/2026 — bug [[QA Workspace/02 Demandas/HML/Bug E-mail De Confirmacao De Cadastro Nao Chega No Novo Ambiente De Homologacao|Bug E-mail De Confirmação De Cadastro]]
+> Testado via automação (setup de pré-cadastro de agente) e confirmado manualmente checando a caixa Gmail: o e-mail de confirmação de cadastro não chega no `dev.sogov.net`. Card do bug aberto, aguardando SGV.
 
 **Evidências de Testes:**
 
@@ -663,7 +665,7 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 
 > [!danger] Bugs encontrados
 
-Nenhum registrado ainda nesta rodada — esta nota nasce antes do início da execução manual no novo ambiente de homologação.
+- 🐛 [[QA Workspace/02 Demandas/HML/Bug E-mail De Confirmacao De Cadastro Nao Chega No Novo Ambiente De Homologacao|Bug E-mail de confirmação de cadastro não chega]] — confirmado em 26/08/2026, CT-025 reprovado, sem SGV ainda.
 
 ---
 
@@ -720,3 +722,4 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 
 - 2026-08-26 - 📝 Plano de teste criado a partir do export do Notion (SGV-8321), 52 pontos técnicos organizados em 13 áreas.
 - 2026-08-26 - 📝 Casos de Teste reescritos (37 CTs práticos em 8 grupos + checklist de "Verificações técnicas" separada) a pedido do Rafael — a primeira versão estava técnica demais (linguagem de worker/SQS/IRSA/ArgoCD), sem bater com o padrão do resto do vault de testar pelo que o usuário vê e faz na tela.
+- 2026-08-26 - 🐛 CT-025 reprovado — e-mail de confirmação de cadastro não chega no `dev.sogov.net` (confirmado via automação e checagem manual da caixa Gmail). Bug cadastrado sem SGV ainda.
