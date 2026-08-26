@@ -16,7 +16,7 @@ modulo: documento automatizado
 
 > [!info] Informações
 > - **Tipo:** Melhoria
-> - **Status:** DEV
+> - **Status:** Concluída (em produção)
 > - **Responsável QA:** Rafael
 > - **Link:** (Notion — SGV-7863)
 
@@ -39,9 +39,7 @@ Ao aplicar um documento automatizado como carimbo/selo, o sistema renderizava o 
 ---
 
 > [!warning] Pontos de atenção
-
-> [!danger] Gate aberto — defeito filho ainda não fechado
-> [[QA Workspace/02 Demandas/Concluídas/11001 - Defeito Tabela Com Fundo Branco E Imagem Oculta No Documento Automatizado Gerado|SGV-11001]] (tabela com fundo branco e imagem oculta no documento automatizado gerado) segue `status: aberto`. Pela regra do vault ("Melhoria não é aprovada em DEV com defeito aberto"), **não marquei esta melhoria como aprovada em DEV** mesmo com a evidência nova — só registrei o que a evidência mostra (crop automático + fundo transparente do selo). Confirmar com o Rafael se o defeito 11001 também foi corrigido nesta rodada antes de aprovar a pai.
+> Nenhum em aberto — ver Histórico.
 
 ---
 
@@ -61,7 +59,7 @@ Ao aplicar um documento automatizado como carimbo/selo, o sistema renderizava o 
 ---
 
 > [!danger] Bugs encontrados
-> [[QA Workspace/02 Demandas/Concluídas/11001 - Defeito Tabela Com Fundo Branco E Imagem Oculta No Documento Automatizado Gerado|SGV-11001]] — defeito filho, ainda **aberto**. Bloqueia a aprovação desta melhoria em DEV até ser corrigido e revalidado.
+> [[QA Workspace/02 Demandas/Concluídas/11001 - Defeito Tabela Com Fundo Branco E Imagem Oculta No Documento Automatizado Gerado|SGV-11001]] — defeito filho, **corrigido e fechado** junto com a conclusão desta melhoria.
 
 ---
 
@@ -78,4 +76,5 @@ Ao aplicar um documento automatizado como carimbo/selo, o sistema renderizava o 
 
 ## Histórico
 
-- 2026-08-26 - 📝 Card criado (tardio) a partir de evidência nova; CT-001 (fundo transparente do selo) validado — defeito filho SGV-11001 segue aberto, aprovação em DEV pendente de confirmação
+- 2026-08-26 - 📝 Card criado (tardio) a partir de evidência nova; CT-001 (fundo transparente do selo) validado
+- 2026-08-26 - ✅ Melhoria aprovada e concluída, já em produção (confirmado pelo Rafael) — etapas de DEV/HML concluídas implicitamente; defeito filho SGV-11001 corrigido e fechado junto
