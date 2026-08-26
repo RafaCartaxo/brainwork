@@ -6,11 +6,12 @@ tags:
   - servidor
 task: "9971"
 prioridade: alta
-status: aberto
+status: resolvido
 data: 2026-07-13
 responsavel: Rafael
 modulo: assinatura-digital
 data_inicio: 2026-07-13
+data_fim: "2026-08-26"
 ambiente: HML
 ---
 # Sistema permite solicitar assinatura para servidor com cadastro "A aprovar"
@@ -34,6 +35,8 @@ Então o sistema deve exibir o badge de cadastro incompleto e impedir a conclus�
 
 ![[9971 - solicitar assinatura para servidor com cadastro incompleto.mp4]]
 
+![[9971 - nao solicita assinatura para servidor com status a aprovar ok.mp4]]
+
 ---
 
 ### Resultado Esperado
@@ -44,7 +47,7 @@ O sistema não deve permitir concluir a solicitação de assinatura para servido
 
 ### Critérios de aceite
 
-- [ ] Servidores com cadastro "A aprovar" não devem estar disponíveis para solicitação de assinatura
+- [x] Servidores com cadastro "A aprovar" não devem estar disponíveis para solicitação de assinatura
 - [ ] Deve ser exibido o badge de cadastro incompleto ao tentar selecionar um servidor nessa situação
 - [ ] Após a aprovação do cadastro, o servidor deve passar a ficar disponível normalmente para solicitação de assinatura
 
@@ -65,6 +68,8 @@ O sistema não deve permitir concluir a solicitação de assinatura para servido
 
 **Evidências de Testes:**
 
+![[9971 - nao solicita assinatura para servidor com status a aprovar ok.mp4]]
+
 ---
 
 ### Ambiente
@@ -77,6 +82,9 @@ O sistema não deve permitir concluir a solicitação de assinatura para servido
 ### Informações adicionais
 
 - Demanda relacionada: SGV-9971
-- Observações: Validar também o reaproveitamento de solicitações de assinatura já existentes para o mesmo servidor.
+- Observações:
+    - Validar também o reaproveitamento de solicitações de assinatura já existentes para o mesmo servidor.
+    - A evidência do reteste (`9971 - nao solicita assinatura para servidor com status a aprovar ok.mp4`) confirma diretamente o critério 1 (servidor "a aprovar" não fica disponível). Critérios 2 (badge de cadastro incompleto) e 3 (disponibilidade após aprovação) não foram confirmados especificamente por essa evidência — CT-B01 deixado sem marcação por cobrir os dois em conjunto.
 - Histórico:
     - 2026-07-13 - 🐛 Bug cadastrado
+    - 2026-08-26 - ✅ Aprovada em homologação (servidor com cadastro "a aprovar" não fica mais disponível para solicitação de assinatura)
