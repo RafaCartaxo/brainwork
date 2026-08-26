@@ -30,15 +30,15 @@ ambiente: HML
 
 > [!abstract] Resumo
 
-Pontos de teste detalhados para validar a migração da arquitetura Lambda para EKS (app-sogov), abrangendo workers SQS, CronJobs, migrações Prisma, autenticação, upload de arquivos, e‑mail, geração de PDFs, banco de dados, cache Redis, credenciais AWS (IRSA), CI/CD com ArgoCD, performance/escalabilidade e regressão funcional de GraphQL/REST.
+O time trocou a "sala de máquinas" do sistema — de Lambda (funções que rodavam sob demanda) pra pods em Kubernetes (EKS), sempre ligados. Pra quem usa o SoGov pela tela, **nada deveria mudar**: os mesmos botões, os mesmos fluxos, o mesmo resultado. Esta nota existe pra confirmar isso na prática, no novo ambiente de homologação.
 
-Esta nota nasce do processamento de 2 exports do Notion (`SKILL_LIMPEZA_EXPORT`, Modo B — card direto): o roteiro de testes original da SGV-8321 e a lista de bugs abertos/solucionados na rodada anterior de validação. Com o novo ambiente de homologação disponibilizado, a premissa é que os pontos de teste não mudaram — esta rodada existe pra confirmar isso.
+Nasce do processamento de 2 exports do Notion (`SKILL_LIMPEZA_EXPORT`, Modo B — card direto): o roteiro de testes original da SGV-8321 e a lista de bugs abertos/solucionados na rodada anterior. Reescrita em 2026-08-26 pra sair do tom técnico do export original (worker, SQS, initContainer, IRSA, ArgoCD) e virar algo que dá pra executar clicando na tela, do jeito que o resto do vault já faz.
 
 ---
 
 ## Regras de negócio
 
-Não há regra de negócio nova — a interface funcional (GraphQL/REST) não muda. O que muda é o **runtime**: de Lambda + API Gateway para pods em EKS (Fastify nativo), com workers SQS dedicados, CronJobs no lugar de Lambda Schedule, migrações Prisma via initContainer, IRSA no lugar de credenciais estáticas, e deploy via ArgoCD no lugar de `serverless deploy`. Cada bloco de Casos de Teste abaixo carrega o "por quê" (o que mudou na arquitetura que justifica o teste).
+Não existe regra de negócio nova — a interface continua a mesma. O que muda é **como o sistema processa por trás**: ações que antes aconteciam na hora (enviar e-mail, assinar, importar, gerar PDF) agora passam primeiro por uma fila de espera; tarefas programadas (avisos, expiração de convite, publicações) rodam por conta própria em vez de disparadas por evento; o deploy de cada versão nova atualiza o banco de dados sozinho antes de liberar o sistema. Cada grupo de Casos de Teste abaixo carrega uma nota curta do "por quê" quando o contexto ajuda a entender o risco.
 
 ---
 
@@ -47,39 +47,23 @@ Não há regra de negócio nova — a interface funcional (GraphQL/REST) não mu
 > - **3 bugs da rodada anterior são especificamente de POC** (SGV-9076, SGV-9074, SGV-8658, tag `[BUG-Arquitetura-POC]`, ambiente "POC1") — confirmar se esse ambiente de POC ainda existe/é relevante no novo ambiente de homologação antes de tentar revalidar esses três.
 > - O export original não trouxe "Responsáveis" preenchidos por ponto de teste (colunas vazias) — distribuir entre Rafael e Flávio ao iniciar a execução.
 > - **SGV-9530** ("Erro ao tentar ativar instância") está com status **Cancelado** na rodada anterior — não faz parte da revalidação.
+> - Esta nota separa dois tipos de verificação: **Casos de Teste** (dá pra clicar e observar sozinho na tela) e **Verificações técnicas** (dependem de log/painel/teste de carga feito pelo Dev ou Infra — não existe fluxo de tela pra elas). Ver as duas seções abaixo.
 
 ---
 
 ## Casos de Teste ([skill](../../../Sistema/Skills/SKILL_CASOS_DE_TESTE.md))
 
-### A. Workers SQS (NOVO modelo — Crítico)
+*O que dá pra clicar, observar e confirmar direto na tela.*
 
-Antes: SQS → trigger automático do Lambda. Agora: pod em loop com long-polling, escalado por KEDA.
+### A. Ações que agora passam por uma fila de espera antes de acontecer (Crítico)
 
-#### **CT-001 Processamento ponta a ponta em cada uma das 9 filas SQS** *(CA1)*
+Antes, ações como enviar e-mail, assinar documento ou importar arquivo aconteciam na hora. Agora cada uma passa primeiro por um processamento em segundo plano — pode levar alguns segundos a mais, e se uma travar, as outras continuam funcionando normalmente (não é mais tudo ou nada).
 
-**Dado** que uma mensagem é publicada em cada uma das filas (sendMail, signDocuments, sendNotification, documentImport, createDocumentObject, generateBIReports, generateDispatchPDFs, generateDocumentPDF, documentImportPending)
-**Quando** o worker dedicado da fila consome a mensagem
-**Então** o processamento ocorre ponta a ponta com sucesso, sem depender de trigger automático da AWS
+#### **CT-001 Enviar um e-mail pelo sistema continua funcionando** *(CA1)*
 
-> 💡 Cada fila agora tem um Deployment próprio; uma falha isolada não é mais detectada por trigger AWS.
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-002 Latência de pickup da mensagem SQS** *(CA2)*
-
-**Dado** que uma mensagem é publicada em qualquer uma das 9 filas
-**Quando** o worker faz long-poll (20s)
-**Então** a mensagem é processada em até 25s
-
-> 💡 Diferente do Lambda (~ms para invocar).
+**Dado** que eu realizo uma ação que dispara e-mail (ex.: enviar um convite de cadastro)
+**Quando** eu confirmo a ação
+**Então** verifico que o e-mail chega certo na caixa de entrada, em até 30 segundos
 
 **Execução Passou?**
 - [ ] Sim
@@ -90,13 +74,11 @@ Antes: SQS → trigger automático do Lambda. Agora: pod em loop com long-pollin
 
 ---
 
-#### **CT-003 Mensagens grandes / payload com caracteres especiais** *(CA3)*
+#### **CT-002 Assinar um documento continua funcionando** *(CA2)*
 
-**Dado** que uma mensagem SQS contém payload grande ou com caracteres especiais
-**Quando** o worker processa a mensagem
-**Então** o parser processa corretamente, sem truncar ou corromper o conteúdo
-
-> 💡 Parser pode diferir entre runtime Lambda e Node puro.
+**Dado** que eu tenho um documento pronto pra assinatura
+**Quando** eu assino
+**Então** verifico que o documento fica assinado corretamente, em até 30 segundos
 
 **Execução Passou?**
 - [ ] Sim
@@ -107,17 +89,11 @@ Antes: SQS → trigger automático do Lambda. Agora: pod em loop com long-pollin
 
 ---
 
-### B. CronJobs (NOVO — substituem Lambda Schedule)
+#### **CT-003 Receber uma notificação continua funcionando** *(CA3)*
 
-13 tarefas via `node scheduler.js --type <task>`: restore-email, update-work-status, expire-invitation, clear-temporary-modules, notify-contract-expiration, publish-on-wall, activate-access-key, inactivate-access-key, check-downtime-modules-edit, notify-deadline-expiration, generate-bi-reports, generate-dispatch-pdfs, notify-publish-documents.
-
-#### **CT-004 Cada CronJob executa no horário esperado** *(CA4)*
-
-**Dado** que cada uma das 13 tarefas está agendada como CronJob no Kubernetes
-**Quando** o horário programado chega
-**Então** a tarefa executa no horário esperado, confirmado nos logs (atenção a fuso UTC vs BRT)
-
-> 💡 Schedule agora é cron string; erro de fuso é comum.
+**Dado** que uma ação minha ou de outro usuário deveria gerar notificação (ex.: documento tramitado pra mim)
+**Quando** essa ação acontece
+**Então** verifico que a notificação chega pra mim, em até 30 segundos
 
 **Execução Passou?**
 - [ ] Sim
@@ -128,13 +104,11 @@ Antes: SQS → trigger automático do Lambda. Agora: pod em loop com long-pollin
 
 ---
 
-#### **CT-005 Idempotência do CronJob (ex.: restore-email)** *(CA5)*
+#### **CT-004 Importar um documento continua funcionando** *(CA4)*
 
-**Dado** que a tarefa `restore-email` já executou uma vez
-**Quando** ela é executada novamente (retry/re-run)
-**Então** os e-mails não são duplicados
-
-> 💡 Em CronJob com falha + retry, pode haver re-execução — no Lambda os retries automáticos eram raros.
+**Dado** que eu tenho um arquivo pra importar como documento
+**Quando** eu importo
+**Então** verifico que o documento é criado corretamente a partir do arquivo, em até 30 segundos
 
 **Execução Passou?**
 - [ ] Sim
@@ -145,17 +119,11 @@ Antes: SQS → trigger automático do Lambda. Agora: pod em loop com long-pollin
 
 ---
 
-### C. Migrações Prisma via initContainer (NOVO fluxo)
+#### **CT-005 Criar um documento continua funcionando** *(CA5)*
 
-Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.prisma`) em um initContainer antes do pod principal subir.
-
-#### **CT-006 Deploy aplica migração nos 3 schemas** *(CA6)*
-
-**Dado** um novo deploy da aplicação
-**Quando** o initContainer executa `prisma migrate deploy`
-**Então** os 3 schemas (principal, BI, transition) são migrados com sucesso
-
-> 💡 Schema transition é novo; não existia em produção.
+**Dado** que eu preencho os dados de um novo documento
+**Quando** eu confirmo a criação
+**Então** verifico que o documento é criado com sucesso, em até 30 segundos
 
 **Execução Passou?**
 - [ ] Sim
@@ -166,13 +134,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-007 Falha de migração impede o pod de subir** *(CA7)*
+#### **CT-006 Gerar um relatório de BI continua funcionando** *(CA6)*
 
-**Dado** que uma migração Prisma falha no initContainer
-**Quando** o Kubernetes tenta subir o pod principal
-**Então** o rollout fica preso (pod não vira Ready)
-
-> 💡 Antes era "deploy primeiro, migrate depois"; agora o pod só fica Ready se a migration passar.
+**Dado** que eu solicito um relatório de BI
+**Quando** eu confirmo a geração
+**Então** verifico que o relatório fica disponível, com os dados corretos
 
 **Execução Passou?**
 - [ ] Sim
@@ -183,26 +149,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-008 Múltiplos pods subindo simultaneamente não causam lock duplo no DB** *(CA8)*
+#### **CT-007 Gerar PDF de vários despachos de uma vez continua funcionando** *(CA7)*
 
-**Dado** que múltiplos pods sobem ao mesmo tempo (ex.: rolling update)
-**Quando** cada um roda seu initContainer de migração
-**Então** o advisory lock do Prisma evita conflito/lock duplo no banco
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-009 Rollback do ArgoCD após migração preserva dados** *(CA9)*
-
-**Dado** um deploy com migração já aplicada
-**Quando** o ArgoCD faz rollback para a versão anterior
-**Então** os dados são preservados e a aplicação volta a funcionar (migrações são forward-only — validar o comportamento real)
+**Dado** que eu selecionei vários despachos
+**Quando** eu peço pra gerar/baixar o PDF de todos juntos
+**Então** verifico que todos os PDFs são gerados corretamente
 
 **Execução Passou?**
 - [ ] Sim
@@ -213,15 +164,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### D. Autenticação, Sessão e Cookies (Mudanças sutis — Alto risco)
+#### **CT-008 Gerar o PDF final de um documento assinado continua funcionando** *(CA8)*
 
-#### **CT-010 Cookie de sessão com Domain/SameSite/Secure corretos por ambiente** *(CA10)*
-
-**Dado** um login bem-sucedido em qualquer ambiente (dev/hom/prod)
-**Quando** o cookie `session_*` é definido
-**Então** `Domain`, `SameSite` e `Secure` estão corretos para o ambiente
-
-> 💡 Vars `APPLICATION_AUTH_DOMAIN` e `APPLICATION_AUTH_SAME_SITE` foram adicionadas/alteradas.
+**Dado** que eu tenho um documento pronto pra emissão/assinatura
+**Quando** eu peço pra gerar o PDF final
+**Então** verifico que o PDF sai correto e disponível pra download
 
 **Execução Passou?**
 - [ ] Sim
@@ -232,26 +179,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-011 Multi-tenant: troca de instância grava cookie instanceId** *(CA11)*
+#### **CT-009 Retomar uma importação que ficou pendente continua funcionando** *(CA9)*
 
-**Dado** um usuário autenticado
-**Quando** ele troca de instância
-**Então** o cookie `instanceId` é gravado e o backend o respeita nas próximas chamadas
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-012 Logout limpa cookie em todos os subdomínios** *(CA12)*
-
-**Dado** um usuário autenticado em um subdomínio
-**Quando** ele faz logout
-**Então** o cookie de sessão é limpo em todos os subdomínios (não apenas no atual)
+**Dado** que uma importação de documento minha ficou pendente
+**Quando** eu volto mais tarde pra conferir
+**Então** verifico que ela concluiu sozinha, sem ficar travada pra sempre
 
 **Execução Passou?**
 - [ ] Sim
@@ -262,13 +194,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-013 Sessões legadas (criadas no Lambda) continuam válidas** *(CA13)*
+#### **CT-010 Texto longo ou com acentos/caracteres especiais não trava nenhuma dessas ações** *(CA10)*
 
-**Dado** uma sessão criada antes do cutover para EKS
-**Quando** o usuário acessa a aplicação já em EKS
-**Então** a sessão legada continua válida, sem deslogar o usuário
-
-> 💡 DbAuth deve re-encriptar; validar que usuários ativos não são deslogados no cutover.
+**Dado** que eu preencho um campo com texto longo, acentos ou caracteres especiais (ex.: "ç", "ã", símbolos)
+**Quando** eu realizo qualquer uma das ações acima (CT-001 a CT-009)
+**Então** verifico que o conteúdo chega correto do outro lado, sem cortar ou corromper
 
 **Execução Passou?**
 - [ ] Sim
@@ -279,28 +209,15 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-014 Login com SameSite=Strict em fluxo cross-site** *(CA14)*
+### B. Convite, prazo e publicação automática
 
-**Dado** um fluxo cross-site (ex.: link de e-mail abrindo em nova aba)
-**Quando** o usuário faz login
-**Então** o login funciona mesmo com `SameSite=Strict` configurado
+Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nada.
 
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
+#### **CT-011 Convite de cadastro expira no prazo certo** *(CA11)*
 
-**Evidências de Testes:**
-
----
-
-### E. Upload de Arquivos (S3 presigned URL)
-
-#### **CT-015 Upload de arquivo maior que 6 MB** *(CA15)*
-
-**Dado** um arquivo maior que 6 MB (limite antigo do Lambda)
-**Quando** o upload é realizado
-**Então** o upload é concluído com sucesso, sem a restrição antiga
+**Dado** que eu enviei um convite de cadastro pra alguém
+**Quando** o prazo de validade do convite passa
+**Então** verifico que o convite não pode mais ser usado
 
 **Execução Passou?**
 - [ ] Sim
@@ -311,28 +228,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-016 Upload de arquivos grandes (50 MB, 100 MB, 500 MB)** *(CA16)*
+#### **CT-012 Aviso de prazo de processo vencendo chega no dia certo** *(CA12)*
 
-**Dado** arquivos de 50 MB, 100 MB e 500 MB
-**Quando** o upload é realizado
-**Então** cada upload é concluído com sucesso (validar `client_max_body_size` no Ingress/ALB/Istio)
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-017 Presigned URL expira corretamente** *(CA17)*
-
-**Dado** uma presigned URL de upload gerada
-**Quando** o tempo configurado de expiração passa
-**Então** a tentativa de uso retorna 403
-
-> 💡 SDK v3 tem comportamento ligeiramente diferente do v2.
+**Dado** que um processo/documento meu está com prazo perto de vencer
+**Quando** a data de aviso programada chega
+**Então** verifico que o aviso/notificação chega certinho
 
 **Execução Passou?**
 - [ ] Sim
@@ -343,28 +243,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-018 Anexos em texto longo (endpoint dedicado)** *(CA18)*
+#### **CT-013 Aviso de contrato de cliente vencendo chega no dia certo** *(CA13)*
 
-**Dado** um anexo vinculado a um campo de texto longo
-**Quando** o upload usa o endpoint `getSignedUrlToUploadAttachmentInBigText`
-**Então** o upload funciona corretamente
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-019 Upload simultâneo de múltiplos arquivos** *(CA19)*
-
-**Dado** múltiplos arquivos selecionados para upload
-**Quando** os uploads são disparados simultaneamente
-**Então** todos são concluídos corretamente, sem falhas de conexão
-
-> 💡 Conexões keep-alive em pods longos podem se comportar diferente.
+**Dado** que um contrato de cliente está perto do vencimento
+**Quando** a data de aviso programada chega
+**Então** verifico que quem precisa saber é avisado
 
 **Execução Passou?**
 - [ ] Sim
@@ -375,13 +258,31 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### F. E-mail (SES SDK v2 → v3 + nodemailer)
+#### **CT-014 Documento programado pra publicar no mural sai na data certa** *(CA14)*
 
-#### **CT-020 Envio direto de e-mail (bySqs=false)** *(CA20)*
+**Dado** que eu programei um documento pra publicar no mural numa data futura
+**Quando** essa data chega
+**Então** verifico que ele é publicado sozinho, sem eu precisar fazer nada manualmente
 
-**Dado** uma ação que dispara e-mail direto (sem fila)
-**Quando** o envio é processado
-**Então** o e-mail é entregue corretamente
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+> [!info]- Rotinas sem tela pra observar direto
+> Existem outras rotinas automáticas (limpeza de módulos temporários, atualização de status de trabalho, ativação/inativação de chave de acesso, aviso de módulo fora do ar, geração agendada de relatórios) que não têm uma tela específica pra eu conferir sozinho — ficam na seção **Verificações técnicas**, no fim desta nota.
+
+---
+
+### C. Login, troca de instância e sessão (Alto risco)
+
+#### **CT-015 Login funciona normalmente** *(CA15)*
+
+**Dado** que eu tenho usuário e senha válidos
+**Quando** eu faço login
+**Então** verifico que entro normalmente e fico conectado
 
 **Execução Passou?**
 - [ ] Sim
@@ -392,26 +293,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-021 Envio via fila sendMail (bySqs=true)** *(CA21)*
+#### **CT-016 Trocar de prefeitura/instância mostra os dados certos** *(CA16)*
 
-**Dado** uma ação que dispara e-mail via fila `sendMail`
-**Quando** o worker novo consome a mensagem
-**Então** o e-mail é entregue corretamente
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-022 Templates React Email + Handlebars renderizam corretamente** *(CA22)*
-
-**Dado** um e-mail transacional (ex.: convite, boas-vindas, notificação)
-**Quando** o template é renderizado
-**Então** o HTML sai correto e sem quebra de formatação
+**Dado** que eu tenho acesso a mais de uma instância
+**Quando** eu troco de instância pelo seletor
+**Então** verifico que os dados exibidos mudam pra da instância selecionada, sem misturar com a anterior
 
 **Execução Passou?**
 - [ ] Sim
@@ -422,26 +308,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-023 E-mails com anexos** *(CA23)*
+#### **CT-017 Logout desconecta de verdade** *(CA17)*
 
-**Dado** um e-mail que deve incluir anexo
-**Quando** ele é enviado pelo novo nodemailer
-**Então** o anexo chega corretamente (sem corromper encoding/multipart)
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-024 Bounce/complaint handling** *(CA24)*
-
-**Dado** um envio que gera bounce ou complaint
-**Quando** o SES processa o evento
-**Então** o comportamento é tratado corretamente (vars `AWS_SES_HOST/PORT/CREDENTIAL_USER` foram removidas — agora é SDK puro)
+**Dado** que eu estou logado
+**Quando** eu clico em sair
+**Então** verifico que realmente saio — ao tentar acessar uma página interna de novo, sou redirecionado pro login
 
 **Execução Passou?**
 - [ ] Sim
@@ -452,13 +323,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### G. Geração de PDF (assíncrona via fila)
+#### **CT-018 Continuo logado depois da atualização do sistema** *(CA18)*
 
-#### **CT-025 Geração PAdES completa (mutation → polling → download)** *(CA25)*
-
-**Dado** uma solicitação de geração de PDF assinado (PAdES)
-**Quando** a mutation dispara, o status é consultado via polling e o download é solicitado
-**Então** o fluxo completo funciona ponta a ponta via SQS + worker `generateDocumentPDF`
+**Dado** que eu já estava logado antes da virada pra nova versão do sistema
+**Quando** o sistema muda de versão
+**Então** verifico que continuo conectado, sem ser desconectado à força
 
 **Execução Passou?**
 - [ ] Sim
@@ -469,26 +338,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-026 Geração de despachos em lote** *(CA26)*
+#### **CT-019 Login funciona a partir de um link de e-mail aberto em nova aba** *(CA19)*
 
-**Dado** múltiplos despachos selecionados
-**Quando** a geração em lote é disparada (`generateDispatchPDFs`)
-**Então** todos os PDFs são gerados sem estourar `activeDeadlineSeconds`
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-027 Tempo de geração comparável ao baseline do Lambda** *(CA27)*
-
-**Dado** um cenário de geração de PDF equivalente ao usado como baseline no Lambda
-**Quando** o tempo total é medido no novo ambiente
-**Então** o tempo é comparável (documentar se está mais rápido ou mais lento e por quê)
+**Dado** que eu recebo um e-mail com link de ação (ex.: convite, redefinição de senha)
+**Quando** eu clico no link e ele abre numa aba nova
+**Então** verifico que consigo fazer login normalmente nessa aba
 
 **Execução Passou?**
 - [ ] Sim
@@ -499,28 +353,13 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-028 Concorrência: múltiplos usuários gerando PDF simultaneamente** *(CA28)*
+### D. Upload e download de arquivos
 
-**Dado** múltiplos usuários solicitando geração de PDF ao mesmo tempo
-**Quando** as solicitações chegam simultaneamente
-**Então** o KEDA escala os workers de PDF e todas as gerações são concluídas
+#### **CT-020 Upload de arquivo grande (acima de 6MB) funciona** *(CA20)*
 
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-### H. Banco de Dados (Read replicas e múltiplos schemas)
-
-#### **CT-029 Queries de leitura usando DATABASE_URL_RO** *(CA29)*
-
-**Dado** uma operação de leitura
-**Quando** ela é roteada para a replica de leitura
-**Então** os dados retornam corretamente via `DATABASE_URL_RO`
+**Dado** que eu tenho um arquivo maior que 6MB
+**Quando** eu faço upload dele (documento, anexo, foto de perfil, logo da instância)
+**Então** verifico que o upload conclui com sucesso (antes existia um limite de 6MB que não existe mais)
 
 **Execução Passou?**
 - [ ] Sim
@@ -531,26 +370,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-030 Relatórios BI usando DATABASE_BI_URL_RO** *(CA30)*
+#### **CT-021 Upload de arquivos bem grandes (50, 100, 500MB) funciona** *(CA21)*
 
-**Dado** a geração de um relatório BI
-**Quando** a consulta é executada
-**Então** os dados retornam corretamente via `DATABASE_BI_URL_RO`
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-031 Lag de replicação não causa dados "sumidos" após escrita** *(CA31)*
-
-**Dado** uma escrita recém-realizada
-**Quando** uma leitura é feita logo em seguida (replica RO)
-**Então** o dado aparece corretamente, sem sumir por lag de replicação
+**Dado** que eu tenho arquivos bem grandes
+**Quando** eu tento o upload
+**Então** verifico que ele conclui, ou — se houver um limite — que a mensagem de erro é clara
 
 **Execução Passou?**
 - [ ] Sim
@@ -561,26 +385,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-032 Connection pool não esgota sob carga** *(CA32)*
+#### **CT-022 Link de upload/download não fica válido pra sempre** *(CA22)*
 
-**Dado** múltiplos pods rodando simultaneamente (`connection_limit=1` por pod)
-**Quando** a carga aumenta (replicaCount × workers)
-**Então** o pod não esgota conexões com o banco
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-033 Schema transition não interfere com o schema principal** *(CA33)*
-
-**Dado** o schema `transition/schema.prisma` (novo, staging de migração de dados)
-**Quando** operações rodam no schema principal
-**Então** não há interferência entre os dois schemas
+**Dado** que eu tenho um link de upload/download gerado pelo sistema
+**Quando** eu tento usá-lo bem depois de ele ter sido gerado
+**Então** verifico que ele já não funciona mais (expirou) — checagem de segurança
 
 **Execução Passou?**
 - [ ] Sim
@@ -591,13 +400,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### I. Cache Redis (opcional — novo no fluxo)
+#### **CT-023 Anexar arquivo em campo de texto longo funciona** *(CA23)*
 
-#### **CT-034 App funciona com USE_REDIS_CACHE=false** *(CA34)*
-
-**Dado** a variável `USE_REDIS_CACHE=false` (default)
-**Quando** a aplicação opera normalmente
-**Então** ela funciona corretamente usando fallback para o banco
+**Dado** que eu tenho um formulário com campo de texto longo que aceita anexo
+**Quando** eu anexo um arquivo nesse campo
+**Então** verifico que ele é salvo corretamente
 
 **Execução Passou?**
 - [ ] Sim
@@ -608,26 +415,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-035 App funciona com Redis habilitado** *(CA35)*
+#### **CT-024 Vários uploads ao mesmo tempo não travam** *(CA24)*
 
-**Dado** o Redis habilitado
-**Quando** funcionalidades como `userCache.getUserLastEnvironment/Activity` são usadas
-**Então** elas funcionam corretamente usando o cache
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-036 Queda do Redis não derruba a aplicação** *(CA36)*
-
-**Dado** o Redis habilitado e em uso
-**Quando** o Redis cai durante a operação
-**Então** a aplicação degrada graciosamente, sem cair junto
+**Dado** que eu selecionei vários arquivos
+**Quando** eu envio todos de uma vez
+**Então** verifico que todos concluem certo, sem nenhum travar ou corromper
 
 **Execução Passou?**
 - [ ] Sim
@@ -638,28 +430,13 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### J. IRSA / Credenciais AWS (Crítico em prod)
+### E. Conteúdo e aparência dos e-mails do sistema
 
-#### **CT-037 Pod acessa S3 sem AWS_ACCESS_KEY_ID no env** *(CA37)*
+#### **CT-025 E-mails do sistema chegam corretamente** *(CA25)*
 
-**Dado** um pod sem `AWS_ACCESS_KEY_ID` definido no ambiente
-**Quando** ele precisa acessar o S3
-**Então** o acesso funciona via IRSA (obrigatório em prod)
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-038 Pod envia e-mails via SES sem credenciais estáticas** *(CA38)*
-
-**Dado** um pod sem credenciais estáticas configuradas
-**Quando** ele envia e-mail via SES
-**Então** o envio funciona via IRSA
+**Dado** que eu realizo uma ação que dispara e-mail
+**Quando** o e-mail é enviado
+**Então** verifico que ele chega normalmente na caixa de entrada
 
 **Execução Passou?**
 - [ ] Sim
@@ -670,26 +447,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-039 Worker SQS lê/deleta mensagens via IRSA** *(CA39)*
+#### **CT-026 Aparência dos e-mails está correta** *(CA26)*
 
-**Dado** um worker SQS operando via Service Account (IRSA)
-**Quando** ele lê e deleta mensagens da fila
-**Então** as permissões da Service Account são suficientes e a operação funciona
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-040 Erros 403/AccessDenied retornam mensagem clara nos logs** *(CA40)*
-
-**Dado** um erro de permissão IRSA (403/AccessDenied)
-**Quando** ele ocorre em qualquer integração AWS
-**Então** o log traz uma mensagem clara o suficiente para diagnóstico
+**Dado** que eu recebo um e-mail do sistema
+**Quando** eu abro
+**Então** verifico que o layout e o texto aparecem certos, sem quebra de formatação
 
 **Execução Passou?**
 - [ ] Sim
@@ -700,13 +462,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### K. CI/CD e Deploy via ArgoCD
+#### **CT-027 E-mail com anexo chega correto** *(CA27)*
 
-#### **CT-041 Promoção dev → hom → prod via auto-MR** *(CA41)*
-
-**Dado** uma alteração aprovada
-**Quando** ela é promovida de dev para hom e depois para prod via auto-MR
-**Então** o fluxo funciona corretamente (substitui o antigo `serverless deploy`)
+**Dado** que eu recebo um e-mail que deveria vir com anexo
+**Quando** eu abro
+**Então** verifico que o anexo está lá e abre sem problema
 
 **Execução Passou?**
 - [ ] Sim
@@ -717,26 +477,13 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-042 Rollback de versão no ArgoCD restaura app funcional** *(CA42)*
+#### **CT-028 Logo do SOGOV aparece no e-mail "Finalize seu cadastro"** *(CA28)*
 
-**Dado** uma versão com problema em produção/homologação
-**Quando** o rollback é feito no ArgoCD
-**Então** a aplicação volta a funcionar normalmente na versão anterior
+**Dado** que eu sou um cidadão Pessoa Física recebendo o e-mail de finalização de cadastro
+**Quando** eu abro o e-mail
+**Então** verifico que a logo do SOGOV aparece corretamente
 
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-043 Preview environment cria namespace funcional** *(CA43)*
-
-**Dado** uma branch `feature/*`
-**Quando** o preview environment é criado
-**Então** o namespace `preview-<slug>` sobe com a aplicação funcional (recurso novo, não existia em Lambda)
+> 💡 Bug conhecido da rodada anterior (SGV-8602) — atenção redobrada aqui.
 
 **Execução Passou?**
 - [ ] Sim
@@ -747,26 +494,13 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-044 Cleanup automático do preview ao fechar/mergear MR** *(CA44)*
+### F. Geração e download de PDF (documentos e despachos)
 
-**Dado** um preview environment ativo
-**Quando** o MR correspondente é fechado ou mergeado
-**Então** o preview é removido automaticamente, sem deixar lixo no cluster
+#### **CT-029 Emitir/assinar e baixar documento em PDF funciona ponta a ponta** *(CA29)*
 
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-045 DB de preview isolado do DB de dev** *(CA45)*
-
-**Dado** um preview environment com migrações rodando
-**Quando** as migrações são aplicadas
-**Então** elas rodam em um DB próprio, sem poluir o DB de dev
+**Dado** que eu tenho um documento pronto pra emissão/assinatura
+**Quando** eu gero o PDF assinado e baixo
+**Então** verifico que o PDF sai correto
 
 **Execução Passou?**
 - [ ] Sim
@@ -777,13 +511,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### L. Performance e Escalabilidade
+#### **CT-030 Gerar PDF de vários despachos de uma vez funciona** *(CA30)*
 
-#### **CT-046 Locust com cenários atuais comparado ao Lambda** *(CA46)*
-
-**Dado** os cenários existentes (`scenarios.py`)
-**Quando** o Locust roda contra o novo ambiente
-**Então** p50/p95/p99 são comparáveis ao baseline do Lambda (obrigatório antes do cutover)
+**Dado** que eu selecionei vários despachos
+**Quando** eu peço a geração em lote
+**Então** verifico que todos saem corretos
 
 **Execução Passou?**
 - [ ] Sim
@@ -794,26 +526,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-#### **CT-047 HPA escala o Deployment principal sob carga** *(CA47)*
+#### **CT-031 Tempo de geração de PDF continua razoável** *(CA31)*
 
-**Dado** carga de 100/500/1000 VUs
-**Quando** a carga aumenta
-**Então** o HPA escala o Deployment principal corretamente
-
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-048 Limites de CPU/memória suficientes para PDF/BI** *(CA48)*
-
-**Dado** os `resources.limits` configurados para os pods de PDF/BI
-**Quando** operações pesadas de PDF/BI rodam
-**Então** não ocorre OOMKill
+**Dado** que eu gero um PDF (documento ou despacho)
+**Quando** eu comparo com o tempo que levava antes da mudança
+**Então** verifico que não está visivelmente mais lento
 
 **Execução Passou?**
 - [ ] Sim
@@ -824,15 +541,11 @@ Agora rodam 3 schemas (`schema.prisma`, `bi/schema.prisma`, `transition/schema.p
 
 ---
 
-### M. Regressão funcional GraphQL/REST
+#### **CT-032 Vários usuários gerando PDF ao mesmo tempo não trava o sistema** *(CA32)*
 
-Apesar de a interface GraphQL não ter mudado, o runtime mudou (Lambda+API Gateway → Fastify nativo em pod).
-
-#### **CT-049 Suite completa de regressão do app** *(CA49)*
-
-**Dado** os principais fluxos do app (workboard, kanban, busca, documentos, notificações, assinaturas, mural)
-**Quando** a suite de regressão é executada
-**Então** nada quebrou ao trocar o runtime
+**Dado** que mais de uma pessoa gera PDF ao mesmo tempo (testar com outro QA/colega, se possível)
+**Quando** as gerações acontecem juntas
+**Então** verifico que todas concluem normalmente, sem erro pra ninguém
 
 **Execução Passou?**
 - [ ] Sim
@@ -843,26 +556,13 @@ Apesar de a interface GraphQL não ter mudado, o runtime mudou (Lambda+API Gatew
 
 ---
 
-#### **CT-050 Endpoints REST legados continuam funcionando** *(CA50)*
+### G. O que eu cadastro aparece certo e na hora
 
-**Dado** o endpoint `/solicitacoes/listar-documentos` (e demais legados)
-**Quando** ele é chamado
-**Então** continua funcionando corretamente via Fastify
+#### **CT-033 O que acabei de cadastrar aparece na hora** *(CA33)*
 
-**Execução Passou?**
-- [ ] Sim
-- [ ] Não
-- [ ] Não se aplica
-
-**Evidências de Testes:**
-
----
-
-#### **CT-051 WebSockets/long-polling de notificações** *(CA51)*
-
-**Dado** uma notificação em tempo real
-**Quando** ela é entregue via WebSocket/long-polling
-**Então** a conexão longa se comporta corretamente fora do Lambda
+**Dado** que eu acabei de criar/editar algo (documento, setor, usuário)
+**Quando** eu vou pra tela que lista/mostra esse dado
+**Então** verifico que ele já aparece, sem precisar recarregar várias vezes
 
 **Execução Passou?**
 - [ ] Sim
@@ -873,11 +573,11 @@ Apesar de a interface GraphQL não ter mudado, o runtime mudou (Lambda+API Gatew
 
 ---
 
-#### **CT-052 Headers customizados preservados** *(CA52)*
+#### **CT-034 Relatórios de BI mostram números corretos** *(CA34)*
 
-**Dado** uma chamada com headers customizados (tenant header, correlation IDs)
-**Quando** ela chega ao backend
-**Então** os headers chegam intactos, sem manipulação indevida (o API Gateway antigo podia alterá-los)
+**Dado** que eu gero um relatório de BI
+**Quando** eu confiro os números
+**Então** verifico que eles batem com o que está cadastrado no sistema
 
 **Execução Passou?**
 - [ ] Sim
@@ -888,13 +588,76 @@ Apesar de a interface GraphQL não ter mudado, o runtime mudou (Lambda+API Gatew
 
 ---
 
-### N. Fora de execução — registro
+### H. Fluxos principais continuam funcionando (regressão geral)
+
+#### **CT-035 Fluxos principais do sistema continuam funcionando** *(CA35)*
+
+**Dado** que eu uso o sistema normalmente
+**Quando** eu passo pelos principais fluxos (mesa de trabalho, kanban, busca, documentos, notificações, assinaturas, mural)
+**Então** verifico que tudo funciona igual a antes da mudança de arquitetura
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-036 Integrações antigas continuam respondendo** *(CA36)*
+
+**Dado** que existe uma integração mais antiga usada por fora do sistema (ex.: listagem de documentos)
+**Quando** ela é chamada
+**Então** verifico que continua respondendo normalmente
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-037 Notificações em tempo real continuam chegando na hora** *(CA37)*
+
+**Dado** que uma ação minha ou de outro usuário gera notificação em tempo real
+**Quando** ela acontece
+**Então** verifico que a notificação chega na hora, sem eu precisar recarregar a página
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+### I. Fora de execução — registro
 
 *Só preencher quando algum CT acima for retirado/adiado desta rodada.*
 
 | Caso | Decisão | Motivo |
 |---|---|---|
 |  |  |  |
+
+---
+
+## Verificações técnicas
+
+*Mudanças de arquitetura sem tela pra eu observar direto — dependem de log, painel interno ou teste de carga feito pelo Dev/Infra. Não são CTs no sentido tradicional (não dá pra clicar sozinho), mas continuam sendo parte do que precisa ser confirmado antes de dar a migração por validada.*
+
+- [ ] Deploy de nova versão sobe sem erro, mesmo com a atualização automática do banco de dados durante a subida
+- [ ] Se a atualização do banco falhar durante um deploy, o sistema não fica no ar quebrado (trava a subida ou avisa claramente — pedir ao Dev pra simular esse cenário)
+- [ ] Reverter uma versão com problema (rollback) funciona e não perde dados
+- [ ] Rotinas automáticas "invisíveis" (limpeza de módulos temporários, atualização de status de trabalho, ativação/inativação de chave de acesso, aviso de módulo fora do ar, geração agendada de relatórios/PDFs em lote) rodam no horário certo, confirmado nos logs pelo Dev
+- [ ] Rodar a mesma rotina automática duas vezes não duplica nada (ex.: não duplica e-mail de recuperação de senha) — pedir ao Dev pra forçar a re-execução
+- [ ] Sistema continua funcionando igual com o cache (Redis) ligado ou desligado; se o cache cair no meio do uso, o sistema não sai do ar
+- [ ] Acesso a arquivos e envio de e-mail não dependem de senha fixa configurada no código — checagem de segurança feita pelo Dev
+- [ ] Sistema aguenta carga de uso e picos de acesso sem cair (teste de performance feito pelo time de Infra, comparado com a versão anterior)
+- [ ] Ambiente de teste temporário de uma branch (se for usado durante o projeto) funciona durante o teste e some sozinho depois que o MR é fechado/mergeado
 
 ---
 
@@ -912,47 +675,48 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 
 ## Regressão — bugs da rodada anterior
 
-24 bugs foram abertos na rodada anterior de validação da nova arquitetura (export "itens que foram abertos e solucionados na rodada anterior"). **Não viraram cards individuais no vault** — isto é apenas uma checklist de referência para revalidação no novo ambiente de homologação. A coluna "Área correlacionada" é uma inferência a partir do título do bug cruzado com as 13 áreas técnicas do plano acima (seção Casos de Teste) — títulos sem contexto adicional (só o que veio no export) podem estar incorretos, revisar ao executar.
+24 bugs foram abertos na rodada anterior de validação da nova arquitetura (export "itens que foram abertos e solucionados na rodada anterior"). **Não viraram cards individuais no vault** — isto é apenas uma checklist de referência para revalidação no novo ambiente de homologação. A coluna "CT correlacionado" aponta pro caso de teste prático (acima) que mais se aproxima do que o bug descreve — títulos sem contexto adicional (só o que veio no export) podem estar incorretos, revisar ao executar.
 
-| SGV | Título | Status rodada anterior | Área correlacionada | Revalidar em HML |
+| SGV | Título | Status rodada anterior | CT correlacionado | Revalidar em HML |
 |---|---|---|---|---|
 | SGV-9530 | Erro ao tentar ativar instância "Em implantação" | Cancelado | — | ☐ *(não se aplica — cancelado)* |
-| SGV-9076 | Erro ao excluir pré-cadastro de servidor (ambiente POC1) | Aprovado no Dev | Sem área clara — tag POC, confirmar se POC1 existe no novo ambiente | ☐ |
-| SGV-9074 | Erro ao selecionar localização em campo do tipo mapa (POC1) | Aprovado no Dev | Sem área clara — tag POC, confirmar se POC1 existe no novo ambiente | ☐ |
-| SGV-8820 | Sessão como Cidadão PJ não é persistida | Aprovado no Dev | D. Autenticação, Sessão e Cookies (CT-010/CT-013) | ☐ |
-| SGV-8806 | Impossibilidade de criar novos documentos | Aprovado no Dev | A. Workers SQS — fila `createDocumentObject` (CT-001) | ☐ |
-| SGV-8775 | Erro ao tentar realizar importação de documentos | Aprovado no Dev | A. Workers SQS — fila `documentImport` (CT-001) | ☐ |
-| SGV-8689 | Download de documento por cidadão não é realizado corretamente | Aprovado no Dev | E. Upload/Download S3 (CT-015/CT-017) | ☐ |
-| SGV-8688 | Erro ao tentar abrir qualquer solicitação como cidadão | Aprovado no Dev | D. Autenticação/Sessão ou M. Regressão (CT-010/CT-049) | ☐ |
-| SGV-8669 | Erro ao emitir documento para cliente (ambiente administrativo) | Aprovado no Dev | G. Geração de PDF (CT-025) | ☐ |
-| SGV-8661 | Documentos e despachos não carregam ao baixar documento personalizado | Aprovado no Dev | G. Geração de PDF (CT-025/CT-026) | ☐ |
-| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | E. Upload/Download S3 (CT-017) | ☐ |
-| SGV-8658 | Erro ao realizar ou solicitar Assinaturas (POC) | Aprovado no Dev | Sem área clara — tag POC; correlato a G. PDF/Assinatura (CT-025) se aplicável fora de POC | ☐ |
-| SGV-8609 | Falha ao cadastrar servidor no ambiente com nova arquitetura | Aprovado no Dev | C. Migrações Prisma ou H. Banco de Dados (CT-006/CT-029) | ☐ |
-| SGV-8602 | Logo do SOGOV não exibida no e-mail "Finalize seu cadastro" (cidadão PF) | Aprovado no Dev | F. E-mail — templates (CT-022) | ☐ |
-| SGV-8447 | Erro ao avançar etapa no cadastro via link | Aprovado no Dev | D. Autenticação — link cross-site (CT-014) | ☐ |
-| SGV-8446 | Erro ao enviar e-mail ao realizar cadastro de Servidor/cidadão | Aprovado no Dev | F. E-mail (CT-020/CT-021) | ☐ |
-| SGV-8381 | ApolloError: system.messages.something-went-wrong ao acessar tela inicial | Aprovado no Dev | M. Regressão GraphQL/REST (CT-049) | ☐ |
-| SGV-8377 | Erro ao tentar anexar arquivo em despacho | Aprovado no Dev | E. Upload de Arquivos (CT-015/CT-019) | ☐ |
-| SGV-8375 | Erro 500 ao realizar despacho com prazo | Aprovado no Dev | G. Geração de PDF ou M. Regressão (CT-026/CT-049) | ☐ |
-| SGV-8372 | Erro ao realizar upload de imagem para perfil de Servidor/cidadão | Aprovado no Dev | E. Upload de Arquivos (CT-015) | ☐ |
-| SGV-8371 | Erro ao acessar link de convite para servidor | Aprovado no Dev | D. Autenticação — link (CT-014) | ☐ |
-| SGV-8366 | Erro ao realizar upload de imagem (logos) em instância | Aprovado no Dev | E. Upload de Arquivos (CT-015) | ☐ |
-| SGV-8365 | Erro ao criar documento | Aprovado no Dev | A. Workers SQS — fila `createDocumentObject` (CT-001) | ☐ |
-| SGV-8362 | Erro ao consultar CPF/CNPJ | Aprovado no Dev | Sem área clara — integração externa não citada nas 13 áreas do plano | ☐ |
+| SGV-9076 | Erro ao excluir pré-cadastro de servidor (ambiente POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☐ |
+| SGV-9074 | Erro ao selecionar localização em campo do tipo mapa (POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☐ |
+| SGV-8820 | Sessão como Cidadão PJ não é persistida | Aprovado no Dev | CT-015 / CT-018 (Login e sessão) | ☐ |
+| SGV-8806 | Impossibilidade de criar novos documentos | Aprovado no Dev | CT-005 (Criar documento) | ☐ |
+| SGV-8775 | Erro ao tentar realizar importação de documentos | Aprovado no Dev | CT-004 (Importar documento) | ☐ |
+| SGV-8689 | Download de documento por cidadão não é realizado corretamente | Aprovado no Dev | CT-020 / CT-022 (Upload/download) | ☐ |
+| SGV-8688 | Erro ao tentar abrir qualquer solicitação como cidadão | Aprovado no Dev | CT-015 / CT-035 (Login ou regressão geral) | ☐ |
+| SGV-8669 | Erro ao emitir documento para cliente (ambiente administrativo) | Aprovado no Dev | CT-029 (Emitir/baixar documento) | ☐ |
+| SGV-8661 | Documentos e despachos não carregam ao baixar documento personalizado | Aprovado no Dev | CT-029 / CT-030 (Geração/download de PDF) | ☐ |
+| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☐ |
+| SGV-8658 | Erro ao realizar ou solicitar Assinaturas (POC) | Aprovado no Dev | Sem CT claro — tag POC; correlato a CT-029 (assinatura) se aplicável fora de POC | ☐ |
+| SGV-8609 | Falha ao cadastrar servidor no ambiente com nova arquitetura | Aprovado no Dev | Sem CT claro — pode estar ligado ao deploy (ver Verificações técnicas), confirmar contexto | ☐ |
+| SGV-8602 | Logo do SOGOV não exibida no e-mail "Finalize seu cadastro" (cidadão PF) | Aprovado no Dev | CT-028 (Logo no e-mail de cadastro) | ☐ |
+| SGV-8447 | Erro ao avançar etapa no cadastro via link | Aprovado no Dev | CT-019 (Login via link de e-mail) | ☐ |
+| SGV-8446 | Erro ao enviar e-mail ao realizar cadastro de Servidor/cidadão | Aprovado no Dev | CT-025 (E-mails do sistema) | ☐ |
+| SGV-8381 | ApolloError: system.messages.something-went-wrong ao acessar tela inicial | Aprovado no Dev | CT-035 (Regressão geral) | ☐ |
+| SGV-8377 | Erro ao tentar anexar arquivo em despacho | Aprovado no Dev | CT-020 / CT-024 (Upload de arquivo) | ☐ |
+| SGV-8375 | Erro 500 ao realizar despacho com prazo | Aprovado no Dev | CT-030 / CT-035 (PDF em lote ou regressão) | ☐ |
+| SGV-8372 | Erro ao realizar upload de imagem para perfil de Servidor/cidadão | Aprovado no Dev | CT-020 (Upload de arquivo) | ☐ |
+| SGV-8371 | Erro ao acessar link de convite para servidor | Aprovado no Dev | CT-019 (Login via link) | ☐ |
+| SGV-8366 | Erro ao realizar upload de imagem (logos) em instância | Aprovado no Dev | CT-020 (Upload de arquivo) | ☐ |
+| SGV-8365 | Erro ao criar documento | Aprovado no Dev | CT-005 (Criar documento) | ☐ |
+| SGV-8362 | Erro ao consultar CPF/CNPJ | Aprovado no Dev | Sem CT claro — integração externa não coberta pelos CTs acima | ☐ |
 
-**Leitura geral:** a maioria dos bugs da rodada anterior (17 dos 24) correlaciona claramente com áreas centrais da migração (Workers SQS, Autenticação/Sessão, Upload de Arquivos, E-mail, Geração de PDF) — o que é esperado, dado que essas são justamente as áreas com maior mudança de runtime. 3 são especificamente de POC (ambiente separado, confirmar se ainda existe). 1 foi cancelado. 3 não têm área clara o suficiente pelo título isolado (SGV-8688, SGV-8609, SGV-8362) — vale confirmar contexto antes de revalidar.
+**Leitura geral:** a maioria dos bugs da rodada anterior (17 dos 24) correlaciona claramente com casos de teste práticos já listados acima — o que é esperado, dado que essas são justamente as áreas com maior mudança por trás da tela (documentos, sessão, upload, e-mail, PDF). 3 são especificamente de POC (ambiente separado, confirmar se ainda existe). 1 foi cancelado. 3 não têm CT claro pelo título isolado (SGV-8609, SGV-8688, SGV-8362) — vale confirmar contexto antes de revalidar.
 
 ---
 
 > [!tip] Observações
-> - Origem: 2 exports do Notion processados em 2026-08-26 (`SKILL_LIMPEZA_EXPORT`, Modo B) — plano de testes original da SGV-8321 e lista de bugs da rodada anterior.
+> - Origem: 2 exports do Notion processados em 2026-08-26 (`SKILL_LIMPEZA_EXPORT`, Modo B) — plano de testes original da SGV-8321 e lista de bugs da rodada anterior. Reescrita no mesmo dia pra sair do tom técnico do export (worker, SQS, initContainer, IRSA, ArgoCD) e virar Casos de Teste no formato Dado/Quando/Então que dá pra executar clicando na tela, separando o que é tecnicamente inobservável em "Verificações técnicas".
 > - Escopo desta rodada: apenas documentação/preparo. Execução manual no novo ambiente de homologação é o próximo passo, condicionado a ter URL/acesso do ambiente.
-> - Ordem de execução recomendada: priorizar primeiro os blocos marcados como "Crítico"/"Alto risco" no plano original — A. Workers SQS, C. Migrações Prisma, D. Autenticação/Sessão/Cookies, J. IRSA — e rodar a checklist de regressão dos 24 bugs em paralelo aos blocos correlacionados. Blocos de menor risco (I. Redis, L. Performance) podem vir depois.
+> - Ordem de execução recomendada: priorizar primeiro o grupo **A** (ações que passam pela fila de espera) e **C** (login/sessão) — são os de maior risco — e rodar a checklist de regressão dos 24 bugs em paralelo aos CTs correlacionados. As Verificações técnicas podem ser combinadas com o Dev em paralelo, sem bloquear os Casos de Teste.
 > - Automação via `sogov-automation-test` (skills `criar-teste-api`/`criar-teste-e2e` do repo) é um passo posterior, só depois que a validação manual confirmar que os pontos realmente não mudaram — mesmo padrão já seguido no TR 1.24-1.25.
 
 ---
 
 ## Histórico
 
-- 2026-08-26 - 📝 Plano de teste criado a partir do export do Notion (SGV-8321), 52 CTs organizados em 13 áreas técnicas, com checklist de regressão dos 24 bugs da rodada anterior anexada. Motivado pela disponibilização de novo ambiente de homologação com a nova arquitetura.
+- 2026-08-26 - 📝 Plano de teste criado a partir do export do Notion (SGV-8321), 52 pontos técnicos organizados em 13 áreas.
+- 2026-08-26 - 📝 Casos de Teste reescritos (37 CTs práticos em 8 grupos + checklist de "Verificações técnicas" separada) a pedido do Rafael — a primeira versão estava técnica demais (linguagem de worker/SQS/IRSA/ArgoCD), sem bater com o padrão do resto do vault de testar pelo que o usuário vê e faz na tela.
