@@ -22,10 +22,22 @@ date: 2026-07-13
 | Templater               | `templater-obsidian`         | Templates dinâmicos (ex.: data automática)    |
 | Dataview                | `dataview`                   | Consultas e listagens dinâmicas sobre notas (usado na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]]) |
 | Slides Extended         | `slides-extended`            | Apresentações a partir de notas               |
-| Minimal Theme Settings  | `obsidian-minimal-settings`  | Configurações do tema Minimal                 |
+| Minimal Theme Settings  | `obsidian-minimal-settings`  | Configurações do tema Minimal (só relevante se o tema Minimal voltar a ser o ativo — ver [[#Tema (aparência)]]) |
 | Editing Toolbar         | `editing-toolbar`            | Barra de formatação estilo Word no modo de edição |
 | Homepage                | `homepage`                   | Abre a [[../../QA Workspace/Dashboard/Dashboard\|Dashboard]] automaticamente ao abrir o vault; botão na ribbon + comando com atalho |
 | Obsidian Git            | `obsidian-git`               | Versionamento/sincronização automática do vault (pull ao abrir; commit+push a cada 10 min) |
+| Style Settings          | `obsidian-style-settings`    | Controles de customização visual de tema/hierarquia (cores, cabeçalhos, contraste) — usado pelo tema Blue Topaz, ver [[#Tema (aparência)]] |
+
+## Tema (aparência)
+
+Tema ativo: **Blue Topaz** (`appearance.json` → `cssTheme: "Blue Topaz"`). Instalado **manualmente** (sem o navegador de temas comunitário do Obsidian, que não estava disponível na sessão que fez a troca) a partir do repositório oficial listado no `community-css-themes.json` do Obsidian:
+
+- Repo: `pkm-er/Blue-Topaz_Obsidian-css`, branch `master`
+- Arquivos baixados: `manifest.json` + `theme.css` → colocados em `.obsidian/themes/Blue Topaz/`
+
+Depende do plugin **Style Settings** (`obsidian-style-settings`, tabela acima) pra expor os controles de hierarquia visual do tema — painel em **Settings → Style Settings → Blue Topaz**. O próprio README do tema recomenda esse plugin.
+
+O tema **Minimal** (usado antes) continua instalado em `.obsidian/themes/Minimal/` — não foi removido, só deixou de ser o `cssTheme` ativo. Pra voltar: trocar `cssTheme` de volta pra `"Minimal"` em `appearance.json`.
 
 ## Plugins Core (nativos) que precisam estar ligados
 - **Bases** — necessário pros arquivos `.base` funcionarem ([[../../QA Workspace/Dashboard/Bugs.base|Bugs.base]], [[../../QA Workspace/Dashboard/Demandas.base|Demandas.base]], [[../../QA Workspace/01 Daily/Índice Diário.base|Índice Diário.base]]). Em Settings → Core plugins.
@@ -161,7 +173,7 @@ Só funciona em Linux/GNOME/Nautilus. Em outro ambiente (macOS, Windows, outro D
 ## Setup Rápido (do zero)
 
 1. Abrir **Settings → Community plugins**, desativar **Safe mode**
-2. Procurar e instalar cada plugin da tabela acima pelo ID, ativar todos
+2. Procurar e instalar cada plugin da tabela acima pelo ID, ativar todos (se o navegador de temas comunitário estiver disponível, instalar o tema **Blue Topaz** por lá também — senão, baixar manualmente conforme [[#Tema (aparência)]] e ativar em Settings → Appearance)
 3. Habilitar os core plugins **Bases** e **Daily notes** (Settings → Core plugins)
 4. Configurar Daily Notes conforme a seção acima
 5. Configurar o atalho `Ctrl+L` pro Omnisearch (Settings → Hotkeys → buscar "Omnisearch")
