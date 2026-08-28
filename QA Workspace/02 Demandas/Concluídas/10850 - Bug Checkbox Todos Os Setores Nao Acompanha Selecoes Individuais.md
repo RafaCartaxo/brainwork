@@ -5,13 +5,14 @@ tags:
   - etiquetas
 task: "10850"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-13
-data_fim: ""
+data_fim: 2026-08-28
 responsavel: Rafael
 cadastrado_por: ""
 modulo: etiquetas
-ambiente: DEV
+ambiente: HML
+deploy: pendente_release
 ---
 # Checkbox "Todos os setores" não acompanha o estado das seleções individuais de setores
 
@@ -29,11 +30,13 @@ Durante validação foi identificado que, ao compartilhar uma etiqueta com **set
 
 ---
 
-### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10850)
+### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://10850)
 
 ![[10850 - checkbox nok.mp4]]
+*Reprodução em DEV (13/08).*
 
-*Sem evidência por enquanto.*
+![[10850 - seletor etiquetas ok.mp4]]
+*Aprovado em homologação (28/08).*
 
 ---
 
@@ -46,8 +49,8 @@ Durante validação foi identificado que, ao compartilhar uma etiqueta com **set
 
 ### Critérios de aceite
 
-- [ ] O checkbox **"Todos os setores"** seleciona e desseleciona todos os setores da lista ao ser acionado
-- [ ] As seleções individuais atualizam o checkbox mestre para **cheio**, **parcial/indeterminado** ou **vazio**, conforme o estado da lista
+- [x] O checkbox **"Todos os setores"** seleciona e desseleciona todos os setores da lista ao ser acionado
+- [x] As seleções individuais atualizam o checkbox mestre para **cheio**, **parcial/indeterminado** ou **vazio**, conforme o estado da lista
 
 ---
 
@@ -61,11 +64,13 @@ Durante validação foi identificado que, ao compartilhar uma etiqueta com **set
 **Então** o checkbox mestre marca todos ao ser acionado e reflete os estados cheio/parcial/vazio conforme as seleções
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[10850 - seletor etiquetas ok.mp4]]
 
 ---
 
@@ -83,6 +88,8 @@ Durante validação foi identificado que, ao compartilhar uma etiqueta com **set
 - Observações:
     - Relacionado ao seletor de setores do drawer — nota de **vizinhança** (não duplicata) adicionada no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]: o **Defeito 6** cobre a ausência de "Selecionados:", contador `+qtd` e limpar todos; a [[QA Workspace/02 Demandas/Concluídas/10842 - Defeito Select De Setores Parcialmente Oculto Ao Compartilhar Com Setores Especificos|SGV-10842]] cobre a ocultação do select por volume; este card cobre a **sincronização do checkbox mestre "Todos os setores"** com as seleções individuais — sintomas distintos do mesmo campo.
     - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
+    - **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] existe, mas não descreve o comportamento do checkbox mestre "Todos os setores" (estados cheio/parcial/vazio) — sem respaldo escrito, não é contradição. Lacuna a importar (fluxo 8).
 
 - Histórico:
     - 2026-08-13 - 🐛 Bug cadastrado (SGV-10850; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])
+    - 2026-08-28 - ✅ Aprovada em DEV e em homologação (etapas anteriores concluídas implicitamente) — segue pra Concluídas
