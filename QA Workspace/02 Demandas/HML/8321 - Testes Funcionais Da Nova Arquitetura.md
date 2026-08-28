@@ -668,6 +668,7 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 - 🐛 [[QA Workspace/02 Demandas/HML/Bug E-mail De Confirmacao De Cadastro Nao Chega No Novo Ambiente De Homologacao|Bug E-mail de confirmação de cadastro não chega]] — confirmado em 26/08/2026, CT-025 reprovado, sem SGV ainda.
 - 🐛 [[QA Workspace/02 Demandas/HML/11151 - Bug Documento Não É Criado Com Anexo No Módulo E No Assunto E Serviço|SGV-11151]] — cadastrado em 28/08/2026, documento não criado com anexo no módulo/assunto e serviço; não bate com CT existente (ver Observações do card).
 - 🐛 [[QA Workspace/02 Demandas/HML/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
+- 🐛 [[QA Workspace/02 Demandas/HML/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
 
 ---
 
@@ -727,3 +728,4 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-08-26 - 🐛 CT-025 reprovado — e-mail de confirmação de cadastro não chega no `dev.sogov.net` (confirmado via automação e checagem manual da caixa Gmail). Bug cadastrado sem SGV ainda.
 - 2026-08-28 - 🐛 SGV-11151 cadastrado — documento não criado com anexo no campo do módulo e no campo de assunto e serviço. Achado testando criação/anexo; sem CT correspondente na lista atual.
 - 2026-08-28 - 🐛 SGV-11153 cadastrado — regressão confirmada da SGV-8660 (tabela de Regressão): download da versão compactada do documento retorna erro.
+- 2026-08-28 - 🐛 SGV-11158 cadastrado — prévia de documento não carrega na tela de solicitação de assinatura. Sem CT/regressão exata correspondente.
