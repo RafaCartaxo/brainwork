@@ -3,24 +3,24 @@ tags:
   - qa
   - conhecimento
 tipo: referencia
-revisado: 2026-08-25
+revisado: 2026-08-28
 ---
-# NX Gest - Reposicionamento de identidade (PLAN-085)
+# NX Gest - Reposicionamento de identidade (PLAN-086)
 
 > [!info] Sobre esta nota
-> Plano **fechado e aprovado**, ainda **não executado**. Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[../README|04 Conhecimento]] (material de fora, resumido e linkado).
+> Plano **fechado e aprovado**, ainda **não executado** (mantido como **pendência** — será o **PLAN-086 do repo** quando entrar; o número real é atribuído na criação). Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[../README|04 Conhecimento]] (material de fora, resumido e linkado).
 > Template: [[../../../Sistema/Templates/Conhecimento|Conhecimento.md]].
-> Notas irmãs: [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
-> **Antes de executar:** [[NX Gest - Handoff de execução]] — ordem entre os planos, setup, baseline e colisões.
+> Notas irmãs: [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]].
+> **Orquestração:** [[NX Gest - Handoff de execução]].
 
 > [!warning] Numeração provisória
-> `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — **no repo o último plano é o PLAN-084**. O número definitivo é atribuído no momento em que cada plano for criado, na ordem em que efetivamente entrar. Não pré-reservar número (de PLAN nem de BR): foi o erro corrigido em 25/08.
+> O rótulo `PLAN-085` era provisório e **colidiu** com o plano de periodicidade alternada (que entrou como **PLAN-085**, executado em 27/08). Este plano de identidade será **PLAN-086** no repo; o plano de convite (anexo) será **PLAN-087**. Números atribuídos na criação, sem pré-reserva (de PLAN nem de BR): foi o erro corrigido em 25/08.
 
 ## Visão geral
 
 - **O quê:** alinhar a documentação canônica do NX Gest ao que o produto já é — de "sistema de gestão de cobranças em campo" para **plataforma modular de gestão operacional**, tendo *crédito em campo* como primeiro vertical.
 - **Natureza:** organização. Uma passada, escopo medido, docs-only (+3 strings user-facing). **Não é** rebrand, refatoração, migração de infra, nem antecipação de fase do roadmap.
-- **Estado:** plano aprovado em 21/08/2026. Nada implementado. Repo não clonado na máquina.
+- **Estado:** plano aprovado em 21/08/2026; **pendência registrada (28/08)** — será PLAN-086 no repo quando for executar. Repo clonado em `~/Documentos/Desenvolvimento/nxgestao`.
 - **Origem:** o plano completo foi gerado em sessão de IA e vive em `~/.claude/plans/eu-tinha-te-deixado-shiny-hummingbird.md` (caminho volátil — esta nota é a cópia durável).
 
 ## Regras de negócio
@@ -82,7 +82,7 @@ Gatilhos para promover o F4 a execução (**A, B ou C disparam sozinhos**):
 (1) Falha o escopo do próprio `02-BUSINESS-RULES.md` — "a plataforma é modular" não governa entidade, nenhum request a viola. (2) Falha o checklist SKILL-009 §4.4 ("toda BR tem ao menos um UC/CT?") — seria a primeira BR sem CT e, sendo BR imutável, dívida permanente. (3) BR-034 não se aplica: não há código de negócio novo.
 
 > [!warning] Correção de 25/08 — não pré-reservar número de BR
-> A versão anterior desta nota reservava o `BR-107` para a camada `tipo_negocio`. **Errado:** reservar número sem escrever a regra colide com a primeira BR nova que aparecer — e apareceu, no [[NX Gest - Contrato periodicidade alternada (PLAN-087)|PLAN-087]], que precisa de duas. Texto correto: a camada `tipo_negocio` **receberá um BR numerado no momento em que for escrita**, sem pré-reserva. Vale para números de PLAN também (ver nota de numeração provisória no topo).
+> A versão anterior desta nota reservava o `BR-107` para a camada `tipo_negocio`. **Errado:** reservar número sem escrever a regra colide com a primeira BR nova que aparecer — e apareceu, no [[NX Gest - Contrato periodicidade alternada (PLAN-085)|PLAN-085]], que precisa de duas. Texto correto: a camada `tipo_negocio` **receberá um BR numerado no momento em que for escrita**, sem pré-reserva. Vale para números de PLAN também (ver nota de numeração provisória no topo).
 
 ### "Finanças pessoais" / "evolução pessoal" ficam fora da Visão
 
@@ -128,19 +128,19 @@ Superfície final: **16 arquivos**, 7 docs de identidade + 3 user-facing + 3 art
 
 ### Legibilidade para o próximo agente (dois furos corrigidos)
 
-1. **A investigação vive fora do repo.** O plano em `~/.claude/plans/` é invisível para um agente trabalhando no repo — tudo apurado evaporaria. Correção: o `PLAN-085` **no repo** carrega uma seção "Baseline e fatos apurados". Mesma lógica para o PLAN-086.
+1. **A investigação vive fora do repo.** O plano em `~/.claude/plans/` é invisível para um agente trabalhando no repo — tudo apurado evaporaria. Correção: o `PLAN-086` **no repo** carrega uma seção "Baseline e fatos apurados". Mesma lógica para o PLAN-087.
 2. **Não existe caminho de leitura para "o que é este produto?"** A tabela "comece por aqui" do `AGENTS.md` tem 7 linhas e nenhuma responde a pergunta; a mais próxima aponta uma **pasta**. Correção: linha nova formulada como pergunta, com 3 saltos — `00-NORTH-STAR` (o que somos) → `ADR-007` (o que aceita entrar) → `08-UC-MODULOS` (como plugar).
 
 ### Coerência com convenções do repo (auditado)
 
 | Convenção | Verificação |
 |---|---|
-| ADR é pareado com PLAN | ADR-005↔PLAN-043/044 · ADR-006↔PLAN-045 → o par ADR-007↔PLAN-085 segue o padrão |
+| ADR é pareado com PLAN | ADR-005↔PLAN-043/044 · ADR-006↔PLAN-045 → o par ADR-007↔PLAN-086 segue o padrão |
 | ADR pode ser de governança, não só de stack | ADR-005 = "por que o redesign deixou débito + guardrails anti-drift" — mesma forma do ADR-007 |
 | Versionamento usa incremento **menor** | nenhum doc jamais foi a 2.0 (1.0→1.1→1.4→1.9). Corrigido: NORTH-STAR →1.1, PROJECT →1.2, PRD →1.1 |
 | Histórico não se reescreve | PLAN-084; `plans/README.md:103-107` |
 
-## Anexo — incidente do link de convite (PLAN-086)
+## Anexo — incidente do link de convite (PLAN-087)
 
 Incidente real: operador recebeu link antigo de convite, clicou, mensagem incompreensível, **travou as duas pessoas**.
 
@@ -162,7 +162,7 @@ As quatro situações mais prováveis produzem a **mesma** mensagem: `auth.error
 
 Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a tela é um `ErrorBanner` sem ação de saída (critério não cumprido em plano concluído); e o e-mail de convite é o **único** dos 4 templates sem prazo concreto — `reset` diz "30 minutos", `verificarEmail` "24 horas", `convite` diz "validade limitada" quando o TTL real é **7 dias** (`auth-token.service.ts:5`).
 
-**Divisão decidida.** No PLAN-085 entra só a copy **preventiva** do e-mail (string pura, 3 idiomas, zero backend): prazo real + "se receber um convite mais recente, use sempre o último — o anterior deixa de funcionar". Evita o incidente em vez de explicá-lo depois. Todo o resto vira **PLAN-086** (códigos de erro distintos, ramificação no `AtivarPage`, ativação das 6 chaves órfãs, par novo "Convite substituído", ação de saída da AC-07, BR nova, UC/CT) — é código com gates, não caberia num plano de documentação.
+**Divisão decidida.** No PLAN-086 entra só a copy **preventiva** do e-mail (string pura, 3 idiomas, zero backend): prazo real + "se receber um convite mais recente, use sempre o último — o anterior deixa de funcionar". Evita o incidente em vez de explicá-lo depois. Todo o resto vira **PLAN-087** (códigos de erro distintos, ramificação no `AtivarPage`, ativação das 6 chaves órfãs, par novo "Convite substituído", ação de saída da AC-07, BR nova, UC/CT) — é código com gates, não caberia num plano de documentação.
 
 ---
 
@@ -235,16 +235,16 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 ### F6 — anti-drift e rastreio
 
 - [ ] Linha nova na matriz de propagação da `docs/skills/SKILL-009-documentation-sync.md` §3 (**o entregável que impede a reincidência**)
-- [ ] `docs/plans/PLAN-071-email-deliverability.md:69` — anotação de **uma linha** de que o rodapé foi atualizado pelo PLAN-085. Plano **não** reescrito
-- [ ] `docs/plans/PLAN-086-mensagens-falha-convite.md` criado como 📝 Planejado, com a investigação do incidente embutida
-- [ ] `PLAN-085` e `PLAN-086` registrados em `docs/plans/README.md`
-- [ ] `PLAN-085` contém a seção "Baseline e fatos apurados" (os fatos ficam no repo, não só na sessão)
+- [ ] `docs/plans/PLAN-071-email-deliverability.md:69` — anotação de **uma linha** de que o rodapé foi atualizado pelo PLAN-086. Plano **não** reescrito
+- [ ] `docs/plans/PLAN-087-mensagens-falha-convite.md` criado como 📝 Planejado, com a investigação do incidente embutida
+- [ ] `PLAN-086` e `PLAN-087` registrados em `docs/plans/README.md`
+- [ ] `PLAN-086` contém a seção "Baseline e fatos apurados" (os fatos ficam no repo, não só na sessão)
 
 ### F7 — registro e fechamento
 
 - [ ] `docs/UPDATES.md` com a entrega
 - [ ] `docs/STATUS.md` atualizado
-- [ ] Status do `PLAN-085` atualizado
+- [ ] Status do `PLAN-086` atualizado
 - [ ] **Re-rodar os 6 gates e comparar com F0** — `audit:links` `0 erro(s)`, `docs:audit` `Nenhuma divergência`, `audit:modules` idêntico
 - [ ] Leitura corrida do `00-NORTH-STAR.md` conferindo que os dois níveis não se contradizem
 - [ ] **Teste de pronto:** um leitor do NORTH-STAR chega à mesma conclusão de quem lê o ADR-006 + roadmap + tela de login
@@ -252,8 +252,8 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 ## Dúvidas em aberto
 
 - [ ] Onde clonar o repo, nome da branch (sugestão `docs/reposicionamento-plataforma`), e se fica commit local ou PR (`gh` não instalado na máquina)
-- [ ] Contagens estagnadas do `04-ROADMAP` §Estado Atual (diz 18 telas / 15 shared components; `docs:audit` mede 28 telas) — dívida pré-existente, fora do escopo do PLAN-085, registrar no `BACKLOG.md`
-- [ ] PLAN-071 está `⏳ Em execução` e a l.69 especifica o rodapé de e-mail que o PLAN-085 muda — a anotação de rastreio resolve, mas o PLAN-071 também documenta cor primária `#0520ae` enquanto o código usa `#3571eb`: conferir se foi mudança legítima de tema
+- [ ] Contagens estagnadas do `04-ROADMAP` §Estado Atual (diz 18 telas / 15 shared components; `docs:audit` mede 28 telas) — dívida pré-existente, fora do escopo do PLAN-086, registrar no `BACKLOG.md`
+- [ ] PLAN-071 está `⏳ Em execução` e a l.69 especifica o rodapé de e-mail que o PLAN-086 muda — a anotação de rastreio resolve, mas o PLAN-071 também documenta cor primária `#0520ae` enquanto o código usa `#3571eb`: conferir se foi mudança legítima de tema
 
 ## Cards relacionados
 

@@ -3,17 +3,17 @@ tags:
   - qa
   - conhecimento
 tipo: referencia
-revisado: 2026-08-25
+revisado: 2026-08-28
 ---
 # NX Gest - Navegação escalável (PLAN-081)
 
 > [!info] Sobre esta nota
 > Revisão do **PLAN-081** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
-> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-085)]] · [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
-> **Antes de executar:** [[NX Gest - Handoff de execução]] — ordem entre os planos, setup, baseline e colisões.
+> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-086)]] · [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]].
+> **Orquestração:** [[NX Gest - Handoff de execução]].
 
-> [!warning] Numeração provisória
-> `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — no repo o último plano é o **PLAN-084**. O `PLAN-081` **já existe** no repo com esse número. Não pré-reservar número (de PLAN nem de BR).
+> [!warning] Numeração
+> A **revisão deste plano foi aplicada no repo em 28/08** (organização: 4 correções + corte da sidebar). O `PLAN-081` **já existe** no repo com esse número. No repo o último plano é o **PLAN-085** (alternada, executado). Não pré-reservar número (de PLAN nem de BR).
 
 ## Visão geral
 

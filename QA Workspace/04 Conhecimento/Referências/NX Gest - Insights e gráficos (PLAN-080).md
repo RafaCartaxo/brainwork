@@ -3,20 +3,20 @@ tags:
   - qa
   - conhecimento
 tipo: referencia
-revisado: 2026-08-25
+revisado: 2026-08-28
 ---
 # NX Gest - Insights e gráficos (PLAN-080)
 
 > [!info] Sobre esta nota
 > Correção de direção para o **PLAN-080** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
-> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-085)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-087)]].
-> **Antes de executar:** [[NX Gest - Handoff de execução]] — ordem entre os planos, setup, baseline e colisões.
+> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-086)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]].
+> **Orquestração:** [[NX Gest - Handoff de execução]].
 
 > [!tip] Desacoplado do PLAN-081
 > A revisão do PLAN-081 decidiu que `insights` entra na aba **"Mais"** (a Rota fica primária). Como a Fase 1 daqui entrega `/insights` alcançável por URL **sem item de nav**, este plano **deixou de depender** do PLAN-081 para entregar — ele virou pré-requisito só de **descoberta**. Ver [[NX Gest - Navegação escalável (PLAN-081)]].
 
-> [!warning] Numeração provisória
-> `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — **no repo o último plano é o PLAN-084**. O número definitivo é atribuído quando cada plano for criado, na ordem em que efetivamente entrar. Não pré-reservar número (de PLAN nem de BR).
+> [!warning] Numeração
+> A **Fase 0.5 deste plano (correções doc-only) foi aplicada no repo em 28/08** (organização). No repo o último plano é o **PLAN-085** (alternada, executado). Números livres: **PLAN-086** (identidade) e **PLAN-087** (convite fix). Não pré-reservar número (de PLAN nem de BR).
 
 ## Visão geral
 
@@ -203,7 +203,7 @@ Nota de fundo: `audit-modules.mjs` valida `MODULE_WIDGETS` do **frontend**; o ca
 ## Referências
 
 - Plano completo da sessão: `~/.claude/plans/eu-tinha-te-deixado-shiny-hummingbird.md` (Parte 2)
-- Nota par: [[NX Gest - Reposicionamento de identidade (PLAN-085)]]
+- Nota par: [[NX Gest - Reposicionamento de identidade (PLAN-086)]]
 - Planos do repo: `docs/plans/PLAN-080-insights-dashboard.md` (📝 Planejado) · `PLAN-081-navegacao-escalavel.md` (📝) · `PLAN-082-devboard-recharts.md` (📝) · `PLAN-083-otimizacao-consultas-busca.md` (✅ Concluído) · `PLAN-077` (performance)
 - Código citado: `src/modules/admin/domain/modules.ts` · `src/modules/operacoes/application/use-cases/ListarHistoricoAtrasos/` · `src/modules/caixa/infrastructure/repositories/caixa.repository.impl.ts` · `frontend/src/modules/operacoes/pages/OperacoesDashboard.tsx` · `frontend/src/shared/theme/favicon.ts` · `scripts/audit-modules.mjs` · `scripts/audit-styles.mjs`
 - Convenções do vault: [[../../../Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[../README|04 Conhecimento]] regra 2

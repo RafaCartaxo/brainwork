@@ -3,24 +3,24 @@ tags:
   - qa
   - conhecimento
 tipo: referencia
-revisado: 2026-08-25
+revisado: 2026-08-28
 ---
-# NX Gest - Contrato periodicidade alternada (PLAN-087)
+# NX Gest - Contrato periodicidade alternada (PLAN-085)
 
 > [!info] Sobre esta nota
-> Plano fechado, **não executado**, para o repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
-> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-085)]] · [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]].
-> **Antes de executar:** [[NX Gest - Handoff de execução]] — ordem entre os planos, setup, baseline e colisões.
+> Plano **executado** — virou o **PLAN-085 do repo** `RafaCartaxo/nxgest` (**implementado em 27/08 e em produção**). Nota do vault atualizada em 28/08: o rótulo provisório era `PLAN-087`; o número real atribuído na criação foi **PLAN-085** (regra "não pré-reservar número"). Execução detalhada em `docs/plans/PLAN-085-contrato-periodicidade-alternada.md`.
+> Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-086)]] · [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]].
+> **Orquestração:** [[NX Gest - Handoff de execução]].
 
-> [!warning] Numeração provisória
-> `PLAN-085`, `PLAN-086` e `PLAN-087` são rótulos de trabalho — **no repo o último plano é o PLAN-084**. O número definitivo é atribuído quando cada plano for criado, na ordem em que efetivamente entrar. Não pré-reservar número (de PLAN nem de BR).
+> [!warning] Numeração
+> O rótulo `PLAN-087` era provisório. **Número real: PLAN-085** (atribuído na criação, sem pré-reserva). Os números seguintes livres no repo: **PLAN-086** (identidade) e **PLAN-087** (convite fix).
 
 ## Visão geral
 
 - **O quê:** adicionar um terceiro modelo de contrato — **pagar dia sim, dia não** — como valor novo de `periodicidade`, chamado `alternada`.
 - **Regra:** intervalo de 2 dias. Fechou o contrato na segunda, começa quarta; fechou terça, começa quinta. Respeita domingo como os outros modelos.
 - **Padrão comercial:** ~20 dias → **10 parcelas**.
-- **Estado:** plano fechado em 25/08/2026. Nada implementado.
+- **Estado:** ✅ **executado em 27/08/2026 como PLAN-085 do repo** (implementado + deploy em produção). Nota fechada em 25/08; execução validada com tsc/test/docs/audits verdes e testes manuais.
 - **Origem:** modelo já em uso pelos clientes que o sistema não representava.
 
 ## Regras de negócio
@@ -153,7 +153,7 @@ Vira lookup (`{diaria:"20", alternada:"10", semanal:"3"}`) — **nos dois lugare
 - [ ] `docs/engineering/02-API.md` + `npm run docs:collection`
 - [ ] `docs/product/06-CASOS-DE-USO.md` (UC) e `07-CASOS-DE-USO-API.md` (CT de `POST /api/contratos` com `alternada`)
 - [ ] `docs/product/01-DOMAIN.md` — hoje **não menciona periodicidade**; incluir na descrição de Contrato
-- [ ] `docs/plans/PLAN-0XX-contrato-periodicidade-alternada.md` + linha em `docs/plans/README.md`
+- [x] `docs/plans/PLAN-085-contrato-periodicidade-alternada.md` + linha em `docs/plans/README.md`
 - [ ] `docs/skills/SKILL-009-documentation-sync.md` §3 — linha do espelho `intervaloDePeriodicidade` backend↔frontend
 - [ ] `docs/UPDATES.md` · `docs/STATUS.md`
 
