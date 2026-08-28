@@ -162,7 +162,7 @@ As quatro situações mais prováveis produzem a **mesma** mensagem: `auth.error
 
 Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a tela é um `ErrorBanner` sem ação de saída (critério não cumprido em plano concluído); e o e-mail de convite é o **único** dos 4 templates sem prazo concreto — `reset` diz "30 minutos", `verificarEmail` "24 horas", `convite` diz "validade limitada" quando o TTL real é **7 dias** (`auth-token.service.ts:5`).
 
-**Divisão decidida.** No PLAN-086 entra só a copy **preventiva** do e-mail (string pura, 3 idiomas, zero backend): prazo real + "se receber um convite mais recente, use sempre o último — o anterior deixa de funcionar". Evita o incidente em vez de explicá-lo depois. Todo o resto vira **PLAN-087** (códigos de erro distintos, ramificação no `AtivarPage`, ativação das 6 chaves órfãs, par novo "Convite substituído", ação de saída da AC-07, BR nova, UC/CT) — é código com gates, não caberia num plano de documentação.
+**Divisão decidida (revisada em 28/08).** A copy preventiva do e-mail (string pura, 3 idiomas, zero backend: prazo real de 7 dias + "use sempre o último convite") e todo o resto (códigos de erro distintos, ramificação no `AtivarPage`, ativação das 6 chaves órfãs, par novo "Convite substituído", ação de saída da AC-07, BR-109, UC/CT) foram **executados no PLAN-087 (28/08)**. Este plano de identidade fica com a doc canônica + as 3 strings + ADR-007, **sem** o e-mail de convite (já entregue).
 
 ---
 
@@ -225,7 +225,7 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 ### F5 — user-facing
 
 - [ ] `templates.ts:56-58` — `rodape[*].marca` nos 3 idiomas
-- [ ] `templates.ts:26-28` — `convite[*].seguro` nos 3 idiomas (prazo de 7 dias + aviso de que reenvio invalida o anterior)
+- [x] `templates.ts:26-28` — `convite[*].seguro` nos 3 idiomas (prazo de 7 dias + aviso de que reenvio invalida o anterior) — **feito no PLAN-087 (28/08)**, saiu deste plano
 - [ ] Assuntos, corpos, botões e cores dos e-mails **intocados**
 - [ ] `frontend/public/manifest.webmanifest:5` — só `description`
 - [ ] `locales/{pt-BR,en,es}.json:851` — só `lead.queroConhecerSubtitle` (sai "de cobranças"; pt-BR passa a "o NX Gest")

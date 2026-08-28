@@ -52,9 +52,9 @@ Sequencial, **um plano por branch**, nunca em paralelo (ver Colisões abaixo). *
 | # | O quê | Por que nessa posição | Tamanho | Estado |
 |---|---|---|---|---|
 | ~~**1**~~ | ~~PLAN-080 — apenas a Fase 0.5~~ | O `PLAN-080` no repo hoje **instrui a fazer o que foi decidido não fazer** (expandir `dependsOn`, construir gráfico sobre `snapshots_atraso`). É doc-only, independente, e para o repo de desinformar. | ~30 min | ✅ **feito (28/08)** — organização |
-| **1** | **Identidade** (a nota → virará PLAN-086) | Docs + 3 strings, autocontido. Inclui a copy preventiva do e-mail de convite, que mitiga o incidente real de link inválido. | médio | ⏳ pendente |
+| **1** | **Identidade** (a nota → virará PLAN-086) | Docs + 3 strings, autocontido. **Revisado 28/08:** a copy preventiva do e-mail de convite foi entregue no PLAN-087. | médio | ⏳ pendente |
 | ~~**3**~~ | ~~**3º modelo de contrato**~~ | ~~Único que entrega valor direto ao usuário~~ | — | ✅ **executado como PLAN-085 (27/08, em prod)** |
-| **2** | **Erros do link de convite** (→ virará PLAN-087) | Corrige incidente de produção que travou duas pessoas. Código + BR + UC/CT. | médio | ⏳ pendente |
+| **2** | **Erros do link de convite** (→ PLAN-087) | Corrige incidente de produção que travou duas pessoas. Código + BR + UC/CT + copy preventiva do e-mail. | médio | ✅ **executado como PLAN-087 (28/08)** |
 | **3** | **PLAN-081 — Fase 1 e 2** | Refactor de higiene (`nav.ts`) + aba "Mais". Sem valor visível ao usuário na Fase 1. Não bloqueia nada. | médio | ⏳ pendente |
 
 **Não executar:** a Fase 2 do PLAN-081 original (sidebar colapsável) — foi cortada do escopo. E nenhuma fase do PLAN-080 além da 0.5 sem decisão do dono.
@@ -76,8 +76,8 @@ Estes arquivos são tocados por **mais de um** plano. Executar em branches paral
 > [!warning] Não pré-reservar número
 > Os rótulos das notas de identidade e convite ainda são **provisórios**. **No repo o último plano é o PLAN-085** (alternada, executado) e o BR mais alto é o **BR-108** (verificado em 28/08).
 
-- **PLAN:** cada plano recebe o **próximo número livre no momento em que o arquivo é criado**, na ordem em que efetivamente entrar. Estado real em 28/08: **alternada = PLAN-085** (já usado); identidade → **PLAN-086**; convite → **PLAN-087** — **mas confira o último número no repo antes**, porque outro plano pode ter nascido nesse meio-tempo.
-- **BR:** mesma regra, sequencial a partir do próximo livre. O 3º modelo usou **BR-107 e BR-108**; o de convite precisa de **1**. Quem entrar primeiro leva o próximo número livre.
+- **PLAN:** cada plano recebe o **próximo número livre no momento em que o arquivo é criado**, na ordem em que efetivamente entrar. Estado real em 28/08: **alternada = PLAN-085** (executado) · **convite = PLAN-087** (executado); **identidade → PLAN-086** (pendente) — **mas confira o último número no repo antes**, porque outro plano pode ter nascido nesse meio-tempo.
+- **BR:** mesma regra, sequencial a partir do próximo livre. O 3º modelo usou **BR-107 e BR-108**; o convite usou **BR-109**. O de identidade não precisa de BR.
 - **ADR:** o de identidade cria o **ADR-007** (ADR-006 é o último). Não há disputa.
 - **Ao criar cada arquivo, anote o número real na nota do vault correspondente** — para o título provisório deixar de enganar.
 
