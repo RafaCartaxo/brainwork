@@ -63,56 +63,6 @@ for (const k of kpis) {
 
 ---
 
-## Defeitos
-
-> [!info] O que aparece aqui
-> Cards com a tag `defeito`: problema encontrado executando o CT de uma **task pai**, em DEV. Ciclo de vida atrelado ao pai — fecha na aprovação em DEV, sem passar por homologação, e por isso termina com `ambiente: DEV` (o marcador da exceção). Regra: [[Sistema/Contexto/PADROES_QA#Defeito × Bug|PADROES_QA → Defeito × Bug]].
->
-> Não contam nos KPIs de Bugs acima — são coisas diferentes de propósito.
-
-```dataviewjs
-const def = dv.pages('#defeito').where(p => p.file.ext === "md");
-const kpis = [
-  { label: "abertos",     n: def.where(p => p.status === "aberto").length,      cor: "#dc2626" },
-  { label: "resolvidos",  n: def.where(p => p.status === "resolvido").length,   cor: "#059669" },
-  { label: "descartados", n: def.where(p => p.status === "descartado").length,  cor: "#64748b" },
-  { label: "total",       n: def.length,                                        cor: "#7c3aed" },
-];
-const faixa = dv.el("div", "", { cls: "qa-kpis" });
-for (const k of kpis) {
-  const card = faixa.createDiv({ cls: "qa-kpi" + (k.n === 0 ? " is-zero" : "") });
-  card.style.setProperty("--kpi", k.cor);
-  card.createDiv({ cls: "qa-kpi-n", text: String(k.n) });
-  card.createDiv({ cls: "qa-kpi-l", text: k.label });
-}
-```
-
-### Defeitos em aberto, por task pai
-
-```dataviewjs
-const abertos = dv.pages('#defeito')
-  .where(p => p.file.ext === "md" && p.status !== "resolvido" && p.status !== "descartado");
-if (abertos.length === 0) {
-  dv.el("p", "✅ Nenhum defeito em aberto — nenhuma task pai bloqueada.");
-} else {
-  const porPai = {};
-  for (const d of abertos) {
-    const pai = d.pai ? String(d.pai) : "— sem pai declarado";
-    (porPai[pai] ??= []).push(d);
-  }
-  for (const [pai, filhos] of Object.entries(porPai)) {
-    // o card da pai pode estar em qualquer pasta da esteira — acha pelo campo task
-    const cardPai = dv.pages('"QA Workspace/02 Demandas"')
-      .where(p => String(p.task ?? "") === pai).first();
-    const rotulo = cardPai ? cardPai.file.link : `SGV-${pai}`;
-    dv.el("p", `**${rotulo}** — ${filhos.length} defeito(s) em aberto (bloqueia a aprovação em DEV)`);
-    dv.list(filhos.map(f => f.file.link));
-  }
-}
-```
-
----
-
 ## Demandas (hub)
 
 > [!info] O que aparece aqui
@@ -148,33 +98,6 @@ if (dailies.length === 0) {
 TASK
 FROM "QA Workspace/00 Inbox"
 WHERE !completed
-```
-
----
-
-## Sem dono — disponível pra pegar
-
-> [!info] O que aparece aqui
-> Cards abertos com `responsavel` **vazio**: demanda que qualquer QA do time pode pegar. Eles **não entram na fila** da daily de propósito — a fila é a lista do que é *seu* ([[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA → `responsavel`]]). É aqui que eles ficam visíveis.
-
-```dataviewjs
-const sem = dv.pages('"QA Workspace/02 Demandas"')
-  .where(p => p.file.ext === "md"
-           && p.file.name !== "README"
-           && !p.file.path.includes("/Concluídas/")
-           && (p.responsavel === null || p.responsavel === undefined
-               || String(p.responsavel).trim() === ""));
-if (sem.length === 0) {
-  dv.el("p", "✅ Nenhuma demanda sem dono — tudo com responsável definido.");
-} else {
-  dv.table(["Demanda", "Ambiente", "Status", "Deploy"],
-    sem.sort(p => p.file.name).map(p => [
-      p.file.link,
-      p.ambiente ?? "—",
-      p.status ?? "—",
-      p.deploy ? `⏳ ${p.deploy}` : "—",
-    ]));
-}
 ```
 
 ---
