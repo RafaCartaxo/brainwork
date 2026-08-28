@@ -19,6 +19,28 @@ ambiente: HML
 
 Durante validação foi identificado que a criação de documento falha quando há arquivo anexado no campo de anexo do módulo e no campo de anexo do assunto e serviço — o sistema retorna erro em vez de criar o documento.
 
+```jsx
+curl '<https://dev.sogov.net/api-dev/graphql>' \
+  -H 'accept: */*' \
+  -H 'accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' \
+  -H 'auth-provider: dbAuth' \
+  -H 'authorization: Bearer 15769' \
+  -H 'content-type: application/json' \
+  -b '_ga=GA1.1.947450628.1787769532; accessType=public-agent; instanceId=1; session_8911=gXWTAftY9W+DONiqFwFNwfQHqFPp3D73pICWKXLHnUbRTs+1HPGAUEPOMfU/xOEhkSPHawnukl7TkfuZyvceQP2nJa3Q01s6yn1uoRtAF7XMB5m+g9lI8JjFSMjEh7iz+IXVY6BYwlx2kNmSYF/O/w==|ny54ZPGtFG4Y1rwsCwWc4Q==; _ga_FEH338067G=GS2.1.s1787916452$o11$g1$t1787925188$j47$l0$h0' \
+  -H 'origin: <https://dev.sogov.net>' \
+  -H 'priority: u=1, i' \
+  -H 'referer: <https://dev.sogov.net/cliente/1/abrir-documento/373?matterServiceId=3939>' \
+  -H 'sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150", "Google Chrome";v="150"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36' \
+  -H 'x-renderer: /cliente/1/abrir-documento/373' \
+  -H 'x-tenant: 1' \
+  --data-raw $'{"operationName":"documentProcess","variables":{"id":223057},"query":"query documentProcess($id: Int\u0021) {\\n  documentProcess(id: $id) {\\n    id\\n    status\\n    errorMessage\\n    trackerCode\\n    documentId\\n    attachments {\\n      id\\n      name\\n      __typename\\n    }\\n    __typename\\n  }\\n}"}'
+```
 ---
 
 ### Passo a passo para reproduzir

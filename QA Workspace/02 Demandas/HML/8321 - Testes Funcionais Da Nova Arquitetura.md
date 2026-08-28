@@ -666,6 +666,8 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 > [!danger] Bugs encontrados
 
 - 🐛 [[QA Workspace/02 Demandas/HML/Bug E-mail De Confirmacao De Cadastro Nao Chega No Novo Ambiente De Homologacao|Bug E-mail de confirmação de cadastro não chega]] — confirmado em 26/08/2026, CT-025 reprovado, sem SGV ainda.
+- 🐛 [[QA Workspace/02 Demandas/HML/11151 - Bug Documento Não É Criado Com Anexo No Módulo E No Assunto E Serviço|SGV-11151]] — cadastrado em 28/08/2026, documento não criado com anexo no módulo/assunto e serviço; não bate com CT existente (ver Observações do card).
+- 🐛 [[QA Workspace/02 Demandas/HML/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
 
 ---
 
@@ -691,7 +693,7 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 | SGV-8688 | Erro ao tentar abrir qualquer solicitação como cidadão | Aprovado no Dev | CT-015 / CT-035 (Login ou regressão geral) | ☐ |
 | SGV-8669 | Erro ao emitir documento para cliente (ambiente administrativo) | Aprovado no Dev | CT-029 (Emitir/baixar documento) | ☐ |
 | SGV-8661 | Documentos e despachos não carregam ao baixar documento personalizado | Aprovado no Dev | CT-029 / CT-030 (Geração/download de PDF) | ☐ |
-| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☐ |
+| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☑ *(reprovado — reaberto como [[QA Workspace/02 Demandas/HML/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada\|SGV-11153]])* |
 | SGV-8658 | Erro ao realizar ou solicitar Assinaturas (POC) | Aprovado no Dev | Sem CT claro — tag POC; correlato a CT-029 (assinatura) se aplicável fora de POC | ☐ |
 | SGV-8609 | Falha ao cadastrar servidor no ambiente com nova arquitetura | Aprovado no Dev | Sem CT claro — pode estar ligado ao deploy (ver Verificações técnicas), confirmar contexto | ☐ |
 | SGV-8602 | Logo do SOGOV não exibida no e-mail "Finalize seu cadastro" (cidadão PF) | Aprovado no Dev | CT-028 (Logo no e-mail de cadastro) | ☐ |
@@ -723,3 +725,5 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-08-26 - 📝 Plano de teste criado a partir do export do Notion (SGV-8321), 52 pontos técnicos organizados em 13 áreas.
 - 2026-08-26 - 📝 Casos de Teste reescritos (37 CTs práticos em 8 grupos + checklist de "Verificações técnicas" separada) a pedido do Rafael — a primeira versão estava técnica demais (linguagem de worker/SQS/IRSA/ArgoCD), sem bater com o padrão do resto do vault de testar pelo que o usuário vê e faz na tela.
 - 2026-08-26 - 🐛 CT-025 reprovado — e-mail de confirmação de cadastro não chega no `dev.sogov.net` (confirmado via automação e checagem manual da caixa Gmail). Bug cadastrado sem SGV ainda.
+- 2026-08-28 - 🐛 SGV-11151 cadastrado — documento não criado com anexo no campo do módulo e no campo de assunto e serviço. Achado testando criação/anexo; sem CT correspondente na lista atual.
+- 2026-08-28 - 🐛 SGV-11153 cadastrado — regressão confirmada da SGV-8660 (tabela de Regressão): download da versão compactada do documento retorna erro.
