@@ -55,7 +55,7 @@ Sequencial, **um plano por branch**, nunca em paralelo (ver Colisões abaixo). *
 | **1** | **Identidade** (→ PLAN-086) | Docs + strings + ADR-007. **Revisado 28/08:** a copy preventiva do e-mail de convite foi entregue no PLAN-087. | médio | ✅ **executado como PLAN-086 (28/08)** |
 | ~~**3**~~ | ~~**3º modelo de contrato**~~ | ~~Único que entrega valor direto ao usuário~~ | — | ✅ **executado como PLAN-085 (27/08, em prod)** |
 | **2** | **Erros do link de convite** (→ PLAN-087) | Corrige incidente de produção que travou duas pessoas. Código + BR + UC/CT + copy preventiva do e-mail. | médio | ✅ **executado como PLAN-087 (28/08)** |
-| **3** | **PLAN-081 — Fase 1 e 2** | Refactor de higiene (`nav.ts`) + aba "Mais". Sem valor visível ao usuário na Fase 1. Não bloqueia nada. | médio | ⏳ pendente |
+| **3** | **PLAN-081 — Fase 1 e 2** | Refactor de higiene (`nav.ts`) + aba "Mais". Sem valor visível ao usuário na Fase 1. Não bloqueia nada. | médio | ⏳ pendente — **desbloqueia a Fase 1.5 do PLAN-080** |
 
 **Não executar:** a Fase 2 do PLAN-081 original (sidebar colapsável) — foi cortada do escopo. E nenhuma fase do PLAN-080 além da 0.5 sem decisão do dono.
 

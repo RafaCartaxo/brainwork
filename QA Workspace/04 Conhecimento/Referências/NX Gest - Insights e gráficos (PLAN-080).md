@@ -22,7 +22,7 @@ revisado: 2026-08-28
 
 - **O quê:** o PLAN-080 propõe um módulo whitelabel `insights` (read-only) com 5 gráficos em Recharts, página própria `/insights`, backend `src/modules/insights/`. Esta nota registra as correções de direção antes de alguém implementar.
 - **Por que corrigir agora:** está **planejado, não implementado** — mudar custa zero. Executado como está, o custo apareceria em dois lugares caros: um gráfico que seria re-removido, e uma expansão de `dependsOn` que exigiria re-PATCH em todos os tenants.
-- **Estado:** direção aprovada em 21/08/2026. Nada implementado.
+- **Estado:** ✅ **executado em 28-29/08/2026 como PLAN-080 do repo** — Fases 0, 1 e 2 implementadas e **em produção** (endpoints `/api/insights/resumo` e `/api/insights/carteira` + página `/insights`). **Fase 1.5 (item de nav na aba "Mais") bloqueada até o PLAN-081.** Direção aprovada em 21/08; Fase 0.5 aplicada na organização (28/08).
 
 ## Visão geral do que o plano já acerta
 
