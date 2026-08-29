@@ -20,7 +20,7 @@ revisado: 2026-08-28
 
 - **O quê:** alinhar a documentação canônica do NX Gest ao que o produto já é — de "sistema de gestão de cobranças em campo" para **plataforma modular de gestão operacional**, tendo *crédito em campo* como primeiro vertical.
 - **Natureza:** organização. Uma passada, escopo medido, docs-only (+3 strings user-facing). **Não é** rebrand, refatoração, migração de infra, nem antecipação de fase do roadmap.
-- **Estado:** plano aprovado em 21/08/2026; **pendência registrada (28/08)** — será PLAN-086 no repo quando for executar. Repo clonado em `~/Documentos/Desenvolvimento/nxgestao`.
+- **Estado:** ✅ **executado em 28/08/2026 como PLAN-086 do repo** (doc canônica + ADR-007 + 4 strings user-facing). Plano aprovado em 21/08; execução validada com gates verdes (audit:links/docs/modules + 181 testes).
 - **Origem:** o plano completo foi gerado em sessão de IA e vive em `~/.claude/plans/eu-tinha-te-deixado-shiny-hummingbird.md` (caminho volátil — esta nota é a cópia durável).
 
 ## Regras de negócio
@@ -179,7 +179,7 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 - [ ] `src/modules/admin/domain/modules.ts` e o espelho frontend **intocados** — `audit:modules` idêntico ao baseline
 - [ ] `docs/product/02-BUSINESS-RULES.md` intocado; **não** foi dividido por nível
 - [ ] Nenhuma BR nova criada por este plano (e **nenhum número de BR pré-reservado** — ver correção de 25/08)
-- [ ] Nenhuma chave de i18n além de `lead.queroConhecerSubtitle`; `auth.tagline` intacta
+- [x] Nenhuma chave de i18n além de `lead.queroConhecerSubtitle` e `auth.loginSubtitle` (nova — subtítulo do login era hardcoded); `auth.tagline` intacta
 - [ ] Headers `# O que este sistema é` / `# O que este sistema não é` **não** renomeados (níveis entram como `##` dentro deles)
 - [ ] "Finanças pessoais" / "evolução pessoal" **não** entraram na Visão canônica
 
@@ -224,12 +224,13 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 
 ### F5 — user-facing
 
-- [ ] `templates.ts:56-58` — `rodape[*].marca` nos 3 idiomas
+- [x] `templates.ts:56-58` — `rodape[*].marca` nos 3 idiomas (feito: "plataforma de gestão operacional")
 - [x] `templates.ts:26-28` — `convite[*].seguro` nos 3 idiomas (prazo de 7 dias + aviso de que reenvio invalida o anterior) — **feito no PLAN-087 (28/08)**, saiu deste plano
-- [ ] Assuntos, corpos, botões e cores dos e-mails **intocados**
-- [ ] `frontend/public/manifest.webmanifest:5` — só `description`
-- [ ] `locales/{pt-BR,en,es}.json:851` — só `lead.queroConhecerSubtitle` (sai "de cobranças"; pt-BR passa a "o NX Gest")
-- [ ] `npx tsc --noEmit` · `npm run build` · `node scripts/check-dist.mjs` · `npm test` (`mailers.test.ts`)
+- [x] Assuntos, corpos, botões e cores dos e-mails **intocados**
+- [x] `frontend/public/manifest.webmanifest:5` — só `description` (feito: plataforma)
+- [x] `locales/{pt-BR,en,es}.json:851` — só `lead.queroConhecerSubtitle` (sai "de cobranças"; pt-BR passa a "o NX Gest") — **feito**
+- [x] **`auth.loginSubtitle` (nova, 3 idiomas)** — subtítulo do login movido do hardcoded (`LoginPage.tsx`) para i18n; mesma classe responsiva. **Adicionado à execução a pedido do dono (28/08)**
+- [x] `npx tsc --noEmit` · `npm run build` · `node scripts/check-dist.mjs` · `npm test` (`mailers.test.ts`)
 - [ ] Render manual dos 3 e-mails conferido
 
 ### F6 — anti-drift e rastreio

@@ -52,7 +52,7 @@ Sequencial, **um plano por branch**, nunca em paralelo (ver Colisões abaixo). *
 | # | O quê | Por que nessa posição | Tamanho | Estado |
 |---|---|---|---|---|
 | ~~**1**~~ | ~~PLAN-080 — apenas a Fase 0.5~~ | O `PLAN-080` no repo hoje **instrui a fazer o que foi decidido não fazer** (expandir `dependsOn`, construir gráfico sobre `snapshots_atraso`). É doc-only, independente, e para o repo de desinformar. | ~30 min | ✅ **feito (28/08)** — organização |
-| **1** | **Identidade** (a nota → virará PLAN-086) | Docs + 3 strings, autocontido. **Revisado 28/08:** a copy preventiva do e-mail de convite foi entregue no PLAN-087. | médio | ⏳ pendente |
+| **1** | **Identidade** (→ PLAN-086) | Docs + strings + ADR-007. **Revisado 28/08:** a copy preventiva do e-mail de convite foi entregue no PLAN-087. | médio | ✅ **executado como PLAN-086 (28/08)** |
 | ~~**3**~~ | ~~**3º modelo de contrato**~~ | ~~Único que entrega valor direto ao usuário~~ | — | ✅ **executado como PLAN-085 (27/08, em prod)** |
 | **2** | **Erros do link de convite** (→ PLAN-087) | Corrige incidente de produção que travou duas pessoas. Código + BR + UC/CT + copy preventiva do e-mail. | médio | ✅ **executado como PLAN-087 (28/08)** |
 | **3** | **PLAN-081 — Fase 1 e 2** | Refactor de higiene (`nav.ts`) + aba "Mais". Sem valor visível ao usuário na Fase 1. Não bloqueia nada. | médio | ⏳ pendente |
