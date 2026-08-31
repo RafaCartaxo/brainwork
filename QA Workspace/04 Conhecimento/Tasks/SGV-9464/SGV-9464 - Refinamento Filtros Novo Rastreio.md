@@ -42,7 +42,7 @@ modulo: Rastrear Documento
 - [x] ~~Escopo dos filtros~~ → o MR zera `statusFilter` e `importedDocuments`; validação em homologação aprovou o reinício dos filtros ao novo rastreio.
 
 > [!warning] Divergência doc × bug (aberta — decisão de produto)
-> A doc [[Módulos/Rastrear Documento|Rastrear Documento]] descreve "Novo rastreio" como "recomeça do zero **mantendo os resultados anteriores visíveis ao fundo**" e não menciona reinício de filtros. O bug SGV-9464 + MR !553 tratam a permanência dos filtros como defeito a corrigir. Com a aprovação do bug, o comportamento agora especificado é **reiniciar os filtros**. Confirmar com produto se a linha da doc está desatualizada (fonte Notion editada em 25/03; bug/MR de 09/07) e, se sim, atualizar a doc do módulo + registrar em "Comportamentos observados em teste". Não editado aqui: é decisão de produto, não suposição.
+> A doc [[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento|Rastrear Documento]] descreve "Novo rastreio" como "recomeça do zero **mantendo os resultados anteriores visíveis ao fundo**" e não menciona reinício de filtros. O bug SGV-9464 + MR !553 tratam a permanência dos filtros como defeito a corrigir. Com a aprovação do bug, o comportamento agora especificado é **reiniciar os filtros**. Confirmar com produto se a linha da doc está desatualizada (fonte Notion editada em 25/03; bug/MR de 09/07) e, se sim, atualizar a doc do módulo + registrar em "Comportamentos observados em teste". Não editado aqui: é decisão de produto, não suposição.
 
 ---
 
@@ -78,5 +78,5 @@ Ao iniciar um novo rastreio, os filtros da consulta anterior são reiniciados au
 ## Histórico do refinamento
 
 - 2026-07-21 - Material recebido (export do Notion) e organizado na mesa. Task tem descrição e passo a passo claros e entrega do dev com MR aprovado em DEV, mas **sem** resultado esperado, critérios de aceite nem evidência — por isso entrou na mesa (modo A) em vez de card direto. 4 gaps mapeados em Pontos a definir.
-- 2026-07-21 - 📝 Destilado fechado e card criado em [[../02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|02 Demandas/Concluídas/9464]]. 4 Pontos a definir resolvidos pela validação em homologação (critérios, resultado esperado, escopo dos filtros e evidência confirmados). Demanda simples validada e aprovada direto em homologação.
+- 2026-07-21 - 📝 Destilado fechado e card criado em [[QA Workspace/02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|02 Demandas/Concluídas/9464]]. 4 Pontos a definir resolvidos pela validação em homologação (critérios, resultado esperado, escopo dos filtros e evidência confirmados). Demanda simples validada e aprovada direto em homologação.
 - 2026-07-21 - ✅ Aprovada em homologação. Mesa arquivada em `04 Conhecimento/` (`status: refinado`). Ciclo do fluxo 6 concluído. Divergência doc × bug ("Novo rastreio" mantém estado vs. reinicia filtros) permanece aberta como decisão de produto.

@@ -247,7 +247,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 ---
 
 > [!tip] Observações
-> - Refinado a partir do export do Notion + entrega do dev (B. Luan, MR !666) + inspeção da anatomia no Figma (Claude em Chrome). Mesa de refinamento arquivada em [[QA Workspace/04 Conhecimento/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|04 Conhecimento]].
+> - Refinado a partir do export do Notion + entrega do dev (B. Luan, MR !666) + inspeção da anatomia no Figma (Claude em Chrome). Mesa de refinamento arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-10151/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|04 Conhecimento]].
 > - Regra completa da mesa em [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] — seção "2. Filtros rápidos dinâmicos e inteligentes" já documenta o rótulo por aba (sem divergência com esta entrega); não documenta o estado desabilitado (CA8).
 
 ## Histórico

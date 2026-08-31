@@ -50,7 +50,7 @@ QA Workspace/
 │   ├── Módulos/ (uma nota por módulo do Sogov — regras de negócio e comportamentos, template Conhecimento.md)
 │   ├── Fluxos/ (fluxos de negócio ponta a ponta que cruzam módulos)
 │   ├── Referências/ (docs do repo, manuais, links externos, leis)
-│   └── SGV - Refinamento <título>.md (mesas de trabalho concluídas, status: refinado)
+│   └── Tasks/<SGV>/ (material específico de uma task — refinamento arquivado, plano de automação; raiz de 04 Conhecimento não recebe arquivo nenhum)
 ├── 05 Refinar/
 │   └── README.md (mesa de trabalho do refinamento — exports do Notion etc. no template Refinamento.md; concluído, arquiva em 04 Conhecimento/)
 ├── 06 Estudos/
