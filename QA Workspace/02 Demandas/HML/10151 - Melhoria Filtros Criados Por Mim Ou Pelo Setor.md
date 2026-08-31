@@ -5,7 +5,6 @@ tags:
   - qa
   - mesa-de-trabalho
 task: "10151"
-mel: ""
 status: aberto
 prioridade: media
 deploy: pendente_hml

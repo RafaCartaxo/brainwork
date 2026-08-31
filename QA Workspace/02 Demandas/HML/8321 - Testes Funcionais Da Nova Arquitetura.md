@@ -5,9 +5,8 @@ tags:
   - qa
   - arquitetura
 task: "8321"
-status: hml
+status: aberto
 prioridade: alta
-mel: ""
 data_inicio: 2026-08-26
 data_fim: ""
 responsavel: Rafael Borges, Flávio Oliveira

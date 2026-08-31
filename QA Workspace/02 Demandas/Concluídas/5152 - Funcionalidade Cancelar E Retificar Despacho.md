@@ -2,11 +2,11 @@
 tags:
   - demanda
   - qa
+  - funcionalidade
   - despacho
 task: "5152"
 status: resolvido
 prioridade: media
-mel: ""
 data_inicio: 2026-08-04
 data_fim: 2026-08-11
 responsavel: Rafael

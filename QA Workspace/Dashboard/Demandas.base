@@ -4,19 +4,26 @@ filters:
     - file.ext == "md"
 formulas:
   dias_em_andamento: if(data_inicio, (today() - date(data_inicio)).days, "")
-  status_icone: if(status == "resolvido", "✅", if(status == "em_validacao", "🟡", if(status == "aberto", "🔵", if(status == "descartado", "🗑️", if(status == "refinado", "📝", "⚪")))))
+  status_icone: if(status == "resolvido", "✅", if(status == "em_validacao", "🟡", if(status == "aberto", "🔵", if(status == "descartado", "🗑️", "⚪"))))
   prioridade_icone: if(prioridade == "altíssima", "🔴", if(prioridade == "alta", "🔴", if(prioridade == "media", "🟡", if(prioridade == "baixa", "🟢", "⚪"))))
+  pontos_faixa: if(pontos == null, "", if(pontos == 0, "< 0,5h", if(pontos == 1, "< 2h", if(pontos == 2, "< 4h", if(pontos == 3, "< 8h", if(pontos == 5, "< 2d", if(pontos == 8, "< 3d", if(pontos == 13, "< 4d", if(pontos == 21, "< 5d", if(pontos == 34, "< 7d", if(pontos == 55, "< 10d", if(pontos == 89, "< 15d", if(pontos == 144, "< 30d", "?")))))))))))))
 properties:
   modulo:
     displayName: Módulo
   responsavel:
     displayName: Responsável
+  aguardando:
+    displayName: Aguardando
   formula.status_icone:
     displayName: Status
   formula.prioridade_icone:
     displayName: Prioridade
   formula.dias_em_andamento:
     displayName: Dias
+  pontos:
+    displayName: Pontos
+  formula.pontos_faixa:
+    displayName: Faixa
 views:
   - type: table
     name: Todas as Demandas
@@ -34,7 +41,7 @@ views:
     name: Em Andamento
     filters:
       and:
-        - status != "concluida"
+        - status != "resolvido"
     order:
       - file.name
       - formula.status_icone
@@ -45,7 +52,7 @@ views:
     name: Concluídas
     filters:
       and:
-        - status == "concluida"
+        - status == "resolvido"
     order:
       - file.name
       - modulo

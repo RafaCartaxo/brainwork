@@ -6,7 +6,6 @@ tags:
 task: "3412"
 prioridade: media
 status: aberto
-data: 2026-07-22
 data_inicio: 2026-07-22
 responsavel: Rafael
 modulo: assinaturas

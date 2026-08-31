@@ -75,7 +75,7 @@ Criar em `02 Demandas/DEV/` usando [[../Templates/Demanda.md|Demanda]]:
 | Campo | Valor |
 |---|---|
 | **Arquivo** | `MEL-NNNN - <título>.md` (sem SGV ainda) |
-| **Frontmatter** | `task: ""`, `mel: "NNNN"`, `status: dev`, `data_inicio: hoje` |
+| **Frontmatter** | `task: ""`, `status: aberto`, `data_inicio: hoje`, tag `melhoria` além de `demanda`/`qa` — o identificador `MEL-NNNN` vive só no nome do arquivo, não tem campo próprio |
 | **Conteúdo** | Resumo, Regras de negócio, Pontos de atenção, Casos de teste, Evidências, Histórico |
 | **Link reverso** | Transformar `MEL-NNNN` no checkbox da daily original em wikilink pro card ([[../../QA Workspace/01 Daily/README#Regra de links|Regra de links]]) |
 

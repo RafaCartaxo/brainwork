@@ -2,11 +2,11 @@
 tags:
   - demanda
   - qa
+  - melhoria
   - servicos-e-assuntos
 task: "10147"
 status: aberto
 prioridade: alta
-mel: ""
 data_inicio: 2026-08-17
 data_fim: ""
 responsavel: Rafael

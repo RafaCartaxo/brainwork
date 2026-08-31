@@ -5,9 +5,8 @@ tags:
   - qa
   - etiquetas
 task: "3234"
-status: dev
+status: aberto
 prioridade: alta
-mel: ""
 data_inicio: 2026-08-12
 data_fim: ""
 responsavel: Rafael

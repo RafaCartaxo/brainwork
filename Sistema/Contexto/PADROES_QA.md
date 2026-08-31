@@ -153,10 +153,21 @@ QA Workspace/
 - **Hotfix**: correção urgente é validada num ambiente de homologação que carrega a versão de produção + a hotfix. O card vive em `02 Demandas/Hotfix/` durante a validação (`ambiente: HOTFIX`) e, aprovado, vai pra `Concluídas/` como qualquer bug. Evidências na subpasta `Evidências/Hotfix/`.
 - **Bug de produção em sustentação** (relatado/analisado em produção, correção **não urgente** — se urgente, é Hotfix acima): não existe pasta `Produção/` em `02 Demandas/` de propósito — o card nasce em `DEV/` com `ambiente: DEV`, representando a **posição na esteira de correção**, e a origem/análise em produção fica registrada na Descrição e no Histórico. Daí segue a esteira normal (ou a variação 3f, se for task de API). Precedentes: SGV-9963, SGV-9750.
 - `cadastrado_por` (opcional): quem cadastrou o card, quando não foi o próprio responsável pela validação. Se tem a informação, preenche; se não, deixa vazio — não inventar.
-- `responsavel`: o QA que vai validar. **Vazio = sem dono** — demanda disponível pra quem pegar. Card sem dono **não entra na fila viva**: a fila é a lista do que é *seu*, não o inventário de tudo que existe no vault. Ele continua visível na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]], na seção "Sem dono — disponível pra pegar". Deixar vazio é **decisão**, não esquecimento: ao criar card sem dono, dizer o porquê no próprio card.
+- `responsavel`: **quem precisa agir agora, nesta etapa** — não "quem cadastrou", não "quem vai eventualmente retestar", não um dono fixo do início ao fim da demanda. **Vazio = ninguém do QA tem ação pendente agora** — seja porque está disponível pra qualquer QA pegar, seja porque está bloqueado esperando outro time (dev corrigir, produto priorizar sprint, deploy subir). Card sem ação pendente **não entra na fila viva**: a fila é a lista do que é *seu agora*, não o inventário de tudo que existe no vault. Ele continua visível na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]], na seção "Sem dono — disponível pra pegar". Deixar vazio é **decisão**, não esquecimento: ao criar card sem dono, dizer o porquê no próprio card.
   - **Precedente**: SGV-10363, aprovada em DEV em 18/08 — a validação em homologação ficou aberta pra qualquer QA do time, então não podia ocupar linha na fila do Rafael.
   - Não confundir com o caso da **SGV-8867**, cujo QA responsável é o Lucas: aquela **não virou card** (o vault guarda as nossas atividades). A diferença é que na 10363 o trabalho de DEV *foi* nosso — o que falta dono é a etapa seguinte.
+  - **Exemplos do fluxo real**: testou e aprovou/reprovou em DEV, segue pra HML → limpar `responsavel:` a menos que você mesmo vá retestar em HML. Testou/aprovou em HML → não gera pendência sua (outro QA pode pegar se reabrir). Cadastrou um bug/melhoria no Notion → limpar `responsavel:` (vira backlog de produto, priorizar sprint não é ação do QA; o `qa-atualiza.py` já faz essa limpeza sozinho no momento do cadastro). Card reprovado aguardando fix do dev → limpar (bloqueio externo, ninguém do QA tem o que fazer até o fix chegar).
+- `aguardando` (opcional): só quando `responsavel:` está vazio, diz **o quê**/**quem** está bloqueando — `dev`, `produto`, `deploy` ou `terceiro`. Não é lido pelo script (é só informativo, alimenta a seção "Sem dono" da Dashboard e o Kanban), então não precisa ser preciso — mas ajuda a distinguir "disponível pra qualquer QA pegar" (sem `aguardando`) de "ninguém pode agir até terceiro resolver" (com `aguardando`). **Sempre que `responsavel:` for preenchido de novo** (alguém retoma o card), limpar `aguardando:` no mesmo momento — evita o estado contraditório de um card com dono *e* marcado como bloqueado em terceiro ao mesmo tempo.
+- `pontos` (opcional): esforço da sua passagem pelo card, na escala de pontos — ver [[#Escala de esforço (pontos)]] abaixo. Atualizado no fechamento de cada etapa, junto com `responsavel`/`aguardando` (ver checklist abaixo).
+
+### Ao fechar sua etapa em um card — checklist único
+Os três campos acima mudam juntos, no mesmo momento (quando você termina sua parte de um card). Pra não aplicar só metade da convenção:
+1. Preencher/atualizar `pontos:` com o esforço dessa passagem. Se o card já tinha um valor de uma passagem anterior, registrar a mudança em `## Histórico` (`- DD/MM/AAAA - Pontos: X → Y (motivo)`).
+2. A ação passa a ser de outra pessoa/time? Limpar `responsavel:` e, se fizer sentido, preencher `aguardando:`. Continua sendo sua? Deixar `responsavel:` como está.
+3. Se `responsavel:` for preenchido de novo depois (retomando o card), limpar `aguardando:` nesse momento.
+
 - Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
+- `data_inicio`/`data_fim`: medem a janela do QA no vault — `data_inicio` é quando o card foi cadastrado/nasceu no vault, `data_fim` é quando foi aprovado em homologação e movido pra `Concluídas/`. **Não isolam uma etapa específica** (costumam somar DEV+HML juntos) e **não são tempo de execução do dev** — não confundir com `pontos` (esforço da sua passagem), que é outra medida.
 
 ## Defeito × Bug
 
@@ -255,6 +266,29 @@ Quando um bug ou suspeita de bug (achado via análise de código, CX, ou qualque
 - Critério de aceite e CT são escritos de forma mínima, inferidos do título, e marcados como confirmados;
 - `Observações` registra explicitamente a ausência de material de causa raiz, pra quem reabrir no futuro saber que precisa reconstituir o passo a passo do zero (a task no Notion continua sendo a referência, se existir lá).
 
+## Escala de esforço (pontos)
+
+Campo `pontos` (Demanda/Bug, opcional) — **esforço estimado da sua passagem pelo card, não tempo cronometrado**. Preenchido depois do fato, sem precisar registrar horário de início/fim. Escala Fibonacci, cada valor ancorado numa faixa de referência (a faixa é só apoio pra calibrar a estimativa, não uma medição):
+
+| Pontos | Faixa de referência |
+|---|---|
+| 0 | < 0,5h |
+| 1 | < 2h |
+| 2 | < 4h |
+| 3 | < 8h |
+| 5 | < 2 dias |
+| 8 | < 3 dias |
+| 13 | < 4 dias |
+| 21 | < 5 dias |
+| 34 | < 7 dias |
+| 55 | < 10 dias |
+| 89 | < 15 dias |
+| 144 | < 30 dias |
+
+A Dashboard (`Bugs.base`/`Demandas.base`) calcula automaticamente a faixa correspondente ao ponto escolhido (`formula.pontos_faixa`) — é só exibição, a fonte de verdade é sempre o valor em `pontos`, nada duplicado. Quando o card passa por mais de uma etapa do QA (validação inicial, depois reteste), atualizar `pontos` a cada passagem, seguindo o [[#Ao fechar sua etapa em um card — checklist único|checklist]] acima.
+
+Agregação por dia/semana/mês (ex.: total de pontos da semana) não existe ainda — é próximo passo natural depois que o registro por card estiver rodando por um tempo, mas `pontos` + `data_fim` já são os dois dados que essa agregação vai precisar, nada precisa ser remodelado depois.
+
 ## Frontmatter
 Todas as notas seguem frontmatter YAML com ao menos a tag `qa`:
 ```yaml
@@ -264,3 +298,5 @@ tags:
   - [tag-específica]
 ---
 ```
+
+**Convenção de nomenclatura de tags**: singular, kebab-case, sem acento (ex.: `assinatura`, não `assinaturas`; `automacao`, não `automação`; `fluxo-de-trabalho`, não `fluxo-trabalho`). Formaliza o padrão que já é majoritário na prática — evita duplicidade tipo `demanda`/`demandas` ou `skill`/`skills` coexistindo pro mesmo conceito.

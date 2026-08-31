@@ -164,7 +164,7 @@ O aninhamento é feito pelo **script** (`sincroniza_demandas_ativas`, lendo o ca
 
 ### Card sem dono não gera item
 
-Card com `responsavel` **vazio** ([[../../Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]) está disponível pra qualquer QA pegar e **não entra na fila** — ela lista o que é *seu*, não tudo que existe. Quem quiser ver o que está sem dono olha a [[../Dashboard/Dashboard|Dashboard]], seção "Sem dono — disponível pra pegar". É a regra de bolso de sempre: **escreveu? foi na daily. quer ver? foi na Dashboard.**
+Card com `responsavel` **vazio** ([[../../Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]) **não entra na fila** — ela lista o que é *seu agora*, não tudo que existe. "Sem dono" cobre dois motivos, distinguidos pelo campo opcional `aguardando`: disponível pra qualquer QA pegar (sem `aguardando`), ou bloqueado esperando outro time — dev, produto, deploy (`aguardando: dev`/`produto`/`deploy`). Quem quiser ver o que está sem dono olha a [[../Dashboard/Dashboard|Dashboard]], seção "Sem dono — disponível pra pegar" (agrupada por motivo, recolhida por padrão). Item que já estava na fila e teve `responsavel` limpo depois some sozinho no próximo 🔄 (`resolve_pendencias_obsoletas`, [[../../Sistema/Agentes/AGENTE_FILA|AGENTE_FILA]]). É a regra de bolso de sempre: **escreveu? foi na daily. quer ver? foi na Dashboard.**
 
 ## Pendência ↔ copy de Atividades
 

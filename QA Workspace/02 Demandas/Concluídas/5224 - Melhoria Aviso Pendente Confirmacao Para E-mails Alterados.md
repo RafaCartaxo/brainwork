@@ -2,11 +2,11 @@
 tags:
   - demanda
   - qa
+  - melhoria
   - perfil
 task: "5224"
 status: resolvido
 prioridade: media
-mel: ""
 data_inicio: 2026-08-14
 data_fim: "2026-08-14"
 responsavel: Rafael

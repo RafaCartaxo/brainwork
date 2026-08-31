@@ -95,7 +95,14 @@ Item com +7 dias de arrasto → registra no Auto-organização:
 
 ### 6. Auto-resolve órfãos
 
-Card em `Concluídas/` ou `99 Arquivo/` que ainda tem pendência de "Acompanhar" → pendência fechada automaticamente com `→ card concluído/descartado`.
+> [!important] Isto é do script, não do agente (implementado em 31/08)
+> Fica documentado aqui desde antes de existir de fato — só passou a rodar com `resolve_pendencias_obsoletas()` no `qa-atualiza.py`, chamada em `main()` antes de `sincroniza_demandas_ativas()`. Antes disso a fila só crescia; nada removia item cujo card já tinha saído de cena.
+
+Item de "A fazer hoje" (topo ou filho `↳`) cujo card já não justifica mais estar lá é fechado automaticamente no próximo 🔄:
+- card movido pra `Concluídas/` ou `99 Arquivo/`;
+- ou `responsavel:` foi limpo depois que o item já tinha sido criado (ex.: você concluiu sua etapa e tirou seu nome do card, mas o item da fila de hoje ainda não sabia disso).
+
+**Conservador de propósito**: um item de topo com filho `↳` remanescente nunca é removido, mesmo que o card da pai já tenha fechado — o filho precisa da linha da pai como âncora. Filhos são resolvidos primeiro; a pai só cai depois que nenhum filho sobrou. Card que não dá pra localizar não é mexido.
 
 ## Exemplo (dia 20/07/2026)
 
@@ -161,6 +168,7 @@ Em 28/07 uma sessão de IA moveu o agrupamento por natureza pra dentro do `qa-at
 | Mover `[x]` pra `✅ Concluídos hoje` | **`qa-atualiza.py`** (`coleta_concluidos`) | Mecânico e idempotente |
 | Ledger (Atividades → `[x]` na fila) | **`qa-atualiza.py`** (`ledger_do_dia`) | Já era do script |
 | Aninhar defeito sob a task pai | **`qa-atualiza.py`** (`sincroniza_demandas_ativas`) | Lê o campo `pai:` do frontmatter — dado explícito, sem interpretação |
+| Fechar item órfão (card concluído/arquivado ou `responsavel:` limpo) | **`qa-atualiza.py`** (`resolve_pendencias_obsoletas`) | Leitura determinística de pasta + campo — sem julgamento |
 
 Regra prática: **se dá pra decidir com uma conta ou um regex seguro, é do script; se precisa entender o que o item quer dizer, é do agente.** Ao mexer no `.py`, conferir se a mudança não invade a coluna do agente — e vice-versa.
 

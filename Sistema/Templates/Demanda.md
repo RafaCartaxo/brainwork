@@ -3,20 +3,21 @@ tags:
   - demanda
   - qa
 task: ""
-status: dev
+pai: ""
+status: aberto
 ambiente: DEV
 prioridade: media
-mel: ""
 data_inicio: <% tp.date.now("YYYY-MM-DD") %>
 data_fim:
 responsavel:
+aguardando:
+pontos:
 modulo:
 ---
 # Demanda: {{Título}}
 
 > [!info] Informações
-> - **Tipo:** [Bug / Melhoria / Funcionalidade / POC]
-> - **Status:** [DEV / HML / Concluída]
+> - **Tipo:** [Bug / Melhoria / Funcionalidade / POC] — adicionar tag correspondente (`melhoria`/`funcionalidade`/etc.) além de `demanda`/`qa`
 > - **Responsável QA:**
 > - **Link:**
 

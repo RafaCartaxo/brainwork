@@ -2,6 +2,7 @@
 tags:
   - demanda
   - qa
+  - melhoria
   - mesa-de-trabalho
 task: "10363"
 pai: ""
@@ -9,7 +10,6 @@ status: em_validacao
 ambiente: HML
 deploy: pendente_hml
 prioridade: media
-mel: ""
 data_inicio: 2026-08-18
 data_fim:
 responsavel:

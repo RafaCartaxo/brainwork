@@ -197,7 +197,12 @@ def pai_do_card(texto_card):
 
 
 def tipo_do_card(texto_card):
-    """Bug é o padrão (sem prefixo na frase); outros tipos prefixam."""
+    """Bug é o padrão (sem prefixo na frase); outros tipos prefixam.
+
+    Classificação por TAG, não por campo de frontmatter — `mel:` foi removido
+    dos templates (quase sempre vazio, o identificador real já vive no nome
+    do arquivo `MEL-NNNN - ...md`); `tags: [..., melhoria]`/`[..., funcionalidade]`
+    é o sinal vivo agora, mesmo padrão que `bug`/`defeito` já usavam."""
     if eh_defeito(texto_card):
         return "Defeito "
     if tem_tag(texto_card, "bug"):
@@ -205,8 +210,10 @@ def tipo_do_card(texto_card):
     m = re.search(r"\*\*Tipo:\*\* *(\w+)", texto_card)
     if m:
         return m.group(1).capitalize() + " "
-    if re.search(r'^mel:', texto_card, re.M):
+    if tem_tag(texto_card, "melhoria"):
         return "Melhoria "
+    if tem_tag(texto_card, "funcionalidade"):
+        return "Funcionalidade "
     return "Demanda "
 
 
@@ -305,6 +312,66 @@ def _itens_da_fila(texto):
     invariante o recriaria no topo a cada execução do 🔄 — a mesma classe de
     bug de idempotência que duplicou pendência em 18/08."""
     return re.findall(r"^>(?: +)?- \[.\] (.+)$", texto, re.M)
+
+
+def resolve_pendencias_obsoletas(texto):
+    """Auto-resolve órfãos (AGENTE_FILA.md, item 6 — documentado, nunca
+    implementado até agora). Fecha item de 'A fazer hoje' cujo card já não
+    justifica mais estar lá: card movido pra Concluídas/99 Arquivo, ou
+    `responsavel:` foi limpo depois que o item já tinha sido criado.
+
+    Só varre 'A fazer hoje' (topo + filhos ↳) — 'Pendente para amanhã' está
+    vazia/não usada em todas as dailies observadas (ago/2026).
+
+    Conservador de propósito: um item de topo com filho ↳ remanescente NUNCA
+    é removido, mesmo que o card da pai já tenha fechado — o filho precisa
+    da linha da pai como âncora. Filhos são resolvidos primeiro; a pai só
+    cai depois que nenhum filho sobrou. Card que não dá pra localizar não é
+    mexido (mesma cautela de `sincroniza_demandas_ativas`/`achar_card`)."""
+
+    def card_de(rid):
+        if rid.startswith("MEL"):
+            achados = glob.glob(os.path.join(DEMANDAS, "**", f"{rid} - *.md"), recursive=True)
+            return achados[0] if achados else None
+        return achar_card(rid.split("-", 1)[1])
+
+    def pode_fechar(rid):
+        card = card_de(rid)
+        if not card:
+            return False
+        aberto = any(f"{os.sep}{p}{os.sep}" in card for p in ("DEV", "HML", "Hotfix", "POCs"))
+        if not aberto:
+            return True
+        dono = re.search(r"^responsavel: *(.*)$", ler(card), re.M)
+        return not (dono and dono.group(1).strip().strip('"'))
+
+    linhas = texto.split("\n")
+
+    # 1) filhos ↳ primeiro
+    restam = []
+    for ln in linhas:
+        m = re.match(rf"^{re.escape(INDENT_FILHO)}- \[ \] ↳ (.+)$", ln)
+        if m:
+            idm = re.search(r"(SGV-?\d+|MEL-\d{4})", m.group(1))
+            if idm and pode_fechar(norm_id(idm.group(1))):
+                acoes.append(f"{norm_id(idm.group(1))} → fila viva: fechado (órfão)")
+                continue
+        restam.append(ln)
+    linhas = restam
+
+    # 2) topo, só se não sobrou filho logo abaixo
+    restam = []
+    for idx, ln in enumerate(linhas):
+        m = re.match(r"^> - \[ \] (.+)$", ln)
+        if m:
+            tem_filho = idx + 1 < len(linhas) and linhas[idx + 1].startswith(INDENT_FILHO)
+            if not tem_filho:
+                idm = re.search(r"(SGV-?\d+|MEL-\d{4})", m.group(1))
+                if idm and pode_fechar(norm_id(idm.group(1))):
+                    acoes.append(f"{norm_id(idm.group(1))} → fila viva: fechado (órfão)")
+                    continue
+        restam.append(ln)
+    return "\n".join(restam)
 
 
 def sincroniza_demandas_ativas(texto):
@@ -435,6 +502,11 @@ def processa_continuacoes(daily, hoje):
             t = ler(card)
             t = set_frontmatter(t, "task", num)
             t = add_historico(t, f"💡 Cadastrada no Notion como SGV-{num}", hoje)
+            # cadastrar sempre tira a ação das mãos do QA — vai pro backlog do
+            # produto aguardar sprint, não é mais pendência de acompanhar aqui
+            # (convenção de responsavel: "quem precisa agir agora").
+            t = set_frontmatter(t, "responsavel", "")
+            t = set_frontmatter(t, "aguardando", "produto")
             antigo = os.path.splitext(os.path.basename(card))[0]
             novo_base = f"{num} - " + antigo.split(" - ", 1)[1]
             novo_path = os.path.join(os.path.dirname(card), novo_base + ".md")
@@ -610,6 +682,9 @@ def processa_continuacoes(daily, hoje):
                 continue
             t = set_frontmatter(ler(alvo), "task", num)
             t = add_historico(t, f"🐛 Cadastrado no Notion como SGV-{num}", hoje)
+            # mesma regra do bloco 1: cadastrar tira a ação das mãos do QA.
+            t = set_frontmatter(t, "responsavel", "")
+            t = set_frontmatter(t, "aguardando", "produto")
             antigo = os.path.splitext(os.path.basename(alvo))[0]
             novo_base = antigo if re.match(r"^\d+ - ", antigo) else f"{num} - {antigo}"
             novo_path = os.path.join(os.path.dirname(alvo), novo_base + ".md")
@@ -1171,6 +1246,7 @@ def main():
     roteia_evidencias()
     d = processa_continuacoes(ler(hoje_p), hoje)
     reconcilia_atividades(d, hoje)
+    d = resolve_pendencias_obsoletas(d)
     d = sincroniza_demandas_ativas(d)
     d = ledger_do_dia(d)
     d = coleta_concluidos(d)

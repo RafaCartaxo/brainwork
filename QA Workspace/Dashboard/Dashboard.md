@@ -115,9 +115,12 @@ for (const p of dailies) {
     if (!t.completed && t.text.trim() !== "" && t.section && t.section.subpath === "Melhorias propostas") items.push(t);
   }
 }
-// cards Demanda já cadastrados também seguram o número (frontmatter mel)
+// cards Demanda já cadastrados também seguram o número (agora pelo nome do
+// arquivo — o campo mel: foi removido dos templates, o identificador real
+// sempre viveu no nome "MEL-NNNN - ...md", nunca no valor do campo)
 for (const p of dv.pages('#demanda')) {
-  if (p.mel) maxMel = Math.max(maxMel, parseInt(String(p.mel), 10) || 0);
+  const m2 = p.file.name.match(/MEL-(\d{4})/);
+  if (m2) maxMel = Math.max(maxMel, parseInt(m2[1], 10));
 }
 const prox = String(maxMel + 1).padStart(4, "0");
 dv.el("p", `Próximo número livre: **MEL-${prox}**`);
@@ -180,4 +183,51 @@ flowchart TD
     J --> N
     K --> N
     L --> N
+```
+
+---
+
+## Sem dono — disponível pra pegar
+
+> [!info] O que é isto
+> Cards ativos (DEV/HML/Hotfix/POCs) sem `responsavel:` preenchido — a ação atual não é de ninguém específico agora, seja porque estão livres pra qualquer QA pegar, seja porque estão aguardando outro time. Por isso não ocupam linha na fila pessoal ("A fazer hoje"), mas também não podem sumir de vista — é aqui que ficam visíveis. Convenção completa: [[Sistema/Contexto/PADROES_QA|PADROES_QA]] → `responsavel`.
+
+```dataviewjs
+const cards = dv.pages('"QA Workspace/02 Demandas"')
+  .where(p => p.file.ext === "md")
+  .where(p => ["DEV", "HML", "Hotfix", "POCs"].includes(p.file.folder.split("/").pop()))
+  .where(p => !p.responsavel || String(p.responsavel).trim() === "");
+
+const rotulos = {
+  dev: "🔧 Aguardando Dev",
+  produto: "📦 Aguardando Produto/Sprint",
+  deploy: "🚀 Aguardando Deploy",
+  terceiro: "⏳ Aguardando terceiro",
+  livre: "🆓 Livre pra qualquer QA pegar",
+};
+
+const grupos = {};
+for (const c of cards) {
+  const chave = c.aguardando ? String(c.aguardando).trim() : "livre";
+  (grupos[chave] ??= []).push(c);
+}
+
+const raiz = dv.el("details", "", { cls: "qa-semdono" });
+raiz.createEl("summary", { text: `📋 Sem dono — disponível pra pegar (${cards.length})` });
+
+if (cards.length === 0) {
+  raiz.createEl("p", { text: "Nenhum card sem dono no momento." });
+} else {
+  for (const chave of Object.keys(rotulos).concat(Object.keys(grupos).filter(k => !rotulos[k]))) {
+    const lista = grupos[chave];
+    if (!lista || lista.length === 0) continue;
+    const sub = raiz.createEl("details", { cls: "qa-semdono-grupo" });
+    sub.createEl("summary", { text: `${rotulos[chave] || ("❓ " + chave)} (${lista.length})` });
+    const ul = sub.createEl("ul");
+    for (const c of lista.sort((a, b) => a.file.name.localeCompare(b.file.name))) {
+      const li = ul.createEl("li");
+      li.createEl("a", { text: c.file.name, href: c.file.path, cls: "internal-link" });
+    }
+  }
+}
 ```

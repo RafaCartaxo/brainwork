@@ -2,11 +2,11 @@
 tags:
   - demanda
   - qa
+  - melhoria
 task: "7863"
 status: resolvido
 ambiente: PROD
 prioridade: media
-mel: ""
 data_inicio: 2026-08-26
 data_fim: 2026-08-26
 responsavel: Rafael

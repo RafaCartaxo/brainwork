@@ -2,11 +2,11 @@
 tags:
   - demanda
   - qa
+  - melhoria
   - formulario
   - repeticao-campo
 task: ""
-mel: "0001"
-status: dev
+status: aberto
 prioridade: media
 data_inicio: 2026-07-14
 data_fim:

@@ -5,7 +5,6 @@ tags:
   - qa
   - usuario-cidadao
 task: "9493"
-mel: ""
 status: aberto
 prioridade: ""
 data_inicio: 2026-07-30

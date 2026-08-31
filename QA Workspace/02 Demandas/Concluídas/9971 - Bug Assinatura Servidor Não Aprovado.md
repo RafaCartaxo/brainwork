@@ -7,7 +7,6 @@ tags:
 task: "9971"
 prioridade: alta
 status: resolvido
-data: 2026-07-13
 responsavel: Rafael
 modulo: assinatura-digital
 data_inicio: 2026-07-13

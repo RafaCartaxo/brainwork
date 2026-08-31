@@ -2,12 +2,12 @@
 tags:
   - demanda
   - qa
+  - melhoria
   - despacho
 task: "9011"
 status: resolvido
 ambiente: HML
 prioridade: media
-mel: ""
 data_inicio: 2026-08-11
 data_fim: "2026-08-14"
 responsavel: Rafael

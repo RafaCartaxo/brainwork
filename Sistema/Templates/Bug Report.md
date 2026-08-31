@@ -8,7 +8,9 @@ prioridade: media
 status: aberto
 data_inicio: <% tp.date.now("YYYY-MM-DD") %>
 data_fim: ""
-responsavel: Rafael
+responsavel:
+aguardando:
+pontos:
 cadastrado_por: ""
 modulo: ""
 ambiente: DEV

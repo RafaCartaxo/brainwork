@@ -7,7 +7,6 @@ tags:
 task: "9977"
 prioridade: media
 status: aberto
-data: 2026-07-13
 responsavel: Rafael
 modulo: despacho
 data_inicio: 2026-07-13
