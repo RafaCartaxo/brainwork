@@ -32,6 +32,8 @@ Então verifico que, mesmo clicando diversas vezes, o documento não abre
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://11185)
 
+![[11185 - abrir demanda como cidadão em iphone nok.mp4]]
+
 *Capturada pelo celular (iPhone/Safari) — ainda não está no vault. Adicionar aqui quando o Rafael passar o arquivo.*
 
 ---
