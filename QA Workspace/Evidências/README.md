@@ -8,7 +8,7 @@ tags:
 Guia único de como gravar, organizar e referenciar evidências de validação.
 
 > [!warning] Não deixar vídeo cru pra trás
-> Gravação sem renomear/mover na raiz de `Evidências/` é o primeiro sinal de fluxo quebrado — resolver no mesmo dia, antes de fechar a daily.
+> Gravação sem renomear/mover na raiz de `Evidências/` é o primeiro sinal de fluxo quebrado — resolver no mesmo dia, antes de fechar a daily. Exceção: vídeo com número de card mas **sem card local no vault** (provável card só no Notion) — o roteador (`🔄`) não move sozinho pra não adivinhar destino; vai pra `Sem Card/` manualmente, não fica solto na raiz.
 
 ## Processo completo (fluxo 5)
 
@@ -99,8 +99,12 @@ Evidências/
 ├── Hotfix/
 ├── Produção/
 ├── Arquitetura/
-└── Cadastrar/        ← cards sem SGV ainda
+├── Cadastrar/        ← cards sem SGV ainda
+└── Sem Card/         ← número de card no nome, mas sem card local no vault (provável card só no Notion)
 ```
+
+> [!info] Por que agrupar por SGV dentro de cada ambiente não é feito
+> Desenvolvimento/Homologação misturam vídeos de SGVs diferentes soltos, sem subpasta por task. Levantamento de 31/08: a maioria esmagadora das tasks tem só 1 vídeo (56/74 em Homologação, 26/39 em Desenvolvimento) — criar pasta por SGV viraria dezenas de pastas de 1 arquivo, mais fricção que ganho. Achar tudo sobre uma SGV já é resolvido pelo 🔍 (`evidencia://`, busca por número, não depende de pasta).
 
 > [!info] Evidências não são versionadas
 > A pasta `Evidências/` está no `.gitignore`. Para migrar pra outro computador: nuvem, HD externo ou cópia manual.

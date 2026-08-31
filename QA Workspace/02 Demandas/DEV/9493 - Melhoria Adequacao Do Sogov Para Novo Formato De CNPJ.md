@@ -814,6 +814,8 @@ Os três primeiros saíram do **gate de doc** e da leitura do MR, e cada um muda
 
 ## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://9493)
 
+![[9493 - 2.mp4]]
+
 ---
 
 > [!tip] Observações
