@@ -135,6 +135,10 @@
     "iconName": "LiGraduationCap",
     "iconColor": "#ca8a04"
   },
+  "QA Workspace/07 Termo de Referência": {
+    "iconName": "LiScale",
+    "iconColor": "#9333ea"
+  },
   "QA Workspace/Planejamento": {
     "iconName": "LiTarget",
     "iconColor": "#0d9488"
