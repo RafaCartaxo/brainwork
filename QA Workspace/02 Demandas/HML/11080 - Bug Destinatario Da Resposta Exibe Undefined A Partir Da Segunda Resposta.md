@@ -2,7 +2,7 @@
 tags:
   - bug
   - qa
-  - despachos
+  - despacho
   - usuario-cidadao
 task: "11080"
 pai: ""

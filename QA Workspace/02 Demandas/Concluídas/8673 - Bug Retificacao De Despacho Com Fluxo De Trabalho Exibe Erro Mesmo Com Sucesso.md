@@ -2,7 +2,7 @@
 tags:
   - bug
   - qa
-  - despachos
+  - despacho
 task: "8673"
 prioridade: ""
 status: resolvido

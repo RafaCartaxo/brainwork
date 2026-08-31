@@ -1,7 +1,7 @@
 ---
 tags:
   - sistema
-  - agentes
+  - agente
 ---
 # Agentes
 

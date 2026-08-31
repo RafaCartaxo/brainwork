@@ -2,7 +2,7 @@
 tags:
   - bug
   - qa
-  - assinaturas
+  - assinatura
 task: "10786"
 prioridade: media
 status: aberto

@@ -2,8 +2,8 @@
 tags:
   - bug
   - qa
-  - urbanistico
-  - fluxo-trabalho
+  - processo-urbanistico
+  - fluxo-de-trabalho
 task: "9384"
 prioridade: alta
 status: resolvido

@@ -2,7 +2,7 @@
 tags:
   - bug
   - qa
-  - formularios
+  - formulario
 task: "10517"
 prioridade: media
 status: resolvido

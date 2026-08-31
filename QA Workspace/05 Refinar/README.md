@@ -1,7 +1,7 @@
 ---
 tags:
   - qa
-  - refinar
+  - refinamento
 ---
 # 05 Refinar
 

@@ -4,7 +4,7 @@ tags:
   - qa
   - conhecimento
   - sogov
-  - assinaturas
+  - assinatura
 tipo: modulo
 revisado: 2026-08-10
 fonte: https://app.notion.com/p/alfa-group/Assinaturas-3a34ab9f797643bbb1792b9a3d90cb8e

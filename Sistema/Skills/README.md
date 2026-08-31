@@ -1,7 +1,7 @@
 ---
 tags:
   - sistema
-  - skills
+  - skill
 ---
 # Skills
 

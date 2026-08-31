@@ -1,7 +1,7 @@
 ---
 tags:
   - qa
-  - demandas
+  - demanda
 ---
 # POCs
 

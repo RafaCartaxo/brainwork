@@ -4,7 +4,7 @@ tags:
   - qa
   - sanidade
   - sogov
-  - processos-urbanisticos
+  - processo-urbanistico
 tipo: roteiro-sanidade
 revisado: 2026-07-21
 fonte: https://app.notion.com/p/alfa-group/Roteiro-de-Sanidade-03-Processos-urban-sticos-2fd2aec67d3080838477f7afb819b55b

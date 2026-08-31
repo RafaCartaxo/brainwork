@@ -1,7 +1,7 @@
 ---
 tags:
   - qa
-  - diario
+  - daily
 ---
 # 01 Daily
 

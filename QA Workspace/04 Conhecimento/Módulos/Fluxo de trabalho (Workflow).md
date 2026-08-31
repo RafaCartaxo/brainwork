@@ -4,7 +4,7 @@ tags:
   - qa
   - conhecimento
   - sogov
-  - workflow
+  - fluxo-de-trabalho
 tipo: modulo
 revisado: 2026-07-17
 fonte: https://app.notion.com/p/alfa-group/Fluxo-de-trabalho-Workflow-4773d79eb5dc457da4582f05b4527f51
