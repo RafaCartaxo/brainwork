@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBackpack",
       "LiAlbum",
       "LiCalendarDays",
       "LiLayers",
@@ -14,8 +15,7 @@
       "LiFlaskConical",
       "LiCheckSquare",
       "LiShieldCheck",
-      "LiBookOpen",
-      "LiFileText"
+      "LiBookOpen"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
@@ -179,5 +179,6 @@
   "QA Workspace/04 Conhecimento/Tasks": {
     "iconName": "LiAlbum",
     "iconColor": "#8f21e8"
-  }
+  },
+  "QA Workspace/Evidências/Sem Card": "LiBackpack"
 }
