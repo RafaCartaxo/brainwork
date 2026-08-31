@@ -87,10 +87,7 @@
     "iconName": "LiBookOpen",
     "iconColor": "#e11d48"
   },
-  "QA Workspace/99 Arquivo": {
-    "iconName": "LiArchive",
-    "iconColor": "#78350f"
-  },
+  "QA Workspace/99 Arquivo": "LiArchive",
   "QA Workspace/02 Demandas/Hotfix": {
     "iconName": "LiFlame",
     "iconColor": "#dc2626"
