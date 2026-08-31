@@ -65,6 +65,7 @@ QA Workspace/
     ├── README.md
     ├── Contexto/
     │   ├── COMO_EU_TRABALHO.md
+    │   ├── Ferramentas do dia a dia.md
     │   ├── FLUXOS.md
     │   ├── PADROES_QA.md
     │   └── Plugins Instalados.md
