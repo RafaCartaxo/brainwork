@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiAlbum",
       "LiCalendarDays",
       "LiLayers",
       "LiCode2",
@@ -14,8 +15,7 @@
       "LiCheckSquare",
       "LiShieldCheck",
       "LiBookOpen",
-      "LiFileText",
-      "LiArchive"
+      "LiFileText"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
@@ -175,5 +175,9 @@
   "Sistema/Agentes": {
     "iconName": "LiBot",
     "iconColor": "#7c3aed"
+  },
+  "QA Workspace/04 Conhecimento/Tasks": {
+    "iconName": "LiAlbum",
+    "iconColor": "#8f21e8"
   }
 }
