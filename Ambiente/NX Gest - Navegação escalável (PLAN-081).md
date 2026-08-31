@@ -8,7 +8,7 @@ revisado: 2026-08-28
 # NX Gest - Navegação escalável (PLAN-081)
 
 > [!info] Sobre esta nota
-> Revisão do **PLAN-081** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
+> Revisão do **PLAN-081** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[QA Workspace/04 Conhecimento/README|04 Conhecimento]].
 > Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-086)]] · [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]].
 > **Orquestração:** [[NX Gest - Handoff de execução]].
 
@@ -169,4 +169,4 @@ O plano diz "cap 5 primários" mas **não nomeia o mecanismo**. Especificar: o c
 - Origem da navegação atual: `docs/plans/Stitch-Nav-AppFirst-NXGest.md` (✅ Concluído 07/08/2026, PLAN-060)
 - Normativo de UI: `docs/foundation/ADR-005-UI-Governance.md` · `docs/engineering/design/06-UI-PATTERNS.md` · `UI-COVERAGE.md`
 - Código citado: `frontend/src/shared/layout/{AppLayout,BottomTabBar,UserMenu}.tsx` · `frontend/src/shared/theme/ThemeProvider.tsx` · `frontend/src/shared/auth/RequireModule.tsx` · `scripts/audit-ui.mjs` · `frontend/src/index.css`
-- Convenções do vault: [[../../../Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[../README|04 Conhecimento]] regra 2
+- Convenções do vault: [[Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[QA Workspace/04 Conhecimento/README|04 Conhecimento]] regra 2

@@ -14,7 +14,7 @@ Base de conhecimento sobre o Sogov — comportamentos do sistema, regras de neg�
 | `Módulos/` | Uma nota por módulo/funcionalidade do Sogov (Documentos, Despachos, Assinatura, Notificações, Central de Atendimento…) com regras de negócio e comportamentos conhecidos |
 | `Fluxos/` | Fluxos de negócio ponta a ponta que cruzam módulos (ex.: ciclo de vida de um documento, da abertura à conclusão) |
 | `Referências/` | Material importado ou linkado de fora: docs do repositório, manuais, links externos, leis e normativas (ex.: TCE-PE) |
-| (raiz) | Análises de refinamento arquivadas (ver seção abaixo) |
+| (raiz) | **Só** análises de refinamento arquivadas (ver seção abaixo) — nome sempre `SGV-<n> - Refinamento <título>.md`. Nenhum outro tipo de conteúdo vai solto na raiz; se não é refinamento arquivado, pertence a uma das três pastas acima |
 
 Notas de documentação usam o template [[../../Sistema/Templates/Conhecimento.md|Conhecimento.md]].
 

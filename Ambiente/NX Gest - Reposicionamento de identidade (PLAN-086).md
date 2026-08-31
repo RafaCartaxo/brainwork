@@ -8,8 +8,8 @@ revisado: 2026-08-28
 # NX Gest - Reposicionamento de identidade (PLAN-086)
 
 > [!info] Sobre esta nota
-> Plano **fechado e aprovado**, ainda **não executado** (mantido como **pendência** — será o **PLAN-086 do repo** quando entrar; o número real é atribuído na criação). Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[../README|04 Conhecimento]] (material de fora, resumido e linkado).
-> Template: [[../../../Sistema/Templates/Conhecimento|Conhecimento.md]].
+> Plano **fechado e aprovado**, ainda **não executado** (mantido como **pendência** — será o **PLAN-086 do repo** quando entrar; o número real é atribuído na criação). Trata do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**, então não vale como conhecimento de validação: está aqui como acervo pesquisável, no espírito da regra 2 de [[QA Workspace/04 Conhecimento/README|04 Conhecimento]] (material de fora, resumido e linkado).
+> Template: [[Sistema/Templates/Conhecimento|Conhecimento.md]].
 > Notas irmãs: [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]].
 > **Orquestração:** [[NX Gest - Handoff de execução]].
 
@@ -266,4 +266,4 @@ Débitos adjacentes: **PLAN-065 AC-07** pedia "erro + 'reenviar convite'" e a te
 - Repo: `https://github.com/RafaCartaxo/nxgest` · produção `nxgest.com.br` · staging `nxgestao.duckdns.org`
 - Docs do repo citadas: `docs/foundation/00-NORTH-STAR.md` · `docs/foundation/ADR-006-Module-Manifest.md` · `docs/product/{00-PROJECT,03-PRD,04-ROADMAP,08-UC-MODULOS}.md` · `docs/plans/{PLAN-065,PLAN-071,PLAN-075,PLAN-084}.md` · `docs/skills/SKILL-009-documentation-sync.md`
 - Código citado: `src/modules/admin/domain/modules.ts` · `src/modules/auth/application/use-cases/AtivarConta/AtivarContaUseCase.ts` · `src/shared/email/templates.ts` · `frontend/src/i18n/locales/*.json`
-- Convenções do vault seguidas: [[../../../Sistema/Contexto/REGRAS_IA|REGRAS_IA]] (regra de data resolvida do ambiente; commit por arquivo com identidade fixada) · [[../README|04 Conhecimento]] regra 2 (importar ≠ copiar tudo)
+- Convenções do vault seguidas: [[Sistema/Contexto/REGRAS_IA|REGRAS_IA]] (regra de data resolvida do ambiente; commit por arquivo com identidade fixada) · [[QA Workspace/04 Conhecimento/README|04 Conhecimento]] regra 2 (importar ≠ copiar tudo)

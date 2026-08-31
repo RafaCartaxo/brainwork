@@ -125,4 +125,4 @@ Leitura corrida do `docs/foundation/00-NORTH-STAR.md` conferindo que os dois ní
 - As notas de plano: [[NX Gest - Reposicionamento de identidade (PLAN-086)]] · [[NX Gest - Insights e gráficos (PLAN-080)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]]
 - Contrato universal do repo para agentes: `AGENTS.md` na raiz
 - Governança de doc do repo: `docs/skills/SKILL-009-documentation-sync.md` · `docs/CONTRIBUTING.md`
-- Convenções deste vault: [[../../../Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[../README|04 Conhecimento]] regra 2
+- Convenções deste vault: [[Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[QA Workspace/04 Conhecimento/README|04 Conhecimento]] regra 2

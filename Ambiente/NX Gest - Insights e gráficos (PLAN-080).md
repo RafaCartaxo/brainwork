@@ -8,7 +8,7 @@ revisado: 2026-08-28
 # NX Gest - Insights e gráficos (PLAN-080)
 
 > [!info] Sobre esta nota
-> Correção de direção para o **PLAN-080** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[../README|04 Conhecimento]].
+> Correção de direção para o **PLAN-080** (📝 Planejado, não implementado) do repo pessoal `RafaCartaxo/nxgest` — **não é sistema Sogov**. Acervo pesquisável, na regra 2 de [[QA Workspace/04 Conhecimento/README|04 Conhecimento]].
 > Notas irmãs: [[NX Gest - Reposicionamento de identidade (PLAN-086)]] · [[NX Gest - Navegação escalável (PLAN-081)]] · [[NX Gest - Contrato periodicidade alternada (PLAN-085)]].
 > **Orquestração:** [[NX Gest - Handoff de execução]].
 
@@ -206,4 +206,4 @@ Nota de fundo: `audit-modules.mjs` valida `MODULE_WIDGETS` do **frontend**; o ca
 - Nota par: [[NX Gest - Reposicionamento de identidade (PLAN-086)]]
 - Planos do repo: `docs/plans/PLAN-080-insights-dashboard.md` (📝 Planejado) · `PLAN-081-navegacao-escalavel.md` (📝) · `PLAN-082-devboard-recharts.md` (📝) · `PLAN-083-otimizacao-consultas-busca.md` (✅ Concluído) · `PLAN-077` (performance)
 - Código citado: `src/modules/admin/domain/modules.ts` · `src/modules/operacoes/application/use-cases/ListarHistoricoAtrasos/` · `src/modules/caixa/infrastructure/repositories/caixa.repository.impl.ts` · `frontend/src/modules/operacoes/pages/OperacoesDashboard.tsx` · `frontend/src/shared/theme/favicon.ts` · `scripts/audit-modules.mjs` · `scripts/audit-styles.mjs`
-- Convenções do vault: [[../../../Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[../README|04 Conhecimento]] regra 2
+- Convenções do vault: [[Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[QA Workspace/04 Conhecimento/README|04 Conhecimento]] regra 2

@@ -179,4 +179,4 @@ Vira lookup (`{diaria:"20", alternada:"10", semanal:"3"}`) — **nos dois lugare
 - Plano de origem dos 2 modelos atuais: `docs/plans/PLAN-076-contrato-periodicidade.md`
 - BRs relevantes: BR-039 (diária ou semanal) · BR-040 (configurável, sem retroatividade) · BR-040-A (semanal não inicia em domingo) · BR-042 (nunca vence em domingo) · BR-042-A (fórmula da `dataFinal`)
 - Código citado: `src/modules/contrato/domain/{contrato.entity,periodicidade}.ts` · `src/modules/contrato/domain/services/gerar-parcelas.ts` · `frontend/src/modules/contrato/utils/calcularDataFinal.ts` · `frontend/src/modules/contrato/components/ContratoForm.tsx` · `src/database.ts:123,444`
-- Convenções do vault: [[../../../Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[../README|04 Conhecimento]] regra 2
+- Convenções do vault: [[Sistema/Contexto/REGRAS_IA|REGRAS_IA]] · [[QA Workspace/04 Conhecimento/README|04 Conhecimento]] regra 2

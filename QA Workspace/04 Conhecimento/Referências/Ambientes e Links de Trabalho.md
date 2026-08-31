@@ -69,5 +69,5 @@ Os três aceitam os mesmos caminhos da tabela de padrão acima. **Atenção ao p
 
 ## Referências
 - Arquivo importável no navegador: [`favoritos-sogov.html`](favoritos-sogov.html) (mesma pasta)
-- [[QA Workspace/04 Conhecimento/Ferramentas do dia a dia|Ferramentas do dia a dia]] — lista viva de ferramentas e acessos; a seção "Acessos rápidos" aponta pra cá
+- [[Sistema/Contexto/Ferramentas do dia a dia|Ferramentas do dia a dia]] — lista viva de ferramentas e acessos; a seção "Acessos rápidos" aponta pra cá
 - [[QA Workspace/04 Conhecimento/Referências/Docs do repositório Sogov|Docs do repositório Sogov]]

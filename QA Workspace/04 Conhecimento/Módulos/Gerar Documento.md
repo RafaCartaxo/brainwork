@@ -50,10 +50,10 @@ Funcionalidade que permite criar um novo documento **a partir de** um documento 
 
 ## Regras de acesso e permissões (ponto importante)
 
-> [!warning] Propagação de acesso
-> Ao gerar um documento a partir de outro (ex.: gerar um Alvará a partir de um Protocolo): **todos os usuários que faziam parte da tramitação do documento gerador passam a ter acesso ao documento gerado** — mesmo que não tivessem permissão prévia pra visualizar o módulo do documento gerado. O acesso é **restrito ao documento gerado e associado**, não concede permissão geral ao módulo.
+> [!warning] Propagação de acesso — regra canônica mora em [[Associar e Desassociar]]
+> O documento gerado **é tratado como documento associado** ao gerador (ver "Eventos e associação" acima) — por isso herda a mesma regra de visibilidade de [[Associar e Desassociar#Permissões e visibilidade|Associar/Desassociar → Permissões e visibilidade]]: todos os envolvidos na tramitação do documento gerador passam a ter acesso **restrito de visualização** ao documento gerado (mesmo sem permissão prévia pro módulo dele; não concede permissão geral). Não repetir a regra aqui — só o exemplo aplicado a este fluxo:
 >
-> Exemplo: se um usuário com permissão gera um Alvará a partir de um Protocolo, qualquer outro usuário que participou da tramitação do Protocolo — mesmo sem permissão prévia pra visualizar Alvarás — pode visualizar **exclusivamente** o Alvará gerado e associado a esse Protocolo.
+> Exemplo: usuário com permissão gera um Alvará a partir de um Protocolo → qualquer outro usuário que participou da tramitação do Protocolo pode visualizar **exclusivamente** esse Alvará, mesmo sem permissão prévia pra visualizar Alvarás em geral.
 
 ## Notificações
 

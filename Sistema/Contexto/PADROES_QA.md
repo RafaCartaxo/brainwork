@@ -126,6 +126,7 @@ QA Workspace/
 | Arquivo | Finalidade |
 |---------|------------|
 | [[Sistema/Contexto/COMO_EU_TRABALHO.md\|COMO_EU_TRABALHO.md]] | Fluxo de trabalho pessoal, ambientes e tipos de demanda |
+| [[Sistema/Contexto/Ferramentas do dia a dia.md\|Ferramentas do dia a dia.md]] | Lista viva de ferramentas, acessos e atalhos da rotina — setup pessoal, não conhecimento de domínio do Sogov |
 | [[Sistema/Contexto/FLUXOS.md\|FLUXOS.md]] | Passo a passo prático de cada fluxo (dia, bug, melhoria, evidência) — linkado na Dashboard |
 | [[Sistema/Contexto/PADROES_QA.md\|PADROES_QA.md]] | Este arquivo — padrões técnicos e de documentação |
 | [[Sistema/Contexto/Plugins Instalados.md\|Plugins Instalados.md]] | Setup completo do vault: plugins, atalhos, ícones/cores, Daily Notes, Graph View — necessário pra replicar em outro computador ou com outra IA |
