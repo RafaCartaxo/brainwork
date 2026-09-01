@@ -81,8 +81,11 @@ Antes, ações como enviar e-mail, assinar documento ou importar arquivo acontec
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
+
+> [!danger]- Reprovado em 01/09/2026 — bug [[QA Workspace/02 Demandas/HML/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]]
+> Ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não carrega — a assinatura não pode ser concluída.
 
 **Evidências de Testes:**
 
@@ -669,6 +672,7 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 - 🐛 [[QA Workspace/02 Demandas/HML/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
 - 🐛 [[QA Workspace/02 Demandas/HML/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
 - 🐛 [[QA Workspace/02 Demandas/HML/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
+- 🐛 [[QA Workspace/02 Demandas/HML/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] — cadastrado em 01/09/2026, CT-002 reprovado (documento não carrega ao clicar pra assinar; vizinho da SGV-11158, ponto de falha diferente).
 
 ---
 
@@ -730,3 +734,4 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-08-28 - 🐛 SGV-11153 cadastrado — regressão confirmada da SGV-8660 (tabela de Regressão): download da versão compactada do documento retorna erro.
 - 2026-08-28 - 🐛 SGV-11158 cadastrado — prévia de documento não carrega na tela de solicitação de assinatura. Sem CT/regressão exata correspondente.
 - 2026-08-28 - 🐛 SGV-11159 cadastrado — regressão confirmada da SGV-9074 (tabela de Regressão): campo de mapa não carrega para seleção de localização; reproduz fora do ambiente POC1.
+- 2026-09-01 - 🐛 CT-002 reprovado — SGV-11215 cadastrado (documento não carrega ao clicar pra assinar).
