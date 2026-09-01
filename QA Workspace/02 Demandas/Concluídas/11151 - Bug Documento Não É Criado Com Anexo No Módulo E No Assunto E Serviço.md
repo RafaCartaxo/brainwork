@@ -5,13 +5,14 @@ tags:
 task: "11151"
 pai: ""
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-28
-data_fim: ""
+data_fim: 2026-09-01
 responsavel: Rafael
 cadastrado_por: ""
 modulo: arquitetura
 ambiente: HML
+deploy: pendente_release
 ---
 # Documento não é criado com anexo no módulo e no assunto e serviço
 
@@ -56,6 +57,10 @@ Então verifico que o documento não é criado com sucesso e o sistema retorna e
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Arquitetura/) [🔍](evidencia://11151)
 
 ![[11151 - erro ao criar documento com anexo no modulo e assunto.mp4]]
+*Reprodução (28/08).*
+
+![[11151 - OK.mp4]]
+*Aprovado em homologação (01/09).*
 
 ---
 
@@ -67,9 +72,9 @@ Então verifico que o documento não é criado com sucesso e o sistema retorna e
 
 ### Critérios de aceite
 
-- [ ] Documento é criado com sucesso com anexo no campo do módulo
-- [ ] Documento é criado com sucesso com anexo no campo de assunto e serviço
-- [ ] Documento é criado com sucesso com os dois campos de anexo preenchidos ao mesmo tempo
+- [x] Documento é criado com sucesso com anexo no campo do módulo
+- [x] Documento é criado com sucesso com anexo no campo de assunto e serviço
+- [x] Documento é criado com sucesso com os dois campos de anexo preenchidos ao mesmo tempo
 
 ---
 
@@ -84,10 +89,12 @@ Então verifico que o documento não é criado com sucesso e o sistema retorna e
 **Então** o documento é criado com sucesso, sem erro
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[11151 - OK.mp4]]
 
 ---
 
@@ -101,6 +108,7 @@ Então verifico que o documento não é criado com sucesso e o sistema retorna e
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
-- Observações: Achado testando criação/anexo de documento no novo ambiente de homologação (nova arquitetura). Não bate exatamente com nenhum CT já listado na SGV-8321 — CT-005 é "criar documento" sem anexo, CT-023 é "anexar arquivo em campo de texto longo" (contexto diferente dos campos de anexo do módulo/assunto e serviço). Não marquei nenhum CT da 8321 como reprovado por isso — avaliar se vale um CT novo lá.
+- Observações: Achado testando criação/anexo de documento no novo ambiente de homologação (nova arquitetura). Não bate exatamente com nenhum CT já listado na SGV-8321 — CT-005 é "criar documento" sem anexo, CT-023 é "anexar arquivo em campo de texto longo" (contexto diferente dos campos de anexo do módulo/assunto e serviço). Não marquei nenhum CT da 8321 como reprovado por isso — avaliar se vale um CT novo lá. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado
+    - 2026-09-01 - ✅ Aprovada em homologação
