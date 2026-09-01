@@ -5,13 +5,14 @@ tags:
 task: "11153"
 pai: ""
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-28
-data_fim: ""
+data_fim: 2026-09-01
 responsavel: Rafael
 cadastrado_por: ""
 modulo: arquitetura
 ambiente: HML
+deploy: pendente_release
 ---
 # Erro ao tentar realizar download versão compactada
 
@@ -55,6 +56,10 @@ Então verifico que o sistema retorna erro em vez de concluir o download
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Arquitetura/) [🔍](evidencia://11153)
 
 ![[11153 - erro ao baixar compactado.mp4]]
+*Reprodução (28/08).*
+
+![[11153 - OK.mp4]]
+*Aprovado em homologação (01/09).*
 
 ---
 
@@ -66,7 +71,7 @@ Então verifico que o sistema retorna erro em vez de concluir o download
 
 ### Critérios de aceite
 
-- [ ] Download da versão compactada do documento é concluído com sucesso
+- [x] Download da versão compactada do documento é concluído com sucesso
 
 ---
 
@@ -79,10 +84,12 @@ Então verifico que o sistema retorna erro em vez de concluir o download
 **Então** o download conclui com sucesso, sem erro
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[11153 - OK.mp4]]
 
 ---
 
@@ -96,6 +103,7 @@ Então verifico que o sistema retorna erro em vez de concluir o download
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
-- Observações: Corresponde à SGV-8660 da rodada anterior (tabela de Regressão da SGV-8321, "Erro ao tentar realizar download Versão compactada") — revalidação nesta rodada reproduziu o mesmo erro. A tabela correlacionava com CT-022, mas CT-022 é sobre expiração de link de download, tema diferente do erro de download em si — não bate exatamente, mesmo caso do que já foi observado na SGV-11151.
+- Observações: Corresponde à SGV-8660 da rodada anterior (tabela de Regressão da SGV-8321, "Erro ao tentar realizar download Versão compactada") — revalidação nesta rodada reproduziu o mesmo erro. A tabela correlacionava com CT-022, mas CT-022 é sobre expiração de link de download, tema diferente do erro de download em si — não bate exatamente, mesmo caso do que já foi observado na SGV-11151. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado
+    - 2026-09-01 - ✅ Aprovada em homologação

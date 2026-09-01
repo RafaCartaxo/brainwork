@@ -5,13 +5,14 @@ tags:
 task: "11158"
 pai: ""
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-28
-data_fim: ""
+data_fim: 2026-09-01
 responsavel: Rafael
 cadastrado_por: ""
 modulo: arquitetura
 ambiente: HML
+deploy: pendente_release
 ---
 # Prévia de documento não carrega para solicitação de assinatura
 
@@ -74,9 +75,11 @@ Então verifico que a prévia do documento não carrega
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Arquitetura/) [🔍](evidencia://11158)
 
-![[11158 - OK.mp4]]
-
 ![[11158 - documento não carrega para realizar assinatura.mp4]]
+*Reprodução (28/08).*
+
+![[11158 - OK.mp4]]
+*Aprovado em homologação (01/09).*
 
 ---
 
@@ -88,7 +91,7 @@ Então verifico que a prévia do documento não carrega
 
 ### Critérios de aceite
 
-- [ ] A prévia do documento é exibida corretamente na tela de solicitação de assinatura
+- [x] A prévia do documento é exibida corretamente na tela de solicitação de assinatura
 
 ---
 
@@ -101,10 +104,12 @@ Então verifico que a prévia do documento não carrega
 **Então** a prévia do documento carrega normalmente
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[11158 - OK.mp4]]
 
 ---
 
@@ -118,6 +123,7 @@ Então verifico que a prévia do documento não carrega
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
-- Observações: Achado na mesma revalidação da nova arquitetura. Não encontrei CT nem item da tabela de Regressão que bata exatamente — o mais próximo é a SGV-8661 ("Documentos e despachos não carregam ao baixar documento personalizado", CT-029/CT-030), mas aquele é sobre download de documento personalizado, não prévia no fluxo de assinatura — temas parecidos, não a mesma coisa, então não linkei os dois. curl2 (fetch direto do PDF no S3) é onde a falha aparece na prática — vale o dev olhar CORS/permissão do bucket nesse ambiente novo.
+- Observações: Achado na mesma revalidação da nova arquitetura. Não encontrei CT nem item da tabela de Regressão que bata exatamente — o mais próximo é a SGV-8661 ("Documentos e despachos não carregam ao baixar documento personalizado", CT-029/CT-030), mas aquele é sobre download de documento personalizado, não prévia no fluxo de assinatura — temas parecidos, não a mesma coisa, então não linkei os dois. curl2 (fetch direto do PDF no S3) era onde a falha aparecia na prática. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado
+    - 2026-09-01 - ✅ Aprovada em homologação

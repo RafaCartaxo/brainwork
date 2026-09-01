@@ -5,13 +5,14 @@ tags:
 task: "11159"
 pai: ""
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-28
-data_fim: ""
+data_fim: 2026-09-01
 responsavel: Rafael
 cadastrado_por: ""
 modulo: arquitetura
 ambiente: HML
+deploy: pendente_release
 ---
 # Campo de mapa não carrega para seleção de localização
 
@@ -32,6 +33,10 @@ Então verifico que o campo de mapa não é carregado
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Arquitetura/) [🔍](evidencia://11159)
 
 ![[11159 - campo mapa nok.mp4]]
+*Reprodução (28/08).*
+
+![[11159 - OK.mp4]]
+*Aprovado em homologação (01/09).*
 
 ---
 
@@ -43,8 +48,8 @@ Então verifico que o campo de mapa não é carregado
 
 ### Critérios de aceite
 
-- [ ] O campo de mapa carrega ao acessar um documento com esse campo configurado
-- [ ] É possível selecionar a localização no campo de mapa
+- [x] O campo de mapa carrega ao acessar um documento com esse campo configurado
+- [x] É possível selecionar a localização no campo de mapa
 
 ---
 
@@ -57,10 +62,12 @@ Então verifico que o campo de mapa não é carregado
 **Então** o campo de mapa carrega normalmente, sem erro
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[11159 - OK.mp4]]
 
 ---
 
@@ -74,6 +81,7 @@ Então verifico que o campo de mapa não é carregado
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
-- Observações: Corresponde à SGV-9074 da rodada anterior (tabela de Regressão da SGV-8321, "Erro ao selecionar localização em campo do tipo mapa (POC1)") — revalidação nesta rodada reproduziu o mesmo erro. A rodada anterior marcava esse item como tag POC/ambiente "POC1", com nota pra confirmar se esse ambiente ainda existia no novo ambiente de homologação — esse achado confirma que o problema reproduz também fora do POC1, no ambiente atual.
+- Observações: Corresponde à SGV-9074 da rodada anterior (tabela de Regressão da SGV-8321, "Erro ao selecionar localização em campo do tipo mapa (POC1)") — revalidação nesta rodada reproduziu o mesmo erro. A rodada anterior marcava esse item como tag POC/ambiente "POC1", com nota pra confirmar se esse ambiente ainda existia no novo ambiente de homologação — esse achado confirma que o problema reproduz também fora do POC1, no ambiente atual. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): não é validação de regra de negócio nova — é confirmação de paridade pós-migração de arquitetura (mesma premissa da SGV-8321); resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação. Sem doc de módulo específica pro campo de mapa.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado
+    - 2026-09-01 - ✅ Aprovada em homologação
