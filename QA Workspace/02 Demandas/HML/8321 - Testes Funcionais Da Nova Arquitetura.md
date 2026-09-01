@@ -669,9 +669,9 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 
 - 🐛 [[QA Workspace/02 Demandas/HML/Bug E-mail De Confirmacao De Cadastro Nao Chega No Novo Ambiente De Homologacao|Bug E-mail de confirmação de cadastro não chega]] — confirmado em 26/08/2026, CT-025 reprovado, sem SGV ainda.
 - 🐛 [[QA Workspace/02 Demandas/HML/11151 - Bug Documento Não É Criado Com Anexo No Módulo E No Assunto E Serviço|SGV-11151]] — cadastrado em 28/08/2026, documento não criado com anexo no módulo/assunto e serviço; não bate com CT existente (ver Observações do card).
-- 🐛 [[QA Workspace/02 Demandas/HML/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
-- 🐛 [[QA Workspace/02 Demandas/HML/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
-- 🐛 [[QA Workspace/02 Demandas/HML/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
 - 🐛 [[QA Workspace/02 Demandas/HML/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] — cadastrado em 01/09/2026, CT-002 reprovado (documento não carrega ao clicar pra assinar; vizinho da SGV-11158, ponto de falha diferente).
 
 ---
@@ -690,7 +690,7 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 |---|---|---|---|---|
 | SGV-9530 | Erro ao tentar ativar instância "Em implantação" | Cancelado | — | ☐ *(não se aplica — cancelado)* |
 | SGV-9076 | Erro ao excluir pré-cadastro de servidor (ambiente POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☐ |
-| SGV-9074 | Erro ao selecionar localização em campo do tipo mapa (POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☑ *(reprovado fora do POC1, reaberto como [[QA Workspace/02 Demandas/HML/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização\|SGV-11159]])* |
+| SGV-9074 | Erro ao selecionar localização em campo do tipo mapa (POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☑ *(reaberto fora do POC1 como [[QA Workspace/02 Demandas/Concluídas/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização\|SGV-11159]], corrigido e aprovado em 01/09)* |
 | SGV-8820 | Sessão como Cidadão PJ não é persistida | Aprovado no Dev | CT-015 / CT-018 (Login e sessão) | ☐ |
 | SGV-8806 | Impossibilidade de criar novos documentos | Aprovado no Dev | CT-005 (Criar documento) | ☐ |
 | SGV-8775 | Erro ao tentar realizar importação de documentos | Aprovado no Dev | CT-004 (Importar documento) | ☐ |
@@ -698,7 +698,7 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 | SGV-8688 | Erro ao tentar abrir qualquer solicitação como cidadão | Aprovado no Dev | CT-015 / CT-035 (Login ou regressão geral) | ☐ |
 | SGV-8669 | Erro ao emitir documento para cliente (ambiente administrativo) | Aprovado no Dev | CT-029 (Emitir/baixar documento) | ☐ |
 | SGV-8661 | Documentos e despachos não carregam ao baixar documento personalizado | Aprovado no Dev | CT-029 / CT-030 (Geração/download de PDF) | ☐ |
-| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☑ *(reprovado — reaberto como [[QA Workspace/02 Demandas/HML/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada\|SGV-11153]])* |
+| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☑ *(reaberto como [[QA Workspace/02 Demandas/Concluídas/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada\|SGV-11153]], corrigido e aprovado em 01/09)* |
 | SGV-8658 | Erro ao realizar ou solicitar Assinaturas (POC) | Aprovado no Dev | Sem CT claro — tag POC; correlato a CT-029 (assinatura) se aplicável fora de POC | ☐ |
 | SGV-8609 | Falha ao cadastrar servidor no ambiente com nova arquitetura | Aprovado no Dev | Sem CT claro — pode estar ligado ao deploy (ver Verificações técnicas), confirmar contexto | ☐ |
 | SGV-8602 | Logo do SOGOV não exibida no e-mail "Finalize seu cadastro" (cidadão PF) | Aprovado no Dev | CT-028 (Logo no e-mail de cadastro) | ☐ |
@@ -735,3 +735,4 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-08-28 - 🐛 SGV-11158 cadastrado — prévia de documento não carrega na tela de solicitação de assinatura. Sem CT/regressão exata correspondente.
 - 2026-08-28 - 🐛 SGV-11159 cadastrado — regressão confirmada da SGV-9074 (tabela de Regressão): campo de mapa não carrega para seleção de localização; reproduz fora do ambiente POC1.
 - 2026-09-01 - 🐛 CT-002 reprovado — SGV-11215 cadastrado (documento não carrega ao clicar pra assinar).
+- 2026-09-01 - ✅ SGV-11159, SGV-11158 e SGV-11153 aprovadas em homologação (campo de mapa, prévia de assinatura e download compactado) — SGV-11159 e SGV-11153 fecham as regressões da SGV-9074 e SGV-8660 (tabela de Regressão acima).

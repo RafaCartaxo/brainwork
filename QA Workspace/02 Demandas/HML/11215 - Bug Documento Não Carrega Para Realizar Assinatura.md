@@ -19,7 +19,7 @@ ambiente: HML
 
 Durante validação foi identificado que, ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não é carregado com sucesso — a assinatura não pode ser concluída. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
 
-**Vizinho da [[QA Workspace/02 Demandas/HML/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]], mas ponto de falha diferente**: na 11158 a tela de **solicitar** assinatura é que não carregava a prévia. Aqui a tela de solicitar funcionou normal — é o documento não carregando na hora de **assinar em si**, depois que a solicitação já foi feita.
+**Vizinho da [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]], mas ponto de falha diferente**: na 11158 a tela de **solicitar** assinatura é que não carregava a prévia. Aqui a tela de solicitar funcionou normal — é o documento não carregando na hora de **assinar em si**, depois que a solicitação já foi feita.
 
 ---
 
