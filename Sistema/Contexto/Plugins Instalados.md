@@ -55,6 +55,7 @@ Em Settings → Daily notes:
 ## Atalho customizado
 - `Ctrl+L` → comando `omnisearch:show-modal` (busca full-text no vault). Configurado em Settings → Hotkeys.
 - `Ctrl+H` → comando `homepage:open-homepage` (volta pra Dashboard de qualquer lugar). Configurado em Settings → Hotkeys.
+- `Ctrl+R` → comando `app:reload` ("Reload app without saving"). Configurado em Settings → Hotkeys (2026-09-02) — força o Obsidian a reler tudo do disco quando uma nota aberta não pega sozinha uma edição externa (ex.: arquivo editado por script/IA fora do app).
 
 ## Modo leitura por padrão
 Toda nota abre em **modo leitura** (Settings → Editor → "Default view for new tabs" = Reading view; no `app.json`: `defaultViewMode: preview`). Pra editar: **`Ctrl+E`** alterna leitura ↔ edição (atalho nativo do Obsidian, sem config). O Homepage também abre a Dashboard em Reading view (config própria do plugin).
