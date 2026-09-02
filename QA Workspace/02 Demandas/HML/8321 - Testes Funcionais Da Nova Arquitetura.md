@@ -84,8 +84,8 @@ Antes, ações como enviar e-mail, assinar documento ou importar arquivo acontec
 - [x] Não
 - [ ] Não se aplica
 
-> [!danger]- Reprovado em 01/09/2026 — bug [[QA Workspace/02 Demandas/HML/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]]
-> Ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não carrega — a assinatura não pode ser concluída.
+> [!danger]- Reprovado em 01/09/2026 — bugs [[QA Workspace/02 Demandas/HML/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] e [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]
+> Ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não carrega — a assinatura não pode ser concluída (SGV-11215). Em cenários onde o documento carrega, a assinatura em si não é concluída com sucesso, com ou sem anexo (SGV-11249, achado em 02/09/2026).
 
 **Evidências de Testes:**
 
@@ -673,6 +673,7 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 - 🐛 [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
 - 🐛 [[QA Workspace/02 Demandas/Concluídas/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
 - 🐛 [[QA Workspace/02 Demandas/HML/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] — cadastrado em 01/09/2026, CT-002 reprovado (documento não carrega ao clicar pra assinar; vizinho da SGV-11158, ponto de falha diferente).
+- 🐛 [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] — cadastrado em 02/09/2026, CT-002 reprovado (documento/despacho, com ou sem anexo, carrega mas a assinatura não conclui; vizinho da SGV-11215, ponto de falha diferente).
 
 ---
 
@@ -735,5 +736,6 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-08-28 - 🐛 SGV-11158 cadastrado — prévia de documento não carrega na tela de solicitação de assinatura. Sem CT/regressão exata correspondente.
 - 2026-08-28 - 🐛 SGV-11159 cadastrado — regressão confirmada da SGV-9074 (tabela de Regressão): campo de mapa não carrega para seleção de localização; reproduz fora do ambiente POC1.
 - 2026-09-01 - 🐛 CT-002 reprovado — SGV-11215 cadastrado (documento não carrega ao clicar pra assinar).
+- 2026-09-02 - 🐛 CT-002 segue reprovado — SGV-11249 cadastrado (documento/despacho, com ou sem anexo, carrega mas a assinatura não conclui com sucesso).
 - 2026-09-01 - ✅ SGV-11159, SGV-11158 e SGV-11153 aprovadas em homologação (campo de mapa, prévia de assinatura e download compactado) — SGV-11159 e SGV-11153 fecham as regressões da SGV-9074 e SGV-8660 (tabela de Regressão acima).
 - 2026-09-01 - ✅ SGV-11151 aprovada em homologação (criação de documento com anexo no módulo e no assunto e serviço).
