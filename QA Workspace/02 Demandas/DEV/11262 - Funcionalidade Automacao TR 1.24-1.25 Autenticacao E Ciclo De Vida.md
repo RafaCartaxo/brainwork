@@ -85,3 +85,4 @@ Não é uma correção de bug nem uma feature de produto — é cobertura de reg
 - 2026-08-31 - Suíte 4 validada contra HML: 8/17 confirmados, 3 achados reais, 6 sem causa raiz
 - 2026-09-01 - CT-015 questionado pelo responsável (validação manual diverge do achado automatizado) — investigação de timing tentada, inconclusiva por instabilidade do ambiente
 - 2026-09-02 - Card **SGV-11262** criado (retroativo), plano de subida definido, skill [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] registrada no vault
+- 2026-09-02 - Identificado que esta task cobre só a automação, não as frentes de padronização/sincronização Qase do TR 1.24-1.25 — rascunhada task pai em [[TR 1.24-1.25 - Funcionalidade Verificacao De Conformidade Autenticacao E Ciclo De Vida|TR 1.24-1.25 - Verificação de Conformidade]] (aguardando SGV externo); quando ela ganhar número, preencher `pai:` aqui
