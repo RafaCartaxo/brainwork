@@ -89,7 +89,7 @@ Lastro documental: [[QA Workspace/04 Conhecimento/Módulos/Assinaturas#Página e
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/10786 - Bug QR Code Do Link De Assinatura Aparece Apenas Em Assinaturas Em Pagina Separada|SGV-10786]] — bug **derivado desta validação**: durante a aprovação de 12/08 notou-se que o QR Code do link de assinatura só é exibido em assinaturas em **página separada**
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/10786 - Bug QR Code Do Link De Assinatura Aparece Apenas Em Assinaturas Em Pagina Separada|SGV-10786]] — bug **derivado desta validação**: durante a aprovação de 12/08 notou-se que o QR Code do link de assinatura só é exibido em assinaturas em **página separada**
 - Observações:
     - **Card criado no dia da aprovação** (12/08/2026). A demanda existiu de 10/08 a 12/08 só como registro nas dailies — a descrição e o passo a passo foram reconstruídos a partir desses registros e das evidências.
     - **Gate de doc já realizado em 10/08**, com **divergência confirmada**: a doc de [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] trata o QR Code/texto de autenticidade como **regra transversal**, então o resultado esperado tem lastro escrito e não é interpretação da QA.
