@@ -14,7 +14,7 @@ cadastrado_por: ""
 modulo: assinaturas
 ambiente: HML
 ---
-# Combo assinado não sai da fila de assinatura
+# Documentos e despachos assinados não saem da fila de assinatura
 
 ### Descrição
 
