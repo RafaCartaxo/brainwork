@@ -36,11 +36,17 @@ Então verifico que o QR Code aparece **somente** nas assinaturas em página sep
 
 ---
 
-### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Desenvolvimento/) [🔍](evidencia://10786)
+### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evid%C3%AAncias/Homologa%C3%A7%C3%A3o/) [🔍](evidencia://10786)
 
 ![[10786 - qr code apenas em assinatura em pagina separada.mp4]]
 
 *Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/10267 - Bug Link Verificacao Assinatura Nao Aparece Em Anexos Com Imagens Grandes|SGV-10267]] — mesmo vídeo, cópia renomeada.*
+
+![[10786 - OK pt1.mp4]]
+
+![[10786 - OK pt2.mp4]]
+
+*Aprovação de 02/09/2026 (ver CTs abaixo).*
 
 ---
 
@@ -73,12 +79,14 @@ O comportamento observado é o **oposto exato** da regra escrita. O resultado es
 **Então** verifico que o **QR Code está presente**, conforme a regra transversal da doc
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 
 **Evidências de Testes:**
 
 ![[10786 - qr code apenas em assinatura em pagina separada.mp4]]
+
+![[10786 - OK pt1.mp4]]
 
 ---
 
@@ -89,20 +97,21 @@ O comportamento observado é o **oposto exato** da regra escrita. O resultado es
 **Então** verifico que ele abre a verificação **daquela** assinatura
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
-> [!warning]- Não exercitado
-> Depende do CT-B01 passar: hoje o QR Code **não é exibido** no posicionamento manual, então não há o que escanear. Fica sem marcar de propósito — marcar "Não" sugeriria que o QR foi testado e falhou na leitura, o que não aconteceu.
-
 **Evidências de Testes:**
+
+![[10786 - OK pt2.mp4]]
+
+*(pt1/pt2 assumidos na ordem dos CTs — corrigir se a cobertura for outra)*
 
 ---
 
 ### Ambiente
 
 - Versão:
-- Ambiente: Desenvolvimento — **posição na esteira de correção**. O defeito foi **identificado em homologação**, durante a validação da SGV-10267; o card nasce em `DEV/` por ser bug novo ainda não corrigido em nenhum ambiente ([[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]).
+- Ambiente: Homologação. Card nasceu em `DEV/` representando a posição na esteira de correção (defeito identificado em homologação, durante a validação da SGV-10267 — [[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]); aprovado direto em homologação, sem passagem por validação isolada em DEV.
 
 ---
 
@@ -112,6 +121,7 @@ O comportamento observado é o **oposto exato** da regra escrita. O resultado es
 - Observações:
     - **Gate de doc: divergência confirmada, com citação literal.** A regra transversal de [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] diz que o QR Code vale **também para o posicionamento manual**. O produto faz exatamente o contrário — exibe só na página extra.
     - **Quarto bug no mesmo rodapé de autenticidade**, junto de [[QA Workspace/02 Demandas/HML/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]], [[QA Workspace/02 Demandas/HML/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] e a própria SGV-10267. A dúvida em aberto na doc — *"o ajuste do rodapé foi pontual onde a doc o trata como regra transversal?"* — ganha aqui a resposta mais direta até agora: **este defeito é literalmente o rodapé funcionando só num dos dois posicionamentos**.
-    - Escopo **não apurado nesta rodada**: se a ausência do QR também ocorre na **impressão** e no **download** (a página extra "torna-se parte integrante do arquivo PDF", conforme a doc), ou só na visualização. Vale confirmar antes de fechar a correção.
+    - Escopo **não apurado nesta rodada** (segue em aberto na aprovação de 02/09): se a ausência do QR também ocorria na **impressão** e no **download** (a página extra "torna-se parte integrante do arquivo PDF", conforme a doc), ou só na visualização — não confirmado se a validação de hoje cobriu isso. Ver Anotações da daily de 02/09.
 - Histórico:
     - 2026-08-12 - 🐛 Bug cadastrado (identificado em homologação, durante a validação da SGV-10267)
+    - 2026-09-02 - ✅ Aprovada em homologação (QR Code passou a aparecer também no posicionamento manual)
