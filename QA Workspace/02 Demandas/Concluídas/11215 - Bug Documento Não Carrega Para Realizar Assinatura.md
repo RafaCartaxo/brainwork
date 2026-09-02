@@ -5,9 +5,9 @@ tags:
 task: "11215"
 pai: ""
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-01
-data_fim: ""
+data_fim: 2026-09-02
 responsavel: Rafael
 cadastrado_por: ""
 modulo: arquitetura
@@ -21,6 +21,9 @@ Durante validação foi identificado que, ao solicitar a assinatura de um servid
 
 **Vizinho da [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]], mas ponto de falha diferente**: na 11158 a tela de **solicitar** assinatura é que não carregava a prévia. Aqui a tela de solicitar funcionou normal — é o documento não carregando na hora de **assinar em si**, depois que a solicitação já foi feita.
 
+> [!success]- Aprovado parcialmente em 02/09/2026 (v. 14.17.0)
+> Considerado aprovado **apenas o carregamento do documento** para a tentativa de assinatura — o problema original deste card. A conclusão da assinatura em si segue com falha, agora tratada em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] (comentário deixado por Rafael na task).
+
 ---
 
 ### Passo a passo para reproduzir
@@ -32,6 +35,8 @@ Então verifico que o documento não é carregado com sucesso
 ---
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Arquitetura/) [🔍](evidencia://11215)
+
+![[11215 - parcial OK.mp4]]
 
 ![[11215 - Erro ao carregar documento para realizar assinatura.mp4]]
 
@@ -45,8 +50,8 @@ Então verifico que o documento não é carregado com sucesso
 
 ### Critérios de aceite
 
-- [ ] Ao clicar para assinar, o documento/despacho/anexo carrega com sucesso
-- [ ] A assinatura pode ser concluída normalmente após o documento carregar
+- [x] Ao clicar para assinar, o documento/despacho/anexo carrega com sucesso
+- [ ] A assinatura pode ser concluída normalmente após o documento carregar — **fora do escopo desta aprovação, segue em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]**
 
 ---
 
@@ -59,8 +64,10 @@ Então verifico que o documento não é carregado com sucesso
 **Então** o documento carrega com sucesso e a assinatura pode ser concluída
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
+
+*(aprovado apenas quanto ao carregamento do documento — a conclusão da assinatura segue em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]])*
 
 **Evidências de Testes:**
 
@@ -68,7 +75,7 @@ Então verifico que o documento não é carregado com sucesso
 
 ### Ambiente
 
-- Versão:
+- Versão: 14.17.0
 - Ambiente: Homologação
 
 ---
@@ -76,6 +83,7 @@ Então verifico que o documento não é carregado com sucesso
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
-- Observações: Bate direto com o **CT-002** ("Assinar um documento continua funcionando") da SGV-8321 — o cenário do CT é exatamente ter um documento pronto pra assinatura → assinar → confirmar que fica assinado, e é isso que está falhando (documento nem carrega). Marcado como reprovado lá.
+- Observações: Bate direto com o **CT-002** ("Assinar um documento continua funcionando") da SGV-8321 — o cenário do CT é exatamente ter um documento pronto pra assinatura → assinar → confirmar que fica assinado. Marcado como reprovado lá. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração; válido pra parte aprovada (carregamento). Aprovação parcial registrada por Rafael diretamente na task (comentário): "Assinatura ainda não está sendo realizada com sucesso, porém foi aberto outra task para seguir com a tratativa, sendo essa considerada para aprovação, apenas o carregamento do documento para a realização da tentativa de assinatura no documento. Bug relacionado: SGV-11249".
 - Histórico:
     - 2026-09-01 - 🐛 Bug cadastrado
+    - 2026-09-02 - ✅ Aprovada parcialmente em homologação (v. 14.17.0) — carregamento do documento resolvido; conclusão da assinatura segue em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]
