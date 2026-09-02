@@ -64,6 +64,21 @@ ls cypress/testes/api/entities/<dominio>/*.cy.js cypress/testes/e2e/entities/<do
 - [ ] **Docs × código** — `docs/commands/**` e `docs/business-rules/**` batem com o código atual
       (mesmo crivo do [[SKILL_REVISAO_AUTOMACAO_E2E]] — commands novos ou corrigidos têm entrada
       de doc correspondente, acréscimo nunca reescrita).
+- [ ] **Qualidade e convenção dos comentários** — grep por `Rafael|confirmar com|PENDENTE|não
+      investigado a fundo|preciso investigar` nos arquivos do grupo. Um comentário de código deve:
+      1. Explicar o **PORQUÊ** não-óbvio (uma restrição, um bug real, uma decisão) — nunca repetir
+         o que o código já deixa claro pelo nome.
+      2. **Nunca citar uma pessoa** (nem "confirmado com Fulano", nem "perguntar pro Fulano") — se é
+         regra confirmada, registrar a regra em si; se está em aberto, isso é conteúdo de
+         doc/handoff, não de comentário de código.
+      3. Ser **fato, não diário de investigação** — descrever o comportamento atual conhecido (o
+         quê + evidência mínima), nunca narrar a jornada de debug ("testei isso, não resolveu,
+         ainda preciso ver X") — isso pertence à documentação viva (Handoff/Entrega), não ao código.
+      4. **Sem plano de próxima sessão embutido** — "próximo passo: investigar Y" vai pro Handoff,
+         nunca pro comentário. *Exemplo real: comentários com "PENDENTE — achado não totalmente
+         diagnosticado... precisa de uma rodada isolada pra..." em `identity-lifecycle.api.cy.js`
+         reescritos como fato direto ("Achado sem causa raiz conhecida: X não encontra Y, testado
+         Z, sem efeito"), sem a narrativa de próximos passos.*
 
 ## 3. Rodar pra confirmar que nada quebrou
 
@@ -90,6 +105,7 @@ npx cypress run --browser chrome --spec "<specs do grupo>" --reporter mochawesom
 |---|---|---|
 | TR 1.24-1.25, Suíte 1 (`login.api.cy.js`) — 02/09/2026 | Nenhuma duplicação; só reusa commands pré-existentes + os novos `loginAgentExpectFailure`/`loginCitizenExpectFailure` (usados também por outras 4 suítes, não é duplicação). Organização api/e2e confere com o padrão de `public-agent/`. | Pode subir sem pendência |
 | TR 1.24-1.25, Suítes 3/4 (`lockout.api.cy.js` + `identity-lifecycle.api.cy.js`) — 02/09/2026 | `createIsolatedTestAgent` duplicado quase igual nos dois arquivos (só prefixo do nome/e-mail e shape do retorno mudavam). Fix pré-existente em `finishAgentRegistry` confirmado usado por 6 pontos do setup global + 4 suítes de `public-agent/` — seguro (só corrige race condition). | Extraído pra `cy.createIsolatedTestAgent` único; suítes rodadas de novo, resultado idêntico ao anterior (4/5 e 8/17, mesmos motivos) |
+| TR 1.24-1.25, todos os specs de `auth/` — 02/09/2026 (revisão de comentários) | 2 comentários citando "Rafael" diretamente (`login.api.cy.js`, `lockout.api.cy.js`); 2 blocos em tom de diário de investigação com plano de próxima sessão embutido (`identity-lifecycle.api.cy.js`, CT-022 e CT-034); `login.e2e.cy.js` usava `formatCNPJ()` (CNPJ formatado) — divergia da regra já confirmada via API no CT-003 (CNPJ deve ser RAW), achado ao revisar o comentário de "suposição" do teste. | Comentários reescritos conforme a convenção acima; `login.e2e.cy.js` corrigido pra CNPJ raw — teste que falhava por outro motivo (achado real de implementação, não só comentário) |
 
 ## Resultado Esperado
 
