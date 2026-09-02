@@ -5,13 +5,13 @@ tags:
   - assinatura
 task: "10786"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-12
-data_fim: ""
+data_fim: 2026-09-02
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: assinaturas
-ambiente: DEV
+ambiente: HML
 ---
 # QR Code do link de assinatura aparece apenas em assinaturas em página separada
 
@@ -22,6 +22,9 @@ Durante validação foi identificado que o **QR Code do link de assinatura** é 
 O comportamento esperado é que o QR Code apareça em **todas** as assinaturas, independentemente de como foram posicionadas.
 
 Encontrado durante a validação da [[QA Workspace/02 Demandas/Concluídas/10267 - Bug Link Verificacao Assinatura Nao Aparece Em Anexos Com Imagens Grandes|SGV-10267]], em homologação.
+
+> [!success]- Aprovado em 02/09/2026
+> QR Code passou a aparecer também nas assinaturas de posicionamento manual, em homologação.
 
 ---
 
@@ -55,9 +58,9 @@ O comportamento observado é o **oposto exato** da regra escrita. O resultado es
 
 ### Critérios de aceite
 
-- [ ] O QR Code aparece nas assinaturas geradas na **página extra**
-- [ ] O QR Code aparece nas assinaturas de **posicionamento manual**, no corpo do documento
-- [ ] O QR Code exibido no posicionamento manual é **escaneável** e leva à verificação da assinatura correspondente
+- [x] O QR Code aparece nas assinaturas geradas na **página extra**
+- [x] O QR Code aparece nas assinaturas de **posicionamento manual**, no corpo do documento
+- [x] O QR Code exibido no posicionamento manual é **escaneável** e leva à verificação da assinatura correspondente
 
 ---
 
