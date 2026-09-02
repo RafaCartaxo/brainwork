@@ -227,7 +227,7 @@ Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc
 #### **CT-012 Bloquear vínculo de participante de outra instância** *(CA02)*
 
 **Dado** que o servidor está vinculando um participante a um departamento existente
-**Quando** seleciona um cidadão de outro cliente/instância
+**Quando** tenta buscar/selecionar um cidadão de outro cliente/instância
 **Então** o sistema não permite o vínculo
 
 **Execução Passou?**
