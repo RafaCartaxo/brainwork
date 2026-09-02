@@ -28,7 +28,11 @@ O `1` no fim é o identificador da instância/prefeitura — trocar pra alternar
 
 ## Desenvolvimento (ambientes por dev)
 
-Cada dev tem seu ambiente de branch em `*.d10fnl6gn002xw.amplifyapp.com`, no padrão `dev-<nome>`. É por aqui que a validação em DEV acontece — e é o que aparece na seção **Ambiente** dos cards (ex.: o card da [[QA Workspace/02 Demandas/DEV/10393 - Bug Aviso Assinaturas Digitais Emitir Assinar Cidadão|SGV-10393]] registra "ambiente de branch `dev-diogo-nobrega`").
+Três famílias de ambiente de desenvolvimento, todas em `*.d10fnl6gn002xw.amplifyapp.com` — a organização (`Ambientes > Nova Arquitetura / Containers (Híbridos) / Legado`) espelha os favoritos do navegador.
+
+### Legado (branch por dev — sistema atual, o que o cliente usa)
+
+Cada dev tem seu ambiente de branch, no padrão `dev-<nome>`. É por aqui que a validação em DEV acontece pra sprint normal do legado — e é o que aparece na seção **Ambiente** dos cards (ex.: o card da [[QA Workspace/02 Demandas/DEV/10393 - Bug Aviso Assinaturas Digitais Emitir Assinar Cidadão|SGV-10393]] registra "ambiente de branch `dev-diogo-nobrega`").
 
 | Dev | Subdomínio |
 |---|---|
@@ -37,6 +41,8 @@ Cada dev tem seu ambiente de branch em `*.d10fnl6gn002xw.amplifyapp.com`, no pad
 | Diogo | `dev-diogo-nobrega` |
 | J. Marcelo | `dev-joao-vieira` |
 | J. Rodrigo | `dev-joao-rodrigo` |
+| Lucas Cabral | `dev-lucas-cabral` |
+| Lucas Lacerda | `dev-lucas-lacerda` |
 | Marcos | `dev-marcos-santos` |
 | Matheus Godoi | `dev-matheus-godoi` |
 
@@ -44,6 +50,32 @@ Monta-se a URL assim: `https://<subdomínio>.d10fnl6gn002xw.amplifyapp.com/login
 
 > [!tip] O nome do subdomínio é o nome da branch
 > Sabendo em qual branch o dev subiu o fix, o ambiente sai direto — e o inverso também: o card diz a branch, e daí vem a URL de validação.
+
+### Nova Arquitetura (migração Lambda → EKS, testes em paralelo)
+
+Ambiente único e compartilhado (não é por dev), usado na revalidação da nova arquitetura — ver [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
+
+| Ambiente | Base |
+|---|---|
+| Desenvolvimento (nova arquitetura) | `https://dev.sogov.net` |
+
+### Containers (Híbridos)
+
+Mesmo padrão do Legado — um ambiente de branch por dev —, mas em subdomínio próprio com o sufixo `-container`, pra testes de uma demanda em paralelo à sprint normal do legado (2026-09-02).
+
+| Dev | Subdomínio |
+|---|---|
+| B. Clementino | `dev-bruno-clementino-container` |
+| B. Luan | `dev-bruno-silva-container` |
+| Diogo | `dev-diogo-nobrega-container` |
+| J. Marcelo | `dev-joao-vieira-container` |
+| J. Rodrigo | `dev-joao-rodrigo-container` |
+| Lucas Cabral | `dev-lucas-cabral-container` |
+| Lucas Lacerda | `dev-lucas-lacerda-container` |
+| Marcos | `dev-marcos-santos-container` |
+| Matheus Godoi | `dev-matheus-godoi-container` |
+
+Mesmo padrão de URL do Legado: `https://<subdomínio>-container.d10fnl6gn002xw.amplifyapp.com/login/servidor/1`.
 
 ## Homologação e produção
 
