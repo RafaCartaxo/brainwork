@@ -24,5 +24,6 @@ Instruções de referência para atividades de QA. Diferente de [[../Agentes/REA
 | [[SKILL_REVISAO_AUTOMACAO_E2E]] | Revisar código de teste e2e (padrão + coerência de asserts) antes de subir |
 | [[SKILL_VERIFICACAO_DOC]] | Cruzar bug/demanda contra a doc de módulo (04 Conhecimento) — confirma critério ou expõe divergência |
 | [[SKILL_INICIAR_AUTOMACAO]] | Ir de um card validado ao início da automação — gates (validação + ambiente), onde escrever e o que reaproveitar |
+| [[SKILL_AUTOMACAO_TERMO_REFERENCIA]] | Ir de um Termo de Referência sem CTs/card até testes automatizados validados contra HML — investigação técnica de API, triagem de falha (bug × achado real × instabilidade), documentação viva e preparo pra subida |
 
 > Onde as "avulsas" entram na cadeia: [[SKILL_MELHORIA]] é o fio condutor do fluxo 4 e orquestra [[SKILL_REFINAMENTO]] + [[SKILL_PLANO_DE_TESTE]] + [[SKILL_CASOS_DE_TESTE]] em sequência; [[SKILL_TRIAGEM_SPRINT]] é a **entrada** de uma view de sprint (fluxo 9) e alimenta refinamento/fila.
