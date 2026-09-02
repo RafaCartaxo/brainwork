@@ -4,12 +4,12 @@ tags:
   - conhecimento
   - setup
 tipo: referencia
-revisado: 2026-08-03
+revisado: 2026-09-02
 ---
 # Ambientes e Links de Trabalho
 
 > [!info] Origem e uso
-> Importado do `favoritos.txt` (03/08/2026) — a coleção de favoritos do navegador do Rafael. Esta nota é a **fonte legível**; o arquivo importável no navegador está ao lado: [`favoritos-sogov.html`](favoritos-sogov.html).
+> Importado do `favoritos.txt` (03/08/2026), sincronizado com os favoritos reais do Chrome em 02/09/2026 — a coleção de favoritos do navegador do Rafael. Esta nota é a **fonte legível**; o arquivo importável no navegador está ao lado: [`favoritos-sogov.html`](favoritos-sogov.html).
 >
 > **Pra levar pra outra máquina**: importar o `.html` no navegador (não o `.txt` — navegador não importa lista de texto). Chrome/Edge: `⋮` → Favoritos → Importar favoritos e configurações → Arquivo HTML de favoritos. Firefox: `Ctrl+Shift+O` → Importar e Backup → Importar favoritos de HTML.
 
