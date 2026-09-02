@@ -11,8 +11,10 @@ comentários/docs batem com o código. Não é code review profundo nem validaç
 de qualidade do próprio teste automatizado.
 
 Repo: `~/Documentos/Sogov/sogov-automation-test` (GitLab `qa_sogov/sogov-automation-test`).
-Complementa [[SKILL_REVISAO_ESCOPO_MR]] (que checa se o fix do MR bate com o problema); aqui o
-foco é o **código do teste em si**.
+Complementa [[SKILL_REVISAO_ESCOPO_MR]] (que checa se o fix do MR bate com o problema) e
+[[SKILL_REVISAO_CODIGO_AUTOMACAO]] (que revisa o grupo/suíte inteira — duplicação entre arquivos,
+API inclusa — antes desta entrar no crivo fino de 1 feature); aqui o foco é o **código do teste
+em si**.
 
 ## Gatilhos
 | Gatilho | Exemplo |

@@ -5,7 +5,7 @@ tags:
 ---
 # Skill: Revisão de Escopo de MR
 
-Acessar um Merge Request do GitLab, confirmar que a correção implementada bate com o problema relatado (SGV/card), e levantar os cenários de teste automatizados implementados — sem análise profunda de código, só o suficiente pra decidir se a QA pode seguir pra validação real.
+Acessar um Merge Request do GitLab, confirmar que a correção implementada bate com o problema relatado (SGV/card), e levantar os cenários de teste automatizados implementados — sem análise profunda de código, só o suficiente pra decidir se a QA pode seguir pra validação real. Não olha duplicação/qualidade de código — pra isso, ver [[SKILL_REVISAO_CODIGO_AUTOMACAO]] (grupo/suíte) e [[SKILL_REVISAO_AUTOMACAO_E2E]] (1 feature E2E).
 
 ## Gatilhos
 
