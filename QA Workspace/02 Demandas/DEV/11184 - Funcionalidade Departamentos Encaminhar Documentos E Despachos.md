@@ -175,7 +175,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Execução Passou?**
 - [x] Sim ✅ 2026-09-03
-- [x] Não ✅ 2026-09-03
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -274,7 +274,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Execução Passou?**
 - [x] Sim ✅ 2026-09-03
-- [ ] Não
+- [x] Não ✅ 2026-09-03
 - [ ] Não se aplica
 
 **Evidências de Testes:**
