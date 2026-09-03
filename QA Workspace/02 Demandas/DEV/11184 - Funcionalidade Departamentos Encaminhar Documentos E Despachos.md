@@ -42,8 +42,8 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - Toda persistência é revalidada pela API (configuração do campo, status, instância), independente da validação de interface; departamento invalidado entre a seleção e o salvamento/envio bloqueia a operação por inteiro, sem salvar/enviar parcialmente.
 - PDF exibe o departamento como `Nome do departamento (Razão social da PJ)`, em documento e despacho (formato confirmado no Figma, complemento de 03/09/2026).
 - Busca por departamento (campo pessoa e destinatário de despacho) só retorna resultado a partir de **3 caracteres digitados**, afunilando progressivamente conforme o servidor continua digitando.
-- Resultado que dá match com um departamento já vem **expandido**, mostrando os participantes lotados nele; o cluster do departamento aparece sempre aninhado visualmente sob a pessoa jurídica à qual pertence.
-- CPF de pessoa física lotada num departamento é **anonimizado** na exibição (busca e resultado expandido).
+- ~~Resultado que dá match com um departamento já vem **expandido**, mostrando os participantes lotados nele~~ — **não se aplica a esta entrega** (Rafael, 03/09/2026): depende do nível "participantes" do departamento (Cidadão > PJ > Departamento > participantes), que **não está implementado agora** — só o departamento em si é selecionável/exibido. O cluster do departamento continua sempre aninhado visualmente sob a pessoa jurídica à qual pertence (isso não depende de participantes).
+- ~~CPF de pessoa física lotada num departamento é **anonimizado** na exibição~~ — **não se aplica**, mesmo motivo acima: sem exibição de participantes, não há CPF a anonimizar nesta entrega.
 - No accordion do departamento: a área de clique pra expandir/recolher é restrita ao ícone de chevron; selecionar o departamento como destinatário usa a linha inteira, do início do nome ao fim do container (mesma estética do hover de seleção já existente).
 - Truncamento: se a linha do evento (remetente + destinatários) se aproximar de ~16px da data de emissão, o componente recebe status de truncate; em listas de destinatário longas (múltiplos departamentos/usuários), o texto sempre trunca na 2ª linha.
 - E-mail é enviado ao endereço do departamento a cada encaminhamento efetivo, com deduplicação por endereço normalizado (case-insensitive) e idempotência por evento — reprocessar não duplica.
@@ -58,6 +58,8 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 > - **CA05** (formato de exibição no PDF, grupos A e B abaixo): **resolvido** — complemento do Figma (03/09/2026) confirma o formato `Nome (Razão Social)`, com parênteses; o texto original do requisito, que falava em travessão, não prevalece.
 > - Mesmo gate de doc da SGV-11083: não existe seção de "Departamentos" em `04 Conhecimento/Módulos/` ainda — pendência de criar/atualizar a doc quando esta demanda (e a 11083) forem validadas (fluxo 8).
 > - Complemento do Figma (03/09/2026) trouxe também conteúdo que **não** entra nesta rodada: seleção de membro individual do departamento como destinatário direto (contradiz o escopo fechado do requisito original — Rafael vai conferir e confirmar depois) e departamento como signatário de assinatura (fora do escopo desta entrega). Ambos ficam registrados como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], sem entrar nos CTs abaixo.
+> - **Escopo confirmado por Rafael (03/09/2026)**: esta entrega cobre só o **departamento em si** como destinatário — a hierarquia completa seria Cidadão > PJ > Departamento > **participantes**, e o nível "participantes" **não está implementado agora** (nem exibição, nem seleção). Por isso CT-002a, CT-002b e CT-008 (exibição de participantes/CPF no resultado da busca) foram marcados **Não se aplica** — não é falha de execução, é critério fora do escopo real da entrega. O accordion (CT-002c/CT-008a) continua válido, pois expandir/recolher não depende de mostrar participantes.
+> - **Sem cobertura de CT pra retificação de despacho**: nenhum CT hoje testa o campo de destinatário na tela de retificação — gap exposto pelo defeito [[QA Workspace/02 Demandas/DEV/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]].
 
 ---
 
@@ -106,6 +108,9 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [ ] Não
 - [x] Não se aplica ✅ 2026-09-03
 
+> [!info]- Não se aplica — nível "participantes" não implementado nesta entrega
+> Confirmado por Rafael (03/09/2026): a entrega cobre só o departamento em si; exibir participantes lotados depende de um nível ("Cidadão > PJ > Departamento > participantes") que não existe nesta entrega.
+
 **Evidências de Testes:**
 
 ---
@@ -119,7 +124,10 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica ✅ 2026-09-03
+
+> [!info]- Não se aplica — mesmo motivo do CT-002a
+> Sem exibição de participantes nesta entrega, não há CPF de participante a anonimizar.
 
 **Evidências de Testes:**
 
@@ -225,12 +233,15 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Dado** que um departamento é retornado na busca de destinatário do despacho
 **Quando** o resultado é exibido
-**Então** o componente mostra o nome do departamento e a razão social da PJ, já expandido com os participantes lotados, com o cluster aninhado sob a PJ à qual pertence, e CPF de participante pessoa física anonimizado
+**Então** o componente mostra o nome do departamento e a razão social da PJ, com o cluster aninhado sob a PJ à qual pertence
 
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [x] Não se aplica ✅ 2026-09-03
+- [ ] Não se aplica
+
+> [!info]- CT reescrito (03/09/2026) — checkbox resetado, precisa validar de novo
+> Redação original também cobria "já expandido com participantes lotados... CPF anonimizado" — removido por não se aplicar a esta entrega (nível "participantes" não implementado, mesma decisão do CT-002a/CT-002b). O que sobrou (nome + razão social) é diferente do que foi marcado "Não se aplica" antes — por isso resetei o checkbox em vez de manter a marcação antiga, que era sobre o texto anterior.
 
 **Evidências de Testes:**
 
@@ -247,6 +258,9 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [ ] Sim
 - [x] Não ✅ 2026-09-03
 - [ ] Não se aplica
+
+> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]]
+> Mesmo defeito do CT-002c, confirmado também no destinatário de despacho: área de clique não respeita a distinção chevron (expandir/recolher) × linha inteira (selecionar).
 
 **Evidências de Testes:**
 
@@ -492,7 +506,8 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 ---
 
 > [!danger] Bugs encontrados
-> - [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha (CT-002c reprovado)
+> - [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha (CT-002c e CT-008a reprovados)
+> - [[QA Workspace/02 Demandas/DEV/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — departamento não é persistido ao retificar despacho (tela mostra o cidadão PJ/empresa); achado em teste exploratório, sem CT formal ainda
 
 ---
 
@@ -515,3 +530,5 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - 📝 Funcionalidade refinada (critérios de aceite prontos) — refinamento do requisito técnico do Notion, cruzado com o doc de produto consolidado ("Departamento CNPJ")
 - 2026-09-03 - 🔎 Cruzamento com complemento do Figma (`~/Documentos/Complemento 11184.txt`): formato de exibição resolvido (parênteses, CT-005/CT-011), 7 CTs novos/refinados dentro do escopo já confirmado (busca a partir de 3 caracteres, resultado expandido com cluster aninhado, CPF anonimizado, área de clique do accordion, truncamento). Conteúdo fora do escopo desta rodada (seleção de membro individual; departamento como signatário de assinatura) preservado como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], não incorporado aos CTs.
 - 2026-09-03 - 🐛 CT-002c reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (área de clique do accordion não segue o padrão do Figma)
+- 2026-09-03 - 🔎 Ajuste de escopo (Rafael, validando os CTs): nível "participantes" do departamento não implementado nesta entrega — CT-002a, CT-002b marcados Não se aplica; CT-008 reescrito (removida a parte de participantes/CPF, checkbox resetado); Regras de negócio anotadas. CT-008a reprovado, mesmo defeito do CT-002c ([[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]])
+- 2026-09-03 - 🐛 Defeito cadastrado (achado em teste exploratório): [[QA Workspace/02 Demandas/DEV/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (departamento não persistido ao retificar despacho)
