@@ -6,9 +6,9 @@ tags:
 task: "11319"
 pai: "11184"
 prioridade: alta
-status: aberto
+status: resolvido
 data_inicio: 2026-09-03
-data_fim: ""
+data_fim: "2026-09-03"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: servicos-pj
@@ -61,13 +61,17 @@ Durante validação foi identificado que, ao emitir um despacho com um **departa
 **Então** o departamento aparece selecionado no campo de destinatário, sem ser substituído pelo cidadão PJ/empresa
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reprovado em 03/09, aprovado no reteste de 03/09
+> Corrigido e reteste passou — gravação da execução abaixo, junto com a evidência que registrou o problema original.
 
 **Evidências de Testes:**
 
 ![[11319 - Departamento não é persistido ao retificar despacho.mp4]]
+![[11319 - OK.mp4]]
 
 ---
 
@@ -86,3 +90,4 @@ Durante validação foi identificado que, ao emitir um despacho com um **departa
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-03 - 🐛 Defeito cadastrado (achado na validação da SGV-11184, evidência já no vault)
+    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], validação em homologação acontece pela task principal
