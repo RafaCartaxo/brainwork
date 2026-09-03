@@ -22,7 +22,7 @@ modulo: servicos-pj
 > - **Tipo:** Funcionalidade
 > - **Responsável QA:** Rafael
 > - **Link:** SGV-11184 no Notion ("[Parte 2] Departamentos: Encaminhar documentos/despachos para o departamento")
-> - **Parte 2** de duas, irmã de [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]] — ambas sob a epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-9296 - Índice|SGV-9296]]
+> - **Parte 2** de duas, irmã de [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]] — ambas sob a epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/0 - SGV-9296 - Índice|SGV-9296]]
 
 ---
 
@@ -30,7 +30,7 @@ modulo: servicos-pj
 
 Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em documentos e despachos — no campo pessoa configurado pra Pessoa Jurídica, e no campo de destinatário de despacho. Ao serem efetivamente encaminhados, o departamento recebe notificação por e-mail (com deduplicação e idempotência), e o acesso externo ao documento via essa notificação é registrado com rastreabilidade (`publicIdentifier` UUID, validado contra o vínculo real com o documento) — sem nunca expor o ID interno nem autorizar responder/assinar pela URL.
 
-Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|04 Conhecimento/Tasks/SGV-9296/SGV-11184]]. Resumo em linguagem simples (sem jargão de RF/CA): [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Resumo|SGV-11184 - Resumo]].
+Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|04 Conhecimento/Tasks/SGV-9296/SGV-11184]]. Resumo em linguagem simples (sem jargão de RF/CA): [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/1 - SGV-11184 - Resumo|SGV-11184 - Resumo]].
 
 ---
 
@@ -417,7 +417,7 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 
 > [!tip] Observações
 
-- Refinado a partir do requisito técnico do Notion — análise completa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|04 Conhecimento/Tasks/SGV-9296/SGV-11184]].
+- Refinado a partir do requisito técnico do Notion — análise completa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|04 Conhecimento/Tasks/SGV-9296/SGV-11184]].
 - Depende funcionalmente da SGV-11083 (departamento precisa existir e ter participantes/status antes de ser encaminhável) — validar a 11083 primeiro, ou pelo menos em paralelo com dados de teste compatíveis.
 - Gate de doc: não existe seção de "Departamentos" em `04 Conhecimento/Módulos/` ainda — importar quando esta demanda (e a 11083) forem validadas (fluxo 8).
 

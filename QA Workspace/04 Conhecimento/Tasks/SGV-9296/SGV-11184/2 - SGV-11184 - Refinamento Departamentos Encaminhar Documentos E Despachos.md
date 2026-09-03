@@ -13,7 +13,7 @@ modulo: servicos-pj
 > [!info]- Mesa de trabalho — [[Sistema/Contexto/FLUXOS#6. Refinar demanda já cadastrada|fluxo 6]]
 > Análise e suposição vivem aqui — o card em `02 Demandas/` nasce do **Destilado**, limpo. Ao concluir: análise → Notion (`📤`), card criado (`📝`), este arquivo → `04 Conhecimento/` (`status: refinado`).
 >
-> **Parte 2** de duas — irmã de [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]], sob a mesma epic pai [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-9296 - Índice|SGV-9296]].
+> **Parte 2** de duas — irmã de [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]], sob a mesma epic pai [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/0 - SGV-9296 - Índice|SGV-9296]].
 
 ## O problema (task no Notion)
 
