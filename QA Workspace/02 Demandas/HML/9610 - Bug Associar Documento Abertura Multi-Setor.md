@@ -15,6 +15,8 @@ ambiente: HML
 ---
 # Servidor não consegue associar documento na abertura de um novo documento
 
+> Refinamento: mesa arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-9610/SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor|04 Conhecimento/Tasks/SGV-9610]] · plano de automação em [[QA Workspace/04 Conhecimento/Tasks/SGV-9610/SGV-9610 - Plano de Automação|04 Conhecimento/Tasks/SGV-9610]]
+
 ### Descrição
 
 Servidor cadastrado em mais de um setor não encontra, na busca de "Associar documentos" da **abertura de um novo documento**, documento ao qual tem acesso por um setor em que **não está atuando** no momento. O contraste que delimita o problema: a mesma busca, feita **via despacho**, encontra o documento normalmente (validado na análise de Bruna Machado, 25/06/2026). Causa apontada no MR !537: a busca da abertura era feita **sem informar o setor ativo** do usuário.

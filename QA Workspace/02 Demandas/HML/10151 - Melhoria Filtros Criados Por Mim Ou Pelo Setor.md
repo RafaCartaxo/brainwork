@@ -24,6 +24,7 @@ ambiente: HML
 > - **Link:** [SGV-10151 no Notion](https://app.notion.com/p/alfa-group/DEV-PARTE-4-Funcionalidade-Filtros-Criados-por-mim-Criados-pelo-setor-3a02aec67d3080e0a69bcfd3f7e6796e) · [Figma — Mesa de Trabalho/Handoff](https://www.figma.com/design/57GnUc1cTERzuMCdea2eQa/Mesa-de-Trabalho---Handoff?node-id=957-2978)
 > - **Dev:** B. Luan ([MR !666](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/666))
 > - **Item pai:** *[MELHORIA-CX] Melhoria no Layout da mesa de trabalho* (Parte 4 de N; item pai sem card próprio no vault)
+> - **Refinamento:** mesa arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-10151/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|04 Conhecimento/Tasks/SGV-10151]]
 
 ---
 

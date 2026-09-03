@@ -23,6 +23,7 @@ ambiente: PROD
 > - **Link:** [SGV-9042 no Notion](https://app.notion.com/p/alfa-group/MELHORIA-CX-Adicionar-tarefas-na-barra-de-ferramentas-na-cria-o-de-um-despacho-3722aec67d3081d8ba12d56fc6387c5b) · [Figma — Tramitação/Handoff](https://www.figma.com/design/ikWmC65IpdQRkx5WACE7en/Tramita%C3%A7%C3%A3o---Handoff?node-id=8765-2765)
 > - **Devs:** Gabriel Desidério, Lucas Cabral · **Design:** Ivo Costa, Edu, Vinícius
 > - **Prazo de conclusão (Notion):** 31/07/2026
+> - **Refinamento:** mesa arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-9042/SGV-9042 - Refinamento Ações de Tramitação e Encerramento na Emissão de Despacho|04 Conhecimento/Tasks/SGV-9042]]
 
 ---
 

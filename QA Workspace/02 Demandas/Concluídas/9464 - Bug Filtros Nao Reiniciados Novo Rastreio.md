@@ -14,6 +14,8 @@ ambiente: HML
 ---
 # Ao realizar novo rastreio de documentos, filtros não são reiniciados
 
+> Refinamento: mesa arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-9464/SGV-9464 - Refinamento Filtros Novo Rastreio|04 Conhecimento/Tasks/SGV-9464]]
+
 ### Descrição
 
 Durante validação foi identificado que, após aplicar filtros na tela de resultados do rastreamento de documentos (como "Documentos pausados" e "Documentos encerrados") e realizar um novo rastreio, ao término do carregamento da nova consulta os filtros aplicados anteriormente permaneciam selecionados, não sendo reiniciados automaticamente pelo sistema.
