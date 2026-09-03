@@ -174,8 +174,8 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** o sistema respeita a multiplicidade configurada e impede repetir o mesmo departamento
 
 **Execução Passou?**
-- [ ] Sim
-- [ ] Não
+- [x] Sim ✅ 2026-09-03
+- [x] Não ✅ 2026-09-03
 - [ ] Não se aplica
 
 **Evidências de Testes:**
