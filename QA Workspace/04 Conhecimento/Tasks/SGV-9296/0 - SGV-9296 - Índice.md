@@ -13,7 +13,7 @@ Task guarda-chuva do Notion que agrupa as duas partes da funcionalidade de depar
 | Parte | SGV | O que é | Status |
 |---|---|---|---|
 | 1 | [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ\|SGV-11083]] | Criação, edição, exclusão, suspensão e gerenciamento de membros do departamento | Refinada, aberta em DEV — 33 CTs, 1 ponto em aberto (contagem de participantes, aguardando Produto) |
-| 2 | [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos\|SGV-11184]] | Encaminhar documentos/despachos pro departamento, notificações e rastreabilidade de visualização externa | Refinada, aberta em DEV — 22 CTs, sem pontos em aberto |
+| 2 | [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos\|SGV-11184]] | Encaminhar documentos/despachos pro departamento, notificações e rastreabilidade de visualização externa | Refinada, aberta em DEV — 27 CTs, sem pontos em aberto no escopo atual (ver Contexto de apoio abaixo pra escopo futuro em aberto) |
 
 ## Dependência entre as partes
 
@@ -36,3 +36,5 @@ Resumo → card (critérios + CTs) → mesa de refinamento (detalhe técnico).
 ## Contexto de apoio (não é fonte de critério de aceite)
 
 Documento de produto consolidado do Notion ("Departamento CNPJ") cobre esta epic **e outras 3 tasks** (SGV-8883, 8884, 9898) numa visão única de produto — usado nas duas mesas só como esclarecimento de detalhe (limites de campo, fluxo de convite, formato de exibição), nunca como origem de critério.
+
+[[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma — departamento como destinatário e signatário]] (recebido 03/09/2026): parte já incorporada à SGV-11184 (formato de exibição, regras de busca/exibição); parte fica registrada aqui como possível escopo futuro da epic — seleção de membro individual como destinatário direto (aguardando Rafael confirmar) e departamento como signatário de assinatura (fora do escopo atual, com selos e notificações próprias).
