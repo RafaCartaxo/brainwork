@@ -6,9 +6,9 @@ tags:
 task: "11313"
 pai: "11083"
 prioridade: alta
-status: aberto
+status: resolvido
 data_inicio: 2026-09-03
-data_fim: ""
+data_fim: "2026-09-03"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: servicos-pj
@@ -63,13 +63,17 @@ Mesma regra já documentada pra edição do nome de **setor** ([[QA Workspace/04
 **Então** o despacho já realizado continua exibindo o nome do departamento vigente no momento da tramitação, sem alteração retroativa
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reprovado em 03/09, aprovado no reteste de 03/09
+> Corrigido e reteste passou — gravação da execução abaixo, junto com a evidência que registrou o problema original.
 
 **Evidências de Testes:**
 
 ![[11313 - Editar nome de departamente, também edita os já emitidos.mp4]]
+![[11313 - OK.mp4]]
 
 ---
 
@@ -83,6 +87,9 @@ Mesma regra já documentada pra edição do nome de **setor** ([[QA Workspace/04
 - [ ] Sim
 - [ ] Não
 - [ ] Não se aplica
+
+> [!info]- Não retestado explicitamente nesta rodada
+> A aprovação de 03/09 confirmou o CT-B01 (nome antigo preservado). Este CT (nome novo em despacho futuro) não foi confirmado por essa evidência especificamente — validar durante a validação da SGV-11083 se ainda não tiver sido coberto.
 
 **Evidências de Testes:**
 
@@ -103,3 +110,4 @@ Mesma regra já documentada pra edição do nome de **setor** ([[QA Workspace/04
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-03 - 🐛 Defeito cadastrado (achado na validação da SGV-11083, evidência já no vault)
+    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]], validação em homologação acontece pela task principal. CT-B02 (nome novo em despacho futuro) segue sem retest explícito — ver Observações.
