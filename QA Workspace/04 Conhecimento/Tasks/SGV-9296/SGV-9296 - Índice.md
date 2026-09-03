@@ -24,6 +24,10 @@ A Parte 2 (11184) depende funcionalmente da Parte 1 (11083): precisa existir dep
 - [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|SGV-11083 - Refinamento]]
 - [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|SGV-11184 - Refinamento]]
 
+## Resumos em linguagem simples
+
+- [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Resumo|SGV-11184 - Resumo]] — o que é, problemática e resultado esperado, sem jargão de RF/CA
+
 ## Contexto de apoio (não é fonte de critério de aceite)
 
 Documento de produto consolidado do Notion ("Departamento CNPJ") cobre esta epic **e outras 3 tasks** (SGV-8883, 8884, 9898) numa visão única de produto — usado nas duas mesas só como esclarecimento de detalhe (limites de campo, fluxo de convite, formato de exibição), nunca como origem de critério.

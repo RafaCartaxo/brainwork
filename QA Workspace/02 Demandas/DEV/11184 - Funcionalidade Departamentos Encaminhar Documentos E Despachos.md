@@ -30,7 +30,7 @@ modulo: servicos-pj
 
 Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em documentos e despachos — no campo pessoa configurado pra Pessoa Jurídica, e no campo de destinatário de despacho. Ao serem efetivamente encaminhados, o departamento recebe notificação por e-mail (com deduplicação e idempotência), e o acesso externo ao documento via essa notificação é registrado com rastreabilidade (`publicIdentifier` UUID, validado contra o vínculo real com o documento) — sem nunca expor o ID interno nem autorizar responder/assinar pela URL.
 
-Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|04 Conhecimento/Tasks/SGV-9296/SGV-11184]].
+Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|04 Conhecimento/Tasks/SGV-9296/SGV-11184]]. Resumo em linguagem simples (sem jargão de RF/CA): [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Resumo|SGV-11184 - Resumo]].
 
 ---
 
