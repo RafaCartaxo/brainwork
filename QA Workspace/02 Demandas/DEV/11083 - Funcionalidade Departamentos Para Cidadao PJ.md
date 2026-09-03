@@ -52,6 +52,7 @@ Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc
 > - Documento de produto consolidado ("Departamento CNPJ") cobre 3 tasks diferentes (SGV-8883, 8884, 9898), não só esta — usado aqui só como contexto de apoio, não como fonte de critério de aceite.
 > - Ainda não existe seção de "Departamentos" em nenhuma doc de módulo (`04 Conhecimento/Módulos/`) — quando esta demanda for validada, abre pendência de criar/atualizar a doc (fluxo 8).
 > - **Gap de cobertura exposto pelo defeito [[QA Workspace/02 Demandas/Concluídas/11313 - Defeito Editar Nome Do Departamento Altera Despachos Ja Realizados|SGV-11313]]** (corrigido e aprovado em 03/09/2026): a task inclui "edição" no título, mas nem o requisito refinado nem os CTs abaixo têm um grupo dedicado a **editar** um departamento existente (grupos A-E cobrem criação, participantes, listagem, exclusão e suspensão). O defeito trouxe a regra esperada por analogia com a edição de nome de **setor** ([[QA Workspace/04 Conhecimento/Módulos/Organograma#Edição de setor ou subsetor|Organograma]]) — segue faltando decidir se vira um grupo formal de CTs aqui (o CT-B02 do defeito, nome novo em despacho futuro, também não teve retest explícito — ver o card em Concluídas).
+> - **Gap de cobertura exposto pelo defeito [[QA Workspace/02 Demandas/Concluídas/11273 - Defeito Empresa Vincula A Si Propria Como Participante Do Proprio Departamento|SGV-11273]]** (corrigido e aprovado em 03/09/2026): nenhum CT do grupo B (Gerenciamento de participantes) testava o bloqueio de **auto-vínculo** — a própria PJ dona do departamento sendo aceita como participante dele mesma. CT-012 cobre só o caso de instância diferente, regra distinta. Falta decidir se vira CT formal aqui.
 
 ---
 
@@ -577,6 +578,7 @@ Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc
 
 > [!danger] Bugs encontrados
 > - ~~[[QA Workspace/02 Demandas/Concluídas/11313 - Defeito Editar Nome Do Departamento Altera Despachos Ja Realizados|SGV-11313]] — editar o nome do departamento altera despachos já realizados~~ — **corrigido e aprovado em DEV** (achado em teste exploratório, não em CT formal — ver nota em Pontos de atenção)
+> - ~~[[QA Workspace/02 Demandas/Concluídas/11273 - Defeito Empresa Vincula A Si Propria Como Participante Do Proprio Departamento|SGV-11273]] — empresa conseguia se vincular como participante do próprio departamento~~ — **corrigido e aprovado em DEV** (gap de cobertura: nenhum CT do grupo B testava bloqueio de auto-vínculo)
 
 ---
 
@@ -599,3 +601,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-02 - 📝 Funcionalidade refinada (critérios de aceite prontos) — refinamento de 3 documentos do Notion, 1 ponto em aberto (contagem de participantes) registrado como pendência explícita
 - 2026-09-03 - 🐛 Defeito cadastrado: [[QA Workspace/02 Demandas/Concluídas/11313 - Defeito Editar Nome Do Departamento Altera Despachos Ja Realizados|SGV-11313]] (editar nome do departamento altera despachos já realizados) — achado em teste exploratório, expõe gap de cobertura (sem grupo de CT pra edição de departamento)
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11313 - Defeito Editar Nome Do Departamento Altera Despachos Ja Realizados|SGV-11313]] aprovado em DEV (corrigido, reteste OK) — CT-B02 (nome novo em despacho futuro) sem retest explícito, ver observação no card
+- 2026-09-03 - 🐛✅ Defeito cadastrado já aprovado: [[QA Workspace/02 Demandas/Concluídas/11273 - Defeito Empresa Vincula A Si Propria Como Participante Do Proprio Departamento|SGV-11273]] (empresa vinculava a si própria como participante do próprio departamento, achado em 02/09, corrigido e aprovado em 03/09) — expõe gap de cobertura (grupo B sem CT de bloqueio de auto-vínculo)
