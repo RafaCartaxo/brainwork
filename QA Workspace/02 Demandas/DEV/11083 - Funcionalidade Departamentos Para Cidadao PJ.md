@@ -22,6 +22,7 @@ modulo: servicos-pj
 > - **Tipo:** Funcionalidade
 > - **Responsável QA:** Rafael
 > - **Link:** SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros")
+> - **Parte 1** de duas, irmã de [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]] — ambas sob a epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-9296 - Índice|SGV-9296]]
 
 ---
 
@@ -29,7 +30,7 @@ modulo: servicos-pj
 
 Nova funcionalidade: departamentos vinculados a cidadãos Pessoa Jurídica (PJ). Um servidor cria departamentos (nome + e-mail únicos por empresa) e vincula participantes (cidadãos do mesmo cliente/instância, cada um com um cargo). A listagem e a visualização de PJ passam a exibir razão social, quantidade de participantes e os departamentos da empresa. Departamentos podem ser excluídos (só se não têm participante nem documento tramitado) ou suspensos (só se não têm pendência) — departamento suspenso não pode ser usado em novas tramitações. Toda ação relevante gera notificação (sistema + e-mail) e registro no histórico do cidadão PJ.
 
-Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc de produto consolidado, resumo em formato de QA) — mesa em [[QA Workspace/04 Conhecimento/Tasks/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|04 Conhecimento/Tasks/SGV-11083]].
+Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc de produto consolidado, resumo em formato de QA) — mesa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|04 Conhecimento/Tasks/SGV-11083]].
 
 ---
 
@@ -368,7 +369,7 @@ Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc
 **Então** verifico a quantidade exibida e reporto o comportamento observado (vínculos por departamento ou cidadãos únicos)
 
 > [!warning]- Bloqueado — aguardando definição do Produto
-> Não decidir se o comportamento observado é aprovado ou bug: registrar o número exibido e o cenário, e aguardar a definição do Produto antes de fechar este CT (ver Pontos de atenção do card e [[QA Workspace/04 Conhecimento/Tasks/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|mesa de refinamento]]).
+> Não decidir se o comportamento observado é aprovado ou bug: registrar o número exibido e o cenário, e aguardar a definição do Produto antes de fechar este CT (ver Pontos de atenção do card e [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|mesa de refinamento]]).
 
 **Execução Passou?**
 - [ ] Sim
@@ -585,7 +586,7 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 
 > [!tip] Observações
 
-- Refinado a partir de 3 documentos do Notion — análise completa em [[QA Workspace/04 Conhecimento/Tasks/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|04 Conhecimento/Tasks/SGV-11083]].
+- Refinado a partir de 3 documentos do Notion — análise completa em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/SGV-11083 - Refinamento Departamentos Para Cidadao PJ|04 Conhecimento/Tasks/SGV-11083]].
 - Ponto em aberto (contagem da coluna Participantes) não é regra de negócio em disputa por falta de doc — é decisão de Produto ainda não tomada. Ver Pontos de atenção acima.
 - Gate de doc: não existe seção de "Departamentos" em `04 Conhecimento/Módulos/` ainda — importar quando esta demanda for validada (fluxo 8).
 
