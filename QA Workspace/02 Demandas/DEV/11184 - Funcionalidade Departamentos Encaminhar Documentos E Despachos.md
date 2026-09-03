@@ -59,6 +59,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 > - Mesmo gate de doc da SGV-11083: não existe seção de "Departamentos" em `04 Conhecimento/Módulos/` ainda — pendência de criar/atualizar a doc quando esta demanda (e a 11083) forem validadas (fluxo 8).
 > - Complemento do Figma (03/09/2026) trouxe também conteúdo que **não** entra nesta rodada: seleção de membro individual do departamento como destinatário direto (contradiz o escopo fechado do requisito original — Rafael vai conferir e confirmar depois) e departamento como signatário de assinatura (fora do escopo desta entrega). Ambos ficam registrados como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], sem entrar nos CTs abaixo.
 > - **Escopo confirmado por Rafael (03/09/2026)**: esta entrega cobre só o **departamento em si** como destinatário — a hierarquia completa seria Cidadão > PJ > Departamento > **participantes**, e o nível "participantes" **não está implementado agora** (nem exibição, nem seleção). Por isso CT-002a, CT-002b e CT-008 (exibição de participantes/CPF no resultado da busca) foram marcados **Não se aplica** — não é falha de execução, é critério fora do escopo real da entrega. O accordion (CT-002c/CT-008a) continua válido, pois expandir/recolher não depende de mostrar participantes.
+> - **Ressalva sobre "participantes não implementado"**: isso vale pra **exibição/seleção** do participante como destinatário (grupos A/B). Não vale pra **notificação**: cada membro elegível recebe sua própria notificação **interna** (RF03 CA02, CT-014) — isso já existe e é comportamento em escopo, não confundir com a seleção/exibição deferida. O e-mail com URL externa de rastreabilidade (RF04, grupo D), porém, vai só pro endereço do **departamento** — não tem "participante" nenhum ali; CT-018 tinha uma menção a "membros" incorreta, corrigida.
 > - **Sem cobertura de CT pra retificação de despacho**: nenhum CT hoje testa o campo de destinatário na tela de retificação — gap exposto pelo defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido e aprovado em DEV, 03/09/2026) — segue faltando decidir se vira CT formal aqui.
 
 ---
@@ -436,9 +437,12 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 #### **CT-018 URL externa carrega o publicIdentifier, nunca o ID interno** *(CA02)*
 
-**Dado** que uma notificação é enviada para o departamento ou seus membros
+**Dado** que uma notificação por e-mail é enviada ao departamento
 **Quando** a URL externa é gerada
 **Então** ela contém `departmentId={publicIdentifier}` — o nome do parâmetro é mantido por compatibilidade, mas o valor é sempre o identificador público, nunca o ID numérico interno
+
+> [!info]- "ou seus membros" removido do Dado (03/09/2026)
+> A redação original citava "departamento ou seus membros" recebendo a notificação com URL externa — mas isso não está no requisito (RF04). O e-mail com URL externa vai só pro endereço do **departamento** (RF03 CA01); a notificação **interna** por membro elegível (RF03 CA02) é um canal separado, sem essa URL de rastreamento externo associada. Erro meu ao escrever o CT, corrigido agora.
 
 **Execução Passou?**
 - [ ] Sim
@@ -550,3 +554,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] aprovado em DEV (corrigido, reteste OK) — sem CT formal pra revalidar, gap de retificação segue registrado em Pontos de atenção
 - 2026-09-03 - 🔎 CT-014 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]), só existe o cenário departamento × membro
 - 2026-09-03 - 🔎 CT-015 reescrito (Rafael): linguagem de "evento/canal" trocada por descrição concreta (reprocessar o mesmo encaminhamento não duplica notificação), sem mudar o comportamento testado
+- 2026-09-03 - 🔎 CT-018 corrigido: "ou seus membros" removido do Dado (sem base no RF04, que fala só do departamento); nota de escopo em Pontos de atenção esclarecendo que "participantes não implementado" vale pra exibição/seleção (grupos A/B), não pra notificação interna por membro (RF03 CA02, CT-014), que já está em escopo
