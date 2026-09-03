@@ -409,7 +409,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** ele reutiliza o template do evento e inclui identificação do documento, indicação de encaminhamento ao departamento, nome do departamento + razão social da PJ, remetente/resumo já previstos, e URL externa com `departmentId={publicIdentifier}`
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -503,7 +503,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica
 
 **Evidências de Testes:**
 
