@@ -230,7 +230,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica ✅ 2026-09-03
 
 **Evidências de Testes:**
 
@@ -245,7 +245,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não ✅ 2026-09-03
 - [ ] Não se aplica
 
 **Evidências de Testes:**
@@ -259,7 +259,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** o departamento é persistido como destinatário
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim ✅ 2026-09-03
 - [ ] Não
 - [ ] Não se aplica
 
