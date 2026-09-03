@@ -104,7 +104,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica ✅ 2026-09-03
 
 **Evidências de Testes:**
 
