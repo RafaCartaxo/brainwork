@@ -371,9 +371,12 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 #### **CT-014 Deduplicação de e-mail por endereço normalizado** *(CA02)*
 
-**Dado** que o endereço do departamento também pertence a um membro, ou dois membros compartilham o mesmo endereço
+**Dado** que o endereço do departamento é o mesmo de um cidadão já cadastrado como membro dele
 **Quando** os destinatários de e-mail são montados
-**Então** é enviado apenas um e-mail por endereço normalizado (sem diferenciar maiúsculas/minúsculas); a notificação interna continua sendo criada uma vez por membro elegível
+**Então** é enviado apenas um e-mail por endereço normalizado (sem diferenciar maiúsculas/minúsculas) — não dois, um pelo departamento e outro pelo membro; a notificação interna continua sendo criada uma vez por membro elegível
+
+> [!info]- Cenário de dois membros com o mesmo e-mail removido (03/09/2026)
+> Confirmado pelo Rafael: cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] — "e-mail institucional... único no sistema"), então dois membros nunca compartilham endereço. O único cenário real de sobreposição é **departamento × membro** (o departamento tem seu próprio campo de e-mail, sem essa mesma trava de unicidade contra os cidadãos).
 
 **Execução Passou?**
 - [ ] Sim
@@ -545,3 +548,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - 🐛 Defeito cadastrado (achado em teste exploratório): [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (departamento não persistido ao retificar despacho)
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] aprovado em DEV (corrigido, reteste OK) — CT-002c e CT-008a revalidados e marcados Sim
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] aprovado em DEV (corrigido, reteste OK) — sem CT formal pra revalidar, gap de retificação segue registrado em Pontos de atenção
+- 2026-09-03 - 🔎 CT-014 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]), só existe o cenário departamento × membro
