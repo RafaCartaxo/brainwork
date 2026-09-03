@@ -299,9 +299,9 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** os membros não são expandidos, sugeridos nem adicionados como destinatários individuais
 
 **Execução Passou?**
-- [x] Sim
+- [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica
 
 **Evidências de Testes:**
 
@@ -361,7 +361,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** uma notificação por e-mail é enviada ao endereço do departamento
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
