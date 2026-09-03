@@ -59,7 +59,7 @@ Como integrante de um departamento destinatário, quero ser notificado sobre doc
 
 **Critérios de aceitação (CA01-CA04):**
 - CA01 — E-mail enviado ao endereço do departamento sempre que um documento/despacho é efetivamente encaminhado a ele
-- CA02 — Deduplicação: um só e-mail por endereço normalizado (case-insensitive), mesmo se o endereço do departamento coincidir com o de um membro, ou dois membros compartilharem endereço; notificação interna continua uma por membro elegível
+- CA02 — Deduplicação: um só e-mail por endereço normalizado (case-insensitive) quando o endereço do departamento coincide com o de um membro já cadastrado; notificação interna continua uma por membro elegível. Cenário de dois membros compartilharem endereço **não existe** — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]])
 - CA03 — Idempotência: reprocessar o mesmo evento não duplica e-mail nem notificação interna pra mesma combinação evento+canal+destinatário
 - CA04 — E-mail reaproveita o template do evento e inclui: identificação do documento, indicação de que foi encaminhado ao departamento, nome do departamento + razão social, remetente/resumo já previstos, e URL externa com `departmentId={publicIdentifier}`
 
@@ -126,7 +126,7 @@ Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em
 
 #### C. Notificações
 - [ ] E-mail é enviado ao endereço do departamento sempre que um documento/despacho é efetivamente encaminhado a ele
-- [ ] Só um e-mail por endereço normalizado (sem diferenciar maiúsculas/minúsculas), mesmo com endereço compartilhado entre departamento e membro(s); notificação interna continua uma por membro elegível
+- [ ] Só um e-mail por endereço normalizado (sem diferenciar maiúsculas/minúsculas), mesmo com o e-mail do departamento coincidindo com o de um membro; notificação interna continua uma por membro elegível
 - [ ] Reprocessar o mesmo evento não duplica e-mail nem notificação interna
 - [ ] E-mail reaproveita o template do evento e inclui documento, indicação de encaminhamento ao departamento, nome+razão social, e URL com `departmentId={publicIdentifier}`
 
@@ -152,3 +152,4 @@ Ver seção "## Casos de teste" do card — CTs completos com Dado/Quando/Então
 - 2026-09-03 - 🔎 Ajuste de escopo, na validação: nível "participantes" do departamento não implementado nesta entrega — resultado expandido/CPF anonimizado (CT-002a, CT-002b, parte do CT-008) marcados fora de escopo; cluster aninhado sob a PJ e o accordion continuam válidos.
 - 2026-09-03 - 🐛 Defeito cadastrado (achado em teste exploratório): [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — departamento não persistido ao retificar despacho, gap de cobertura (sem CT de retificação)
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] aprovado em DEV (corrigido, reteste OK)
+- 2026-09-03 - 🔎 RF03 CA02 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema, só existe o cenário departamento × membro
