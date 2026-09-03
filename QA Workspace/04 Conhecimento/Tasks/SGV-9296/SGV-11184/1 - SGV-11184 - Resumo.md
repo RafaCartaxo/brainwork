@@ -3,9 +3,9 @@ tags:
   - qa
   - conhecimento
 ---
-# SGV-11184 — Resumo em linguagem simples
+# Resumo: Departamentos — encaminhar documentos e despachos
 
-> Parte 2 da epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-9296 - Índice|SGV-9296]] — irmã da [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]]. Detalhe técnico (RFs, critérios, CTs) fica no [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|card]] e na [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|mesa de refinamento]]. Esta nota é só o "o que é e por quê".
+> Parte 2 da epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/0 - SGV-9296 - Índice|SGV-9296]] — irmã da [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]]. Detalhe técnico (RFs, critérios, CTs) fica no [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|card]] e na [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|mesa de refinamento]]. Esta nota é só o "o que é e por quê".
 
 ## O que é
 
