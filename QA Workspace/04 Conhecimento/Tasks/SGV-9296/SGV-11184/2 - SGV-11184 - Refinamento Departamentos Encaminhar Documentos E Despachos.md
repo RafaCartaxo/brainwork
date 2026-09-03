@@ -26,7 +26,7 @@ modulo: servicos-pj
 - Seleção é no nível do departamento — membros não aparecem como opções individuais.
 - Um documento pode ter mais de um departamento (respeitando a multiplicidade já configurada no campo pessoa); o mesmo departamento não pode se repetir no mesmo campo/lista.
 - Departamento suspenso, excluído ou de outra instância não aparece na busca nem é aceito pela API.
-- Figma é referência visual — em divergência, prevalecem as regras funcionais daqui.
+- Figma é referência visual — o formato de exibição (CA05) foi confirmado por ele quando o texto original ficou em aberto; demais divergências de escopo (fora do que já está fechado acima) não entram automaticamente, exigem confirmação.
 - Visualização externa é **somente leitura**; o identificador do departamento na URL não autoriza responder, assinar ou qualquer ação protegida.
 
 ### RF01 — Selecionar departamento em campo pessoa de documento
@@ -38,7 +38,7 @@ Como servidor, quero selecionar um departamento num campo pessoa configurado pra
 - CA02 — Busca por nome do departamento ou razão social da PJ, sempre limitada à instância atual; cada resultado mostra nome do departamento + razão social
 - CA03 — Ao salvar, o vínculo documento↔campo↔departamento é persistido; a API revalida configuração do campo, status do departamento e instância, independente da validação de interface
 - CA04 — Respeita a multiplicidade configurada do campo (único/múltiplo) e impede repetir o mesmo departamento
-- CA05 — No PDF, o departamento aparece como `{Nome do departamento} — {Razão social da PJ}` (conferir formato exato no Figma na hora da validação)
+- CA05 — No PDF, o departamento aparece como `Nome do departamento (Razão social da PJ)`, com parênteses (formato confirmado no complemento do Figma, 03/09/2026)
 - CA06 — Se o departamento for invalidado (suspenso/excluído) entre a seleção e o salvamento, a operação é recusada por inteiro, sem salvar parcialmente, com aviso de que não está mais disponível
 
 ### RF02 — Selecionar departamento como destinatário de despacho
@@ -81,7 +81,8 @@ Como responsável pela rastreabilidade, quero registrar quando um documento enca
 
 - **Fonte**: só o requisito técnico bruto desta vez (sem "Resumo" pré-simplificado, diferente da SGV-11083). Schema Prisma (`Department.publicIdentifier`, `DocumentInteraction.ip`/`departmentId`) e Tarefas técnicas de dev removidos do Destilado por não serem QA — ficam só aqui como contexto se precisar.
 - **Cruzamento com o doc de produto consolidado** ("Departamento CNPJ", mesmo usado na SGV-11083) — seção "Departamentos na tramitação": confirma que a busca de destinatário na abertura de documento mostra a árvore completa (cidadãos PF/PJ + departamentos + participantes com cargo + servidores), que a emissão depois de escolhido o destinatário é idêntica à atual (sem notificação na abertura em si — só no encaminhamento efetivo, que bate com RF03), e que despachos mostram "destinatário com contexto (departamento — empresa)" — reforça o formato de exibição do RF01 CA05/RF02 CA05.
-- **Nenhum ponto genuinamente em aberto identificado** — diferente da SGV-11083. A única ressalva do próprio requisito é "verificar no Figma" o formato exato de exibição no PDF (CA05 de RF01/RF02), mas o formato textual já vem definido (`{Nome} — {Razão Social}`); é detalhe de validação visual na hora do teste, não decisão de produto pendente.
+- **CA05 resolvido com o complemento do Figma** (recebido 03/09/2026, `~/Documentos/Complemento 11184.txt`): formato de exibição é `Nome (Razão Social)` — parênteses, não o travessão do texto original do requisito. Complemento trouxe também detalhes de UX sem contradição com o escopo já fechado (busca a partir de 3 caracteres, resultado expandido com cluster aninhado sob a PJ, CPF de PF anonimizado, área de clique do accordion restrita ao chevron, regra de truncate a ~16px da data e truncamento sempre na 2ª linha) — incorporados aos CTs do card.
+- **Conteúdo do complemento fora do escopo desta entrega, não incorporado**: (1) seleção de membro individual do departamento como destinatário direto — contradiz a premissa fechada do RF01 ("seleção direta de membro não faz parte desta entrega"); Rafael vai conferir e confirmar se é mudança de escopo ou parte futura da epic; (2) departamento como signatário de solicitação de assinatura (com selos e strings de notificação próprias) — não existe no requisito original, que cobre só tramitação (documento/despacho), não assinatura. Ambos os pontos preservados como material de referência da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], sem entrar no Destilado/CTs abaixo.
 
 ---
 
@@ -95,7 +96,7 @@ Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em
 
 - Departamento aparece na busca de destinatário (campo pessoa PJ e despacho) só se ativo e da mesma instância; membros nunca aparecem individualmente a partir dele.
 - Seleção/persistência respeita multiplicidade, duplicidade e revalidação pela API; departamento invalidado entre seleção e salvamento bloqueia a operação por inteiro.
-- PDF exibe `{Nome do departamento} — {Razão social da PJ}`.
+- PDF exibe `Nome do departamento (Razão social da PJ)`.
 - E-mail vai ao endereço do departamento a cada encaminhamento efetivo, sem duplicar (dedup por e-mail normalizado, idempotência por evento).
 - Visualização externa via link do departamento é somente leitura, registra `DocumentInteraction` só depois de validar formato/vínculo/instância/permissão, e nunca revela existência de documento/departamento em caso de link inválido.
 
@@ -106,7 +107,10 @@ Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em
 - [ ] Busca retorna por nome do departamento ou razão social da PJ, só da mesma instância, exibindo os dois
 - [ ] Vínculo documento-campo-departamento é persistido ao salvar, com revalidação da API (configuração do campo, status, instância)
 - [ ] Multiplicidade do campo (único/múltiplo) é respeitada e departamento repetido é bloqueado
-- [ ] PDF exibe o departamento como "Nome do departamento — Razão social da PJ"
+- [ ] PDF exibe o departamento como "Nome do departamento (Razão social da PJ)"
+- [ ] Busca retorna resultado só a partir de 3 caracteres digitados, afunilando progressivamente
+- [ ] Resultado do match já vem expandido (mostrando participantes), cluster aninhado sob a PJ, CPF de PF anonimizado
+- [ ] Área de clique do accordion (chevron) não interfere na seleção do departamento (linha inteira)
 - [ ] Departamento invalidado entre seleção e salvamento bloqueia a operação por inteiro, com aviso claro
 
 #### B. Selecionar departamento como destinatário de despacho
@@ -116,6 +120,7 @@ Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em
 - [ ] Membros do departamento não são expandidos nem selecionáveis individualmente a partir dele
 - [ ] PDF do despacho exibe o departamento no mesmo formato do campo pessoa
 - [ ] Departamento invalidado após seleção bloqueia o envio por inteiro, sem disparar notificação
+- [ ] Linha do evento (remetente + destinatários) recebe truncate a ~16px da data; listas longas de destinatário sempre truncam na 2ª linha
 
 #### C. Notificações
 - [ ] E-mail é enviado ao endereço do departamento sempre que um documento/despacho é efetivamente encaminhado a ele
@@ -141,3 +146,4 @@ Ver seção "## Casos de teste" do card — CTs completos com Dado/Quando/Então
 
 - 2026-09-03 - Material recebido (export do Notion — requisito técnico completo, sem "Resumo" pré-simplificado desta vez)
 - 2026-09-03 - Destilado escrito cruzando com o doc de produto consolidado ("Departamento CNPJ" → seção Departamentos na tramitação); nenhum ponto em aberto identificado
+- 2026-09-03 - 🔎 Complemento do Figma recebido e cruzado com os 22 CTs já existentes: CA05 (formato de exibição) resolvido a favor do parênteses; 7 detalhes de UX sem contradição incorporados aos CTs (busca 3 caracteres, resultado expandido/cluster aninhado, CPF anonimizado, área de clique do accordion, truncamento). Seleção de membro individual e departamento-como-signatário identificados como fora do escopo desta entrega — preservados como material da epic (SGV-9296), aguardando confirmação de Rafael sobre se viram parte futura.
