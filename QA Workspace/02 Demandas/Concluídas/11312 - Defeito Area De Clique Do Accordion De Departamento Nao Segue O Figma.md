@@ -6,9 +6,9 @@ tags:
 task: "11312"
 pai: "11184"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-03
-data_fim: ""
+data_fim: "2026-09-03"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: servicos-pj
@@ -62,13 +62,17 @@ Durante a validação do CT-002c da [[QA Workspace/02 Demandas/DEV/11184 - Funci
 **Então** o departamento é selecionado como destinatário, sem expandir/recolher o accordion
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
+
+> [!success]- Reprovado em 03/09, aprovado no reteste de 03/09
+> Corrigido e reteste passou — gravação da execução abaixo, junto com a evidência que registrou o problema original.
 
 **Evidências de Testes:**
 
 ![[11312 - área de clique não respeitada.mp4]]
+![[11312 - OK.mp4]]
 
 ---
 
@@ -86,3 +90,4 @@ Durante a validação do CT-002c da [[QA Workspace/02 Demandas/DEV/11184 - Funci
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-03 - 🐛 Defeito cadastrado (CT-002c da SGV-11184 reprovado)
+    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], validação em homologação acontece pela task principal
