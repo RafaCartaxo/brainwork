@@ -64,6 +64,25 @@ ls cypress/testes/api/entities/<dominio>/*.cy.js cypress/testes/e2e/entities/<do
 - [ ] **Docs × código** — `docs/commands/**` e `docs/business-rules/**` batem com o código atual
       (mesmo crivo do [[SKILL_REVISAO_AUTOMACAO_E2E]] — commands novos ou corrigidos têm entrada
       de doc correspondente, acréscimo nunca reescrita).
+- [ ] **Reaproveitamento de dados de teste (evitar poluir a base)** — todo cenário que cria um
+      registro novo (agente, cidadão) deveria perguntar: esse registro pode ser **fixo e
+      reaproveitado** entre rodadas, ou precisa mesmo ser novo a cada execução? Regra prática:
+      - Se o cenário **sempre devolve o registro a um estado conhecido** no fim do teste (ex.:
+        reverte `workStatus` pra Ativo) → use CPF/documento **fixo**, reaproveitável via
+        `getPublicAgentOrCreate`/`getCitizenOrCreate` (que já são idempotentes por nome/documento).
+      - Se o cenário **deixa o registro num estado irreversível** sem uma forma de resetar (ex.:
+        conta bloqueada por tentativas, sem mutation de desbloqueio confirmada ainda) → aí sim
+        precisa de um registro novo por rodada — mas registrar isso como decisão consciente
+        (comentário curto explicando por quê), não como omissão.
+      - Atenção ao caso "quase reaproveitável, falta 1 cenário devolver o estado": um cenário que
+        esquece de reverter no final quebra o reaproveitamento de TODOS os outros que dependem da
+        mesma busca por nome no próximo `getPublicAgentOrCreate`.
+      *Exemplo real: `identity-lifecycle.api.cy.js` gerava CPF novo (`generateCPF()`) a cada
+      rodada pros 5 agentes da Suíte 4, mesmo todos já devolvendo o estado pra Ativo no fim de
+      cada fluxo — 10 registros novos por rodada completa da Suíte 3+4, sem necessidade. Corrigido
+      com `fixedCpf` opcional em `cy.createIsolatedTestAgent` — os 5 agentes da Suíte 4 agora usam
+      CPF fixo (reaproveitado via nome); a Suíte 3 (lockout) continua gerando novo por rodada,
+      decisão consciente registrada em comentário (sem mutation de desbloqueio ainda).*
 - [ ] **Qualidade e convenção dos comentários** — grep por `Rafael|confirmar com|PENDENTE|não
       investigado a fundo|preciso investigar` nos arquivos do grupo. Um comentário de código deve:
       1. Explicar o **PORQUÊ** não-óbvio (uma restrição, um bug real, uma decisão) — nunca repetir
