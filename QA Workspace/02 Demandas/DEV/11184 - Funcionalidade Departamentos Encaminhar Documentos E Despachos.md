@@ -381,20 +381,20 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica
 
 **Evidências de Testes:**
 
 ---
 
-#### **CT-015 Idempotência no reprocessamento do evento** *(CA03)*
+#### **CT-015 Reprocessar o mesmo encaminhamento não duplica a notificação** *(CA03)*
 
-**Dado** que o processamento de uma notificação seja repetido
-**Quando** o mesmo evento é consumido novamente
-**Então** o sistema não duplica e-mails nem notificações internas pra mesma combinação de evento, canal e destinatário
+**Dado** que um encaminhamento ao departamento já foi processado e a notificação (e-mail e interna) já foi enviada
+**Quando** esse mesmo encaminhamento é processado de novo por retentativa do sistema (não uma nova ação do usuário)
+**Então** o e-mail e a notificação interna não são enviados de novo pra quem já recebeu
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -549,3 +549,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] aprovado em DEV (corrigido, reteste OK) — CT-002c e CT-008a revalidados e marcados Sim
 - 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] aprovado em DEV (corrigido, reteste OK) — sem CT formal pra revalidar, gap de retificação segue registrado em Pontos de atenção
 - 2026-09-03 - 🔎 CT-014 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]), só existe o cenário departamento × membro
+- 2026-09-03 - 🔎 CT-015 reescrito (Rafael): linguagem de "evento/canal" trocada por descrição concreta (reprocessar o mesmo encaminhamento não duplica notificação), sem mudar o comportamento testado
