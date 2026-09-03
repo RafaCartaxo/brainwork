@@ -74,7 +74,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** a busca inclui departamentos ativos vinculados a cidadãos PJ; com a configuração desabilitada, nenhum departamento é exibido ou aceito
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -89,7 +89,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** o sistema retorna os departamentos correspondentes do mesmo cliente/instância, afunilando o resultado a cada caractere digitado, exibindo nome do departamento e razão social da PJ em cada resultado; com menos de 3 caracteres, nenhum resultado é retornado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -195,7 +195,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** o valor aparece no formato "Nome do departamento (Razão social da PJ)", com parênteses (formato confirmado no Figma)
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -212,7 +212,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Execução Passou?**
 - [ ] Sim
 - [ ] Não
-- [ ] Não se aplica
+- [x] Não se aplica
 
 **Evidências de Testes:**
 
@@ -227,7 +227,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** o sistema retorna departamentos ativos do mesmo cliente/instância, por nome ou razão social da PJ, afunilando o resultado a cada caractere digitado; com menos de 3 caracteres, nenhum resultado é retornado
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -242,7 +242,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 **Então** o componente mostra o nome do departamento e a razão social da PJ, com o cluster aninhado sob a PJ à qual pertence
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 - [ ] Não se aplica
 
@@ -285,7 +285,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Execução Passou?**
 - [x] Sim ✅ 2026-09-03
-- [x] Não ✅ 2026-09-03
+- [ ] Não ✅ 2026-09-03
 - [ ] Não se aplica
 
 **Evidências de Testes:**
