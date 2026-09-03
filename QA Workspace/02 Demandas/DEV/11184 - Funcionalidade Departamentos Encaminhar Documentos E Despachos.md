@@ -134,8 +134,11 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
+
+> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]]
+> Área de clique não respeita a distinção chevron (expandir/recolher) × linha inteira (selecionar) definida no Figma. Bate também no CT-008a (mesma regra no destinatário de despacho) — revalidar os dois juntos quando a correção subir.
 
 **Evidências de Testes:**
 
@@ -489,6 +492,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 ---
 
 > [!danger] Bugs encontrados
+> - [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha (CT-002c reprovado)
 
 ---
 
@@ -510,3 +514,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 
 - 2026-09-03 - 📝 Funcionalidade refinada (critérios de aceite prontos) — refinamento do requisito técnico do Notion, cruzado com o doc de produto consolidado ("Departamento CNPJ")
 - 2026-09-03 - 🔎 Cruzamento com complemento do Figma (`~/Documentos/Complemento 11184.txt`): formato de exibição resolvido (parênteses, CT-005/CT-011), 7 CTs novos/refinados dentro do escopo já confirmado (busca a partir de 3 caracteres, resultado expandido com cluster aninhado, CPF anonimizado, área de clique do accordion, truncamento). Conteúdo fora do escopo desta rodada (seleção de membro individual; departamento como signatário de assinatura) preservado como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], não incorporado aos CTs.
+- 2026-09-03 - 🐛 CT-002c reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/DEV/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (área de clique do accordion não segue o padrão do Figma)
