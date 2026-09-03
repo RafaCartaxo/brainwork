@@ -38,7 +38,7 @@ Durante a validação do CT-002c da [[QA Workspace/02 Demandas/DEV/11184 - Funci
 
 ### Resultado Esperado
 
-- Área de clique do accordion (expandir/recolher) restrita ao ícone de chevron.
+- Área de clique do accordion (expandir/recolher) restrita a área de seleção.
 - Selecionar o departamento como destinatário usa a linha inteira, do início do nome ao fim do container, com a mesma estética de hover de seleção já implementada.
 - As duas ações não interferem entre si.
 
@@ -46,7 +46,7 @@ Durante a validação do CT-002c da [[QA Workspace/02 Demandas/DEV/11184 - Funci
 
 ### Critérios de aceite
 
-- [ ] Clicar no ícone de chevron expande ou recolhe o accordion, sem selecionar o departamento
+- [ ] Clicar no ícone de chevron e em sua aréa de seleção expande ou recolhe o accordion, sem selecionar o departamento
 - [ ] Clicar em qualquer outro ponto da linha do departamento seleciona-o como destinatário, sem expandir/recolher o accordion
 
 ---
