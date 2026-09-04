@@ -5,9 +5,9 @@ tags:
 task: "11249"
 pai: ""
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-02
-data_fim: ""
+data_fim: "2026-09-04"
 responsavel: Rafael
 cadastrado_por: ""
 modulo: arquitetura
@@ -35,9 +35,12 @@ Então verifico que a assinatura não é concluída com sucesso
 
 ---
 
-### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Arquitetura/) [🔍](evidencia://11249)
+### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Homologação/) [🔍](evidencia://11249)
 
 ![[11249 - Erro ao assinar documento.mp4]]
+
+> [!success]- Reteste em 04/09/2026 — aprovado
+> ![[11249 - OK.mp4]]
 
 ---
 
