@@ -37,6 +37,7 @@ Roteamento de um olhar: acha a situação na coluna da esquerda e segue. A **aç
 | Tenho um teste e2e pronto pra subir | — | Revisar padrão + coerência de asserts → [[../Skills/SKILL_REVISAO_AUTOMACAO_E2E\|SKILL_REVISAO_AUTOMACAO_E2E]] |
 | Quero conferir um bug/demanda contra a documentação | — | Identificar o módulo → cruzar contra `04 Conhecimento/Módulos/` → [[../Skills/SKILL_VERIFICACAO_DOC\|SKILL_VERIFICACAO_DOC]] |
 | Quero iniciar automação de um card | 3h | Conferir gates (card validado + fix no ambiente do Cypress) → repo `sogov-automation-test` → [[../Skills/SKILL_INICIAR_AUTOMACAO\|SKILL_INICIAR_AUTOMACAO]] |
+| Quero subir CTs de um card pra Qase | 3j | Filtrar CTs aplicáveis (fora os "Não se aplica") → rascunho "Preparação Qase" → [[../Skills/SKILL_SYNC_QASE\|SKILL_SYNC_QASE]] |
 | Documento/card fora do padrão do vault | — | Revisar grafia/estrutura/copy oficial → [[../Skills/SKILL_PADRONIZACAO\|SKILL_PADRONIZACAO]] |
 | Quero que a IA organize tudo que ficou cru | — | Pedir "organiza a daily" — cobre parte mecânica + classificação ([[../Agentes/AGENTE_ORGANIZADOR\|AGENTE_ORGANIZADOR]]) |
 
@@ -140,6 +141,9 @@ CT de uma Melhoria/Funcionalidade reprovou **em DEV**? O problema é **Defeito**
 > Identificou, resolve. Aprovar entrega cujo próprio CT reprovou é registro falso. Exceção (produto adia o fix) exige decisão explícita registrada no card do pai — o `🔄` avisa quando a aprovação chega com defeito filho ainda aberto.
 
 Na fila, o defeito **não ocupa linha própria** — aparece aninhado sob a linha da pai. E **em homologação não se reteste defeito**: valida-se a Melhoria inteira, e problema encontrado lá é **Bug** (esteira completa, sem `pai:`).
+
+### 3j. Após aprovar: subir CTs pra Qase
+Fecha a ponte validação → repositório de casos da Qase, em paralelo à automação (fluxo 3h). CTs prontos (Dado/Quando/Então já escritos no card) → filtrar quais aplicam de fato (fora os marcados "Não se aplica" — não representam cenário real da entrega) → identificar mecânica repetida entre CTs (candidato a shared step) → escrever/atualizar o rascunho "Preparação Qase" em `04 Conhecimento/Tasks/<epic>/<parte>/` → [[../Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] (mapeia campos, gera `corrections.json`, roda dry-run → lote isolado → `--apply` via `sogov-automation-test/scripts/qase-sync-<contexto>/`) → rascunho vira registro com os ids/hashes da Qase.
 
 ## 4. Melhoria: da ideia ao cadastro
 
