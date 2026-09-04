@@ -22,13 +22,13 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 ### `busca-3-caracteres` — Busca de departamento com filtro progressivo a partir de 3 caracteres
 *(usado em: CT-002/id 444, CT-007/id 449)*
 1. Ação: O servidor informa parte do nome do departamento ou a razão social da PJ, a partir de 3 caracteres digitados. Resultado esperado: O sistema retorna os departamentos correspondentes do mesmo cliente/instância, afunilando o resultado a cada caractere digitado; com menos de 3 caracteres, nenhum resultado é retornado.
-- Hash na Qase: `<preenchido depois do --apply>`
+- Hash na Qase: `0437ba49056fc231f29ff1dd4743a4a5bcb143dc`
 
 ### `accordion-click-area` — Área de clique do accordion restrita ao chevron; seleção usa a linha inteira
 *(usado em: CT-002c/id 445, CT-008a/id 451)*
 1. Ação: O servidor clica no ícone de chevron. Resultado esperado: O accordion expande ou recolhe, mostrando/ocultando os participantes.
 2. Ação: O servidor clica em qualquer outro ponto da linha do departamento (do início do nome ao fim do container). Resultado esperado: O departamento é selecionado como destinatário, com a mesma estética de hover de seleção já existente — a expansão do accordion não interfere na seleção, e vice-versa.
-- Hash na Qase: `<preenchido depois do --apply>`
+- Hash na Qase: `def9e4d06f3622f906ad6781b07cc06ab02f291a`
 
 ---
 
@@ -222,3 +222,4 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 
 - 2026-09-04 - 📤 21 casos criados na Qase (ids 443-463), sem `description`/`postconditions`, sem shared steps — Rafael sinalizou que ficou "cru".
 - 2026-09-04 - 🔎 Desenhado o formato "rascunho→registro" e a skill [[Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] pra formalizar. Este arquivo reescrito no novo template, com `description`/`postconditions` preenchidos e 2 shared steps identificados (`busca-3-caracteres`, `accordion-click-area`) — próximo passo: aplicar via `update` na Qase.
+- 2026-09-04 - ✅ Aplicado: 2 shared steps criados (hashes acima, confirmados via `--inspect`), `description`/`postconditions` aplicados nos 21 casos, e os 4 casos que compartilhavam mecânica (CT-002/CT-007, CT-002c/CT-008a) passaram a referenciar o shared step correspondente (`shared_step_hash` confirmado via `--inspect=444`). `corrections.json` agora guarda `id`/`hash` em cada entrada — reruns não duplicam. `status: enviado`.
