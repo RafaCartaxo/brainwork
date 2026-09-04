@@ -346,10 +346,16 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
+> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]
+> Achado com um cidadão de nome extenso (não departamento, mas mesmo mecanismo de truncamento): campo de busca de destinatário cresce sem limite, sem truncar; despacho já emitido trunca já na 1ª linha, não na 2ª como especifica o protótipo. Relacionado também ao CT-B03/CT-B06 da [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]].
+
 **Evidências de Testes:**
+
+![[11338 - incorreto 1.png]]
+![[11338 - incorreto 2.png]]
 
 ---
 

@@ -162,7 +162,7 @@ Quando o texto do item for extenso, **sempre trunca na 2ª linha**, mantendo a m
 
 **Execução Passou?**
 - [ ] Sim
-- [ ] Não
+- [x] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
