@@ -40,7 +40,7 @@ Consolida e aponta pra: [[../../QA Workspace/05 Refinar/README|05 Refinar/README
 
 ## Handoff (pra onde vai depois)
 
-Card destilado + CTs → **validação** (fluxo 3b–3d, com o gate de doc) → aprovado → **automação** ([[../Contexto/FLUXOS#3h. Após aprovar: preparar automação|fluxo 3h]] → [[SKILL_INICIAR_AUTOMACAO]]).
+Card destilado + CTs → **validação** (fluxo 3b–3d, com o gate de doc) → aprovado → **automação** ([[../Contexto/FLUXOS#3h. Após aprovar: preparar automação|fluxo 3h]] → [[SKILL_INICIAR_AUTOMACAO]]) e, em paralelo, **Qase** ([[../Contexto/FLUXOS#3j. Após aprovar: subir CTs pra Qase|fluxo 3j]] → [[SKILL_SYNC_QASE]]).
 
 ## Resultado Esperado
 
