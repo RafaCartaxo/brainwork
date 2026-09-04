@@ -265,7 +265,7 @@ def add_atividade(daily, secao, linha):
 
 
 def add_pendencia_afazer(daily, item):
-    return re.sub(r"(> \*\*A fazer hoje:\*\*\n)", rf"\g<1>> - [ ] {item}\n", daily, count=1)
+    return re.sub(r"(> \[!todo\][^\n]*\n)", rf"\g<1>> - [ ] {item}\n", daily, count=1)
 
 
 def add_pendencia(daily, item):
@@ -463,7 +463,7 @@ def sincroniza_demandas_ativas(texto):
                 movida = f"{rid} - Cadastrar melhoria no Notion"
             else:
                 movida = f"{rid} - Acompanhar ({titulo})"
-        texto = re.sub(r"(> \*\*A fazer hoje:\*\*\n)", rf"\g<1>> - [ ] {movida}\n", texto, count=1)
+        texto = re.sub(r"(> \[!todo\][^\n]*\n)", rf"\g<1>> - [ ] {movida}\n", texto, count=1)
         if re.search(r"## Pendente para amanhã\n(?!- )", texto):
             texto = texto.replace("## Pendente para amanhã\n", "## Pendente para amanhã\n- [ ] \n", 1)
         acoes.append(f"{rid} → fila viva: {movida[:55]}")
@@ -885,7 +885,7 @@ def ledger_do_dia(texto):
                     for a in afazer)
                 if coberto:
                     break
-                texto = re.sub(r"(> \*\*A fazer hoje:\*\*\n)",
+                texto = re.sub(r"(> \[!todo\][^\n]*\n)",
                                rf"\g<1>> - [x] {item} → registrado\n", texto, count=1)
                 afazer.append(item)
                 acoes.append(f"ledger: [x] {item[:55]}")
@@ -909,7 +909,7 @@ def coleta_concluidos(texto):
     defeito ainda aberto é estado inconsistente — vira aviso, não movimentação
     silenciosa.
     """
-    m = re.search(r"(> \*\*A fazer hoje:\*\*\n)((?:>.*\n)*)", texto)
+    m = re.search(r"(> \[!todo\][^\n]*\n)((?:>.*\n)*)", texto)
     if not m:
         return texto
     linhas = m.group(2).rstrip("\n").split("\n")
@@ -1239,7 +1239,7 @@ def main():
             call_novo = "\n".join(f"> - {i}" for i in novos)
             afazer_novo = "\n".join(f"> - [ ] {i}" for i in novos)
             d = re.sub(r"(> \[!info\][^\n]*\n)", rf"\g<1>{call_novo}\n", d, count=1)
-            d = re.sub(r"(> \*\*A fazer hoje:\*\*\n)", rf"\g<1>{afazer_novo}\n", d, count=1)
+            d = re.sub(r"(> \[!todo\][^\n]*\n)", rf"\g<1>{afazer_novo}\n", d, count=1)
             gravar(hoje_p, d)
             acoes.append(f"{len(novos)} pendência(s) de ontem carregada(s) pro A fazer hoje")
 
