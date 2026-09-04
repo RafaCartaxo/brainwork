@@ -18,14 +18,14 @@ ambiente: DEV
 
 ### Descrição
 
-Durante validação foi identificado que o campo "e mais $qtd destinatário(s)" do despacho — e o equivalente "com cópia para ($qtd)" quando há múltiplos em cópia — não exibe o dropdown de acordo com o protótipo do Figma. Hoje está despadronizado: mostra padrões diferentes entre si pra cada tipo de entidade (cidadão PF, cidadão PJ, departamento, setor, servidor) no mesmo dropdown, quando cada tipo deveria seguir o próprio padrão fixo definido no protótipo.
+Durante validação foi identificado que o campo "e mais *qtd* destinatário(s)" do despacho — e o equivalente "com cópia para *qtd*" quando há múltiplos em cópia — não exibe o dropdown de acordo com o protótipo do Figma. Hoje está despadronizado: mostra padrões diferentes entre si pra cada tipo de entidade (cidadão PF, cidadão PJ, departamento, setor, servidor) no mesmo dropdown, quando cada tipo deveria seguir o próprio padrão fixo definido no protótipo.
 
 ---
 
 ### Passo a passo para reproduzir
 
 **Dado** que um despacho tem múltiplos destinatários (ou múltiplos em cópia), com tipos diferentes entre eles (cidadão PF, cidadão PJ, departamento, setor, servidor)
-**Quando** o dropdown "e mais $qtd destinatário(s)" (ou "com cópia para ($qtd)") é expandido
+**Quando** o dropdown "e mais *qtd* destinatário(s)" e "com cópia para *qtd*) é expandido
 **Então** verifico que a exibição de cada item não segue o padrão fixo por tipo definido no protótipo do Figma — os padrões aparecem misturados/inconsistentes entre os tipos
 
 ---
