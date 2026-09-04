@@ -18,7 +18,7 @@ ambiente: DEV
 
 ### Descrição
 
-Durante validação foi identificado que, ao selecionar um destinatário (cidadão) com nome extremamente longo num despacho, o truncamento não segue o especificado no protótipo do Figma em nenhuma das duas superfícies observadas:
+Durante validação foi identificado que, ao selecionar um departamento com nome extremamente longo num despacho, o truncamento não segue o especificado no protótipo do Figma em nenhuma das duas superfícies observadas:
 
 1. **Campo "Busque e selecione destinatários"**: o texto do nome extenso não trunca — o campo cresce sem limite, ocupando múltiplas linhas dentro da própria caixa de busca.
 2. **Exibição do despacho já emitido**: o texto trunca, mas aparenta truncar já na **1ª linha**, e não sempre na **2ª linha** como especifica o protótipo ("sempre será truncada na segunda linha").
@@ -66,7 +66,7 @@ Mesma regra já especificada no protótipo do Figma (ver [[QA Workspace/02 Deman
 
 #### **CT-B01 Campo de busca de destinatário não cresce sem limite com nome extenso**
 
-**Dado** que um cidadão tem nome extremamente longo cadastrado
+**Dado** que um departamento tem nome extremamente longo cadastrado
 **Quando** é selecionado no campo "Busque e selecione destinatários"
 **Então** o campo aplica truncamento, sem crescer sem limite pra múltiplas linhas
 
@@ -107,9 +107,10 @@ Mesma regra já especificada no protótipo do Figma (ver [[QA Workspace/02 Deman
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — defeito do CT-012a (nunca executado antes deste achado, ver o próprio CT). Relacionado também à [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] (CT-B03/CT-B06) — mesma família de bug de truncamento no dropdown/exibição de destinatário, achada com cidadão nesta rodada.
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — defeito do CT-012a (nunca executado antes deste achado, ver o próprio CT). Relacionado também à [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] (CT-B03/CT-B06) — mesma família de bug de truncamento no dropdown/exibição de destinatário, achada com departamento nesta rodada.
 - Observações:
-    - Rafael se referiu a este caso como "truncamento do setor" — as duas evidências mostram um **cidadão** (PF) com nome extenso, não um setor. Registrado como achado com cidadão; se houver também um caso específico de setor não reproduzido aqui, avisar que é um caso adicional.
+    - Achado com um **departamento** de nome extenso. A anotação "Curl Test Citizen" que aparece na evidência é o **cidadão PJ dono do departamento** (hierarquia Cidadão > PF/PJ; departamento só existe dentro de um cidadão PJ), não o próprio destinatário selecionado.
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-04 - 🐛 Defeito cadastrado (CT-012a da SGV-11184 reprovado; evidência já no vault)
+    - 2026-09-04 - 🔎 Confirmado com Rafael: é departamento (não cidadão) — card corrigido pra consistência (Descrição, CT-B01, Observações)
