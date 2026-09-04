@@ -29,8 +29,8 @@ Mesmo mecanismo de truncamento já registrado como CT-012a na [[QA Workspace/02 
 
 ### Passo a passo para reproduzir
 
-**Dado** que um cidadão está cadastrado com um nome extremamente longo (ex.: string repetida muitas vezes, "Teste nome gigante...")
-**Quando** esse cidadão é selecionado no campo "Busque e selecione destinatários" de um despacho
+**Dado** que um Departamento está cadastrado com um nome extremamente longo (ex.: string repetida muitas vezes, "Teste nome gigante...")
+**Quando** esse Departamento é selecionado no campo "Busque e selecione destinatários" de um despacho
 **Então** verifico que o campo de busca cresce sem limite, ocupando múltiplas linhas, sem aplicar truncamento
 
 **Dado** que um despacho foi emitido (ou retificado) com esse destinatário de nome extenso
