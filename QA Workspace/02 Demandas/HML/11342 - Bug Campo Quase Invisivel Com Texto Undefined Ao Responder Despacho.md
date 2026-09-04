@@ -14,7 +14,7 @@ cadastrado_por: ""
 modulo: despachos
 ambiente: HML
 ---
-# Campo quase invisível com texto "undefined" aparece ao responder despacho
+# Campo de despacho resposta com texto "undefined" ao responder despacho
 
 ### Descrição
 
