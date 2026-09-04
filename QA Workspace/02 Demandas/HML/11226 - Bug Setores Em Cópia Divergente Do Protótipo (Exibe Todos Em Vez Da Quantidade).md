@@ -21,7 +21,7 @@ Durante validação foi identificado que a linha de setores em cópia está dive
 
 Evidência (`11226 - divergência protótipo setores em cópia.mp4`) traz a comparação lado a lado: **print 02 → Figma 01 (protótipo)** mostrando `com cópia para ($qtd)`, e **01 → Sogov hoje 01** mostrando todos os setores listados em cópia — checar a parte grifada em cada print.
 
-**Possível mesma família da [[QA Workspace/02 Demandas/DEV/10784 - Bug Destinatarios Em Copia De Despacho Divergente Do Prototipo|SGV-10784]]** (ainda aberta, em `DEV/`): aquele card já registra a linha de cópia do despacho divergente do protótipo no mesmo sentido — protótipo com quantidade, produto sem. A 10784 explicitamente descartou "criação de documento" do escopo na época ("foi conferida e não apresenta a divergência"), então se este achado for na criação de documento (não no despacho), pode ser uma regressão nova em área antes checada; se for no despacho, pode ser a mesma divergência da 10784 revalidada. Não linkei como duplicata — avaliar com o Rafael antes de fechar como a mesma coisa (ver Observações).
+**Possível mesma família da [[QA Workspace/02 Demandas/Concluídas/10784 - Bug Destinatarios Em Copia De Despacho Divergente Do Prototipo|SGV-10784]]** (ainda aberta, em `DEV/`): aquele card já registra a linha de cópia do despacho divergente do protótipo no mesmo sentido — protótipo com quantidade, produto sem. A 10784 explicitamente descartou "criação de documento" do escopo na época ("foi conferida e não apresenta a divergência"), então se este achado for na criação de documento (não no despacho), pode ser uma regressão nova em área antes checada; se for no despacho, pode ser a mesma divergência da 10784 revalidada. Não linkei como duplicata — avaliar com o Rafael antes de fechar como a mesma coisa (ver Observações).
 
 ---
 
@@ -78,6 +78,6 @@ Então verifico que o sistema mostra todos os setores em cópia por extenso, em 
 ### Informações adicionais
 
 - Demanda relacionada:
-- Observações: Confirmar com o Rafael se é a mesma divergência da [[QA Workspace/02 Demandas/DEV/10784 - Bug Destinatarios Em Copia De Despacho Divergente Do Prototipo|SGV-10784]] (mesmo padrão protótipo-com-quantidade × produto-sem) ou achado novo em tela diferente — a 10784 é especificamente do despacho e tinha descartado a criação de documento do escopo na época. `modulo: despacho` foi inferido por essa semelhança; corrigir se o achado for em outra tela.
+- Observações: Confirmar com o Rafael se é a mesma divergência da [[QA Workspace/02 Demandas/Concluídas/10784 - Bug Destinatarios Em Copia De Despacho Divergente Do Prototipo|SGV-10784]] (mesmo padrão protótipo-com-quantidade × produto-sem) ou achado novo em tela diferente — a 10784 é especificamente do despacho e tinha descartado a criação de documento do escopo na época. `modulo: despacho` foi inferido por essa semelhança; corrigir se o achado for em outra tela.
 - Histórico:
     - 2026-09-01 - 🐛 Bug cadastrado

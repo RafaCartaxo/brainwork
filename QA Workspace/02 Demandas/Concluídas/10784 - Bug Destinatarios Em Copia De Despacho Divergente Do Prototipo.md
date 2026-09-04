@@ -5,13 +5,13 @@ tags:
   - despacho
 task: "10784"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-08-12
-data_fim: ""
+data_fim: "2026-09-04"
 responsavel: Rafael
 cadastrado_por: Rafael
 modulo: despacho
-ambiente: DEV
+ambiente: HML
 ---
 # Destinatários em cópia de despacho divergente do protótipo
 
@@ -43,6 +43,11 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
 
 ![[10784 - prototipo correto.png]]
 
+**Reteste (aprovado em homologação, 04/09/2026):**
+
+![[10784 - reteste OK, cópia com quantidade e chevron conforme protótipo (mesma evidência da SGV-11333).mp4]]
+*Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] — mesmo vídeo, cópia renomeada.*
+
 ---
 
 ### Resultado Esperado
@@ -55,10 +60,10 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
 
 ### Critérios de aceite
 
-- [ ] A linha de cópia informa **quantos** destinatários estão em cópia, sem exigir nenhuma interação
-- [ ] A linha de cópia indica visualmente que é **expansível**, como o `e mais N destinatário(s)` da linha acima
-- [ ] Ao acionar a linha de cópia, os destinatários em cópia são **exibidos**
-- [ ] A linha de cópia e o `e mais N destinatário(s)` têm o **mesmo tratamento visual** entre si — hoje um é link e o outro é texto estático com avatares
+- [x] A linha de cópia informa **quantos** destinatários estão em cópia, sem exigir nenhuma interação
+- [x] A linha de cópia indica visualmente que é **expansível**, como o `e mais N destinatário(s)` da linha acima
+- [x] Ao acionar a linha de cópia, os destinatários em cópia são **exibidos**
+- [x] A linha de cópia e o `e mais N destinatário(s)` têm o **mesmo tratamento visual** entre si — hoje um é link e o outro é texto estático com avatares
 
 ---
 
@@ -72,12 +77,16 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
 **Então** verifico que ela informa **quantos** destinatários estão em cópia, no formato `com cópia para (N)`, sem exigir interação
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
+
+> [!success]- Reprovado em 12/08, aprovado no reteste de 04/09
+> Corrigido e reteste passou em homologação — gravação da execução abaixo, junto com a evidência que registrou o problema original.
 
 **Evidências de Testes:**
 
 ![[10784 - atual incorreto.png]]
+![[10784 - reteste OK, cópia com quantidade e chevron conforme protótipo (mesma evidência da SGV-11333).mp4]]
 
 ---
 
@@ -89,20 +98,24 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
 **Então** verifico que ela indica ser expansível (chevron, no mesmo tratamento do `e mais N destinatário(s)`) e que, ao ser acionada, exibe os destinatários em cópia
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
+
+> [!success]- Reprovado em 12/08, aprovado no reteste de 04/09
+> Corrigido e reteste passou em homologação — mesma evidência do CT-B01.
 
 **Evidências de Testes:**
 
 ![[10784 - atual incorreto.png]]
 *Mesma evidência do CT-B01; comparar com `10784 - prototipo correto.png`.*
+![[10784 - reteste OK, cópia com quantidade e chevron conforme protótipo (mesma evidência da SGV-11333).mp4]]
 
 ---
 
 ### Ambiente
 
-- Versão: **12.39.44.2**
-- Ambiente: Desenvolvimento — **posição na esteira de correção**. O defeito foi identificado em **homologação e em produção**; o card nasce em `DEV/` por ser bug novo ainda não corrigido em nenhum ambiente ([[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]).
+- Versão: **12.39.44.2** (identificado) — aprovado em homologação em 04/09/2026
+- Ambiente: Homologação — aprovado nesta rodada. O defeito foi identificado originalmente em **homologação e em produção**; o card nasceu em `DEV/` por ser bug novo ainda não corrigido em nenhum ambiente ([[Sistema/Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]).
 
 ---
 
@@ -116,5 +129,7 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
     - 🔎 **Observação fora de escopo, a confirmar**: comparando as duas imagens, o `e mais N` do produto também parece não trazer a palavra *"destinatário(s)"* nem o tratamento de link azul que o protótipo mostra. Não foi validado nesta rodada e **não entrou nos critérios** — mas se for confirmado, é a mesma família de divergência.
     - Mesma tela da [[QA Workspace/02 Demandas/Concluídas/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (divergências de protótipo na exibição do despacho) — vale tratar as duas na mesma passada de ajuste.
     - 🔎 **Possível mesma família da [[QA Workspace/02 Demandas/HML/11226 - Bug Setores Em Cópia Divergente Do Protótipo (Exibe Todos Em Vez Da Quantidade)|SGV-11226]]** (01/09/2026): mesmo padrão protótipo-com-quantidade × produto-sem, achado em nova rodada. Não confirmado se é a mesma tela (despacho) ou achado novo — avaliar junto.
+    - Evidência do reteste compartilhada com [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] — mesmo vídeo, cópia renomeada.
 - Histórico:
     - 2026-08-12 - 🐛 Bug cadastrado (identificado em homologação e produção, versão 12.39.44.2)
+    - 2026-09-04 - ✅ Aprovado em homologação (corrigido, reteste OK — evidência compartilhada com a SGV-11333)
