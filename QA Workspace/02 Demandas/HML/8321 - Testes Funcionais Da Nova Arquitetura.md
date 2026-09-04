@@ -639,7 +639,83 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 
 ---
 
-### I. Fora de execução — registro
+### I. Achados via automação — sugestão de novos CTs *(ainda não confirmados manualmente)*
+
+Encontrados rodando a suíte `sogov-automation-test` contra `dev.sogov.net` (ver seção
+**Automação**, abaixo). Ainda não foram reproduzidos clicando na tela — a automação apontou o
+problema, falta confirmar manualmente antes de virar bug de verdade.
+
+#### **CT-038 Menu de opções do despacho abre corretamente** *(sugerido via automação)*
+
+**Dado** que eu tenho um despacho já existente
+**Quando** eu clico no menu de opções (⋮) desse despacho
+**Então** verifico que o menu abre, mostrando as ações disponíveis
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-039 Carimbo de assinatura mostra o cargo correto do assinante** *(sugerido via automação)*
+
+**Dado** que um servidor com um cargo específico (ex.: "Tester") assina um documento
+**Quando** eu abro o PDF assinado
+**Então** verifico que o carimbo de assinatura mostra o cargo real do assinante, e não um valor
+genérico como "Signatário"
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-040 Botão de emitir aparece disponível num fluxo de trabalho** *(sugerido via automação)*
+
+**Dado** que eu tenho um fluxo de trabalho (workflow) em andamento
+**Quando** chega a etapa de emissão de documento
+**Então** verifico que o botão de emitir aparece disponível na tela
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+---
+
+#### **CT-041 Geração de documento automatizado leva pra tela correta** *(sugerido via automação)*
+
+**Dado** que eu gero um documento automatizado a partir de um fluxo de trabalho
+**Quando** a geração conclui
+**Então** verifico que sou levado pra tela do documento recém-gerado (não fico numa tela
+anterior/errada)
+
+**Execução Passou?**
+- [ ] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+> [!info]- Padrão recorrente pra investigar (não é um CT por si só)
+> Em ~4 pontos diferentes rodando a automação (busca de servidor por nome, listagem em tabela),
+> um elemento da tela demorou mais que o esperado pra ficar visível/carregado, fazendo o teste
+> automatizado "desistir" achando que não existe. Já corrigimos exatamente esse tipo de problema
+> uma vez (select de módulo em Assuntos e Serviços, que carrega a lista de forma assíncrona).
+> Pode ser a mesma causa se repetindo em outras telas — vale o Dev checar se existe um padrão de
+> carregamento assíncrono comum a essas telas de busca/listagem.
+
+---
+
+### J. Fora de execução — registro
 
 *Só preencher quando algum CT acima for retirado/adiado desta rodada.*
 
@@ -662,6 +738,35 @@ Rotinas que rodam sozinhas em horário programado, sem eu precisar clicar em nad
 - [ ] Acesso a arquivos e envio de e-mail não dependem de senha fixa configurada no código — checagem de segurança feita pelo Dev
 - [ ] Sistema aguenta carga de uso e picos de acesso sem cair (teste de performance feito pelo time de Infra, comparado com a versão anterior)
 - [ ] Ambiente de teste temporário de uma branch (se for usado durante o projeto) funciona durante o teste e some sozinho depois que o MR é fechado/mergeado
+
+---
+
+## Automação (`sogov-automation-test`)
+
+*Resumo pra quem for continuar rodando a suíte automatizada contra o novo ambiente.*
+
+- **Onde**: `sogov-automation-test-devnet` — cópia isolada de `sogov-automation-test`, criada
+  pra não conflitar com outro trabalho no repo original. `cypress.env.json` aponta pro
+  `dev.sogov.net`, instância **44** ("E2E Automatic Test", 11 atores de teste já cadastrados e
+  ativos — não precisa recriar).
+- **3 correções já aplicadas no código de teste** (locais, não commitadas ainda): sessão do
+  admin sendo perdida depois de logar um cidadão (`getCitizenOrCreate`), timing no select de
+  módulo de Assuntos e Serviços (`selectMatterServiceModule`), e o CT de criação de Setor
+  passou a validar o resultado real (setor listado) em vez de só o texto do toast.
+- **Como rodar**: por pasta/lote, não a suíte inteira de uma vez — rodar tudo junto sobrecarrega
+  o serviço de geração de PDF do backend e gera falhas que não são bugs reais. Orçamento
+  sugerido: ~15-20min por lote; se estourar, interromper e seguir pro próximo.
+- **Specs de assinatura são anormalmente lentos** (`sign.processing.api.cy.js`,
+  `sign.document.cy.js`) — nem 30min foi suficiente pra terminar rodando sozinhos. Tratar à
+  parte, com bastante tempo reservado.
+- **Falha conhecida, não é bug de teste**: `system.messages.pdf-generator-attachment-error` —
+  capacidade/concorrência do serviço de PDF do backend (já existia no ambiente antigo também,
+  não é da migração). Some quando roda em lotes menores.
+- **Última rodada completa**: 30 specs, 78 testes — 41 passando, 13 falhando, 24 pendentes
+  (~40min de execução total). As 13 falhas viraram os CTs sugeridos na seção J acima, mais o
+  padrão de timing já registrado como investigação pro Dev.
+- Skills do repo (`criar-teste-api`/`criar-teste-e2e`) servem pra estender a suíte se algum CT
+  novo dos grupos acima precisar virar teste automatizado.
 
 ---
 
@@ -740,3 +845,4 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-09-02 - ✅ SGV-11215 aprovada parcialmente em homologação (v. 14.17.0) — carregamento do documento resolvido; conclusão da assinatura segue em SGV-11249.
 - 2026-09-01 - ✅ SGV-11159, SGV-11158 e SGV-11153 aprovadas em homologação (campo de mapa, prévia de assinatura e download compactado) — SGV-11159 e SGV-11153 fecham as regressões da SGV-9074 e SGV-8660 (tabela de Regressão acima).
 - 2026-09-01 - ✅ SGV-11151 aprovada em homologação (criação de documento com anexo no módulo e no assunto e serviço).
+- 2026-09-04 - 🤖 Automação (`sogov-automation-test-devnet`) desbloqueada e rodada contra `dev.sogov.net` em lotes (30 specs, 78 testes: 41 passando / 13 falhando / 24 pendentes). 3 correções de teste aplicadas (sessão de admin, timing de select, validação real no CT de criação de Setor). Achados novos viraram CT-038 a CT-041 (seção J) — ainda não confirmados manualmente. `pdf-generator-attachment-error` confirmado como sobrecarga de backend, não bug de teste. Specs de assinatura (`sign.*`) identificados como anormalmente lentos, tratamento à parte pendente.
