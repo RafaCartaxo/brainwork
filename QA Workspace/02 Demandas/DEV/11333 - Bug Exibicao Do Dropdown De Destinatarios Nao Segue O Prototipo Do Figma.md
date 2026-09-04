@@ -183,6 +183,7 @@ Quando o texto do item for extenso, **sempre trunca na 2ª linha**, mantendo a m
     - Gate de doc: não existe seção no `04 Conhecimento/Módulos/Despachos.md` documentando o padrão de exibição por tipo de entidade no dropdown de destinatário/cópia — pendência de importar essa regra do Figma pra doc quando este bug for corrigido (fluxo 8).
     - CT-B03 e CT-B06 reprovados, confirmados com evidência dedicada em [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (defeito da SGV-11184, achado com cidadão de nome extenso — campo de busca sem limite de truncamento, despacho trunca já na 1ª linha em vez da 2ª).
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
+    - Evidência principal (vídeo da divergência) compartilhada com [[QA Workspace/02 Demandas/Concluídas/10784 - Bug Destinatarios Em Copia De Despacho Divergente Do Prototipo|SGV-10784]] — cópia renomeada, usada lá como reteste da aprovação em homologação.
 - Histórico:
     - 2026-09-04 - 🐛 Bug cadastrado (achado na validação, evidência e protótipo Figma no vault)
     - 2026-09-04 - 🔎 CT-B03/CT-B06 confirmados com evidência dedicada, registrada como defeito da SGV-11184: [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]
