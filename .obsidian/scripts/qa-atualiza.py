@@ -98,7 +98,7 @@ date: {hoje:%Y-%m-%d}
 > [!info]- Carregado de {origem}
 {call}
 
-> **A fazer hoje:**
+> [!todo]+ A fazer hoje:
 {afazer}
 
 ---
@@ -157,7 +157,7 @@ def itens_nao_finalizados(texto):
     Não "consertar" este regex sem ler o aninhamento junto.
     """
     regioes = []
-    m = re.search(r"> \*\*A fazer hoje:\*\*\n((?:>.*\n)*)", texto)
+    m = re.search(r"> \[!todo\][^\n]*\n((?:>.*\n)*)", texto)
     if m:
         regioes.append(m.group(1))
     m = re.search(r"## Pendente para amanhã\n(.*?)(?=\n## |\n> \[!organizacao\]|\Z)",
