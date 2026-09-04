@@ -77,6 +77,11 @@ ls cypress/testes/api/entities/<dominio>/*.cy.js cypress/testes/e2e/entities/<do
       - Atenção ao caso "quase reaproveitável, falta 1 cenário devolver o estado": um cenário que
         esquece de reverter no final quebra o reaproveitamento de TODOS os outros que dependem da
         mesma busca por nome no próximo `getPublicAgentOrCreate`.
+      - **Nome do registro deve seguir a convenção já adotada no repo** (ex.: `"Servidor Publico
+        04"`) sempre que a técnica de reaproveitamento permitir — CPF cru embutido no nome
+        (`"Lifecycle {cpf}"`) só é necessário enquanto o CPF muda a cada rodada; assim que o CPF
+        vira fixo, o nome deve ser "limpo" também (sem dado técnico exposto), não continuar feio
+        só porque "já tava assim".
       *Exemplo real: `identity-lifecycle.api.cy.js` gerava CPF novo (`generateCPF()`) a cada
       rodada pros 5 agentes da Suíte 4, mesmo todos já devolvendo o estado pra Ativo no fim de
       cada fluxo — 10 registros novos por rodada completa da Suíte 3+4, sem necessidade. Corrigido
