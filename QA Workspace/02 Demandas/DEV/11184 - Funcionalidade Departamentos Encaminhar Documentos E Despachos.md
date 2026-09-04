@@ -532,6 +532,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 > [!danger] Bugs encontrados
 > - ~~[[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha~~ — **corrigido e aprovado em DEV** (CT-002c e CT-008a revalidados, Sim)
 > - ~~[[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — departamento não é persistido ao retificar despacho (tela mostra o cidadão PJ/empresa)~~ — **corrigido e aprovado em DEV** (achado em teste exploratório, sem CT formal ainda)
+> - [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] — truncamento de destinatário com nome extenso não segue o protótipo (CT-012a reprovado)
 
 ---
 
@@ -561,3 +562,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - 🔎 CT-014 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]), só existe o cenário departamento × membro
 - 2026-09-03 - 🔎 CT-015 reescrito (Rafael): linguagem de "evento/canal" trocada por descrição concreta (reprocessar o mesmo encaminhamento não duplica notificação), sem mudar o comportamento testado
 - 2026-09-03 - 🔎 CT-018 corrigido: "ou seus membros" removido do Dado (sem base no RF04, que fala só do departamento); nota de escopo em Pontos de atenção esclarecendo que "participantes não implementado" vale pra exibição/seleção (grupos A/B), não pra notificação interna por membro (RF03 CA02, CT-014), que já está em escopo
+- 2026-09-04 - 🐛 CT-012a reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (destinatário com nome extenso não trunca conforme o protótipo)
