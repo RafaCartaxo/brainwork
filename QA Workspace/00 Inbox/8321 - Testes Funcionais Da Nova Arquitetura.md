@@ -1,37 +1,8 @@
----
-tags:
-  - demanda
-  - funcionalidade
-  - qa
-  - arquitetura
-task: "8321"
-status: aberto
-prioridade: alta
-data_inicio: 2026-08-26
-data_fim: ""
-responsavel: Rafael Borges, Flávio Oliveira
-cadastrado_por: ""
-modulo: arquitetura
-ambiente: HML
----
-# Demanda: [Funcionalidade] Testes funcionais da nova arquitetura
 
-> [!info] Informações
-> - **Tipo:** Funcionalidade — Plano de Teste (migração de arquitetura Lambda → EKS)
-> - **Status:** HML (novo ambiente de homologação disponibilizado — rodada de revalidação)
-> - **Responsável QA:** Rafael Borges, Flávio Oliveira
-> - **Link:** [SGV-8321 no Notion](https://app.notion.com/p/alfa-group/Testes-funcionais-da-nova-arquitetura-34c2aec67d308025b995c6880652eeb7)
-> - **Dev responsável:** Flávio Oliveira
-> - **Cliente(s) afetado(s):** — (não informado no export) · **Projetos:** Arquitetura, Sustentação
-> - **Deadline firmado com cliente (Notion):** 27/04/2026 → 15/05/2026 *(já vencido — ver Pontos de atenção)* · **Progresso de subitens:** 4,17%
-
----
 
 > [!abstract] Resumo
 
 O time trocou a "sala de máquinas" do sistema — de Lambda (funções que rodavam sob demanda) pra pods em Kubernetes (EKS), sempre ligados. Pra quem usa o SoGov pela tela, **nada deveria mudar**: os mesmos botões, os mesmos fluxos, o mesmo resultado. Esta nota existe pra confirmar isso na prática, no novo ambiente de homologação.
-
-Nasce do processamento de 2 exports do Notion (`SKILL_LIMPEZA_EXPORT`, Modo B — card direto): o roteiro de testes original da SGV-8321 e a lista de bugs abertos/solucionados na rodada anterior. Reescrita em 2026-08-26 pra sair do tom técnico do export original (worker, SQS, initContainer, IRSA, ArgoCD) e virar algo que dá pra executar clicando na tela, do jeito que o resto do vault já faz.
 
 ---
 
@@ -41,16 +12,7 @@ Não existe regra de negócio nova — a interface continua a mesma. O que muda 
 
 ---
 
-> [!warning] Pontos de atenção
-> - **Deadline do Notion está vencido** (27/04/2026 → 15/05/2026, e hoje é 2026-08-26) — sinalizar com Flávio/Produto se o prazo desta rodada de revalidação precisa ser refirmado.
-> - **3 bugs da rodada anterior são especificamente de POC** (SGV-9076, SGV-9074, SGV-8658, tag `[BUG-Arquitetura-POC]`, ambiente "POC1") — confirmar se esse ambiente de POC ainda existe/é relevante no novo ambiente de homologação antes de tentar revalidar esses três.
-> - O export original não trouxe "Responsáveis" preenchidos por ponto de teste (colunas vazias) — distribuir entre Rafael e Flávio ao iniciar a execução.
-> - **SGV-9530** ("Erro ao tentar ativar instância") está com status **Cancelado** na rodada anterior — não faz parte da revalidação.
-> - Esta nota separa dois tipos de verificação: **Casos de Teste** (dá pra clicar e observar sozinho na tela) e **Verificações técnicas** (dependem de log/painel/teste de carga feito pelo Dev ou Infra — não existe fluxo de tela pra elas). Ver as duas seções abaixo.
-
----
-
-## Casos de Teste ([skill](../../../Sistema/Skills/SKILL_CASOS_DE_TESTE.md))
+## Casos de Teste
 
 *O que dá pra clicar, observar e confirmar direto na tela.*
 
