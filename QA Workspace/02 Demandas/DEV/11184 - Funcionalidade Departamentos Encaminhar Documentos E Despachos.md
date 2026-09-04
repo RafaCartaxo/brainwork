@@ -60,7 +60,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 > - Complemento do Figma (03/09/2026) trouxe também conteúdo que **não** entra nesta rodada: seleção de membro individual do departamento como destinatário direto (contradiz o escopo fechado do requisito original — Rafael vai conferir e confirmar depois) e departamento como signatário de assinatura (fora do escopo desta entrega). Ambos ficam registrados como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], sem entrar nos CTs abaixo.
 > - **Escopo confirmado por Rafael (03/09/2026)**: esta entrega cobre só o **departamento em si** como destinatário — a hierarquia completa seria Cidadão > PJ > Departamento > **participantes**, e o nível "participantes" **não está implementado agora** (nem exibição, nem seleção). Por isso CT-002a, CT-002b e CT-008 (exibição de participantes/CPF no resultado da busca) foram marcados **Não se aplica** — não é falha de execução, é critério fora do escopo real da entrega. O accordion (CT-002c/CT-008a) continua válido, pois expandir/recolher não depende de mostrar participantes.
 > - **Ressalva sobre "participantes não implementado"**: isso vale pra **exibição/seleção** do participante como destinatário (grupos A/B). Não vale pra **notificação**: cada membro elegível recebe sua própria notificação **interna** (RF03 CA02, CT-014) — isso já existe e é comportamento em escopo, não confundir com a seleção/exibição deferida. O e-mail com URL externa de rastreabilidade (RF04, grupo D), porém, vai só pro endereço do **departamento** — não tem "participante" nenhum ali; CT-018 tinha uma menção a "membros" incorreta, corrigida.
-> - **Sem cobertura de CT pra retificação de despacho**: nenhum CT hoje testa o campo de destinatário na tela de retificação — gap exposto pelo defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido e aprovado em DEV, 03/09/2026) — segue faltando decidir se vira CT formal aqui.
+> - ~~**Sem cobertura de CT pra retificação de despacho**~~ — **resolvido** (04/09/2026): formalizado como **CT-012b**, a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido e aprovado em DEV, 03/09/2026).
 
 ---
 
@@ -350,12 +350,33 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [ ] Não se aplica
 
 > [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]
-> Achado com um cidadão de nome extenso (não departamento, mas mesmo mecanismo de truncamento): campo de busca de destinatário cresce sem limite, sem truncar; despacho já emitido trunca já na 1ª linha, não na 2ª como especifica o protótipo. Relacionado também ao CT-B03/CT-B06 da [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]].
+> Achado com um departamento de nome extenso: campo de busca de destinatário cresce sem limite, sem truncar; despacho já emitido trunca já na 1ª linha, não na 2ª como especifica o protótipo. Relacionado também ao CT-B03/CT-B06 da [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]].
 
 **Evidências de Testes:**
 
 ![[11338 - incorreto 1.png]]
 ![[11338 - incorreto 2.png]]
+
+---
+
+#### **CT-012b Retificação preserva o departamento selecionado como destinatário** *(CA05)*
+
+**Dado** que um despacho foi emitido com um departamento como destinatário
+**Quando** o servidor abre a tela de retificação desse despacho
+**Então** o departamento aparece selecionado no campo de destinatário, sem ser substituído pelo cidadão PJ/empresa
+
+**Execução Passou?**
+- [x] Sim
+- [ ] Não
+- [ ] Não se aplica
+
+> [!success]- CT formalizado a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]]
+> Achado em teste exploratório (sem CT formal até agora, ver histórico), corrigido e aprovado em DEV em 04/09/2026. Este CT fecha o gap registrado em Pontos de atenção.
+
+**Evidências de Testes:**
+
+![[11319 - Departamento não é persistido ao retificar despacho.mp4]]
+![[11319 - OK.mp4]]
 
 ---
 
@@ -563,3 +584,4 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - 🔎 CT-015 reescrito (Rafael): linguagem de "evento/canal" trocada por descrição concreta (reprocessar o mesmo encaminhamento não duplica notificação), sem mudar o comportamento testado
 - 2026-09-03 - 🔎 CT-018 corrigido: "ou seus membros" removido do Dado (sem base no RF04, que fala só do departamento); nota de escopo em Pontos de atenção esclarecendo que "participantes não implementado" vale pra exibição/seleção (grupos A/B), não pra notificação interna por membro (RF03 CA02, CT-014), que já está em escopo
 - 2026-09-04 - 🐛 CT-012a reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (destinatário com nome extenso não trunca conforme o protótipo)
+- 2026-09-04 - 📝 CT-012b criado (retificação preserva o departamento como destinatário), formalizando o gap exposto pela [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — já marcado Sim (defeito corrigido e aprovado). Card passa de 27 pra 28 CTs (21 aplicáveis, 7 Não se aplica).
