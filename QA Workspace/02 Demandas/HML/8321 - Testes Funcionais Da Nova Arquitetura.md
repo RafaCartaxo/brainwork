@@ -80,12 +80,12 @@ Antes, ações como enviar e-mail, assinar documento ou importar arquivo acontec
 **Então** verifico que o documento fica assinado corretamente, em até 30 segundos
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
-> [!danger]- Reprovado em 01/09/2026 (segue reprovado) — bugs [[QA Workspace/02 Demandas/Concluídas/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] (aprovada parcialmente em 02/09) e [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]
-> Ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não carregava — resolvido, aprovado em 02/09/2026 v. 14.17.0 (SGV-11215). Mas a assinatura em si segue não sendo concluída com sucesso, com ou sem anexo — CT-002 continua reprovado por isso (SGV-11249, aberta).
+> [!success]- Reprovado em 01/09/2026, aprovado no reteste de 04/09/2026 — bugs [[QA Workspace/02 Demandas/Concluídas/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] (aprovada parcialmente em 02/09) e [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] (aprovada em 04/09)
+> Ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não carregava — resolvido, aprovado em 02/09/2026 v. 14.17.0 (SGV-11215). A assinatura em si seguia não sendo concluída com sucesso, com ou sem anexo (SGV-11249) — agora também aprovada, reteste OK. CT-002 fecha.
 
 **Evidências de Testes:**
 
@@ -778,7 +778,7 @@ anterior/errada)
 - 🐛 [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
 - 🐛 [[QA Workspace/02 Demandas/Concluídas/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
 - 🐛 [[QA Workspace/02 Demandas/Concluídas/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] — cadastrado em 01/09/2026, CT-002 reprovado (documento não carrega ao clicar pra assinar; vizinho da SGV-11158, ponto de falha diferente). Aprovado parcialmente em 02/09/2026 (v. 14.17.0) — só o carregamento; conclusão da assinatura segue em SGV-11249.
-- 🐛 [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] — cadastrado em 02/09/2026, CT-002 reprovado (documento/despacho, com ou sem anexo, carrega mas a assinatura não conclui; vizinho da SGV-11215, ponto de falha diferente).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] — cadastrado em 02/09/2026, CT-002 reprovado (documento/despacho, com ou sem anexo, carrega mas a assinatura não conclui; vizinho da SGV-11215, ponto de falha diferente). Aprovado em homologação em 04/09/2026 — reteste OK, CT-002 fecha.
 
 ---
 
@@ -846,3 +846,4 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 - 2026-09-01 - ✅ SGV-11159, SGV-11158 e SGV-11153 aprovadas em homologação (campo de mapa, prévia de assinatura e download compactado) — SGV-11159 e SGV-11153 fecham as regressões da SGV-9074 e SGV-8660 (tabela de Regressão acima).
 - 2026-09-01 - ✅ SGV-11151 aprovada em homologação (criação de documento com anexo no módulo e no assunto e serviço).
 - 2026-09-04 - 🤖 Automação (`sogov-automation-test-devnet`) desbloqueada e rodada contra `dev.sogov.net` em lotes (30 specs, 78 testes: 41 passando / 13 falhando / 24 pendentes). 3 correções de teste aplicadas (sessão de admin, timing de select, validação real no CT de criação de Setor). Achados novos viraram CT-038 a CT-041 (seção J) — ainda não confirmados manualmente. `pdf-generator-attachment-error` confirmado como sobrecarga de backend, não bug de teste. Specs de assinatura (`sign.*`) identificados como anormalmente lentos, tratamento à parte pendente.
+- 2026-09-04 - ✅ SGV-11249 aprovada em homologação (reteste OK, assinatura concluída com sucesso com e sem anexo) — CT-002 fecha, sem bug bloqueando.

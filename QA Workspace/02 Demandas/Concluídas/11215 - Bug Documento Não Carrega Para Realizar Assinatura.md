@@ -22,7 +22,7 @@ Durante validação foi identificado que, ao solicitar a assinatura de um servid
 **Vizinho da [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]], mas ponto de falha diferente**: na 11158 a tela de **solicitar** assinatura é que não carregava a prévia. Aqui a tela de solicitar funcionou normal — é o documento não carregando na hora de **assinar em si**, depois que a solicitação já foi feita.
 
 > [!success]- Aprovado parcialmente em 02/09/2026 (v. 14.17.0)
-> Considerado aprovado **apenas o carregamento do documento** para a tentativa de assinatura — o problema original deste card. A conclusão da assinatura em si segue com falha, agora tratada em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] (comentário deixado por Rafael na task).
+> Considerado aprovado **apenas o carregamento do documento** para a tentativa de assinatura — o problema original deste card. A conclusão da assinatura em si segue com falha, agora tratada em [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] (comentário deixado por Rafael na task).
 
 ---
 
@@ -51,7 +51,7 @@ Então verifico que o documento não é carregado com sucesso
 ### Critérios de aceite
 
 - [x] Ao clicar para assinar, o documento/despacho/anexo carrega com sucesso
-- [ ] A assinatura pode ser concluída normalmente após o documento carregar — **fora do escopo desta aprovação, segue em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]**
+- [ ] A assinatura pode ser concluída normalmente após o documento carregar — **fora do escopo desta aprovação, segue em [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]**
 
 ---
 
@@ -67,7 +67,7 @@ Então verifico que o documento não é carregado com sucesso
 - [x] Sim
 - [ ] Não
 
-*(aprovado apenas quanto ao carregamento do documento — a conclusão da assinatura segue em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]])*
+*(aprovado apenas quanto ao carregamento do documento — a conclusão da assinatura segue em [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]])*
 
 **Evidências de Testes:**
 
@@ -86,4 +86,4 @@ Então verifico que o documento não é carregado com sucesso
 - Observações: Bate direto com o **CT-002** ("Assinar um documento continua funcionando") da SGV-8321 — o cenário do CT é exatamente ter um documento pronto pra assinatura → assinar → confirmar que fica assinado. Marcado como reprovado lá. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração; válido pra parte aprovada (carregamento). Aprovação parcial registrada por Rafael diretamente na task (comentário): "Assinatura ainda não está sendo realizada com sucesso, porém foi aberto outra task para seguir com a tratativa, sendo essa considerada para aprovação, apenas o carregamento do documento para a realização da tentativa de assinatura no documento. Bug relacionado: SGV-11249".
 - Histórico:
     - 2026-09-01 - 🐛 Bug cadastrado
-    - 2026-09-02 - ✅ Aprovada parcialmente em homologação (v. 14.17.0) — carregamento do documento resolvido; conclusão da assinatura segue em [[QA Workspace/02 Demandas/HML/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]
+    - 2026-09-02 - ✅ Aprovada parcialmente em homologação (v. 14.17.0) — carregamento do documento resolvido; conclusão da assinatura segue em [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]]

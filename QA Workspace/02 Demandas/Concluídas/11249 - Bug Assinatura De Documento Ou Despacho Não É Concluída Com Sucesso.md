@@ -52,8 +52,8 @@ Então verifico que a assinatura não é concluída com sucesso
 
 ### Critérios de aceite
 
-- [ ] Documento/despacho **sem anexo**: assinatura é concluída com sucesso
-- [ ] Documento/despacho **com anexo**: assinatura é concluída com sucesso
+- [x] Documento/despacho **sem anexo**: assinatura é concluída com sucesso
+- [x] Documento/despacho **com anexo**: assinatura é concluída com sucesso
 
 ---
 
@@ -67,10 +67,12 @@ Então verifico que a assinatura não é concluída com sucesso
 **Então** a assinatura é concluída com sucesso
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[11249 - OK.mp4]]
 
 ---
 
@@ -82,10 +84,12 @@ Então verifico que a assinatura não é concluída com sucesso
 **Então** a assinatura é concluída com sucesso
 
 **Execução Passou?**
-- [ ] Sim
+- [x] Sim
 - [ ] Não
 
 **Evidências de Testes:**
+
+![[11249 - OK.mp4]]
 
 ---
 
@@ -102,3 +106,4 @@ Então verifico que a assinatura não é concluída com sucesso
 - Observações: Bate com o **CT-002** ("Assinar um documento continua funcionando") da SGV-8321 — já reprovado por [[QA Workspace/02 Demandas/Concluídas/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]]. Este card documenta outra manifestação do mesmo fluxo quebrado: mesmo quando o documento carrega, a assinatura não conclui.
 - Histórico:
     - 2026-09-02 - 🐛 Bug cadastrado
+    - 2026-09-04 - ✅ Aprovado em homologação — reteste OK, assinatura concluída com sucesso com e sem anexo
