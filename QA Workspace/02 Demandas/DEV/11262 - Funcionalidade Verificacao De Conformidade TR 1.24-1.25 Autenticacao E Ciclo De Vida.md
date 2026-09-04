@@ -36,7 +36,7 @@ Verificação de conformidade do Sogov com os itens **1.24** e **1.25** do Termo
 | 1. Análise | Leitura do Termo original, extração dos itens 1.24/1.25, primeira formalização dos casos de teste | ✅ Concluída (histórica, anterior a esta task) |
 | 2. Casos de teste | Consolidação de 3 versões divergentes numa fonte única no vault | ✅ Concluída (31/08) |
 | 3. Sincronização com a Qase | Alinhamento dos 39 casos no projeto Qase via API | ✅ Concluída (31/08) |
-| 4. Automação | Cobertura automatizada (Cypress) dos 38 CTs, validada contra HML | 🔄 Em andamento — 25/38 confirmados |
+| 4. Automação | Cobertura automatizada (Cypress) dos 38 CTs, validada contra homolog | 🔄 Em andamento — 25/38 confirmados, 12/38 já em MR |
 
 ---
 
@@ -72,24 +72,26 @@ Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/02 Sincronização Qas
 
 ## Parte 4 — Automação
 
-🔄 Em andamento. Cypress, repo `sogov-automation-test` — nada commitado ainda. Detalhe completo e atualizado a cada rodada: [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Handoff de execução|Handoff de execução]] · [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] (processo).
+🔄 Em andamento. Cypress, repo `sogov-automation-test`. **Rafael entra de férias em 04/09, volta 24/09 (quinta)** — ver [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] pra retomar rápido. Detalhe completo e atualizado a cada rodada: [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Handoff de execução|Handoff de execução]] · [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] (processo).
 
 ### Suítes e status atual
 
 | Suíte | CTs | Status |
 |---|---|---|
-| 1. Tipos de acesso | CT-001 a 009 (9) | ✅ Todos confirmados |
-| 2. Validação de credenciais | CT-010 a 012 (3) | ✅ Todos confirmados |
-| 3. Bloqueio por tentativas | CT-013, 014, 018, 019 (4) | ✅ Confirmados |
+| 1. Tipos de acesso | CT-001 a 009 (9) | ✅ Confirmados — branch `tr-1.24-1.25-auth-suite-1-2` no ar, MR a criar/confirmar |
+| 2. Validação de credenciais | CT-010 a 012 (3) | ✅ Confirmados — mesma branch |
+| 3. Bloqueio por tentativas | CT-013, 014, 018, 019 (4) | ✅ Confirmados — não commitado ainda |
 | 3. Bloqueio por tentativas | CT-015 | ⚠️ Em disputa — ver Achados |
 | 3. Bloqueio por tentativas | CT-016, 017 | ❌ Sem código (falta captura de API) |
-| 4. Ciclo de vida da identidade | CT-020, 021, 023, 024, 025, 027, 031, 032 (8) | ✅ Confirmados |
+| 4. Ciclo de vida da identidade | CT-020, 021, 023, 024, 025, 027, 031, 032 (8) | ✅ Confirmados — não commitado ainda |
 | 4. Ciclo de vida da identidade | CT-029, 030, 033 (3) | ⚠️ Achados reais — ver Achados |
 | 4. Ciclo de vida da identidade | CT-022, 026, 028, 034, 035, 036 (6) | ❓ Falha sem causa raiz identificada |
-| 5. Transversais e auditoria | CT-038 | ✅ Confirmado |
+| 5. Transversais e auditoria | CT-038 | ✅ Confirmado — não commitado ainda |
 | 5. Transversais e auditoria | CT-037 | ❌ Sem código (falta captura de API) |
 
-**25 de 38 CTs 100% prontos e verdes contra HML.**
+**25 de 38 CTs 100% prontos e verdes contra homolog — 12 deles (Suítes 1 e 2) já em MR aberto, aguardando review.**
+
+**Pendente de decisão, código já pronto mas NÃO commitado**: os 5 agentes fixos da Suíte 4 foram renomeados (CPF cru tirado do nome, ex. `"Servidor Lifecycle Ativo Inativo"`) — mudança feita, mas nunca rodada de novo pra confirmar (fica pro dia 24). Também um fix de reaproveitamento de dado em `sector.e2e.cy.js` (fora do escopo da TR, feature de Organograma) — não commitado, decisão de quando subir é do Rafael.
 
 ### Achados reais de produto (não são bugs da automação)
 
@@ -109,7 +111,7 @@ Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/02 Sincronização Qas
 2. **6 CTs da Suíte 4 sem causa raiz** (CT-022/026/028/034/035/036) — mesma janela de investigação do item 1.
 3. **CT-029/030/033** — confirmação rápida com produto/backend se a divergência Licença × Férias é intencional.
 4. **CT-016/017/037** — aguardam captura de API nova (desbloqueio manual e endpoint de auditoria), depende do responsável capturar via DevTools/HAR.
-5. **Subida do código**: sessão de revisão conjunta (diff suíte por suíte) antes de qualquer commit/MR — nada sobe até resolver pelo menos os itens 1-3.
+5. **Subida do código**: Suítes 1 e 2 (12 CTs, sem achado nem pendência) já commitadas e em branch/MR (`tr-1.24-1.25-auth-suite-1-2`) — confirmar review/merge no dia 24. Suítes 3/4/5 continuam sem commit, aguardando resolver os itens 1-4 acima.
 
 ---
 
@@ -131,3 +133,4 @@ Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/02 Sincronização Qas
 - 2026-09-01 - CT-015 questionado pelo responsável (validação manual diverge do achado automatizado) — investigação de timing tentada, inconclusiva por instabilidade do ambiente
 - 2026-09-02 - Card criado (retroativo, só cobria a Parte 4/automação nesse momento), skill [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] registrada no vault
 - 2026-09-02 - Reestruturada pra virar a task **pai** do TR inteiro (4 partes), usando o novo template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade]] — decisão do Rafael de não abrir SGVs separados por parte "por enquanto"
+- 2026-09-04 - Suítes 1 e 2 (12 CTs) commitadas e enviadas em branch própria (`tr-1.24-1.25-auth-suite-1-2`, a partir do `origin/main` atualizado, sem conflito) — MR a criar/confirmar. Suíte 4 renomeada (CPF cru tirado do nome dos 5 agentes fixos) — pronta, não commitada, não re-rodada ainda. Rafael entra de férias, volta 24/09 — [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] criada
