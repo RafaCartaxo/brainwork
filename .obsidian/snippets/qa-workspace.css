@@ -238,16 +238,63 @@
   }
 }
 
-/* ---------- QA Financeiro: cor por linha (status de checkbox) ----------
+/* ---------- QA Financeiro: status + cor por cartão ----------
    Escopado por cssclasses (qa-financas) — só a nota de Planejamento
-   Financeiro declara a classe. Linhas marcadas [x] ficam verdes; o resto
+   Financeiro declara a classe. Linhas marcadas [x] ganham fundo verde
+   (status); callouts de cartão ganham cor própria por tipo customizado
+   ([!note-contas|note-nubank|note-sofisa|note-mercado-pago]). O resto
    do vault não é afetado. Cores seguem o sistema do snippet. */
 
+/* Linha marcada → fundo verde (status); texto inalterado */
 .qa-financas li.task-list-item[data-task="x"],
 .qa-financas li.task-list-item[data-task="X"] {
-  color: #16a34a;
+  background: rgba(22, 163, 74, 0.12);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
 }
 
-.qa-financas li.task-list-item[data-task="x"] .task-list-item-checkbox {
+.qa-financas li.task-list-item[data-task="x"] .task-list-item-checkbox,
+.qa-financas li.task-list-item[data-task="X"] .task-list-item-checkbox {
   accent-color: #16a34a;
+}
+
+/* Cartões: barra lateral + título coloridos, fundo bem sutil.
+   Contas fixas neutro (slate) para os bancos coloridos saltarem. */
+.qa-financas .callout[data-callout="note-contas"],
+.qa-financas .callout[data-callout="note-nubank"],
+.qa-financas .callout[data-callout="note-sofisa"],
+.qa-financas .callout[data-callout="note-mercado-pago"] {
+  border-radius: 6px;
+}
+
+.qa-financas .callout[data-callout="note-contas"] {
+  background: rgba(100, 116, 139, 0.05);
+  border-inline-start: 3px solid #64748b;
+}
+.qa-financas .callout[data-callout="note-contas"] .callout-title {
+  color: #64748b;
+}
+
+.qa-financas .callout[data-callout="note-nubank"] {
+  background: rgba(130, 10, 209, 0.06);
+  border-inline-start: 3px solid #820ad1;
+}
+.qa-financas .callout[data-callout="note-nubank"] .callout-title {
+  color: #820ad1;
+}
+
+.qa-financas .callout[data-callout="note-sofisa"] {
+  background: rgba(34, 197, 94, 0.06);
+  border-inline-start: 3px solid #22c55e;
+}
+.qa-financas .callout[data-callout="note-sofisa"] .callout-title {
+  color: #22c55e;
+}
+
+.qa-financas .callout[data-callout="note-mercado-pago"] {
+  background: rgba(0, 158, 227, 0.06);
+  border-inline-start: 3px solid #009ee3;
+}
+.qa-financas .callout[data-callout="note-mercado-pago"] .callout-title {
+  color: #009ee3;
 }
