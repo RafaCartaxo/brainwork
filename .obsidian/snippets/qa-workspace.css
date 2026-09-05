@@ -237,3 +237,17 @@
     transform: none;
   }
 }
+
+/* ---------- QA Financeiro: cor por linha (status de checkbox) ----------
+   Escopado por cssclasses (qa-financas) — só a nota de Planejamento
+   Financeiro declara a classe. Linhas marcadas [x] ficam verdes; o resto
+   do vault não é afetado. Cores seguem o sistema do snippet. */
+
+.qa-financas li.task-list-item[data-task="x"],
+.qa-financas li.task-list-item[data-task="X"] {
+  color: #16a34a;
+}
+
+.qa-financas li.task-list-item[data-task="x"] .task-list-item-checkbox {
+  accent-color: #16a34a;
+}

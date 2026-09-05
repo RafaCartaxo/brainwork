@@ -3,6 +3,8 @@ tags:
   - qa
   - inbox-capture
 status: estruturado
+cssclasses:
+  - qa-financas
 ---
 # Planejamento Financeiro Consolidado (Set/2026 – Mar/2027)
 
@@ -11,10 +13,8 @@ status: estruturado
 > **Saldo livre em conta:** R$ 1.163,48
 
 > [!note] Legenda de visualização
-> - `[!success]` **verde** = pago/quitação
-> - `[!info]` **azul** = contas fixas do mês
-> - `[!todo]` **azul** = faturas do mês (um callout por cartão)
-> - `[!summary]` **cinza** = resultado/fechamento do mês
+> - **Linha marcada `[x]`** = verde (pago/quitação)
+> - **Callouts neutros** = organização do mês (contas fixas · faturas por cartão · resultado)
 > - `[!warning]` **amarelo** = atenção / teto estourado
 
 ---
@@ -37,18 +37,18 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.1 Setembro/2026 — Transição (retroativo · 100% pago)
 
-> [!success] Contas fixas — R$ 206,13
+> [!note] Contas fixas — R$ 206,13
 > - [x] Energia — R$ 76,70
 > - [x] Internet — R$ 81,53
 > - [x] Rastreador — R$ 47,90 ✅ 2026-09-05
 
-> [!success] Nubank (venc. ~09/set) — quitada
+> [!note] Nubank (venc. ~09/set) — quitada
 > - [x] Fatura quitada ✅ 2026-09-05
 
-> [!success] Sofisa (venc. ~10/set) — R$ 1.541,03 pagos
+> [!note] Sofisa (venc. ~10/set) — R$ 1.541,03 pagos
 > - [x] Fatura quitada · saldo remanescente R$ 465,23 → Out/2026 ✅ 2026-09-05
 
-> [!success] Mercado Pago (venc. ~08/set) — quitada
+> [!note] Mercado Pago (venc. ~08/set) — quitada
 > - [x] Fatura quitada ✅ 2026-09-05
 
 > [!summary] Resultado
@@ -61,24 +61,24 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 > [!warning] Teto dos cartões 100% comprometido
 > O teto dos cartões (R$ 1.902,46) já está **100% comprometido** — Nubank R$ 800,12 (só faltam lançar TotalPass e Meli), Mercado Pago R$ 625,11, Sofisa R$ 477,23. **Qualquer PIX novo que cair na fatura de Outubro estoura o teto.** A única folga flexível é a rotina de R$ 700,00 (dinheiro da conta).
 
-> [!info] Contas fixas — R$ 1.386,56
+> [!note] Contas fixas — R$ 1.386,56
 > - [ ] Aluguel/Água — R$ 1.180,45
 > - [ ] Internet — R$ 81,53
 > - [ ] Energia — R$ 76,70 _(R$ 51,32 abatidos do Flash)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!todo] Nubank (venc. ~09/out) — R$ 800,12
+> [!note] Nubank (venc. ~09/out) — R$ 800,12
 > - [ ] Fatura Nubank — R$ 800,12
 >   - Lançamentos base (inclui OpenCode + IOF): R$ 720,32
 >   - TotalPass (a lançar): R$ 59,90
 >   - Meli (a lançar): R$ 19,90
 
-> [!todo] Sofisa (venc. ~10/out) — R$ 477,23
+> [!note] Sofisa (venc. ~10/out) — R$ 477,23
 > - [ ] Fatura Sofisa — R$ 477,23
 >   - Saldo pendente: R$ 465,23
 >   - VPS Hosting: R$ 12,00
 
-> [!todo] Mercado Pago (venc. ~08/out) — R$ 625,11
+> [!note] Mercado Pago (venc. ~08/out) — R$ 625,11
 > - [ ] Fatura Mercado Pago — R$ 625,11
 >   - GFS: R$ 358,33
 >   - Pneus: R$ 200,00
@@ -91,25 +91,25 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.3 Novembro/2026 — Descompressão
 
-> [!info] Contas fixas — R$ 1.437,90
+> [!note] Contas fixas — R$ 1.437,90
 > - [ ] Aluguel/Água — R$ 1.180,45
 > - [ ] Internet — R$ 81,53
 > - [ ] Energia — R$ 128,02 _(padrão)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!todo] Nubank (venc. ~09/nov) — R$ 459,66
+> [!note] Nubank (venc. ~09/nov) — R$ 459,66
 > - [ ] Fatura Nubank — R$ 459,66
 >   - Boticário 3/4: R$ 67,94
 >   - PIX: R$ 168,18 + R$ 36,04 + R$ 50,41
 >   - Assinaturas recorrentes: R$ 137,09
 
-> [!todo] Sofisa (venc. ~10/nov) — R$ 359,96
+> [!note] Sofisa (venc. ~10/nov) — R$ 359,96
 > - [ ] Fatura Sofisa — R$ 359,96
 >   - Mercado Livre: R$ 184,00
 >   - Shopee: R$ 108,79 + R$ 42,42 + R$ 12,75
 >   - VPS Hosting: R$ 12,00
 
-> [!todo] Mercado Pago (venc. ~08/nov) — R$ 66,78
+> [!note] Mercado Pago (venc. ~08/nov) — R$ 66,78
 > - [ ] Fatura Mercado Pago — R$ 66,78
 >   - Parcela fixa: R$ 66,78
 
@@ -120,24 +120,24 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.4 Dezembro/2026
 
-> [!info] Contas fixas — R$ 1.437,90
+> [!note] Contas fixas — R$ 1.437,90
 > - [ ] Aluguel/Água — R$ 1.180,45
 > - [ ] Internet — R$ 81,53
 > - [ ] Energia — R$ 128,02 _(padrão)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!todo] Nubank (venc. ~09/dez) — R$ 373,21
+> [!note] Nubank (venc. ~09/dez) — R$ 373,21
 > - [ ] Fatura Nubank — R$ 373,21
 >   - Boticário 4/4: R$ 67,94
 >   - PIX: R$ 168,18
 >   - Assinaturas recorrentes: R$ 137,09
 
-> [!todo] Sofisa (venc. ~10/dez) — R$ 196,00
+> [!note] Sofisa (venc. ~10/dez) — R$ 196,00
 > - [ ] Fatura Sofisa — R$ 196,00
 >   - Mercado Livre (remanescente): R$ 184,00
 >   - VPS Hosting: R$ 12,00
 
-> [!todo] Mercado Pago (venc. ~08/dez) — R$ 66,78
+> [!note] Mercado Pago (venc. ~08/dez) — R$ 66,78
 > - [ ] Fatura Mercado Pago — R$ 66,78
 >   - Parcela fixa: R$ 66,78
 
@@ -148,23 +148,23 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.5 Janeiro/2027
 
-> [!info] Contas fixas — R$ 1.437,90
+> [!note] Contas fixas — R$ 1.437,90
 > - [ ] Aluguel/Água — R$ 1.180,45
 > - [ ] Internet — R$ 81,53
 > - [ ] Energia — R$ 128,02 _(padrão)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!todo] Nubank (venc. ~09/jan) — R$ 305,27
+> [!note] Nubank (venc. ~09/jan) — R$ 305,27
 > - [ ] Fatura Nubank — R$ 305,27
 >   - PIX: R$ 168,18
 >   - Assinaturas recorrentes: R$ 137,09
 
-> [!todo] Sofisa (venc. ~10/jan) — R$ 196,00
+> [!note] Sofisa (venc. ~10/jan) — R$ 196,00
 > - [ ] Fatura Sofisa — R$ 196,00
 >   - Mercado Livre (remanescente): R$ 184,00
 >   - VPS Hosting: R$ 12,00
 
-> [!todo] Mercado Pago (venc. ~08/jan) — R$ 66,78
+> [!note] Mercado Pago (venc. ~08/jan) — R$ 66,78
 > - [ ] Fatura Mercado Pago — R$ 66,78
 >   - Parcela fixa: R$ 66,78
 
@@ -175,22 +175,22 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.6 Fevereiro/2027
 
-> [!info] Contas fixas — R$ 1.437,90
+> [!note] Contas fixas — R$ 1.437,90
 > - [ ] Aluguel/Água — R$ 1.180,45
 > - [ ] Internet — R$ 81,53
 > - [ ] Energia — R$ 128,02 _(padrão)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!todo] Nubank (venc. ~09/fev) — R$ 137,09
+> [!note] Nubank (venc. ~09/fev) — R$ 137,09
 > - [ ] Fatura Nubank — R$ 137,09
 >   - Assinaturas recorrentes (TotalPass + Meli + OpenCode/IOF): R$ 137,09
 
-> [!todo] Sofisa (venc. ~10/fev) — R$ 196,00
+> [!note] Sofisa (venc. ~10/fev) — R$ 196,00
 > - [ ] Fatura Sofisa — R$ 196,00
 >   - Mercado Livre (remanescente): R$ 184,00
 >   - VPS Hosting: R$ 12,00
 
-> [!todo] Mercado Pago (venc. ~08/fev) — R$ 66,78
+> [!note] Mercado Pago (venc. ~08/fev) — R$ 66,78
 > - [ ] Fatura Mercado Pago — R$ 66,78
 >   - Parcela fixa: R$ 66,78
 
@@ -201,22 +201,22 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.7 Março/2027 — Fechamento
 
-> [!info] Contas fixas — R$ 1.437,90
+> [!note] Contas fixas — R$ 1.437,90
 > - [ ] Aluguel/Água — R$ 1.180,45
 > - [ ] Internet — R$ 81,53
 > - [ ] Energia — R$ 128,02 _(padrão)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!todo] Nubank (venc. ~09/mar) — R$ 137,09
+> [!note] Nubank (venc. ~09/mar) — R$ 137,09
 > - [ ] Fatura Nubank — R$ 137,09
 >   - Assinaturas recorrentes (TotalPass + Meli + OpenCode/IOF): R$ 137,09
 
-> [!todo] Sofisa (venc. ~10/mar) — R$ 196,00
+> [!note] Sofisa (venc. ~10/mar) — R$ 196,00
 > - [ ] Fatura Sofisa — R$ 196,00
 >   - Mercado Livre (remanescente): R$ 184,00
 >   - VPS Hosting: R$ 12,00
 
-> [!success] Mercado Pago (venc. ~08/mar) — cartão quitado e zerado
+> [!note] Mercado Pago (venc. ~08/mar) — cartão quitado e zerado
 > - [x] Sem fatura a pagar — R$ 0,00
 
 > [!summary] Resultado do mês
