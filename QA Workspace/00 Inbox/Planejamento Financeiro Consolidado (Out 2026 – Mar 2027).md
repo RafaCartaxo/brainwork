@@ -6,58 +6,113 @@ status: aguardando-estrutura
 ---
 # Planejamento Financeiro Consolidado (Out/2026 – Mar/2027)
 
-> **Status Atual:** Transição de Setembro concluída com sucesso.  
-> **Saldo Livre em Conta:** R$ 1.163,48
-> 
-> **Contas do Mês Quitadas:** Energia (R$ 76,70 pago), Internet (R$ 81,53 pago), Rastreador (R$ 47,90 pago).
+> [!summary] Status Atual
+> Transição de Setembro concluída com sucesso.
+> **Saldo livre em conta:** R$ 1.163,48
+> **Contas do mês quitadas:** Energia (R$ 76,70) · Internet (R$ 81,53) · Rastreador (R$ 47,90)
 
 ---
 
-## 1. Mapeamento de Faturas por Cartão de Crédito
+## 1. Itens Recorrentes
 
-### Cartão Nubank (Vencimento ~09)
+Itens fixos que se repetem todos os meses. Referência única — nos cartões aparecem apenas como "Recorrência mensal".
 
-- **Outubro/2026 (R$ 800,12):**
-    - Lançamentos base/PIX/Faculdade/Boticário: R$ 660,22
-    - Assinaturas recorrentes: Total PES (R$ 59,90) + Mercado Pago Meli (R$ 19,90) + OpenCode + IOF (R$ 57,29)
-- **Novembro/2026 (R$ 459,66):**
-    - Parcelas/PIX: Boticário 3/4 (R$ 67,94) + PIX (R$ 168,18 + R$ 36,04 + R$ 50,41) = R$ 322,57
-    - Assinaturas recorrentes: Total PES (R$ 59,90) + Mercado Pago Meli (R$ 19,90) + OpenCode + IOF (R$ 57,29) = R$ 137,09
-- **Dezembro/2026 (R$ 373,21):**
-    - Parcelas/PIX: Boticário 4/4 (R$ 67,94) + PIX (R$ 168,18) = R$ 236,12
-    - Assinaturas recorrentes: R$ 137,09
-- **Janeiro/2027 (R$ 305,27):**
-    - Parcela/PIX: PIX (R$ 168,18)
-    - Assinaturas recorrentes: R$ 137,09
-- **Fevereiro/2027 (R$ 137,09):** Apenas assinaturas recorrentes fixas.
-- **Março/2027 (R$ 137,09):** Apenas assinaturas recorrentes fixas.
+| Item | Cartão | Valor/mês | Período |
+|---|---|---|---|
+| TotalPass | Nubank | R$ 59,90 | fixo |
+| Mercado Pago Meli | Nubank | R$ 19,90 | fixo |
+| OpenCode + IOF | Nubank | R$ 57,29 | fixo |
+| VPS Hosting | Sofisa | R$ 12,00 | fixo |
+| Parcela fixa | Mercado Pago | R$ 66,78 | até Fev/2027 |
 
 ---
 
-### Cartão Sofisa (Vencimento ~10)
+## 2. Faturas por Cartão
 
-- **Outubro/2026 (R$ 477,23):**
-    - Saldo líquido faturas pendentes: R$ 465,23 _(R$ 2.006,26 app (-) R$ 1.541,03 pago em Setembro)_
-    - Recorrente: VPS Hosting (R$ 12,00)
-- **Novembro/2026 (R$ 359,96):**
-    - Parcelamento Mercado Livre (R$ 184,00) + Xoupi (R$ 108,79 + R$ 42,42 + R$ 12,75) = R$ 347,96
-    - Recorrente: VPS Hosting (R$ 12,00)
-- **Dezembro/2026 a Março/2027 (R$ 196,00/mês):**
-    - Parcela remanescente Mercado Livre (R$ 184,00) + VPS Hosting (R$ 12,00)
+### Resumo Matriz Cartão × Mês
 
----
-
-### Cartão Mercado Pago (Vencimento ~08)
-
-- **Outubro/2026 (R$ 625,11):**
-    - Dívidas pendentes / GFS (R$ 358,33) + Pneus (R$ 200,00) + Parcela fixa (R$ 66,78)
-- **Novembro/2026 a Fevereiro/2027 (R$ 66,78/mês):**
-    - Apenas parcela recorrente fixa de R$ 66,78.
-- **Março/2027 (R$ 0,00):** Cartão 100% quitado e zerado.
+| Mês / Ano | Nubank (R$) | Sofisa (R$) | Mercado Pago (R$) | Total Cartões (R$) |
+|---|---|---|---|---|
+| **Out/2026** | 800,12 | 477,23 | 625,11 | **1.902,46** |
+| **Nov/2026** | 459,66 | 359,96 | 66,78 | **886,40** |
+| **Dez/2026** | 373,21 | 196,00 | 66,78 | **635,99** |
+| **Jan/2027** | 305,27 | 196,00 | 66,78 | **568,05** |
+| **Fev/2027** | 137,09 | 196,00 | 66,78 | **399,87** |
+| **Mar/2027** | 137,09 | 196,00 | 0,00 | **333,09** |
 
 ---
 
-## 2. Visão Geral Consolidada Mês a Mês
+### 2.1 Cartão Nubank (Vencimento ~09)
+
+> [!note] Recorrência mensal: **R$ 137,09** (TotalPass R$ 59,90 + Meli R$ 19,90 + OpenCode + IOF R$ 57,29)
+
+| Mês | Categoria | Descrição | Valor (R$) |
+|---|---|---|---|
+| **Out/2026** | Lançamentos base | Fatura já lançada (inclui OpenCode + IOF) | 720,32 |
+| | Assinaturas (a lançar) | TotalPass | 59,90 |
+| | Assinaturas (a lançar) | Mercado Pago Meli | 19,90 |
+| | | **Subtotal** | **800,12** |
+| **Nov/2026** | Parcelas | Boticário 3/4 | 67,94 |
+| | PIX | Compra avulsa | 168,18 |
+| | PIX | Compra avulsa | 36,04 |
+| | PIX | Compra avulsa | 50,41 |
+| | Assinaturas | Recorrência mensal | 137,09 |
+| | | **Subtotal** | **459,66** |
+| **Dez/2026** | Parcelas | Boticário 4/4 | 67,94 |
+| | PIX | Compra avulsa | 168,18 |
+| | Assinaturas | Recorrência mensal | 137,09 |
+| | | **Subtotal** | **373,21** |
+| **Jan/2027** | PIX | Compra avulsa | 168,18 |
+| | Assinaturas | Recorrência mensal | 137,09 |
+| | | **Subtotal** | **305,27** |
+| **Fev/2027** | Assinaturas | Recorrência mensal | 137,09 |
+| | | **Subtotal** | **137,09** |
+| **Mar/2027** | Assinaturas | Recorrência mensal | 137,09 |
+| | | **Subtotal** | **137,09** |
+
+> [!note] Out/2026: fatura atual de R$ 720,32 (lançado). TotalPass e Meli ainda não lançados — previsão final de R$ 800,12.
+
+---
+
+### 2.2 Cartão Sofisa (Vencimento ~10)
+
+> [!note] Recorrência mensal: **R$ 12,00** (VPS Hosting)
+
+| Mês | Categoria | Descrição | Valor (R$) |
+|---|---|---|---|
+| **Out/2026** | Saldo pendente | Faturas acumuladas (R$ 2.006,26 app − R$ 1.541,03 pagos) | 465,23 |
+| | Recorrente | VPS Hosting | 12,00 |
+| | | **Subtotal** | **477,23** |
+| **Nov/2026** | Parcelas | Mercado Livre | 184,00 |
+| | Parcelas | Shopee | 108,79 |
+| | Parcelas | Shopee | 42,42 |
+| | Parcelas | Shopee | 12,75 |
+| | Recorrente | VPS Hosting | 12,00 |
+| | | **Subtotal** | **359,96** |
+| **Dez/2026 a Mar/2027** | Parcela | Mercado Livre (remanescente) | 184,00 |
+| | Recorrente | VPS Hosting | 12,00 |
+| | | **Subtotal/mês** | **196,00** |
+
+---
+
+### 2.3 Cartão Mercado Pago (Vencimento ~08)
+
+> [!note] Recorrência mensal: **R$ 66,78** (parcela fixa, até Fev/2027)
+
+| Mês | Categoria | Descrição | Valor (R$) |
+|---|---|---|---|
+| **Out/2026** | Dívida pendente | GFS | 358,33 |
+| | Compra | Pneus | 200,00 |
+| | Parcela fixa | Recorrência mensal | 66,78 |
+| | | **Subtotal** | **625,11** |
+| **Nov/2026 a Fev/2027** | Parcela fixa | Recorrência mensal | 66,78 |
+| | | **Subtotal/mês** | **66,78** |
+| **Mar/2027** | — | Cartão quitado e zerado | 0,00 |
+| | | **Subtotal** | **0,00** |
+
+---
+
+## 3. Visão Geral Consolidada Mês a Mês
 
 ### Resumo do Custo Fixo Sem Cartões
 
@@ -79,7 +134,7 @@ status: aguardando-estrutura
 
 ---
 
-## 3. Diretrizes de Manutenção
+## 4. Diretrizes de Manutenção
 
 1. **Gargalo Vencido:** O mês de Outubro/2026 absorve o último pico de faturas acumuladas e o salário proporcional. O saldo atual de R$ 1.163,48 + FGTS garantem a transição sem déficit.
 2. **Descompressão em Novembro:** O custo de cartões cai de R$ 1.902,46 em Outubro para R$ 886,40 em Novembro, gerando um pico imediato de liquidez financeira.
