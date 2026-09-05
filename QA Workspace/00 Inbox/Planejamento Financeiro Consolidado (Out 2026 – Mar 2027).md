@@ -6,8 +6,8 @@ status: aguardando-estrutura
 ---
 # Planejamento Financeiro Consolidado (Out/2026 – Mar/2027)
 
-> [!summary] Status Atual
-> Transição de Setembro concluída com sucesso.
+> [!success] Setembro 100% quitado
+> Faturas Nubank/Sofisa/Mercado Pago (venc. ~08/09/10) e contas de moradia pagas — transição concluída.
 > **Saldo livre em conta:** R$ 1.163,48
 > **Contas do mês quitadas:** Energia (R$ 76,70) · Internet (R$ 81,53) · Rastreador (R$ 47,90)
 
