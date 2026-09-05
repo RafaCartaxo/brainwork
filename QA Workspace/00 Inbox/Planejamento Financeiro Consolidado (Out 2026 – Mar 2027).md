@@ -112,25 +112,34 @@ Itens fixos que se repetem todos os meses. Referência única — nos cartões a
 
 ---
 
-## 3. Visão Geral Consolidada Mês a Mês
+## 3. Limites de Gasto e Fluxo de Caixa por Mês
+
+> [!warning] Outubro/2026 é o mês de aperto
+> O teto dos cartões (R$ 1.902,46) já está **100% comprometido** — Nubank R$ 800,12 (só faltam lançar TotalPass e Meli), Mercado Pago R$ 625,11, Sofisa R$ 477,23. **Qualquer PIX novo que cair na fatura de Outubro estoura o teto.** A única folga flexível é a rotina de R$ 700,00 (dinheiro da conta).
 
 ### Resumo do Custo Fixo Sem Cartões
 
 - **Outubro/2026:** R$ 1.386,56 _(Aluguel/Água R$ 1.180,45 + Internet R$ 81,53 + Energia R$ 76,70 já abatida com R$ 51,32 do Flash + Rastreador R$ 47,90)_
 - **Novembro/2026 em diante:** R$ 1.437,90 / mês _(Com energia em valor padrão de R$ 128,02)_
 
----
+### Limites por Mês
 
-### Projeção Financeira e Fluxo de Caixa
+|Mês / Ano|Entradas (R$)|Teto Cartões (R$)|Moradia (R$)|Rotina máx. (R$)|Total Saídas (R$)|Saldo do Mês (R$)|Acumulado (R$)|
+|---|---|---|---|---|---|---|---|
+|**Out/2026**|**3.550,00** _(1.900 salário prop. + 1.650 FGTS)_|1.902,46|1.386,56|700,00|**3.989,02**|- 439,02 _(coberto pelo saldo)_|**+ 724,46**|
+|**Nov/2026**|**5.700,00** _(3.800 salário + 1.900 1ª parc. 13º)_|886,40|1.437,90|700,00|**3.024,30**|**+ 2.675,70**|**+ 3.400,16**|
+|**Dez/2026**|**5.350,00** _(3.800 salário + 1.550 2ª parc. 13º)_|635,99|1.437,90|700,00|**2.773,89**|**+ 2.576,11**|**+ 5.976,27**|
+|**Jan/2027**|**3.800,00** _(salário normal)_|568,05|1.437,90|700,00|**2.705,95**|**+ 1.094,05**|**+ 7.070,32**|
+|**Fev/2027**|**3.800,00** _(salário normal)_|399,87|1.437,90|700,00|**2.537,77**|**+ 1.262,23**|**+ 8.332,55**|
+|**Mar/2027**|**3.800,00** _(salário normal)_|333,09|1.437,90|700,00|**2.470,99**|**+ 1.329,01**|**+ 9.661,56**|
 
-|Mês / Ano|Entradas Estimadas (R$)|Total Cartões (R$)|Custo Fixo Moradia/Rotina (R$)|Total Saídas no Mês (R$)|Saldo Líquido do Mês (R$)|Acumulado em Caixa (R$)|
-|---|---|---|---|---|---|---|
-|**Outubro/2026**|**3.550,00** _(R$ 1.900 Salário Proporcional + R$ 1.650 FGTS)_|1.902,46|2.086,56 _(Moradia + R$ 700 Rotina)_|**3.989,02**|- 439,02 _(Coberto pelo Saldo)_|**+ 724,46**|
-|**Novembro/2026**|**5.700,00** _(R$ 3.800 Salário + R$ 1.900 1ª parc. 13º)_|886,40|2.137,90 _(Moradia + R$ 700 Rotina)_|**3.024,30**|**+ 2.675,70**|**+ 3.400,16**|
-|**Dezembro/2026**|**5.350,00** _(R$ 3.800 Salário + R$ 1.550 2ª parc. 13º)_|635,99|2.137,90 _(Moradia + R$ 700 Rotina)_|**2.773,89**|**+ 2.576,11**|**+ 5.976,27**|
-|**Janeiro/2027**|**3.800,00** _(Salário Normal)_|568,05|2.137,90 _(Moradia + R$ 700 Rotina)_|**2.705,95**|**+ 1.094,05**|**+ 7.070,32**|
-|**Fevereiro/2027**|**3.800,00** _(Salário Normal)_|399,87|2.137,90 _(Moradia + R$ 700 Rotina)_|**2.537,77**|**+ 1.262,23**|**+ 8.332,55**|
-|**Março/2027**|**3.800,00** _(Salário Normal)_|333,09|2.137,90 _(Moradia + R$ 700 Rotina)_|**2.470,99**|**+ 1.329,01**|**+ 9.661,56**|
+> [!tip] Regra de bolso
+> - **Cartões = teto fixo.** Sem folga em Outubro; folga real só a partir de Novembro (queda de R$ 1.902,46 → R$ 886,40).
+> - **Rotina = R$ 700,00 flexíveis** (gastos variáveis/gasolina). É a única margem de manobra em Outubro.
+> - **Tudo além disso estoura o plano** — o superávit dos meses seguintes não deve virar despesa extra.
+
+> [!todo] Pendência de classificação
+> Definir, com base no histórico, se os **PIX aleatórios** entram na **fatura do cartão** ou saem do **dinheiro da conta (rotina)**. Isso decide onde o limite se aplica na prática — verificar antes do fechamento de Outubro.
 
 ---
 
