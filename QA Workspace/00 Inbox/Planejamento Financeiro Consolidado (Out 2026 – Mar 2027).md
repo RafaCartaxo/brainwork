@@ -59,8 +59,9 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ### 2.2 Outubro/2026 — Mês de aperto
 
-> [!warning] Teto dos cartões 100% comprometido
-> O teto dos cartões (R$ 1.902,46) já está **100% comprometido** — Nubank R$ 800,12 (só faltam lançar TotalPass e Meli), Mercado Pago R$ 625,11, Sofisa R$ 477,23. **Qualquer PIX novo que cair na fatura de Outubro estoura o teto.** A única folga flexível é a rotina de R$ 700,00 (dinheiro da conta).
+> [!warning] Teto dos cartões estourado em R$ 60,75 (atualizado 2026-09-12)
+> Teto real R$ 1.963,21 — Nubank R$ 872,87 (base 720,32 + TotalPass 59,90 + cabelo 40,00 + PIX Lazer 1/2 52,65) + Mercado Pago R$ 625,11 + Sofisa R$ 465,23 fechada. Meli R$ 19,90 ainda não lançou — se lançar vai a R$ 892,77 / R$ 1.983,11. VPS R$ 12,00 não veio em Out → movido para Nov. Estouro absorvido pela rotina. **Rotina R$ 700: R$ 45 consumidos (Tapioca 10 + Casa 35) → restante R$ 655,00.**
+> Saldo em conta R$ 2.725,63 = R$ 1.163,48 + R$ 1.607,15 FGTS − R$ 45 rotina. Salário prop. R$ 1.900 pendente. Contas venc. Out ainda não pagas.
 
 > [!note-contas] Contas fixas — R$ 1.386,56
 > - [ ] Aluguel/Água — R$ 1.180,45
@@ -68,16 +69,18 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 > - [ ] Energia — R$ 76,70 _(R$ 51,32 abatidos do Flash)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!note-nubank] Nubank (venc. ~09/out) — R$ 800,12
-> - [ ] Fatura Nubank — R$ 800,12
+> [!note-nubank] Nubank (venc. ~09/out) — R$ 872,87
+> - [ ] Fatura Nubank — R$ 872,87
 >   - Lançamentos base (inclui OpenCode + IOF): R$ 720,32
->   - TotalPass (a lançar): R$ 59,90
->   - Meli (a lançar): R$ 19,90
+>   - TotalPass: R$ 59,90
+>   - Corte cabelo (crédito Nubank): R$ 40,00 ✅ 2026-09-12
+>   - PIX Lazer 1/2: R$ 52,65 ✅ 2026-09-12
+>   - Meli (a lançar): R$ 19,90 — se lançar, fatura vai a R$ 892,77
 
-> [!note-sofisa] Sofisa (venc. ~10/out) — R$ 477,23
-> - [ ] Fatura Sofisa — R$ 477,23
+> [!note-sofisa] Sofisa (venc. ~10/out) — R$ 465,23 fechada
+> - [ ] Fatura Sofisa — R$ 465,23 ✅ 2026-09-12
 >   - Saldo pendente: R$ 465,23
->   - VPS Hosting: R$ 12,00
+>   - VPS Hosting R$ 12,00 não veio nesta fatura → movido para Nov
 
 > [!note-mercado-pago] Mercado Pago (venc. ~08/out) — R$ 625,11
 > - [ ] Fatura Mercado Pago — R$ 625,11
@@ -86,7 +89,8 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 >   - Parcela fixa: R$ 66,78
 
 > [!summary] Resultado do mês
-> Entradas R$ 3.550,00 · Saídas R$ 3.989,02 · Saldo −439,02 _(coberto pelo saldo)_ · **Acumulado R$ 724,46**
+> Entradas R$ 3.507,15 · Saídas R$ 4.049,77 · Saldo −542,62 _(coberto pelo saldo)_ · **Acumulado R$ 620,86**
+> FGTS real R$ 1.607,15 (prev. 1.650,00 = −42,85) + Nubank +72,75 − Sofisa VPS 12,00. Rotina 45/700 consumidos. Saldo em conta 2026-09-12: R$ 2.725,63.
 
 ---
 
@@ -98,24 +102,25 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 > - [ ] Energia — R$ 128,02 _(padrão)_
 > - [ ] Rastreador — R$ 47,90
 
-> [!note-nubank] Nubank (venc. ~09/nov) — R$ 459,66
-> - [ ] Fatura Nubank — R$ 459,66
+> [!note-nubank] Nubank (venc. ~09/nov) — R$ 512,31
+> - [ ] Fatura Nubank — R$ 512,31
 >   - Boticário 3/4: R$ 67,94
 >   - PIX: R$ 168,18 + R$ 36,04 + R$ 50,41
+>   - PIX Lazer 2/2: R$ 52,65
 >   - Assinaturas recorrentes: R$ 137,09
 
-> [!note-sofisa] Sofisa (venc. ~10/nov) — R$ 359,96
-> - [ ] Fatura Sofisa — R$ 359,96
+> [!note-sofisa] Sofisa (venc. ~10/nov) — R$ 371,96
+> - [ ] Fatura Sofisa — R$ 371,96
 >   - Mercado Livre: R$ 184,00
 >   - Shopee: R$ 108,79 + R$ 42,42 + R$ 12,75
->   - VPS Hosting: R$ 12,00
+>   - VPS Hosting Out + Nov: R$ 24,00 (12,00 de Out não faturado + 12,00 Nov)
 
 > [!note-mercado-pago] Mercado Pago (venc. ~08/nov) — R$ 66,78
 > - [ ] Fatura Mercado Pago — R$ 66,78
 >   - Parcela fixa: R$ 66,78
 
 > [!summary] Resultado do mês
-> Entradas R$ 5.700,00 · Saídas R$ 3.024,30 · Saldo +2.675,70 · **Acumulado R$ 3.400,16**
+> Entradas R$ 5.700,00 · Saídas R$ 3.088,95 · Saldo +2.611,05 · **Acumulado R$ 3.231,91**
 
 ---
 
@@ -143,7 +148,7 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 >   - Parcela fixa: R$ 66,78
 
 > [!summary] Resultado do mês
-> Entradas R$ 5.350,00 · Saídas R$ 2.773,89 · Saldo +2.576,11 · **Acumulado R$ 5.976,27**
+> Entradas R$ 5.350,00 · Saídas R$ 2.773,89 · Saldo +2.576,11 · **Acumulado R$ 5.808,02**
 
 ---
 
@@ -170,7 +175,7 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 >   - Parcela fixa: R$ 66,78
 
 > [!summary] Resultado do mês
-> Entradas R$ 3.800,00 · Saídas R$ 2.705,95 · Saldo +1.094,05 · **Acumulado R$ 7.070,32**
+> Entradas R$ 3.800,00 · Saídas R$ 2.705,95 · Saldo +1.094,05 · **Acumulado R$ 6.902,07**
 
 ---
 
@@ -196,7 +201,7 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 >   - Parcela fixa: R$ 66,78
 
 > [!summary] Resultado do mês
-> Entradas R$ 3.800,00 · Saídas R$ 2.537,77 · Saldo +1.262,23 · **Acumulado R$ 8.332,55**
+> Entradas R$ 3.800,00 · Saídas R$ 2.537,77 · Saldo +1.262,23 · **Acumulado R$ 8.164,30**
 
 ---
 
@@ -221,7 +226,7 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 > - [x] Sem fatura a pagar — R$ 0,00
 
 > [!summary] Resultado do mês
-> Entradas R$ 3.800,00 · Saídas R$ 2.470,99 · Saldo +1.329,01 · **Acumulado R$ 9.661,56**
+> Entradas R$ 3.800,00 · Saídas R$ 2.470,99 · Saldo +1.329,01 · **Acumulado R$ 9.493,31**
 
 ---
 
@@ -236,8 +241,8 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 | Mês / Ano | Nubank (R$) | Sofisa (R$) | Mercado Pago (R$) | Total Cartões (R$) |
 |---|---|---|---|---|
-| **Out/2026** | 800,12 | 477,23 | 625,11 | **1.902,46** |
-| **Nov/2026** | 459,66 | 359,96 | 66,78 | **886,40** |
+| **Out/2026** | 872,87 | 465,23 | 625,11 | **1.963,21** |
+| **Nov/2026** | 512,31 | 371,96 | 66,78 | **951,05** |
 | **Dez/2026** | 373,21 | 196,00 | 66,78 | **635,99** |
 | **Jan/2027** | 305,27 | 196,00 | 66,78 | **568,05** |
 | **Fev/2027** | 137,09 | 196,00 | 66,78 | **399,87** |
@@ -247,15 +252,15 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 |Mês / Ano|Entradas (R$)|Teto Cartões (R$)|Moradia (R$)|Rotina máx. (R$)|Total Saídas (R$)|Saldo do Mês (R$)|Acumulado (R$)|
 |---|---|---|---|---|---|---|---|
-|**Out/2026**|**3.550,00** _(1.900 salário prop. + 1.650 FGTS)_|1.902,46|1.386,56|700,00|**3.989,02**|- 439,02 _(coberto pelo saldo)_|**+ 724,46**|
-|**Nov/2026**|**5.700,00** _(3.800 salário + 1.900 1ª parc. 13º)_|886,40|1.437,90|700,00|**3.024,30**|**+ 2.675,70**|**+ 3.400,16**|
-|**Dez/2026**|**5.350,00** _(3.800 salário + 1.550 2ª parc. 13º)_|635,99|1.437,90|700,00|**2.773,89**|**+ 2.576,11**|**+ 5.976,27**|
-|**Jan/2027**|**3.800,00** _(salário normal)_|568,05|1.437,90|700,00|**2.705,95**|**+ 1.094,05**|**+ 7.070,32**|
-|**Fev/2027**|**3.800,00** _(salário normal)_|399,87|1.437,90|700,00|**2.537,77**|**+ 1.262,23**|**+ 8.332,55**|
-|**Mar/2027**|**3.800,00** _(salário normal)_|333,09|1.437,90|700,00|**2.470,99**|**+ 1.329,01**|**+ 9.661,56**|
+|**Out/2026**|**3.507,15** _(1.900 salário prop. pendente + 1.607 FGTS real)_|1.963,21|1.386,56|700,00 (45 consumidos → 655 restantes)|**4.049,77**|- 542,62 _(coberto pelo saldo)_|**+ 620,86**|
+|**Nov/2026**|**5.700,00** _(3.800 salário + 1.900 1ª parc. 13º)_|951,05|1.437,90|700,00|**3.088,95**|**+ 2.611,05**|**+ 3.231,91**|
+|**Dez/2026**|**5.350,00** _(3.800 salário + 1.550 2ª parc. 13º)_|635,99|1.437,90|700,00|**2.773,89**|**+ 2.576,11**|**+ 5.808,02**|
+|**Jan/2027**|**3.800,00** _(salário normal)_|568,05|1.437,90|700,00|**2.705,95**|**+ 1.094,05**|**+ 6.902,07**|
+|**Fev/2027**|**3.800,00** _(salário normal)_|399,87|1.437,90|700,00|**2.537,77**|**+ 1.262,23**|**+ 8.164,30**|
+|**Mar/2027**|**3.800,00** _(salário normal)_|333,09|1.437,90|700,00|**2.470,99**|**+ 1.329,01**|**+ 9.493,31**|
 
 > [!tip] Regra de bolso
-> - **Cartões = teto fixo.** Sem folga em Outubro; folga real só a partir de Novembro (queda de R$ 1.902,46 → R$ 886,40).
+> - **Cartões = teto fixo.** Sem folga em Outubro (estouro R$ 60,75 absorvido pela rotina); folga real só a partir de Novembro (queda de R$ 1.963,21 → R$ 951,05).
 > - **Rotina = R$ 700,00 flexíveis** (gastos variáveis/gasolina). É a única margem de manobra em Outubro.
 > - **Tudo além disso estoura o plano** — o superávit dos meses seguintes não deve virar despesa extra.
 
@@ -266,6 +271,6 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 ## 4. Diretrizes de Manutenção
 
-1. **Gargalo Vencido:** O mês de Outubro/2026 absorve o último pico de faturas acumuladas e o salário proporcional. O saldo atual de R$ 1.163,48 + FGTS garantem a transição sem déficit.
-2. **Descompressão em Novembro:** O custo de cartões cai de R$ 1.902,46 em Outubro para R$ 886,40 em Novembro, gerando um pico imediato de liquidez financeira.
-3. **Reserva Acumulada:** Mantendo a margem de R$ 700,00/mês para gastos variáveis/gasolina, a projeção indica fechamento de Março/2027 com aproximadamente **R$ 9.600,00 em caixa livre**.
+1. **Gargalo Vencido:** O mês de Outubro/2026 absorve o último pico de faturas acumuladas e o salário proporcional (R$ 1.900 pendente). O saldo atual de R$ 2.725,63 em 2026-09-12 (R$ 1.163,48 + R$ 1.607,15 FGTS − R$ 45 rotina) garante a transição sem déficit. Contas venc. Out ainda não pagas.
+2. **Descompressão em Novembro:** O custo de cartões cai de R$ 1.963,21 em Outubro para R$ 951,05 em Novembro, gerando um pico imediato de liquidez financeira.
+3. **Reserva Acumulada:** Mantendo a margem de R$ 700,00/mês para gastos variáveis/gasolina, a projeção indica fechamento de Março/2027 com aproximadamente **R$ 9.493,31 em caixa livre**.
