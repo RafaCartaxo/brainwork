@@ -10,10 +10,11 @@ cssclasses:
 
 > [!success] Dashboard — atualizado em 2026-09-12
 > - **Caixa agora (12/set):** R$ 2.725,63 _(1.163,48 + 1.607,15 FGTS − 45 rotina)_
-> - **A receber início Out:** R$ 1.900,00 salário proporcional
-> - **A pagar Out:** R$ 4.049,77 + R$ 12,00 VPS prevista = **R$ 4.061,77**
-> - **Sobra prevista fim Out:** **R$ 608,86**
-> - Setembro 100% quitado (base). Contas venc. Out ainda não pagas.
+> - **A receber início Out:** R$ 1.900,00 salário proporcional (antes dos venc. 08/09/10)
+> - **Obrigação Out:** R$ 3.361,77 (Cartões 1.975,21 + Moradia 1.386,56)
+> - **Sobra sem gastar rotina:** R$ 1.308,86
+> - **Rotina:** −R$ 700,00 (45 usados → 655 restantes)
+> - **Sobra gastando rotina:** **R$ 608,86**
 
 > [!success] Setembro 100% quitado (retroativo)
 > Transição de Setembro concluída. Faturas Nubank/Sofisa/Mercado Pago (venc. ~08/09/10) e contas de moradia pagas.
@@ -96,12 +97,11 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 >   - Parcela fixa: R$ 66,78
 
 > [!summary] Resultado — Out/2026
-> - Entradas: R$ 3.507,15 (R$ 1.900,00 salário prop. a receber início Out + R$ 1.607,15 FGTS já em conta; prev. 1.650,00 = −42,85)
-> - Saídas fixas: R$ 3.349,77 (Cartões R$ 1.975,21 + Moradia R$ 1.386,56)
-> - Rotina: R$ 700,00 teto · R$ 45,00 consumidos (Tapioca 10 + Casa 35) → R$ 655,00 restantes
-> - Total saídas: R$ 4.061,77
-> - Saldo do mês: R$ −554,62 (coberto pelo saldo anterior)
-> - Acumulado: **R$ 608,86**
+> - Entradas: R$ 3.507,15 (R$ 1.900,00 salário prop. a receber início Out + R$ 1.607,15 FGTS já em conta)
+> - Saídas fixas (obrigação): R$ 3.361,77 (Cartões R$ 1.975,21 + Moradia R$ 1.386,56)
+> - Sobra sem gastar rotina: R$ 1.308,86
+> - Rotina: −R$ 700,00 (R$ 45,00 usados → R$ 655,00 restantes)
+> - Sobra gastando rotina: **R$ 608,86**
 > - Fluxo: 2.725,63 + 1.900,00 → 08/out 625,11 → 09/out 872,87 → 10/out 477,23 → moradia 1.386,56 → rotina 655,00 → sobra 608,86
 
 ---
@@ -133,11 +133,10 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 > [!summary] Resultado — Nov/2026
 > - Entradas: R$ 5.700,00 (3.800 salário + 1.900 1ª parc. 13º)
-> - Saídas fixas: R$ 2.376,95 (Cartões R$ 939,05 + Moradia R$ 1.437,90)
-> - Rotina: R$ 700,00
-> - Total saídas: R$ 3.076,95
-> - Saldo do mês: R$ +2.623,05
-> - Acumulado: **R$ 3.231,91**
+> - Saídas fixas (obrigação): R$ 2.376,95 (Cartões R$ 939,05 + Moradia R$ 1.437,90)
+> - Sobra sem gastar rotina: R$ 3.931,91
+> - Rotina: −R$ 700,00
+> - Sobra gastando rotina: **R$ 3.231,91**
 
 ---
 
@@ -166,11 +165,10 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 > [!summary] Resultado — Dez/2026
 > - Entradas: R$ 5.350,00 (3.800 salário + 1.550 2ª parc. 13º)
-> - Saídas fixas: R$ 2.073,89 (Cartões R$ 635,99 + Moradia R$ 1.437,90)
-> - Rotina: R$ 700,00
-> - Total saídas: R$ 2.773,89
-> - Saldo do mês: R$ +2.576,11
-> - Acumulado: **R$ 5.808,02**
+> - Saídas fixas (obrigação): R$ 2.073,89 (Cartões R$ 635,99 + Moradia R$ 1.437,90)
+> - Sobra sem gastar rotina: R$ 6.508,02
+> - Rotina: −R$ 700,00
+> - Sobra gastando rotina: **R$ 5.808,02**
 
 ---
 
@@ -198,11 +196,10 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 > [!summary] Resultado — Jan/2027
 > - Entradas: R$ 3.800,00 (salário normal)
-> - Saídas fixas: R$ 2.005,95 (Cartões R$ 568,05 + Moradia R$ 1.437,90)
-> - Rotina: R$ 700,00
-> - Total saídas: R$ 2.705,95
-> - Saldo do mês: R$ +1.094,05
-> - Acumulado: **R$ 6.902,07**
+> - Saídas fixas (obrigação): R$ 2.005,95 (Cartões R$ 568,05 + Moradia R$ 1.437,90)
+> - Sobra sem gastar rotina: R$ 7.602,07
+> - Rotina: −R$ 700,00
+> - Sobra gastando rotina: **R$ 6.902,07**
 
 ---
 
@@ -229,11 +226,10 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 > [!summary] Resultado — Fev/2027
 > - Entradas: R$ 3.800,00 (salário normal)
-> - Saídas fixas: R$ 1.837,77 (Cartões R$ 399,87 + Moradia R$ 1.437,90)
-> - Rotina: R$ 700,00
-> - Total saídas: R$ 2.537,77
-> - Saldo do mês: R$ +1.262,23
-> - Acumulado: **R$ 8.164,30**
+> - Saídas fixas (obrigação): R$ 1.837,77 (Cartões R$ 399,87 + Moradia R$ 1.437,90)
+> - Sobra sem gastar rotina: R$ 8.864,30
+> - Rotina: −R$ 700,00
+> - Sobra gastando rotina: **R$ 8.164,30**
 
 ---
 
@@ -259,11 +255,10 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 
 > [!summary] Resultado — Mar/2027
 > - Entradas: R$ 3.800,00 (salário normal)
-> - Saídas fixas: R$ 1.770,99 (Cartões R$ 333,09 + Moradia R$ 1.437,90)
-> - Rotina: R$ 700,00
-> - Total saídas: R$ 2.470,99
-> - Saldo do mês: R$ +1.329,01
-> - Acumulado: **R$ 9.493,31**
+> - Saídas fixas (obrigação): R$ 1.770,99 (Cartões R$ 333,09 + Moradia R$ 1.437,90)
+> - Sobra sem gastar rotina: R$ 10.193,31
+> - Rotina: −R$ 700,00
+> - Sobra gastando rotina: **R$ 9.493,31**
 
 ---
 
