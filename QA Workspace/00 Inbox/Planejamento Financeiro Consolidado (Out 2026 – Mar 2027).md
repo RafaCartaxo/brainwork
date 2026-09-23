@@ -8,7 +8,8 @@ cssclasses:
 ---
 # Planejamento Financeiro Consolidado (Out 2026 – Mar 2027)
 
-> [!success] Dashboard — atualizado em 2026-09-12
+> [!warning] Dashboard — projeção-base de 2026-09-12
+> A atualização de 2026-09-23 alterou as faturas correntes e algumas faturas futuras. Os resultados abaixo continuam sendo a projeção-base anterior até a conciliação completa; não usar os acumulados como saldo definitivo.
 > - **Caixa agora (12/set):** R$ 2.725,63 _(1.163,48 + 1.607,15 FGTS ✅ − 45 rotina)_
 > - **A receber início Out:** R$ 1.900,00 salário proporcional ⏳ (antes dos venc. 08/09/10)
 > - **Obrigação Out:** R$ 3.361,77 (Cartões 1.975,21 + Moradia 1.386,56)
@@ -16,6 +17,22 @@ cssclasses:
 > - **Rotina:** −R$ 700,00 (45 usados → 655 restantes)
 > - **Sobra gastando rotina:** **R$ 608,86**
 > - **Linha do caixa:** Set 1.163,48 → Out 608,86 → Nov 3.231,91 → Dez 5.808,02 → Jan 6.902,07 → Fev 8.164,30 → Mar 9.493,31
+
+> [!note] Conciliação financeira — 23/09/2026
+> Fonte: `Downloads/atualizacao_financeira_23-09-2026(1).md`. Os valores abaixo têm prioridade sobre a previsão-base quando representam a mesma fatura.
+>
+> | Cartão | Fatura atual | Previsão-base de Out | Diferença | Saldo/parcelas futuras informados |
+> |---|---:|---:|---:|---|
+> | Nubank | R$ 1.018,47 | R$ 872,87 | +R$ 145,60 | 09/nov R$ 456,81 · 09/dez R$ 317,71 · 11/jan R$ 168,18 |
+> | Sofisa | R$ 580,29 | R$ 477,23 | +R$ 103,06 | Ainda não informado |
+> | Mercado Pago/Mercado Livre | R$ 968,67 | R$ 625,11 | +R$ 343,56 | Composição futura ainda não detalhada |
+> | **Total** | **R$ 2.567,43** | **R$ 1.975,21** | **+R$ 592,22** | — |
+>
+> **Caixa informado:** Nubank R$ 2.466,13. Esse saldo não deve ser somado novamente ao caixa projetado; é uma fotografia da conta na data da atualização.
+>
+> **Itens novos ou confirmados:** Nubank — BemMais R$ 24,11, recarga R$ 20,00, Meli+ R$ 19,90, Pix no crédito 3× R$ 81,58 e corte R$ 40,00; Sofisa — nova compra R$ 115,06. O Meli+ já existe como recorrência de R$ 19,90 e o corte já estava lançado em Outubro; não duplicar. A fatura atual deve ser usada pelo total fechado, não pela soma adicional desses itens.
+>
+> **Mercado Pago:** a fatura atual inclui, entre outros lançamentos, Casa 6× R$ 91,47, Compressor 10× R$ 118,07 e compras de R$ 54,04, R$ 57,99 e R$ 21,99. Como não foi informada a parcela corrente nem a composição completa, essas parcelas não foram distribuídas automaticamente nos meses seguintes.
 
 > [!success] Setembro 100% quitado (retroativo)
 > Transição de Setembro concluída. Faturas Nubank/Sofisa/Mercado Pago (venc. ~08/09/10) e contas de moradia pagas.
@@ -318,3 +335,11 @@ Itens fixos que se repetem todos os meses. Referência única — nos meses apar
 1. **Gargalo vencido:** Out absorve o pico + salário R$ 1.900 a receber início Out (antes dos venc. 08/09/10). Ver Dashboard no topo para caixa agora.
 2. **Descompressão em Novembro:** O custo de cartões cai de R$ 1.975,21 em Outubro para R$ 939,05 em Novembro, gerando um pico imediato de liquidez financeira.
 3. **Reserva Acumulada:** Mantendo a margem de R$ 700,00/mês para gastos variáveis/gasolina, a projeção indica fechamento de Março/2027 com aproximadamente **R$ 9.493,31 em caixa livre**.
+
+## 5. Pendências para fechar a projeção
+
+- [ ] Confirmar se a fatura atual dos três cartões corresponde às cobranças com vencimento em Outubro.
+- [ ] Distribuir o Pix Nubank de 3× R$ 81,58 entre Outubro, Novembro e Dezembro, caso ainda não esteja refletido nas faturas futuras informadas.
+- [ ] Identificar as parcelas correntes de Casa e Compressor no Mercado Pago e projetar as parcelas restantes.
+- [ ] Recalcular a matriz de cartões, os totais mensais e a linha do caixa somente depois da conferência acima.
+- [ ] Manter a previsão-base de 12/set como histórico, sem misturá-la aos valores atuais de 23/set.
