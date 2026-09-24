@@ -41,7 +41,7 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda.
 
 ### Resultado Esperado
 
-A preferência só deve ser gravada no momento da confirmação do encerramento (clicar em "Encerrar"). Cancelar ou fechar o dialog não deve alterar a preferência do usuário nem encerrar a tramitação — ver [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c5|C5]] e [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-009|CT-009]].
+A preferência só deve ser gravada no momento da confirmação do encerramento (clicar em "Encerrar"). Cancelar ou fechar o dialog não deve alterar a preferência do usuário nem encerrar a tramitação — ver [[01 - Demanda#^c5|C5]] e [[03 - Casos de teste#^ct-009|CT-009]].
 
 ---
 
@@ -81,7 +81,7 @@ Pendência — nenhuma evidência anexada ainda.
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda|SGV-9982]]
-- Observações: achado durante a validação do pacote QA de SGV-9982 — [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-009|CT-009]].
+- Demanda relacionada: [[01 - Demanda|SGV-9982]]
+- Observações: achado durante a validação do pacote QA de SGV-9982 — [[03 - Casos de teste#^ct-009|CT-009]].
 - Histórico:
     - 2026-09-24 - 🐛 Defeito cadastrado (da SGV-9982)

@@ -143,7 +143,7 @@ Tags da nota: manter somente `qa` e `qase`. Este lote não usa shared steps (CT-
 ### CT-009 — Cancelar não grava a preferência nem encerra a tramitação
 
 - **Qase ID:** [783](https://app.qase.io/case/SGV-783)
-- **Descrição:** confirma o critério C5 — a preferência só é gravada na confirmação; Cancelar/fechar não altera nada. Defeito [[Defeitos/SGV-11815 - Defeito Preferência De Permanecer É Gravada Ao Cancelar O Encerramento|SGV-11815]] corrigido e aprovado em DEV.
+- **Descrição:** confirma o critério C5 — a preferência só é gravada na confirmação; Cancelar/fechar não altera nada. Defeito [[SGV-11815 - Defeito Preferência De Permanecer É Gravada Ao Cancelar O Encerramento|SGV-11815]] corrigido e aprovado em DEV.
 - **Pré-condições:** dialog de encerramento aberto, em qualquer um dos três tipos.
 - **Passo 1 — Ação:** alterar o estado do checkbox e clicar em "Cancelar" (ou fechar o dialog).
   **Resultado esperado:** nenhuma preferência gravada; nenhum encerramento ocorre.
@@ -176,7 +176,7 @@ Tags da nota: manter somente `qa` e `qase`. Este lote não usa shared steps (CT-
 ### CT-012 — Os três dialogs seguem o modal de alerta com CTAs e copy padronizados
 
 - **Qase ID:** [786](https://app.qase.io/case/SGV-786)
-- **Descrição:** confirma o critério C9 — os três dialogs de encerramento usam o formato de alerta (`modal Type=Alert`), CTAs padronizados e a copy exata de cada tipo, incluindo as cores do protótipo Figma. Defeito [[Defeitos/SGV-11816 - Defeito Cores Do Modal De Encerramento Divergem Do Protótipo Figma|SGV-11816]] (cores divergentes do Figma) corrigido e aprovado em DEV.
+- **Descrição:** confirma o critério C9 — os três dialogs de encerramento usam o formato de alerta (`modal Type=Alert`), CTAs padronizados e a copy exata de cada tipo, incluindo as cores do protótipo Figma. Defeito [[SGV-11816 - Defeito Cores Do Modal De Encerramento Divergem Do Protótipo Figma|SGV-11816]] (cores divergentes do Figma) corrigido e aprovado em DEV.
 - **Pré-condições:** usuário tem permissão para abrir qualquer um dos três dialogs de encerramento.
 - **Passo 1 — Ação:** abrir o dialog "Encerrar tramitação" (documento inteiro).
   **Resultado esperado:** `modal Type=Alert` com as cores do protótipo Figma, CTA primário "Encerrar", CTA secundário "Cancelar", título "Encerrar tramitação" e corpo com o texto exato definido (incluindo $sigla/$nome-setor).

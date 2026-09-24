@@ -42,7 +42,7 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda.
 
 Protótipo: [Figma — Tramitação - Concepção → Section "Dialogs"](https://www.figma.com/design/LAe926PuW2psDGd3XT45lX/Tramita%C3%A7%C3%A3o---Concep%C3%A7%C3%A3o?node-id=6164-6993)
 
-As cores dos três dialogs (ícone, cor de destaque, borda superior do `modal Type=Alert`) devem corresponder exatamente ao definido no protótipo Figma — ver [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c9|C9]] e [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-012|CT-012]].
+As cores dos três dialogs (ícone, cor de destaque, borda superior do `modal Type=Alert`) devem corresponder exatamente ao definido no protótipo Figma — ver [[01 - Demanda#^c9|C9]] e [[03 - Casos de teste#^ct-012|CT-012]].
 
 ---
 
@@ -80,7 +80,7 @@ Pendência — nenhuma evidência anexada ainda.
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda|SGV-9982]]
-- Observações: achado durante a validação do pacote QA de SGV-9982 — [[QA Workspace/02 Demandas/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-012|CT-012]].
+- Demanda relacionada: [[01 - Demanda|SGV-9982]]
+- Observações: achado durante a validação do pacote QA de SGV-9982 — [[03 - Casos de teste#^ct-012|CT-012]].
 - Histórico:
     - 2026-09-24 - 🐛 Defeito cadastrado (da SGV-9982)
