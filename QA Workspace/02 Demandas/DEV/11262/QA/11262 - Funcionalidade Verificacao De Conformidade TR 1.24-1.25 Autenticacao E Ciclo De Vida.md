@@ -18,7 +18,7 @@ modulo: autenticacao
 > [!info] Informações
 > - **Tipo:** Funcionalidade (verificação de conformidade com Termo de Referência) — task **pai**, guarda-chuva das 4 partes abaixo
 > - **Responsável QA:** Rafael
-> - **Vault:** [[QA Workspace/07 Termo de Referência/1.24-1.25/1.24-1.25 - Handoff Geral|Handoff Geral]] (visão de conjunto) · [[QA Workspace/07 Termo de Referência/1.24-1.25/README|pasta do Termo]]
+> - **Vault:** [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/1.24-1.25 - Handoff Geral|Handoff Geral]] (visão de conjunto) · [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/README|pasta do Termo]]
 > - **Padrão reaproveitável:** [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Template — Verificação de Conformidade]] (usar pro próximo Termo de Referência)
 
 ---
@@ -54,7 +54,7 @@ Antes de existir uma fonte única de casos de teste, o Termo já tinha sido lido
 
 Correções de conteúdo feitas no caminho: precondição do CT-003 (cidadão PJ), granularidade do CT-018/019, e os nomes de nível de permissão do CT-020 (eram "Assistente/Auxiliar/Visualizador" — não existem no sistema; certo é **Especialista/Usuário básico/Somente leitura**, confirmado em 4 fontes: i18n da aplicação, migration do banco, docs de business-rules do QA, nota do vault).
 
-Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/01 Casos de Teste/1.24-1.25 - Casos de Teste|Casos de Teste]].
+Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/01 Casos de Teste/1.24-1.25 - Casos de Teste|Casos de Teste]].
 
 ---
 
@@ -66,13 +66,13 @@ Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/01 Casos de Teste/1.24
 - Ferramenta reutilizável em `sogov-automation-test/scripts/qase-sync-1.24-1.25/` — serve de modelo pro próximo Termo de Referência.
 - `priority` deixado de fora de propósito (preencher manualmente na Qase depois).
 
-Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/02 Sincronização Qase/1.24-1.25 - Sincronização com a Qase|Sincronização com a Qase]].
+Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/02 Sincronização Qase/1.24-1.25 - Sincronização com a Qase|Sincronização com a Qase]].
 
 ---
 
 ## Parte 4 — Automação
 
-🔄 Em andamento. Cypress, repo `sogov-automation-test`. **Rafael entra de férias em 04/09, volta 24/09 (quinta)** — ver [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] pra retomar rápido. Detalhe completo e atualizado a cada rodada: [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Handoff de execução|Handoff de execução]] · [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] (processo).
+🔄 Em andamento. Cypress, repo `sogov-automation-test`. **Rafael entra de férias em 04/09, volta 24/09 (quinta)** — ver [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] pra retomar rápido. Detalhe completo e atualizado a cada rodada: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Handoff de execução|Handoff de execução]] · [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] (processo).
 
 ### Suítes e status atual
 
@@ -133,4 +133,4 @@ Detalhe: [[QA Workspace/07 Termo de Referência/1.24-1.25/02 Sincronização Qas
 - 2026-09-01 - CT-015 questionado pelo responsável (validação manual diverge do achado automatizado) — investigação de timing tentada, inconclusiva por instabilidade do ambiente
 - 2026-09-02 - Card criado (retroativo, só cobria a Parte 4/automação nesse momento), skill [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] registrada no vault
 - 2026-09-02 - Reestruturada pra virar a task **pai** do TR inteiro (4 partes), usando o novo template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade]] — decisão do Rafael de não abrir SGVs separados por parte "por enquanto"
-- 2026-09-04 - Suítes 1 e 2 (12 CTs) commitadas e enviadas em branch própria (`tr-1.24-1.25-auth-suite-1-2`, a partir do `origin/main` atualizado, sem conflito) — MR a criar/confirmar. Suíte 4 renomeada (CPF cru tirado do nome dos 5 agentes fixos) — pronta, não commitada, não re-rodada ainda. Rafael entra de férias, volta 24/09 — [[QA Workspace/07 Termo de Referência/1.24-1.25/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] criada
+- 2026-09-04 - Suítes 1 e 2 (12 CTs) commitadas e enviadas em branch própria (`tr-1.24-1.25-auth-suite-1-2`, a partir do `origin/main` atualizado, sem conflito) — MR a criar/confirmar. Suíte 4 renomeada (CPF cru tirado do nome dos 5 agentes fixos) — pronta, não commitada, não re-rodada ainda. Rafael entra de férias, volta 24/09 — [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] criada

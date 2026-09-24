@@ -1,6 +1,5 @@
 [
   "obsidian-icon-folder",
-  "calendar",
   "templater-obsidian",
   "obsidian-excalidraw-plugin",
   "dataview",
@@ -11,5 +10,6 @@
   "homepage",
   "obsidian-git",
   "obsidian-style-settings",
-  "obsidian-meta-bind-plugin"
+  "obsidian-meta-bind-plugin",
+  "calendar"
 ]
