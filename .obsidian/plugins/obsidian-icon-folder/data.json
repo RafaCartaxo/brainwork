@@ -63,14 +63,6 @@
     "iconName": "LiClipboardList",
     "iconColor": "#7c3aed"
   },
-  "QA Workspace/02 Demandas/DEV": {
-    "iconName": "LiCode2",
-    "iconColor": "#059669"
-  },
-  "QA Workspace/02 Demandas/HML": {
-    "iconName": "LiClipboardCheck",
-    "iconColor": "#ea580c"
-  },
   "QA Workspace/02 Demandas/POCs": {
     "iconName": "LiFlaskConical",
     "iconColor": "#c026d3"
@@ -88,10 +80,6 @@
     "iconColor": "#e11d48"
   },
   "QA Workspace/99 Arquivo": "LiArchive",
-  "QA Workspace/02 Demandas/Hotfix": {
-    "iconName": "LiFlame",
-    "iconColor": "#dc2626"
-  },
   "QA Workspace/Evidências": {
     "iconName": "LiVideo",
     "iconColor": "#16a34a"
