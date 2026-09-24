@@ -117,7 +117,7 @@ Os três dialogs de encerramento ganham o checkbox; a escolha é persistida por 
 - C8. Desmarcar o checkbox e confirmar o encerramento reverte a preferência para "voltar para a mesa". ^c8
 - C9. Os três dialogs usam o `modal` com `Type=Alert`, CTA primário "Encerrar", CTA secundário "Cancelar", com a copy exata definida no documento de origem. ^c9
 
-> C9 está registrado como critério de aceite do produto, mas **não tem CT dedicado nesta rodada** (ver `03 - Casos de teste` e `02 - Plano de teste` — validação de copy/estilo fica para uma rodada seguinte, junto com acessibilidade, mobile e histórico).
+> C9 é coberto por [[03 - Casos de teste#^ct-012|CT-012]].
 
 ---
 

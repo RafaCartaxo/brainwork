@@ -27,7 +27,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 - **Projeto Qase:** `<a confirmar>`
 - **Suite Qase:** `<a confirmar>`
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-011)
+- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-012)
 
 ## Mapeamento dos campos
 
@@ -167,6 +167,21 @@ Tags da nota: manter somente `qa` e `qase`. Tags enviadas ao Qase: `SGV-9982`, `
   **Resultado esperado:** preferência salva é aplicada normalmente.
 - **Pós-condição:** comportamento do checkbox consistente com a preferência salva em qualquer sessão/dispositivo.
 - **Tipo:** regressão. **Camada:** API. **Automação:** a definir. **Prioridade Qase:** baixa. **Severidade Qase:** menor. **Comportamento:** positivo.
+- **Tags Qase:** `SGV-9982`, `tramitação`
+
+### CT-012 — Os três dialogs seguem o modal de alerta com CTAs e copy padronizados
+
+- **Qase ID:** `preencher após o envio`
+- **Descrição:** confirma que os três dialogs de encerramento usam o formato de alerta, os CTAs padronizados e a copy exata definida para cada tipo.
+- **Pré-condições:** usuário tem permissão para abrir qualquer um dos três dialogs de encerramento.
+- **Passo 1 — Ação:** abrir o dialog "Encerrar tramitação" (documento inteiro).
+  **Resultado esperado:** `modal Type=Alert`, CTA "Encerrar"/"Cancelar", título "Encerrar tramitação" e corpo com o texto exato definido, incluindo "mesmo" e $sigla/$nome-setor.
+- **Passo 2 — Ação:** abrir o dialog "Encerrar tramitação no setor".
+  **Resultado esperado:** `modal Type=Alert`, CTA "Encerrar"/"Cancelar", título "Encerrar tramitação no setor" e corpo com o texto exato definido, incluindo $sigla/$nome-setor.
+- **Passo 3 — Ação:** abrir o dialog "Encerrar tramitação para mim".
+  **Resultado esperado:** `modal Type=Alert`, CTA "Encerrar"/"Cancelar", título "Encerrar tramitação para mim" e corpo com o texto exato definido.
+- **Pós-condição:** nenhuma alteração de estado; validação apenas visual/textual.
+- **Tipo:** funcional. **Camada:** UI. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** positivo.
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 > **Regra:** critérios, evidências, esforço e resultado da execução continuam no vault ou no Test Run; não duplicar esses dados no caso da Qase.

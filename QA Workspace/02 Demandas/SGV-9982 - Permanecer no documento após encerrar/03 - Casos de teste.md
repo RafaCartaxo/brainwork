@@ -18,7 +18,7 @@ pontos: ""
 > [!settings]- Controle dos casos de teste  
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. Escopo desta rodada: CT-001 a CT-011 (núcleo funcional). C9 e os requisitos não-funcionais de copy/histórico/acessibilidade/mobile ficam para uma rodada seguinte — ver `01 - Demanda` e `02 - Plano de teste`.
+> Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. Escopo desta rodada: CT-001 a CT-012 (núcleo funcional + copy/estilo dos dialogs). Os requisitos não-funcionais de histórico, acessibilidade e mobile ficam para uma rodada seguinte — ver `01 - Demanda` e `02 - Plano de teste`.
 
 ---
 
@@ -34,6 +34,7 @@ pontos: ""
 | [[01 - Demanda#^c6\|C6]] | [[03 - Casos de teste#^ct-006\|CT-006]] |
 | [[01 - Demanda#^c7\|C7]] | [[03 - Casos de teste#^ct-007\|CT-007]] |
 | [[01 - Demanda#^c8\|C8]] | [[03 - Casos de teste#^ct-008\|CT-008]] |
+| [[01 - Demanda#^c9\|C9]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
 | RNF03 (isolamento por usuário) | [[03 - Casos de teste#^ct-010\|CT-010]] |
 | RNF04 (persistência entre sessões) | [[03 - Casos de teste#^ct-011\|CT-011]] |
 
@@ -463,3 +464,45 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** planejado
 
 ^ct-011
+
+> [!example]- CT-012 · Os três dialogs seguem o modal de alerta com CTAs e copy padronizados
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que os três dialogs de encerramento usam o formato de alerta, os CTAs padronizados e a copy exata definida para cada tipo.
+>
+> **Pré-condições:**
+> - Usuário tem permissão para abrir qualquer um dos três dialogs de encerramento (documento inteiro, setor, participação própria).
+>
+> **Dado** que o usuário abre um dos três dialogs de encerramento  
+> **Quando** ele observa o dialog exibido  
+> **Então** o dialog usa o formato de alerta (`modal Type=Alert`, ícone e borda superior em laranja), o CTA primário é "Encerrar", o CTA secundário é "Cancelar", o checkbox exibe o texto "Permanecer no documento após encerrar" (sem ponto final), e o título/corpo correspondem exatamente à copy definida para aquele tipo:
+>
+> - **Documento inteiro** — título "Encerrar tramitação"; corpo: "Ao encerrar a tramitação deste documento, todos os setores nele envolvidos serão afetados, e só poderá ser retomado pelo seu setor dono $sigla $nome-setor. Deseja mesmo encerrar a tramitação do documento?"
+> - **Setor** — título "Encerrar tramitação no setor"; corpo: "Ao encerrar a participação de seu setor $sigla $nome-setor neste documento, os colaboradores nele envolvidos também terão suas participações encerradas. Deseja encerrar a tramitação do documento no setor?"
+> - **Participação própria** — título "Encerrar tramitação para mim"; corpo: "Ao encerrar sua participação neste documento, suas ações nele ficarão indisponíveis até que você o reabra. Deseja encerrar a tramitação do documento para você?"
+>
+> **Resultado esperado:** os três dialogs seguem exatamente o padrão visual e textual especificado, sem variações além do texto próprio de cada tipo.
+>
+> **Pós-condição:** nenhuma alteração de estado — validação apenas visual/textual, sem confirmar nem cancelar o encerramento.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** UI  
+> **Automação:** manual  
+> **Execução:** planejado
+
+^ct-012

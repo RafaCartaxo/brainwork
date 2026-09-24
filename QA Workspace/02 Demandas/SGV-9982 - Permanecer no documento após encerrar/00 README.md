@@ -23,14 +23,14 @@ etapa_atual: "QA · Casos de teste"
 |---|---|
 | Demanda | ✅ Preparada (pendência RF11 em aberto) |
 | Plano de teste | ✅ Preparado |
-| Casos de teste | ✅ Preparados (CT-001 a CT-011) |
+| Casos de teste | ✅ Preparados (CT-001 a CT-012) |
 | Validação | ⏳ Aguardando implementação do DEV |
 | Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
 
 **Próximo passo:** decidir a pendência do RF11 e confirmar `projeto`/`pontos_alocados` em `01 - Demanda`; depois rotear para o DEV.
 
 > [!warning]- Escopo desta rodada  
-> Cobre o núcleo funcional (CT-001 a CT-011): estado do checkbox, redirecionamento, persistência por usuário e entre sessões. Ficam para uma rodada seguinte: copy/estilo exato dos dialogs (C9), acessibilidade (RNF07), variante mobile (RNF08) e verificação de histórico (RNF05) — bem como o requisito condicional RF11.
+> Cobre o núcleo funcional e a copy/estilo dos dialogs (CT-001 a CT-012): estado do checkbox, redirecionamento, persistência por usuário e entre sessões, formato de alerta e textos dos três dialogs. Ficam para uma rodada seguinte: acessibilidade (RNF07), variante mobile (RNF08) e verificação de histórico (RNF05) — bem como o requisito condicional RF11.
 
 Pacote QA para `SGV-9982`:
 
