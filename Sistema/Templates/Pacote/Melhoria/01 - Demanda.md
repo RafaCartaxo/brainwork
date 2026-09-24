@@ -9,6 +9,7 @@ pontos_alocados: ""
 **Ticket de origem:** <SGV/ATV, se diferente do ID do pacote> · **Protótipo:** <link Figma, se houver>
 
 > [!info]- Navegação QA/DEV
+> **README do card:** [[00 README|Abrir README do card]]
 > **Demanda:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
 > **Casos de teste:** [[03 - Casos de teste]]

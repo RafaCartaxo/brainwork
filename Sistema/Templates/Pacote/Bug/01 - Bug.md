@@ -7,10 +7,14 @@ pontos_alocados: ""
 # <ID> — Bug <Título curto>
 
 > [!info]- Navegação QA/DEV
+> **README do card:** [[00 README|Abrir README do card]]
 > **Bug:** [[01 - Bug]]
-> **Casos de teste:** [[02 - Casos de teste]]
+> **Plano de teste:** [[02 - Plano de teste]]
+> **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
+
+> Bug simples (1-2 critérios, sem risco de regressão em outras camadas) pode pular `02 - Plano de teste.md` direto pra `03 - Casos de teste.md` — o plano não é obrigatório pra bug, só pra melhoria/funcionalidade.
 
 > [!settings]- Controle do bug
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`

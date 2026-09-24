@@ -8,6 +8,7 @@ pontos: ""
 # Plano de teste — <ID>
 
 > [!info]- Navegação QA
+> **README do card:** [[00 README|Abrir README do card]]
 > **Demanda/Bug:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
 > **Casos de teste:** [[03 - Casos de teste]]

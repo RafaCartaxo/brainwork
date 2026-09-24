@@ -41,7 +41,7 @@ pontos: ""
 
 **Próximo passo:** <registrar a próxima ação objetiva>.
 
-> [!tip]- Esforço
+> [!tip]- Esforço e capacidade
 > ```dataviewjs
 > const atual = dv.current().pontos;
 > const paginas = dv.pages('"' + dv.current().file.folder + '"').where(p => typeof p.pontos === "number");
@@ -49,9 +49,18 @@ pontos: ""
 > dv.paragraph(`**Esforço desta etapa:** ${typeof atual === "number" ? atual : "a definir"} pontos`);
 > dv.table(["Artefato", "Pontos"], paginas.sort(p => p.file.name).map(p => [p.file.link, p.pontos]));
 > dv.paragraph(`**Esforço total do pacote:** ${total} pontos`);
+>
+> const demanda = dv.pages('"' + dv.current().file.folder + '"').where(p => p.pontos_alocados !== undefined && p.pontos_alocados !== "").first();
+> if (demanda) {
+>   const alocado = Number(demanda.pontos_alocados || 0);
+>   const diferenca = alocado - total;
+>   dv.paragraph(`**Capacidade alocada:** ${alocado} pontos · **${diferenca >= 0 ? "Saldo" : "Déficit"}:** ${Math.abs(diferenca)} pontos`);
+> } else {
+>   dv.paragraph("`pontos_alocados` ainda não preenchido em 01-Demanda/01-Bug — sem comparação de capacidade.");
+> }
 > ```
 >
-> A busca por pasta (`dv.pages(file.folder)`) já inclui a subpasta `Defeitos/` automaticamente — não precisa de um bloco separado somando defeitos filhos (diferente do operating-vault, onde o pacote QA e o pacote DEV ficam em pastas irmãs distintas).
+> A busca por pasta (`dv.pages(file.folder)`) já inclui a subpasta `Defeitos/` automaticamente — não precisa de um bloco separado somando defeitos filhos (diferente do operating-vault, onde o pacote QA e o pacote DEV ficam em pastas irmãs distintas). `pontos_alocados` fica só em `01-Demanda`/`01-Bug` (não duplicado aqui) — este bloco lê de lá pra calcular saldo/déficit.
 
 Pacote para `<ID>`:
 
