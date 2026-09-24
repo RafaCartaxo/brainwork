@@ -5,194 +5,198 @@ status: rascunho
 tipo_card: melhoria
 projeto: ""
 modulo: "Tramitação — Encerramento de documento"
-qase_projeto: ""
-qase_suite_id: ""
+qase_projeto: SGV
+qase_suite_id: 358
 casos_origem: "[[03 - Casos de teste]]"
 validacao_origem: "[[04 - Validação dev]]"
 ---
 # Preparação Qase — SGV-9982
 
-> [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> [!info]- Navegação QA
+> **Demanda:** [[01 - Demanda]]
+> **Plano de teste:** [[02 - Plano de teste]]
+> **Casos de teste:** [[03 - Casos de teste]]
+> **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
-Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` para os campos da API.
+Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (todos aprovados na validação, incluindo CT-009 e CT-012, corrigidos após defeito) para os campos da API.
 
-> **Pendência:** `qase_projeto` e `qase_suite_id` ainda não foram confirmados para o módulo Tramitação — verificar suites existentes antes do envio real. Nenhum caso foi enviado à Qase nesta etapa.
+> [!success] Status: rascunho revisado, pronto pra `--apply`
+> Suite **358** ("9982 - Permitir escolher permanecer no documento ou voltar à mesa ao encerrar") criada em 24/09/2026, filha de **125** (Melhorias/Funcionalidades) — mesmo padrão das demais melhorias já sincronizadas. Payload real em `sogov-automation-test/scripts/qase-sync-9982-tramitacao/corrections.json`, `dry-run` já rodado e conferido (12 `creates`, sem erro). Falta só o Rafael revisar esta nota e autorizar o `node sync.js --apply`.
 
 ## Configuração
 
-- **Projeto Qase:** `<a confirmar>`
-- **Suite Qase:** `<a confirmar>`
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-012)
+- **Projeto Qase:** `SGV`
+- **Suite Qase:** `358` — [9982 - Permitir escolher permanecer no documento ou voltar à mesa ao encerrar](https://app.qase.io/project/SGV?suite=358), filha de `125` (Melhorias/Funcionalidades)
+- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-012 — todos aplicáveis, nenhum "Não se aplica")
+- **Script/payload:** `sogov-automation-test/scripts/qase-sync-9982-tramitacao/` (`sync.js` + `corrections.json` + `README.md`)
 
 ## Mapeamento dos campos
 
 | Vault | Qase | Regra |
 |---|---|---|
-| Título do CT | `title` | manter o título humano do cenário |
-| Descrição | `description` | resumir o objetivo do CT |
+| Título do CT | `title` | mantém o título humano do cenário; CTs de regressão levam o prefixo `[REGRESSÃO]` |
+| Descrição + critério de aceite | `description` | nunca deixar vazio |
 | Pré-condições | `preconditions` | copiar sem misturar com os passos |
-| Dado/Quando/Então | `steps` | separar cada ação do resultado esperado |
-| Pós-condição | `postconditions` | registrar somente o estado após o teste |
-| Tipo, camada, automação | campos Qase | usar os valores normalizados abaixo |
+| Dado/Quando/Então | `steps` | separar cada ação do resultado esperado — CT-012 tem 3 steps (um por dialog) |
+| Pós-condição | `postconditions` | só quando agrega algo além do resultado esperado do último step |
+| Tipo, severidade, automação | `type`/`severity`/`automation` | **inteiros reais na API**, não texto — usar só rótulos já confirmados contra a Qase real (ver abaixo). Camada (UI/API/E2E) é só organização do vault, não é campo da Qase |
 
-Valores normalizados: `funcional`/`regressão`; camada `E2E`/`API`/`unit`; automação `manual`/`automatizado`/`ambos`.
+**Rótulos confirmados e usados nos 12 (nenhum inventado):** `severity: normal` (4), `type: acceptance` (7), `automation: is-not-automated` (0). Não existe um `type` de "regressão" confirmado neste projeto — inspecionei casos `[REGRESSÃO]` já existentes na Qase (suite 321) e eles usam `type=1` (não mapeado no script); por isso os CTs de regressão desta leva (CT-002, CT-010, CT-011) usam o mesmo `acceptance` confirmado, sinalizados pelo prefixo `[REGRESSÃO]` no título em vez de um enum não confirmado.
 
-Tags da nota: manter somente `qa` e `qase`. Tags enviadas ao Qase: `SGV-9982`, `tramitação` — não criar uma tag por CT.
+`priority` e `behavior` ficam de fora do payload por padrão (mesma decisão da sincronização anterior, SGV-9296) — preencher manualmente na Qase depois, se fizer sentido.
+
+Tags da nota: manter somente `qa` e `qase`. Este lote não usa shared steps (CT-003/CT-004/CT-005 têm mecânica parecida, mas resultado esperado específico por tipo de encerramento — decidido manter os 3 casos independentes).
 
 ## Casos preparados
 
-> Nenhum destes casos foi enviado à Qase. Os `Qase ID` ficam em branco até o envio real.
+> Conteúdo idêntico ao `corrections.json` real (não um exemplo) — nenhum caso foi enviado ainda. Os `Qase ID` ficam em branco até o `--apply`.
 
 ### CT-001 — Checkbox desmarcado por padrão sem preferência salva
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que o checkbox "Permanecer no documento após encerrar" aparece desmarcado para usuário sem preferência salva.
+- **Descrição:** confirma o critério C1/C2 (RF02) da SGV-9982 — o checkbox "Permanecer no documento após encerrar" aparece desmarcado quando o usuário nunca marcou a preferência.
 - **Pré-condições:** usuário não possui preferência salva; está em documento com tramitação ativa, prestes a abrir um dos três dialogs de encerramento.
 - **Passo 1 — Ação:** abrir qualquer um dos três dialogs de encerramento.
   **Resultado esperado:** o checkbox "Permanecer no documento após encerrar" é exibido desmarcado.
 - **Pós-condição:** nenhum dado alterado; dialog aberto aguardando decisão.
-- **Tipo:** funcional. **Camada:** UI. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
-### CT-002 — Confirmar com checkbox desmarcado mantém o redirecionamento atual
+### CT-002 — [REGRESSÃO] Confirmar com checkbox desmarcado mantém o redirecionamento atual
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que, sem marcar o checkbox, o usuário continua sendo redirecionado para a mesa de trabalho.
+- **Descrição:** confirma o critério C3 — sem marcar o checkbox, o usuário continua sendo redirecionado para a mesa de trabalho.
 - **Pré-condições:** checkbox desmarcado; documento com tramitação ativa.
 - **Passo 1 — Ação:** confirmar o encerramento clicando em "Encerrar" com o checkbox desmarcado.
   **Resultado esperado:** usuário é redirecionado para a mesa de trabalho.
 - **Pós-condição:** tramitação encerrada conforme o tipo escolhido; usuário na mesa de trabalho.
-- **Tipo:** regressão. **Camada:** E2E. **Automação:** manual. **Prioridade Qase:** alta. **Severidade Qase:** crítica. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-003 — Confirmar marcado no encerramento do documento inteiro permanece no documento
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que marcar o checkbox no dialog "Encerrar tramitação" mantém o usuário no documento.
+- **Descrição:** confirma os critérios C1 e C4 — marcar o checkbox no dialog "Encerrar tramitação" mantém o usuário no documento.
 - **Pré-condições:** usuário com permissão para encerrar a tramitação do documento inteiro; dialog "Encerrar tramitação" aberto.
 - **Passo 1 — Ação:** marcar o checkbox e confirmar clicando em "Encerrar".
-  **Resultado esperado:** usuário permanece no documento, recarregado no estado pós-encerramento.
+  **Resultado esperado:** usuário permanece no documento, recarregado no estado pós-encerramento com as ações indisponíveis já refletidas.
 - **Pós-condição:** tramitação do documento encerrada para todos os setores; usuário permanece na tela do documento.
-- **Tipo:** funcional. **Camada:** E2E. **Automação:** manual. **Prioridade Qase:** alta. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-004 — Confirmar marcado no encerramento de setor permanece no documento
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que marcar o checkbox no dialog "Encerrar tramitação no setor" mantém o usuário no documento.
+- **Descrição:** confirma os critérios C1 e C4 — marcar o checkbox no dialog "Encerrar tramitação no setor" mantém o usuário no documento.
 - **Pré-condições:** usuário com permissão para encerrar a participação do próprio setor; dialog "Encerrar tramitação no setor" aberto.
 - **Passo 1 — Ação:** marcar o checkbox e confirmar clicando em "Encerrar".
   **Resultado esperado:** usuário permanece no documento, recarregado no estado pós-encerramento; participação do setor e colaboradores encerrada.
 - **Pós-condição:** participação do setor e colaboradores encerrada; usuário permanece na tela do documento.
-- **Tipo:** funcional. **Camada:** E2E. **Automação:** manual. **Prioridade Qase:** alta. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-005 — Confirmar marcado no encerramento de participação própria permanece no documento
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que marcar o checkbox no dialog "Encerrar tramitação para mim" mantém o usuário no documento.
+- **Descrição:** confirma os critérios C1 e C4 — marcar o checkbox no dialog "Encerrar tramitação para mim" mantém o usuário no documento.
 - **Pré-condições:** usuário participa do documento; dialog "Encerrar tramitação para mim" aberto.
 - **Passo 1 — Ação:** marcar o checkbox e confirmar clicando em "Encerrar".
   **Resultado esperado:** usuário permanece no documento, recarregado no estado pós-encerramento; suas próprias ações ficam indisponíveis.
 - **Pós-condição:** participação do próprio usuário encerrada; usuário permanece na tela do documento.
-- **Tipo:** funcional. **Camada:** E2E. **Automação:** manual. **Prioridade Qase:** alta. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-006 — Preferência marcada em um tipo de encerramento já reflete nos outros dois
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que a preferência é única por usuário, não por tipo de encerramento.
+- **Descrição:** confirma o critério C6 — a preferência é única por usuário, não por tipo de encerramento.
 - **Pré-condições:** usuário marcou e confirmou o checkbox em um dos três dialogs anteriormente.
 - **Passo 1 — Ação:** abrir outro dialog de encerramento (tipo diferente do já confirmado).
   **Resultado esperado:** checkbox já aparece marcado, sem precisar marcar novamente.
 - **Pós-condição:** preferência do usuário permanece "permanecer" para qualquer tipo de encerramento.
-- **Tipo:** funcional. **Camada:** API. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-007 — Reabrir o dialog reflete o último valor salvo
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que o checkbox é pré-marcado conforme a última preferência salva.
+- **Descrição:** confirma o critério C7 — o checkbox é pré-marcado conforme a última preferência salva.
 - **Pré-condições:** usuário tem a preferência "permanecer" salva.
 - **Passo 1 — Ação:** abrir novamente qualquer um dos três dialogs de encerramento.
   **Resultado esperado:** checkbox aparece pré-marcado.
 - **Pós-condição:** nenhuma alteração até nova confirmação ou cancelamento.
-- **Tipo:** funcional. **Camada:** API. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-008 — Desmarcar e confirmar reverte a preferência
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que desmarcar o checkbox e confirmar reverte a preferência para "voltar à mesa".
+- **Descrição:** confirma o critério C8 — desmarcar o checkbox e confirmar reverte a preferência para "voltar à mesa".
 - **Pré-condições:** usuário tem a preferência "permanecer" salva; checkbox aparece marcado.
 - **Passo 1 — Ação:** desmarcar o checkbox e confirmar clicando em "Encerrar".
   **Resultado esperado:** preferência revertida; usuário redirecionado para a mesa de trabalho.
 - **Pós-condição:** próxima abertura de qualquer dialog mostra o checkbox desmarcado.
-- **Tipo:** funcional. **Camada:** API. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** negativo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-009 — Cancelar não grava a preferência nem encerra a tramitação
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que alterar o checkbox sem confirmar não grava nada.
+- **Descrição:** confirma o critério C5 — a preferência só é gravada na confirmação; Cancelar/fechar não altera nada. Defeito [[Defeitos/SGV-11815 - Defeito Preferência De Permanecer É Gravada Ao Cancelar O Encerramento|SGV-11815]] corrigido e aprovado em DEV.
 - **Pré-condições:** dialog de encerramento aberto, em qualquer um dos três tipos.
 - **Passo 1 — Ação:** alterar o estado do checkbox e clicar em "Cancelar" (ou fechar o dialog).
   **Resultado esperado:** nenhuma preferência gravada; nenhum encerramento ocorre.
 - **Pós-condição:** preferência e tramitação permanecem como estavam antes da abertura do dialog.
-- **Tipo:** funcional. **Camada:** UI. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** negativo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
-### CT-010 — Preferência é por usuário, não por setor
+### CT-010 — [REGRESSÃO] Preferência é por usuário, não por setor
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma isolamento da preferência por usuário, mesmo entre usuários do mesmo setor.
+- **Descrição:** confirma o requisito não funcional RNF03 — isolamento da preferência por usuário, mesmo entre usuários do mesmo setor.
 - **Pré-condições:** dois usuários do mesmo setor, um com preferência salva e outro sem.
 - **Passo 1 — Ação:** cada usuário confirma um encerramento a partir de sua própria preferência.
   **Resultado esperado:** cada usuário é direcionado conforme sua própria preferência, sem interferência do setor.
 - **Pós-condição:** preferências individuais preservadas.
-- **Tipo:** regressão. **Camada:** API. **Automação:** a definir. **Prioridade Qase:** baixa. **Severidade Qase:** menor. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
-### CT-011 — Preferência sobrevive a logout e a novo dispositivo
+### CT-011 — [REGRESSÃO] Preferência sobrevive a logout e a novo dispositivo
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma persistência da preferência além da sessão atual.
+- **Descrição:** confirma o requisito não funcional RNF04 — persistência da preferência além da sessão atual.
 - **Pré-condições:** usuário tem a preferência "permanecer" salva.
 - **Passo 1 — Ação:** fazer logout e login novamente, ou acessar de outro dispositivo.
   **Resultado esperado:** preferência salva é aplicada normalmente.
 - **Pós-condição:** comportamento do checkbox consistente com a preferência salva em qualquer sessão/dispositivo.
-- **Tipo:** regressão. **Camada:** API. **Automação:** a definir. **Prioridade Qase:** baixa. **Severidade Qase:** menor. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 ### CT-012 — Os três dialogs seguem o modal de alerta com CTAs e copy padronizados
 
 - **Qase ID:** `preencher após o envio`
-- **Descrição:** confirma que os três dialogs de encerramento usam o formato de alerta, os CTAs padronizados e a copy exata definida para cada tipo.
+- **Descrição:** confirma o critério C9 — os três dialogs de encerramento usam o formato de alerta (`modal Type=Alert`), CTAs padronizados e a copy exata de cada tipo, incluindo as cores do protótipo Figma. Defeito [[Defeitos/SGV-11816 - Defeito Cores Do Modal De Encerramento Divergem Do Protótipo Figma|SGV-11816]] (cores divergentes do Figma) corrigido e aprovado em DEV.
 - **Pré-condições:** usuário tem permissão para abrir qualquer um dos três dialogs de encerramento.
 - **Passo 1 — Ação:** abrir o dialog "Encerrar tramitação" (documento inteiro).
-  **Resultado esperado:** `modal Type=Alert`, CTA "Encerrar"/"Cancelar", título "Encerrar tramitação" e corpo com o texto exato definido, incluindo "mesmo" e $sigla/$nome-setor.
+  **Resultado esperado:** `modal Type=Alert` com as cores do protótipo Figma, CTA primário "Encerrar", CTA secundário "Cancelar", título "Encerrar tramitação" e corpo com o texto exato definido (incluindo $sigla/$nome-setor).
 - **Passo 2 — Ação:** abrir o dialog "Encerrar tramitação no setor".
-  **Resultado esperado:** `modal Type=Alert`, CTA "Encerrar"/"Cancelar", título "Encerrar tramitação no setor" e corpo com o texto exato definido, incluindo $sigla/$nome-setor.
+  **Resultado esperado:** `modal Type=Alert` com as cores do protótipo Figma, CTA primário "Encerrar", CTA secundário "Cancelar", título "Encerrar tramitação no setor" e corpo com o texto exato definido (incluindo $sigla/$nome-setor).
 - **Passo 3 — Ação:** abrir o dialog "Encerrar tramitação para mim".
-  **Resultado esperado:** `modal Type=Alert`, CTA "Encerrar"/"Cancelar", título "Encerrar tramitação para mim" e corpo com o texto exato definido.
+  **Resultado esperado:** `modal Type=Alert` com as cores do protótipo Figma, CTA primário "Encerrar", CTA secundário "Cancelar", título "Encerrar tramitação para mim" e corpo com o texto exato definido.
 - **Pós-condição:** nenhuma alteração de estado; validação apenas visual/textual.
-- **Tipo:** funcional. **Camada:** UI. **Automação:** manual. **Prioridade Qase:** média. **Severidade Qase:** normal. **Comportamento:** positivo.
+- **severity:** normal · **type:** acceptance · **automation:** is-not-automated
 - **Tags Qase:** `SGV-9982`, `tramitação`
 
 > **Regra:** critérios, evidências, esforço e resultado da execução continuam no vault ou no Test Run; não duplicar esses dados no caso da Qase.
 
 ## Checklist de envio
 
-- [ ] Todos os CTs candidatos têm descrição, pré-condições e passos.
-- [ ] Projeto e suite confirmados.
-- [ ] Campos normalizados e passos separados.
-- [ ] Tags limitadas ao ID da demanda e ao módulo.
-- [ ] Campos da API validados.
-- [ ] Envio realizado sem duplicação.
+- [x] Todos os CTs candidatos têm descrição, pré-condições e passos.
+- [x] Projeto e suite confirmados (SGV / 358).
+- [x] Campos normalizados e passos separados.
+- [x] Tags limitadas ao ID da demanda e ao módulo.
+- [x] Campos da API validados (`dry-run` rodado, `severity`/`type`/`automation` conferidos contra rótulos já confirmados na Qase real).
+- [ ] Envio realizado sem duplicação — **aguardando autorização do Rafael pro `node sync.js --apply`**.
 - [ ] IDs da Qase registrados nesta nota.
 - [ ] Status alterado para `enviado`.
