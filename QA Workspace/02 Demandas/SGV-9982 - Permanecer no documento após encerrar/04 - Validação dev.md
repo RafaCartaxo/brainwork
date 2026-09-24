@@ -8,18 +8,18 @@ responsavel: ""
 resultado: aguardando
 pontos: 0
 ct_resultados:
-  ct_001: "⏳ Aguardando"
-  ct_002: "⏳ Aguardando"
-  ct_003: "⏳ Aguardando"
-  ct_004: "⏳ Aguardando"
-  ct_005: "⏳ Aguardando"
-  ct_006: "⏳ Aguardando"
-  ct_007: "⏳ Aguardando"
-  ct_008: "⏳ Aguardando"
-  ct_009: "⏳ Aguardando"
-  ct_010: "⏳ Aguardando"
-  ct_011: "⏳ Aguardando"
-  ct_012: "⏳ Aguardando"
+  ct_001: ⏳ Aguardando
+  ct_002: ⏳ Aguardando
+  ct_003: ⏳ Aguardando
+  ct_004: ⏳ Aguardando
+  ct_005: ⏳ Aguardando
+  ct_006: ⏳ Aguardando
+  ct_007: ⏳ Aguardando
+  ct_008: ⏳ Aguardando
+  ct_009: ❌ Falhou
+  ct_010: ⏳ Aguardando
+  ct_011: ⏳ Aguardando
+  ct_012: ❌ Falhou
 data_inicio: ""
 data_fim: ""
 ---
