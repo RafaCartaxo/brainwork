@@ -45,7 +45,7 @@ Mesmo formato dos CTs embutidos em cards de bug ([[SKILL_BUGS|SKILL_BUGS]]) — 
 | Separador | `---` entre CTs |
 
 > [!note]- Por que mudou (30/07/2026)
-> O formato anterior era um item de lista com tudo indentado como continuação (`- **CT-001 ...**` + linhas indentadas + `<span>` verde/vermelho). Funcionava, mas: não entrava no outline, dificultava dobrar CT por CT numa nota com 12 casos, e o HTML inline atrapalhava a leitura no modo edição. Rafael passou o formato desejado em 30/07 e o padrão foi trocado. Amostra viva: [[QA Workspace/02 Demandas/Concluídas/10437 - Bug Nao Entra No Documento Criado E Redireciona Pra Mesa De Trabalho|SGV-10437]].
+> O formato anterior era um item de lista com tudo indentado como continuação (`- **CT-001 ...**` + linhas indentadas + `<span>` verde/vermelho). Funcionava, mas: não entrava no outline, dificultava dobrar CT por CT numa nota com 12 casos, e o HTML inline atrapalhava a leitura no modo edição. Rafael passou o formato desejado em 30/07 e o padrão foi trocado. Amostra viva: [[QA Workspace/02 Demandas/Concluídas/10437/QA/10437 - Bug Nao Entra No Documento Criado E Redireciona Pra Mesa De Trabalho|SGV-10437]].
 
 ---
 

@@ -99,7 +99,7 @@ O usuário pode definir o escopo da busca padrão entre seus próprios setores (
 
 ## Comportamentos observados em teste
 <!-- O que foi aprendido validando: comportamentos não documentados, pegadinhas, efeitos colaterais -->
-- **2026-07-21 (HML) — "Novo rastreio" reinicia os filtros da consulta anterior.** Validado e aprovado em homologação via [[../02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]] (MR !553): ao disparar um novo rastreio (muda `location.search`), o sistema zera `statusFilter` e `importedDocuments`, e a nova consulta não herda os filtros anteriores.
+- **2026-07-21 (HML) — "Novo rastreio" reinicia os filtros da consulta anterior.** Validado e aprovado em homologação via [[../02 Demandas/Concluídas/9464/QA/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]] (MR !553): ao disparar um novo rastreio (muda `location.search`), o sistema zera `statusFilter` e `importedDocuments`, e a nova consulta não herda os filtros anteriores.
     > [!warning] Diverge da regra da doc (linha ~54) — decisão de produto em aberto
     > A regra escrita em [[#Resultados da busca padrão]] diz que "Novo rastreio" *"recomeça do zero mantendo os resultados anteriores visíveis ao fundo"* e **não menciona reiniciar filtros**. A validação aprovada da SGV-9464 estabelece o oposto: **os filtros devem ser reiniciados**. Como o comportamento aprovado contradiz a doc, a doc está **provavelmente desatualizada** (fonte Notion editada em 25/03/2026 vs. bug/MR de 09/07/2026). **Não editar a regra da linha ~54 até confirmar com Dev/Produto.** Pendente: confirmar a decisão e, se confirmada, atualizar a linha do "Novo rastreio" e registrar aqui a mudança com data. Registro conforme [[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]].
 
@@ -112,7 +112,7 @@ O usuário pode definir o escopo da busca padrão entre seus próprios setores (
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
-- [[../02 Demandas/Concluídas/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]] — "Novo rastreio" deve reiniciar os filtros (aprovado em HML 2026-07-21; ver [[#Comportamentos observados em teste]] — diverge da doc, decisão de produto em aberto)
+- [[../02 Demandas/Concluídas/9464/QA/9464 - Bug Filtros Nao Reiniciados Novo Rastreio|SGV-9464]] — "Novo rastreio" deve reiniciar os filtros (aprovado em HML 2026-07-21; ver [[#Comportamentos observados em teste]] — diverge da doc, decisão de produto em aberto)
 
 ## Referências
 <!-- Docs do repo (caminho), links externos, leis -->

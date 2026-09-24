@@ -21,7 +21,7 @@ ags:
 > Sanidade 005, 006, 007, 008, 010 (+ 7 outros) — "Roteiro de Sanidade 01: Implantação".
 
 ## Bugs com impacto em cenários do roteiro
-- [BUG] (Sanidade-006/2026) Erro 503 ao ativar clientes com status "Em implantação" — ver [[../02 Demandas/Concluídas/6975 - Bug Erro 503 Ativar Cliente Em Implantação|SGV-6975]]
+- [BUG] (Sanidade-006/2026) Erro 503 ao ativar clientes com status "Em implantação" — ver [[../02 Demandas/Concluídas/6975/QA/6975 - Bug Erro 503 Ativar Cliente Em Implantação|SGV-6975]]
 - [BUG] (Sanidade-005/2026) Documento temporário volta para "Em elaboração" após emitir em instância Em Implantação
 - [BUG] (Sanidade-005/2026) Não é possível assinar documento em instância Em Implantação
 

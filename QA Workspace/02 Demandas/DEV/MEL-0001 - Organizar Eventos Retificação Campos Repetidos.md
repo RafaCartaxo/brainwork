@@ -26,7 +26,7 @@ modulo: formularios
 
 > [!abstract] Resumo
 
-Campos com "permitir repetição de campo" podem ser duplicados N vezes (repetição 1, 2, 3, 4...), e um formulário pode ter vários campos assim (Descrição, Mapa, Número etc.). Quando várias repetições de vários campos são retificadas, os eventos aparecem na linha do tempo **sem ordem definida**: a repetição 1 de um campo lá em cima, as repetições 2 e 3 juntas mais abaixo, a 4 em outro ponto, intercaladas com retificações de outros campos. A melhoria é organizar a exibição: **agrupar as retificações por campo, com as repetições em ordem numérica, e os campos na ordem em que aparecem no formulário**. (O conteúdo de cada evento já está correto desde o [[QA Workspace/02 Demandas/Concluídas/8805 - Bug Descrição Técnica Campos Repetidos|SGV-8805]] — aqui é só a organização/ordenação.)
+Campos com "permitir repetição de campo" podem ser duplicados N vezes (repetição 1, 2, 3, 4...), e um formulário pode ter vários campos assim (Descrição, Mapa, Número etc.). Quando várias repetições de vários campos são retificadas, os eventos aparecem na linha do tempo **sem ordem definida**: a repetição 1 de um campo lá em cima, as repetições 2 e 3 juntas mais abaixo, a 4 em outro ponto, intercaladas com retificações de outros campos. A melhoria é organizar a exibição: **agrupar as retificações por campo, com as repetições em ordem numérica, e os campos na ordem em que aparecem no formulário**. (O conteúdo de cada evento já está correto desde o [[QA Workspace/02 Demandas/Concluídas/8805/QA/8805 - Bug Descrição Técnica Campos Repetidos|SGV-8805]] — aqui é só a organização/ordenação.)
 
 ---
 

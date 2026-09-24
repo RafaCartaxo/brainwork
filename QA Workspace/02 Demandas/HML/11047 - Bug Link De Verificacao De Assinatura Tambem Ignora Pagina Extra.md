@@ -18,7 +18,7 @@ ambiente: HML
 
 ### Descrição
 
-Durante a validação da [[QA Workspace/02 Demandas/Concluídas/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] foi identificado que, apesar do download da versão com assinaturas autenticáveis já respeitar a página extra de assinaturas, o **link de verificação de assinaturas** também não respeita essa configuração — mesmo problema de fundo, superfície diferente.
+Durante a validação da [[QA Workspace/02 Demandas/Concluídas/10404/QA/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] foi identificado que, apesar do download da versão com assinaturas autenticáveis já respeitar a página extra de assinaturas, o **link de verificação de assinaturas** também não respeita essa configuração — mesmo problema de fundo, superfície diferente.
 
 Evidência compartilhada com a SGV-10404 (mesmo vídeo, cópia renomeada) — **o trecho entre 4min e 5min** mostra o achado.
 
@@ -79,9 +79,9 @@ Então verifico que a página extra de assinaturas não é respeitada
 
 ### Informações adicionais
 
-- Demanda relacionada: SGV-11047 (Notion). Achado durante a validação/aprovação da [[QA Workspace/02 Demandas/Concluídas/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] em 24/08.
+- Demanda relacionada: SGV-11047 (Notion). Achado durante a validação/aprovação da [[QA Workspace/02 Demandas/Concluídas/10404/QA/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] em 24/08.
 - Observações:
-    - Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] — mesmo vídeo, cópia renomeada. **Trecho de 4min a 5min** é onde o achado aparece.
+    - Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/10404/QA/10404 - Bug Download Assinaturas Autenticaveis Ignora Pagina Extra Assinaturas|SGV-10404]] — mesmo vídeo, cópia renomeada. **Trecho de 4min a 5min** é onde o achado aparece.
     - Mesma área de regra documentada da SGV-10404 ([[QA Workspace/04 Conhecimento/Módulos/Assinaturas#Página extra de assinaturas (28/04/2026)|Assinaturas § Página extra de assinaturas]]: "a página extra não é apenas visual; ela se torna parte integrante do arquivo PDF") — vale conferir se o link de verificação usa o mesmo caminho de renderização problemático.
 - Histórico:
     - 2026-08-24 - 🐛 SGV-11047 - Bug cadastrado (achado durante validação da SGV-10404)

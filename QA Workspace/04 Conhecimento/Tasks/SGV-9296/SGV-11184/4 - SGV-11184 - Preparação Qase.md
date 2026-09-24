@@ -49,7 +49,7 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 - **Qase id:** `444`
 
 ### CT-002c Área de clique do accordion vs. seleção do departamento
-- **Descrição:** CA02 — SGV-11184, grupo A. Defeito [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (corrigido, aprovado em DEV em 03/09/2026).
+- **Descrição:** CA02 — SGV-11184, grupo A. Defeito [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (corrigido, aprovado em DEV em 03/09/2026).
 - **Precondição:** O departamento é exibido como accordion no resultado da busca.
 - **Passos:** usa o shared step `accordion-click-area`.
 - **Severidade / Tipo / Automação:** normal / acceptance / não automatizado
@@ -96,7 +96,7 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 - **Qase id:** `450`
 
 ### CT-008a Área de clique do accordion vs. seleção do departamento no despacho
-- **Descrição:** CA02 — SGV-11184, grupo B. Defeito [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (corrigido, aprovado em DEV em 03/09/2026).
+- **Descrição:** CA02 — SGV-11184, grupo B. Defeito [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (corrigido, aprovado em DEV em 03/09/2026).
 - **Precondição:** O departamento é exibido como accordion no resultado da busca de destinatário do despacho.
 - **Passos:** usa o shared step `accordion-click-area`.
 - **Severidade / Tipo / Automação:** normal / acceptance / não automatizado
@@ -125,7 +125,7 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 - **Qase id:** `454`
 
 ### CT-012b Retificação preserva o departamento selecionado como destinatário
-- **Descrição:** CA05 — SGV-11184, grupo B. Formalizado a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido, aprovado em DEV em 03/09/2026).
+- **Descrição:** CA05 — SGV-11184, grupo B. Formalizado a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido, aprovado em DEV em 03/09/2026).
 - **Precondição:** Um despacho foi emitido com um departamento como destinatário.
 - **Passos:** 1. Ação: O servidor abre a tela de retificação desse despacho → Resultado esperado: O departamento aparece selecionado no campo de destinatário, sem ser substituído pelo cidadão PJ/empresa.
 - **Severidade / Tipo / Automação:** normal / acceptance / não automatizado

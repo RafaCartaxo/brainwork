@@ -60,7 +60,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 > - Complemento do Figma (03/09/2026) trouxe também conteúdo que **não** entra nesta rodada: seleção de membro individual do departamento como destinatário direto (contradiz o escopo fechado do requisito original — Rafael vai conferir e confirmar depois) e departamento como signatário de assinatura (fora do escopo desta entrega). Ambos ficam registrados como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], sem entrar nos CTs abaixo.
 > - **Escopo confirmado por Rafael (03/09/2026)**: esta entrega cobre só o **departamento em si** como destinatário — a hierarquia completa seria Cidadão > PJ > Departamento > **participantes**, e o nível "participantes" **não está implementado agora** (nem exibição, nem seleção). Por isso CT-002a, CT-002b e CT-008 (exibição de participantes/CPF no resultado da busca) foram marcados **Não se aplica** — não é falha de execução, é critério fora do escopo real da entrega. O accordion (CT-002c/CT-008a) continua válido, pois expandir/recolher não depende de mostrar participantes.
 > - **Ressalva sobre "participantes não implementado"**: isso vale pra **exibição/seleção** do participante como destinatário (grupos A/B). Não vale pra **notificação**: cada membro elegível recebe sua própria notificação **interna** (RF03 CA02, CT-014) — isso já existe e é comportamento em escopo, não confundir com a seleção/exibição deferida. O e-mail com URL externa de rastreabilidade (RF04, grupo D), porém, vai só pro endereço do **departamento** — não tem "participante" nenhum ali; CT-018 tinha uma menção a "membros" incorreta, corrigida.
-> - ~~**Sem cobertura de CT pra retificação de despacho**~~ — **resolvido** (04/09/2026): formalizado como **CT-012b**, a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido e aprovado em DEV, 03/09/2026).
+> - ~~**Sem cobertura de CT pra retificação de despacho**~~ — **resolvido** (04/09/2026): formalizado como **CT-012b**, a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (corrigido e aprovado em DEV, 03/09/2026).
 
 ---
 
@@ -146,11 +146,11 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [ ] Não
 - [ ] Não se aplica
 
-> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]]
+> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]]
 > Área de clique não respeita a distinção chevron (expandir/recolher) × linha inteira (selecionar) definida no Figma. Bate também no CT-008a (mesma regra no destinatário de despacho) — revalidar os dois juntos quando a correção subir.
 
 > [!success]- Reprovado em 03/09, aprovado no reteste de 03/09
-> O defeito virou [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]], foi corrigido e o reteste passou — gravação da execução embedada abaixo, junto com a evidência que registrou o problema original. O card do defeito está em `Concluídas/`.
+> O defeito virou [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]], foi corrigido e o reteste passou — gravação da execução embedada abaixo, junto com a evidência que registrou o problema original. O card do defeito está em `Concluídas/`.
 
 **Evidências de Testes:**
 
@@ -266,11 +266,11 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [ ] Não
 - [ ] Não se aplica
 
-> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]]
+> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]]
 > Mesmo defeito do CT-002c, confirmado também no destinatário de despacho: área de clique não respeita a distinção chevron (expandir/recolher) × linha inteira (selecionar).
 
 > [!success]- Reprovado em 03/09, aprovado no reteste de 03/09
-> O defeito virou [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]], foi corrigido e o reteste passou — mesma correção do CT-002c, confirmada também no destinatário de despacho.
+> O defeito virou [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]], foi corrigido e o reteste passou — mesma correção do CT-002c, confirmada também no destinatário de despacho.
 
 **Evidências de Testes:**
 
@@ -370,7 +370,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [ ] Não
 - [ ] Não se aplica
 
-> [!success]- CT formalizado a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]]
+> [!success]- CT formalizado a partir do defeito [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]]
 > Achado em teste exploratório (sem CT formal até agora, ver histórico), corrigido e aprovado em DEV em 04/09/2026. Este CT fecha o gap registrado em Pontos de atenção.
 
 **Evidências de Testes:**
@@ -551,8 +551,8 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 ---
 
 > [!danger] Bugs encontrados
-> - ~~[[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha~~ — **corrigido e aprovado em DEV** (CT-002c e CT-008a revalidados, Sim)
-> - ~~[[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — departamento não é persistido ao retificar despacho (tela mostra o cidadão PJ/empresa)~~ — **corrigido e aprovado em DEV** (achado em teste exploratório, sem CT formal ainda)
+> - ~~[[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha~~ — **corrigido e aprovado em DEV** (CT-002c e CT-008a revalidados, Sim)
+> - ~~[[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — departamento não é persistido ao retificar despacho (tela mostra o cidadão PJ/empresa)~~ — **corrigido e aprovado em DEV** (achado em teste exploratório, sem CT formal ainda)
 > - [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] — truncamento de destinatário com nome extenso não segue o protótipo (CT-012a reprovado)
 
 ---
@@ -575,14 +575,14 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 
 - 2026-09-03 - 📝 Funcionalidade refinada (critérios de aceite prontos) — refinamento do requisito técnico do Notion, cruzado com o doc de produto consolidado ("Departamento CNPJ")
 - 2026-09-03 - 🔎 Cruzamento com complemento do Figma (`~/Documentos/Complemento 11184.txt`): formato de exibição resolvido (parênteses, CT-005/CT-011), 7 CTs novos/refinados dentro do escopo já confirmado (busca a partir de 3 caracteres, resultado expandido com cluster aninhado, CPF anonimizado, área de clique do accordion, truncamento). Conteúdo fora do escopo desta rodada (seleção de membro individual; departamento como signatário de assinatura) preservado como material da epic em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Tasks/SGV-9296]], não incorporado aos CTs.
-- 2026-09-03 - 🐛 CT-002c reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (área de clique do accordion não segue o padrão do Figma)
-- 2026-09-03 - 🔎 Ajuste de escopo (Rafael, validando os CTs): nível "participantes" do departamento não implementado nesta entrega — CT-002a, CT-002b marcados Não se aplica; CT-008 reescrito (removida a parte de participantes/CPF, checkbox resetado); Regras de negócio anotadas. CT-008a reprovado, mesmo defeito do CT-002c ([[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]])
-- 2026-09-03 - 🐛 Defeito cadastrado (achado em teste exploratório): [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (departamento não persistido ao retificar despacho)
-- 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] aprovado em DEV (corrigido, reteste OK) — CT-002c e CT-008a revalidados e marcados Sim
-- 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] aprovado em DEV (corrigido, reteste OK) — sem CT formal pra revalidar, gap de retificação segue registrado em Pontos de atenção
+- 2026-09-03 - 🐛 CT-002c reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] (área de clique do accordion não segue o padrão do Figma)
+- 2026-09-03 - 🔎 Ajuste de escopo (Rafael, validando os CTs): nível "participantes" do departamento não implementado nesta entrega — CT-002a, CT-002b marcados Não se aplica; CT-008 reescrito (removida a parte de participantes/CPF, checkbox resetado); Regras de negócio anotadas. CT-008a reprovado, mesmo defeito do CT-002c ([[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]])
+- 2026-09-03 - 🐛 Defeito cadastrado (achado em teste exploratório): [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (departamento não persistido ao retificar despacho)
+- 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] aprovado em DEV (corrigido, reteste OK) — CT-002c e CT-008a revalidados e marcados Sim
+- 2026-09-03 - ✅ [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] aprovado em DEV (corrigido, reteste OK) — sem CT formal pra revalidar, gap de retificação segue registrado em Pontos de atenção
 - 2026-09-03 - 🔎 CT-014 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]), só existe o cenário departamento × membro
 - 2026-09-03 - 🔎 CT-015 reescrito (Rafael): linguagem de "evento/canal" trocada por descrição concreta (reprocessar o mesmo encaminhamento não duplica notificação), sem mudar o comportamento testado
 - 2026-09-03 - 🔎 CT-018 corrigido: "ou seus membros" removido do Dado (sem base no RF04, que fala só do departamento); nota de escopo em Pontos de atenção esclarecendo que "participantes não implementado" vale pra exibição/seleção (grupos A/B), não pra notificação interna por membro (RF03 CA02, CT-014), que já está em escopo
 - 2026-09-04 - 🐛 CT-012a reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (destinatário com nome extenso não trunca conforme o protótipo)
-- 2026-09-04 - 📝 CT-012b criado (retificação preserva o departamento como destinatário), formalizando o gap exposto pela [[QA Workspace/02 Demandas/Concluídas/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — já marcado Sim (defeito corrigido e aprovado). Card passa de 27 pra 28 CTs (21 aplicáveis, 7 Não se aplica).
+- 2026-09-04 - 📝 CT-012b criado (retificação preserva o departamento como destinatário), formalizando o gap exposto pela [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — já marcado Sim (defeito corrigido e aprovado). Card passa de 27 pra 28 CTs (21 aplicáveis, 7 Não se aplica).
 - 2026-09-04 - 📤 21 CTs aplicáveis enviados pro projeto SGV na Qase (suite 220), via `sogov-automation-test/scripts/qase-sync-9296-departamentos/` — ids 443-463. Espelho legível em [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/4 - SGV-11184 - Preparação Qase|Preparação Qase]].

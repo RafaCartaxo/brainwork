@@ -84,7 +84,7 @@ Antes, ações como enviar e-mail, assinar documento ou importar arquivo acontec
 - [ ] Não
 - [ ] Não se aplica
 
-> [!success]- Reprovado em 01/09/2026, aprovado no reteste de 04/09/2026 — bugs [[QA Workspace/02 Demandas/Concluídas/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] (aprovada parcialmente em 02/09) e [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] (aprovada em 04/09)
+> [!success]- Reprovado em 01/09/2026, aprovado no reteste de 04/09/2026 — bugs [[QA Workspace/02 Demandas/Concluídas/11215/QA/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] (aprovada parcialmente em 02/09) e [[QA Workspace/02 Demandas/Concluídas/11249/QA/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] (aprovada em 04/09)
 > Ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não carregava — resolvido, aprovado em 02/09/2026 v. 14.17.0 (SGV-11215). A assinatura em si seguia não sendo concluída com sucesso, com ou sem anexo (SGV-11249) — agora também aprovada, reteste OK. CT-002 fecha.
 
 **Evidências de Testes:**
@@ -773,12 +773,12 @@ anterior/errada)
 > [!danger] Bugs encontrados
 
 - 🐛 [[QA Workspace/02 Demandas/HML/Bug E-mail De Confirmacao De Cadastro Nao Chega No Novo Ambiente De Homologacao|Bug E-mail de confirmação de cadastro não chega]] — confirmado em 26/08/2026, CT-025 reprovado, sem SGV ainda.
-- 🐛 [[QA Workspace/02 Demandas/Concluídas/11151 - Bug Documento Não É Criado Com Anexo No Módulo E No Assunto E Serviço|SGV-11151]] — cadastrado em 28/08/2026, documento não criado com anexo no módulo/assunto e serviço; não bate com CT existente (ver Observações do card).
-- 🐛 [[QA Workspace/02 Demandas/Concluídas/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
-- 🐛 [[QA Workspace/02 Demandas/Concluídas/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
-- 🐛 [[QA Workspace/02 Demandas/Concluídas/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
-- 🐛 [[QA Workspace/02 Demandas/Concluídas/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] — cadastrado em 01/09/2026, CT-002 reprovado (documento não carrega ao clicar pra assinar; vizinho da SGV-11158, ponto de falha diferente). Aprovado parcialmente em 02/09/2026 (v. 14.17.0) — só o carregamento; conclusão da assinatura segue em SGV-11249.
-- 🐛 [[QA Workspace/02 Demandas/Concluídas/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] — cadastrado em 02/09/2026, CT-002 reprovado (documento/despacho, com ou sem anexo, carrega mas a assinatura não conclui; vizinho da SGV-11215, ponto de falha diferente). Aprovado em homologação em 04/09/2026 — reteste OK, CT-002 fecha.
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11151/QA/11151 - Bug Documento Não É Criado Com Anexo No Módulo E No Assunto E Serviço|SGV-11151]] — cadastrado em 28/08/2026, documento não criado com anexo no módulo/assunto e serviço; não bate com CT existente (ver Observações do card).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11153/QA/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada|SGV-11153]] — cadastrado em 28/08/2026, regressão da SGV-8660 (tabela de Regressão acima).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11158/QA/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]] — cadastrado em 28/08/2026, prévia de documento não carrega na solicitação de assinatura; sem CT/regressão exata (ver Observações do card).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11159/QA/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização|SGV-11159]] — cadastrado em 28/08/2026, regressão da SGV-9074 (tabela de Regressão acima, antes tag POC1).
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11215/QA/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]] — cadastrado em 01/09/2026, CT-002 reprovado (documento não carrega ao clicar pra assinar; vizinho da SGV-11158, ponto de falha diferente). Aprovado parcialmente em 02/09/2026 (v. 14.17.0) — só o carregamento; conclusão da assinatura segue em SGV-11249.
+- 🐛 [[QA Workspace/02 Demandas/Concluídas/11249/QA/11249 - Bug Assinatura De Documento Ou Despacho Não É Concluída Com Sucesso|SGV-11249]] — cadastrado em 02/09/2026, CT-002 reprovado (documento/despacho, com ou sem anexo, carrega mas a assinatura não conclui; vizinho da SGV-11215, ponto de falha diferente). Aprovado em homologação em 04/09/2026 — reteste OK, CT-002 fecha.
 
 ---
 
@@ -796,7 +796,7 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 |---|---|---|---|---|
 | SGV-9530 | Erro ao tentar ativar instância "Em implantação" | Cancelado | — | ☐ *(não se aplica — cancelado)* |
 | SGV-9076 | Erro ao excluir pré-cadastro de servidor (ambiente POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☐ |
-| SGV-9074 | Erro ao selecionar localização em campo do tipo mapa (POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☑ *(reaberto fora do POC1 como [[QA Workspace/02 Demandas/Concluídas/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização\|SGV-11159]], corrigido e aprovado em 01/09)* |
+| SGV-9074 | Erro ao selecionar localização em campo do tipo mapa (POC1) | Aprovado no Dev | Sem CT claro — tag POC, confirmar se POC1 existe no novo ambiente | ☑ *(reaberto fora do POC1 como [[QA Workspace/02 Demandas/Concluídas/11159/QA/11159 - Bug Campo De Mapa Não Carrega Para Seleção De Localização\|SGV-11159]], corrigido e aprovado em 01/09)* |
 | SGV-8820 | Sessão como Cidadão PJ não é persistida | Aprovado no Dev | CT-015 / CT-018 (Login e sessão) | ☐ |
 | SGV-8806 | Impossibilidade de criar novos documentos | Aprovado no Dev | CT-005 (Criar documento) | ☐ |
 | SGV-8775 | Erro ao tentar realizar importação de documentos | Aprovado no Dev | CT-004 (Importar documento) | ☐ |
@@ -804,7 +804,7 @@ Nenhuma anexada ainda — esta rodada ainda não começou a ser executada.
 | SGV-8688 | Erro ao tentar abrir qualquer solicitação como cidadão | Aprovado no Dev | CT-015 / CT-035 (Login ou regressão geral) | ☐ |
 | SGV-8669 | Erro ao emitir documento para cliente (ambiente administrativo) | Aprovado no Dev | CT-029 (Emitir/baixar documento) | ☐ |
 | SGV-8661 | Documentos e despachos não carregam ao baixar documento personalizado | Aprovado no Dev | CT-029 / CT-030 (Geração/download de PDF) | ☐ |
-| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☑ *(reaberto como [[QA Workspace/02 Demandas/Concluídas/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada\|SGV-11153]], corrigido e aprovado em 01/09)* |
+| SGV-8660 | Erro ao tentar realizar download Versão compactada | Aprovado no Dev | CT-022 (Link de download) | ☑ *(reaberto como [[QA Workspace/02 Demandas/Concluídas/11153/QA/11153 - Bug Erro Ao Tentar Realizar Download Versão Compactada\|SGV-11153]], corrigido e aprovado em 01/09)* |
 | SGV-8658 | Erro ao realizar ou solicitar Assinaturas (POC) | Aprovado no Dev | Sem CT claro — tag POC; correlato a CT-029 (assinatura) se aplicável fora de POC | ☐ |
 | SGV-8609 | Falha ao cadastrar servidor no ambiente com nova arquitetura | Aprovado no Dev | Sem CT claro — pode estar ligado ao deploy (ver Verificações técnicas), confirmar contexto | ☐ |
 | SGV-8602 | Logo do SOGOV não exibida no e-mail "Finalize seu cadastro" (cidadão PF) | Aprovado no Dev | CT-028 (Logo no e-mail de cadastro) | ☐ |

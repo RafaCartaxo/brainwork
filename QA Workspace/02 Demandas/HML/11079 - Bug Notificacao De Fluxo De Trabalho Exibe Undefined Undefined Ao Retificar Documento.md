@@ -79,6 +79,6 @@ A notificação exibida após a retificação mostra o nome real da etapa inicia
 
 - Demanda relacionada: SGV-11079 (Notion)
 - Observações:
-    - Relacionado à área da [[QA Workspace/02 Demandas/Concluídas/8673 - Bug Retificacao De Despacho Com Fluxo De Trabalho Exibe Erro Mesmo Com Sucesso|SGV-8673]] (retificação de documento/despacho com fluxo de trabalho), mas defeito diferente: aqui é a notificação com valores não interpolados, não o erro falso de retificação.
+    - Relacionado à área da [[QA Workspace/02 Demandas/Concluídas/8673/QA/8673 - Bug Retificacao De Despacho Com Fluxo De Trabalho Exibe Erro Mesmo Com Sucesso|SGV-8673]] (retificação de documento/despacho com fluxo de trabalho), mas defeito diferente: aqui é a notificação com valores não interpolados, não o erro falso de retificação.
 - Histórico:
     - 2026-08-25 - 🐛 SGV-11079 - Bug cadastrado

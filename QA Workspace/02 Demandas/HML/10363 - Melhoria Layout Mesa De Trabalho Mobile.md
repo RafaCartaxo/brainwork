@@ -59,10 +59,10 @@ Os 4 saíram da validação em DEV desta task. Seguem a esteira do defeito ([[Si
 
 | Defeito | Situação | Evidência |
 |---|---|---|
-| [[QA Workspace/02 Demandas/Concluídas/10859 - Defeito Visual 1\|SGV-10859]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
-| [[QA Workspace/02 Demandas/Concluídas/10860 - Defeito Visual 2\|SGV-10860]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
-| [[QA Workspace/02 Demandas/Concluídas/10861 - Defeito Visual 3\|SGV-10861]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
-| [[QA Workspace/02 Demandas/Concluídas/10862 - Defeito Visual 4\|SGV-10862]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
+| [[QA Workspace/02 Demandas/Concluídas/10859/QA/10859 - Defeito Visual 1\|SGV-10859]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
+| [[QA Workspace/02 Demandas/Concluídas/10860/QA/10860 - Defeito Visual 2\|SGV-10860]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
+| [[QA Workspace/02 Demandas/Concluídas/10861/QA/10861 - Defeito Visual 3\|SGV-10861]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
+| [[QA Workspace/02 Demandas/Concluídas/10862/QA/10862 - Defeito Visual 4\|SGV-10862]] | ✅ Corrigido e retestado em DEV (18/08) | Notion |
 
 > [!note] A numeração 1–4 é só identificação
 > Segue a **ordem crescente de SGV**, não prioridade nem ordem de descoberta. Os quatro eram problemas visuais básicos e não tiveram descrição individual registrada aqui — o detalhe está em cada task do Notion, junto da gravação.
