@@ -5,7 +5,7 @@ tags:
 ---
 # Resumo: Departamentos para cidadão Pessoa Jurídica
 
-> Parte 1 da epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/0 - SGV-9296 - Índice|SGV-9296]] — irmã da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]]. Detalhe técnico (RFs, critérios, CTs) fica no [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|card]] e na [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|mesa de refinamento]]. Esta nota é só o "o que é e por quê".
+> Parte 1 da epic [[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] — irmã da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]]. Detalhe técnico (RFs, critérios, CTs) fica no [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|card]] e na [[QA Workspace/02 Demandas/Concluídas/11083/Conhecimento/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|mesa de refinamento]]. Esta nota é só o "o que é e por quê".
 
 ## O que é
 

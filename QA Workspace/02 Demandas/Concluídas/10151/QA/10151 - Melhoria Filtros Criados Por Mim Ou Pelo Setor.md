@@ -24,7 +24,7 @@ ambiente: HML
 > - **Link:** [SGV-10151 no Notion](https://app.notion.com/p/alfa-group/DEV-PARTE-4-Funcionalidade-Filtros-Criados-por-mim-Criados-pelo-setor-3a02aec67d3080e0a69bcfd3f7e6796e) · [Figma — Mesa de Trabalho/Handoff](https://www.figma.com/design/57GnUc1cTERzuMCdea2eQa/Mesa-de-Trabalho---Handoff?node-id=957-2978)
 > - **Dev:** B. Luan ([MR !666](https://gitlab.sogo.com.br/ari.garcia/sogov-dev/-/merge_requests/666))
 > - **Item pai:** *[MELHORIA-CX] Melhoria no Layout da mesa de trabalho* (Parte 4 de N; item pai sem card próprio no vault)
-> - **Refinamento:** mesa arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-10151/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|04 Conhecimento/Tasks/SGV-10151]]
+> - **Refinamento:** mesa arquivada em [[QA Workspace/02 Demandas/Concluídas/10151/Conhecimento/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|Concluídas/10151/Conhecimento]]
 
 ---
 
@@ -248,7 +248,7 @@ Regras gerais da mesa (abas, permissões, switch de setor): [[QA Workspace/04 Co
 ---
 
 > [!tip] Observações
-> - Refinado a partir do export do Notion + entrega do dev (B. Luan, MR !666) + inspeção da anatomia no Figma (Claude em Chrome). Mesa de refinamento arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-10151/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|04 Conhecimento]].
+> - Refinado a partir do export do Notion + entrega do dev (B. Luan, MR !666) + inspeção da anatomia no Figma (Claude em Chrome). Mesa de refinamento arquivada em [[QA Workspace/02 Demandas/Concluídas/10151/Conhecimento/SGV-10151 - Refinamento Filtros Criados Por Mim Ou Pelo Setor|04 Conhecimento]].
 > - Regra completa da mesa em [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] — seção "2. Filtros rápidos dinâmicos e inteligentes" já documenta o rótulo por aba (sem divergência com esta entrega); não documenta o estado desabilitado (CA8).
 
 ## Histórico

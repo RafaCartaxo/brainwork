@@ -14,7 +14,7 @@ ambiente: HML
 ---
 # Ao realizar novo rastreio de documentos, filtros não são reiniciados
 
-> Refinamento: mesa arquivada em [[QA Workspace/04 Conhecimento/Tasks/SGV-9464/SGV-9464 - Refinamento Filtros Novo Rastreio|04 Conhecimento/Tasks/SGV-9464]]
+> Refinamento: mesa arquivada em [[QA Workspace/02 Demandas/Concluídas/9464/Conhecimento/SGV-9464 - Refinamento Filtros Novo Rastreio|Concluídas/9464/Conhecimento]]
 
 ### Descrição
 
@@ -78,7 +78,7 @@ Então, ao término do carregamento da nova consulta, os filtros aplicados anter
 ### Informações adicionais
 
 - Demanda relacionada: SGV-9464
-- Observações: Refinada em [[QA Workspace/04 Conhecimento/Tasks/SGV-9464/SGV-9464 - Refinamento Filtros Novo Rastreio|SGV-9464 - Refinamento Filtros Novo Rastreio]]. Correção pelo MR !553 (João Marcelo): ao detectar novo rastreio (`location.search` muda), zera `statusFilter` e `importedDocuments`; `searchItems` passa a aceitar overrides explícitos pra a busca inicial não depender do estado antigo. Aprovado em DEV por Lucas Beninca (15/07). Card criado retroativamente no momento do registro da validação (aprovada em homologação).
+- Observações: Refinada em [[QA Workspace/02 Demandas/Concluídas/9464/Conhecimento/SGV-9464 - Refinamento Filtros Novo Rastreio|SGV-9464 - Refinamento Filtros Novo Rastreio]]. Correção pelo MR !553 (João Marcelo): ao detectar novo rastreio (`location.search` muda), zera `statusFilter` e `importedDocuments`; `searchItems` passa a aceitar overrides explícitos pra a busca inicial não depender do estado antigo. Aprovado em DEV por Lucas Beninca (15/07). Card criado retroativamente no momento do registro da validação (aprovada em homologação).
 
 > [!warning] Diverge da doc do módulo — decisão de produto em aberto
 > Verificado contra [[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento|Rastrear Documento]] ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]], 2026-07-21, HML): a doc (linha ~54) descreve "Novo rastreio" como *"recomeça do zero mantendo os resultados anteriores visíveis ao fundo"* e **não menciona reiniciar filtros**. A validação aprovada aqui estabelece o oposto (reiniciar os filtros). Como o comportamento aprovado contradiz a doc, a doc está **provavelmente desatualizada** (Notion editado em 25/03/2026 vs. bug/MR de 09/07/2026). Não é bloqueio deste card (já aprovado). **Pendente de decisão de Produto**: confirmar e atualizar a doc do módulo. Registrado na doc em [[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento#Comportamentos observados em teste|Comportamentos observados em teste]].

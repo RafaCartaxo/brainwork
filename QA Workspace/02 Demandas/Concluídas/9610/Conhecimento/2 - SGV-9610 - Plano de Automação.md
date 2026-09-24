@@ -9,7 +9,7 @@ revisado: 2026-07-22
 # Plano de Automação: Associar Documento — Abertura Multi-Setor
 
 > [!info] O que é esta nota
-> Plano de referência pra automatizar a SGV-9610 ("Associar Documento — Abertura Multi-Setor"), pra ficar fácil de retomar quando a implementação começar. Fluxo geral: [[Sistema/Skills/SKILL_INICIAR_AUTOMACAO|SKILL_INICIAR_AUTOMACAO]]. Material relacionado: [[QA Workspace/04 Conhecimento/Tasks/SGV-9610/1 - SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor|mapeamento/refinamento]], card [[QA Workspace/02 Demandas/Concluídas/9610/QA/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610 (DEV)]], doc [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar]].
+> Plano de referência pra automatizar a SGV-9610 ("Associar Documento — Abertura Multi-Setor"), pra ficar fácil de retomar quando a implementação começar. Fluxo geral: [[Sistema/Skills/SKILL_INICIAR_AUTOMACAO|SKILL_INICIAR_AUTOMACAO]]. Material relacionado: [[QA Workspace/02 Demandas/Concluídas/9610/Conhecimento/1 - SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor|mapeamento/refinamento]], card [[QA Workspace/02 Demandas/Concluídas/9610/QA/9610 - Bug Associar Documento Abertura Multi-Setor|SGV-9610 (DEV)]], doc [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar]].
 
 ## Contexto
 
@@ -22,7 +22,7 @@ Ao começar a validar a 9610 em DEV, levantou-se a dúvida: *pra iniciar a autom
 ## Estado atual (assessment)
 
 **Especificação — pronta:**
-- Refinamento `status: refinado` (17/07): [[QA Workspace/04 Conhecimento/Tasks/SGV-9610/1 - SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor]].
+- Refinamento `status: refinado` (17/07): [[QA Workspace/02 Demandas/Concluídas/9610/Conhecimento/1 - SGV-9610 - Refinamento Associar Documento Abertura Multi-Setor]].
 - Card [[QA Workspace/02 Demandas/Concluídas/9610/QA/9610 - Bug Associar Documento Abertura Multi-Setor|9610 (DEV)]]: 6 CTs em Gherkin (CT-B01…B06), 5 critérios, ambiente DEV, ligado ao MR !537. **Status `aberto` — zero execução manual.**
 - Doc de módulo [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar]] cobre o comportamento multi-setor.
 

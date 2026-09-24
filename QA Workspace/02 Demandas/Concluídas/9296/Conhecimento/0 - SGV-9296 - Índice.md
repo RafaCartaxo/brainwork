@@ -25,16 +25,16 @@ Resumo → card (critérios + CTs) → mesa de refinamento (detalhe técnico).
 
 ## Resumos em linguagem simples
 
-- [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/1 - SGV-11083 - Resumo|SGV-11083 - Resumo]]
-- [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/1 - SGV-11184 - Resumo|SGV-11184 - Resumo]]
+- [[QA Workspace/02 Demandas/Concluídas/11083/Conhecimento/1 - SGV-11083 - Resumo|SGV-11083 - Resumo]]
+- [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/1 - SGV-11184 - Resumo|SGV-11184 - Resumo]]
 
 ## Mesas de refinamento
 
-- [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11083/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|SGV-11083 - Refinamento]]
-- [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|SGV-11184 - Refinamento]]
+- [[QA Workspace/02 Demandas/Concluídas/11083/Conhecimento/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|SGV-11083 - Refinamento]]
+- [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|SGV-11184 - Refinamento]]
 
 ## Contexto de apoio (não é fonte de critério de aceite)
 
 Documento de produto consolidado do Notion ("Departamento CNPJ") cobre esta epic **e outras 3 tasks** (SGV-8883, 8884, 9898) numa visão única de produto — usado nas duas mesas só como esclarecimento de detalhe (limites de campo, fluxo de convite, formato de exibição), nunca como origem de critério.
 
-[[QA Workspace/04 Conhecimento/Tasks/SGV-9296/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma — departamento como destinatário e signatário]] (recebido 03/09/2026): parte já incorporada à SGV-11184 (formato de exibição, regras de busca/exibição); parte fica registrada aqui como possível escopo futuro da epic — seleção de membro individual como destinatário direto (aguardando Rafael confirmar) e departamento como signatário de assinatura (fora do escopo atual, com selos e notificações próprias).
+[[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma — departamento como destinatário e signatário]] (recebido 03/09/2026): parte já incorporada à SGV-11184 (formato de exibição, regras de busca/exibição); parte fica registrada aqui como possível escopo futuro da epic — seleção de membro individual como destinatário direto (aguardando Rafael confirmar) e departamento como signatário de assinatura (fora do escopo atual, com selos e notificações próprias).

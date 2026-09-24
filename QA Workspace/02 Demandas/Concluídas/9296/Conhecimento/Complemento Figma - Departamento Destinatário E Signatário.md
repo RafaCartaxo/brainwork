@@ -7,7 +7,7 @@ data_recebido: 2026-09-03
 ---
 # Referência: Complemento Figma — departamento como destinatário e signatário
 
-Material recebido de Rafael em 03/09/2026 (`~/Documentos/Complemento 11184.txt`, extraído do Figma), cruzado contra os 22 CTs da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]]. Parte do conteúdo já foi incorporada lá (ver Histórico do card e da mesa); esta nota preserva **o que não entrou**, pra não se perder, e serve de contexto de apoio pra epic [[QA Workspace/04 Conhecimento/Tasks/SGV-9296/0 - SGV-9296 - Índice|SGV-9296]] como um todo.
+Material recebido de Rafael em 03/09/2026 (`~/Documentos/Complemento 11184.txt`, extraído do Figma), cruzado contra os 22 CTs da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]]. Parte do conteúdo já foi incorporada lá (ver Histórico do card e da mesa); esta nota preserva **o que não entrou**, pra não se perder, e serve de contexto de apoio pra epic [[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] como um todo.
 
 > [!info] Não é fonte de critério de aceite da 11184
 > Nada aqui vira CT sem confirmação de Rafael. É registro do que o Figma descreve, pra quando (e se) virar escopo de trabalho — desta ou de uma parte futura da epic.
