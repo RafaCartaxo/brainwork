@@ -8,18 +8,18 @@ responsavel: ""
 resultado: aguardando
 pontos: 0
 ct_resultados:
-  ct_001: ⏳ Aguardando
-  ct_002: ⏳ Aguardando
-  ct_003: ⏳ Aguardando
-  ct_004: ⏳ Aguardando
-  ct_005: ⏳ Aguardando
-  ct_006: ⏳ Aguardando
-  ct_007: ⏳ Aguardando
-  ct_008: ⏳ Aguardando
-  ct_009: ❌ Falhou
-  ct_010: ⏳ Aguardando
-  ct_011: ⏳ Aguardando
-  ct_012: ❌ Falhou
+  ct_001: ✅ Aprovado
+  ct_002: ✅ Aprovado
+  ct_003: ✅ Aprovado
+  ct_004: ✅ Aprovado
+  ct_005: ✅ Aprovado
+  ct_006: ✅ Aprovado
+  ct_007: ✅ Aprovado
+  ct_008: ✅ Aprovado
+  ct_009: ✅ Aprovado
+  ct_010: ✅ Aprovado
+  ct_011: ✅ Aprovado
+  ct_012: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---

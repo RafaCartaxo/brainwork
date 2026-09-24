@@ -48,7 +48,7 @@ As cores dos três dialogs (ícone, cor de destaque, borda superior do `modal Ty
 
 ### Critérios de aceite
 
-- [ ] As cores do modal (ícone, cor de destaque, borda superior do Alert) correspondem exatamente ao protótipo Figma nos três dialogs de encerramento
+- [x] As cores do modal (ícone, cor de destaque, borda superior do Alert) correspondem exatamente ao protótipo Figma nos três dialogs de encerramento
 
 ---
 
