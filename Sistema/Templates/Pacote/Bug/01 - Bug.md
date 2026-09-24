@@ -22,9 +22,9 @@ pontos_alocados: ""
 
 ---
 
-## Problema / contexto
+## Descrição
 
-Durante validação foi identificado que ... (o que está acontecendo, pra quem, em qual situação)
+Durante validação foi identificado que ...
 
 ---
 
@@ -37,49 +37,31 @@ Durante validação foi identificado que ... (o que está acontecendo, pra quem,
 
 ---
 
-## Objetivo
-
-Qual comportamento correto deve passar a funcionar depois da correção?
-
----
-
-## Escopo
-
-- O que esta correção cobre.
-
----
-
-## Fora de escopo
-
-- O que não muda.
-
----
-
-## Critérios de aceite
-
-- C1. O comportamento incorreto deixa de ocorrer após a correção. ^c1
-- C2. O fluxo relacionado permanece íntegro após a correção. ^c2
-
----
-
 ## Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/) [🔍](evidencia://<ID>)
 
 Pendência — nenhuma evidência (vídeo/print) anexada ainda.
 
 ---
 
-## Checklist de entrega ao DEV
+## Resultado Esperado
 
-- [ ] Problema, contexto e passos de reprodução estão claros.
-- [ ] Escopo e fora de escopo estão claros.
-- [ ] Critérios de aceite são objetivos e testáveis.
-- [ ] Plano (se houver) e casos de teste estão vinculados.
-- [ ] `pontos_alocados` foi preenchido.
+-
 
 ---
 
-## Pendências de decisão
+## Critérios de aceite
 
-- Nenhuma. Se houver pendência, manter `status: analise` em `00 README`.
+- [ ] O comportamento incorreto deixa de ocorrer após a correção.
+- [ ] O fluxo relacionado permanece íntegro após a correção.
+
+---
+
+## Checklist de entrega ao DEV
+
+- [ ] Sintoma, ambiente e passos de reprodução estão claros.
+- [ ] Resultado esperado está definido.
+- [ ] Critérios de aceite são objetivos e testáveis.
+- [ ] Casos de teste estão vinculados.
+- [ ] `pontos_alocados` foi preenchido.
 
 > **Defeito, não Bug?** Se este problema saiu da execução de um CT de uma task pai (melhoria/funcionalidade) em DEV, é **Defeito**, não Bug — troque a tag em `00 README.md` (`pai: "<ID da task pai>"`) e crie este pacote dentro de `<pai>/Defeitos/`, não como pacote solto. Regra completa: [[../../Contexto/PADROES_QA.md#Defeito × Bug|PADROES_QA]].
