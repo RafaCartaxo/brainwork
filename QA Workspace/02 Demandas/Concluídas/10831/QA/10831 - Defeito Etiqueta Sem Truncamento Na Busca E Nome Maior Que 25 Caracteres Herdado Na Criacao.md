@@ -42,13 +42,13 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 ![[10831 - defeito 3234.mp4]]
 
 > [!info]- Evidência complementar (cópia de outro card)
-> A gravação abaixo é uma **cópia** da evidência do "Defeito 4" originalmente registrado no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]], seguindo a regra de compartilhamento entre cards do [[QA Workspace/Evidências/README|Evidências/README]] (cópia renomeada com o número deste card).
+> A gravação abaixo é uma **cópia** da evidência do "Defeito 4" originalmente registrado no card agrupado [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]], seguindo a regra de compartilhamento entre cards do [[QA Workspace/Evidências/README|Evidências/README]] (cópia renomeada com o número deste card).
 >
 > Mostra o card de sugestão quebrando com um termo **curto** (`Financeiro 2026`, 15 caracteres) — o mesmo sintoma de overflow, mas antes de eu saber que o termo precisava ter 25+ caracteres pra também expor a herança do nome. Fica como registro de como o defeito apareceu na validação original da SGV-3234.
 >
 > ![[10831 - EV-01 - box da sugestao quebrado (evidencia parcial, reaproveitada da SGV-3234).gif]]
 >
-> *Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] — mesmo vídeo, cópia renomeada.*
+> *Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] — mesmo vídeo, cópia renomeada.*
 
 ---
 
@@ -58,7 +58,7 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 - **Campo de busca**: truncar o texto em **1 linha com ellipsis** (`text-overflow: ellipsis; white-space: nowrap; overflow: hidden;`)
 - **Card "Criar etiqueta [termo]"**: permitir **quebra em múltiplas linhas**, respeitando a largura do card (`word-break: break-word;`)
-- **Herança no drawer**: o nome pré-preenchido não deveria ultrapassar os 25 caracteres que a etiqueta permite. A doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] define esse limite (*"Nome: limite de 25 caracteres, com contador n/25"*), e o campo já **bloqueia digitação** acima disso quando preenchido diretamente (confirmado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], CT-027) — pré-preencher acima do limite é inconsistente com essa regra já validada.
+- **Herança no drawer**: o nome pré-preenchido não deveria ultrapassar os 25 caracteres que a etiqueta permite. A doc de [[QA Workspace/04 Conhecimento/Módulos/Etiquetas|Etiquetas]] define esse limite (*"Nome: limite de 25 caracteres, com contador n/25"*), e o campo já **bloqueia digitação** acima disso quando preenchido diretamente (confirmado na validação da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], CT-027) — pré-preencher acima do limite é inconsistente com essa regra já validada.
 
 ---
 
@@ -141,7 +141,7 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na 1ª rodada de validação em DEV, registrado inicialmente como "Defeito 4" no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] e **extraído pra ticket próprio** em 13/08/2026, a pedido do Rafael. A descrição da task já existente no Notion é mais precisa que o achado original (traz a causa em CSS) e revela um comportamento novo — a herança do nome — que não tinha sido testado até então.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na 1ª rodada de validação em DEV, registrado inicialmente como "Defeito 4" no card agrupado [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] e **extraído pra ticket próprio** em 13/08/2026, a pedido do Rafael. A descrição da task já existente no Notion é mais precisa que o achado original (traz a causa em CSS) e revela um comportamento novo — a herança do nome — que não tinha sido testado até então.
 
 - Observações:
     - **Prioridade ajustada pra média**: o achado original tinha severidade baixa (só o box quebrando visualmente). A herança do nome acima de 25 caracteres na criação é um problema de consistência de dado, não só visual — subiu a severidade.
@@ -149,6 +149,6 @@ Além disso, ao acionar essa sugestão com um termo de mais de 25 caracteres, o 
     - O comportamento esperado (regras de CSS) veio da descrição da task no Notion. Não foi verificado contra um nó específico do Figma de handoff — se houver um, adicionar aqui.
 
 - Histórico:
-    - 2026-08-13 - 🐛 Bug cadastrado (SGV-10831 já existente no Notion; card do vault criado a partir da task, extraído do agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])
+    - 2026-08-13 - 🐛 Bug cadastrado (SGV-10831 já existente no Notion; card do vault criado a partir da task, extraído do agrupado [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])
     - 2026-08-13 - 📹 Evidência principal roteada (`10831 - defeito 3234.mp4`) — gravação do Rafael, cobre os três CTs
-    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)

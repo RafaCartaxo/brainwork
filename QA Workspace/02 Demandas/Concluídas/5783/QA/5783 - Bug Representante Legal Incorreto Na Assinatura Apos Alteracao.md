@@ -115,7 +115,7 @@ Depois de alterar o responsável legal da PJ, a assinatura leva pro documento os
 ### Informações adicionais
 
 - Demanda relacionada: **SGV-5783** — `Alta`, dev **Diogo Sobreira** (Squad 1), batida na [[QA Workspace/Planejamento/SP15|Triagem SP15]] em 17/07 com o título "Representante legal incorreto na assinatura após alteração".
-- **Card criado retroativamente em 30/07**, no momento da aprovação — o bug não tinha card no vault, só a entrada da triagem e o histórico de análise. Descrição e passo a passo reconstruídos do título oficial + narrativa da validação (mesmo caminho da [[QA Workspace/02 Demandas/HML/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]]).
+- **Card criado retroativamente em 30/07**, no momento da aprovação — o bug não tinha card no vault, só a entrada da triagem e o histórico de análise. Descrição e passo a passo reconstruídos do título oficial + narrativa da validação (mesmo caminho da [[QA Workspace/02 Demandas/Concluídas/9405/QA/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]]).
 - **Gate de doc** (2026-07-30, fluxo 8): **divergência confirmada** — o comportamento contrariava regra escrita em [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]], em dois pontos que se somam:
 
     | Onde | O que diz |

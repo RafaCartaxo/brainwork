@@ -18,7 +18,7 @@ deploy: pendente_release
 
 ### Descrição
 
-Durante validação foi identificado que a prévia do documento não carrega na tela de solicitação de assinatura — o sistema não exibe o preview do arquivo, impedindo conferir o documento antes/durante o fluxo de assinatura. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
+Durante validação foi identificado que a prévia do documento não carrega na tela de solicitação de assinatura — o sistema não exibe o preview do arquivo, impedindo conferir o documento antes/durante o fluxo de assinatura. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
 
 curl1 — busca as informações do artefato/documento (metadados, URLs do arquivo) pro fluxo de assinatura:
 
@@ -122,7 +122,7 @@ Então verifico que a prévia do documento não carrega
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
 - Observações: Achado na mesma revalidação da nova arquitetura. Não encontrei CT nem item da tabela de Regressão que bata exatamente — o mais próximo é a SGV-8661 ("Documentos e despachos não carregam ao baixar documento personalizado", CT-029/CT-030), mas aquele é sobre download de documento personalizado, não prévia no fluxo de assinatura — temas parecidos, não a mesma coisa, então não linkei os dois. curl2 (fetch direto do PDF no S3) era onde a falha aparecia na prática. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado

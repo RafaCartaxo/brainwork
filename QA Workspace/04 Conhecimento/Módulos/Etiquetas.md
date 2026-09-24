@@ -8,7 +8,7 @@ revisado: 2026-08-12
 # Etiquetas
 
 > [!info] Sobre esta nota
-> Importada do Notion em 12/08/2026 (fluxo 8), a partir da página oficial **Etiquetas**. Cobre a base do módulo **mais três entregas distintas** — só a primeira é escopo da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]].
+> Importada do Notion em 12/08/2026 (fluxo 8), a partir da página oficial **Etiquetas**. Cobre a base do módulo **mais três entregas distintas** — só a primeira é escopo da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]].
 
 ## Visão geral
 
@@ -159,7 +159,7 @@ Opções: **Editar** (abre drawer) · **Nova subetiqueta** (só em etiqueta-pai)
 
 ## Comportamentos observados em teste
 
-*Registrado na 1ª rodada de validação em DEV da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], em 13/08/2026 (v12.38.39.2).*
+*Registrado na 1ª rodada de validação em DEV da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], em 13/08/2026 (v12.38.39.2).*
 
 - **Limite de 25 caracteres**: bloqueio **silencioso**. O campo aceita só os 25 primeiros, o contador trava em `25/25` e **não há mensagem de erro**.
 - **Visibilidade de etiqueta compartilhada**: etiqueta compartilhada com um setor do qual o usuário **não** participa não aparece no menu de aplicação — mas **aparece** na página da feature (para quem criou) e no filtro da Mesa. Criar uma assim pelo drawer a aplica ao documento e exibe o toast de sucesso, embora ela fique invisível no menu. É a regra de visualização por permissão, não defeito.
@@ -172,7 +172,7 @@ Opções: **Editar** (abre drawer) · **Nova subetiqueta** (só em etiqueta-pai)
 
 ## Dúvidas em aberto
 
-- [ ] **"Modal de etiquetas não fecha ao aplicar na mesa"** — relatado no detalhamento original da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], mas **não há especificação** na doc de design de 07/05. Confirmar com produto/design se entrou na entrega. **Pista de 13/08**: o menu de contexto do card **não fecha** ao abrir o painel de etiquetas e chega a cobrir o botão "Nova etiqueta" (Defeito 7 em [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]) — pode ser a mesma causa.
+- [ ] **"Modal de etiquetas não fecha ao aplicar na mesa"** — relatado no detalhamento original da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]], mas **não há especificação** na doc de design de 07/05. Confirmar com produto/design se entrou na entrega. **Pista de 13/08**: o menu de contexto do card **não fecha** ao abrir o painel de etiquetas e chega a cobrir o botão "Nova etiqueta" (Defeito 7 em [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]]) — pode ser a mesma causa.
 - [x] ~~A doc não define o que acontece ao **exceder 25 caracteres** no nome (bloqueia a digitação ou exibe erro?).~~ **Resolvido em 13/08**: bloqueia a digitação, sem mensagem de erro. Registrado em Comportamentos observados.
 - [ ] O checkbox "Não quero receber este alerta novamente" é **por usuário, por diálogo, ou global**? E onde se desfaz essa escolha? *(13/08: confirmado que o checkbox **existe** nos dois diálogos — edição com mudança de compartilhamento e exclusão de compartilhada — mas o alcance segue indefinido.)*
 
@@ -180,7 +180,7 @@ Opções: **Editar** (abre drawer) · **Nova subetiqueta** (só em etiqueta-pai)
 
 ## Cards relacionados
 
-- [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — Refatoração de etiquetas (em validação em DEV)
+- [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — Refatoração de etiquetas (em validação em DEV)
 - SGV-5416 — Teste de usabilidade (backlog), relacionado à 3234 na task
 
 ---

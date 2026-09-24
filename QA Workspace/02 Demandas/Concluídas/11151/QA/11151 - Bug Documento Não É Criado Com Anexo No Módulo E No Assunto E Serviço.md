@@ -107,7 +107,7 @@ Então verifico que o documento não é criado com sucesso e o sistema retorna e
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
 - Observações: Achado testando criação/anexo de documento no novo ambiente de homologação (nova arquitetura). Não bate exatamente com nenhum CT já listado na SGV-8321 — CT-005 é "criar documento" sem anexo, CT-023 é "anexar arquivo em campo de texto longo" (contexto diferente dos campos de anexo do módulo/assunto e serviço). Não marquei nenhum CT da 8321 como reprovado por isso — avaliar se vale um CT novo lá. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado

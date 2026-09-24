@@ -18,7 +18,7 @@ ambiente: DEV
 
 ### Descrição
 
-Durante a validação do CT-002c da [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] foi identificado que a área de clique do accordion do departamento não respeita o padrão definido no Figma — a distinção entre clicar no ícone de chevron (expandir/recolher os participantes) e clicar na linha do departamento (selecioná-lo como destinatário) não está sendo aplicada como especificado. Comportamento exato observado, ver gravação em Evidências.
+Durante a validação do CT-002c da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] foi identificado que a área de clique do accordion do departamento não respeita o padrão definido no Figma — a distinção entre clicar no ícone de chevron (expandir/recolher os participantes) e clicar na linha do departamento (selecioná-lo como destinatário) não está sendo aplicada como especificado. Comportamento exato observado, ver gravação em Evidências.
 
 ---
 
@@ -85,9 +85,9 @@ Durante a validação do CT-002c da [[QA Workspace/02 Demandas/DEV/11184 - Funci
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — defeito do CT-002c, achado na validação em DEV.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — defeito do CT-002c, achado na validação em DEV.
 - Observações:
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-03 - 🐛 Defeito cadastrado (CT-002c da SGV-11184 reprovado)
-    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], validação em homologação acontece pela task principal
+    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], validação em homologação acontece pela task principal

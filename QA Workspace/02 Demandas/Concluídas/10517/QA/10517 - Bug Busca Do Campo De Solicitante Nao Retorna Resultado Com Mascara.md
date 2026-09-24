@@ -21,7 +21,7 @@ Durante validação foi identificado que a busca do **campo de solicitante** —
 
 Como o campo apresenta a máscara para quem digita, o caminho natural do usuário é justamente o que não funciona: ele preenche no formato que a tela sugere e conclui que o solicitante não existe.
 
-O comportamento **reproduz em produção e em homologação**, e é **anterior** à [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — não é regressão daquela entrega, apenas foi encontrado durante a execução dela.
+O comportamento **reproduz em produção e em homologação**, e é **anterior** à [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — não é regressão daquela entrega, apenas foi encontrado durante a execução dela.
 
 ---
 
@@ -47,7 +47,7 @@ E quando eu pesquiso o **mesmo** solicitante **sem** a pontuação, verifico que
 A busca do campo de solicitante retorna o registro **independentemente da presença de pontuação** — digitando com máscara ou sem, o resultado é o mesmo.
 
 > [!warning]- Gate de doc: não existe doc do construtor de formulários, mas existe precedente na doc de outro módulo
-> **Não há doc do construtor de formulários** em `04 Conhecimento/Módulos/` — é a mesma lacuna já registrada nos CT-023 e CT-027 da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]. Então **nada escrito descreve como esta busca deve tratar pontuação**.
+> **Não há doc do construtor de formulários** em `04 Conhecimento/Módulos/` — é a mesma lacuna já registrada nos CT-023 e CT-027 da [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]. Então **nada escrito descreve como esta busca deve tratar pontuação**.
 >
 > O que existe é **precedente em outro módulo**: a doc de [[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento|Rastrear Documento]] tem regra explícita — *"o campo deve suportar CPF/CNPJ com pontuação (pontos, traços, barras); o sistema preserva visualmente o que foi digitado/colado, mas **a busca funciona independente da presença de pontuação**"* — e o tooltip daquele input cita justamente `solicitante (CPF/CNPJ)`.
 >
@@ -127,12 +127,12 @@ A busca do campo de solicitante retorna o registro **independentemente da presen
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — **apenas origem do achado**. Reproduz em produção e homologação, é anterior ao CNPJ alfanumérico, e por isso **não virou CT da melhoria** nem afeta critério dela.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — **apenas origem do achado**. Reproduz em produção e homologação, é anterior ao CNPJ alfanumérico, e por isso **não virou CT da melhoria** nem afeta critério dela.
 
 - Observações:
     - **Pode ser a mesma causa raiz do defeito que o Waldemar abriu** no `TC-712` (CT-016): *"Busca por CNPJ alfanumérico não retorna resultado (o item existe)"*. Se ele pesquisou **com máscara**, o que ele registrou como "alfanumérico não retorna" pode ser na verdade "**mascarado** não retorna" — mesmo defeito, diagnóstico diferente. Vale confirmar com ele antes que os dois virem correções separadas.
     - Sem doc do construtor de formulários, a expectativa se apoia em **precedente de outro módulo** ([[QA Workspace/04 Conhecimento/Módulos/Rastrear Documento|Rastrear Documento]]), não em regra desta tela — ver o gate de doc no Resultado Esperado.
 
 - Histórico:
-    - 2026-07-31 - 🐛 Bug cadastrado (achado durante a execução da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção e homologação)
+    - 2026-07-31 - 🐛 Bug cadastrado (achado durante a execução da [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção e homologação)
     - 2026-08-19 - ✅ Aprovada em homologação (busca com máscara passa a retornar o registro — CNPJ e CPF, colado e digitado; CT-B01/B02/B03 confirmados). Validação em DEV não teve registro separado; correção já disponível em homologação quando retomado. Confirmação com o Waldemar sobre o TC-712 (possível mesma causa raiz) segue pendente.

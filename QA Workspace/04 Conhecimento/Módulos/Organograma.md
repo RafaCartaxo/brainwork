@@ -213,7 +213,7 @@ Eventos registrados (lista literal do export), agrupados em três blocos:
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
-- [[../../02 Demandas/DEV/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977 - Timeout na edição de regras do Organograma]]
+- [[../../02 Demandas/Concluídas/8977/QA/8977 - Bug Timeout Edicao Regras Organograma|SGV-8977 - Timeout na edição de regras do Organograma]]
 
 ## Referências
 <!-- Docs do repo (caminho), links externos, leis -->

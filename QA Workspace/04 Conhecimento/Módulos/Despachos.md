@@ -81,7 +81,7 @@ Arquivos `.dwg` **devem ser aceitos como anexo nos despachos**, tanto no ambient
 
 O motivo registrado na doc é um caso de uso concreto: quando um anexo é **reprovado na abertura do processo**, o cidadão precisa reencaminhar o arquivo, e sem suporte à extensão ele fica impedido de fazer isso.
 
-> [!important] Regra que respalda a [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]
+> [!important] Regra que respalda a [[QA Workspace/02 Demandas/Concluídas/10482/QA/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]
 > Esta é a regra escrita que faltava no gate de doc daquele card: DWG **é** formato aceito em despacho. Um `.dwg` que passa no upload e faz a criação do documento falhar **contradiz regra documentada** — não é lacuna de especificação.
 >
 > O que a doc **não** define: quais arquivos `.dwg` são válidos (tamanho, versão do formato). Então a distinção "recusar com mensagem" × "estourar erro na geração" segue sem respaldo escrito.
@@ -101,7 +101,7 @@ Ação **crítica e irreversível**. Objetivo: invalidar trâmites internos pres
 | Restrição de origem | **Não** é permitido cancelar despacho gerado por ação sistêmica (Retificou, Associou, Desassociou, Cancelou, Revogou, Suspendeu, Pausou, Retomou) |
 | Permissão | Servidor **N1**, **Administrador** ou **Administrador Setorial** do **setor dono do documento** |
 | Permissão (N2) | Usuário básico cancela **apenas despacho de sua própria autoria** |
-| ⚠️ Divergência | **O produto não implementa esta regra.** O comportamento observado indica que a checagem olha **quem criou o documento** — ignorando tanto a autoria do despacho quanto o cargo no setor dono. É a [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]]; ver a tabela de cenários em Comportamentos observados |
+| ⚠️ Divergência | **O produto não implementa esta regra.** O comportamento observado indica que a checagem olha **quem criou o documento** — ignorando tanto a autoria do despacho quanto o cargo no setor dono. É a [[QA Workspace/02 Demandas/Concluídas/10596/QA/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]]; ver a tabela de cenários em Comportamentos observados |
 | Irreversibilidade | Cancelado **não** pode ser reaberto nem retomado |
 | Justificativa | **Obrigatória** (texto) para concluir |
 
@@ -151,7 +151,7 @@ Permite **corrigir erros de preenchimento** em despacho já emitido e em tramita
 **Impactos:**
 
 - Tag **"Retificado"** na timeline e em todas as visualizações.
-- **Todas as assinaturas** (concluídas ou pendentes) do despacho original **e dos anexos** são canceladas, por alteração de conteúdo. ⚠️ **O produto não faz isso na saída impressa**: ao retificar uma resposta já assinada, a assinatura segue aparecendo na impressão sem sinalização de invalidada — [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]].
+- **Todas as assinaturas** (concluídas ou pendentes) do despacho original **e dos anexos** são canceladas, por alteração de conteúdo. ⚠️ **O produto não faz isso na saída impressa**: ao retificar uma resposta já assinada, a assinatura segue aparecendo na impressão sem sinalização de invalidada — [[QA Workspace/02 Demandas/Concluídas/10607/QA/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]].
 - Justificativa exibida ao **final da subthread** do despacho retificado.
 - Notificações internas e e-mails automáticos para todos os envolvidos.
 - **Todos os despachos de resposta ao despacho retificado devem ser cancelados**, seguindo a regra de despacho cancelado.
@@ -225,7 +225,7 @@ O único critério que explica os cinco é **"é o criador do documento?"** — 
 - **Ignora a autoria do despacho.** No cenário 5 o servidor criou o próprio despacho e não consegue cancelá-lo. A regra dá essa permissão explicitamente.
 - **Ignora o cargo no setor dono.** Ainda no 5, ele é **Administrador do CIM**, que é o setor dono. Deveria passar pela trilha principal, independente da autoria.
 
-O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilhas e é negado nas duas. Virou a [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]].
+O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilhas e é negado nas duas. Virou a [[QA Workspace/02 Demandas/Concluídas/10596/QA/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]].
 
 > [!warning]- Correção de rota: o que eu havia registrado aqui mais cedo estava errado
 > Na primeira versão desta seção (manhã de 04/08) eu concluí, a partir do cenário 4 isolado, que a regra real era "setor dono **ou** autoria, com autoria valendo para qualquer nível" — e cheguei a reescrever a tabela de permissão por causa disso. O cenário 5 falsificou essa leitura: no 4 o autor conseguia cancelar porque **também era o criador do documento**, não porque era autor. A tabela de permissão foi restaurada para o texto da doc oficial, e a divergência passou a ser registrada como defeito do produto, que é o que ela é.
@@ -235,15 +235,15 @@ O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilh
 
 ### Outros
 
-- **2026-08-04 (DEV) — retificar resposta assinada não invalida a assinatura na impressão.** A regra manda cancelar **todas** as assinaturas por alteração de conteúdo, e o diálogo do Figma avisa o usuário disso antes de confirmar. Na prática a assinatura segue saindo no papel **como se valesse**: [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]]. Segundo defeito da mesma rodada de validação da 5152 — o outro é no cancelamento.
+- **2026-08-04 (DEV) — retificar resposta assinada não invalida a assinatura na impressão.** A regra manda cancelar **todas** as assinaturas por alteração de conteúdo, e o diálogo do Figma avisa o usuário disso antes de confirmar. Na prática a assinatura segue saindo no papel **como se valesse**: [[QA Workspace/02 Demandas/Concluídas/10607/QA/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]]. Segundo defeito da mesma rodada de validação da 5152 — o outro é no cancelamento.
 
 - **2026-08-04 — a grafia da tarja foi resolvida no Figma, e esta doc estava errada.** A página do módulo escreve "Sem efeito"; o design mostra **`SEM EFEITO`** em caixa alta, e a **task estava certa**. Corrigido acima. Ficou claro também que são **três** elementos distintos, que vinham sendo confundidos: a **tarja `SEM EFEITO`** (marca d'água diagonal no PDF), a tag **`Anulado`** (drawer de download personalizado, no despacho e em cada anexo) e a tag **"Despacho cancelado"** (timeline).
 - **2026-08-04 — copys de notificação e e-mail lidas no Figma** (páginas `[SGV-7448]` e `[SGV-7450]` do arquivo Tramitação — Handoff). Estão transcritas no card da [[QA Workspace/02 Demandas/Concluídas/5152/QA/5152 - Funcionalidade Cancelar E Retificar Despacho|SGV-5152]], em "Copys confirmadas no Figma". Dois pontos que mudam expectativa de teste: **(a)** o e-mail traz o botão **"Acessar documento"** e o texto "acesse o documento para visualizar a justificativa" — ou seja o link leva ao **documento**, não direto à justificativa, ao contrário do que esta doc afirmava; **(b)** o diálogo da retificação diz "Ao retificar este **documento**" quando a ação é sobre o **despacho** — provável **defeito de copy no design**.
 - **2026-08-04 — o design não tem toast de sucesso.** Nem para cancelar nem para retificar: existem o diálogo de confirmação *antes* da ação, a notificação na central, o e-mail e os artefatos de saída. Se aparecer toast na execução, é copy nova e não especificada.
-- **2026-08-03 (DEV e homologação) — `.dwg` aceito no upload faz a criação do documento/despacho falhar** em 3 arquivos específicos: [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Contradiz a regra de "Extensão DWG" acima, que manda aceitar `.dwg` como anexo em despacho no interno e no externo.
+- **2026-08-03 (DEV e homologação) — `.dwg` aceito no upload faz a criação do documento/despacho falhar** em 3 arquivos específicos: [[QA Workspace/02 Demandas/Concluídas/10482/QA/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Contradiz a regra de "Extensão DWG" acima, que manda aceitar `.dwg` como anexo em despacho no interno e no externo.
 
 ## Dúvidas em aberto
-- [ ] **Como a assinatura invalidada deve aparecer na saída do despacho RETIFICADO?** A doc garante que as assinaturas são canceladas, mas descreve o tratamento visual só para o **cancelado** (sinalização de sem efeito, tarja `SEM EFEITO`). Para o retificado define a tag "Retificado" nas visualizações, sem dizer o que acontece com a assinatura no papel. É a lacuna que faz o critério da [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] aceitar "marcada como inválida" **ou** "ausente"
+- [ ] **Como a assinatura invalidada deve aparecer na saída do despacho RETIFICADO?** A doc garante que as assinaturas são canceladas, mas descreve o tratamento visual só para o **cancelado** (sinalização de sem efeito, tarja `SEM EFEITO`). Para o retificado define a tag "Retificado" nas visualizações, sem dizer o que acontece com a assinatura no papel. É a lacuna que faz o critério da [[QA Workspace/02 Demandas/Concluídas/10607/QA/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] aceitar "marcada como inválida" **ou** "ausente"
 - [x] ~~**O "Retificar despacho" está implementado?**~~ **Respondido em 04/08/2026**: sim, em DEV — mesmo card do cancelar, a SGV-5152, status "Testando em Dev"
 - [ ] **A menção via "@" está implementada?** Mesma situação: doc de 13/05/2026 e item de backlog `[Melhoria-CX]` aberto. **Não** está coberta pela SGV-5152, que é só cancelar/retificar
 - [x] ~~**Qual a regra de permissão de cancelar que vale?**~~ **Resolvido por validação em 04/08/2026**: é **setor dono OU autoria**, com a autoria valendo para qualquer nível — ver "Permissão de cancelar" em Comportamentos observados. A redação desta página estava errada, não o produto
@@ -257,18 +257,18 @@ O cenário 5 é o mais forte porque o servidor deveria passar por **duas** trilh
 - [ ] **Cidadão.** A notificação interna fala em "servidores envolvidos" e o e-mail em "participantes". Cidadão em documento com abertura externa recebe o e-mail com link da justificativa? Vê a tarja "Sem efeito" no ambiente externo?
 - [ ] **O que entra em "ações desfeitas/refeitas"?** Comentários, menções via "@", solicitações de assinatura criadas depois pelo meatball — nenhuma fonte enumera o conjunto
 - [ ] **Numeração de despacho cancelado.** Preservação está escrita só para a retificação. Cancelado mantém o número (deixando buraco na sequência) ou é reaproveitado?
-- [ ] **Quais arquivos `.dwg` são válidos?** A regra diz que a extensão é aceita, mas não define tamanho nem versão do formato — é exatamente a lacuna que deixa o 5º critério da [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]] inexecutável (não dá pra montar um arquivo "inválido" sem saber a regra)
+- [ ] **Quais arquivos `.dwg` são válidos?** A regra diz que a extensão é aceita, mas não define tamanho nem versão do formato — é exatamente a lacuna que deixa o 5º critério da [[QA Workspace/02 Demandas/Concluídas/10482/QA/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]] inexecutável (não dá pra montar um arquivo "inválido" sem saber a regra)
 - [ ] **Revisor de anexos (selos, carimbos, anotações em DWG) não está coberto por esta doc.** A SGV-8698 entregou isso e a regra não mora aqui nem em módulo nenhum do vault — falta identificar onde a doc oficial dessa funcionalidade vive
 - [ ] O export trouxe "1 more…" na lista de itens do backlog da página — **um item ficou de fora**. O reexport de 04/08 **cortou no mesmo lugar**, então o 6º item segue desconhecido; pra fechar é preciso expandir a lista no Notion **antes** de exportar
-- [ ] ⚠️ **O export está truncado no fim, e existe um callout que nunca chegou ao vault.** A última linha dos dois exports é um `>` solitário, logo depois da seção "Extensão DWG" — é o início de um callout cujo conteúdo não veio. **É o candidato mais provável a conter a regra de quais `.dwg` são válidos** (tamanho, versão), que é justamente a lacuna acima e o que bloqueia o caso negativo da [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Vale abrir a página no Notion e ler esse bloco
+- [ ] ⚠️ **O export está truncado no fim, e existe um callout que nunca chegou ao vault.** A última linha dos dois exports é um `>` solitário, logo depois da seção "Extensão DWG" — é o início de um callout cujo conteúdo não veio. **É o candidato mais provável a conter a regra de quais `.dwg` são válidos** (tamanho, versão), que é justamente a lacuna acima e o que bloqueia o caso negativo da [[QA Workspace/02 Demandas/Concluídas/10482/QA/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]]. Vale abrir a página no Notion e ler esse bloco
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
-- [[QA Workspace/02 Demandas/DEV/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]] — anexo DWG em documento/despacho (aberto; divergência com a regra de Extensão DWG)
+- [[QA Workspace/02 Demandas/Concluídas/10482/QA/10482 - Bug Criacao De Documento E Despacho Falha Com Anexos DWG Especificos|SGV-10482]] — anexo DWG em documento/despacho (aberto; divergência com a regra de Extensão DWG)
 - [[QA Workspace/02 Demandas/Concluídas/9042/QA/9042 - Melhoria Ações de Tramitação e Encerramento na Emissão de Despacho|SGV-9042]] — ações de tramitação e encerramento na emissão de despacho
-- [[QA Workspace/02 Demandas/HML/7829 - Bug Anexos Despacho Não Carregados Emitir Assinar Cidadão|SGV-7829]] — anexos do despacho ao emitir e assinar como cidadão
-- [[QA Workspace/02 Demandas/HML/5360 - Bug Assinatura Despacho Customizado Não Aparece Pendentes|SGV-5360]] — solicitação de assinatura em despacho customizado
-- [[QA Workspace/02 Demandas/HML/9977 - Bug Nome Oculto Cópia Despacho|SGV-9977]] — servidor em cópia no despacho
+- [[QA Workspace/02 Demandas/Concluídas/7829/QA/7829 - Bug Anexos Despacho Não Carregados Emitir Assinar Cidadão|SGV-7829]] — anexos do despacho ao emitir e assinar como cidadão
+- [[QA Workspace/02 Demandas/Concluídas/5360/QA/5360 - Bug Assinatura Despacho Customizado Não Aparece Pendentes|SGV-5360]] — solicitação de assinatura em despacho customizado
+- [[QA Workspace/02 Demandas/Concluídas/9977/QA/9977 - Bug Nome Oculto Cópia Despacho|SGV-9977]] — servidor em cópia no despacho
 - [[QA Workspace/02 Demandas/Concluídas/9499/QA/9499 - Bug Sigilo Despacho Servidor Autor|SGV-9499]] e [[QA Workspace/99 Arquivo/Bug Sigilo Despacho Cidadão Autor|Bug Sigilo Despacho Cidadão Autor]] — regras de sigilo
 - [[QA Workspace/02 Demandas/Concluídas/8380/QA/8380 - Bug Referencia Resposta Despacho Cadeia Respostas|SGV-8380]] — referência da resposta na cadeia, mesmo tema da seção "Referência de origem nos eventos"
 - [[QA Workspace/02 Demandas/Concluídas/6375/QA/6375 - Bug Data Ausente Evento Despacho|SGV-6375]] — evento do despacho

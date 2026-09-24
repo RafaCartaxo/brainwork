@@ -167,4 +167,4 @@ Ver seção "## Casos de teste" do card — CTs completos com Dado/Quando/Então
 
 - 2026-09-02 - Material recebido (3 arquivos do Notion: requisito técnico completo, doc de produto consolidado, resumo já em formato de QA)
 - 2026-09-02 - Destilado escrito a partir dos 3 documentos cruzados; 1 ponto em aberto identificado (contagem de participantes) e mantido como pendência explícita, não decidido
-- 2026-09-02 - 📝 Card criado em [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|02 Demandas/DEV/11083]], com 33 CTs (5 grupos) derivados do Destilado
+- 2026-09-02 - 📝 Card criado em [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|02 Demandas/DEV/11083]], com 33 CTs (5 grupos) derivados do Destilado

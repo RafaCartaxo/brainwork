@@ -32,7 +32,7 @@ Três famílias de ambiente de desenvolvimento, todas em `*.d10fnl6gn002xw.ampli
 
 ### Legado (branch por dev — sistema atual, o que o cliente usa)
 
-Cada dev tem seu ambiente de branch, no padrão `dev-<nome>`. É por aqui que a validação em DEV acontece pra sprint normal do legado — e é o que aparece na seção **Ambiente** dos cards (ex.: o card da [[QA Workspace/02 Demandas/DEV/10393 - Bug Aviso Assinaturas Digitais Emitir Assinar Cidadão|SGV-10393]] registra "ambiente de branch `dev-diogo-nobrega`").
+Cada dev tem seu ambiente de branch, no padrão `dev-<nome>`. É por aqui que a validação em DEV acontece pra sprint normal do legado — e é o que aparece na seção **Ambiente** dos cards (ex.: o card da [[QA Workspace/02 Demandas/Concluídas/10393/QA/10393 - Bug Aviso Assinaturas Digitais Emitir Assinar Cidadão|SGV-10393]] registra "ambiente de branch `dev-diogo-nobrega`").
 
 | Dev | Subdomínio |
 |---|---|
@@ -53,7 +53,7 @@ Monta-se a URL assim: `https://<subdomínio>.d10fnl6gn002xw.amplifyapp.com/login
 
 ### Nova Arquitetura (migração Lambda → EKS, testes em paralelo)
 
-Ambiente único e compartilhado (não é por dev), usado na revalidação da nova arquitetura — ver [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
+Ambiente único e compartilhado (não é por dev), usado na revalidação da nova arquitetura — ver [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
 
 | Ambiente | Base |
 |---|---|

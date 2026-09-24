@@ -18,7 +18,7 @@ deploy: pendente_release
 
 ### Descrição
 
-Durante validação foi identificado que o download da versão compactada do documento retorna erro em vez de concluir. Já era um bug conhecido da rodada anterior de validação da nova arquitetura ([[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]] → tabela de Regressão, SGV-8660) e reapareceu nesta revalidação em homologação.
+Durante validação foi identificado que o download da versão compactada do documento retorna erro em vez de concluir. Já era um bug conhecido da rodada anterior de validação da nova arquitetura ([[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]] → tabela de Regressão, SGV-8660) e reapareceu nesta revalidação em homologação.
 
 ```jsx
 curl 'https://dev.sogov.net/api-dev/graphql' \
@@ -102,7 +102,7 @@ Então verifico que o sistema retorna erro em vez de concluir o download
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
 - Observações: Corresponde à SGV-8660 da rodada anterior (tabela de Regressão da SGV-8321, "Erro ao tentar realizar download Versão compactada") — revalidação nesta rodada reproduziu o mesmo erro. A tabela correlacionava com CT-022, mas CT-022 é sobre expiração de link de download, tema diferente do erro de download em si — não bate exatamente, mesmo caso do que já foi observado na SGV-11151. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado

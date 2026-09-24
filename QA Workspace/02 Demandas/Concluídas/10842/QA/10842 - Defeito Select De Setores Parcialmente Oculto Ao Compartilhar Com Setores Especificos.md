@@ -78,12 +78,12 @@ Durante validação foi identificado que, ao iniciar a criação de uma nova eti
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV.
 
 - Observações:
-    - Relacionado ao seletor de setores do drawer — nota de **vizinhança** (não duplicata) adicionada no card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] (o **Defeito 6** cobre "Selecionados:", contador `+qtd` e limpar todos; a **ocultação por volume da lista** deste card é um sintoma distinto).
-    - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
+    - Relacionado ao seletor de setores do drawer — nota de **vizinhança** (não duplicata) adicionada no card agrupado [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]] (o **Defeito 6** cobre "Selecionados:", contador `+qtd` e limpar todos; a **ocultação por volume da lista** deste card é um sintoma distinto).
+    - ⚠️ Os subitens da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
 
 - Histórico:
-    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)
-    - 2026-08-13 - 🐛 Bug cadastrado (SGV-10842; achado na validação da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido, reteste OK) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08)
+    - 2026-08-13 - 🐛 Bug cadastrado (SGV-10842; achado na validação da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]])

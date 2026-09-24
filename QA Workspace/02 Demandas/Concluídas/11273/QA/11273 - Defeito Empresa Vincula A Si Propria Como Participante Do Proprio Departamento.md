@@ -83,7 +83,7 @@ A própria empresa responsável pelo departamento **não deve estar disponível 
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]] — defeito do grupo B (Gerenciamento de participantes); nenhum CT hoje cobria bloqueio de auto-vínculo (CT-012 bloqueia participante de **outra instância**, regra diferente) — gap de cobertura exposto por este defeito.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]] — defeito do grupo B (Gerenciamento de participantes); nenhum CT hoje cobria bloqueio de auto-vínculo (CT-012 bloqueia participante de **outra instância**, regra diferente) — gap de cobertura exposto por este defeito.
 - Observações:
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:

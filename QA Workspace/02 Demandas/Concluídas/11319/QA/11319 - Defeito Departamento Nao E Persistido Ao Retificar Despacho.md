@@ -38,7 +38,7 @@ Durante validação foi identificado que, ao emitir um despacho com um **departa
 
 ### Resultado Esperado
 
-[[QA Workspace/04 Conhecimento/Módulos/Despachos#Retificar despacho|Despachos.md]] documenta que a tela de retificação tem **"Campos editáveis: destinatários..."** — o fluxo existe pra corrigir erros de preenchimento, o que exige que o campo mostre o valor **atual real** antes de qualquer edição. Departamento é um destinatário válido desde a [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]]:
+[[QA Workspace/04 Conhecimento/Módulos/Despachos#Retificar despacho|Despachos.md]] documenta que a tela de retificação tem **"Campos editáveis: destinatários..."** — o fluxo existe pra corrigir erros de preenchimento, o que exige que o campo mostre o valor **atual real** antes de qualquer edição. Departamento é um destinatário válido desde a [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]]:
 
 - A tela de retificação deve mostrar **o departamento** selecionado no campo de destinatário, exatamente como foi solicitado no despacho original.
 - Não deve reverter/substituir pelo cidadão PJ/empresa ao qual o departamento pertence.
@@ -84,10 +84,10 @@ Durante validação foi identificado que, ao emitir um despacho com um **departa
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — defeito achado em teste exploratório, não em CT formal (a 11184 ainda não tem grupo de CT pra retificação de despacho, ver nota em Pontos de atenção do card).
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — defeito achado em teste exploratório, não em CT formal (a 11184 ainda não tem grupo de CT pra retificação de despacho, ver nota em Pontos de atenção do card).
 - Observações:
     - Risco funcional além do visual: se o servidor não perceber a troca e salvar a retificação assim, o destinatário real do despacho pode mudar de departamento pra PJ/empresa sem intenção — daí a prioridade alta.
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-03 - 🐛 Defeito cadastrado (achado na validação da SGV-11184, evidência já no vault)
-    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], validação em homologação acontece pela task principal
+    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], validação em homologação acontece pela task principal

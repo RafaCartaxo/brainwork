@@ -99,13 +99,13 @@ O toast de **exclusão** (`Etiqueta excluída com sucesso!`) já está correto e
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV; corresponde ao **Defeito 5** do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]], extraído para ticket próprio.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] — achado na validação da refatoração de etiquetas em DEV; corresponde ao **Defeito 5** do card agrupado [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]], extraído para ticket próprio.
 
 - Observações:
     - O modal de confirmação ao salvar edição foi verificado — comportamento **correto**; não faz parte deste bug.
-    - ⚠️ Os subitens da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
+    - ⚠️ Os subitens da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] estão em 87,50% e não vieram no export — este achado pode ser algo que **ainda não subiu**. Confirmar antes de tratar como bug fechado.
     - Sem evidência por enquanto — captura dedicada pendente.
 
 - Histórico:
-    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/DEV/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08). **Sem gravação de reteste**: a aprovação vem da confirmação direta do Rafael, não de evidência nova — a única gravação do card é a do defeito original (13/08)
-    - 2026-08-13 - 🐛 Bug cadastrado (SGV-10844; correspondente ao Defeito 5 do card agrupado [[QA Workspace/02 Demandas/DEV/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])
+    - 2026-08-17 - ✅ Aprovada em DEV (defeito corrigido) — card fechado **sem etapa de HML**: é defeito da [[QA Workspace/02 Demandas/Concluídas/3234/QA/3234 - Melhoria Refatoracao De Etiquetas|SGV-3234]] e a validação em homologação acontece pela task principal (decisão do Rafael em 17/08). **Sem gravação de reteste**: a aprovação vem da confirmação direta do Rafael, não de evidência nova — a única gravação do card é a do defeito original (13/08)
+    - 2026-08-13 - 🐛 Bug cadastrado (SGV-10844; correspondente ao Defeito 5 do card agrupado [[QA Workspace/02 Demandas/Concluídas/3234/QA/Defeitos/Defeitos 3234 - Refatoracao De Etiquetas|Defeitos 3234]])

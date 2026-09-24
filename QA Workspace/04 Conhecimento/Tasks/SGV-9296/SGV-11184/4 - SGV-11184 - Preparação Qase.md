@@ -11,7 +11,7 @@ suite_id: 220
 > [!info] Como usar este arquivo
 > Nasce **rascunho** pra revisão antes de qualquer POST/PATCH real na Qase. Depois do `--apply`, os ids/hashes entram aqui e o arquivo vira o **registro definitivo** — nunca é descartado. Este aqui já passou pela 1ª rodada (criação dos 21 casos, 04/09/2026) e está na 2ª (enriquecimento: description/postconditions + shared steps).
 
-Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]]. Ferramenta: `sogov-automation-test/scripts/qase-sync-9296-departamentos/`. Suite: **220** ("9296 - Possibilidade de Cadastrar Contato/Departamento sem CPF/CNPJ"), projeto `SGV`.
+Fonte: [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]]. Ferramenta: `sogov-automation-test/scripts/qase-sync-9296-departamentos/`. Suite: **220** ("9296 - Possibilidade de Cadastrar Contato/Departamento sem CPF/CNPJ"), projeto `SGV`.
 
 21 dos 28 CTs do card (7 ficaram de fora, marcados "Não se aplica" — ver seção no fim).
 
@@ -118,7 +118,7 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 - **Qase id:** `453`
 
 ### CT-012a Truncamento da linha do evento com múltiplos destinatários
-- **Descrição:** CA05 — SGV-11184, grupo B. 🔴 Defeito [[QA Workspace/02 Demandas/DEV/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] **ainda aberto**.
+- **Descrição:** CA05 — SGV-11184, grupo B. 🔴 Defeito [[QA Workspace/02 Demandas/Concluídas/11184/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] **ainda aberto**.
 - **Precondição:** A linha do evento de emissão (remetente + destinatários) tem um ou mais departamentos entre os destinatários.
 - **Passos:** 1. Ação: A linha se aproxima de ~16px da data de emissão → Resultado esperado: O componente recebe status de truncate; em listas longas de destinatário, o texto sempre trunca na 2ª linha, mantendo a mesma sequência de string até o ponto de corte.
 - **Severidade / Tipo / Automação:** normal / acceptance / não automatizado
@@ -215,7 +215,7 @@ Fonte: [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encam
 
 ## Ainda não subiu (fora de escopo deste lote)
 
-- Os 33 CTs da [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]] (Parte 1) — nenhum executado ainda.
+- Os 33 CTs da [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]] (Parte 1) — nenhum executado ainda.
 - Os CTs próprios dos cards de defeito (SGV-11312, 11313, 11319, 11338, 11273) — hoje só existem como "Casos de Teste Básicos" dentro de cada card de defeito, não replicados aqui.
 
 ## Histórico desta preparação

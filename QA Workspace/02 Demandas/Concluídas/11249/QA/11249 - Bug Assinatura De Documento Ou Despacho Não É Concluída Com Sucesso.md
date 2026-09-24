@@ -17,7 +17,7 @@ ambiente: HML
 
 ### Descrição
 
-Durante validação foi identificado que, ao criar um documento/despacho — com ou sem anexo — e solicitar a assinatura de um servidor, ao tentar assinar a assinatura não é concluída com sucesso. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
+Durante validação foi identificado que, ao criar um documento/despacho — com ou sem anexo — e solicitar a assinatura de um servidor, ao tentar assinar a assinatura não é concluída com sucesso. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
 
 **Vizinho da [[QA Workspace/02 Demandas/Concluídas/11215/QA/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]], mas ponto de falha diferente**: na 11215 o documento não chega a carregar ao clicar pra assinar — a tentativa nem começa. Aqui o documento carrega e o fluxo de assinatura é iniciado, mas a assinatura em si não é concluída com sucesso.
 
@@ -102,7 +102,7 @@ Então verifico que a assinatura não é concluída com sucesso
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
 - Observações: Bate com o **CT-002** ("Assinar um documento continua funcionando") da SGV-8321 — já reprovado por [[QA Workspace/02 Demandas/Concluídas/11215/QA/11215 - Bug Documento Não Carrega Para Realizar Assinatura|SGV-11215]]. Este card documenta outra manifestação do mesmo fluxo quebrado: mesmo quando o documento carrega, a assinatura não conclui.
 - Histórico:
     - 2026-09-02 - 🐛 Bug cadastrado

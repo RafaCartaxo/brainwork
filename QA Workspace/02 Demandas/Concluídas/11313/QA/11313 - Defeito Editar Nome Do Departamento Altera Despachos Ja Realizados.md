@@ -104,10 +104,10 @@ Mesma regra já documentada pra edição do nome de **setor** ([[QA Workspace/04
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]] — a task já inclui "edição" no escopo (título da task no Notion), mas o requisito técnico refinado não detalhava regra de efeito da edição sobre tramitações passadas nem tinha CT próprio pra isso; gap exposto por este defeito.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]] — a task já inclui "edição" no escopo (título da task no Notion), mas o requisito técnico refinado não detalhava regra de efeito da edição sobre tramitações passadas nem tinha CT próprio pra isso; gap exposto por este defeito.
 - Observações:
     - Resultado esperado ancorado por analogia na regra já documentada pra **setor** ([[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]]), citada pelo Rafael como referência — inclui o alerta ao usuário ("documentos já tramitados permanecerão com o nome antigo") quando há tramitação prévia. Esse alerta **não tem CT próprio ainda** — não foi confirmado se faz parte desta correção ou é só o efeito de dado (nome preservado) sem a UX de aviso; confirmar com Rafael antes de cobrar o alerta como critério.
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
 - Histórico:
     - 2026-09-03 - 🐛 Defeito cadastrado (achado na validação da SGV-11083, evidência já no vault)
-    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]], validação em homologação acontece pela task principal. CT-B02 (nome novo em despacho futuro) segue sem retest explícito — ver Observações.
+    - 2026-09-03 - ✅ Aprovado em DEV (corrigido, reteste OK) — card fechado sem etapa de HML: é defeito da [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]], validação em homologação acontece pela task principal. CT-B02 (nome novo em despacho futuro) segue sem retest explícito — ver Observações.

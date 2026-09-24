@@ -17,7 +17,7 @@ ambiente: HML
 
 ### Descrição
 
-Durante validação foi identificado que, ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não é carregado com sucesso — a assinatura não pode ser concluída. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
+Durante validação foi identificado que, ao solicitar a assinatura de um servidor num documento/despacho/anexo e clicar pra assinar, o documento não é carregado com sucesso — a assinatura não pode ser concluída. Achado no mesmo ambiente de homologação (nova arquitetura) da [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]].
 
 **Vizinho da [[QA Workspace/02 Demandas/Concluídas/11158/QA/11158 - Bug Prévia De Documento Não Carrega Para Solicitação De Assinatura|SGV-11158]], mas ponto de falha diferente**: na 11158 a tela de **solicitar** assinatura é que não carregava a prévia. Aqui a tela de solicitar funcionou normal — é o documento não carregando na hora de **assinar em si**, depois que a solicitação já foi feita.
 
@@ -82,7 +82,7 @@ Então verifico que o documento não é carregado com sucesso
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
 - Observações: Bate direto com o **CT-002** ("Assinar um documento continua funcionando") da SGV-8321 — o cenário do CT é exatamente ter um documento pronto pra assinatura → assinar → confirmar que fica assinado. Marcado como reprovado lá. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): confirmação de paridade pós-migração de arquitetura, não regra de negócio nova — resultado esperado é reproduzir o comportamento pré-migração; válido pra parte aprovada (carregamento). Aprovação parcial registrada por Rafael diretamente na task (comentário): "Assinatura ainda não está sendo realizada com sucesso, porém foi aberto outra task para seguir com a tratativa, sendo essa considerada para aprovação, apenas o carregamento do documento para a realização da tentativa de assinatura no documento. Bug relacionado: SGV-11249".
 - Histórico:
     - 2026-09-01 - 🐛 Bug cadastrado

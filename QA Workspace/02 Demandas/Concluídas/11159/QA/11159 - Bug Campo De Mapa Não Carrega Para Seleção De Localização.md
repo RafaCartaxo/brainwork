@@ -18,7 +18,7 @@ deploy: pendente_release
 
 ### Descrição
 
-Durante validação foi identificado que, ao acessar um documento com campo de mapa configurado, o campo não carrega para seleção de localização. Já era um bug conhecido da rodada anterior de validação da nova arquitetura ([[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]] → tabela de Regressão, SGV-9074) e reapareceu nesta revalidação em homologação.
+Durante validação foi identificado que, ao acessar um documento com campo de mapa configurado, o campo não carrega para seleção de localização. Já era um bug conhecido da rodada anterior de validação da nova arquitetura ([[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]] → tabela de Regressão, SGV-9074) e reapareceu nesta revalidação em homologação.
 
 ---
 
@@ -80,7 +80,7 @@ Então verifico que o campo de mapa não é carregado
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/HML/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/8321/QA/8321 - Testes Funcionais Da Nova Arquitetura|SGV-8321]]
 - Observações: Corresponde à SGV-9074 da rodada anterior (tabela de Regressão da SGV-8321, "Erro ao selecionar localização em campo do tipo mapa (POC1)") — revalidação nesta rodada reproduziu o mesmo erro. A rodada anterior marcava esse item como tag POC/ambiente "POC1", com nota pra confirmar se esse ambiente ainda existia no novo ambiente de homologação — esse achado confirma que o problema reproduz também fora do POC1, no ambiente atual. **Gate de doc** ([[Sistema/Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]): não é validação de regra de negócio nova — é confirmação de paridade pós-migração de arquitetura (mesma premissa da SGV-8321); resultado esperado é reproduzir o comportamento pré-migração, já confirmado na aprovação. Sem doc de módulo específica pro campo de mapa.
 - Histórico:
     - 2026-08-28 - 🐛 Bug cadastrado

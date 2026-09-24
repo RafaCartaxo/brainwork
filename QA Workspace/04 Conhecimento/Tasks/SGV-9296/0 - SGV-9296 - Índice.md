@@ -12,8 +12,8 @@ Task guarda-chuva do Notion que agrupa as duas partes da funcionalidade de depar
 
 | Parte | SGV | O que é | Status |
 |---|---|---|---|
-| 1 | [[QA Workspace/02 Demandas/DEV/11083 - Funcionalidade Departamentos Para Cidadao PJ\|SGV-11083]] | Criação, edição, exclusão, suspensão e gerenciamento de membros do departamento | Refinada, aberta em DEV — 33 CTs, 1 ponto em aberto (contagem de participantes, aguardando Produto) |
-| 2 | [[QA Workspace/02 Demandas/DEV/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos\|SGV-11184]] | Encaminhar documentos/despachos pro departamento, notificações e rastreabilidade de visualização externa | Refinada, aberta em DEV — 27 CTs, sem pontos em aberto no escopo atual (ver Contexto de apoio abaixo pra escopo futuro em aberto) |
+| 1 | [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ\|SGV-11083]] | Criação, edição, exclusão, suspensão e gerenciamento de membros do departamento | Refinada, aberta em DEV — 33 CTs, 1 ponto em aberto (contagem de participantes, aguardando Produto) |
+| 2 | [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos\|SGV-11184]] | Encaminhar documentos/despachos pro departamento, notificações e rastreabilidade de visualização externa | Refinada, aberta em DEV — 27 CTs, sem pontos em aberto no escopo atual (ver Contexto de apoio abaixo pra escopo futuro em aberto) |
 
 ## Dependência entre as partes
 

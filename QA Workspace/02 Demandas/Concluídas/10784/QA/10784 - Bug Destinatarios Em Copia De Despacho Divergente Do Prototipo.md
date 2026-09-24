@@ -46,7 +46,7 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
 **Reteste (aprovado em homologação, 04/09/2026):**
 
 ![[10784 - reteste OK, cópia com quantidade e chevron conforme protótipo (mesma evidência da SGV-11333).mp4]]
-*Evidência compartilhada com [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] — mesmo vídeo, cópia renomeada.*
+*Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/11333/QA/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] — mesmo vídeo, cópia renomeada.*
 
 ---
 
@@ -128,8 +128,8 @@ Então verifico que a linha de destinatários em cópia diverge do protótipo: e
     - O elemento irmão `e mais N destinatário(s)`, na linha de destinatários, **já segue o padrão** (contador + chevron). Isso sugere que o componente de cópia não foi alinhado ao mesmo padrão, e não que o padrão inteiro esteja errado.
     - 🔎 **Observação fora de escopo, a confirmar**: comparando as duas imagens, o `e mais N` do produto também parece não trazer a palavra *"destinatário(s)"* nem o tratamento de link azul que o protótipo mostra. Não foi validado nesta rodada e **não entrou nos critérios** — mas se for confirmado, é a mesma família de divergência.
     - Mesma tela da [[QA Workspace/02 Demandas/Concluídas/10740/QA/10740 - Bug Divergencias De Prototipo Na Exibicao Do Despacho|SGV-10740]] (divergências de protótipo na exibição do despacho) — vale tratar as duas na mesma passada de ajuste.
-    - 🔎 **Possível mesma família da [[QA Workspace/02 Demandas/HML/11226 - Bug Setores Em Cópia Divergente Do Protótipo (Exibe Todos Em Vez Da Quantidade)|SGV-11226]]** (01/09/2026): mesmo padrão protótipo-com-quantidade × produto-sem, achado em nova rodada. Não confirmado se é a mesma tela (despacho) ou achado novo — avaliar junto.
-    - Evidência do reteste compartilhada com [[QA Workspace/02 Demandas/DEV/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] — mesmo vídeo, cópia renomeada.
+    - 🔎 **Possível mesma família da [[QA Workspace/02 Demandas/Concluídas/11226/QA/11226 - Bug Setores Em Cópia Divergente Do Protótipo (Exibe Todos Em Vez Da Quantidade)|SGV-11226]]** (01/09/2026): mesmo padrão protótipo-com-quantidade × produto-sem, achado em nova rodada. Não confirmado se é a mesma tela (despacho) ou achado novo — avaliar junto.
+    - Evidência do reteste compartilhada com [[QA Workspace/02 Demandas/Concluídas/11333/QA/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]] — mesmo vídeo, cópia renomeada.
 - Histórico:
     - 2026-08-12 - 🐛 Bug cadastrado (identificado em homologação e produção, versão 12.39.44.2)
     - 2026-09-04 - ✅ Aprovado em homologação (corrigido, reteste OK — evidência compartilhada com a SGV-11333)

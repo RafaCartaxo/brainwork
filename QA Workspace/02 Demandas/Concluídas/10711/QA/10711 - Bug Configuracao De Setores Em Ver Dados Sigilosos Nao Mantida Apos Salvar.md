@@ -84,7 +84,7 @@ Então verifico que todos os setores são exibidos como selecionados, desconside
 
 ### Informações adicionais
 
-- Demanda relacionada: possível relação com [[QA Workspace/02 Demandas/DEV/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]] — o export do Notion marcava esta SGV-10711 como "Impactando" a 6373 (mesma família: setores não mantidos em telas de configuração), não confirmado se é causa raiz comum
+- Demanda relacionada: possível relação com [[QA Workspace/02 Demandas/Concluídas/6373/QA/6373 - Bug Setores Regras Tramitação Não Mantidos Avançar Retroceder Etapas AS|SGV-6373]] — o export do Notion marcava esta SGV-10711 como "Impactando" a 6373 (mesma família: setores não mantidos em telas de configuração), não confirmado se é causa raiz comum
 - Observações: Origem — export do Notion (SGV-10711, squad Rogue One, projeto Sustentação). MR aberto por Diogo Sobreira (dev), revisado por João Rodrigo e João Marcelo, arquivo `Section4.tsx` (fluxo guiado de criação de serviço/assunto). Aprovado por Rafael direto em homologação (comentário da task: "Status: Aprovado em homologação Versão: 12.44.51.2"), sem validação isolada em DEV registrada.
 - Histórico:
     - 2026-08-27 - 🐛 Bug identificado, MR aberto (Diogo Sobreira)

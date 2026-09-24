@@ -1019,7 +1019,7 @@ Lidas direto no arquivo **Tramitação — Handoff**, nas páginas `[SGV-7448] C
 
 Nenhum bug novo aberto na validação de 11/08/2026 — os 40 CTs passaram em homologação.
 
-Os achados anteriores da feature seguem em cards próprios e **não foram encerrados por esta aprovação**: [[QA Workspace/02 Demandas/DEV/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]], [[QA Workspace/02 Demandas/DEV/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] e [[QA Workspace/02 Demandas/DEV/10608 - Bug Achados Na Retificacao De Despacho E Documento|SGV-10608]].
+Os achados anteriores da feature seguem em cards próprios e **não foram encerrados por esta aprovação**: [[QA Workspace/02 Demandas/Concluídas/10596/QA/10596 - Bug Autor Nao Consegue Cancelar O Proprio Despacho|SGV-10596]], [[QA Workspace/02 Demandas/Concluídas/10607/QA/10607 - Bug Assinatura De Resposta Retificada Ainda Aparece Na Impressao|SGV-10607]] e [[QA Workspace/02 Demandas/Concluídas/10608/QA/10608 - Bug Achados Na Retificacao De Despacho E Documento|SGV-10608]].
 
 ---
 
@@ -1057,7 +1057,7 @@ Gravação única cobrindo a suíte inteira — cancelamento (grupos B a E), ret
 - **Escopo de "ações desfeitas/refeitas"** (comentários, menções, solicitações criadas depois pelo meatball).
 - **Numeração do despacho cancelado**: preservação está escrita só para a retificação.
 
-**Eventos de retificação com campos repetidos** já têm melhoria própria em [[QA Workspace/02 Demandas/DEV/MEL-0001 - Organizar Eventos Retificação Campos Repetidos|MEL-0001]] — se os eventos desta entrega ficarem repetitivos, é aquele escopo, não bug novo.
+**Eventos de retificação com campos repetidos** já têm melhoria própria em [[QA Workspace/02 Demandas/Concluídas/MEL-0001/QA/MEL-0001 - Organizar Eventos Retificação Campos Repetidos|MEL-0001]] — se os eventos desta entrega ficarem repetitivos, é aquele escopo, não bug novo.
 
 ---
 

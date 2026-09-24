@@ -19,7 +19,7 @@ ambiente: HML
 
 Durante validação foi identificado que, quando o cidadão Pessoa Jurídica abre um documento e o imprime, o **CNPJ aparece anonimizado** na impressão, em vez de ser exibido por extenso.
 
-O comportamento **não é regressão** da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]: já ocorria em **produção** antes da mudança de formato de CNPJ, e isso foi validado. O bug foi apenas **encontrado** durante a execução dos casos daquela melhoria.
+O comportamento **não é regressão** da [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]: já ocorria em **produção** antes da mudança de formato de CNPJ, e isso foi validado. O bug foi apenas **encontrado** durante a execução dos casos daquela melhoria.
 
 ---
 
@@ -110,7 +110,7 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — **apenas origem do achado**, não é defeito daquela entrega. Encontrado durante a execução exploratória dos casos da melhoria; como já ocorria em produção, **não virou CT da 9493** e não afeta nenhum critério de aceite dela.
+- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]] — **apenas origem do achado**, não é defeito daquela entrega. Encontrado durante a execução exploratória dos casos da melhoria; como já ocorria em produção, **não virou CT da 9493** e não afeta nenhum critério de aceite dela.
 
 - Observações:
     - **O produto já usa mascaramento em outro lugar de propósito**: a doc de [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] registra o e-mail anonimizado na mensagem de erro como comportamento intencional. Vale antecipar que o dev pode alegar que a anonimização do CNPJ também é intencional — como não há regra escrita pra esta saída, essa conversa precisa de decisão de produto, e é o que a pendência de documentação resolve.
@@ -118,5 +118,5 @@ O CNPJ do cidadão Pessoa Jurídica é exibido **por extenso e formatado** na im
     - Evidência compartilhada com [[QA Workspace/02 Demandas/Concluídas/10955/QA/10955 - Bug Resposta De Despacho Nao Sai Na Impressao Do Documento|SGV-10955]] — mesmo vídeo, cópia renomeada (bug novo encontrado durante esta validação em homologação).
 
 - Histórico:
-    - 2026-07-31 - 🐛 Bug cadastrado (achado em DEV durante a execução da [[QA Workspace/02 Demandas/DEV/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção)
+    - 2026-07-31 - 🐛 Bug cadastrado (achado em DEV durante a execução da [[QA Workspace/02 Demandas/Concluídas/9493/QA/9493 - Melhoria Adequacao Do Sogov Para Novo Formato De CNPJ|SGV-9493]]; confirmado como pré-existente em produção)
     - 2026-08-19 - ✅ Aprovada em homologação (CNPJ exibido por extenso e formatado na impressão, CT-B01 e CT-B02 confirmados — numérico e alfanumérico). Validação em DEV não chegou a ser registrada separadamente; a correção já estava disponível em homologação quando retomada. Gate de doc reconfirmado: [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]] segue sem regra escrita pra esta saída — pendência de documentação de 31/07 continua aberta.
