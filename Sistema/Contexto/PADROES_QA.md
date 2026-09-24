@@ -96,11 +96,16 @@ QA Workspace/
 ```
 
 ## Templates
+
+> [!important] A partir de 24/09/2026: demandas novas usam pacote de arquivos
+> Bug/Defeito/Melhoria/Funcionalidade **novos** nascem como pacote em [[Sistema/Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Melhoria/01-Demanda` ou `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como nota única (`Bug Report.md`/`Demanda.md` abaixo). Motivo e precedente: pacote SGV-9982, `QA Workspace/04 Conhecimento/Tasks/SGV-9982 - Permanecer no documento após encerrar/`.
+> `Bug Report.md`/`Demanda.md` continuam valendo pro que já existe — não convertidos. A fila automática (`qa-atualiza.py`/`AGENTE_FILA`) foi zerada em 24/09/2026 e **não rastreia pacotes** — pendência: adaptar o script (glob recursivo) e a Dashboard ("Sem dono") se algum dia isso voltar a importar. `PADROES_QA.md`, `FLUXOS.md` e os demais skills/agentes citados abaixo ainda descrevem o modelo antigo de nota única — ainda não foram reescritos pro pacote (pendência registrada, não é lacuna esquecida).
+
 | Template | Uso |
 |----------|-----|
-| [[Sistema/Templates/Bug Report.md\|Bug Report.md]] | Reportar bugs com estrutura padronizada |
+| [[Sistema/Templates/Bug Report.md\|Bug Report.md]] | Reportar bugs com estrutura padronizada (formato anterior — ver aviso acima) |
 | [[Sistema/Templates/Casos de teste.md\|Casos de teste.md]] | Criar casos de teste no formato Dado/Quando/Então |
-| [[Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) |
+| [[Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) (formato anterior — ver aviso acima) |
 | [[Sistema/Templates/Daily Note.md\|Daily Note.md]] | Registro diário de atividades — lugar único de escrita do dia a dia |
 | [[Sistema/Templates/Refinamento.md\|Refinamento.md]] | Mesa de trabalho do refinamento (fluxo 6) — análise no arquivo, card nasce destilado |
 | [[Sistema/Templates/Conhecimento.md\|Conhecimento.md]] | Nota da base de conhecimento (04 Conhecimento) — módulo/fluxo/referência do sistema |

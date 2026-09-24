@@ -7,6 +7,9 @@ tags:
 
 Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Bug Report.md))
 
+> [!important] A partir de 24/09/2026: pacote de arquivos, não nota única
+> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` segue válido só pro que já existe (não convertido). Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
+
 ## Objetivos
 
 - Estruturar bugs de forma clara e reproduzível
