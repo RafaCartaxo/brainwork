@@ -20,41 +20,41 @@ pontos_alocados: ""
 
 **Ticket de origem:** SGV-11637 (card ATV-256) · **Protótipo:** Figma "Tramitação - Concepção" → seção SGV-11637 (dialogs)
 
-> [!info]- Navegação QA/DEV
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> [!info]- Navegação QA/DEV  
+> **Demanda:** [[01 - Demanda]]  
+> **Plano de teste:** [[02 - Plano de teste]]  
+> **Casos de teste:** [[03 - Casos de teste]]  
+> **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
-> [!settings]- Controle da demanda
-> **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`
-> **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
+> [!settings]- Controle da demanda  
+> **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`  
+> **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`  
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
-> [!info] Status atual
+> [!info] Status atual  
 > **Próximo passo:** decidir a pendência do RF11 (ver Pendências) e confirmar `projeto`/`pontos_alocados` antes de rotear para o DEV.
 
 ---
 
 ## Capacidade e esforço
 
-> [!tip]- Capacidade do ciclo
+> [!tip]- Capacidade do ciclo  
 > **Capacidade alocada:** preencher `pontos_alocados`.
 >
-> ```dataviewjs
-> const id = "SGV-9982";
-> const paginas = dv.pages().where(p => p.file.path.includes(id) && typeof p.pontos === "number");
-> const lista = paginas.sort(p => p.file.name);
-> const necessario = lista.array().reduce((soma, pagina) => soma + Number(pagina.pontos), 0);
-> const alocado = Number(dv.current().pontos_alocados || 0);
-> const diferenca = alocado - necessario;
-> if (lista.length > 0) {
->   dv.table(["Etapa/artefato", "Pontos"], lista.map(p => [p.file.link, p.pontos]));
-> } else {
->   dv.paragraph("Nenhum artefato com pontos registrado ainda.");
-> }
-> dv.paragraph(`**Esforço necessário:** ${necessario} pontos · **Capacidade alocada:** ${alocado} pontos · **${diferenca >= 0 ? "Saldo" : "Déficit"}:** ${Math.abs(diferenca)} pontos`);
+> ```dataviewjs  
+> const id = "SGV-9982";  
+> const paginas = dv.pages().where(p => p.file.path.includes(id) && typeof p.pontos === "number");  
+> const lista = paginas.sort(p => p.file.name);  
+> const necessario = lista.array().reduce((soma, pagina) => soma + Number(pagina.pontos), 0);  
+> const alocado = Number(dv.current().pontos_alocados || 0);  
+> const diferenca = alocado - necessario;  
+> if (lista.length > 0) {  
+>   dv.table(["Etapa/artefato", "Pontos"], lista.map(p => [p.file.link, p.pontos]));  
+> } else {  
+>   dv.paragraph("Nenhum artefato com pontos registrado ainda.");  
+> }  
+> dv.paragraph(`**Esforço necessário:** ${necessario} pontos · **Capacidade alocada:** ${alocado} pontos · **${diferenca >= 0 ? "Saldo" : "Déficit"}:** ${Math.abs(diferenca)} pontos`);  
 > ```
 
 ---

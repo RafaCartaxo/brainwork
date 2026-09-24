@@ -7,14 +7,14 @@ pontos: ""
 
 # Plano de teste — SGV-9982
 
-> [!info]- Navegação QA
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> [!info]- Navegação QA  
+> **Demanda:** [[01 - Demanda]]  
+> **Plano de teste:** [[02 - Plano de teste]]  
+> **Casos de teste:** [[03 - Casos de teste]]  
+> **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
-> [!settings]- Controle do plano de teste
+> [!settings]- Controle do plano de teste  
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
 ---

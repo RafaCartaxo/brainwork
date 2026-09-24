@@ -25,16 +25,16 @@ data_fim: ""
 
 # Validação — SGV-9982
 
-> [!info]- Navegação QA
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> [!info]- Navegação QA  
+> **Demanda:** [[01 - Demanda]]  
+> **Plano de teste:** [[02 - Plano de teste]]  
+> **Casos de teste:** [[03 - Casos de teste]]  
+> **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
-> [!settings]- Controle da validação
-> **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`
-> **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`
+> [!settings]- Controle da validação  
+> **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`  
+> **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
 > Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. O DEV ainda não implementou a melhoria — esta nota está no estado inicial, aguardando build.
