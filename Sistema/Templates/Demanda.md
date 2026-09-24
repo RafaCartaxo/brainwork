@@ -39,7 +39,7 @@ Breve descrição da demanda.
 
 ## Casos de teste
 
-- Criar casos de teste no padrão de cabeçalho — `#### **CT-NNN Título** *(CAn)*`, palavras-chave em negrito, `- [ ] Sim` / `- [ ] Não` / `- [ ] Não se aplica`, `---` entre casos. Formato completo em [[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]] · exemplo em [[Sistema/Templates/Casos de teste|Casos de teste]]
+- Criar casos de teste no padrão de cabeçalho — `#### **CT-NNN Título** *(CAn)*`, palavras-chave em negrito, `- [ ] Sim` / `- [ ] Não` / `- [ ] Não se aplica`, `---` entre casos. Formato completo em [[Sistema/Skills/SKILL_CASOS_DE_TESTE|SKILL_CASOS_DE_TESTE]] (para demanda nova, ver o formato do pacote em [[Sistema/Templates/Pacote/03 - Casos de teste|Pacote/03 - Casos de teste]])
 - Com muitos casos, agrupar por tema (`### A. <grupo>`) e manter **um CT por critério**
 - Caso retirado ou adiado depois de escrito vai pro grupo de registro abaixo — **não** apagar nem deixar buraco na numeração
 

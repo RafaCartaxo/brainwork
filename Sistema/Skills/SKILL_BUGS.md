@@ -5,10 +5,10 @@ tags:
 ---
 # Skill: Criação e Organização de Bugs
 
-Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Bug Report.md))
+Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Pacote/Bug/01%20-%20Bug.md))
 
 > [!important] A partir de 24/09/2026: pacote de arquivos, não nota única
-> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` segue válido só pro que já existe (não convertido). Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
+> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 — nada mais os referencia como template ativo. Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
 
 ## Objetivos
 
@@ -168,7 +168,7 @@ Quando ...
 Então ...
 ```
 
-O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[../Templates/Casos de teste|Casos de teste]].
+O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[SKILL_CASOS_DE_TESTE]] (ou o formato `Dado/Quando/Então` do pacote, [[../Templates/Pacote/03 - Casos de teste|Pacote/03 - Casos de teste]]).
 
 Nunca usar lista numerada (`1. 2. 3.`) nem texto corrido: o passo a passo é o que o dev executa pra reproduzir, e a forma BDD deixa explícito o que é pré-condição, o que é ação e o que é o defeito observado.
 

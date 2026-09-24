@@ -69,7 +69,7 @@ Itens **não marcados** de `## Melhorias propostas` e `## Pendente para amanhã`
 
 | Tipo detectado | Destino | Marca no registro original |
 |---|---|---|
-| Bug (comportamento errado observado) | Card em `02 Demandas/DEV/` ([[Sistema/Templates/Bug Report.md\|Bug Report.md]]) | ` → card criado: [[card]]` |
+| Bug (comportamento errado observado) | Card em `02 Demandas/DEV/` (`Bug Report.md` — template da época, removido em 24/09/2026, ver [[../Templates/Pacote/00 README|Pacote]]) | ` → card criado: [[card]]` |
 | Melhoria de produto | Checkbox em `## Melhorias propostas` da mesma daily | ` → movido pra Melhorias propostas` |
 | Tarefa/lembrete pontual | Item em `## Pendente para amanhã` da mesma daily | ` → movido pra Pendente para amanhã` |
 | Ideia sobre o próprio vault/ferramenta | Item no checklist "Próximos passos" de `00 Inbox/README.md` | ` → backlog do vault` |

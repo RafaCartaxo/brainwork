@@ -50,7 +50,7 @@ Quando Rafael marca uma pendência como feita, ele anota o **resultado curto ent
 | `Revisar cenários do SGV-XXXX (API aprovada)` | Linha `✅ SGV-XXXX - API aprovada em homologação` em Atividades, card: `status: resolvido`, move pra `Concluídas/`, `data_fim` preenchida, item no Histórico. API não tem esteira DEV — vai direto pra homologação; aprovação já conclui. |
 | `Revisar cenários do SGV-XXXX (API reprovada)` | Linha `🔴 SGV-XXXX - API reaberta em homologação` em Atividades, `status: aberto` no card, nova pendência de revalidação, item no Histórico |
 | `Atualizar/levar análise do SGV-XXXX pro Notion (feito)` | Linha `📤 SGV-XXXX - <Tipo> atualizado(a) no Notion (...)` em Atividades, item no Histórico do card. Se existir mesa em `05 Refinar/` com esse SGV (`status: em_refinamento`): renomeia pra `<SGV> - Refinamento <título curto>.md`, muda status pra `refinado`, move pra `04 Conhecimento/`, cross-link no card |
-| `Refinar SGV-XXXX (card criado, critérios prontos)` | Lê o Destilado da mesa em `05 Refinar/SGV-XXXX.md` → cria card em `02 Demandas/<ambiente>/` (template [[../Templates/Bug Report.md\|Bug Report]] pra bug, [[../Templates/Demanda.md\|Demanda]] pra melhoria/funcionalidade), preenche frontmatter (task, status, ambiente, data_inicio), cross-link mesa ↔ card (Observações: "Análise completa: [[04 Conhecimento/<SGV> - Refinamento <título>]]" no card, wikilink reverso na mesa), linha `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` em Atividades → Planejamento, item no Histórico do card, cria pendência `SGV-XXXX - Atualizar no Notion (levar análise/critérios pra task)`. Aplica regra de links: toda menção ao SGV na daily vira wikilink pro card |
+| `Refinar SGV-XXXX (card criado, critérios prontos)` | Lê o Destilado da mesa em `05 Refinar/SGV-XXXX.md` → cria pacote em `02 Demandas/<ambiente>/` (template [[../Templates/Pacote/Bug/01 - Bug\|Pacote/Bug]] pra bug, [[../Templates/Pacote/Melhoria/01 - Demanda\|Pacote/Melhoria]] pra melhoria/funcionalidade — ver [[../Templates/Pacote/00 README|Pacote]]), preenche frontmatter no `00 README.md` do pacote (task, status, ambiente, data_inicio), cross-link mesa ↔ card (Observações: "Análise completa: [[04 Conhecimento/<SGV> - Refinamento <título>]]" no card, wikilink reverso na mesa), linha `📝 SGV-XXXX - <Tipo> refinado(a) (critérios de aceite prontos)` em Atividades → Planejamento, item no Histórico do card, cria pendência `SGV-XXXX - Atualizar no Notion (levar análise/critérios pra task)`. Aplica regra de links: toda menção ao SGV na daily vira wikilink pro card |
 | `Investigar suspeita: <título> (descartada: <motivo>)` | Linha `🗑️ Suspeita descartada: <título> (não é bug: <motivo>)` em Atividades |
 | `Investigar suspeita: <título> (confirmada)` | **Botão**: cria pendência "Criar card do bug: <título> (via SKILL_BUGS)" na fila — o card em si exige IA/sessão, que o cria e registra |
 | Marcada **sem anotação de resultado** | **Manual**: pergunta o desfecho antes de agir. **Agendado**: não inventa — lista como `⏳ aguardando resultado` e não altera nada |
@@ -67,7 +67,7 @@ A linha do checkbox processado ganha a mesma marca ` → <resultado>` de sempre 
 
 | Tipo detectado | Destino | Marca no registro original |
 |---|---|---|
-| Bug (comportamento errado observado, reproduzível) | Card novo em `02 Demandas/<ambiente testado>/` (DEV quando o ambiente não é conhecido), template [[../Templates/Bug Report.md\|Bug Report.md]] | linha ganha ` → card criado: [[card]]` |
+| Bug (comportamento errado observado, reproduzível) | Pacote novo em `02 Demandas/<ambiente testado>/` (DEV quando o ambiente não é conhecido), template [[../Templates/Pacote/Bug/01 - Bug\|Pacote/Bug]] | linha ganha ` → card criado: [[card]]` |
 | Melhoria de produto (ideia sobre o sistema, não é erro) | Checkbox em `## Melhorias propostas` da mesma daily | linha ganha ` → movido pra Melhorias propostas` |
 | Tarefa/lembrete pontual (não é bug nem melhoria) | Item em `## Pendente para amanhã` da mesma daily | linha ganha ` → movido pra Pendente para amanhã` |
 | Ideia sobre o próprio vault/ferramenta | Item novo no checklist "Próximos passos" de `00 Inbox/README.md` | linha ganha ` → backlog do vault` |
@@ -99,7 +99,7 @@ Na prática:
 - Pendência que nasce durante o dia entra em **A fazer hoje**
 - O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão conforme o tipo de card:
   - Card com `task` preenchido → `SGV-XXXX - Acompanhar (<título>)`
-  - Card sem `task`, template Bug Report → `Cadastrar bug <título> no Notion`
+  - Card sem `task`, tag `bug` → `Cadastrar bug <título> no Notion`
   - Card sem `task`, template Demanda com campo `mel` preenchido (não vazio) → `Cadastrar melhoria MEL-NNNN no Notion`
   - Card sem `task`, outros casos → `SGV-XXXX - Acompanhar (<título>)` (fallback seguro)
 - A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)

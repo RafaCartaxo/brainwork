@@ -5,7 +5,10 @@ tags:
 ---
 # Skill: Criação de Casos de Teste
 
-Criar e organizar casos de teste seguindo o padrão utilizado pelo QA. ([Template](../Templates/Casos de teste.md))
+Criar e organizar casos de teste seguindo o padrão utilizado pelo QA.
+
+> [!important] A partir de 24/09/2026: pacote de arquivos
+> Demanda nova usa `03 - Casos de teste.md` do pacote ([Template](../Templates/Pacote/03%20-%20Casos%20de%20teste.md) — formato `[!example]-` com âncora `^ct-NNN`, não mais o cabeçalho `#### **CT-NNN**` descrito abaixo). O template solto `Casos de teste.md` foi removido em 24/09/2026 — o formato `#### **CT-NNN**`/Sim-Não-Não se aplica descrito nesta skill segue valendo só pro que já existe em nota única (ex.: cards antigos, [[../../QA Workspace/07 Termo de Referência/1.24-1.25/01 Casos de Teste/1.24-1.25 - Casos de Teste|Termo de Referência 1.24-1.25]] até migrar pro pacote).
 
 ## Objetivos
 

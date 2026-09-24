@@ -10,7 +10,7 @@ Orquestra o ciclo completo de uma melhoria de produto — da ideia anotada na da
 ## Contexto (pra qualquer IA/pessoa sem o setup na cabeça)
 
 - **Onde nasce**: `## Melhorias propostas` da daily, como checkbox `MEL-NNNN · Título`
-- **Template do card**: [[../Templates/Demanda.md|Demanda]] (hub — diferente de bug que usa Bug Report autocontido)
+- **Template do card**: a partir de 24/09/2026, pacote em [[../Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`Melhoria/01-Demanda`) — o antigo `Demanda.md` (hub único) segue só como referência do formato anterior, não convertido
 - **Destino do card**: `QA Workspace/02 Demandas/DEV/`, arquivo `MEL-NNNN - <título>` (renomeado com SGV após cadastro)
 - **Regras completas de MEL**: [[../../QA Workspace/01 Daily/README#Regra de Melhorias propostas|01 Daily/README]] (formato do checkbox, numeração, ciclo de vida)
 - **Copy oficial**: catálogo de frases em [[../../QA Workspace/01 Daily/README|01 Daily/README]] — seções Melhoria e Planejamento
@@ -29,7 +29,7 @@ Orquestra o ciclo completo de uma melhoria de produto — da ideia anotada na da
 | Aspecto | Bug | Melhoria |
 |---|---|---|
 | Natureza | Comportamento errado que existe | Sistema funciona, pode funcionar melhor |
-| Template | [[../Templates/Bug Report.md|Bug Report]] (nota única, autocontida) | [[../Templates/Demanda.md|Demanda]] (hub — agrega plano, CTs, evidências, bugs) |
+| Template | [[../Templates/Pacote/Bug/01 - Bug|Pacote/Bug]] (a partir de 24/09/2026 — antes, Bug Report autocontido) | [[../Templates/Pacote/Melhoria/01 - Demanda|Pacote/Melhoria]] (a partir de 24/09/2026 — antes, Demanda hub) |
 | Refinamento | Análise de causa raiz | Definição de escopo + regras de negócio |
 | Skill | [[SKILL_BUGS]] | SKILL_MELHORIA (este arquivo) |
 

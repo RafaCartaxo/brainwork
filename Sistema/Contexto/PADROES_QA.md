@@ -86,25 +86,27 @@ QA Workspace/
     ├── Specs/
     │   └── YYYY-MM-DD-<tópico>-design.md (documentos de design/spec de melhorias do próprio vault)
     └── Templates/
-        ├── Bug Report.md
-        ├── Casos de teste.md
         ├── Conhecimento.md
         ├── Daily Note.md
-        ├── Demanda.md
+        ├── Demanda.md (formato anterior, não convertido — ver aviso abaixo)
         ├── Estudo.md
-        └── Refinamento.md
+        ├── Refinamento.md
+        ├── Verificação de Conformidade (Termo de Referência).md
+        └── Pacote/ (padrão atual pra demanda nova — 00 README, Melhoria/01-Demanda, Bug/01-Bug, 02-05)
 ```
 
 ## Templates
 
 > [!important] A partir de 24/09/2026: demandas novas usam pacote de arquivos
 > Bug/Defeito/Melhoria/Funcionalidade **novos** nascem como pacote em [[Sistema/Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Melhoria/01-Demanda` ou `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como nota única (`Bug Report.md`/`Demanda.md` abaixo). Motivo e precedente: pacote SGV-9982, `QA Workspace/04 Conhecimento/Tasks/SGV-9982 - Permanecer no documento após encerrar/`.
-> `Bug Report.md`/`Demanda.md` continuam valendo pro que já existe — não convertidos. A fila automática (`qa-atualiza.py`/`AGENTE_FILA`) foi zerada em 24/09/2026 e **não rastreia pacotes** — pendência: adaptar o script (glob recursivo) e a Dashboard ("Sem dono") se algum dia isso voltar a importar. `PADROES_QA.md`, `FLUXOS.md` e os demais skills/agentes citados abaixo ainda descrevem o modelo antigo de nota única — ainda não foram reescritos pro pacote (pendência registrada, não é lacuna esquecida).
+> `Demanda.md` continua valendo pro que já existe — não convertido. `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 (redundantes com o pacote; o único uso independente de `Casos de teste.md` — [[QA Workspace/07 Termo de Referência/1.24-1.25/01 Casos de Teste/1.24-1.25 - Casos de Teste|Termo de Referência 1.24-1.25]] — vai migrar pro padrão de pacote também). A fila automática (`qa-atualiza.py`/`AGENTE_FILA`) foi zerada em 24/09/2026 e **não rastreia pacotes** — pendência: adaptar o script (glob recursivo) e a Dashboard ("Sem dono") se algum dia isso voltar a importar. `PADROES_QA.md`, `FLUXOS.md` e os demais skills/agentes citados abaixo ainda descrevem o modelo antigo de nota única — ainda não foram reescritos pro pacote (pendência registrada, não é lacuna esquecida).
 
 | Template | Uso |
 |----------|-----|
-| [[Sistema/Templates/Bug Report.md\|Bug Report.md]] | Reportar bugs com estrutura padronizada (formato anterior — ver aviso acima) |
-| [[Sistema/Templates/Casos de teste.md\|Casos de teste.md]] | Criar casos de teste no formato Dado/Quando/Então |
+| [[Sistema/Templates/Pacote/00 README\|Pacote/00 README.md]] | Hub do pacote de uma demanda nova (bug, defeito, melhoria, funcionalidade) — status, esforço, navegação |
+| [[Sistema/Templates/Pacote/Bug/01 - Bug\|Pacote/Bug/01 - Bug.md]] | Reportar bug/defeito novo dentro do pacote |
+| [[Sistema/Templates/Pacote/Melhoria/01 - Demanda\|Pacote/Melhoria/01 - Demanda.md]] | Demanda de melhoria/funcionalidade nova dentro do pacote |
+| [[Sistema/Templates/Pacote/03 - Casos de teste\|Pacote/03 - Casos de teste.md]] | Criar casos de teste no formato Dado/Quando/Então, dentro do pacote |
 | [[Sistema/Templates/Demanda.md\|Demanda.md]] | Estruturar nota principal de uma demanda (hub) (formato anterior — ver aviso acima) |
 | [[Sistema/Templates/Daily Note.md\|Daily Note.md]] | Registro diário de atividades — lugar único de escrita do dia a dia |
 | [[Sistema/Templates/Refinamento.md\|Refinamento.md]] | Mesa de trabalho do refinamento (fluxo 6) — análise no arquivo, card nasce destilado |
@@ -153,7 +155,7 @@ QA Workspace/
 > [!important] Antes: é **Bug** ou **Defeito**?
 > Problema que saiu da execução de um CT de uma task pai, em DEV, é **Defeito** — outro ciclo de vida, outra esteira, outra tag. Ver [[#Defeito × Bug]] logo abaixo. As regras desta seção valem para os dois, exceto onde a seção do Defeito diz o contrário.
 
-- Todo bug usa o [[Sistema/Templates/Bug Report.md|Bug Report.md]] como estrutura única (sem tag `demanda`, sem callouts) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
+- Bug novo usa o pacote [[Sistema/Templates/Pacote/Bug/01 - Bug|Pacote/Bug]] (a partir de 24/09/2026 — antes, `Bug Report.md` como estrutura única) — ver [[Sistema/Skills/SKILL_BUGS.md|SKILL_BUGS.md]].
 - `status` reflete o ciclo de vida do bug: `aberto` (ainda com problema) → `em_validacao` → `resolvido`. Não usar `dev`/`hml`/`prod` nesse campo — isso é o que o campo `ambiente` já representa.
 - `ambiente` reflete a **posição do card na esteira** (DEV/HML/HOTFIX/PROD) — a pasta onde ele vive em `02 Demandas/`. **Não é "o último ambiente testado"**: aprovado em DEV, o card já vai pra `HML/` com `ambiente: HML` *antes* de ser testado em homologação. É o mesmo sentido usado no bug de produção em sustentação, mais abaixo ("posição na esteira de correção").
 - `deploy` (opcional) é o que diz se o ambiente atual está **testável**: `pendente_hml` = aprovado em DEV mas o fix ainda não subiu pra homologação; `pendente_release` = aprovado em HML, aguardando janela de release. Card com `deploy` preenchido não deve ser pego pra validar ainda — a fila sinaliza `⏳ aguardando deploy`. Ver [[../Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]].

@@ -75,7 +75,7 @@ A **prática das dailies ganha** — mas a reconciliação é explícita: corrig
 
 A **skill** dá a estrutura (quais seções); o **template** dá o formato do conteúdo. Ler só a skill leva a acertar as seções e errar o formato.
 
-**Precedente**: 2026-07-28, "Passo a passo para reproduzir" escrito em lista numerada quando o padrão é BDD `Dado que / E / Quando / Então` — que estava visível tanto na [[../Skills/SKILL_BUGS|SKILL_BUGS]] quanto no [[../Templates/Bug Report|Bug Report]].
+**Precedente**: 2026-07-28, "Passo a passo para reproduzir" escrito em lista numerada quando o padrão é BDD `Dado que / E / Quando / Então` — que estava visível tanto na [[../Skills/SKILL_BUGS|SKILL_BUGS]] quanto no template usado na época (`Bug Report.md`, descontinuado em 24/09/2026 — ver [[../Templates/Pacote/00 README|Pacote]]).
 
 ## Nunca falhar em silêncio
 
