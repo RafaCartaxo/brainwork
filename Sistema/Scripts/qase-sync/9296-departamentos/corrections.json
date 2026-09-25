@@ -1,0 +1,522 @@
+{
+  "_readme": "Payload de sincronização dos 21 CTs aplicáveis da SGV-11184 (Departamentos — encaminhar documentos e despachos) na Qase (projeto SGV, suite 220). Rodada 1 (04/09/2026): criação dos 21 casos (ids 443-463, já gravados em cada entrada de 'creates' — reruns pulam, não duplicam). Rodada 2 (04/09/2026): 'updates' preenche description/postconditions em todos os 21 e troca os steps repetidos por shared steps (busca-3-caracteres: CT-002/CT-007; accordion-click-area: CT-002c/CT-008a). Ver rascunho legível em QA Workspace/04 Conhecimento/Tasks/SGV-9296/SGV-11184/4 - SGV-11184 - Preparação Qase.md no vault. Dos 28 CTs do card, 7 ficaram de fora ('Não se aplica'): CT-002a, CT-002b, CT-006, CT-010, CT-012, CT-014, CT-022.",
+  "project_code": "SGV",
+  "suite_id": 220,
+  "updates": [
+    {
+      "id": 443,
+      "description": "CA01 — SGV-11184, grupo A (campo pessoa configurado pra Pessoa Jurídica)."
+    },
+    {
+      "id": 444,
+      "description": "CA02 — SGV-11184, grupo A.",
+      "steps": [
+        {
+          "shared_step_key": "busca-3-caracteres"
+        }
+      ]
+    },
+    {
+      "id": 445,
+      "description": "CA02 — SGV-11184, grupo A. Defeito SGV-11312 (corrigido, aprovado em DEV em 03/09/2026).",
+      "steps": [
+        {
+          "shared_step_key": "accordion-click-area"
+        }
+      ]
+    },
+    {
+      "id": 446,
+      "description": "CA03 — SGV-11184, grupo A.",
+      "postconditions": "Vínculo documento↔campo↔departamento persistido no banco, revalidado pela API."
+    },
+    {
+      "id": 447,
+      "description": "CA04 — SGV-11184, grupo A."
+    },
+    {
+      "id": 448,
+      "description": "CA05 — SGV-11184, grupo A. Formato confirmado no complemento do Figma (03/09/2026): parênteses, não travessão."
+    },
+    {
+      "id": 449,
+      "description": "CA01 — SGV-11184, grupo B.",
+      "steps": [
+        {
+          "shared_step_key": "busca-3-caracteres"
+        }
+      ]
+    },
+    {
+      "id": 450,
+      "description": "CA02 — SGV-11184, grupo B."
+    },
+    {
+      "id": 451,
+      "description": "CA02 — SGV-11184, grupo B. Defeito SGV-11312 (corrigido, aprovado em DEV em 03/09/2026).",
+      "steps": [
+        {
+          "shared_step_key": "accordion-click-area"
+        }
+      ]
+    },
+    {
+      "id": 452,
+      "description": "CA03 — SGV-11184, grupo B.",
+      "postconditions": "Departamento persistido como destinatário do despacho no banco."
+    },
+    {
+      "id": 453,
+      "description": "CA05 — SGV-11184, grupo B. Mesmo formato do CT-005."
+    },
+    {
+      "id": 454,
+      "description": "CA05 — SGV-11184, grupo B. Defeito SGV-11338 (ainda aberto)."
+    },
+    {
+      "id": 455,
+      "description": "CA05 — SGV-11184, grupo B. Formalizado a partir do defeito SGV-11319 (corrigido, aprovado em DEV em 03/09/2026)."
+    },
+    {
+      "id": 456,
+      "description": "CA01 — SGV-11184, grupo C."
+    },
+    {
+      "id": 457,
+      "description": "CA03 — SGV-11184, grupo C.",
+      "postconditions": "Nenhum e-mail/notificação duplicado persistido pra mesma combinação evento+canal+destinatário."
+    },
+    {
+      "id": 458,
+      "description": "CA04 — SGV-11184, grupo C."
+    },
+    {
+      "id": 459,
+      "description": "CA01 — SGV-11184, grupo D (RF04).",
+      "postconditions": "publicIdentifier gravado no registro do departamento."
+    },
+    {
+      "id": 460,
+      "description": "CA02 — SGV-11184, grupo D. Escopo é só o e-mail ao endereço do departamento (RF03 CA01)."
+    },
+    {
+      "id": 461,
+      "description": "CA03 — SGV-11184, grupo D.",
+      "postconditions": "Nenhum registro de interação até todas as validações passarem."
+    },
+    {
+      "id": 462,
+      "description": "CA04 — SGV-11184, grupo D.",
+      "postconditions": "Registro DocumentInteraction persistido no banco."
+    },
+    {
+      "id": 463,
+      "description": "CA05 — SGV-11184, grupo D."
+    }
+  ],
+  "delete": [],
+  "creates": [
+    {
+      "title": "CT-001 Departamento só aparece com Pessoa Jurídica habilitada no campo",
+      "preconditions": "Um campo pessoa está configurado pra aceitar Pessoa Jurídica.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O servidor pesquisa um destinatário",
+          "data": "",
+          "expected_result": "A busca inclui departamentos ativos vinculados a cidadãos PJ; com a configuração desabilitada, nenhum departamento é exibido ou aceito"
+        }
+      ],
+      "id": 443
+    },
+    {
+      "title": "CT-002 Busca de departamentos por nome ou razão social, só da mesma instância",
+      "preconditions": "A busca de departamentos está habilitada no campo.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O servidor informa parte do nome do departamento ou a razão social da PJ, a partir de 3 caracteres digitados",
+          "data": "≥ 3 caracteres do nome ou razão social",
+          "expected_result": "O sistema retorna os departamentos correspondentes do mesmo cliente/instância, afunilando o resultado a cada caractere digitado, exibindo nome do departamento e razão social da PJ em cada resultado; com menos de 3 caracteres, nenhum resultado é retornado"
+        }
+      ],
+      "id": 444
+    },
+    {
+      "title": "CT-002c Área de clique do accordion vs. seleção do departamento",
+      "preconditions": "O departamento é exibido como accordion no resultado da busca.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O servidor clica no ícone de chevron",
+          "data": "",
+          "expected_result": "O accordion expande ou recolhe, mostrando/ocultando os participantes"
+        },
+        {
+          "action": "O servidor clica em qualquer outro ponto da linha do departamento (do início do nome ao fim do container)",
+          "data": "",
+          "expected_result": "O departamento é selecionado como destinatário, com a mesma estética de hover de seleção já existente — a expansão do accordion não interfere na seleção, e vice-versa"
+        }
+      ],
+      "_note": "Defeito SGV-11312 (corrigido, aprovado em DEV em 03/09/2026).",
+      "id": 445
+    },
+    {
+      "title": "CT-003 Vínculo é persistido e revalidado pela API",
+      "preconditions": "O servidor selecionou um departamento válido no campo pessoa.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Salva o documento",
+          "data": "",
+          "expected_result": "O vínculo entre documento, campo pessoa e departamento é persistido, e a API revalida a configuração do campo, o status do departamento e a instância, independente da validação da interface"
+        }
+      ],
+      "id": 446
+    },
+    {
+      "title": "CT-004 Multiplicidade do campo é respeitada e duplicidade é bloqueada",
+      "preconditions": "Um campo pessoa de seleção única ou múltipla.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O servidor seleciona departamentos",
+          "data": "",
+          "expected_result": "O sistema respeita a multiplicidade configurada e impede repetir o mesmo departamento"
+        }
+      ],
+      "id": 447
+    },
+    {
+      "title": "CT-005 Representação do departamento no PDF do documento",
+      "preconditions": "O documento tem um departamento num campo pessoa.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O PDF é gerado ou regenerado",
+          "data": "",
+          "expected_result": "O valor aparece no formato \"Nome do departamento (Razão social da PJ)\", com parênteses (formato confirmado no Figma)"
+        }
+      ],
+      "id": 448
+    },
+    {
+      "title": "CT-007 Busca no campo de destinatário do despacho",
+      "preconditions": "Um servidor está criando ou editando um despacho.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Pesquisa no campo de destinatário informando ao menos 3 caracteres",
+          "data": "≥ 3 caracteres do nome ou razão social",
+          "expected_result": "O sistema retorna departamentos ativos do mesmo cliente/instância, por nome ou razão social da PJ, afunilando o resultado a cada caractere digitado; com menos de 3 caracteres, nenhum resultado é retornado"
+        }
+      ],
+      "id": 449
+    },
+    {
+      "title": "CT-008 Apresentação do resultado no componente",
+      "preconditions": "Um departamento é retornado na busca de destinatário do despacho.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O resultado é exibido",
+          "data": "",
+          "expected_result": "O componente mostra o nome do departamento e a razão social da PJ, com o cluster aninhado sob a PJ à qual pertence"
+        }
+      ],
+      "id": 450
+    },
+    {
+      "title": "CT-008a Área de clique do accordion vs. seleção do departamento no despacho",
+      "preconditions": "O departamento é exibido como accordion no resultado da busca de destinatário do despacho.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O servidor clica no ícone de chevron",
+          "data": "",
+          "expected_result": "O accordion expande ou recolhe os participantes"
+        },
+        {
+          "action": "Clica em qualquer outro ponto da linha do departamento",
+          "data": "",
+          "expected_result": "O departamento é selecionado como destinatário, com a mesma estética de hover de seleção já existente"
+        }
+      ],
+      "_note": "Defeito SGV-11312 (corrigido, aprovado em DEV em 03/09/2026).",
+      "id": 451
+    },
+    {
+      "title": "CT-009 Departamento é persistido como destinatário",
+      "preconditions": "Um departamento válido está selecionado no despacho.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O despacho é salvo ou enviado",
+          "data": "",
+          "expected_result": "O departamento é persistido como destinatário"
+        }
+      ],
+      "id": 452
+    },
+    {
+      "title": "CT-011 Representação do departamento no PDF do despacho",
+      "preconditions": "Um despacho tem um departamento como destinatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O PDF do documento/despacho é gerado",
+          "data": "",
+          "expected_result": "O destinatário é representado no mesmo formato definido pro campo pessoa (CT-005)"
+        }
+      ],
+      "id": 453
+    },
+    {
+      "title": "CT-012a Truncamento da linha do evento com múltiplos destinatários",
+      "preconditions": "A linha do evento de emissão (remetente + destinatários) tem um ou mais departamentos entre os destinatários.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A linha se aproxima de ~16px da data de emissão",
+          "data": "",
+          "expected_result": "O componente recebe status de truncate; em listas longas de destinatário (múltiplos departamentos ou usuários lotados), o texto sempre trunca na 2ª linha, mantendo a mesma sequência de string até o ponto de corte"
+        }
+      ],
+      "_note": "Reprovado — defeito SGV-11338 aberto (departamento de nome extenso: campo de busca cresce sem limite; despacho trunca já na 1ª linha, não na 2ª).",
+      "id": 454
+    },
+    {
+      "title": "CT-012b Retificação preserva o departamento selecionado como destinatário",
+      "preconditions": "Um despacho foi emitido com um departamento como destinatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O servidor abre a tela de retificação desse despacho",
+          "data": "",
+          "expected_result": "O departamento aparece selecionado no campo de destinatário, sem ser substituído pelo cidadão PJ/empresa"
+        }
+      ],
+      "_note": "Formalizado a partir do defeito SGV-11319 (corrigido, aprovado em DEV em 03/09/2026).",
+      "id": 455
+    },
+    {
+      "title": "CT-013 E-mail enviado ao endereço do departamento",
+      "preconditions": "Um documento ou despacho foi efetivamente encaminhado a um departamento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A operação é concluída",
+          "data": "",
+          "expected_result": "Uma notificação por e-mail é enviada ao endereço do departamento"
+        }
+      ],
+      "id": 456
+    },
+    {
+      "title": "CT-015 Reprocessar o mesmo encaminhamento não duplica a notificação",
+      "preconditions": "Um encaminhamento ao departamento já foi processado e a notificação (e-mail e interna) já foi enviada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Esse mesmo encaminhamento é processado de novo por retentativa do sistema (não uma nova ação do usuário)",
+          "data": "",
+          "expected_result": "O e-mail e a notificação interna não são enviados de novo pra quem já recebeu"
+        }
+      ],
+      "id": 457
+    },
+    {
+      "title": "CT-016 Conteúdo e link do e-mail",
+      "preconditions": "Um documento/despacho foi encaminhado a um departamento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O e-mail é enviado",
+          "data": "",
+          "expected_result": "Reutiliza o template do evento e inclui identificação do documento, indicação de encaminhamento ao departamento, nome do departamento + razão social da PJ, remetente/resumo já previstos, e URL externa com departmentId={publicIdentifier}"
+        }
+      ],
+      "id": 458
+    },
+    {
+      "title": "CT-017 Departamento sempre tem publicIdentifier",
+      "preconditions": "Um departamento novo ou existente.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Seus dados são persistidos ou migrados",
+          "data": "",
+          "expected_result": "Ele possui um publicIdentifier UUID v4, único, imutável e não nulo"
+        }
+      ],
+      "id": 459
+    },
+    {
+      "title": "CT-018 URL externa carrega o publicIdentifier, nunca o ID interno",
+      "preconditions": "Uma notificação por e-mail é enviada ao departamento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A URL externa é gerada",
+          "data": "",
+          "expected_result": "Contém departmentId={publicIdentifier} — o nome do parâmetro é mantido por compatibilidade, mas o valor é sempre o identificador público, nunca o ID numérico interno"
+        }
+      ],
+      "id": 460
+    },
+    {
+      "title": "CT-019 Validação completa do vínculo antes de qualquer registro",
+      "preconditions": "A URL contém um departmentId.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O usuário abre o documento",
+          "data": "",
+          "expected_result": "O backend valida o formato UUID, localiza o departamento por publicIdentifier, confirma que pertence à mesma instância do documento, confirma o vínculo real com o documento (campo pessoa ou destinatário de despacho) e aplica as permissões externas já existentes — só então registra a interação"
+        }
+      ],
+      "id": 461
+    },
+    {
+      "title": "CT-020 Interação registrada só após carregamento válido do conteúdo",
+      "preconditions": "Todas as validações foram aprovadas e o conteúdo principal do documento carregou com sucesso.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A visualização ocorre",
+          "data": "",
+          "expected_result": "É criada uma DocumentInteraction (referência ao documento, tipo visualização, departmentId interno resolvido, IP normalizado, demais metadados do modelo atual); requisições de assets, prévias, health checks e validações de URL não geram interação"
+        }
+      ],
+      "id": 462
+    },
+    {
+      "title": "CT-021 Parâmetro ausente ou inválido não gera interação nem revela existência",
+      "preconditions": "O parâmetro está ausente, malformado, sem correspondência ou sem vínculo com o documento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A URL é acessada (ou o documento é acessado por outro fluxo válido, no caso de ausência)",
+          "data": "",
+          "expected_result": "O sistema não registra interação de departamento; se o parâmetro for malformado/sem vínculo, retorna a mesma resposta genérica de recurso indisponível, sem revelar a existência do departamento ou do documento"
+        }
+      ],
+      "id": 463
+    }
+  ],
+  "shared_steps": [
+    {
+      "key": "busca-3-caracteres",
+      "title": "Busca de departamento com filtro progressivo a partir de 3 caracteres",
+      "steps": [
+        {
+          "action": "O servidor informa parte do nome do departamento ou a razão social da PJ, a partir de 3 caracteres digitados",
+          "data": "≥ 3 caracteres do nome ou razão social",
+          "expected_result": "O sistema retorna os departamentos correspondentes do mesmo cliente/instância, afunilando o resultado a cada caractere digitado; com menos de 3 caracteres, nenhum resultado é retornado"
+        }
+      ],
+      "hash": "0437ba49056fc231f29ff1dd4743a4a5bcb143dc"
+    },
+    {
+      "key": "accordion-click-area",
+      "title": "Área de clique do accordion restrita ao chevron; seleção usa a linha inteira",
+      "steps": [
+        {
+          "action": "O servidor clica no ícone de chevron",
+          "data": "",
+          "expected_result": "O accordion expande ou recolhe, mostrando/ocultando os participantes"
+        },
+        {
+          "action": "O servidor clica em qualquer outro ponto da linha do departamento (do início do nome ao fim do container)",
+          "data": "",
+          "expected_result": "O departamento é selecionado como destinatário, com a mesma estética de hover de seleção já existente — a expansão do accordion não interfere na seleção, e vice-versa"
+        }
+      ],
+      "hash": "def9e4d06f3622f906ad6781b07cc06ab02f291a"
+    }
+  ]
+}

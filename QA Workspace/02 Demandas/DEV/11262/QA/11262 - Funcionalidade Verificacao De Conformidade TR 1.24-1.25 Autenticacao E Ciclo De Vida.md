@@ -63,7 +63,7 @@ Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/01 Casos de T
 ✅ Concluída em 31/08. A Qase (projeto `SGV`) estava desatualizada em relação ao vault: 23 casos vazios, 1 corrompido, 2 com regra já corrigida no vault mas não lá. Sincronizado via **API REST** (não CSV — duplica em vez de atualizar):
 
 - 25 casos atualizados, 2 excluídos (órfãos já absorvidos), 1 criado (equivalente ao CT-017, desbloqueio manual).
-- Ferramenta reutilizável em `sogov-automation-test/scripts/qase-sync-1.24-1.25/` — serve de modelo pro próximo Termo de Referência.
+- Ferramenta reutilizável em [[Sistema/Scripts/qase-sync/1.24-1.25/README|Sistema/Scripts/qase-sync/1.24-1.25]] (vault — decisão de 25/09 de tirar os scripts qase-sync do repo `sogov-automation-test`, mais fácil de acessar/reaproveitar aqui) — serve de modelo pro próximo Termo de Referência.
 - `priority` deixado de fora de propósito (preencher manualmente na Qase depois).
 
 Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/02 Sincronização Qase/1.24-1.25 - Sincronização com a Qase|Sincronização com a Qase]].
@@ -134,3 +134,4 @@ Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/02 Sincroniza
 - 2026-09-02 - Card criado (retroativo, só cobria a Parte 4/automação nesse momento), skill [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] registrada no vault
 - 2026-09-02 - Reestruturada pra virar a task **pai** do TR inteiro (4 partes), usando o novo template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade]] — decisão do Rafael de não abrir SGVs separados por parte "por enquanto"
 - 2026-09-04 - Suítes 1 e 2 (12 CTs) commitadas e enviadas em branch própria (`tr-1.24-1.25-auth-suite-1-2`, a partir do `origin/main` atualizado, sem conflito) — MR a criar/confirmar. Suíte 4 renomeada (CPF cru tirado do nome dos 5 agentes fixos) — pronta, não commitada, não re-rodada ainda. Rafael entra de férias, volta 24/09 — [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] criada
+- 2026-09-25 - Rafael de volta das férias. Confirmado: MR das Suítes 1/2 foi mergeado no `origin/main` (commit `6c9188c`). Scripts `qase-sync-*` (1.24-1.25, 9296-departamentos, 9982-tramitacao) removidos do repo `sogov-automation-test` e movidos pra [[Sistema/Scripts/qase-sync|Sistema/Scripts/qase-sync]] no vault (decisão do Rafael, reutilizáveis fora do repo, `.env`/`package.json` próprios). Nova branch de trabalho criada a partir do `origin/main` atualizado pra continuar as Suítes 3/4/5

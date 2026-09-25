@@ -1,0 +1,8 @@
+{
+  "name": "qase-sync-tools",
+  "private": true,
+  "description": "Scripts reutilizáveis de sincronização com a Qase (API REST) — um por task/termo, README próprio em cada subpasta. .env compartilhado nesta pasta (QASE_TESTOPS_API_TOKEN).",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

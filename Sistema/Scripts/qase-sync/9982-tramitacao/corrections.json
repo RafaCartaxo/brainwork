@@ -1,0 +1,236 @@
+{
+  "_readme": "Payload de sincronização dos 12 CTs aplicáveis da SGV-9982 (Permitir escolher permanecer no documento ou voltar à mesa ao encerrar) na Qase (projeto SGV, suite 358 — filha de 125 Melhorias/Funcionalidades, criada em 24/09/2026 especificamente pra esta melhoria). Todos os 12 CTs foram aprovados na validação em DEV (incluindo CT-009 e CT-012, que reprovaram numa rodada anterior — defeitos SGV-11815 e SGV-11816, corrigidos e retestados). description/preconditions/postconditions preenchidos desde a rodada 1 (evitando o retrabalho de 2 rodadas que aconteceu na SGV-9296). Sem shared steps nesta leva — CT-003/CT-004/CT-005 têm mecânica parecida (marcar checkbox + confirmar Encerrar) mas resultado esperado específico por tipo de encerramento; decidido manter como 3 casos independentes. Ver rascunho legível em 'QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/05 - Preparação Qase.md' no vault BrainWork (pacote passou por '02 Demandas/' → '04 Conhecimento/Tasks/' → de volta pra '02 Demandas/DEV/' em 24/09/2026 — destino correto pra pacote de demanda ativa).",
+  "project_code": "SGV",
+  "suite_id": 358,
+  "updates": [],
+  "delete": [],
+  "creates": [
+    {
+      "title": "CT-001 Checkbox desmarcado por padrão sem preferência salva",
+      "description": "Confirma o critério C1/C2 (RF02) da SGV-9982: o checkbox \"Permanecer no documento após encerrar\" aparece desmarcado quando o usuário nunca marcou a preferência.",
+      "preconditions": "Usuário não possui preferência de \"Permanecer no documento após encerrar\" salva. Usuário está em um documento com tramitação ativa, prestes a abrir um dos três dialogs de encerramento (documento inteiro, setor ou participação própria).",
+      "postconditions": "Nenhum dado é alterado; o dialog permanece aberto aguardando a decisão do usuário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir qualquer um dos três dialogs de encerramento",
+          "data": "",
+          "expected_result": "O checkbox \"Permanecer no documento após encerrar\" é exibido desmarcado."
+        }
+      ],
+      "id": 775
+    },
+    {
+      "title": "[REGRESSÃO] CT-002 Confirmar com checkbox desmarcado mantém o redirecionamento atual",
+      "description": "Confirma o critério C3 da SGV-9982: sem marcar o checkbox, o comportamento de produção (redirecionar para a mesa de trabalho) é preservado.",
+      "preconditions": "O checkbox \"Permanecer no documento após encerrar\" está desmarcado. O documento tem tramitação ativa passível de encerramento.",
+      "postconditions": "Tramitação encerrada conforme o tipo escolhido; usuário na mesa de trabalho.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Confirmar o encerramento clicando em \"Encerrar\" com o checkbox desmarcado",
+          "data": "",
+          "expected_result": "O usuário é redirecionado para a mesa de trabalho."
+        }
+      ],
+      "id": 776
+    },
+    {
+      "title": "CT-003 Confirmar marcado no encerramento do documento inteiro permanece no documento",
+      "description": "Confirma os critérios C1 e C4 da SGV-9982: marcar o checkbox no dialog \"Encerrar tramitação\" (documento inteiro) mantém o usuário no documento.",
+      "preconditions": "Usuário tem permissão para encerrar a tramitação do documento inteiro. Dialog \"Encerrar tramitação\" está aberto.",
+      "postconditions": "Tramitação do documento encerrada para todos os setores envolvidos; usuário permanece na tela do documento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Marcar o checkbox \"Permanecer no documento após encerrar\" e confirmar clicando em \"Encerrar\"",
+          "data": "",
+          "expected_result": "O usuário permanece no documento, que é recarregado no estado pós-encerramento com as ações indisponíveis já refletidas."
+        }
+      ],
+      "id": 777
+    },
+    {
+      "title": "CT-004 Confirmar marcado no encerramento de setor permanece no documento",
+      "description": "Confirma os critérios C1 e C4 da SGV-9982: marcar o checkbox no dialog \"Encerrar tramitação no setor\" mantém o usuário no documento.",
+      "preconditions": "Usuário tem permissão para encerrar a participação do próprio setor. Dialog \"Encerrar tramitação no setor\" está aberto.",
+      "postconditions": "Participação do setor e dos colaboradores encerrada; usuário permanece na tela do documento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Marcar o checkbox \"Permanecer no documento após encerrar\" e confirmar clicando em \"Encerrar\"",
+          "data": "",
+          "expected_result": "O usuário permanece no documento, recarregado no estado pós-encerramento, com a participação do setor e de seus colaboradores encerrada."
+        }
+      ],
+      "id": 778
+    },
+    {
+      "title": "CT-005 Confirmar marcado no encerramento de participação própria permanece no documento",
+      "description": "Confirma os critérios C1 e C4 da SGV-9982: marcar o checkbox no dialog \"Encerrar tramitação para mim\" mantém o usuário no documento.",
+      "preconditions": "Usuário participa do documento e pode encerrar sua própria participação. Dialog \"Encerrar tramitação para mim\" está aberto.",
+      "postconditions": "Participação do próprio usuário encerrada; usuário permanece na tela do documento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Marcar o checkbox \"Permanecer no documento após encerrar\" e confirmar clicando em \"Encerrar\"",
+          "data": "",
+          "expected_result": "O usuário permanece no documento, recarregado no estado pós-encerramento, com suas próprias ações indisponíveis."
+        }
+      ],
+      "id": 779
+    },
+    {
+      "title": "CT-006 Preferência marcada em um tipo de encerramento já reflete nos outros dois",
+      "description": "Confirma o critério C6 da SGV-9982: a preferência é única por usuário, não por tipo de encerramento.",
+      "preconditions": "Usuário marcou e confirmou o checkbox em um dos três dialogs de encerramento anteriormente (ex.: encerramento de setor).",
+      "postconditions": "A preferência do usuário permanece \"permanecer\" independentemente do tipo de encerramento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir o dialog de encerramento de documento inteiro ou de participação própria em outra tramitação",
+          "data": "",
+          "expected_result": "O checkbox já aparece marcado, sem precisar marcar novamente."
+        }
+      ],
+      "id": 780
+    },
+    {
+      "title": "CT-007 Reabrir o dialog reflete o último valor salvo",
+      "description": "Confirma o critério C7 da SGV-9982: o checkbox é pré-marcado conforme a última preferência salva pelo usuário.",
+      "preconditions": "Usuário tem a preferência \"permanecer\" salva de uma confirmação anterior.",
+      "postconditions": "Nenhuma alteração ocorre até que o usuário confirme ou cancele.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir novamente qualquer um dos três dialogs de encerramento",
+          "data": "",
+          "expected_result": "O checkbox aparece pré-marcado."
+        }
+      ],
+      "id": 781
+    },
+    {
+      "title": "CT-008 Desmarcar e confirmar reverte a preferência",
+      "description": "Confirma o critério C8 da SGV-9982: desmarcar o checkbox e confirmar reverte a preferência do usuário para \"voltar à mesa\".",
+      "preconditions": "Usuário tem a preferência \"permanecer\" salva; o checkbox aparece marcado ao abrir o dialog.",
+      "postconditions": "Na próxima abertura de qualquer um dos três dialogs, o checkbox aparece desmarcado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Desmarcar o checkbox e confirmar o encerramento clicando em \"Encerrar\"",
+          "data": "",
+          "expected_result": "A preferência é revertida e o usuário é redirecionado para a mesa de trabalho."
+        }
+      ],
+      "id": 782
+    },
+    {
+      "title": "CT-009 Cancelar não grava a preferência nem encerra a tramitação",
+      "description": "Confirma o critério C5 da SGV-9982: a preferência só é gravada na confirmação; Cancelar ou fechar o dialog não altera a preferência nem encerra a tramitação. Defeito SGV-11815 corrigido e aprovado em DEV.",
+      "preconditions": "Dialog de encerramento aberto, em qualquer um dos três tipos.",
+      "postconditions": "Próxima abertura do dialog reflete a preferência anterior à tentativa, não a alteração descartada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Alterar o estado do checkbox (marcar ou desmarcar) e clicar em \"Cancelar\" (ou fechar o dialog sem confirmar)",
+          "data": "",
+          "expected_result": "Nenhuma preferência é gravada e nenhum encerramento ocorre."
+        }
+      ],
+      "id": 783
+    },
+    {
+      "title": "[REGRESSÃO] CT-010 Preferência é por usuário, não por setor",
+      "description": "Confirma o requisito não funcional RNF03 da SGV-9982: a preferência é isolada por usuário, mesmo entre usuários do mesmo setor.",
+      "preconditions": "Dois usuários do mesmo setor: um com a preferência \"permanecer\" salva, outro sem preferência salva.",
+      "postconditions": "Preferências individuais preservadas para futuros encerramentos.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Cada usuário confirma um encerramento a partir de sua própria preferência",
+          "data": "",
+          "expected_result": "Cada usuário é direcionado conforme a sua própria preferência, independentemente do setor."
+        }
+      ],
+      "id": 784
+    },
+    {
+      "title": "[REGRESSÃO] CT-011 Preferência sobrevive a logout e a novo dispositivo",
+      "description": "Confirma o requisito não funcional RNF04 da SGV-9982: a preferência do usuário é persistida além da sessão atual.",
+      "preconditions": "Usuário tem a preferência \"permanecer\" salva.",
+      "postconditions": "Comportamento do checkbox consistente com a preferência salva, independentemente de sessão/dispositivo.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Fazer logout e login novamente, ou acessar a plataforma em outro dispositivo",
+          "data": "",
+          "expected_result": "A preferência salva é aplicada normalmente, sem precisar marcar o checkbox de novo."
+        }
+      ],
+      "id": 785
+    },
+    {
+      "title": "CT-012 Os três dialogs seguem o modal de alerta com CTAs e copy padronizados",
+      "description": "Confirma o critério C9 da SGV-9982: os três dialogs de encerramento usam o formato de alerta (modal Type=Alert), os CTAs padronizados e a copy exata definida para cada tipo, incluindo as cores do protótipo Figma. Defeito SGV-11816 (cores divergentes do Figma) corrigido e aprovado em DEV.",
+      "preconditions": "Usuário tem permissão para abrir qualquer um dos três dialogs de encerramento.",
+      "postconditions": "Nenhuma alteração de estado — validação apenas visual/textual, sem confirmar nem cancelar o encerramento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir o dialog \"Encerrar tramitação\" (documento inteiro)",
+          "data": "",
+          "expected_result": "modal Type=Alert com as cores do protótipo Figma, CTA primário \"Encerrar\", CTA secundário \"Cancelar\", título \"Encerrar tramitação\" e corpo com o texto exato definido (incluindo $sigla/$nome-setor)."
+        },
+        {
+          "action": "Abrir o dialog \"Encerrar tramitação no setor\"",
+          "data": "",
+          "expected_result": "modal Type=Alert com as cores do protótipo Figma, CTA primário \"Encerrar\", CTA secundário \"Cancelar\", título \"Encerrar tramitação no setor\" e corpo com o texto exato definido (incluindo $sigla/$nome-setor)."
+        },
+        {
+          "action": "Abrir o dialog \"Encerrar tramitação para mim\"",
+          "data": "",
+          "expected_result": "modal Type=Alert com as cores do protótipo Figma, CTA primário \"Encerrar\", CTA secundário \"Cancelar\", título \"Encerrar tramitação para mim\" e corpo com o texto exato definido."
+        }
+      ],
+      "id": 786
+    }
+  ],
+  "shared_steps": []
+}

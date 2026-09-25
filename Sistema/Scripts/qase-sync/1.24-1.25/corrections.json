@@ -1,0 +1,334 @@
+{
+  "_readme": "Payload de correção pros 39 casos do TR 1.24-1.25 na Qase (projeto SGV, suite id 4). Gerado a partir do arquivo canônico do vault em 31/08. Consumido por sync.js. Campos ausentes num 'update' = não mexer nesse campo. 'priority' foi deliberadamente deixado de fora de todos os casos (inclusive o create) — decisão do Rafael em 31/08: preencher manualmente na Qase depois, é campo fácil de ajustar lá, e evita depender de um mapeamento de enum (low/medium/high) que não tínhamos como confirmar empiricamente (nenhum dos 39 casos originais tinha prioridade definida). AVISO (04/09/2026): esta pasta está CONGELADA, sem o fix de idempotência da versão nova (ver qase-sync-9296-departamentos/) — o 'creates' abaixo não tem 'id' gravado, então rodar `node sync.js --apply` de novo RECRIARIA um caso duplicado. Não rodar sem revisar/adaptar primeiro.",
+  "project_code": "SGV",
+  "suite_id": 4,
+  "updates": [
+    {
+      "postconditions": "Sessão autenticada no contexto de servidor; sem outra alteração de estado persistente",
+      "id": 1
+    },
+    {
+      "description": "1.24.2. Cidadão (Pessoa Física): Autenticação por CPF(Obrigatoriamente) e senha;",
+      "id": 2
+    },
+    {
+      "description": "1.24.3. Empresas e outras entidades (Pessoa Jurídica): Autenticação por CNPJ (Obrigatoriamente) e senha.",
+      "preconditions": "A empresa já está cadastrada como cidadão PJ.",
+      "postconditions": "Sessão autenticada no contexto de empresa; nada mais muda no sistema.",
+      "id": 3
+    },
+    {
+      "title": "Ao informar um CPF na tela de login compartilhada, o sistema nunca autentica no contexto de Empresa",
+      "description": "1.24.2. Cidadão (Pessoa Física): Autenticação por CPF(Obrigatoriamente) e senha; (...) 1.24.3. Empresas e outras entidades (Pessoa Jurídica): Autenticação por CNPJ (Obrigatoriamente) e senha.",
+      "preconditions": "A tela de login do cidadão está aberta — o mesmo campo único usado por pessoa física e empresa (mesma tela dos CT-002/CT-003).",
+      "postconditions": "Se houver cadastro correspondente, a sessão é aberta no contexto de Cidadão (pessoa física); nunca no contexto de Empresa.",
+      "steps": [
+        {
+          "action": "A pessoa informa um CPF cadastrado (11 dígitos) e a senha correta na mesma tela usada pelas empresas [SS-01b]",
+          "data": "CPF cadastrado (11 dígitos) + senha correta",
+          "expected_result": "O login funciona, mas sempre no contexto de Cidadão (pessoa física) — o perfil Empresa nunca é atribuído a um login feito com CPF, já que a empresa se identifica exclusivamente por CNPJ (14 dígitos)"
+        }
+      ],
+      "_note": "CORREÇÃO: card estava com título de uma premissa antiga/inválida e steps duplicados do id6. Reescrito com o conteúdo atual e válido do CT-005.",
+      "id": 5
+    },
+    {
+      "preconditions": "O usuário está cadastrado e ativo.",
+      "postconditions": "Contador de tentativas malsucedidas em 3 (não bloqueado).",
+      "steps": [
+        {
+          "action": "Ele erra 3 vezes [SS-03, N=3]",
+          "data": "3 tentativas erradas",
+          "expected_result": "Ainda sem bloqueio (faltam 2 pro limite)"
+        },
+        {
+          "action": "Faz um login com sucesso, e em seguida erra mais 3 vezes [SS-03, N=3]",
+          "data": "login correto + 3 erradas",
+          "expected_result": "A conta não bloqueia nessa segunda leva, mostrando que o contador reiniciou depois do login certo"
+        }
+      ],
+      "id": 18
+    },
+    {
+      "preconditions": "Existem dois usuários distintos, ambos cadastrados e ativos.",
+      "postconditions": "Usuário A bloqueado; Usuário B com sessão autenticada normalmente.",
+      "steps": [
+        {
+          "action": "O Usuário A é bloqueado depois de errar 5 vezes [SS-03, N=5]",
+          "data": "Usuário A, 5 tentativas erradas",
+          "expected_result": "Usuário A fica bloqueado"
+        },
+        {
+          "action": "O Usuário B tenta autenticar com suas próprias credenciais corretas",
+          "data": "Usuário B, credenciais válidas",
+          "expected_result": "Ele consegue autenticar de boa — o bloqueio ficou restrito à conta do Usuário A"
+        }
+      ],
+      "id": 19
+    },
+    {
+      "preconditions": "O servidor está cadastrado com status \"Ativo\", em qualquer nível (Administrador, Administrador Setorial, Especialista, Usuário básico ou Somente leitura).",
+      "postconditions": "Sessão com permissões plenas do perfil; nada mais muda no sistema.",
+      "steps": [
+        {
+          "action": "Ele autentica na tela do servidor [SS-01a] e percorre as funcionalidades disponíveis pro seu nível",
+          "data": "servidor Ativo, qualquer nível",
+          "expected_result": "Todas as funcionalidades e permissões do perfil dele estão liberadas, sem nenhuma restrição extra ligada ao status"
+        }
+      ],
+      "id": 20
+    },
+    {
+      "preconditions": "O servidor está com status \"Licença\" vigente.",
+      "postconditions": "Sessão autenticada em modo restrito (quarentena de privilégios).",
+      "steps": [
+        {
+          "action": "Ele tenta autenticar normalmente com CPF e senha [SS-04a, status=Licença]",
+          "data": "CPF + senha corretos, status Licença",
+          "expected_result": "O login é permitido (diferente do \"Inativo\"), mas o acesso fica restrito a um mínimo de funcionalidades não transacionais"
+        }
+      ],
+      "id": 21
+    },
+    {
+      "preconditions": "O servidor com status \"Licença\" vigente já concluiu o login.",
+      "postconditions": "Sem alteração de estado além da sessão autenticada em modo restrito.",
+      "steps": [
+        {
+          "action": "Ele olha a tela inicial/mesa de trabalho [SS-04b, status=Licença]",
+          "data": "servidor logado, status Licença",
+          "expected_result": "O sistema mostra um aviso informando que ele está de licença"
+        }
+      ],
+      "id": 22
+    },
+    {
+      "preconditions": "O servidor com status \"Licença\" está autenticado no sistema.",
+      "postconditions": "Nenhuma alteração de estado é produzida pelas tentativas bloqueadas.",
+      "steps": [
+        {
+          "action": "Ele tenta editar um documento, aprovar/assinar uma tramitação, ou avançar um fluxo [SS-04c, status=Licença]",
+          "data": "servidor logado, status Licença",
+          "expected_result": "Todas essas ações ficam bloqueadas/indisponíveis"
+        }
+      ],
+      "id": 23
+    },
+    {
+      "title": "Servidor em \"Licença\" não tem acesso a nenhuma funcionalidade, nem de leitura/consulta",
+      "preconditions": "O servidor com status \"Licença\" está autenticado no sistema.",
+      "postconditions": "Sem alteração de estado além da sessão autenticada em modo restrito.",
+      "steps": [
+        {
+          "action": "Ele tenta consultar/visualizar algo que veria normalmente se estivesse \"Ativo\" [SS-04d, status=Licença]",
+          "data": "servidor logado, status Licença",
+          "expected_result": "Nada fica visível — o acesso é limitado por completo, sem visibilidade de conteúdo"
+        }
+      ],
+      "_note": "CORREÇÃO (18/08): título/conteúdo anteriores diziam que a leitura 'permanece acessível' — confirmado com o Rafael que está errado, hoje não há acesso nenhum, nem de leitura.",
+      "id": 24
+    },
+    {
+      "preconditions": "O servidor está logado no sistema (sessão ativa) com status \"Ativo\".",
+      "postconditions": "A sessão em curso passa a operar em modo restrito a partir do momento da alteração.",
+      "steps": [
+        {
+          "action": "Um Administrador muda o status dele pra \"Licença\", com a sessão ainda aberta",
+          "data": "sessão ativa + mudança de status pra Licença",
+          "expected_result": "A restrição já vale ali mesmo, na sessão em curso — não precisa de um novo login"
+        }
+      ],
+      "id": 25
+    },
+    {
+      "preconditions": "O servidor tem um período de \"Licença\" configurado com data de término definida.",
+      "postconditions": "O servidor retorna ao status \"Ativo\", com permissões plenas restauradas.",
+      "steps": [
+        {
+          "action": "Chega (ou se simula) a data de término, e ele autentica de novo [SS-05, status=Licença]",
+          "data": "data de término atingida",
+          "expected_result": "As permissões plenas voltam automaticamente, e ele retorna ao status \"Ativo\""
+        }
+      ],
+      "id": 26
+    },
+    {
+      "preconditions": "O servidor está com status \"Férias\" vigente.",
+      "postconditions": "Sessão autenticada em modo restrito (quarentena de privilégios).",
+      "steps": [
+        {
+          "action": "Ele tenta autenticar normalmente com CPF e senha [SS-04a, status=Férias]",
+          "data": "CPF + senha corretos, status Férias",
+          "expected_result": "O login é permitido, com o acesso restrito pela mesma política de quarentena da \"Licença\""
+        }
+      ],
+      "id": 27
+    },
+    {
+      "preconditions": "O servidor com status \"Férias\" vigente já concluiu o login.",
+      "postconditions": "Sem alteração de estado além da sessão autenticada em modo restrito.",
+      "steps": [
+        {
+          "action": "Ele olha a tela inicial/mesa de trabalho [SS-04b, status=Férias]",
+          "data": "servidor logado, status Férias",
+          "expected_result": "O sistema mostra uma notificação informando que ele está de férias"
+        }
+      ],
+      "id": 28
+    },
+    {
+      "preconditions": "O servidor com status \"Férias\" está autenticado no sistema.",
+      "postconditions": "Nenhuma alteração de estado é produzida pelas tentativas bloqueadas.",
+      "steps": [
+        {
+          "action": "Ele tenta editar/criar um documento, ou executar/avançar um fluxo [SS-04c, status=Férias]",
+          "data": "servidor logado, status Férias",
+          "expected_result": "Essas ações de escrita e execução de fluxo ficam bloqueadas/indisponíveis"
+        }
+      ],
+      "id": 29
+    },
+    {
+      "title": "Servidor em \"Férias\" não tem acesso a nenhuma funcionalidade, nem de leitura/consulta",
+      "preconditions": "O servidor com status \"Férias\" está autenticado no sistema.",
+      "postconditions": "Sem alteração de estado além da sessão autenticada em modo restrito.",
+      "steps": [
+        {
+          "action": "Ele tenta consultar/visualizar algo que veria normalmente se estivesse \"Ativo\" [SS-04d, status=Férias]",
+          "data": "servidor logado, status Férias",
+          "expected_result": "Nada fica visível — o acesso é limitado por completo, sem visibilidade de conteúdo"
+        }
+      ],
+      "_note": "CORREÇÃO (18/08): mesma correção do id24 — ver nota lá.",
+      "id": 30
+    },
+    {
+      "preconditions": "O servidor tem um período de \"Férias\" configurado com data de término definida.",
+      "postconditions": "O servidor retorna ao status \"Ativo\", com permissões plenas restauradas.",
+      "steps": [
+        {
+          "action": "Chega (ou se simula) a data de término, e ele autentica de novo [SS-05, status=Férias]",
+          "data": "data de término atingida",
+          "expected_result": "As permissões plenas voltam automaticamente, e ele retorna ao status \"Ativo\""
+        }
+      ],
+      "id": 31
+    },
+    {
+      "preconditions": "O servidor está cadastrado com status \"Inativo\" (vínculo encerrado).",
+      "postconditions": "Nenhuma sessão aberta; nada muda no sistema.",
+      "steps": [
+        {
+          "action": "Ele tenta autenticar com CPF e senha corretos",
+          "data": "credenciais corretas, status Inativo",
+          "expected_result": "O acesso é negado de forma explícita (explicit deny), mesmo com credenciais corretas — o sistema mostra uma mensagem de conta inativa, diferente das usadas pra credenciais inválidas ou conta bloqueada (ver CT-010, CT-011, CT-015)"
+        }
+      ],
+      "id": 32
+    },
+    {
+      "preconditions": "O servidor está logado no sistema (sessão ativa) com status \"Ativo\".",
+      "postconditions": "A sessão em curso é encerrada/revogada a partir do momento da alteração.",
+      "steps": [
+        {
+          "action": "Um Administrador muda o status dele pra \"Inativo\", com a sessão ainda aberta",
+          "data": "sessão ativa + mudança de status pra Inativo",
+          "expected_result": "O acesso é revogado imediatamente na sessão em curso — ela não continua válida até um novo login"
+        }
+      ],
+      "id": 34
+    },
+    {
+      "preconditions": "O servidor estava inativo e foi reativado por um Administrador (status volta para \"Ativo\").",
+      "postconditions": "O servidor retorna ao status \"Ativo\", com permissões plenas restauradas.",
+      "steps": [
+        {
+          "action": "Ele tenta autenticar de novo",
+          "data": "servidor reativado",
+          "expected_result": "O login funciona, com as permissões plenas do perfil dele totalmente restauradas"
+        }
+      ],
+      "id": 35
+    },
+    {
+      "preconditions": "O servidor está cadastrado, e um Administrador pode alterar o status dele livremente.",
+      "postconditions": "O servidor termina a sequência com status \"Inativo\" e sem acesso.",
+      "steps": [
+        {
+          "action": "Alternar o status na sequência Ativo → Férias → Ativo → Licença → Inativo, testando login/ação depois de cada mudança",
+          "data": "sequência de mudanças de status",
+          "expected_result": "Em cada etapa, o comportamento de acesso (permitido, restrito ou negado) corresponde exatamente ao status vigente naquele momento"
+        }
+      ],
+      "id": 36
+    },
+    {
+      "preconditions": "Existe acesso a um relatório/log de auditoria de acessos (perfil Administrador).",
+      "postconditions": "O log de auditoria fica com as novas entradas registradas permanentemente.",
+      "steps": [
+        {
+          "action": "Fazer tentativas de login com sucesso e com falha pro mesmo usuário, e depois consultar o log/relatório de auditoria",
+          "data": "diversas tentativas de login",
+          "expected_result": "Todas as tentativas (sucesso e falha) aparecem registradas com data, hora e resultado, permitindo rastreabilidade"
+        }
+      ],
+      "id": 37
+    },
+    {
+      "preconditions": "O usuário está cadastrado e ativo.",
+      "postconditions": "Duas sessões ativas simultâneas para o mesmo usuário.",
+      "steps": [
+        {
+          "action": "Autenticar em dois dispositivos/navegadores distintos, ao mesmo tempo, com as mesmas credenciais",
+          "data": "mesmas credenciais, dois acessos simultâneos",
+          "expected_result": "Ambas as sessões continuam ativas e funcionais, permitindo requisições normalmente em qualquer uma delas, sem que uma encerre a outra"
+        }
+      ],
+      "id": 38
+    },
+    {
+      "title": "Status \"Suspenso\" se comporta exatamente como \"Inativo\": negação total de acesso",
+      "preconditions": "O servidor está cadastrado com status \"Suspenso\".",
+      "postconditions": "Nenhuma sessão aberta; nada muda no sistema.",
+      "steps": [
+        {
+          "action": "Ele tenta autenticar com CPF e senha corretos",
+          "data": "credenciais corretas, status Suspenso",
+          "expected_result": "O acesso é negado de forma explícita (explicit deny), do mesmo jeito que o status \"Inativo\""
+        }
+      ],
+      "id": 39
+    }
+  ],
+  "delete": [
+    {
+      "id": 13,
+      "_note": "Absorvido no vault em 19/08: virou uma cláusula extra no Expected Result de CT-009/CT-010/CT-014/CT-031. A explicação de por que ele não existe mais fica registrada na seção 'G. Fora de execução' do arquivo canônico do vault — decisão do Rafael em 31/08: excluir de vez em vez de só marcar como depreciado."
+    },
+    {
+      "id": 33,
+      "_note": "Absorvido no vault em 19/08, mesmo motivo do id13 — ver nota lá."
+    }
+  ],
+  "creates": [
+    {
+      "title": "Um servidor desbloqueia manualmente a conta pela tela do servidor",
+      "description": "[Não há regra explícita sobre o mecanismo de desbloqueio] 1.25.1. \"Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada;\"",
+      "preconditions": "A conta está bloqueada (mesma pré-condição do CT-015), e existe um servidor com permissão de desbloqueio.",
+      "postconditions": "Conta volta ao estado desbloqueado; contador de tentativas zerado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Esse servidor acessa a própria tela e realiza o desbloqueio manual da conta",
+          "data": "conta bloqueada + permissão de desbloqueio",
+          "expected_result": "A conta é desbloqueada, e o usuário consegue autenticar normalmente em seguida"
+        }
+      ],
+      "_note": "Equivalente ao CT-017 do vault. Nunca teve card na Qase — só existia o desbloqueio por e-mail (id17/CT-016)."
+    }
+  ]
+}
