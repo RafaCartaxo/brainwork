@@ -23,6 +23,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
+> **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
@@ -38,6 +39,7 @@ pontos: ""
 | Casos de teste | ⏳ |
 | Validação | ⏳ |
 | Preparação Qase | ⏳ |
+| Automação | ⏳ |
 
 **Próximo passo:** <registrar a próxima ação objetiva>.
 
@@ -72,6 +74,7 @@ Pacote para `<ID>`:
 ├── 03 - Casos de teste.md
 ├── 04 - Validação dev.md
 ├── 05 - Preparação Qase.md
+├── 06 - Automação.md        (opcional — só quando houver cobertura automatizada)
 └── Defeitos/                (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md)
 ```
 
