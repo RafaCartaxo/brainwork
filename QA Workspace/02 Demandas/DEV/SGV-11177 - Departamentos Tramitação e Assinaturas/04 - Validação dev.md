@@ -25,8 +25,8 @@ ct_resultados:
   ct_015: ✅ Aprovado
   ct_016: ✅ Aprovado
   ct_017: ✅ Aprovado
-  ct_018: ⏳ Aguardando
-  ct_019: ⏳ Aguardando
+  ct_018: ✅ Aprovado
+  ct_019: ✅ Aprovado
   ct_020: ⏳ Aguardando
   ct_021: ⏳ Aguardando
   ct_022: ⏳ Aguardando
