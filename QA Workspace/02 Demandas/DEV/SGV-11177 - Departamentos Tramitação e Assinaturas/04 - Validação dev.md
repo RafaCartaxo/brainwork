@@ -8,37 +8,37 @@ responsavel: ""
 resultado: aguardando
 pontos: 0
 ct_resultados:
-  ct_001: "⏳ Aguardando"
-  ct_002: "⏳ Aguardando"
-  ct_003: "⏳ Aguardando"
-  ct_004: "⏳ Aguardando"
-  ct_005: "⏳ Aguardando"
-  ct_006: "⏳ Aguardando"
-  ct_007: "⏳ Aguardando"
-  ct_008: "⏳ Aguardando"
-  ct_009: "⏳ Aguardando"
-  ct_010: "⏳ Aguardando"
-  ct_011: "⏳ Aguardando"
-  ct_012: "⏳ Aguardando"
-  ct_013: "⏳ Aguardando"
-  ct_014: "⏳ Aguardando"
-  ct_015: "⏳ Aguardando"
-  ct_016: "⏳ Aguardando"
-  ct_017: "⏳ Aguardando"
-  ct_018: "⏳ Aguardando"
-  ct_019: "⏳ Aguardando"
-  ct_020: "⏳ Aguardando"
-  ct_021: "⏳ Aguardando"
-  ct_022: "⏳ Aguardando"
-  ct_023: "⏳ Aguardando"
-  ct_024: "⏳ Aguardando"
-  ct_025: "⏳ Aguardando"
-  ct_026: "⏳ Aguardando"
-  ct_027: "⏳ Aguardando"
-  ct_028: "⏳ Aguardando"
-  ct_029: "⏳ Aguardando"
-  ct_030: "⏳ Aguardando"
-  ct_031: "⏳ Aguardando"
+  ct_001: ✅ Aprovado
+  ct_002: ✅ Aprovado
+  ct_003: ✅ Aprovado
+  ct_004: ✅ Aprovado
+  ct_005: ⏳ Aguardando
+  ct_006: ⏳ Aguardando
+  ct_007: ⏳ Aguardando
+  ct_008: ⏳ Aguardando
+  ct_009: ⏳ Aguardando
+  ct_010: ⏳ Aguardando
+  ct_011: ⏳ Aguardando
+  ct_012: ⏳ Aguardando
+  ct_013: ⏳ Aguardando
+  ct_014: ⏳ Aguardando
+  ct_015: ⏳ Aguardando
+  ct_016: ⏳ Aguardando
+  ct_017: ⏳ Aguardando
+  ct_018: ⏳ Aguardando
+  ct_019: ⏳ Aguardando
+  ct_020: ⏳ Aguardando
+  ct_021: ⏳ Aguardando
+  ct_022: ⏳ Aguardando
+  ct_023: ⏳ Aguardando
+  ct_024: ⏳ Aguardando
+  ct_025: ⏳ Aguardando
+  ct_026: ⏳ Aguardando
+  ct_027: ⏳ Aguardando
+  ct_028: ⏳ Aguardando
+  ct_029: ⏳ Aguardando
+  ct_030: ⏳ Aguardando
+  ct_031: ⏳ Aguardando
 data_inicio: ""
 data_fim: ""
 ---
