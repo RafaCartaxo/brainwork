@@ -12,7 +12,7 @@ ct_resultados:
   ct_002: ✅ Aprovado
   ct_003: ✅ Aprovado
   ct_004: ✅ Aprovado
-  ct_005: ⏳ Aguardando
+  ct_005: 🔵 Em andamento
   ct_006: ⏳ Aguardando
   ct_007: ⏳ Aguardando
   ct_008: ⏳ Aguardando
