@@ -38,7 +38,7 @@ Solicitar assinatura pro cidadão PJ funciona pela busca direta, mas exibe a tag
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11910)
 
-Pendência — nenhuma evidência (vídeo/print) anexada ainda.
+![[11910 - retorna cidadão com tag de cadastro incompleto, incorreto.mp4]]
 
 ---
 
@@ -69,7 +69,7 @@ Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). 
 
 **Evidências de Testes:**
 
-Pendência — nenhuma evidência anexada ainda.
+![[11910 - retorna cidadão com tag de cadastro incompleto, incorreto.mp4]]
 
 ---
 

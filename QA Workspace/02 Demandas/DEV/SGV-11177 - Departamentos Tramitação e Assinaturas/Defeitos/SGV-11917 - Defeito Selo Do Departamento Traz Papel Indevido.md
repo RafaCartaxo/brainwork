@@ -34,7 +34,7 @@ Antes de assinado (a posicionar/posicionado), o selo de assinatura de um departa
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11917)
 
-Pendência — nenhuma evidência (vídeo/print) anexada ainda.
+![[11917 - Selo departamento retornando $papel, incorreto.mp4]]
 
 ---
 
@@ -65,7 +65,7 @@ Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum es
 
 **Evidências de Testes:**
 
-Pendência — nenhuma evidência anexada ainda.
+![[11917 - Selo departamento retornando $papel, incorreto.mp4]]
 
 ---
 

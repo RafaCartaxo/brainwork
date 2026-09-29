@@ -34,7 +34,7 @@ Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identific
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11905)
 
-Pendência — nenhuma evidência (vídeo/print) anexada ainda. Rafael vai anexar depois.
+![[11905 - Selo representando dpt incorreto.mp4]]
 
 ---
 
@@ -67,7 +67,7 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 
 **Evidências de Testes:**
 
-Pendência — nenhuma evidência anexada ainda.
+![[11905 - Selo representando dpt incorreto.mp4]]
 
 ---
 

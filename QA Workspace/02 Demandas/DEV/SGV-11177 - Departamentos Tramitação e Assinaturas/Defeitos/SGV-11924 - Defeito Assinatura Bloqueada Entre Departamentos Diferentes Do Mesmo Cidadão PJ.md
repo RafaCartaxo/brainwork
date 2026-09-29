@@ -52,7 +52,7 @@ Toast exibido: "Você já foi solicitado assinar em alguns dos locais neste seto
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11924)
 
-Pendência — nenhuma evidência (vídeo/print) anexada ainda.
+![[11924 - Assinatura bloqueada entre departamentos, incorreto.mp4]]
 
 ---
 
@@ -83,7 +83,7 @@ Solicitação de assinatura a um departamento diferente do mesmo cidadão PJ é 
 
 **Evidências de Testes:**
 
-Pendência — nenhuma evidência anexada ainda.
+![[11924 - Assinatura bloqueada entre departamentos, incorreto.mp4]]
 
 ---
 
@@ -97,7 +97,8 @@ Pendência — nenhuma evidência anexada ainda.
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-035|CT-035]] (critério C35, criado a partir deste achado). Card reaproveitado: a suspeita original registrada aqui (campo cargo preenchido com CPF, CT-025) era autofill do navegador, não bug — CT-025 confirmado aprovado.
+- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-035|CT-035]] (critério C35, criado a partir deste achado). Card reaproveitado: a suspeita original registrada aqui (campo cargo preenchido com CPF, CT-025) era autofill do navegador, não bug — CT-025 confirmado aprovado. Evidência da suspeita descartada, preservada por contexto:
+  ![[11924 - Cargo auto-preenchido com CPF, correto, falso cadastro.mp4]]
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (suspeita original: campo cargo com CPF, CT-025)
     - 2026-09-29 - 🔁 Conteúdo do card substituído — suspeita original era autofill do navegador (CT-025 aprovado); achado real é o bloqueio entre departamentos diferentes da mesma PJ (CT-035)
