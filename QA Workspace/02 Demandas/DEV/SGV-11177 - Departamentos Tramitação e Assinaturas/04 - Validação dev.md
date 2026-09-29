@@ -36,9 +36,9 @@ ct_resultados:
   ct_026: ⏳ Aguardando
   ct_027: ⏳ Aguardando
   ct_028: ⏳ Aguardando
-  ct_029: ⏳ Aguardando
-  ct_030: ⏳ Aguardando
-  ct_031: ⏳ Aguardando
+  ct_029: ✅ Aprovado
+  ct_030: ✅ Aprovado
+  ct_031: 🔵 Em andamento
   ct_032: ❌ Falhou
   ct_033: ❌ Falhou
   ct_034: ❌ Falhou
