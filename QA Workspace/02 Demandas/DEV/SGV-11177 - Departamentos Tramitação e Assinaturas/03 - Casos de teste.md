@@ -61,6 +61,7 @@ pontos: ""
 | [[01 - Demanda#^c32\|C32]] | [[03 - Casos de teste#^ct-032\|CT-032]] |
 | [[01 - Demanda#^c33\|C33]] | [[03 - Casos de teste#^ct-033\|CT-033]] |
 | [[01 - Demanda#^c34\|C34]] | [[03 - Casos de teste#^ct-034\|CT-034]] |
+| [[01 - Demanda#^c35\|C35]] | [[03 - Casos de teste#^ct-035\|CT-035]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1012,7 +1013,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI/E2E  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11924 - Defeito Campo Cargo Vem Preenchido Com CPF No Vínculo Externo|SGV-11924]]
+> **Execução:** aprovado — campo cargo pareceu preenchido com o CPF por causa de autofill do navegador (login salvo), não é bug da aplicação; confirmado funcionando
 
 ^ct-025
 
@@ -1357,3 +1358,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** reprovado — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido|SGV-11917]]
 
 ^ct-034
+
+> [!example]- CT-035 · Assinatura a departamentos diferentes do mesmo cidadão PJ
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que solicitar assinatura a um segundo departamento do mesmo cidadão PJ não é bloqueado pelo sistema.
+>
+> **Pré-condições:**  
+> - Assinatura já solicitada a um departamento de um cidadão PJ (CT-011).
+>
+> **Dado** que uma assinatura já foi solicitada a um departamento de um cidadão PJ  
+> **Quando** o solicitante configura uma nova solicitação de assinatura a um departamento **diferente** do **mesmo** cidadão PJ  
+> **Então** o sistema aceita a solicitação normalmente
+>
+> **Resultado esperado:** nenhum bloqueio — departamentos diferentes da mesma PJ podem ser signatários independentes, mesma regra já válida pra destinatário de tramitação.
+>
+> **Pós-condição:** os dois departamentos ficam como signatários pendentes, cada um com sua própria solicitação.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c35|C35]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** API  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ|SGV-11924]]
+
+^ct-035

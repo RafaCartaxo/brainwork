@@ -1,0 +1,103 @@
+---
+tags:
+  - defeito
+  - qa
+  - servicos-pj
+task: "11924"
+pai: "SGV-11177"
+prioridade: media
+status: aberto
+data_inicio: 2026-09-29
+data_fim: ""
+responsavel: Rafael
+aguardando:
+pontos:
+cadastrado_por: ""
+modulo: servicos-pj
+ambiente: DEV
+---
+# Assinatura bloqueada entre departamentos diferentes do mesmo cidadão PJ
+
+### Descrição
+
+Não é possível solicitar assinatura de departamentos diferentes do mesmo cidadão PJ — a API bloqueia a segunda solicitação achando que já perguntou pro cidadão. Contraria a regra confirmada: um documento pode ter mais de um departamento como signatário, inclusive departamentos diferentes da mesma PJ (mesma regra de destinatário de tramitação, [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], estendida à assinatura).
+
+---
+
+### Passo a passo para reproduzir
+
+**Dado** que uma assinatura já foi solicitada a um departamento de um cidadão PJ
+**Quando** o solicitante configura uma nova solicitação de assinatura a um departamento diferente do mesmo cidadão PJ
+**Então** verifico que a API retorna erro, bloqueando a solicitação
+
+Resposta da API:
+
+```json
+{
+    "errors": [
+        {
+            "message": "system.messages.you-have-already-been-asked-once-with-sogov",
+            "locations": [{"line": 2, "column": 3}],
+            "path": ["createSignatures"],
+            "extensions": {"code": "REDWOODJS_ERROR"}
+        }
+    ],
+    "data": null
+}
+```
+
+Toast exibido: "Você já foi solicitado assinar em alguns dos locais neste setor com assinatura SOGOV."
+
+---
+
+### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11924)
+
+Pendência — nenhuma evidência (vídeo/print) anexada ainda.
+
+---
+
+### Resultado Esperado
+
+Solicitação de assinatura a um departamento diferente do mesmo cidadão PJ é aceita normalmente, sem bloqueio. Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c35|C35]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-035|CT-035]].
+
+---
+
+### Critérios de aceite
+
+- [ ] Solicitar assinatura a um departamento diferente do mesmo cidadão PJ não é bloqueado pela checagem "já perguntou"
+
+---
+
+### Casos de Teste Básicos
+
+#### **CT-B01 Assinatura a segundo departamento da mesma PJ não é bloqueada**
+
+**Dado** que uma assinatura já foi solicitada a um departamento de um cidadão PJ
+**Quando** o solicitante configura uma nova solicitação a um departamento diferente do mesmo cidadão PJ
+**Então** a solicitação é aceita, sem o erro `you-have-already-been-asked-once-with-sogov`
+
+**Execução Passou?**
+- [ ] Sim
+- [x] Não
+- [ ] Não se aplica
+
+**Evidências de Testes:**
+
+Pendência — nenhuma evidência anexada ainda.
+
+---
+
+### Ambiente
+
+- Versão: a definir
+- Ambiente: Desenvolvimento
+
+---
+
+### Informações adicionais
+
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-035|CT-035]] (critério C35, criado a partir deste achado). Card reaproveitado: a suspeita original registrada aqui (campo cargo preenchido com CPF, CT-025) era autofill do navegador, não bug — CT-025 confirmado aprovado.
+- Histórico:
+    - 2026-09-29 - 🐛 Defeito cadastrado (suspeita original: campo cargo com CPF, CT-025)
+    - 2026-09-29 - 🔁 Conteúdo do card substituído — suspeita original era autofill do navegador (CT-025 aprovado); achado real é o bloqueio entre departamentos diferentes da mesma PJ (CT-035)

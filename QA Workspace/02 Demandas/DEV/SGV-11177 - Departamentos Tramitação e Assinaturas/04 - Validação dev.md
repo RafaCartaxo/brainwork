@@ -32,7 +32,7 @@ ct_resultados:
   ct_022: ⏳ Aguardando
   ct_023: ✅ Aprovado
   ct_024: ✅ Aprovado
-  ct_025: ❌ Falhou
+  ct_025: ✅ Aprovado
   ct_026: ✅ Aprovado
   ct_027: ✅ Aprovado
   ct_028: ✅ Aprovado
@@ -42,6 +42,7 @@ ct_resultados:
   ct_032: ❌ Falhou
   ct_033: ❌ Falhou
   ct_034: ❌ Falhou
+  ct_035: ❌ Falhou
 data_inicio: ""
 data_fim: ""
 ---
@@ -61,7 +62,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real em andamento — 5 defeitos confirmados até 29/09/2026 (CT-020, CT-025, CT-032, CT-033, CT-034).
+> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real em andamento — 5 defeitos confirmados até 29/09/2026 (CT-020, CT-032, CT-033, CT-034, CT-035).
 
 ---
 
@@ -130,7 +131,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-022\|CT-022]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_022]` |  |  |  | `= choice(this.ct_resultados.ct_022 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-023\|CT-023]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_023]` |  |  |  | `= choice(this.ct_resultados.ct_023 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-024\|CT-024]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_024]` |  |  |  | `= choice(this.ct_resultados.ct_024 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-025\|CT-025]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_025]` |  |  | [[Defeitos/SGV-11924 - Defeito Campo Cargo Vem Preenchido Com CPF No Vínculo Externo\|SGV-11924]] | `= choice(this.ct_resultados.ct_025 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-025\|CT-025]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_025]` |  | Cargo parecia preenchido com CPF — era autofill do navegador (login salvo), não bug |  | `= choice(this.ct_resultados.ct_025 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-026\|CT-026]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_026]` |  |  |  | `= choice(this.ct_resultados.ct_026 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-027\|CT-027]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_027]` |  |  |  | `= choice(this.ct_resultados.ct_027 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-028\|CT-028]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_028]` |  |  |  | `= choice(this.ct_resultados.ct_028 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
@@ -140,6 +141,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-032\|CT-032]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_032]` |  |  | [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário\|SGV-11905]] | `= choice(this.ct_resultados.ct_032 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-033\|CT-033]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_033]` |  |  | [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento\|SGV-11910]] | `= choice(this.ct_resultados.ct_033 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-034\|CT-034]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_034]` |  |  | [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido\|SGV-11917]] | `= choice(this.ct_resultados.ct_034 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-035\|CT-035]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_035]` |  |  | [[Defeitos/SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ\|SGV-11924]] | `= choice(this.ct_resultados.ct_035 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 
