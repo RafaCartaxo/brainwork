@@ -59,6 +59,7 @@ pontos: ""
 | [[01 - Demanda#^c30\|C30]] | [[03 - Casos de teste#^ct-030\|CT-030]] |
 | [[01 - Demanda#^c31\|C31]] | [[03 - Casos de teste#^ct-031\|CT-031]] |
 | [[01 - Demanda#^c32\|C32]] | [[03 - Casos de teste#^ct-032\|CT-032]] |
+| [[01 - Demanda#^c33\|C33]] | [[03 - Casos de teste#^ct-033\|CT-033]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1279,3 +1280,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** reprovado — [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]]
 
 ^ct-032
+
+> [!example]- CT-033 · Selecionar o cidadão PJ funciona igual, independente do caminho de busca
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que solicitar assinatura pro cidadão PJ dá o mesmo resultado independente de como ele foi localizado na busca.
+>
+> **Pré-condições:**  
+> - Cidadão PJ com ao menos um departamento cadastrado.
+>
+> **Dado** que o servidor pesquise diretamente pelo cidadão PJ e solicite a assinatura dele  
+> **Quando** ele repetir a mesma solicitação, agora pesquisando pelo nome de um departamento ou membro desse cidadão PJ e selecionando o mesmo cidadão PJ a partir da linha `Cidadão PJ > Departamento > Membro` retornada  
+> **Então** os dois caminhos resultam no mesmo comportamento — a solicitação de assinatura é aceita normalmente nos dois
+>
+> **Resultado esperado:** o caminho de busca (direto pelo cidadão PJ, ou via departamento/membro) não interfere na validação de cadastro do cidadão PJ selecionado.
+>
+> **Pós-condição:** nenhuma, é só uma verificação de consistência entre os dois caminhos.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c33|C33]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional (regressão)  
+> **Camada:** UI/API  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento|SGV-11910]]
+
+^ct-033
