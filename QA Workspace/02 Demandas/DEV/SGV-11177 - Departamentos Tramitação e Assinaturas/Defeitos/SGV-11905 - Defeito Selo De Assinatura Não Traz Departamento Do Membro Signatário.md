@@ -42,7 +42,7 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda. Rafael vai anexa
 
 O selo deve mostrar: razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel.
 
-Ver [[01 - Demanda#^c32|C32]] e [[03 - Casos de teste#^ct-032|CT-032]].
+Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c32|C32]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]].
 
 ---
 
@@ -80,7 +80,7 @@ Pendência — nenhuma evidência anexada ainda.
 
 ### Informações adicionais
 
-- Demanda relacionada: [[01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação real do pacote QA de SGV-11177 — [[03 - Casos de teste#^ct-032|CT-032]] (critério C32 criado a partir deste achado, fora de sequência).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]] (critério C32 criado a partir deste achado, fora de sequência).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
