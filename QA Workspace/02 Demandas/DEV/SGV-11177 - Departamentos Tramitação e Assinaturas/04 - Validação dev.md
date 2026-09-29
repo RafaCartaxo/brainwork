@@ -12,12 +12,12 @@ ct_resultados:
   ct_002: ✅ Aprovado
   ct_003: ✅ Aprovado
   ct_004: ✅ Aprovado
-  ct_005: 🔵 Em andamento
+  ct_005: ✅ Aprovado
   ct_006: ✅ Aprovado
   ct_007: ✅ Aprovado
   ct_008: ✅ Aprovado
-  ct_009: 🔵 Em andamento
-  ct_010: 🔵 Em andamento
+  ct_009: ✅ Aprovado
+  ct_010: ✅ Aprovado
   ct_011: ✅ Aprovado
   ct_012: ✅ Aprovado
   ct_013: ✅ Aprovado
@@ -28,8 +28,8 @@ ct_resultados:
   ct_018: ✅ Aprovado
   ct_019: ✅ Aprovado
   ct_020: ❌ Falhou
-  ct_021: ⏳ Aguardando
-  ct_022: ⏳ Aguardando
+  ct_021: ✅ Aprovado
+  ct_022: ✅ Aprovado
   ct_023: ✅ Aprovado
   ct_024: ✅ Aprovado
   ct_025: ✅ Aprovado
