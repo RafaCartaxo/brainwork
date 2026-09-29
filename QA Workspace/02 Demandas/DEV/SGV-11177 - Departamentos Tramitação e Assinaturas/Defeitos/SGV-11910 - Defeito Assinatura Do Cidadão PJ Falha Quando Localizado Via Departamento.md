@@ -22,7 +22,7 @@ ambiente: DEV
 
 Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identificado um efeito colateral da busca nova de departamento/membro sobre uma capacidade pré-existente: solicitar assinatura diretamente para um cidadão Pessoa Jurídica (a empresa, não um departamento nem um membro).
 
-O componente de busca de destinatário/signatário retorna o resultado numa hierarquia única — `Cidadão PJ > Departamento > Membro` — e permite localizar o mesmo cidadão PJ tanto pesquisando diretamente pelo nome/CNPJ dele quanto pesquisando pelo nome de um departamento ou membro seu (a busca expande a hierarquia e devolve o cidadão PJ como parte do mesmo resultado). O caminho de busca não deveria mudar o resultado da seleção — mas muda: selecionar o cidadão PJ pela busca direta funciona normalmente; selecionar o **mesmo** cidadão PJ a partir de um resultado encontrado via departamento retorna erro de **"cadastro incompleto"**, mesmo o cidadão tendo cadastro completo (comprovado pelo caminho direto funcionar).
+O componente de busca de destinatário/signatário retorna o resultado numa hierarquia única — `Cidadão PJ > Departamento > Membro` — e permite localizar o mesmo cidadão PJ tanto pesquisando diretamente pelo nome/CNPJ dele quanto pesquisando pelo nome de um departamento ou membro seu (a busca expande a hierarquia e devolve o cidadão PJ como parte do mesmo resultado). O caminho de busca não deveria mudar o resultado da seleção — mas muda: selecionar o cidadão PJ pela busca direta funciona normalmente; selecionar o **mesmo** cidadão PJ a partir de um resultado encontrado via departamento exibe a **tag de "cadastro incompleto"**, impedindo a solicitação — mesmo o cidadão tendo cadastro completo (comprovado pelo caminho direto funcionar).
 
 ---
 
@@ -33,8 +33,8 @@ O componente de busca de destinatário/signatário retorna o resultado numa hier
 **Então** a solicitação é aceita normalmente
 
 **Dado** o mesmo cidadão PJ
-**Quando** o servidor pesquisa pelo nome de um departamento ou membro desse cidadão PJ, e a partir da linha `Cidadão PJ > Departamento > Membro` retornada seleciona o cidadão PJ (não o departamento, não o membro)
-**Então** verifico que o sistema retorna erro de cadastro incompleto, impedindo a solicitação — divergindo do resultado do caminho direto
+**Quando** o servidor pesquisa pelo nome de um departamento ou membro *desse* cidadão PJ, e a partir da linha `Cidadão PJ > Departamento > Membro`
+**Então** o cidadão PJ (não o departamento, não o membro) verifico que o sistema retorna tag de cadastro incompleto, impedindo a solicitação.
 
 ---
 
@@ -53,7 +53,7 @@ Selecionar o cidadão PJ como signatário deve dar o mesmo resultado independent
 ### Critérios de aceite
 
 - [ ] Selecionar o cidadão PJ a partir da busca direta aceita a solicitação de assinatura normalmente (comportamento já correto, preservar)
-- [ ] Selecionar o mesmo cidadão PJ a partir do resultado expandido de um departamento/membro seu também aceita a solicitação normalmente, sem erro de cadastro incompleto
+- [ ] Selecionar o mesmo cidadão PJ a partir do resultado expandido de um departamento/membro seu também aceita a solicitação normalmente, sem exibir a tag de cadastro incompleto
 - [ ] O caminho de busca (direto vs. via departamento/membro) não interfere na validação de completude do cadastro do cidadão PJ
 
 ---
@@ -64,7 +64,7 @@ Selecionar o cidadão PJ como signatário deve dar o mesmo resultado independent
 
 **Dado** que um cidadão PJ com departamento cadastrado é localizado pelos dois caminhos de busca (direto, e via departamento/membro)
 **Quando** o servidor solicita assinatura pra esse cidadão PJ em cada um dos dois casos
-**Então** os dois caminhos resultam na solicitação aceita normalmente, sem erro de cadastro incompleto em nenhum dos dois
+**Então** os dois caminhos resultam na solicitação aceita normalmente, sem a tag de cadastro incompleto em nenhum dos dois
 
 **Execução Passou?**
 - [ ] Sim
