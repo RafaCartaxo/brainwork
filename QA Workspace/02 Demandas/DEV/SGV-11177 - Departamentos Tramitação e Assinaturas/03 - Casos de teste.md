@@ -1012,7 +1012,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI/E2E  
 > **Automação:** manual  
-> **Execução:** planejado
+> **Execução:** reprovado — [[Defeitos/SGV-11924 - Defeito Campo Cargo Vem Preenchido Com CPF No Vínculo Externo|SGV-11924]]
 
 ^ct-025
 
