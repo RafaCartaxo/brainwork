@@ -2,7 +2,7 @@
 tags:
   - bug
   - qa
-  - servicos-e-assuntos
+  - gerar-documento
 task: "11926"
 pai: ""
 prioridade: media
@@ -13,7 +13,7 @@ responsavel: Rafael
 aguardando:
 pontos:
 cadastrado_por: ""
-modulo: servicos-e-assuntos
+modulo: gerar-documento
 ambiente: DEV
 ---
 # Campo de solicitante desatualizado — bloqueia fluxos novos
@@ -56,11 +56,11 @@ Campo de solicitante atualizado, com visualização padronizada e habilitando os
 
 ### Casos de Teste Básicos
 
-#### **CT-B01 Atalho de criação rápida no campo de solicitante**
+#### **CT-B01 Campo de solicitante atualizado, com os fluxos novos habilitados**
 
-**Dado** que o usuário está construindo um formulário com campo de solicitante
-**Quando** ele abre o componente de seleção de pessoa desse campo
-**Então** o atalho de criação rápida (PF ou PJ) está disponível
+**Dado** que o usuário está na criação de um documento com campo de solicitante
+**Quando** ele pesquisa pelo usuário destinatário
+**Então** o componente exibe a visualização padronizada, permite selecionar departamento na abertura e mostra o atalho de criação rápida de cidadão (PF ou PJ)
 
 **Execução Passou?**
 - [ ] Sim
@@ -82,6 +82,6 @@ Campo de solicitante atualizado, com visualização padronizada e habilitando os
 
 ### Informações adicionais
 
-- Observações: componente compartilhado/herdado de outro módulo — vale checar se outros campos do tipo pessoa que usam o mesmo componente têm o mesmo problema, além do campo de solicitante.
+- Observações: componente compartilhado/herdado de outro módulo — vale checar se outros campos do tipo pessoa que usam o mesmo componente têm o mesmo problema, além do campo de solicitante. Cadastro rápido é a SGV-11178 (sem card local no vault ainda).
 - Histórico:
     - 2026-09-29 - 🐛 Bug cadastrado
