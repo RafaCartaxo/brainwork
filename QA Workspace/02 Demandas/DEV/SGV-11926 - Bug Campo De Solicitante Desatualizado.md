@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-O componente do campo de solicitante, herdado de outro módulo e usado na criação de documento (busca do destinatário/solicitante), está desatualizado — impede a visualização padronizada e bloqueia fluxos que dependem desse componente estar em dia: seleção de departamento na abertura de documento e o atalho de criação rápida de cidadão exigido pela regra nova ("Qualquer campo do tipo pessoa ou componente de seleção de usuário no qual seja possível adicionar um cidadão deve, agora, conter um atalho para a criação rápida deste, seja ele pessoa física ou jurídica.") — cadastro rápido é a SGV-11178.
+O campo de solicitante, na criação de documento, usa um componente antigo — sem visualização padronizada, sem seleção de departamento e sem o atalho de cadastro rápido (SGV-11178).
 
 ---
 
