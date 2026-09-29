@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identificado que, ao solicitar assinatura de um cidadão que é membro de um departamento, o componente de eventos de assinatura mostra apenas o nome de exibição e o cargo do cidadão — sem identificar o departamento que ele representa naquela assinatura. O Figma amarra a identidade do signatário à sua lotação no departamento; hoje essa amarração se perde no evento.
+Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identificado que, ao solicitar assinatura de um cidadão que é membro de um departamento, o componente de eventos de assinatura mostra **só o nome de exibição do cidadão** — nem o cargo, nem o departamento que ele representa naquela assinatura aparecem. O Figma amarra a identidade do signatário à sua lotação no departamento; hoje essa amarração se perde por completo no evento.
 
 ---
 
@@ -28,7 +28,7 @@ Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identific
 
 **Dado** que uma assinatura é solicitada a um cidadão que é membro de um departamento
 **Quando** o servidor consulta os eventos de assinatura desse documento
-**Então** verifico que o evento mostra só `$Nome_exibição ($Cargo)`, sem o trecho `como $Nome_depto (Representando $RazaoSocial)`
+**Então** verifico que o evento mostra só `$Nome_exibição`, sem cargo e sem o trecho `como $Nome_depto (Representando $RazaoSocial)`
 
 ---
 
@@ -40,9 +40,12 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda. Rafael vai anexa
 
 ### Resultado Esperado
 
-O evento deve seguir a string completa definida no Figma:
+Testado aqui contra o cenário **"solo doc"** (assinatura só do documento, sem despacho/anexos), da tela do Figma "Eventos de solicitação de assinatura para participante de um departamento de um CNPJ":
 
 `$Assinatura_textual ($Cargo) $Sigla solicitou a assinatura de $Nome_exibição ($Cargo) como $Nome_depto (Representando $RazaoSocial), neste documento.`
+
+> [!note]- Outras combinações também têm string própria no Figma (não repetidas aqui pra não inflar o card)
+> A mesma tela do Figma define variações conforme o que está sendo assinado: só o documento (sequencial), documento + todos os anexos, documento + anexos selecionados, documento + despacho, despacho isolado, anexos isolados, despacho + anexos, documento + despacho + anexos, e a listagem de usuários do departamento na assinatura sequencial (`$Assinatura_textual ($Cargo) como $Nome_depto (Representando $RazaoSocial)`). Todas seguem o mesmo princípio corrigido aqui — amarrar o cidadão ao departamento — só muda o que vem depois de "solicitou a assinatura...". Conferir a variação certa contra o Figma na hora de validar cada uma, se/quando isso virar CT formal.
 
 Ver [[01 - Demanda#^c20|C20]] e [[03 - Casos de teste#^ct-020|CT-020]].
 
@@ -57,9 +60,9 @@ Ver [[01 - Demanda#^c20|C20]] e [[03 - Casos de teste#^ct-020|CT-020]].
 
 ### Casos de Teste Básicos
 
-#### **CT-B01 Evento de assinatura mostra cidadão e departamento juntos**
+#### **CT-B01 Evento de assinatura (solo doc) mostra cidadão e departamento juntos**
 
-**Dado** que uma assinatura é solicitada a um cidadão membro de um departamento
+**Dado** que uma assinatura é solicitada a um cidadão membro de um departamento, só pro documento (sem despacho/anexos)
 **Quando** o servidor consulta o evento correspondente
 **Então** o texto do evento segue o padrão `$Assinatura_textual ($Cargo) $Sigla solicitou a assinatura de $Nome_exibição ($Cargo) como $Nome_depto (Representando $RazaoSocial), neste documento`
 
