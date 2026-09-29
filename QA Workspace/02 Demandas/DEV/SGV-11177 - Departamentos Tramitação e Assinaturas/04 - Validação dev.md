@@ -38,7 +38,7 @@ ct_resultados:
   ct_028: ✅ Aprovado
   ct_029: ✅ Aprovado
   ct_030: ✅ Aprovado
-  ct_031: 🔵 Em andamento
+  ct_031: ✅ Aprovado
   ct_032: ❌ Falhou
   ct_033: ❌ Falhou
   ct_034: ❌ Falhou
