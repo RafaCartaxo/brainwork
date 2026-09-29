@@ -41,6 +41,7 @@ ct_resultados:
   ct_031: ⏳ Aguardando
   ct_032: ❌ Falhou
   ct_033: ❌ Falhou
+  ct_034: ❌ Falhou
 data_inicio: ""
 data_fim: ""
 ---
@@ -138,6 +139,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-031\|CT-031]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_031]` |  |  |  | `= choice(this.ct_resultados.ct_031 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-032\|CT-032]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_032]` |  |  | [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário\|SGV-11905]] | `= choice(this.ct_resultados.ct_032 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-033\|CT-033]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_033]` |  |  | [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento\|SGV-11910]] | `= choice(this.ct_resultados.ct_033 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-034\|CT-034]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_034]` |  |  | [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido Antes De Assinado\|SGV-11917]] | `= choice(this.ct_resultados.ct_034 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 

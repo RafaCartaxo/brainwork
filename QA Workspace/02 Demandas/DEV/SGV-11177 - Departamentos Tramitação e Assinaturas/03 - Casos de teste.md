@@ -60,6 +60,7 @@ pontos: ""
 | [[01 - Demanda#^c31\|C31]] | [[03 - Casos de teste#^ct-031\|CT-031]] |
 | [[01 - Demanda#^c32\|C32]] | [[03 - Casos de teste#^ct-032\|CT-032]] |
 | [[01 - Demanda#^c33\|C33]] | [[03 - Casos de teste#^ct-033\|CT-033]] |
+| [[01 - Demanda#^c34\|C34]] | [[03 - Casos de teste#^ct-034\|CT-034]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1318,3 +1319,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** reprovado — [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento|SGV-11910]]
 
 ^ct-033
+
+> [!example]- CT-034 · Selo do departamento não traz papel antes de assinado
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que o selo do departamento, antes de assinado, não traz o campo papel.
+>
+> **Pré-condições:**  
+> - Assinatura solicitada a um departamento (CT-011), ainda não assinada.
+>
+> **Dado** que a assinatura seja solicitada a um departamento  
+> **Quando** o selo estiver no estado a posicionar ou posicionado (antes de assinado)  
+> **Então** o selo mostra só razão social e nome do departamento, sem o campo papel
+>
+> **Resultado esperado:** nenhum `$papel` exibido antes de assinado. Depois de assinado, o selo já está correto (fora de escopo deste CT).
+>
+> **Pós-condição:** nenhuma.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c34|C34]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** UI  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido Antes De Assinado|SGV-11917]]
+
+^ct-034
