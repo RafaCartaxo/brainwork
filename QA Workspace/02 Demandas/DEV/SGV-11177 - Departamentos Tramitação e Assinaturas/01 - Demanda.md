@@ -125,6 +125,7 @@ Busca e seleção de membro de departamento como destinatário de tramitação; 
 - C20. O componente de eventos de assinatura identifica corretamente o membro e o departamento, conforme o Figma. ^c20
 - C21. Uma assinatura solicitada a um membro de departamento notifica esse membro por e-mail e por notificação interna. ^c21
 - C22. O e-mail do departamento também recebe a notificação quando um membro seu é signatário de uma solicitação de assinatura. ^c22
+- C32. O selo de assinatura aplicado no documento, quando o signatário é um membro de departamento, mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel — mesmo padrão de amarrar a identidade do membro ao departamento que já vale pro header (C19) e pros eventos (C20). *(achado durante validação real em 29/09/2026 — numeração fora de sequência pra não quebrar os anchors de C23 em diante.)* ^c32
 
 ### Fluxo de assinatura para usuário externo
 
@@ -158,7 +159,11 @@ O requisito de origem lista 6 pontos que dependem de conferência direta no Figm
 - Conteúdo e apresentação das notificações (C6, C16, C21, C22).
 - Aplicação do padrão de identificação nas telas e nos PDFs (C7, C8, C9, C10).
 - Headers dos componentes de signatário para departamento e membro (C14, C19).
-- Apresentação dos eventos de assinatura (C15, C20).
+- Apresentação dos eventos de assinatura (C15).
 - Modal de pré-cadastro, aceite dos termos e declaração de maioridade (C27).
+
+> [!bug] Defeitos confirmados em validação real (29/09/2026)
+> - **C20** (eventos de assinatura do membro) — deixou de ser "pendência de conferência" e virou defeito confirmado: [[Defeitos/SGV-11904 - Defeito Eventos De Assinatura Não Identificam Departamento Do Membro Signatário|SGV-11904]].
+> - **C32** (selo de assinatura do membro, criado a partir deste achado) — [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]].
 
 Confirmar `projeto`, `prioridade` e `pontos_alocados` antes de rotear a demanda para o DEV.

@@ -19,7 +19,7 @@ pontos: ""
 > [!settings]- Controle dos casos de teste  
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. CT-001 a CT-010 cobrem a tramitação para membro de departamento; CT-011 a CT-016 a assinatura para departamento; CT-017 a CT-022 a assinatura para membro; CT-023 a CT-031 o fluxo externo por CPF.
+> Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. CT-001 a CT-010 cobrem a tramitação para membro de departamento; CT-011 a CT-016 a assinatura para departamento; CT-017 a CT-022 a assinatura para membro; CT-023 a CT-031 o fluxo externo por CPF; CT-032 (selo de assinatura do membro) foi acrescentado fora de sequência em 29/09/2026, achado durante validação real — ver C32 em `01 - Demanda`.
 
 ---
 
@@ -58,6 +58,7 @@ pontos: ""
 | [[01 - Demanda#^c29\|C29]] | [[03 - Casos de teste#^ct-029\|CT-029]] |
 | [[01 - Demanda#^c30\|C30]] | [[03 - Casos de teste#^ct-030\|CT-030]] |
 | [[01 - Demanda#^c31\|C31]] | [[03 - Casos de teste#^ct-031\|CT-031]] |
+| [[01 - Demanda#^c32\|C32]] | [[03 - Casos de teste#^ct-032\|CT-032]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1240,3 +1241,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** planejado
 
 ^ct-031
+
+> [!example]- CT-032 · Selo de assinatura do membro traz o contexto do departamento
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que o selo aplicado no documento assinado por um membro de departamento traz o contexto do departamento, não só a identidade do cidadão.
+>
+> **Pré-condições:**  
+> - Um cidadão membro de um departamento foi selecionado como signatário de uma solicitação de assinatura (ver CT-017) e concluiu a assinatura.
+>
+> **Dado** que um cidadão membro de um departamento assina um documento  
+> **Quando** o servidor consulta o selo de assinatura aplicado no documento  
+> **Então** o selo mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel
+>
+> **Resultado esperado:** o selo amarra a assinatura do cidadão ao departamento que ele representa — mesmo padrão de identificação já cobrado no header (CT-019) e nos eventos (CT-020), não só o nome do cidadão isolado.
+>
+> **Pós-condição:** documento assinado; selo já aplicado não muda mais nessa via (conferência é só de leitura).
+>
+> **Critérios cobertos:** [[01 - Demanda#^c32|C32]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** UI (PDF/selo)  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]]
+
+^ct-032
