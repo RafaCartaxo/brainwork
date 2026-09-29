@@ -1320,7 +1320,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 
 ^ct-033
 
-> [!example]- CT-034 · Selo do departamento não traz papel antes de assinado
+> [!example]- CT-034 · Selo do departamento não traz papel em nenhum estado
 >
 > ```meta-bind-button  
 > style: primary  
@@ -1332,16 +1332,16 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > ## Cenário
 >
-> **Descrição:** confirma que o selo do departamento, antes de assinado, não traz o campo papel.
+> **Descrição:** confirma que o selo do departamento não traz o campo papel em nenhum dos três estados.
 >
 > **Pré-condições:**  
-> - Assinatura solicitada a um departamento (CT-011), ainda não assinada.
+> - Assinatura solicitada a um departamento (CT-011).
 >
 > **Dado** que a assinatura seja solicitada a um departamento  
-> **Quando** o selo estiver no estado a posicionar ou posicionado (antes de assinado)  
-> **Então** o selo mostra só razão social e nome do departamento, sem o campo papel
+> **Quando** o selo for exibido, em qualquer estado (a posicionar, posicionado ou assinado)  
+> **Então** o selo mostra só razão social e nome do departamento, sem o campo papel, nos três estados
 >
-> **Resultado esperado:** nenhum `$papel` exibido antes de assinado. Depois de assinado, o selo já está correto (fora de escopo deste CT).
+> **Resultado esperado:** nenhum `$papel` exibido em nenhum estado.
 >
 > **Pós-condição:** nenhuma.
 >
@@ -1354,6 +1354,6 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido Antes De Assinado|SGV-11917]]
+> **Execução:** reprovado — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido|SGV-11917]]
 
 ^ct-034

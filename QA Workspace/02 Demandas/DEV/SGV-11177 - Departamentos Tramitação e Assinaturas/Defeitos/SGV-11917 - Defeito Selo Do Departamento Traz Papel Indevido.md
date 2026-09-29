@@ -16,7 +16,7 @@ cadastrado_por: ""
 modulo: servicos-pj
 ambiente: DEV
 ---
-# Selo do departamento traz papel indevido antes de assinado
+# Selo do departamento traz papel indevido
 
 ### Descrição
 
@@ -27,8 +27,8 @@ Antes de assinado (a posicionar/posicionado), o selo de assinatura de um departa
 ### Passo a passo para reproduzir
 
 **Dado** que a assinatura seja solicitada a um departamento
-**Quando** o selo estiver no estado a posicionar ou posicionado (antes de assinado)
-**Então** verifico que aparece o campo `$papel` com valor "signatario", quando não deveria aparecer
+**Quando** o selo for exibido, em qualquer estado (a posicionar, posicionado ou assinado)
+**Então** verifico que aparece o campo `$papel` com valor "signatario" em todos eles, quando não deveria aparecer em nenhum
 
 ---
 
@@ -40,22 +40,22 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda.
 
 ### Resultado Esperado
 
-Selo mostra só razão social e nome do departamento, sem `$papel`, nos estados a posicionar/posicionado. Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c34|C34]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]].
+Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum estado (a posicionar, posicionado ou assinado). Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c34|C34]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]].
 
 ---
 
 ### Critérios de aceite
 
-- [ ] Selo do departamento, antes de assinado, não mostra `$papel`
+- [ ] Selo do departamento não mostra `$papel` em nenhum estado (a posicionar, posicionado, assinado)
 
 ---
 
 ### Casos de Teste Básicos
 
-#### **CT-B01 Selo do departamento sem papel antes de assinado**
+#### **CT-B01 Selo do departamento sem papel em nenhum estado**
 
 **Dado** que a assinatura seja solicitada a um departamento
-**Quando** o selo estiver a posicionar ou posicionado
+**Quando** o selo for exibido, em qualquer estado
 **Então** o selo mostra só razão social e nome do departamento, sem `$papel`
 
 **Execução Passou?**

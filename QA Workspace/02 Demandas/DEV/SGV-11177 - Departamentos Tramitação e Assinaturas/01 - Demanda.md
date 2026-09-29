@@ -127,7 +127,7 @@ Busca e seleção de membro de departamento como destinatário de tramitação; 
 - C22. O e-mail do departamento também recebe a notificação quando um membro seu é signatário de uma solicitação de assinatura. ^c22
 - C32. O selo de assinatura aplicado no documento, quando o signatário é um membro de departamento, mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel — mesmo padrão de amarrar a identidade do membro ao departamento que já vale pro header (C19) e pros eventos (C20). *(achado durante validação real em 29/09/2026 — numeração fora de sequência pra não quebrar os anchors de C23 em diante.)* ^c32
 - C33. Selecionar o cidadão PJ (a empresa) como signatário funciona igual, dê como resultado o mesmo cidadão, tenha sido localizado por busca direta pelo cidadão PJ ou pela hierarquia expandida a partir de um departamento/membro dele — a busca de destinatário retorna a linha `Cidadão PJ > Departamento > Membro`, e o caminho usado pra achar o resultado não pode mudar o comportamento da seleção final. *(achado durante validação real em 29/09/2026, efeito colateral da busca nova por departamento sobre uma capacidade pré-existente — numeração fora de sequência.)* ^c33
-- C34. Antes de assinado (nos estados a posicionar e posicionado), o selo de assinatura de um departamento mostra só razão social e nome do departamento — sem `$papel`. *(achado durante validação real em 29/09/2026 — numeração fora de sequência.)* ^c34
+- C34. O selo de assinatura de um departamento mostra só razão social e nome do departamento — sem `$papel`, em nenhum estado (a posicionar, posicionado, assinado). *(achado durante validação real em 29/09/2026 — numeração fora de sequência.)* ^c34
 
 ### Fluxo de assinatura para usuário externo
 
@@ -168,6 +168,6 @@ O requisito de origem lista 6 pontos que dependem de conferência direta no Figm
 > - **C20** (eventos de assinatura do membro) — deixou de ser "pendência de conferência" e virou defeito confirmado: [[Defeitos/SGV-11904 - Defeito Eventos De Assinatura Não Identificam Departamento Do Membro Signatário|SGV-11904]].
 > - **C32** (selo de assinatura do membro, criado a partir deste achado) — [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]].
 > - **C33** (side-effect da busca por departamento sobre assinatura direta da PJ, criado a partir deste achado) — [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento|SGV-11910]].
-> - **C34** (selo do departamento traz `$papel` indevido antes de assinado, criado a partir deste achado) — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido Antes De Assinado|SGV-11917]].
+> - **C34** (selo do departamento traz `$papel` indevido, criado a partir deste achado) — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido|SGV-11917]].
 
 Confirmar `projeto`, `prioridade` e `pontos_alocados` antes de rotear a demanda para o DEV.
