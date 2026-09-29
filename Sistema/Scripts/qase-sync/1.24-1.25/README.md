@@ -77,8 +77,7 @@ node sync.js --inspect=13   # confirma que voltou status:2
 node sync.js --apply
 ```
 
-Precisa de `QASE_TESTOPS_API_TOKEN` no `.env` do repo (mesmo token já usado pelo
-`cypress-qase-reporter` — ver `docs/integrations/qase.md`). Sem esse `.env`,
+Precisa de `QASE_TESTOPS_API_TOKEN` no `.env` desta pasta (`Sistema/Scripts/qase-sync/.env`, compartilhado entre todas as subpastas — não depende do repo `sogov-automation-test`). Sem esse `.env`,
 `node sync.js` (dry-run) roda normalmente; `--inspect` e `--apply` exigem o token
 (`--inspect` só lê, não escreve nada).
 

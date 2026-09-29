@@ -98,8 +98,7 @@ node sync.js --apply --only=<id-fictício-não-se-aplica-a-creates>
 node sync.js --apply
 ```
 
-Precisa de `QASE_TESTOPS_API_TOKEN` no `.env` do repo (mesmo token do
-`cypress-qase-reporter` — ver `docs/integrations/qase.md`). Token já testado e
+Precisa de `QASE_TESTOPS_API_TOKEN` no `.env` desta pasta (`Sistema/Scripts/qase-sync/.env`, compartilhado entre todas as subpastas — não depende do repo `sogov-automation-test`). Token já testado e
 autenticando (03/09/2026, `GET /v1/project/SGV` → 200).
 
 ## Depois de rodar

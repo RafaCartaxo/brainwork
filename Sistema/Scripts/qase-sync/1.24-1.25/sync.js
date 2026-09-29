@@ -8,8 +8,9 @@
 //   node sync.js --apply          -> aplica de verdade contra a Qase (updates + deletes + create)
 //   node sync.js --apply --only=4 -> aplica de verdade só no case id 4
 //
-// Requer QASE_TESTOPS_API_TOKEN no .env do repo (mesmo token já usado pelo
-// cypress-qase-reporter — ver docs/integrations/qase.md). --inspect também precisa do
+// Requer QASE_TESTOPS_API_TOKEN no .env desta pasta (Sistema/Scripts/qase-sync/.env,
+// compartilhado entre todas as subpastas — não depende do repo sogov-automation-test).
+// --inspect também precisa do
 // token (é uma leitura autenticada), mas não escreve nada.
 //
 // CAMPOS severity/type/automation são INTEIROS na API real (confirmado em 31/08 via
@@ -179,7 +180,7 @@ async function main() {
 
   if (APPLY && !TOKEN) {
     console.error(
-      "QASE_TESTOPS_API_TOKEN não encontrado no .env — configure antes de rodar (mesmo token do cypress-qase-reporter)."
+      "QASE_TESTOPS_API_TOKEN não encontrado no .env (Sistema/Scripts/qase-sync/.env) — configure antes de rodar."
     );
     process.exit(1);
   }

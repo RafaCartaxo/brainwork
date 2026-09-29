@@ -56,7 +56,7 @@ node sync.js
 node sync.js --apply
 ```
 
-Precisa de `QASE_TESTOPS_API_TOKEN` no `.env` do repo. Token já testado e
+Precisa de `QASE_TESTOPS_API_TOKEN` no `.env` desta pasta (`Sistema/Scripts/qase-sync/.env`, compartilhado entre todas as subpastas). Token já testado e
 autenticando (24/09/2026, `GET /v1/project/SGV` → 200; suite 358 criada via
 `POST /v1/suite/SGV` no mesmo dia).
 

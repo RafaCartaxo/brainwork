@@ -29,7 +29,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `358` — [9982 - Permitir escolher permanecer no documento ou voltar à mesa ao encerrar](https://app.qase.io/project/SGV?suite=358), filha de `125` (Melhorias/Funcionalidades)
 - **Origem:** [[03 - Casos de teste]] (CT-001 a CT-012 — todos aplicáveis, nenhum "Não se aplica")
-- **Script/payload:** `sogov-automation-test/scripts/qase-sync-9982-tramitacao/` (`sync.js` + `corrections.json` + `README.md`)
+- **Script/payload:** `Sistema/Scripts/qase-sync/9982-tramitacao/` no vault (`sync.js` + `corrections.json` + `README.md`)
 
 ## Mapeamento dos campos
 
