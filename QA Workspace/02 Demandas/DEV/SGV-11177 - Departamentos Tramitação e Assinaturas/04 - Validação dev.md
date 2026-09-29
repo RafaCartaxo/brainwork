@@ -31,7 +31,7 @@ ct_resultados:
   ct_021: ⏳ Aguardando
   ct_022: ⏳ Aguardando
   ct_023: ⏳ Aguardando
-  ct_024: ⏳ Aguardando
+  ct_024: ✅ Aprovado
   ct_025: ⏳ Aguardando
   ct_026: ✅ Aprovado
   ct_027: ✅ Aprovado
