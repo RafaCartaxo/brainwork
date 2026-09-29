@@ -33,9 +33,9 @@ ct_resultados:
   ct_023: ⏳ Aguardando
   ct_024: ⏳ Aguardando
   ct_025: ⏳ Aguardando
-  ct_026: ⏳ Aguardando
-  ct_027: ⏳ Aguardando
-  ct_028: ⏳ Aguardando
+  ct_026: ✅ Aprovado
+  ct_027: ✅ Aprovado
+  ct_028: ✅ Aprovado
   ct_029: ✅ Aprovado
   ct_030: ✅ Aprovado
   ct_031: 🔵 Em andamento
