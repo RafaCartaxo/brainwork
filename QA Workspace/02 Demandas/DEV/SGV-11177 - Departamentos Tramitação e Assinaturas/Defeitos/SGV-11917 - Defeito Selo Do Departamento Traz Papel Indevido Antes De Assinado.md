@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-Antes de assinado (a posicionar/posicionado), o selo de assinatura de um departamento traz o campo `$papel` com valor "signatario" — não deveria trazer `$papel` nesse caso, só razão social e nome do departamento. Depois de assinado já está correto.
+Antes de assinado (a posicionar/posicionado), o selo de assinatura de um departamento traz o campo `$papel` com valor "signatario" — não deveria trazer `$papel` nesse caso, só razão social e nome do departamento. Depois de assinado também está incorreto.
 
 ---
 
