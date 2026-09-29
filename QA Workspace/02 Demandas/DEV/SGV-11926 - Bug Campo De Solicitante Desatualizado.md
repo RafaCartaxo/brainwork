@@ -16,19 +16,20 @@ cadastrado_por: ""
 modulo: servicos-e-assuntos
 ambiente: DEV
 ---
-# Campo de solicitante desatualizado — sem atalho de criação rápida
+# Campo de solicitante desatualizado — bloqueia fluxos novos
 
 ### Descrição
 
-O componente do campo de solicitante, herdado de outro módulo e usado na construção do formulário (aba de formulário de Serviços e Assuntos), está desatualizado em relação a uma regra nova: "Qualquer campo do tipo pessoa ou componente de seleção de usuário no qual seja possível adicionar um cidadão deve, agora, conter um atalho para a criação rápida deste, seja ele pessoa física ou jurídica." Isso impacta diretamente a demanda de cadastro rápido, que depende desse atalho estar presente em todo campo de seleção de pessoa/usuário.
+O componente do campo de solicitante, herdado de outro módulo e usado na criação de documento (busca do destinatário/solicitante), está desatualizado — impede a visualização padronizada e bloqueia fluxos que dependem desse componente estar em dia: seleção de departamento na abertura de documento e o atalho de criação rápida de cidadão exigido pela regra nova ("Qualquer campo do tipo pessoa ou componente de seleção de usuário no qual seja possível adicionar um cidadão deve, agora, conter um atalho para a criação rápida deste, seja ele pessoa física ou jurídica.") — cadastro rápido é a SGV-11178.
 
 ---
 
 ### Passo a passo para reproduzir
 
-**Dado** que o usuário está na construção de um formulário com campo de solicitante
-**Quando** ele abre o componente de seleção de pessoa nesse campo
-**Então** verifico que não existe o atalho de criação rápida de cidadão (pessoa física ou jurídica), diferente do que a regra exige agora
+**Dado** que o usuário está na criação de um documento com campo de solicitante herdado do módulo
+**Quando** ele digita a pesquisa pelo usuário destinatário
+**Então** verifico que o componente está desatualizado, impedindo a visualização padronizadas
+**E** impedindo possíveis fluxos, como seleção de departamento na abertura e Cadastro rápido (SGV-11178)
 
 ---
 
@@ -40,13 +41,15 @@ O componente do campo de solicitante, herdado de outro módulo e usado na constr
 
 ### Resultado Esperado
 
-Campo de solicitante (e qualquer outro campo do tipo pessoa/componente de seleção de usuário onde seja possível adicionar um cidadão) contém o atalho de criação rápida, para pessoa física ou jurídica.
+Campo de solicitante atualizado, com visualização padronizada e habilitando os fluxos que dependem dele: seleção de departamento na abertura do documento e o atalho de criação rápida de cidadão (PF ou PJ, SGV-11178).
 
 ---
 
 ### Critérios de aceite
 
-- [ ] Campo de solicitante na construção do formulário exibe o atalho de criação rápida de cidadão (PF ou PJ)
+- [ ] Campo de solicitante exibe a visualização padronizada do componente atual
+- [ ] Campo de solicitante permite seleção de departamento na abertura de documento
+- [ ] Campo de solicitante exibe o atalho de criação rápida de cidadão (PF ou PJ)
 - [ ] O componente atualizado não regride nenhum comportamento existente de seleção/busca de solicitante
 
 ---
