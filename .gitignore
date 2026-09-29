@@ -13,3 +13,10 @@ QA Workspace/Evidências/*.mp4
 # Bytecode do qa-atualiza.py — regerado a cada execução/py_compile, gerava diff
 # espúrio em todo commit (inclusive nos automáticos do Obsidian Git)
 .obsidian/scripts/__pycache__/
+
+# Segredo (QASE_TESTOPS_API_TOKEN) e dependências instaláveis dos scripts de sync —
+# achado em 29/09/2026: o .env tinha sido commitado sem querer (vault backup
+# 552a87d, 25/09). Ignorado daqui pra frente; token precisa ser rotacionado na Qase
+# já que segue exposto no histórico até uma limpeza de história ser autorizada.
+Sistema/Scripts/qase-sync/.env
+Sistema/Scripts/qase-sync/node_modules/
