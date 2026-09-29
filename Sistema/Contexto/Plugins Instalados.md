@@ -21,6 +21,7 @@ date: 2026-07-13
 | Tasks                   | `obsidian-tasks-plugin`      | Gerenciamento de tarefas/checklists            |
 | Templater               | `templater-obsidian`         | Templates dinâmicos (ex.: data automática)    |
 | Dataview                | `dataview`                   | Consultas e listagens dinâmicas sobre notas (usado na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]]) |
+| Meta Bind               | `obsidian-meta-bind-plugin`  | Seletores `INPUT[inlineSelect(...)]` (status, ambiente, etapa, resultado de CT) e botões `meta-bind-button` — usado nos pacotes de demanda em `02 Demandas/<ambiente>/` (`00 README`, `01 - Demanda`/`01 - Bug`, `03 - Casos de teste`, `04 - Validação dev`) |
 | Slides Extended         | `slides-extended`            | Apresentações a partir de notas               |
 | Minimal Theme Settings  | `obsidian-minimal-settings`  | Configurações do tema Minimal (só relevante se o tema Minimal voltar a ser o ativo — ver [[#Tema (aparência)]]) |
 | Editing Toolbar         | `editing-toolbar`            | Barra de formatação estilo Word no modo de edição |
