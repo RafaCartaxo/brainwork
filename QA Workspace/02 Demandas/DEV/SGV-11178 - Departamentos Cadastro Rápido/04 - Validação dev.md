@@ -23,14 +23,14 @@ ct_resultados:
   ct_013: ⏳ Aguardando
   ct_014: ✅ Aprovado
   ct_015: ✅ Aprovado
-  ct_016: ⏳ Aguardando
-  ct_017: ⏳ Aguardando
-  ct_018: ⏳ Aguardando
-  ct_019: ⏳ Aguardando
-  ct_020: ⏳ Aguardando
-  ct_021: ⏳ Aguardando
-  ct_022: ⏳ Aguardando
-  ct_023: ⏳ Aguardando
+  ct_016: ✅ Aprovado
+  ct_017: ✅ Aprovado
+  ct_018: ✅ Aprovado
+  ct_019: ✅ Aprovado
+  ct_020: ✅ Aprovado
+  ct_021: ✅ Aprovado
+  ct_022: ✅ Aprovado
+  ct_023: ✅ Aprovado
   ct_024: ⏳ Aguardando
   ct_025: ⏳ Aguardando
   ct_026: ⏳ Aguardando
