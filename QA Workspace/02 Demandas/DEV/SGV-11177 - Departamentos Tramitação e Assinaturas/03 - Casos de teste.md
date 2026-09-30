@@ -62,6 +62,7 @@ pontos: ""
 | [[01 - Demanda#^c33\|C33]] | [[03 - Casos de teste#^ct-033\|CT-033]] |
 | [[01 - Demanda#^c34\|C34]] | [[03 - Casos de teste#^ct-034\|CT-034]] |
 | [[01 - Demanda#^c35\|C35]] | [[03 - Casos de teste#^ct-035\|CT-035]] |
+| [[01 - Demanda#^c36\|C36]] | [[03 - Casos de teste#^ct-036\|CT-036]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1396,3 +1397,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** retestado e aprovado — [[Defeitos/SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ|SGV-11924]]
 
 ^ct-035
+
+> [!example]- CT-036 · Solicitação de assinatura aparece na lista de demandas do departamento
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que uma solicitação de assinatura, seja a um membro de departamento ou ao departamento inteiro, aparece na lista de demandas do departamento.
+>
+> **Pré-condições:**  
+> - Assinatura solicitada a um membro de departamento (CT-017) ou ao departamento inteiro (CT-011).
+>
+> **Dado** que uma assinatura é solicitada a um cidadão membro de um departamento, ou ao departamento inteiro  
+> **Quando** o servidor consulta a lista de demandas do departamento  
+> **Então** a nova solicitação aparece na lista
+>
+> **Resultado esperado:** solicitação carrega normalmente na lista de demandas do departamento, nos dois casos (membro e departamento inteiro).
+>
+> **Pós-condição:** nenhuma.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c36|C36]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** UI  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11948 - Defeito Solicitação De Assinatura Não Aparece Na Lista Do Departamento|SGV-11948]]
+
+^ct-036
