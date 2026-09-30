@@ -25,7 +25,7 @@ etapa_atual: "QA · Casos de teste"
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
 | Casos de teste | ✅ Preparados (CT-001 a CT-036) |
-| Validação | 🔵 Em andamento — 1 defeito confirmado (CT-037, SGV-11951) |
+| Validação | 🔵 Em andamento — 1/37 CTs aprovado (CT-037, defeito SGV-11951 corrigido); demais 36 aguardando implementação do DEV |
 | Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
 
 **Próximo passo:** confirmar `pontos_alocados` em `01 - Demanda` e rotear para o DEV.
