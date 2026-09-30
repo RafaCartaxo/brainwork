@@ -21,8 +21,8 @@ ct_resultados:
   ct_011: ⏳ Aguardando
   ct_012: ⏳ Aguardando
   ct_013: ⏳ Aguardando
-  ct_014: ⏳ Aguardando
-  ct_015: ⏳ Aguardando
+  ct_014: ✅ Aprovado
+  ct_015: ✅ Aprovado
   ct_016: ⏳ Aguardando
   ct_017: ⏳ Aguardando
   ct_018: ⏳ Aguardando
