@@ -6,9 +6,9 @@ tags:
 task: "11924"
 pai: "SGV-11177"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-29
-data_fim: ""
+data_fim: "2026-09-30"
 responsavel: Rafael
 aguardando:
 pontos:
@@ -54,7 +54,11 @@ Toast exibido: "Você já foi solicitado assinar em alguns dos locais neste seto
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11924)
 
+**Antes da correção:**
 ![[11924 - Assinatura bloqueada entre departamentos, incorreto.mp4]]
+
+**Retestado e aprovado (30/09/2026):**
+![[11924 - Assinatura entre departamentos diferentes aceita, ok.mp4]]
 
 ---
 
@@ -66,7 +70,7 @@ Solicitação de assinatura a um departamento diferente do mesmo cidadão PJ é 
 
 ### Critérios de aceite
 
-- [ ] Solicitar assinatura a um departamento diferente do mesmo cidadão PJ não é bloqueado pela checagem "já perguntou"
+- [x] Solicitar assinatura a um departamento diferente do mesmo cidadão PJ não é bloqueado pela checagem "já perguntou"
 
 ---
 
@@ -79,13 +83,13 @@ Solicitação de assinatura a um departamento diferente do mesmo cidadão PJ é 
 **Então** a solicitação é aceita, sem o erro `you-have-already-been-asked-once-with-sogov`
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-![[11924 - Assinatura bloqueada entre departamentos, incorreto.mp4]]
+![[11924 - Assinatura entre departamentos diferentes aceita, ok.mp4]]
 
 ---
 
@@ -105,3 +109,4 @@ Solicitação de assinatura a um departamento diferente do mesmo cidadão PJ é 
     - 2026-09-29 - 🐛 Defeito cadastrado (suspeita original: campo cargo com CPF, CT-025)
     - 2026-09-29 - 🔁 Conteúdo do card substituído — suspeita original era autofill do navegador (CT-025 aprovado); achado real é o bloqueio entre departamentos diferentes da mesma PJ (CT-035)
     - 2026-09-30 - 🔴 Reaberto — reteste falha novamente, mesmo com assinatura já concluída (não só solicitada) pelo Departamento A. Achado adicional: solicitação pro membro aparece na lista pessoal do cidadão, não na lista do departamento (mesma causa raiz de escopo)
+    - 2026-09-30 - ✅ Retestado e aprovado — assinatura a departamentos diferentes da mesma PJ aceita normalmente

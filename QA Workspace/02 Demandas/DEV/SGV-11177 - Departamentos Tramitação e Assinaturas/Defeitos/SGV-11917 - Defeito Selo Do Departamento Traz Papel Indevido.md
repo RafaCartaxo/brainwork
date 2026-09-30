@@ -6,9 +6,9 @@ tags:
 task: "11917"
 pai: "SGV-11177"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-29
-data_fim: ""
+data_fim: "2026-09-30"
 responsavel: Rafael
 aguardando:
 pontos:
@@ -34,7 +34,11 @@ Antes de assinado (a posicionar/posicionado), o selo de assinatura de um departa
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11917)
 
+**Antes da correção:**
 ![[11917 - Selo departamento retornando $papel, incorreto.mp4]]
+
+**Retestado e aprovado (30/09/2026):**
+![[11917 - Selo do departamento sem papel indevido, ok.png]]
 
 ---
 
@@ -46,7 +50,7 @@ Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum es
 
 ### Critérios de aceite
 
-- [ ] Selo do departamento não mostra `$papel` em nenhum estado (a posicionar, posicionado, assinado)
+- [x] Selo do departamento não mostra `$papel` em nenhum estado (a posicionar, posicionado, assinado)
 
 ---
 
@@ -59,13 +63,13 @@ Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum es
 **Então** o selo mostra só razão social e nome do departamento, sem `$papel`
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-![[11917 - Selo departamento retornando $papel, incorreto.mp4]]
+![[11917 - Selo do departamento sem papel indevido, ok.png]]
 
 ---
 
@@ -82,3 +86,4 @@ Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum es
 - Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]] (critério C34, criado a partir deste achado).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
+    - 2026-09-30 - ✅ Retestado e aprovado — selo sem `$papel` em nenhum estado

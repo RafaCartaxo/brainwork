@@ -25,7 +25,7 @@ etapa_atual: "QA · Casos de teste"
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
 | Casos de teste | ✅ Preparados (CT-001 a CT-031) |
-| Validação | ⏳ Aguardando implementação do DEV |
+| Validação | ✅ 35/35 CTs aprovados (5 defeitos encontrados e corrigidos — ver `Defeitos/`) — restam 6 pendências de conferência fina no Figma |
 | Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
 
 **Próximo passo:** confirmar `pontos_alocados` em `01 - Demanda` e rotear para o DEV.

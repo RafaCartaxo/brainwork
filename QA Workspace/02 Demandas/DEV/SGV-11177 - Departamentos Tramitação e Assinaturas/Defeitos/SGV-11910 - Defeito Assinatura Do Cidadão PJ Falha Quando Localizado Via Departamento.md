@@ -6,9 +6,9 @@ tags:
 task: "11910"
 pai: "SGV-11177"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-29
-data_fim: ""
+data_fim: "2026-09-30"
 responsavel: Rafael
 aguardando:
 pontos:
@@ -38,7 +38,11 @@ Solicitar assinatura pro cidadão PJ funciona pela busca direta, mas exibe a tag
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11910)
 
+**Antes da correção:**
 ![[11910 - retorna cidadão com tag de cadastro incompleto, incorreto.mp4]]
+
+**Retestado e aprovado (30/09/2026):**
+![[11910 - Assinatura do cidadão PJ igual nos dois caminhos de busca, ok.mp4]]
 
 ---
 
@@ -50,7 +54,7 @@ Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). 
 
 ### Critérios de aceite
 
-- [ ] Cidadão PJ aceita a solicitação de assinatura nos dois caminhos de busca (direto e via departamento/membro), sem a tag de cadastro incompleto
+- [x] Cidadão PJ aceita a solicitação de assinatura nos dois caminhos de busca (direto e via departamento/membro), sem a tag de cadastro incompleto
 
 ---
 
@@ -63,13 +67,13 @@ Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). 
 **Então** os dois caminhos resultam na solicitação aceita normalmente, sem a tag de cadastro incompleto em nenhum dos dois
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-![[11910 - retorna cidadão com tag de cadastro incompleto, incorreto.mp4]]
+![[11910 - Assinatura do cidadão PJ igual nos dois caminhos de busca, ok.mp4]]
 
 ---
 
@@ -86,3 +90,4 @@ Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). 
 - Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033|CT-033]] (critério C33, criado a partir deste achado).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
+    - 2026-09-30 - ✅ Retestado e aprovado — mesmo resultado nos dois caminhos de busca

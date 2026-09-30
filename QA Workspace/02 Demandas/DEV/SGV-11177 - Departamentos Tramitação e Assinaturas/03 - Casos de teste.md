@@ -823,7 +823,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11904 - Defeito Eventos De Assinatura Não Identificam Departamento Do Membro Signatário|SGV-11904]]
+> **Execução:** retestado e aprovado — [[Defeitos/SGV-11904 - Defeito Eventos De Assinatura Não Identificam Departamento Do Membro Signatário|SGV-11904]]
 
 ^ct-020
 
@@ -1279,7 +1279,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI (PDF/selo)  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]]
+> **Execução:** retestado e aprovado — [[Defeitos/SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]]
 
 ^ct-032
 
@@ -1317,7 +1317,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional (regressão)  
 > **Camada:** UI/API  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento|SGV-11910]]
+> **Execução:** retestado e aprovado — [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento|SGV-11910]]
 
 ^ct-033
 
@@ -1355,7 +1355,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido|SGV-11917]]
+> **Execução:** retestado e aprovado — [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido|SGV-11917]]
 
 ^ct-034
 
@@ -1393,6 +1393,6 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ|SGV-11924]]
+> **Execução:** retestado e aprovado — [[Defeitos/SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ|SGV-11924]]
 
 ^ct-035

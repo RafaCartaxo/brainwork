@@ -6,9 +6,9 @@ tags:
 task: "11904"
 pai: "SGV-11177"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-29
-data_fim: ""
+data_fim: "2026-09-30"
 responsavel: Rafael
 aguardando:
 pontos:
@@ -34,7 +34,8 @@ Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identific
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11904)
 
-Pendência — nenhuma evidência (vídeo/print) anexada ainda. Rafael vai anexar depois.
+**Retestado e aprovado (30/09/2026):**
+![[11904 - Evento de assinatura identifica departamento do membro, ok.mp4]]
 
 ---
 
@@ -53,8 +54,8 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 
 ### Critérios de aceite
 
-- [ ] O evento de assinatura de um membro de departamento identifica o cidadão (nome de exibição + cargo) **e** o departamento que ele representa (nome do departamento + razão social), seguindo a string completa definida no Figma
-- [ ] O comportamento é consistente em todos os eventos relacionados a essa assinatura (não só num evento isolado)
+- [x] O evento de assinatura de um membro de departamento identifica o cidadão (nome de exibição + cargo) **e** o departamento que ele representa (nome do departamento + razão social), seguindo a string completa definida no Figma
+- [x] O comportamento é consistente em todos os eventos relacionados a essa assinatura (não só num evento isolado)
 
 ---
 
@@ -67,13 +68,13 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 **Então** o texto do evento segue o padrão `$Assinatura_textual ($Cargo) $Sigla solicitou a assinatura de $Nome_exibição ($Cargo) como $Nome_depto (Representando $RazaoSocial), neste documento`
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-Pendência — nenhuma evidência anexada ainda.
+![[11904 - Evento de assinatura identifica departamento do membro, ok.mp4]]
 
 ---
 
@@ -90,3 +91,4 @@ Pendência — nenhuma evidência anexada ainda.
 - Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020|CT-020]]. Mesma causa de fundo do selo de assinatura, ver [[SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]] (defeito irmão).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
+    - 2026-09-30 - ✅ Retestado e aprovado — evento identifica cidadão e departamento corretamente

@@ -6,9 +6,9 @@ tags:
 task: "11905"
 pai: "SGV-11177"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-29
-data_fim: ""
+data_fim: "2026-09-30"
 responsavel: Rafael
 aguardando:
 pontos:
@@ -34,7 +34,11 @@ Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identific
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11905)
 
+**Antes da correção:**
 ![[11905 - Selo representando dpt incorreto.mp4]]
+
+**Retestado e aprovado (30/09/2026):**
+![[11905 - Selo de assinatura identifica departamento do membro, ok.mp4]]
 
 ---
 
@@ -48,7 +52,7 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 
 ### Critérios de aceite
 
-- [ ] O selo de assinatura de um membro de departamento mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel
+- [x] O selo de assinatura de um membro de departamento mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel
 
 ---
 
@@ -61,13 +65,13 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 **Então** o selo mostra razão social, nome do departamento, nome de exibição (cargo no departamento) e papel
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-![[11905 - Selo representando dpt incorreto.mp4]]
+![[11905 - Selo de assinatura identifica departamento do membro, ok.mp4]]
 
 ---
 
@@ -84,3 +88,4 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 - Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]] (critério C32 criado a partir deste achado, fora de sequência).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
+    - 2026-09-30 - ✅ Retestado e aprovado — selo traz o contexto completo do departamento
