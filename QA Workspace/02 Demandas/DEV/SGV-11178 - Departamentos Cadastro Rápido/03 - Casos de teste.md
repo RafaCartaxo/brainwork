@@ -63,6 +63,7 @@ pontos: ""
 | [[01 - Demanda#^c34\|C34]] | [[03 - Casos de teste#^ct-034\|CT-034]] |
 | [[01 - Demanda#^c35\|C35]] | [[03 - Casos de teste#^ct-035\|CT-035]] |
 | [[01 - Demanda#^c36\|C36]] | [[03 - Casos de teste#^ct-036\|CT-036]] |
+| [[01 - Demanda#^c37\|C37]] | [[03 - Casos de teste#^ct-037\|CT-037]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1471,3 +1472,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** planejado
 
 ^ct-036
+
+> [!example]- CT-037 · Placeholder do campo CNPJ
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que o campo CNPJ exibe o placeholder no padrão correto.
+>
+> **Pré-condições:**  
+> - Opção Pessoa Jurídica selecionada.
+>
+> **Dado** que a opção Pessoa Jurídica esteja selecionada  
+> **Quando** o campo CNPJ for exibido vazio  
+> **Então** o placeholder exibido é `XX.XXX.XXX/XXXX-XX`
+>
+> **Resultado esperado:** placeholder no padrão `XX.XXX.XXX/XXXX-XX`.
+>
+> **Pós-condição:** nenhuma.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c37|C37]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** UI  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto|SGV-11951]]
+
+^ct-037

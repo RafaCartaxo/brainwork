@@ -27,7 +27,7 @@ ct_resultados:
   ct_017: ✅ Aprovado
   ct_018: ✅ Aprovado
   ct_019: ✅ Aprovado
-  ct_020: ❌ Falhou
+  ct_020: ✅ Aprovado
   ct_021: ✅ Aprovado
   ct_022: ✅ Aprovado
   ct_023: ✅ Aprovado
@@ -39,10 +39,10 @@ ct_resultados:
   ct_029: ✅ Aprovado
   ct_030: ✅ Aprovado
   ct_031: ✅ Aprovado
-  ct_032: ❌ Falhou
-  ct_033: ❌ Falhou
-  ct_034: ❌ Falhou
-  ct_035: ❌ Falhou
+  ct_032: ✅ Aprovado
+  ct_033: ✅ Aprovado
+  ct_034: ✅ Aprovado
+  ct_035: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---

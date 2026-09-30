@@ -126,6 +126,7 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 - C22. Quando a API retorna os dados do CPF válido do responsável legal, o Nome do responsável legal é preenchido automaticamente e permanece desabilitado para edição. ^c22
 - C23. Quando o CPF do responsável legal é inválido ou a API não retorna o nome, o sistema impede a conclusão do cadastro e apresenta mensagem de erro adequada. ^c23
 - C24. Quando o CNPJ é inválido ou a API não retorna os dados obrigatórios, o sistema impede a conclusão do cadastro e apresenta mensagem de erro adequada. ^c24
+- C37. O campo CNPJ exibe o placeholder `XX.XXX.XXX/XXXX-XX`. *(achado durante validação real em 30/09/2026 — numeração fora de sequência pra não quebrar os anchors de C25 em diante.)* ^c37
 
 ### RF05 — Cadastro rápido de departamento
 
@@ -162,3 +163,6 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 - Requisito de origem não traz o conteúdo exato do e-mail de conclusão de cadastro de Pessoa Física (CA06/C13) — confirmar texto/template antes da implementação.
 - Confirmar no Figma (ver "Pontos para validação" do requisito de origem): localização/apresentação do atalho em cada componente, layout do formulário e do seletor, quais campos além de PF/PJ permitem cadastro rápido de Departamento, gatilho das consultas às APIs (saída do campo, ação manual ou tempo de espera), tratamento quando a API não retorna Nome/Razão Social/Nome fantasia, formato/validação de E-mail e Telefone, se a checagem de nome/e-mail duplicado de departamento ignora maiúsculas/acentos/espaços, e se o registro criado deve sempre ser selecionado automaticamente em todos os componentes de origem.
 - Confirmar `projeto`, `prioridade` e `pontos_alocados` antes de rotear a demanda para o DEV.
+
+> [!bug] Defeitos confirmados em validação real (30/09/2026)
+> - **C37** (placeholder do campo CNPJ, criado a partir deste achado) — [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto|SGV-11951]].
