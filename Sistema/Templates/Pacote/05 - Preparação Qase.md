@@ -7,6 +7,7 @@ projeto: ""
 modulo: ""
 qase_projeto: SGV
 qase_suite_id: ""
+demanda: "[[01 - Demanda]]"
 casos_origem: "[[03 - Casos de teste]]"
 validacao_origem: "[[04 - Validação dev]]"
 ---

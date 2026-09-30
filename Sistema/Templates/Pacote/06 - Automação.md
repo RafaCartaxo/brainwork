@@ -49,7 +49,7 @@ Processo completo (investigação técnica → codar → validar → triar achad
 
 ## Achados reais de produto
 
-> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado (não é instabilidade de ambiente nem suposição incorreta do teste), vira **Defeito** (não Bug solto): `pai: "<ID desta demanda>"`, pacote em `<pai>/Defeitos/` — mesma regra de [[../Bug/01 - Bug|01 - Bug]] (seção "Defeito, não Bug?").
+> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado (não é instabilidade de ambiente nem suposição incorreta do teste), vira **Defeito** (não Bug solto): `pai: "<ID desta demanda>"`, pacote em `<pai>/Defeitos/` — mesma regra de [[Bug/01 - Bug|01 - Bug]] (seção "Defeito, não Bug?").
 
 - Nenhum achado registrado ainda.
 

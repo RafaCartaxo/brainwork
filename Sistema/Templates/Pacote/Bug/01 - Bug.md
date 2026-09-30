@@ -65,4 +65,4 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda.
 - [ ] Casos de teste estão vinculados.
 - [ ] `pontos_alocados` foi preenchido.
 
-> **Defeito, não Bug?** Se este problema saiu da execução de um CT de uma task pai (melhoria/funcionalidade) em DEV, é **Defeito**, não Bug — troque a tag em `00 README.md` (`pai: "<ID da task pai>"`) e crie este pacote dentro de `<pai>/Defeitos/`, não como pacote solto. Regra completa: [[../../Contexto/PADROES_QA.md#Defeito × Bug|PADROES_QA]].
+> **Defeito, não Bug?** Se este problema saiu da execução de um CT de uma task pai (melhoria/funcionalidade) em DEV, é **Defeito**, não Bug — troque a tag em `00 README.md` (`pai: "<ID da task pai>"`) e crie este pacote dentro de `<pai>/Defeitos/`, não como pacote solto. Regra completa: [[../../../Contexto/PADROES_QA.md#Defeito × Bug|PADROES_QA]].
