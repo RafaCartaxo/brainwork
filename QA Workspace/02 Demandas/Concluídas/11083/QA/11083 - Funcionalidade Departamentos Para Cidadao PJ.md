@@ -22,7 +22,7 @@ modulo: servicos-pj
 > - **Tipo:** Funcionalidade
 > - **Responsável QA:** Rafael
 > - **Link:** SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros")
-> - **Parte 1** de duas, irmã de [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]] — ambas sob a epic [[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]
+> - **Parte 1** de duas, irmã de [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]] — ambas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]
 
 ---
 

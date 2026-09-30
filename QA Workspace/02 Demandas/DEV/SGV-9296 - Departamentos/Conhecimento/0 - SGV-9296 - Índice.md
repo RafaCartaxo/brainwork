@@ -6,7 +6,10 @@ tipo: indice
 ---
 # Índice: Departamentos de cidadão PJ (SGV-9296)
 
-Task guarda-chuva do Notion que agrupa as quatro partes da funcionalidade de departamentos vinculados a cidadãos Pessoa Jurídica. Sem card/CTs próprios — a validação acontece pelas partes.
+Task guarda-chuva do Notion que agrupa as cinco partes da funcionalidade de departamentos vinculados a cidadãos Pessoa Jurídica. Sem card/CTs próprios — a validação acontece pelas partes.
+
+> [!info] Epic aberta — 2 de 5 partes concluídas
+> Esta pasta vive em `DEV/` (não em `Concluídas/`) enquanto a epic como um todo não fechar — mesmo com Partes 1 e 2 já concluídas individualmente. Regra: só mover esta pasta-índice pra `Concluídas/` quando a última parte em aberto (hoje: 3, 4 e 5) também estiver concluída. Cada parte continua migrando de pasta pelo seu próprio ciclo de vida normal (`DEV` → `HML` → `Concluídas`); esta nota-índice é a exceção que só se move no final.
 
 ## Partes
 
@@ -16,20 +19,22 @@ Task guarda-chuva do Notion que agrupa as quatro partes da funcionalidade de dep
 | 2 | [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos\|SGV-11184]] | Encaminhar documentos/despachos pro departamento, notificações e rastreabilidade de visualização externa | Refinada, aberta em DEV — 27 CTs, sem pontos em aberto no escopo atual |
 | 3 | [[QA Workspace/02 Demandas/DEV/SGV-11176 - Departamentos Convites/01 - Demanda\|SGV-11176]] | Entrada em departamento por link de convite (permanente do departamento ou temporário gerado por servidor) e filtro de solicitações por perfil/departamento | Refinada, aberta em DEV (pacote novo) — 14 CTs, 1 pendência aberta (revogação de convite, não coberta pelo requisito de origem) |
 | 4 | [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda\|SGV-11177]] | Tramitação e assinatura direcionadas a um membro específico de departamento, e assinatura pro departamento inteiro; fluxo externo de assinatura por CPF com pré-cadastro | Refinada, aberta em DEV (pacote novo) — 31 CTs, 6 pontos de conferência visual/textual fina no Figma ainda pendentes |
+| 5 | [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda\|SGV-11178]] | Atalho de cadastro rápido de Pessoa Física, Pessoa Jurídica e Departamento embutido nos componentes de seleção de pessoa (campo solicitante, campo PF/PJ, destinatário de despacho, seleção de signatário) | Refinada, aberta em DEV (pacote novo) — 36 CTs, pendências de Figma/conteúdo de e-mail em aberto |
 
-As Partes 3 e 4 confirmam o que o [[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma]] já tinha antecipado em 03/09/2026 como escopo futuro da epic (seleção de membro como destinatário direto e departamento/membro como signatário) — recebido do Notion como export bruto em 25/09/2026, com SGVs próprios (11176 e 11177) confirmados no mesmo dia.
+As Partes 3 e 4 confirmam o que o [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma]] já tinha antecipado em 03/09/2026 como escopo futuro da epic (seleção de membro como destinatário direto e departamento/membro como signatário) — recebido do Notion como export bruto em 25/09/2026, com SGVs próprios (11176 e 11177) confirmados no mesmo dia. A Parte 5 (11178) chegou depois, em 30/09/2026, também como export bruto do Notion, com SGV próprio (11178) já confirmado.
 
 ## Dependência entre as partes
 
 - A Parte 2 (11184) depende funcionalmente da Parte 1 (11083): precisa existir departamento (com participantes e status ativo/suspenso definidos) antes de testar encaminhamento.
 - A Parte 3 (11176) depende da Parte 1 (11083): entrada por convite pressupõe que o departamento já existe.
 - A Parte 4 (11177) depende das Partes 1 e 3 (11083, 11176): tramitação/assinatura para membro pressupõe que o membro já é participante do departamento (seja por vínculo manual da 11083, seja por convite da 11176).
+- A Parte 5 (11178) é a mais independente das cinco: o atalho de cadastro rápido de PF/PJ não pressupõe departamento nenhum; só o cadastro rápido de Departamento em si depende de já existir ao menos uma PJ com cadastro completo (mesma pré-condição da Parte 1).
 
-Recomendado validar a 11083 primeiro; 11176 e 11184 podem seguir em paralelo depois dela; 11177 valida por último, com massa de dados compatível com as anteriores.
+Recomendado validar a 11083 primeiro; 11176 e 11184 podem seguir em paralelo depois dela; 11177 valida por último, com massa de dados compatível com as anteriores. A 11178 pode ser validada em paralelo a qualquer uma das outras — só o bloco de cadastro rápido de Departamento se beneficia de já ter PJs completas cadastradas.
 
 ## Ordem de leitura sugerida (por parte)
 
-Resumo → card (critérios + CTs) → mesa de refinamento (detalhe técnico), quando existir. As Partes 3 e 4 nasceram já no pacote (`00 README` + `01 - Demanda` + CTs) — sem mesa de refinamento própria, por decisão explícita (requisito já veio completo do Notion).
+Resumo → card (critérios + CTs) → mesa de refinamento (detalhe técnico), quando existir. As Partes 3, 4 e 5 nasceram já no pacote (`00 README` + `01 - Demanda` + CTs) — sem mesa de refinamento própria, por decisão explícita (requisito já veio completo do Notion).
 
 ## Resumos em linguagem simples
 
@@ -45,4 +50,4 @@ Resumo → card (critérios + CTs) → mesa de refinamento (detalhe técnico), q
 
 Documento de produto consolidado do Notion ("Departamento CNPJ") cobre esta epic **e outras 3 tasks** (SGV-8883, 8884, 9898) numa visão única de produto — usado nas duas mesas só como esclarecimento de detalhe (limites de campo, fluxo de convite, formato de exibição), nunca como origem de critério.
 
-[[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma — departamento como destinatário e signatário]] (recebido 03/09/2026): parte já incorporada à SGV-11184 (formato de exibição, regras de busca/exibição); os dois pontos antes registrados como "possível escopo futuro" — seleção de membro individual como destinatário direto e departamento como signatário de assinatura — foram confirmados em 25/09/2026 e viraram a SGV-11177 (Parte 4).
+[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma — departamento como destinatário e signatário]] (recebido 03/09/2026): parte já incorporada à SGV-11184 (formato de exibição, regras de busca/exibição); os dois pontos antes registrados como "possível escopo futuro" — seleção de membro individual como destinatário direto e departamento como signatário de assinatura — foram confirmados em 25/09/2026 e viraram a SGV-11177 (Parte 4).

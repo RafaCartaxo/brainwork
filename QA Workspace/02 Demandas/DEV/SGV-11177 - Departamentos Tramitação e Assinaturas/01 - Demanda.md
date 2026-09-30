@@ -37,9 +37,9 @@ pontos_alocados: ""
 > **Próximo passo:** confirmar `projeto`/`pontos_alocados` antes de rotear para o DEV.
 
 > [!info] Epic  
-> **Parte 4** de quatro, irmã de [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]], [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]] e [[QA Workspace/02 Demandas/DEV/SGV-11176 - Departamentos Convites/01 - Demanda|SGV-11176 (Parte 3)]] — todas sob a epic [[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]].
+> **Parte 4** de cinco, irmã de [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]], [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]], [[QA Workspace/02 Demandas/DEV/SGV-11176 - Departamentos Convites/01 - Demanda|SGV-11176 (Parte 3)]] e [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178 (Parte 5)]] — todas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]].
 >
-> Este requisito confirma o que o [[QA Workspace/02 Demandas/Concluídas/9296/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma]] já tinha antecipado em 03/09/2026 como escopo futuro: seleção de membro de departamento como destinatário direto (aqui RF01-04) e departamento/membro como signatário de assinatura (aqui RF05-06), com a mesma string de exibição e a mesma regra de token bloqueado/liberado.
+> Este requisito confirma o que o [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/Complemento Figma - Departamento Destinatário E Signatário|Complemento Figma]] já tinha antecipado em 03/09/2026 como escopo futuro: seleção de membro de departamento como destinatário direto (aqui RF01-04) e departamento/membro como signatário de assinatura (aqui RF05-06), com a mesma string de exibição e a mesma regra de token bloqueado/liberado.
 
 ---
 
