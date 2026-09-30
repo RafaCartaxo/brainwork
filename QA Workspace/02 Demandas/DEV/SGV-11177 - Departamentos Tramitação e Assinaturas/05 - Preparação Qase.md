@@ -6,7 +6,7 @@ tipo_card: "funcionalidade"
 projeto: ""
 modulo: servicos-pj
 qase_projeto: SGV
-qase_suite_id: ""
+qase_suite_id: 360
 casos_origem: "[[03 - Casos de teste]]"
 validacao_origem: "[[04 - Validação dev]]"
 ---
@@ -22,13 +22,13 @@ validacao_origem: "[[04 - Validação dev]]"
 
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.
 
-> [!warning] Pendência  
-> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Verificar suites existentes em `https://app.qase.io/project/SGV` antes do envio real.
+> [!info] Suite confirmada
+> `qase_suite_id: 360` — verificado via `GET /v1/suite/SGV/360` (30/09/2026): título "11177 - Departamentos: Tramitação e assinaturas" (bate com a demanda), `cases_count: 0` (vazia, sem risco de duplicar), `parent_id: 125` ("Melhorias/Funcionalidades" — hierarquia própria de Rafael, fora da suite 220 da epic 9296; reorganização de hierarquia fica pra depois).
 
 ## Configuração
 
 - **Projeto Qase:** `SGV`
-- **Suite Qase:** `<a confirmar>`
+- **Suite Qase:** `360` — "11177 - Departamentos: Tramitação e assinaturas"
 - **Origem:** [[03 - Casos de teste]] (CT-001 a CT-036 — CT-032 a CT-036 vieram de achados na validação real, fora da sequência original; todos os 36 aplicáveis, nenhum "Não se aplica")
 - **Script/payload:** processo real descrito em [[../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
@@ -329,7 +329,7 @@ Tags da nota: manter somente `qa` e `qase`. Tags enviadas ao Qase: ID da demanda
 ## Checklist de envio
 
 - [ ] Todos os CTs candidatos têm descrição, pré-condições e passos.
-- [ ] Projeto e suite confirmados (suite pré-existente ou criada com autorização explícita).
+- [x] Projeto e suite confirmados (suite pré-existente ou criada com autorização explícita).
 - [ ] Campos normalizados e passos separados.
 - [ ] Tags limitadas ao ID da demanda e ao módulo.
 - [ ] Campos da API validados (`dry-run` rodado antes do `--apply`).
