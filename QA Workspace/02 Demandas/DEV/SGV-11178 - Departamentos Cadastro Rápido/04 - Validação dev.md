@@ -44,6 +44,7 @@ ct_resultados:
   ct_034: "⏳ Aguardando"
   ct_035: "⏳ Aguardando"
   ct_036: "⏳ Aguardando"
+  ct_037: "❌ Falhou"
 data_inicio: ""
 data_fim: ""
 ---
@@ -63,7 +64,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. O DEV ainda não implementou a funcionalidade — esta nota está no estado inicial, aguardando build.
+> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real em andamento — 1 defeito confirmado até 30/09/2026 (CT-037).
 
 ---
 
@@ -144,6 +145,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-034\|CT-034]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_034]` |  |  |  | `= choice(this.ct_resultados.ct_034 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-035\|CT-035]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_035]` |  |  |  | `= choice(this.ct_resultados.ct_035 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-036\|CT-036]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_036]` |  |  |  | `= choice(this.ct_resultados.ct_036 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-037\|CT-037]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_037]` | ![[11951 - Placeholder divergente.png]] |  | [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto\|SGV-11951]] | `= choice(this.ct_resultados.ct_037 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 
