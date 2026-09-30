@@ -20,7 +20,8 @@
           "data": "",
           "expected_result": "O sistema lista, além dos departamentos correspondentes, os cidadãos membros desses departamentos que correspondem à busca"
         }
-      ]
+      ],
+      "id": 789
     },
     {
       "title": "CT-002 Resultado da busca distingue departamento de membro",
@@ -37,7 +38,8 @@
           "data": "",
           "expected_result": "O sistema permite distinguir visualmente um departamento de um membro, conforme o padrão do Figma"
         }
-      ]
+      ],
+      "id": 790
     },
     {
       "title": "CT-003 Selecionar um membro adiciona à tramitação vinculado ao departamento",
@@ -54,7 +56,8 @@
           "data": "",
           "expected_result": "O sistema o adiciona à tramitação vinculado ao respectivo departamento"
         }
-      ]
+      ],
+      "id": 791
     },
     {
       "title": "CT-004 Membro adicionado à tramitação é notificado",
@@ -69,7 +72,8 @@
         {
           "shared_step_key": "notificacao-membro-dupla"
         }
-      ]
+      ],
+      "id": 792
     },
     {
       "title": "CT-005 E-mail do departamento continua recebendo a notificação",
@@ -84,7 +88,8 @@
         {
           "shared_step_key": "notificacao-departamento-mantida"
         }
-      ]
+      ],
+      "id": 793
     },
     {
       "title": "CT-006 Conteúdo das notificações segue o padrão do Figma",
@@ -101,7 +106,8 @@
           "data": "",
           "expected_result": "Conteúdo e apresentação seguem o padrão definido no Figma"
         }
-      ]
+      ],
+      "id": 794
     },
     {
       "title": "CT-007 Padrão de exibição do membro na tramitação",
@@ -116,7 +122,8 @@
         {
           "shared_step_key": "string-identificacao-membro"
         }
-      ]
+      ],
+      "id": 795
     },
     {
       "title": "CT-008 Consistência da exibição entre componentes da tramitação",
@@ -133,7 +140,8 @@
           "data": "",
           "expected_result": "O padrão é aplicado de forma consistente em todos os locais previstos no Figma, sem variação"
         }
-      ]
+      ],
+      "id": 796
     },
     {
       "title": "CT-009 Identificação do membro no PDF",
@@ -148,7 +156,8 @@
         {
           "shared_step_key": "string-identificacao-membro"
         }
-      ]
+      ],
+      "id": 797
     },
     {
       "title": "CT-010 Campo do tipo pessoa no PDF segue o mesmo padrão",
@@ -163,7 +172,8 @@
         {
           "shared_step_key": "string-identificacao-membro"
         }
-      ]
+      ],
+      "id": 798
     },
     {
       "title": "CT-011 Selecionar departamento na assinatura o adiciona como signatário",
@@ -180,7 +190,8 @@
           "data": "",
           "expected_result": "O departamento é adicionado como signatário"
         }
-      ]
+      ],
+      "id": 799
     },
     {
       "title": "CT-012 Qualquer membro apto do departamento consegue assinar",
@@ -198,7 +209,8 @@
           "expected_result": "Ele está apto a realizar a assinatura"
         }
       ],
-      "postconditions": "Documento assinado pelo membro que acessou primeiro; a solicitação é encerrada para os demais membros aptos."
+      "postconditions": "Documento assinado pelo membro que acessou primeiro; a solicitação é encerrada para os demais membros aptos.",
+      "id": 800
     },
     {
       "title": "CT-013 Token bloqueado quando o signatário é um departamento",
@@ -215,7 +227,8 @@
           "data": "",
           "expected_result": "O sistema não permite a solicitação via token"
         }
-      ]
+      ],
+      "id": 801
     },
     {
       "title": "CT-014 Header do componente signatário para departamento",
@@ -232,7 +245,8 @@
           "data": "",
           "expected_result": "O header segue o padrão definido no Figma"
         }
-      ]
+      ],
+      "id": 802
     },
     {
       "title": "CT-015 Eventos de assinatura identificam o departamento",
@@ -249,7 +263,8 @@
           "data": "",
           "expected_result": "O componente de eventos identifica corretamente o departamento, conforme o Figma"
         }
-      ]
+      ],
+      "id": 803
     },
     {
       "title": "CT-016 Notificação do departamento ao solicitar assinatura",
@@ -266,7 +281,8 @@
           "data": "",
           "expected_result": "O sistema envia a notificação ao e-mail do departamento"
         }
-      ]
+      ],
+      "id": 804
     },
     {
       "title": "CT-017 Selecionar membro na assinatura o adiciona vinculado ao departamento",
@@ -283,7 +299,8 @@
           "data": "",
           "expected_result": "O membro é adicionado como signatário, vinculado ao respectivo departamento"
         }
-      ]
+      ],
+      "id": 805
     },
     {
       "title": "CT-018 Token liberado quando o signatário é um membro de departamento",
@@ -300,7 +317,8 @@
           "data": "",
           "expected_result": "O sistema permite a solicitação via token"
         }
-      ]
+      ],
+      "id": 806
     },
     {
       "title": "CT-019 Header do componente signatário identifica membro e departamento",
@@ -317,7 +335,8 @@
           "data": "",
           "expected_result": "O header identifica corretamente o membro e o departamento, conforme o Figma"
         }
-      ]
+      ],
+      "id": 807
     },
     {
       "title": "CT-020 Eventos de assinatura identificam membro e departamento",
@@ -334,7 +353,8 @@
           "data": "",
           "expected_result": "O componente identifica corretamente o membro e o departamento, conforme o Figma"
         }
-      ]
+      ],
+      "id": 808
     },
     {
       "title": "CT-021 Notificação do membro signatário",
@@ -349,7 +369,8 @@
         {
           "shared_step_key": "notificacao-membro-dupla"
         }
-      ]
+      ],
+      "id": 809
     },
     {
       "title": "CT-022 E-mail do departamento continua recebendo notificação de assinatura",
@@ -364,7 +385,8 @@
         {
           "shared_step_key": "notificacao-departamento-mantida"
         }
-      ]
+      ],
+      "id": 810
     },
     {
       "title": "CT-023 Identificação externa solicita e verifica o CPF",
@@ -381,7 +403,8 @@
           "data": "",
           "expected_result": "O sistema verifica se existe cadastro correspondente e direciona pro sub-fluxo certo (CT-024, CT-025 ou CT-026)"
         }
-      ]
+      ],
+      "id": 811
     },
     {
       "title": "CT-024 Pessoa cadastrada e vinculada assina com senha",
@@ -398,7 +421,8 @@
           "data": "",
           "expected_result": "A pessoa realiza a assinatura sem etapa adicional de vínculo ou cadastro"
         }
-      ]
+      ],
+      "id": 812
     },
     {
       "title": "CT-025 Pessoa cadastrada sem vínculo informa cargo, vincula e assina",
@@ -415,7 +439,8 @@
           "data": "",
           "expected_result": "A pessoa é vinculada ao departamento com o cargo informado e realiza a assinatura no mesmo fluxo"
         }
-      ]
+      ],
+      "id": 813
     },
     {
       "title": "CT-026 Pessoa sem cadastro é levada ao pré-cadastro",
@@ -432,7 +457,8 @@
           "data": "",
           "expected_result": "O sistema solicita CPF, e-mail e cargo para o pré-cadastro"
         }
-      ]
+      ],
+      "id": 814
     },
     {
       "title": "CT-027 Termos e declaração de maioridade no pré-cadastro",
@@ -449,7 +475,8 @@
           "data": "",
           "expected_result": "A confirmação fica bloqueada até o aceite dos termos e a declaração de maioridade, no modal do Figma"
         }
-      ]
+      ],
+      "id": 815
     },
     {
       "title": "CT-028 Criação do pré-cadastro e vínculo com o departamento",
@@ -466,7 +493,8 @@
           "data": "",
           "expected_result": "O sistema cria o pré-cadastro e vincula a pessoa ao departamento com o cargo informado"
         }
-      ]
+      ],
+      "id": 816
     },
     {
       "title": "CT-029 Assinatura no mesmo fluxo após o pré-cadastro",
@@ -483,7 +511,8 @@
           "data": "",
           "expected_result": "A pessoa realiza a assinatura na mesma sessão, sem novo login ou navegação"
         }
-      ]
+      ],
+      "id": 817
     },
     {
       "title": "CT-030 Convite por e-mail para completar o cadastro",
@@ -500,7 +529,8 @@
           "data": "",
           "expected_result": "O sistema envia um e-mail com instruções pra completar o cadastro no SOGOV"
         }
-      ]
+      ],
+      "id": 818
     },
     {
       "title": "CT-031 Inconsistência no fluxo externo não cria vínculo ou cadastro duplicado",
@@ -517,7 +547,8 @@
           "data": "",
           "expected_result": "O sistema impede a assinatura, mostra mensagem de erro adequada específica pra etapa, e não cria vínculo ou cadastro duplicado"
         }
-      ]
+      ],
+      "id": 819
     },
     {
       "title": "CT-032 Selo de assinatura do membro traz o contexto do departamento",
@@ -534,7 +565,8 @@
           "data": "",
           "expected_result": "O selo mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel"
         }
-      ]
+      ],
+      "id": 820
     },
     {
       "title": "CT-033 Selecionar o cidadão PJ funciona igual, independente do caminho de busca",
@@ -556,7 +588,8 @@
           "data": "",
           "expected_result": "O mesmo comportamento do passo 1 — solicitação aceita, sem tag de cadastro incompleto"
         }
-      ]
+      ],
+      "id": 821
     },
     {
       "title": "CT-034 Selo do departamento não traz papel em nenhum estado",
@@ -573,7 +606,8 @@
           "data": "",
           "expected_result": "O selo mostra só razão social e nome do departamento, sem o campo papel, nos três estados"
         }
-      ]
+      ],
+      "id": 822
     },
     {
       "title": "CT-035 Assinatura a departamentos diferentes do mesmo cidadão PJ",
@@ -591,7 +625,8 @@
           "expected_result": "O sistema aceita a solicitação normalmente, sem o erro you-have-already-been-asked-once-with-sogov"
         }
       ],
-      "postconditions": "Os dois departamentos ficam como signatários pendentes, cada um com sua própria solicitação."
+      "postconditions": "Os dois departamentos ficam como signatários pendentes, cada um com sua própria solicitação.",
+      "id": 823
     },
     {
       "title": "CT-036 Solicitação de assinatura aparece na lista de demandas do departamento",
@@ -608,7 +643,8 @@
           "data": "",
           "expected_result": "A nova solicitação aparece na lista, nos dois casos (membro e departamento inteiro)"
         }
-      ]
+      ],
+      "id": 824
     }
   ],
   "shared_steps": [
@@ -621,7 +657,8 @@
           "data": "",
           "expected_result": "O membro recebe notificação por e-mail e por notificação interna"
         }
-      ]
+      ],
+      "hash": "98dfb7555ba6371faf9884080bc36f233a65045c"
     },
     {
       "key": "notificacao-departamento-mantida",
@@ -632,7 +669,8 @@
           "data": "",
           "expected_result": "O e-mail do departamento também recebe a notificação, sem substituir a do membro"
         }
-      ]
+      ],
+      "hash": "4c5d48c3d50a3dfb05ebfa12be523b76547a576f"
     },
     {
       "key": "string-identificacao-membro",
@@ -643,7 +681,8 @@
           "data": "",
           "expected_result": "Segue o padrão $nome_exibição ($nome_cargo) - ($Nome_depto - $RazaoSocial)"
         }
-      ]
+      ],
+      "hash": "b344fb966af25ac04db537425366a1cac3b371fb"
     }
   ]
 }

@@ -24,11 +24,11 @@ etapa_atual: "QA · Casos de teste"
 |---|---|
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
-| Casos de teste | ✅ Preparados (CT-001 a CT-031) |
+| Casos de teste | ✅ Preparados (CT-001 a CT-036) |
 | Validação | ✅ 36/36 CTs aprovados (6 defeitos encontrados e corrigidos — ver `Defeitos/`) — restam 6 pendências de conferência fina no Figma |
-| Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
+| Preparação Qase | 📤 Enviado (36 casos + 3 shared steps na suite SGV/360, 30/09/2026) |
 
-**Próximo passo:** confirmar `pontos_alocados` em `01 - Demanda` e rotear para o DEV.
+**Próximo passo:** conferência fina no Figma das 6 pendências pendentes.
 
 > [!warning]- Escopo desta rodada  
 > Cobre as 7 frentes do requisito de origem (Notion, Parte 4 da epic SGV-9296): tramitação para membro de departamento (busca, notificação, exibição em tela e em PDF), assinatura solicitada ao departamento inteiro, assinatura solicitada a um membro específico, e o fluxo de assinatura externa por CPF (com pré-cadastro). Este requisito **confirma e formaliza** o que o `Complemento Figma - Departamento Destinatário E Signatário` (arquivado em `DEV/SGV-9296 - Departamentos/Conhecimento/`) já tinha antecipado como escopo futuro da epic em 03/09/2026.
