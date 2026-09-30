@@ -1,0 +1,649 @@
+{
+  "_readme": "Payload de sincronização dos 36 CTs aplicáveis da SGV-11177 (Departamentos — tramitação e assinaturas, Parte 4 da epic SGV-9296) na Qase (projeto SGV, suite 360, vazia). Rodada 1: criação dos 36 casos (CT-001 a CT-036) e dos 3 shared steps usados (notificacao-membro-dupla: CT-004/CT-021; notificacao-departamento-mantida: CT-005/CT-022; string-identificacao-membro: CT-007/CT-009/CT-010). CT-032 a CT-036 vieram de achados na validação real (fora da numeração original), já retestados e aprovados. Ver rascunho legível em QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/05 - Preparação Qase.md no vault.",
+  "project_code": "SGV",
+  "suite_id": 360,
+  "updates": [],
+  "delete": [],
+  "creates": [
+    {
+      "title": "CT-001 Busca de cidadão PJ retorna departamentos e membros",
+      "description": "Cobre C1 — a busca em campo de cidadão PJ passa a retornar também os cidadãos membros de departamentos que casam com o termo buscado, além dos departamentos correspondentes. Parte da SGV-11177 (Parte 4 da epic SGV-9296, Departamentos).",
+      "preconditions": "Existe ao menos um departamento com membros cujo nome/documento casa com o termo de busca.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Realizar uma busca em campo de cidadão PJ",
+          "data": "",
+          "expected_result": "O sistema lista, além dos departamentos correspondentes, os cidadãos membros desses departamentos que correspondem à busca"
+        }
+      ]
+    },
+    {
+      "title": "CT-002 Resultado da busca distingue departamento de membro",
+      "description": "Cobre C2 — o resultado da busca permite distinguir visualmente um departamento de um membro, conforme o padrão definido no Figma.",
+      "preconditions": "Busca retornando ao menos um departamento e um membro (CT-001).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir os resultados da busca",
+          "data": "",
+          "expected_result": "O sistema permite distinguir visualmente um departamento de um membro, conforme o padrão do Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-003 Selecionar um membro adiciona à tramitação vinculado ao departamento",
+      "description": "Cobre C3 — selecionar um membro exibido no resultado da busca o adiciona à tramitação, vinculado ao respectivo departamento (não como destinatário solto).",
+      "preconditions": "Um membro de departamento é exibido no resultado da busca (CT-001).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Selecionar o membro exibido no resultado",
+          "data": "",
+          "expected_result": "O sistema o adiciona à tramitação vinculado ao respectivo departamento"
+        }
+      ]
+    },
+    {
+      "title": "CT-004 Membro adicionado à tramitação é notificado",
+      "description": "Cobre C4 — membro de departamento adicionado a uma tramitação é notificado (e-mail + interna) quando ela é efetivada.",
+      "preconditions": "Membro adicionado a uma tramitação (CT-003), ainda não efetivada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "notificacao-membro-dupla"
+        }
+      ]
+    },
+    {
+      "title": "CT-005 E-mail do departamento continua recebendo a notificação",
+      "description": "Cobre C5 — o e-mail do departamento não é substituído pelo do membro na notificação de tramitação; os dois recebem.",
+      "preconditions": "Tramitação efetivada com um membro de departamento adicionado (CT-004).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "notificacao-departamento-mantida"
+        }
+      ]
+    },
+    {
+      "title": "CT-006 Conteúdo das notificações segue o padrão do Figma",
+      "description": "Cobre C6 — texto e apresentação das notificações de tramitação para membro de departamento seguem o Figma. Ponto ainda sujeito a conferência fina no Figma (ver Pendências de decisão em 01 - Demanda).",
+      "preconditions": "Notificações geradas por uma tramitação destinada a um membro de departamento (CT-004/CT-005).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Gerar as notificações da tramitação destinada a um membro",
+          "data": "",
+          "expected_result": "Conteúdo e apresentação seguem o padrão definido no Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-007 Padrão de exibição do membro na tramitação",
+      "description": "Cobre C7 — identificação do membro na tramitação segue a string $nome_exibição ($nome_cargo) - ($Nome_depto - $RazaoSocial).",
+      "preconditions": "Membro de departamento adicionado à tramitação (CT-003).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "string-identificacao-membro"
+        }
+      ]
+    },
+    {
+      "title": "CT-008 Consistência da exibição entre componentes da tramitação",
+      "description": "Cobre C8 — o padrão de exibição do membro (CT-007) se repete de forma consistente em todos os componentes previstos da tramitação, sem variação de formato.",
+      "preconditions": "Membro de departamento aparece em mais de um componente da tramitação (ex.: lista de destinatários e detalhe da tramitação).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Renderizar a identificação do membro nos diferentes componentes da tramitação",
+          "data": "",
+          "expected_result": "O padrão é aplicado de forma consistente em todos os locais previstos no Figma, sem variação"
+        }
+      ]
+    },
+    {
+      "title": "CT-009 Identificação do membro no PDF",
+      "description": "Cobre C9 — PDF gerado a partir da tramitação também aplica o padrão de identificação do membro, igual à tela (CT-007).",
+      "preconditions": "Membro de departamento selecionado em uma tramitação (CT-003).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "string-identificacao-membro"
+        }
+      ]
+    },
+    {
+      "title": "CT-010 Campo do tipo pessoa no PDF segue o mesmo padrão",
+      "description": "Cobre C10 — qualquer campo do tipo pessoa preenchido com um membro de departamento também segue o padrão de identificação no PDF correspondente, não só o PDF da tramitação (CT-009).",
+      "preconditions": "Documento com um campo do tipo pessoa preenchido com um membro de departamento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "string-identificacao-membro"
+        }
+      ]
+    },
+    {
+      "title": "CT-011 Selecionar departamento na assinatura o adiciona como signatário",
+      "description": "Cobre C11 — pesquisar e selecionar um departamento numa solicitação de assinatura o adiciona como signatário do documento.",
+      "preconditions": "Usuário está configurando uma solicitação de assinatura.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Pesquisar e selecionar um departamento",
+          "data": "",
+          "expected_result": "O departamento é adicionado como signatário"
+        }
+      ]
+    },
+    {
+      "title": "CT-012 Qualquer membro apto do departamento consegue assinar",
+      "description": "Cobre C12 — quando o signatário é um departamento, qualquer membro apto desse departamento consegue realizar a assinatura, não só um específico.",
+      "preconditions": "Assinatura solicitada a um departamento com mais de um membro apto (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Um membro apto do departamento acessa a solicitação de assinatura",
+          "data": "",
+          "expected_result": "Ele está apto a realizar a assinatura"
+        }
+      ],
+      "postconditions": "Documento assinado pelo membro que acessou primeiro; a solicitação é encerrada para os demais membros aptos."
+    },
+    {
+      "title": "CT-013 Token bloqueado quando o signatário é um departamento",
+      "description": "Cobre C13 — quando o signatário selecionado é um departamento inteiro, o sistema não permite configurar a solicitação de assinatura via token (contraste com CT-018, membro específico).",
+      "preconditions": "Departamento selecionado como signatário (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Configurar a solicitação de assinatura pro departamento",
+          "data": "",
+          "expected_result": "O sistema não permite a solicitação via token"
+        }
+      ]
+    },
+    {
+      "title": "CT-014 Header do componente signatário para departamento",
+      "description": "Cobre C14 — header do componente de signatário segue o padrão do Figma quando o alvo é o departamento inteiro. Ponto ainda sujeito a conferência fina no Figma (ver Pendências de decisão em 01 - Demanda).",
+      "preconditions": "Departamento adicionado como signatário (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o componente signatário do departamento",
+          "data": "",
+          "expected_result": "O header segue o padrão definido no Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-015 Eventos de assinatura identificam o departamento",
+      "description": "Cobre C15 — componente de eventos de assinatura identifica corretamente o departamento (não um membro específico) quando ele é o signatário.",
+      "preconditions": "Ao menos um evento de assinatura já ocorreu numa solicitação com departamento como signatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir os eventos relacionados à assinatura solicitada ao departamento",
+          "data": "",
+          "expected_result": "O componente de eventos identifica corretamente o departamento, conforme o Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-016 Notificação do departamento ao solicitar assinatura",
+      "description": "Cobre C16 — assinatura solicitada a um departamento notifica o e-mail do departamento na criação da solicitação.",
+      "preconditions": "Departamento selecionado como signatário (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Criar a solicitação de assinatura pro departamento",
+          "data": "",
+          "expected_result": "O sistema envia a notificação ao e-mail do departamento"
+        }
+      ]
+    },
+    {
+      "title": "CT-017 Selecionar membro na assinatura o adiciona vinculado ao departamento",
+      "description": "Cobre C17 — pesquisar e selecionar um membro de departamento numa solicitação de assinatura o adiciona como signatário, vinculado ao respectivo departamento.",
+      "preconditions": "Usuário está configurando uma solicitação de assinatura.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Pesquisar e selecionar um membro de departamento",
+          "data": "",
+          "expected_result": "O membro é adicionado como signatário, vinculado ao respectivo departamento"
+        }
+      ]
+    },
+    {
+      "title": "CT-018 Token liberado quando o signatário é um membro de departamento",
+      "description": "Cobre C18 — quando o signatário selecionado é um membro específico, o sistema permite configurar a solicitação de assinatura via token (contraste direto com CT-013, departamento inteiro).",
+      "preconditions": "Membro de departamento selecionado como signatário (CT-017).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Configurar a solicitação de assinatura pro membro",
+          "data": "",
+          "expected_result": "O sistema permite a solicitação via token"
+        }
+      ]
+    },
+    {
+      "title": "CT-019 Header do componente signatário identifica membro e departamento",
+      "description": "Cobre C19 — header do componente de signatário identifica corretamente o membro e o departamento quando o alvo é um membro específico. Ponto ainda sujeito a conferência fina no Figma (ver Pendências de decisão em 01 - Demanda).",
+      "preconditions": "Membro de departamento adicionado como signatário (CT-017).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o componente signatário do membro",
+          "data": "",
+          "expected_result": "O header identifica corretamente o membro e o departamento, conforme o Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-020 Eventos de assinatura identificam membro e departamento",
+      "description": "Cobre C20 — componente de eventos de assinatura identifica corretamente o membro e o departamento ao qual pertence. Retestado e aprovado em 30/09/2026 após correção do defeito SGV-11904 (evento mostrava só o cidadão, sem cargo nem departamento).",
+      "preconditions": "Ao menos um evento de assinatura já ocorreu numa solicitação com membro como signatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir os eventos relacionados à assinatura solicitada a um membro",
+          "data": "",
+          "expected_result": "O componente identifica corretamente o membro e o departamento, conforme o Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-021 Notificação do membro signatário",
+      "description": "Cobre C21 — membro de departamento é notificado (e-mail + interna) ao ser adicionado como signatário de uma solicitação de assinatura.",
+      "preconditions": "Membro de departamento selecionado como signatário (CT-017).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "notificacao-membro-dupla"
+        }
+      ]
+    },
+    {
+      "title": "CT-022 E-mail do departamento continua recebendo notificação de assinatura",
+      "description": "Cobre C22 — e-mail do departamento não é substituído pelo do membro na notificação de assinatura; os dois recebem.",
+      "preconditions": "Solicitação de assinatura criada com um membro como signatário (CT-021).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "shared_step_key": "notificacao-departamento-mantida"
+        }
+      ]
+    },
+    {
+      "title": "CT-023 Identificação externa solicita e verifica o CPF",
+      "description": "Cobre C23 — primeiro passo do fluxo externo de assinatura: o sistema solicita o CPF e verifica se existe cadastro correspondente, direcionando pro sub-fluxo certo.",
+      "preconditions": "Pessoa acessa externamente uma solicitação de assinatura destinada a um departamento ou membro.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Iniciar a identificação externa informando o CPF",
+          "data": "",
+          "expected_result": "O sistema verifica se existe cadastro correspondente e direciona pro sub-fluxo certo (CT-024, CT-025 ou CT-026)"
+        }
+      ]
+    },
+    {
+      "title": "CT-024 Pessoa cadastrada e vinculada assina com senha",
+      "description": "Cobre C24 — caminho mais direto do fluxo externo: pessoa já cadastrada e já vinculada ao departamento destinatário assina só com a senha.",
+      "preconditions": "CPF informado (CT-023) pertence a uma pessoa cadastrada e já vinculada ao departamento destinatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Informar a senha após a identificação",
+          "data": "",
+          "expected_result": "A pessoa realiza a assinatura sem etapa adicional de vínculo ou cadastro"
+        }
+      ]
+    },
+    {
+      "title": "CT-025 Pessoa cadastrada sem vínculo informa cargo, vincula e assina",
+      "description": "Cobre C25 — caminho intermediário: pessoa já cadastrada no SOGOV, mas ainda não membro do departamento destinatário, informa o cargo, é vinculada e assina no mesmo fluxo.",
+      "preconditions": "CPF informado (CT-023) pertence a uma pessoa cadastrada, mas sem vínculo com o departamento destinatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Informar o cargo solicitado",
+          "data": "",
+          "expected_result": "A pessoa é vinculada ao departamento com o cargo informado e realiza a assinatura no mesmo fluxo"
+        }
+      ]
+    },
+    {
+      "title": "CT-026 Pessoa sem cadastro é levada ao pré-cadastro",
+      "description": "Cobre C26 — caminho mais longo: CPF sem cadastro correspondente no SOGOV é levado ao pré-cadastro (CPF, e-mail, cargo), sem pular nenhum campo.",
+      "preconditions": "CPF informado (CT-023) não corresponde a nenhum cadastro existente.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Prosseguir com a assinatura sem cadastro existente",
+          "data": "",
+          "expected_result": "O sistema solicita CPF, e-mail e cargo para o pré-cadastro"
+        }
+      ]
+    },
+    {
+      "title": "CT-027 Termos e declaração de maioridade no pré-cadastro",
+      "description": "Cobre C27 — pré-cadastro exige aceite dos termos aplicáveis e declaração de maioridade, no modal definido no Figma, antes de prosseguir. Ponto ainda sujeito a conferência fina no Figma (ver Pendências de decisão em 01 - Demanda).",
+      "preconditions": "Pessoa preenchendo o pré-cadastro (CT-026).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Confirmar os dados do pré-cadastro",
+          "data": "",
+          "expected_result": "A confirmação fica bloqueada até o aceite dos termos e a declaração de maioridade, no modal do Figma"
+        }
+      ]
+    },
+    {
+      "title": "CT-028 Criação do pré-cadastro e vínculo com o departamento",
+      "description": "Cobre C28 — com dados válidos e consentimentos completos, o sistema cria o pré-cadastro e vincula a pessoa ao departamento com o cargo informado.",
+      "preconditions": "Dados válidos informados e consentimentos aceitos no pré-cadastro (CT-026, CT-027).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Confirmar o pré-cadastro com dados válidos e consentimentos completos",
+          "data": "",
+          "expected_result": "O sistema cria o pré-cadastro e vincula a pessoa ao departamento com o cargo informado"
+        }
+      ]
+    },
+    {
+      "title": "CT-029 Assinatura no mesmo fluxo após o pré-cadastro",
+      "description": "Cobre C29 — concluído o pré-cadastro e o vínculo, a pessoa assina na mesma sessão, sem precisar reiniciar o fluxo.",
+      "preconditions": "Pré-cadastro e vínculo com o departamento concluídos (CT-028).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Prosseguir após a conclusão do pré-cadastro e do vínculo",
+          "data": "",
+          "expected_result": "A pessoa realiza a assinatura na mesma sessão, sem novo login ou navegação"
+        }
+      ]
+    },
+    {
+      "title": "CT-030 Convite por e-mail para completar o cadastro",
+      "description": "Cobre C30 — depois de assinar via pré-cadastro, a pessoa recebe um e-mail com instruções pra completar o cadastro no SOGOV.",
+      "preconditions": "Pessoa assinou o documento por meio de um pré-cadastro (CT-029).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Concluir a assinatura via pré-cadastro",
+          "data": "",
+          "expected_result": "O sistema envia um e-mail com instruções pra completar o cadastro no SOGOV"
+        }
+      ]
+    },
+    {
+      "title": "CT-031 Inconsistência no fluxo externo não cria vínculo ou cadastro duplicado",
+      "description": "Cobre C31 — qualquer inconsistência na identificação, autenticação, vinculação ou pré-cadastro impede a assinatura e mostra mensagem de erro adequada, sem deixar vínculo ou cadastro parcial.",
+      "preconditions": "Uma inconsistência é provocada deliberadamente em cada uma das quatro etapas do fluxo externo (ex.: senha errada, cargo inválido, e-mail já usado, sessão expirada no meio do fluxo).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Provocar uma inconsistência na identificação, autenticação, vinculação ou pré-cadastro",
+          "data": "",
+          "expected_result": "O sistema impede a assinatura, mostra mensagem de erro adequada específica pra etapa, e não cria vínculo ou cadastro duplicado"
+        }
+      ]
+    },
+    {
+      "title": "CT-032 Selo de assinatura do membro traz o contexto do departamento",
+      "description": "Cobre C32 — selo aplicado no documento assinado por um membro de departamento traz razão social, nome do departamento, nome de exibição (com cargo) e papel — mesmo padrão já cobrado no header (CT-019) e nos eventos (CT-020), não só o cidadão isolado. Achado de validação real (29/09/2026); retestado e aprovado em 30/09/2026 após correção do defeito SGV-11905.",
+      "preconditions": "Um cidadão membro de um departamento foi selecionado como signatário (CT-017) e concluiu a assinatura.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Consultar o selo de assinatura aplicado no documento",
+          "data": "",
+          "expected_result": "O selo mostra razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel"
+        }
+      ]
+    },
+    {
+      "title": "CT-033 Selecionar o cidadão PJ funciona igual, independente do caminho de busca",
+      "description": "Cobre C33 — solicitar assinatura pro cidadão PJ dá o mesmo resultado independente de ele ter sido localizado direto ou via hierarquia Cidadão PJ > Departamento > Membro. Achado de validação real (29/09/2026, efeito colateral da busca nova sobre capacidade pré-existente); retestado e aprovado em 30/09/2026 após correção do defeito SGV-11910.",
+      "preconditions": "Cidadão PJ com ao menos um departamento cadastrado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Pesquisar diretamente pelo cidadão PJ e solicitar a assinatura dele",
+          "data": "",
+          "expected_result": "A solicitação é aceita normalmente"
+        },
+        {
+          "action": "Repetir a mesma solicitação pesquisando pelo nome de um departamento ou membro desse cidadão PJ, selecionando o mesmo cidadão PJ a partir da linha Cidadão PJ > Departamento > Membro",
+          "data": "",
+          "expected_result": "O mesmo comportamento do passo 1 — solicitação aceita, sem tag de cadastro incompleto"
+        }
+      ]
+    },
+    {
+      "title": "CT-034 Selo do departamento não traz papel em nenhum estado",
+      "description": "Cobre C34 — selo de um departamento signatário mostra só razão social e nome do departamento, sem o campo papel, em nenhum dos três estados (a posicionar, posicionado, assinado). Achado de validação real (29/09/2026); retestado e aprovado em 30/09/2026 após correção do defeito SGV-11917.",
+      "preconditions": "Assinatura solicitada a um departamento (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o selo em cada um dos três estados (a posicionar, posicionado, assinado)",
+          "data": "",
+          "expected_result": "O selo mostra só razão social e nome do departamento, sem o campo papel, nos três estados"
+        }
+      ]
+    },
+    {
+      "title": "CT-035 Assinatura a departamentos diferentes do mesmo cidadão PJ",
+      "description": "Cobre C35 — solicitar assinatura a um segundo departamento diferente do mesmo cidadão PJ não é bloqueado (mesma regra de múltiplos departamentos por documento já válida pra destinatário de tramitação, SGV-11184, estendida à assinatura). Achado de validação real (29/09/2026); retestado e aprovado em 30/09/2026 após correção do defeito SGV-11924.",
+      "preconditions": "Assinatura já solicitada a um departamento de um cidadão PJ (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Configurar uma nova solicitação de assinatura a um departamento diferente do mesmo cidadão PJ",
+          "data": "",
+          "expected_result": "O sistema aceita a solicitação normalmente, sem o erro you-have-already-been-asked-once-with-sogov"
+        }
+      ],
+      "postconditions": "Os dois departamentos ficam como signatários pendentes, cada um com sua própria solicitação."
+    },
+    {
+      "title": "CT-036 Solicitação de assinatura aparece na lista de demandas do departamento",
+      "description": "Cobre C36 — solicitação de assinatura, seja a um membro de departamento ou ao departamento inteiro, aparece na lista de demandas do departamento. Achado de validação real (30/09/2026); retestado e aprovado no mesmo dia após correção do defeito SGV-11948.",
+      "preconditions": "Assinatura solicitada a um membro de departamento (CT-017) ou ao departamento inteiro (CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Consultar a lista de demandas do departamento após a solicitação",
+          "data": "",
+          "expected_result": "A nova solicitação aparece na lista, nos dois casos (membro e departamento inteiro)"
+        }
+      ]
+    }
+  ],
+  "shared_steps": [
+    {
+      "key": "notificacao-membro-dupla",
+      "title": "Membro recebe notificação por e-mail e notificação interna",
+      "steps": [
+        {
+          "action": "Com o membro de departamento adicionado (à tramitação ou como signatário de assinatura) e a ação efetivada/solicitação criada",
+          "data": "",
+          "expected_result": "O membro recebe notificação por e-mail e por notificação interna"
+        }
+      ]
+    },
+    {
+      "key": "notificacao-departamento-mantida",
+      "title": "E-mail do departamento continua recebendo a notificação",
+      "steps": [
+        {
+          "action": "Com a notificação do membro já disparada (tramitação ou assinatura)",
+          "data": "",
+          "expected_result": "O e-mail do departamento também recebe a notificação, sem substituir a do membro"
+        }
+      ]
+    },
+    {
+      "key": "string-identificacao-membro",
+      "title": "String de identificação do membro segue o padrão do Figma",
+      "steps": [
+        {
+          "action": "Consultar a identificação do membro de departamento renderizada (em tela ou em PDF)",
+          "data": "",
+          "expected_result": "Segue o padrão $nome_exibição ($nome_cargo) - ($Nome_depto - $RazaoSocial)"
+        }
+      ]
+    }
+  ]
+}
