@@ -36,12 +36,12 @@ ct_resultados:
   ct_026: ✅ Aprovado
   ct_027: ✅ Aprovado
   ct_028: ✅ Aprovado
-  ct_029: ⏳ Aguardando
-  ct_030: ⏳ Aguardando
-  ct_031: ⏳ Aguardando
-  ct_032: ⏳ Aguardando
-  ct_033: ⏳ Aguardando
-  ct_034: ⏳ Aguardando
+  ct_029: ❌ Falhou
+  ct_030: ✅ Aprovado
+  ct_031: ✅ Aprovado
+  ct_032: ✅ Aprovado
+  ct_033: ✅ Aprovado
+  ct_034: ✅ Aprovado
   ct_035: ⏳ Aguardando
   ct_036: ⏳ Aguardando
   ct_037: ✅ Aprovado
