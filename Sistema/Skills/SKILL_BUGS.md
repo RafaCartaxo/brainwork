@@ -10,6 +10,12 @@ Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Temp
 > [!important] A partir de 24/09/2026: pacote de arquivos, não nota única
 > Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 — nada mais os referencia como template ativo. Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
 
+### Instanciar o pacote de Bug — passo obrigatório de nomenclatura
+
+Os templates `02 - Plano de teste`, `03 - Casos de teste`, `04 - Validação dev`, `05 - Preparação Qase` e `06 - Automação` vêm com `demanda: "[[01 - Demanda]]"` no frontmatter/nav por padrão (caso mais comum é Melhoria/Funcionalidade). **Ao copiá-los pra dentro de um pacote de Bug**, trocar `[[01 - Demanda]]` → `[[01 - Bug]]` nesses 5 arquivos **no mesmo passo** em que `<ID>` vira o SGV real — não depois, não como lembrete solto. Não editar os templates em si por causa disso.
+
+Toda referência cruzada entre pacotes (de uma daily, de outro pacote, ou de `Defeitos/` pro resto do próprio pacote) usa caminho completo, nunca nome curto — ver [[../Contexto/PADROES_QA.md#Link entre pacotes — sempre caminho completo|PADROES_QA → Link entre pacotes]].
+
 ## Objetivos
 
 - Estruturar bugs de forma clara e reproduzível
@@ -219,7 +225,7 @@ O **Histórico** registra cada etapa vivida pelo card, com a frase padrão prefi
 Quando o bug vem acompanhado de análise, a análise **não entra no card**. Ela mora na mesa de trabalho do `05 Refinar/` (template [[../Templates/Refinamento.md|Refinamento.md]]). O card nasce **destilado** — só o problema, reprodução, resultado esperado, critérios e CTs. O fluxo completo de refinamento está em [[../../QA Workspace/05 Refinar/README|05 Refinar/README]] e no [[../Contexto/FLUXOS#6. Refinar demanda já cadastrada|FLUXOS (fluxo 6)]].
 
 O que sobra da análise no card:
-- **Observações**: wikilink pro arquivo de refinamento em `04 Conhecimento/`
+- **Observações**: wikilink pro arquivo de refinamento arquivado (`Conhecimento/` dentro do próprio card — ver [[SKILL_REFINAMENTO]])
 - **Critérios de aceite**: incluir dados já corrompidos/afetados e regressão do fluxo normal
 - **Histórico**: `- YYYY-MM-DD - Análise de causa raiz (<quem>): <síntese curta>`
 - **Evidência externa** (Notion): anotar na seção Evidências **onde ela está**, sem cópia local

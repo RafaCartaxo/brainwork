@@ -50,7 +50,6 @@ QA Workspace/
 │   ├── Módulos/ (uma nota por módulo do Sogov — regras de negócio e comportamentos, template Conhecimento.md)
 │   ├── Fluxos/ (fluxos de negócio ponta a ponta que cruzam módulos)
 │   └── Referências/ (docs do repo, manuais, links externos, leis)
-├── (material específico de uma task vive em `Conhecimento/` dentro do próprio card — `02 Demandas/<ambiente>/<SGV>/Conhecimento/` se ativa, `Concluídas/<SGV>/Conhecimento/` se concluída — não mais em `04 Conhecimento/Tasks/<SGV>/`, extinto em 24/09/2026; Resumo, refinamento arquivado, plano de automação, nome de arquivo com prefixo numérico pra ordem de leitura, ver [[../Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]])
 ├── 05 Refinar/
 │   └── README.md (mesa de trabalho do refinamento — exports do Notion etc. no template Refinamento.md; concluído, arquiva em 04 Conhecimento/)
 ├── 06 Estudos/
@@ -94,6 +93,8 @@ QA Workspace/
         ├── Verificação de Conformidade (Termo de Referência).md
         └── Pacote/ (padrão atual pra demanda nova — 00 README, Melhoria/01-Demanda, Bug/01-Bug, 02-05)
 ```
+
+Material específico de uma task (Resumo, refinamento arquivado, plano de automação — nome de arquivo com prefixo numérico pra ordem de leitura, ver [[../Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]]) vive em `Conhecimento/` dentro do próprio card: `02 Demandas/<ambiente>/<SGV>/Conhecimento/` se a demanda estiver ativa, `Concluídas/<SGV>/Conhecimento/` se concluída — não mais em `04 Conhecimento/Tasks/<SGV>/`, extinto em 24/09/2026.
 
 ## Templates
 
@@ -177,6 +178,13 @@ Os três campos acima mudam juntos, no mesmo momento (quando você termina sua p
 
 - Ao mudar de ambiente ou ser concluído, mover o arquivo fisicamente de pasta (`DEV` → `HML` → `Concluídas`), atualizando `ambiente` e `status` no frontmatter e um novo item em Histórico (dentro de Informações adicionais), no formato `- YYYY-MM-DD - <frase padrão com emoji>` — mesma frase da daily (ver [[QA Workspace/01 Daily/README|tabela de padronização]]). **Movendo fora do Obsidian** (script, IA, terminal): atualizar também os wikilinks pro caminho novo em todo o vault — o Obsidian só reescreve links sozinho quando a movimentação é feita dentro dele. O [[../Agentes/AGENTE_MIGRACAO_CARDS|AGENTE_MIGRACAO_CARDS]] cobre esse gap.
 - `data_inicio`/`data_fim`: medem a janela do QA no vault — `data_inicio` é quando o card foi cadastrado/nasceu no vault, `data_fim` é quando foi aprovado em homologação e movido pra `Concluídas/`. **Não isolam uma etapa específica** (costumam somar DEV+HML juntos) e **não são tempo de execução do dev** — não confundir com `pontos` (esforço da sua passagem), que é outra medida.
+
+### Link entre pacotes — sempre caminho completo
+
+Todo pacote (`00 README` + `01-06`) usa os **mesmos nomes de arquivo** (`01 - Demanda`, `03 - Casos de teste`, `Defeitos/SGV-XXXX - ...`), então um wikilink de nome curto (`[[01 - Demanda|SGV-XXXX]]`) só resolve certo **dentro do próprio pacote** — e nem sempre: já quebrou uma vez dentro da própria subpasta `Defeitos/` do pacote (um nível de profundidade a mais que o resto), porque o Obsidian pode resolver o nome curto pro `01 - Demanda` de **outro** pacote qualquer no vault.
+
+> [!important] Regra
+> **Qualquer referência cruzada entre pacotes** — de uma daily, de outro pacote, ou de uma subpasta como `Defeitos/` pro resto do próprio pacote — usa o **caminho completo a partir da raiz do vault**: `[[QA Workspace/02 Demandas/<ambiente>/<SGV> - <título>/01 - Demanda|SGV-XXXX]]`. Nome curto (`[[01 - Demanda|SGV-XXXX]]`) só é seguro **dentro da mesma pasta** do arquivo referenciado (link normal entre `01`-`06` do próprio pacote, no mesmo nível). Precedente: `^c20` referenciado de dentro de `Defeitos/SGV-11904 - ...md` não resolvia, porque o Obsidian pegava o `01 - Demanda` de outro pacote (SGV-11177 x qualquer outro).
 
 ## Defeito × Bug
 
