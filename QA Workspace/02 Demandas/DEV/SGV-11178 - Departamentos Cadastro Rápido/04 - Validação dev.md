@@ -31,11 +31,11 @@ ct_resultados:
   ct_021: ✅ Aprovado
   ct_022: ✅ Aprovado
   ct_023: ✅ Aprovado
-  ct_024: ⏳ Aguardando
-  ct_025: ⏳ Aguardando
-  ct_026: ⏳ Aguardando
-  ct_027: ⏳ Aguardando
-  ct_028: ⏳ Aguardando
+  ct_024: ✅ Aprovado
+  ct_025: ✅ Aprovado
+  ct_026: ✅ Aprovado
+  ct_027: ✅ Aprovado
+  ct_028: ✅ Aprovado
   ct_029: ⏳ Aguardando
   ct_030: ⏳ Aguardando
   ct_031: ⏳ Aguardando
