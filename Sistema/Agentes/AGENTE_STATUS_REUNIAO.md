@@ -5,6 +5,8 @@ tags:
 ---
 # Agente: Status — Reunião
 
+> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+
 Ler a daily de hoje e gerar o bloco **Status — reunião** (Fiz / Foco de hoje / Travas) automaticamente — lista rastreável do que foi feito, não roteiro de fala.
 
 ## Por que existe

@@ -22,6 +22,9 @@ Diferente de [[../Skills/README|Skills]] (que são instruções de referência p
 
 ## Gatilhos compartilhados
 
+> [!important] Fila automática (🔄/`qa-atualiza.py`) aposentada em 24/09/2026
+> Decisão do Rafael, registrada nas dailies de 24-25/09: o botão 🔄/script **parou de ser a fonte viva da fila** de pendências. O script não foi apagado nem alterado — só deixou de ser tratado como fonte de verdade, e **não rastreia pacotes** (`02 Demandas/<ambiente>/<SGV> - <título>/`, o padrão desde 24/09). Tracking de pendência agora é **manual**: "Pendente para amanhã" nas dailies + `00 README` do pacote. Isso afeta [[AGENTE_FILA]], [[AGENTE_ORGANIZADOR]], [[AGENTE_STATUS_REUNIAO]] e [[AGENTE_VALIDACAO_DOC]] — a descrição operacional de cada um abaixo continua valendo pro que o agente faz quando chamado, mas nenhum deles roda mais a partir do 🔄 como fonte viva de pendência.
+
 > [!warning] O botão 🔄 **não dispara agente nenhum** — corrigido em 30/07
 > Esta tabela dizia que o 🔄 disparava cinco agentes. **É impossível**: o botão executa `.obsidian/scripts/qa-atualiza.py`, que é Python e não invoca IA.
 >

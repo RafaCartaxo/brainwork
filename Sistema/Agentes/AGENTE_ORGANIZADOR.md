@@ -5,6 +5,8 @@ tags:
 ---
 # Agente: Auto-organização da Daily
 
+> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+
 Classificar e rotear os registros crus da daily (anotações e bugs ainda não estruturados) pras referências corretas do vault, nos dois modos possíveis: pedido manual numa sessão, ou tarefa agendada rodando sozinha. Design completo em [[../Specs/2026-07-14-inbox-auto-organizacao-design.md|Spec]].
 
 ## Princípio: um lugar de escrita, um lugar de leitura

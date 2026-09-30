@@ -5,6 +5,8 @@ tags:
 ---
 # Agente: Organizador da Fila
 
+> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+
 Reorganiza a seção "A fazer hoje" da daily: agrupa por natureza, sinaliza idade e bloqueios, remove ruído.
 
 ## Por que existe

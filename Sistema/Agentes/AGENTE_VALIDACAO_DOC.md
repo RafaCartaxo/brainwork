@@ -5,6 +5,8 @@ tags:
 ---
 # Agente: Validação contra Documentação
 
+> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+
 Rede de segurança do **gate de verificação contra doc** ([[../Skills/SKILL_VERIFICACAO_DOC|SKILL_VERIFICACAO_DOC]]). Varre cards aprovados ou movidos pra `Concluídas/` que ainda não passaram pelo cruzamento contra a documentação do módulo, e levanta pendências visíveis — pra não repetir o caso da SGV-9464 (aprovada em HML e só depois descoberta a divergência com a doc de Rastrear Documento). Precedente real: comportamento validado e aprovado contradizia o que a doc especificava havia 4 meses.
 
 Não faz integração externa nem roda por conta própria em background: dispara no gatilho **já existente** de organização da daily.
