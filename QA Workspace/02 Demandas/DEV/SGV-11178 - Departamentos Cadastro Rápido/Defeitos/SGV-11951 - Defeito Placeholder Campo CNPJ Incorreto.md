@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-No formulário de cadastro rápido de Pessoa Jurídica, o campo CNPJ exibe placeholder incorreto — mostra `00.000...` em vez do padrão esperado `XX.XXX.XXX/XXXX-XX`.
+Durante a validação real da SGV-11178 (Parte 5 da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]) foi identificado que, no formulário de cadastro rápido de Pessoa Jurídica, o campo CNPJ exibe placeholder incorreto — mostra `00.000...` em vez do padrão esperado `XX.XXX.XXX/XXXX-XX`.
 
 ---
 
