@@ -43,7 +43,7 @@ ct_resultados:
   ct_033: ✅ Aprovado
   ct_034: ✅ Aprovado
   ct_035: ✅ Aprovado
-  ct_036: ❌ Falhou
+  ct_036: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---
@@ -63,7 +63,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real em andamento — 5 defeitos confirmados em 29/09/2026 (CT-020, CT-032, CT-033, CT-034, CT-035), todos retestados e aprovados em 30/09/2026. Novo defeito (CT-036, SGV-11948) achado em 30/09/2026 — 35/36 CTs aprovados.
+> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real — 6 defeitos confirmados em 29-30/09/2026 (CT-020, CT-032, CT-033, CT-034, CT-035, CT-036), todos retestados e aprovados. **36/36 CTs aprovados.**
 
 ---
 
@@ -143,7 +143,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-033\|CT-033]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_033]` | ![[11910 - Assinatura do cidadão PJ igual nos dois caminhos de busca, ok.mp4]] |  | [[Defeitos/SGV-11910 - Defeito Assinatura Do Cidadão PJ Falha Quando Localizado Via Departamento\|SGV-11910]] | `= choice(this.ct_resultados.ct_033 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-034\|CT-034]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_034]` | ![[11917 - Selo do departamento sem papel indevido, ok.png]] |  | [[Defeitos/SGV-11917 - Defeito Selo Do Departamento Traz Papel Indevido\|SGV-11917]] | `= choice(this.ct_resultados.ct_034 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-035\|CT-035]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_035]` | ![[11924 - Assinatura entre departamentos diferentes aceita, ok.mp4]] |  | [[Defeitos/SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ\|SGV-11924]] | `= choice(this.ct_resultados.ct_035 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-036\|CT-036]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_036]` | ![[11948 - Solicitacao de assinatura nao aparece na lista de demandas do departamento, incorreto.mp4]] |  | [[Defeitos/SGV-11948 - Defeito Solicitação De Assinatura Não Aparece Na Lista Do Departamento\|SGV-11948]] | `= choice(this.ct_resultados.ct_036 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-036\|CT-036]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_036]` | ![[11948 - OK.mp4]] |  | [[Defeitos/SGV-11948 - Defeito Solicitação De Assinatura Não Aparece Na Lista Do Departamento\|SGV-11948]] | `= choice(this.ct_resultados.ct_036 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 

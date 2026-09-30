@@ -6,9 +6,9 @@ tags:
 task: "11951"
 pai: "SGV-11178"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-09-30
-data_fim: ""
+data_fim: "2026-09-30"
 responsavel: Rafael
 aguardando:
 pontos:
@@ -34,7 +34,11 @@ Durante a validação real da SGV-11178 (Parte 5 da epic [[QA Workspace/02 Deman
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11951)
 
+**Antes da correção:**
 ![[11951 - Placeholder divergente.png]]
+
+**Retestado e aprovado (30/09/2026):**
+![[11951 - Placeholder correto, ok.png]]
 
 ---
 
@@ -46,7 +50,7 @@ Placeholder do campo CNPJ segue o padrão `XX.XXX.XXX/XXXX-XX`.
 
 ### Critérios de aceite
 
-- [ ] Campo CNPJ do cadastro rápido de Pessoa Jurídica exibe o placeholder `XX.XXX.XXX/XXXX-XX`
+- [x] Campo CNPJ do cadastro rápido de Pessoa Jurídica exibe o placeholder `XX.XXX.XXX/XXXX-XX`
 
 ---
 
@@ -59,13 +63,13 @@ Placeholder do campo CNPJ segue o padrão `XX.XXX.XXX/XXXX-XX`.
 **Então** o placeholder exibido deve ser `XX.XXX.XXX/XXXX-XX`
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-![[11951 - Placeholder divergente.png]]
+![[11951 - Placeholder correto, ok.png]]
 
 ---
 
@@ -82,3 +86,4 @@ Placeholder do campo CNPJ segue o padrão `XX.XXX.XXX/XXXX-XX`.
 - Observações: achado durante a validação da SGV-11178 — [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-037|CT-037]] (critério C37, criado a partir deste achado).
 - Histórico:
     - 2026-09-30 - 🐛 Defeito cadastrado (placeholder do campo CNPJ incorreto)
+    - 2026-09-30 - ✅ Retestado e aprovado — placeholder no padrão `XX.XXX.XXX/XXXX-XX`

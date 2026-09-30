@@ -1432,6 +1432,6 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11948 - Defeito Solicitação De Assinatura Não Aparece Na Lista Do Departamento|SGV-11948]]
+> **Execução:** retestado e aprovado — [[Defeitos/SGV-11948 - Defeito Solicitação De Assinatura Não Aparece Na Lista Do Departamento|SGV-11948]]
 
 ^ct-036
