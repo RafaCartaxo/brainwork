@@ -1,10 +1,10 @@
 ---
 status: analise
-demanda: SGV-11177
+demanda: SGV-11178
 tipo: funcionalidade
 etapa_atual: "QA · Casos de teste"
 ---
-# SGV-11177 — Departamentos: Tramitação e assinaturas
+# SGV-11178 — Departamentos: Cadastro rápido
 
 > [!info]- Navegação QA/DEV  
 > **Demanda:** [[01 - Demanda]]  
@@ -24,19 +24,19 @@ etapa_atual: "QA · Casos de teste"
 |---|---|
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
-| Casos de teste | ✅ Preparados (CT-001 a CT-031) |
+| Casos de teste | ✅ Preparados (CT-001 a CT-036) |
 | Validação | ⏳ Aguardando implementação do DEV |
 | Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
 
 **Próximo passo:** confirmar `pontos_alocados` em `01 - Demanda` e rotear para o DEV.
 
 > [!warning]- Escopo desta rodada  
-> Cobre as 7 frentes do requisito de origem (Notion, Parte 4 da epic SGV-9296): tramitação para membro de departamento (busca, notificação, exibição em tela e em PDF), assinatura solicitada ao departamento inteiro, assinatura solicitada a um membro específico, e o fluxo de assinatura externa por CPF (com pré-cadastro). Este requisito **confirma e formaliza** o que o `Complemento Figma - Departamento Destinatário E Signatário` (arquivado em `DEV/SGV-9296 - Departamentos/Conhecimento/`) já tinha antecipado como escopo futuro da epic em 03/09/2026.
+> Cobre o atalho de cadastro rápido (PF, PJ e Departamento) embutido nos componentes de seleção de pessoa (requisito de origem, Parte 5 da epic SGV-9296) — não cobre os fluxos de cadastro dedicados, nem as regras de departamento fora do cadastro em si (SGV-11083), convite (SGV-11176) ou tramitação/assinatura (SGV-11177).
 
-Pacote QA para `SGV-11177`:
+Pacote QA para `SGV-11178`:
 
 ```text
-SGV-11177 - Departamentos Tramitação e Assinaturas/
+SGV-11178 - Departamentos Cadastro Rápido/
 ├── 00 README.md
 ├── 01 - Demanda.md
 ├── 02 - Plano de teste.md
