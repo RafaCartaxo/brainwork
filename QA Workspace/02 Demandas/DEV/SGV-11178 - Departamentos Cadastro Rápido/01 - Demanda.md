@@ -116,7 +116,7 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 
 ### RF04 — Cadastro rápido de pessoa jurídica
 
-- C15. O formulário de Pessoa Jurídica apresenta os campos CNPJ, Razão Social, Nome fantasia, Telefone, CPF do responsável legal e Nome do responsável legal. ^c15
+- C15. O formulário de Pessoa Jurídica apresenta os campos CNPJ, Razão Social, Nome fantasia, Telefone, E-mail, CPF do responsável legal e Nome do responsável legal. ^c15
 - C16. Antes de consultar um CNPJ válido, os campos Razão Social e Nome fantasia permanecem desabilitados. ^c16
 - C17. O sistema valida o CNPJ informado antes de consultar a API. ^c17
 - C18. Quando a API retorna os dados de um CNPJ válido, Razão Social e Nome fantasia são preenchidos automaticamente. ^c18
