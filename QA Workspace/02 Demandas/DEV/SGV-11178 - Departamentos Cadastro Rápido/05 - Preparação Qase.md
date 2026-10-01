@@ -6,7 +6,7 @@ tipo_card: "funcionalidade"
 projeto: ""
 modulo: servicos-pj
 qase_projeto: SGV
-qase_suite_id: ""
+qase_suite_id: 361
 demanda: "[[01 - Demanda]]"
 casos_origem: "[[03 - Casos de teste]]"
 validacao_origem: "[[04 - Validação dev]]"
@@ -23,13 +23,13 @@ validacao_origem: "[[04 - Validação dev]]"
 
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.
 
-> [!warning] Pendência  
-> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Verificar suites existentes em `https://app.qase.io/project/SGV` antes do envio real.
+> [!info] Suite confirmada  
+> `qase_suite_id: 361` — criada via `POST /v1/suite/SGV` em 01/10/2026, com autorização explícita do Rafael (GATE 2 cumprido — suite não existia ainda pra essa demanda). Título "11178 - Departamentos: Cadastro rápido", `parent_id: 125` ("Melhorias/Funcionalidades", mesmo pai da suite 360 da SGV-11177), `cases_count: 0` (vazia, sem risco de duplicar).
 
 ## Configuração
 
 - **Projeto Qase:** `SGV`
-- **Suite Qase:** `<a confirmar>`
+- **Suite Qase:** `361` — "11178 - Departamentos: Cadastro rápido"
 - **Origem:** [[03 - Casos de teste]] (CT-001 a CT-037 — todos aplicáveis, nenhum "Não se aplica". CT-038 fica de fora por enquanto: defeito [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]] ainda aberto, aguardando DEV)
 - **Script/payload:** processo real descrito em [[../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
@@ -59,7 +59,7 @@ Tags da nota: manter somente `qa` e `qase`. Tags enviadas ao Qase: ID da demanda
 ## Checklist de envio
 
 - [ ] Todos os CTs candidatos têm descrição, pré-condições e passos.
-- [ ] Projeto e suite confirmados (suite pré-existente ou criada com autorização explícita).
+- [x] Projeto e suite confirmados (suite pré-existente ou criada com autorização explícita).
 - [ ] Campos normalizados e passos separados.
 - [ ] Tags limitadas ao ID da demanda e ao módulo.
 - [ ] Campos da API validados (`dry-run` rodado antes do `--apply`).
