@@ -4,7 +4,7 @@ tags:
   - qa
   - despachos
 task: "11338"
-pai: "11184"
+pai: "SGV-11184"
 prioridade: media
 status: aberto
 data_inicio: 2026-09-04
