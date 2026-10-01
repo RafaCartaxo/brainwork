@@ -45,6 +45,7 @@ ct_resultados:
   ct_035: ✅ Aprovado
   ct_036: ✅ Aprovado
   ct_037: ✅ Aprovado
+  ct_038: ❌ Falhou
 data_inicio: ""
 data_fim: ""
 ---
@@ -64,7 +65,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real — 1 defeito confirmado em 30/09/2026 (CT-037), retestado e aprovado no mesmo dia. CT-029/SGV-11957 investigado e descartado em 01/10/2026 (diagnóstico errado — comportamento sempre esteve correto). CT-015/SGV-11958 confirmado em 01/10/2026 — critério C15 passou a exigir campo E-mail, corrigido e retestado no mesmo dia. **37/37 CTs aprovados.**
+> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real — 1 defeito confirmado em 30/09/2026 (CT-037), retestado e aprovado no mesmo dia. CT-029/SGV-11957 investigado e descartado em 01/10/2026 (diagnóstico errado — comportamento sempre esteve correto). CT-015/SGV-11958 confirmado em 01/10/2026 — critério C15 passou a exigir campo E-mail, corrigido e retestado no mesmo dia. CT-038/SGV-11962 reprovado em 01/10/2026 — critério C38 novo (responsividade do modal de cadastro rápido), aguardando DEV. **37/38 CTs aprovados.**
 
 ---
 
@@ -146,6 +147,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-035\|CT-035]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_035]` |  |  |  | `= choice(this.ct_resultados.ct_035 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-036\|CT-036]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_036]` |  |  |  | `= choice(this.ct_resultados.ct_036 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-037\|CT-037]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_037]` | ![[11951 - Placeholder correto, ok.png]] |  | [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto\|SGV-11951]] | `= choice(this.ct_resultados.ct_037 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-038\|CT-038]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_038]` | ![[SGV-11962 - Responsividade, incorreto.mp4]] | Critério C38 criado em 01/10/2026 (protótipo Figma) — ainda não implementado | [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade\|SGV-11962]] | `= choice(this.ct_resultados.ct_038 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 
