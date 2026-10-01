@@ -166,3 +166,4 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 
 > [!bug] Defeitos confirmados em validação real (30/09/2026)
 > - **C37** (placeholder do campo CNPJ, criado a partir deste achado) — [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto|SGV-11951]].
+> - **C29** (seletor não traz nenhuma opção pra PJ sem Nome fantasia, em vez do fallback Razão Social + CNPJ) — [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]].
