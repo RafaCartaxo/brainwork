@@ -30,7 +30,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `<a confirmar>`
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-036 — todos aplicáveis, nenhum "Não se aplica")
+- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-037 — todos aplicáveis, nenhum "Não se aplica". CT-038 fica de fora por enquanto: defeito [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]] ainda aberto, aguardando DEV)
 - **Script/payload:** processo real descrito em [[../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
 ## Mapeamento dos campos
