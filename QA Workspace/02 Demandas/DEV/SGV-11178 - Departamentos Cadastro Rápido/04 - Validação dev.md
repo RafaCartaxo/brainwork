@@ -19,10 +19,10 @@ ct_resultados:
   ct_009: ✅ Aprovado
   ct_010: ✅ Aprovado
   ct_011: ✅ Aprovado
-  ct_012: ⏳ Aguardando
-  ct_013: ⏳ Aguardando
+  ct_012: ✅ Aprovado
+  ct_013: ✅ Aprovado
   ct_014: ✅ Aprovado
-  ct_015: ❌ Falhou
+  ct_015: ✅ Aprovado
   ct_016: ✅ Aprovado
   ct_017: ✅ Aprovado
   ct_018: ✅ Aprovado
