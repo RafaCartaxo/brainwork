@@ -52,7 +52,7 @@ Cada tipo de entidade no dropdown segue seu próprio padrão fixo de exibição 
 | Setor | Sigla · Nome do setor |
 | Servidor | Sigla · Nome do servidor |
 
-Quando o texto do item for extenso, **sempre trunca na 2ª linha**, mantendo a mesma sequência de string até o ponto de corte (mesma regra de truncamento já registrada nos CTs de departamento da [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], CT-012a) — o callout do Figma reforça: "sempre será truncada na segunda linha".
+Quando o texto do item for extenso, **sempre trunca na 2ª linha**, mantendo a mesma sequência de string até o ponto de corte (mesma regra de truncamento já registrada nos CTs de departamento da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], CT-012a) — o callout do Figma reforça: "sempre será truncada na segunda linha".
 
 ---
 
@@ -178,12 +178,12 @@ Quando o texto do item for extenso, **sempre trunca na 2ª linha**, mantendo a m
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/Concluídas/11184/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — mesmo mecanismo de truncamento do CT-012a, mas o bug aqui é mais amplo (afeta os 5 tipos de entidade do dropdown de destinatário/cópia do despacho, não só departamento).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]] — mesmo mecanismo de truncamento do CT-012a, mas o bug aqui é mais amplo (afeta os 5 tipos de entidade do dropdown de destinatário/cópia do despacho, não só departamento).
 - Observações:
     - Gate de doc: não existe seção no `04 Conhecimento/Módulos/Despachos.md` documentando o padrão de exibição por tipo de entidade no dropdown de destinatário/cópia — pendência de importar essa regra do Figma pra doc quando este bug for corrigido (fluxo 8).
-    - CT-B03 e CT-B06 reprovados, confirmados com evidência dedicada em [[QA Workspace/02 Demandas/Concluídas/11184/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (defeito da SGV-11184, achado com cidadão de nome extenso — campo de busca sem limite de truncamento, despacho trunca já na 1ª linha em vez da 2ª).
+    - CT-B03 e CT-B06 reprovados, confirmados com evidência dedicada em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (defeito da SGV-11184, achado com cidadão de nome extenso — campo de busca sem limite de truncamento, despacho trunca já na 1ª linha em vez da 2ª).
     - Versão/ambiente exato (qual container `dev-*`) não informado — pendência preencher.
     - Evidência principal (vídeo da divergência) compartilhada com [[QA Workspace/02 Demandas/Concluídas/10784/QA/10784 - Bug Destinatarios Em Copia De Despacho Divergente Do Prototipo|SGV-10784]] — cópia renomeada, usada lá como reteste da aprovação em homologação.
 - Histórico:
     - 2026-09-04 - 🐛 Bug cadastrado (achado na validação, evidência e protótipo Figma no vault)
-    - 2026-09-04 - 🔎 CT-B03/CT-B06 confirmados com evidência dedicada, registrada como defeito da SGV-11184: [[QA Workspace/02 Demandas/Concluídas/11184/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]
+    - 2026-09-04 - 🔎 CT-B03/CT-B06 confirmados com evidência dedicada, registrada como defeito da SGV-11184: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]

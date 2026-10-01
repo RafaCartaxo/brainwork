@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-O critério [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda#^c15|C15]] da SGV-11178 foi atualizado em 01/10/2026 (protótipo no Figma já atualizado) pra exigir também o campo E-mail no formulário de cadastro rápido de Pessoa Jurídica, reduzindo a ocorrência de cadastros incompletos (ver [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]]). A implementação atual ainda não tem esse campo — [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-015|CT-015]] reprova contra o critério atualizado.
+O critério [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda#^c15|C15]] da SGV-11178 foi atualizado em 01/10/2026 (protótipo no Figma já atualizado) pra exigir também o campo E-mail no formulário de cadastro rápido de Pessoa Jurídica, reduzindo a ocorrência de cadastros incompletos (ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]]). A implementação atual ainda não tem esse campo — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-015|CT-015]] reprova contra o critério atualizado.
 
 ---
 
@@ -82,7 +82,7 @@ Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, confor
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
 - Observações: detalhe adicional (obrigatoriedade do campo, validação, link do protótipo) registrado em comentário no Notion, não duplicado aqui.
 - Histórico:
     - 2026-10-01 - 🐛 Defeito cadastrado (C15/CT-015 atualizados pra exigir e-mail, ainda não implementado)

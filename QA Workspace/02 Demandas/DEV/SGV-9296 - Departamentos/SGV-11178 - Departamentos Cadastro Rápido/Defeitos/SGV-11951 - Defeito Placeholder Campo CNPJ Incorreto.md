@@ -82,8 +82,8 @@ Placeholder do campo CNPJ segue o padrão `XX.XXX.XXX/XXXX-XX`.
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
-- Observações: achado durante a validação da SGV-11178 — [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-037|CT-037]] (critério C37, criado a partir deste achado).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
+- Observações: achado durante a validação da SGV-11178 — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-037|CT-037]] (critério C37, criado a partir deste achado).
 - Histórico:
     - 2026-09-30 - 🐛 Defeito cadastrado (placeholder do campo CNPJ incorreto)
     - 2026-09-30 - ✅ Retestado e aprovado — placeholder no padrão `XX.XXX.XXX/XXXX-XX`

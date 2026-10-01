@@ -22,7 +22,7 @@ modulo: servicos-pj
 > - **Tipo:** Funcionalidade
 > - **Responsável QA:** Rafael
 > - **Link:** SGV-11184 no Notion ("[Parte 2] Departamentos: Encaminhar documentos/despachos para o departamento")
-> - **Parte 2** de duas, irmã de [[QA Workspace/02 Demandas/Concluídas/11083/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]] — ambas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]
+> - **Parte 2** de duas, irmã de [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]] — ambas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]
 
 ---
 
@@ -30,7 +30,7 @@ modulo: servicos-pj
 
 Departamentos (SGV-11083) passam a poder ser selecionados como destinatários em documentos e despachos — no campo pessoa configurado pra Pessoa Jurídica, e no campo de destinatário de despacho. Ao serem efetivamente encaminhados, o departamento recebe notificação por e-mail (com deduplicação e idempotência), e o acesso externo ao documento via essa notificação é registrado com rastreabilidade (`publicIdentifier` UUID, validado contra o vínculo real com o documento) — sem nunca expor o ID interno nem autorizar responder/assinar pela URL.
 
-Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|Concluídas/11184/Conhecimento]]. Resumo em linguagem simples (sem jargão de RF/CA): [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/1 - SGV-11184 - Resumo|SGV-11184 - Resumo]]. 21 dos 28 CTs já foram enviados pra Qase (suite 220): [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/4 - SGV-11184 - Preparação Qase|SGV-11184 - Preparação Qase]].
+Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|Concluídas/11184/Conhecimento]]. Resumo em linguagem simples (sem jargão de RF/CA): [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/1 - SGV-11184 - Resumo|SGV-11184 - Resumo]]. 21 dos 28 CTs já foram enviados pra Qase (suite 220): [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/4 - SGV-11184 - Preparação Qase|SGV-11184 - Preparação Qase]].
 
 ---
 
@@ -349,7 +349,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 - [x] Não
 - [ ] Não se aplica
 
-> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/Concluídas/11184/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]
+> [!danger]- Reprovado — defeito [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]]
 > Achado com um departamento de nome extenso: campo de busca de destinatário cresce sem limite, sem truncar; despacho já emitido trunca já na 1ª linha, não na 2ª como especifica o protótipo. Relacionado também ao CT-B03/CT-B06 da [[QA Workspace/02 Demandas/Concluídas/11333/QA/11333 - Bug Exibicao Do Dropdown De Destinatarios Nao Segue O Prototipo Do Figma|SGV-11333]].
 
 **Evidências de Testes:**
@@ -553,7 +553,7 @@ Nasce do refinamento do requisito técnico do Notion — mesa em [[QA Workspace/
 > [!danger] Bugs encontrados
 > - ~~[[QA Workspace/02 Demandas/Concluídas/11312/QA/11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma|SGV-11312]] — área de clique do accordion não respeita a distinção chevron × linha~~ — **corrigido e aprovado em DEV** (CT-002c e CT-008a revalidados, Sim)
 > - ~~[[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — departamento não é persistido ao retificar despacho (tela mostra o cidadão PJ/empresa)~~ — **corrigido e aprovado em DEV** (achado em teste exploratório, sem CT formal ainda)
-> - [[QA Workspace/02 Demandas/Concluídas/11184/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] — truncamento de destinatário com nome extenso não segue o protótipo (CT-012a reprovado)
+> - [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] — truncamento de destinatário com nome extenso não segue o protótipo (CT-012a reprovado)
 
 ---
 
@@ -565,7 +565,7 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 
 > [!tip] Observações
 
-- Refinado a partir do requisito técnico do Notion — análise completa em [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|Concluídas/11184/Conhecimento]].
+- Refinado a partir do requisito técnico do Notion — análise completa em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|Concluídas/11184/Conhecimento]].
 - Depende funcionalmente da SGV-11083 (departamento precisa existir e ter participantes/status antes de ser encaminhável) — validar a 11083 primeiro, ou pelo menos em paralelo com dados de teste compatíveis.
 - Gate de doc: não existe seção de "Departamentos" em `04 Conhecimento/Módulos/` ainda — importar quando esta demanda (e a 11083) forem validadas (fluxo 8).
 
@@ -583,6 +583,6 @@ Nenhuma anexada ainda — funcionalidade ainda não implementada (backlog no Not
 - 2026-09-03 - 🔎 CT-014 ajustado (Rafael): cenário de dois membros compartilharem e-mail removido — cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]), só existe o cenário departamento × membro
 - 2026-09-03 - 🔎 CT-015 reescrito (Rafael): linguagem de "evento/canal" trocada por descrição concreta (reprocessar o mesmo encaminhamento não duplica notificação), sem mudar o comportamento testado
 - 2026-09-03 - 🔎 CT-018 corrigido: "ou seus membros" removido do Dado (sem base no RF04, que fala só do departamento); nota de escopo em Pontos de atenção esclarecendo que "participantes não implementado" vale pra exibição/seleção (grupos A/B), não pra notificação interna por membro (RF03 CA02, CT-014), que já está em escopo
-- 2026-09-04 - 🐛 CT-012a reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/Concluídas/11184/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (destinatário com nome extenso não trunca conforme o protótipo)
+- 2026-09-04 - 🐛 CT-012a reprovado — defeito cadastrado: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/Defeitos/11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (destinatário com nome extenso não trunca conforme o protótipo)
 - 2026-09-04 - 📝 CT-012b criado (retificação preserva o departamento como destinatário), formalizando o gap exposto pela [[QA Workspace/02 Demandas/Concluídas/11319/QA/11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] — já marcado Sim (defeito corrigido e aprovado). Card passa de 27 pra 28 CTs (21 aplicáveis, 7 Não se aplica).
-- 2026-09-04 - 📤 21 CTs aplicáveis enviados pro projeto SGV na Qase (suite 220), via `sogov-automation-test/scripts/qase-sync-9296-departamentos/` — ids 443-463. Espelho legível em [[QA Workspace/02 Demandas/Concluídas/11184/Conhecimento/4 - SGV-11184 - Preparação Qase|Preparação Qase]].
+- 2026-09-04 - 📤 21 CTs aplicáveis enviados pro projeto SGV na Qase (suite 220), via `sogov-automation-test/scripts/qase-sync-9296-departamentos/` — ids 443-463. Espelho legível em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/4 - SGV-11184 - Preparação Qase|Preparação Qase]].

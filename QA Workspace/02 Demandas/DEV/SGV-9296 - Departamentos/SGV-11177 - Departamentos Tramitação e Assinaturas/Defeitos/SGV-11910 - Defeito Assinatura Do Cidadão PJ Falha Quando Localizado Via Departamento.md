@@ -48,7 +48,7 @@ Solicitar assinatura pro cidadão PJ funciona pela busca direta, mas exibe a tag
 
 ### Resultado Esperado
 
-Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c33|C33]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033|CT-033]].
+Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). Ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c33|C33]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033|CT-033]].
 
 ---
 
@@ -86,8 +86,8 @@ Mesmo resultado nos dois caminhos de busca (direto ou via departamento/membro). 
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033|CT-033]] (critério C33, criado a partir deste achado).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033|CT-033]] (critério C33, criado a partir deste achado).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
     - 2026-09-30 - ✅ Retestado e aprovado — mesmo resultado nos dois caminhos de busca

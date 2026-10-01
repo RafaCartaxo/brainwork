@@ -83,8 +83,8 @@ Solicitação de assinatura ao membro ou ao departamento inteiro carrega normalm
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-036|CT-036]] (critério C36, criado a partir deste achado). Distinto da [[SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ|SGV-11924]] (que é sobre a API bloquear a solicitação) — aqui a solicitação é aceita, só não aparece na lista certa.
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-036|CT-036]] (critério C36, criado a partir deste achado). Distinto da [[SGV-11924 - Defeito Assinatura Bloqueada Entre Departamentos Diferentes Do Mesmo Cidadão PJ|SGV-11924]] (que é sobre a API bloquear a solicitação) — aqui a solicitação é aceita, só não aparece na lista certa.
 - Histórico:
     - 2026-09-30 - 🐛 Defeito cadastrado
     - 2026-09-30 - ✅ Retestado e aprovado — solicitação aparece na lista de demandas do departamento (membro e departamento inteiro)

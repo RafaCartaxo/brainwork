@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-Durante a validação real da SGV-11178 (Parte 5 da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]), em 30/09/2026, foi identificado que, quando uma pessoa jurídica não possui Nome fantasia cadastrado, o seletor não traz nenhuma opção pra ela — em vez de cair no fallback esperado (Razão Social + CNPJ, conforme [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda#^c29|C29]]), a PJ simplesmente não aparece no resultado.
+Durante a validação real da SGV-11178 (Parte 5 da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]]), em 30/09/2026, foi identificado que, quando uma pessoa jurídica não possui Nome fantasia cadastrado, o seletor não traz nenhuma opção pra ela — em vez de cair no fallback esperado (Razão Social + CNPJ, conforme [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda#^c29|C29]]), a PJ simplesmente não aparece no resultado.
 
 ---
 
@@ -79,8 +79,8 @@ Pessoa jurídica sem Nome fantasia aparece no seletor como "Razão Social — CN
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
-- Observações: **Descartado em 01/10/2026** — diagnóstico original estava errado. O CT-029 (fallback Razão Social + CNPJ pra PJ sem Nome fantasia) já funcionava corretamente; a PJ da gravação tinha **cadastro incompleto** e foi corretamente ocultada do seletor pelo [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-027|CT-027]] (critério C27). Decisão de produto: formulário de cadastro rápido de PJ passa a coletar e-mail também (ver [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-015|CT-015]]), reduzindo cadastros incompletos.
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
+- Observações: **Descartado em 01/10/2026** — diagnóstico original estava errado. O CT-029 (fallback Razão Social + CNPJ pra PJ sem Nome fantasia) já funcionava corretamente; a PJ da gravação tinha **cadastro incompleto** e foi corretamente ocultada do seletor pelo [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-027|CT-027]] (critério C27). Decisão de produto: formulário de cadastro rápido de PJ passa a coletar e-mail também (ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-015|CT-015]]), reduzindo cadastros incompletos.
 - Histórico:
     - 2026-10-01 - 🐛 Defeito cadastrado (seletor não traz nenhuma opção quando a PJ não tem Nome fantasia)
-    - 2026-10-01 - 🗑️ Descartado — diagnóstico errado, CT-029 já funcionava certo; achado real foi [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-027|CT-027]] (cadastro incompleto). Campo E-mail agora exigido em C15, ver [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/Defeitos/SGV-11958 - Defeito Formulário De Pessoa Jurídica Não Coleta E-mail|SGV-11958]]
+    - 2026-10-01 - 🗑️ Descartado — diagnóstico errado, CT-029 já funcionava certo; achado real foi [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-027|CT-027]] (cadastro incompleto). Campo E-mail agora exigido em C15, ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos/SGV-11958 - Defeito Formulário De Pessoa Jurídica Não Coleta E-mail|SGV-11958]]

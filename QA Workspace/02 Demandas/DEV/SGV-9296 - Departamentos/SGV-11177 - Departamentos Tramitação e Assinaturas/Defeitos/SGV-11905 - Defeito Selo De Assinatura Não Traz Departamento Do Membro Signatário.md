@@ -46,7 +46,7 @@ Durante a validação real da SGV-11177 (Parte 4 da epic SGV-9296) foi identific
 
 O selo deve mostrar: razão social, nome do departamento, nome de exibição (com o cargo no departamento) e papel.
 
-Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c32|C32]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]].
+Ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c32|C32]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]].
 
 ---
 
@@ -84,8 +84,8 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]] (critério C32 criado a partir deste achado, fora de sequência).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032|CT-032]] (critério C32 criado a partir deste achado, fora de sequência).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
     - 2026-09-30 - ✅ Retestado e aprovado — selo traz o contexto completo do departamento

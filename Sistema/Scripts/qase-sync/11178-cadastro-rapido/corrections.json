@@ -1,5 +1,5 @@
 {
-  "_readme": "Payload de sincronização dos 37 CTs aplicáveis da SGV-11178 (Departamentos — cadastro rápido, Parte 5 da epic SGV-9296) na Qase (projeto SGV, suite 361, vazia). CT-038 (responsividade do modal, defeito SGV-11962) fica de fora até ser corrigido e retestado. Nenhum shared step nesta rodada — nenhum par de CTs tinha passo literalmente idêntico (campos diferentes por tipo de cadastro PF/PJ/Departamento). Ver rascunho legível em QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/05 - Preparação Qase.md no vault.",
+  "_readme": "Payload de sincronização dos 37 CTs aplicáveis da SGV-11178 (Departamentos — cadastro rápido, Parte 5 da epic SGV-9296) na Qase (projeto SGV, suite 361, vazia). CT-038 (responsividade do modal, defeito SGV-11962) fica de fora até ser corrigido e retestado. Nenhum shared step nesta rodada — nenhum par de CTs tinha passo literalmente idêntico (campos diferentes por tipo de cadastro PF/PJ/Departamento). Ver rascunho legível em QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/05 - Preparação Qase.md no vault.",
   "project_code": "SGV",
   "suite_id": 361,
   "updates": [],

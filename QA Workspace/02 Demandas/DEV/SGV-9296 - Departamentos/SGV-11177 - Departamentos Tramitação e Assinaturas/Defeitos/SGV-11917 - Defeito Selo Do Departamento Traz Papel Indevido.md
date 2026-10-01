@@ -44,7 +44,7 @@ Antes de assinado (a posicionar/posicionado), o selo de assinatura de um departa
 
 ### Resultado Esperado
 
-Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum estado (a posicionar, posicionado ou assinado). Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c34|C34]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]].
+Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum estado (a posicionar, posicionado ou assinado). Ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c34|C34]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]].
 
 ---
 
@@ -82,8 +82,8 @@ Selo mostra só razão social e nome do departamento, sem `$papel`, em nenhum es
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]] (critério C34, criado a partir deste achado).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação da SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034|CT-034]] (critério C34, criado a partir deste achado).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
     - 2026-09-30 - ✅ Retestado e aprovado — selo sem `$papel` em nenhum estado

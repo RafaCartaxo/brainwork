@@ -48,7 +48,7 @@ Testado aqui contra o cenário **"solo doc"** (assinatura só do documento, sem 
 > [!note]- Outras combinações também têm string própria no Figma (não repetidas aqui pra não inflar o card)
 > A mesma tela do Figma define variações conforme o que está sendo assinado: só o documento (sequencial), documento + todos os anexos, documento + anexos selecionados, documento + despacho, despacho isolado, anexos isolados, despacho + anexos, documento + despacho + anexos, e a listagem de usuários do departamento na assinatura sequencial (`$Assinatura_textual ($Cargo) como $Nome_depto (Representando $RazaoSocial)`). Todas seguem o mesmo princípio corrigido aqui — amarrar o cidadão ao departamento — só muda o que vem depois de "solicitou a assinatura...". Conferir a variação certa contra o Figma na hora de validar cada uma, se/quando isso virar CT formal.
 
-Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c20|C20]] e [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020|CT-020]].
+Ver [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c20|C20]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020|CT-020]].
 
 ---
 
@@ -87,8 +87,8 @@ Ver [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assi
 
 ### Informações adicionais
 
-- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
-- Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020|CT-020]]. Mesma causa de fundo do selo de assinatura, ver [[SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]] (defeito irmão).
+- Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]
+- Observações: achado durante a validação real do pacote QA de SGV-11177 — [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020|CT-020]]. Mesma causa de fundo do selo de assinatura, ver [[SGV-11905 - Defeito Selo De Assinatura Não Traz Departamento Do Membro Signatário|SGV-11905]] (defeito irmão).
 - Histórico:
     - 2026-09-29 - 🐛 Defeito cadastrado (da SGV-11177)
     - 2026-09-30 - ✅ Retestado e aprovado — evento identifica cidadão e departamento corretamente
