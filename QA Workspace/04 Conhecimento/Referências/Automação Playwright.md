@@ -22,7 +22,7 @@ revisado: 2026-10-01
 
 | | Cypress (raiz) | Playwright (`playwright/`) |
 |---|---|---|
-| Specs | ~127 testes legados | **130 specs / 503 testes** |
+| Specs | ~127 testes legados | **131 arquivos / 398 testes** |
 | Entrada | `cypress.config.js` | `playwright/playwright.config.ts` |
 | Roda no CI | ✅ sim (`.gitlab-ci.yml`) | ❌ **não** |
 | Estado | **legado**, a descartar (sem data) | **padrão** — todo caso novo vem pra cá |
@@ -156,6 +156,11 @@ node scripts/run.mjs --project=api --grep "A12"   # um caso só
 
 > [!tip] Node: `.nvmrc` pede 24, `engines` aceita 22
 > O `package.json` declara `"node": ">=22.0.0"` e o `.nvmrc` diz `24`. Divergência interna do projeto. Rodou sem problema em **Node 22.22.1** (01/10/2026).
+
+> [!success] Ambiente validado na máquina do Rafael em 01/10/2026
+> `npm run test:infra` → **50/50**. `npm run test:seed` → **passou em 1.4 min**, instância `E2E Automatic Test` id **45 reutilizada** (prova de que a idempotência funciona — não recriou nada). Manifesto: 3 setores (GP, SCTA, DIR), 29 agentes, 5 cidadãos. `npm run test:list` → **398 testes em 131 arquivos**.
+>
+> O seed emite avisos de *"vínculos duplicados ignorados"* nos módulos PA e CO — resíduo de dados no homolog, não erro: ele escolhe o vínculo mais antigo e segue.
 
 ### Variáveis do `.env`
 
