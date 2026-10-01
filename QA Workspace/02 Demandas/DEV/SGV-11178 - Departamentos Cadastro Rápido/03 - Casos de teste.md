@@ -1196,7 +1196,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI  
 > **Automação:** manual  
-> **Execução:** aprovado — fechado por decisão de produto (01/10/2026): o fallback Razão Social + CNPJ não será implementado; defeito [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]] descartado, substituído pela nova capacidade [[../SGV-11958 - Departamentos Cadastro Rápido E-mail PJ/01 - Demanda|SGV-11958]] (e-mail no cadastro rápido de PJ)
+> **Execução:** aprovado — comportamento sempre esteve correto (fallback Razão Social + CNPJ funciona); o achado da validação real era [[03 - Casos de teste#^ct-027|CT-027]] (cadastro incompleto), não este CT. Defeito [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]] descartado em 01/10/2026
 
 ^ct-029
 
