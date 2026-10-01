@@ -20,7 +20,8 @@
           "data": "",
           "expected_result": "O sistema disponibiliza um atalho para o cadastro rápido, visível e acionável"
         }
-      ]
+      ],
+      "id": 825
     },
     {
       "title": "CT-002 Atalho consistente entre os contextos de uso",
@@ -37,7 +38,8 @@
           "data": "",
           "expected_result": "O atalho de cadastro rápido é oferecido da mesma forma em todos, sem variação de disponibilidade"
         }
-      ]
+      ],
+      "id": 826
     },
     {
       "title": "CT-003 Escolha entre Pessoa Física, Pessoa Jurídica e Departamento",
@@ -54,7 +56,8 @@
           "data": "",
           "expected_result": "O formulário exibido permite escolher entre Pessoa Física, Pessoa Jurídica e Departamento"
         }
-      ]
+      ],
+      "id": 827
     },
     {
       "title": "CT-004 Seleção automática do registro criado no campo de origem",
@@ -72,7 +75,8 @@
           "expected_result": "O novo registro fica disponível e selecionado no campo, desde que compatível com os parâmetros desse campo"
         }
       ],
-      "postconditions": "Registro criado e vinculado ao campo de origem."
+      "postconditions": "Registro criado e vinculado ao campo de origem.",
+      "id": 828
     },
     {
       "title": "CT-005 Seletor radio button com as três opções",
@@ -89,7 +93,8 @@
           "data": "",
           "expected_result": "O sistema apresenta um seletor do tipo radio button com as opções Pessoa Física, Pessoa Jurídica e Departamento, mutuamente exclusivas"
         }
-      ]
+      ],
+      "id": 829
     },
     {
       "title": "CT-006 Apenas um formulário exibido por vez",
@@ -106,7 +111,8 @@
           "data": "",
           "expected_result": "Somente o formulário correspondente é exibido; campos dos outros dois tipos ficam ocultos, não só desabilitados"
         }
-      ]
+      ],
+      "id": 830
     },
     {
       "title": "CT-007 Preservação de dados ao alternar entre tipos",
@@ -123,7 +129,8 @@
           "data": "",
           "expected_result": "Os dados informados anteriormente permanecem preenchidos enquanto o cadastro rápido estiver aberto, sem nenhum campo limpo pela troca"
         }
-      ]
+      ],
+      "id": 831
     },
     {
       "title": "CT-008 Campos do formulário de Pessoa Física",
@@ -140,7 +147,8 @@
           "data": "",
           "expected_result": "São apresentados os campos CPF, Nome, E-mail e Telefone, sem campo adicional não previsto"
         }
-      ]
+      ],
+      "id": 832
     },
     {
       "title": "CT-009 Estado inicial dos campos de Pessoa Física",
@@ -157,7 +165,8 @@
           "data": "",
           "expected_result": "O campo Nome permanece desabilitado, e os campos E-mail e Telefone são opcionais (não bloqueiam a confirmação se vazios)"
         }
-      ]
+      ],
+      "id": 833
     },
     {
       "title": "CT-010 Validação do CPF antes da consulta à API",
@@ -175,7 +184,8 @@
           "expected_result": "O sistema valida o CPF antes de consultar a API; CPF com formato/dígito verificador inválido não dispara chamada à API"
         }
       ],
-      "postconditions": "Nenhuma consulta realizada para CPF inválido."
+      "postconditions": "Nenhuma consulta realizada para CPF inválido.",
+      "id": 834
     },
     {
       "title": "CT-011 Preenchimento automático do Nome via API",
@@ -193,7 +203,8 @@
           "expected_result": "O sistema preenche automaticamente o Nome, mantendo o campo desabilitado para edição"
         }
       ],
-      "postconditions": "Formulário pronto para conclusão (Nome preenchido)."
+      "postconditions": "Formulário pronto para conclusão (Nome preenchido).",
+      "id": 835
     },
     {
       "title": "CT-012 Conclusão do cadastro de Pessoa Física",
@@ -211,7 +222,8 @@
           "expected_result": "O sistema cria o cadastro da pessoa física com sucesso, independentemente do preenchimento de E-mail ou Telefone"
         }
       ],
-      "postconditions": "Pessoa física cadastrada no sistema."
+      "postconditions": "Pessoa física cadastrada no sistema.",
+      "id": 836
     },
     {
       "title": "CT-013 Notificação por e-mail ao concluir cadastro com e-mail informado",
@@ -229,7 +241,8 @@
           "expected_result": "O cidadão recebe uma notificação por e-mail com as instruções para completar seu cadastro"
         }
       ],
-      "postconditions": "Notificação registrada/enviada."
+      "postconditions": "Notificação registrada/enviada.",
+      "id": 837
     },
     {
       "title": "CT-014 Falha na consulta de CPF",
@@ -247,7 +260,8 @@
           "expected_result": "O sistema impede a conclusão do cadastro e apresenta uma mensagem de erro adequada"
         }
       ],
-      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados no formulário."
+      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados no formulário.",
+      "id": 838
     },
     {
       "title": "CT-015 Campos do formulário de Pessoa Jurídica",
@@ -264,7 +278,8 @@
           "data": "",
           "expected_result": "São apresentados os campos CNPJ, Razão Social, Nome fantasia, Telefone, E-mail, CPF do responsável legal e Nome do responsável legal (7 campos), sem campo adicional não previsto"
         }
-      ]
+      ],
+      "id": 839
     },
     {
       "title": "CT-016 Estado inicial dos campos de Pessoa Jurídica",
@@ -281,7 +296,8 @@
           "data": "",
           "expected_result": "Os campos Razão Social e Nome fantasia permanecem desabilitados"
         }
-      ]
+      ],
+      "id": 840
     },
     {
       "title": "CT-017 Validação do CNPJ antes da consulta à API",
@@ -299,7 +315,8 @@
           "expected_result": "O sistema valida o CNPJ antes de consultar a API; CNPJ com formato/dígito verificador inválido não dispara chamada à API"
         }
       ],
-      "postconditions": "Nenhuma consulta realizada para CNPJ inválido."
+      "postconditions": "Nenhuma consulta realizada para CNPJ inválido.",
+      "id": 841
     },
     {
       "title": "CT-018 Preenchimento automático de Razão Social e Nome fantasia",
@@ -316,7 +333,8 @@
           "data": "",
           "expected_result": "O sistema preenche automaticamente a Razão Social e o Nome fantasia com os dados retornados"
         }
-      ]
+      ],
+      "id": 842
     },
     {
       "title": "CT-019 Habilitação do Nome fantasia para edição",
@@ -333,7 +351,8 @@
           "data": "",
           "expected_result": "O campo fica habilitado para edição, enquanto a Razão Social permanece desabilitada"
         }
-      ]
+      ],
+      "id": 843
     },
     {
       "title": "CT-020 Conclusão do cadastro de Pessoa Jurídica sem campos opcionais",
@@ -351,7 +370,8 @@
           "expected_result": "O sistema permite a conclusão do cadastro com sucesso mesmo com os dois campos opcionais vazios"
         }
       ],
-      "postconditions": "Pessoa jurídica cadastrada no sistema."
+      "postconditions": "Pessoa jurídica cadastrada no sistema.",
+      "id": 844
     },
     {
       "title": "CT-021 Validação do CPF do responsável legal",
@@ -368,7 +388,8 @@
           "data": "",
           "expected_result": "O sistema valida o CPF e consulta o nome correspondente na API, mesma regra do CPF de Pessoa Física"
         }
-      ]
+      ],
+      "id": 845
     },
     {
       "title": "CT-022 Preenchimento automático do Nome do responsável legal",
@@ -385,7 +406,8 @@
           "data": "",
           "expected_result": "O sistema preenche automaticamente o Nome do responsável legal, mantendo o campo desabilitado para edição"
         }
-      ]
+      ],
+      "id": 846
     },
     {
       "title": "CT-023 Falha na consulta do CPF do responsável legal",
@@ -403,7 +425,8 @@
           "expected_result": "O sistema impede a conclusão do cadastro e apresenta uma mensagem de erro específica ao campo do responsável legal"
         }
       ],
-      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados."
+      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados.",
+      "id": 847
     },
     {
       "title": "CT-024 Falha na consulta do CNPJ",
@@ -421,7 +444,8 @@
           "expected_result": "O sistema impede a conclusão do cadastro e apresenta uma mensagem de erro adequada"
         }
       ],
-      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados."
+      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados.",
+      "id": 848
     },
     {
       "title": "CT-025 Campos do formulário de Departamento",
@@ -438,7 +462,8 @@
           "data": "",
           "expected_result": "São apresentados o seletor de Pessoa Jurídica, o Nome do departamento e o E-mail (3 campos), sem campo adicional não previsto"
         }
-      ]
+      ],
+      "id": 849
     },
     {
       "title": "CT-026 Obrigatoriedade dos campos de Departamento",
@@ -455,7 +480,8 @@
           "data": "",
           "expected_result": "O sistema exige o preenchimento de todos os campos, bloqueando a confirmação até estarem completos"
         }
-      ]
+      ],
+      "id": 850
     },
     {
       "title": "CT-027 Seletor de PJ lista somente cadastro completo",
@@ -472,7 +498,8 @@
           "data": "",
           "expected_result": "O sistema lista somente pessoas jurídicas com cadastro completo; PJ com cadastro incompleto não aparece na lista"
         }
-      ]
+      ],
+      "id": 851
     },
     {
       "title": "CT-028 Identificação da PJ com Nome fantasia no seletor",
@@ -489,7 +516,8 @@
           "data": "",
           "expected_result": "A opção apresenta o Nome fantasia e o CNPJ (\"Nome fantasia — CNPJ\", conforme o Figma)"
         }
-      ]
+      ],
+      "id": 852
     },
     {
       "title": "CT-029 Identificação da PJ sem Nome fantasia no seletor",
@@ -506,7 +534,8 @@
           "data": "",
           "expected_result": "A opção apresenta a Razão Social e o CNPJ (\"Razão Social — CNPJ\", conforme o Figma)"
         }
-      ]
+      ],
+      "id": 853
     },
     {
       "title": "CT-030 Bloqueio de departamento com nome duplicado",
@@ -524,7 +553,8 @@
           "expected_result": "O sistema impede a criação e informa a duplicidade de nome"
         }
       ],
-      "postconditions": "Nenhum departamento criado."
+      "postconditions": "Nenhum departamento criado.",
+      "id": 854
     },
     {
       "title": "CT-031 Bloqueio de departamento com e-mail duplicado",
@@ -542,7 +572,8 @@
           "expected_result": "O sistema impede a criação e informa a duplicidade de e-mail"
         }
       ],
-      "postconditions": "Nenhum departamento criado."
+      "postconditions": "Nenhum departamento criado.",
+      "id": 855
     },
     {
       "title": "CT-032 Notificação de criação do departamento",
@@ -560,7 +591,8 @@
           "expected_result": "O sistema envia ao e-mail do departamento a mesma notificação utilizada no fluxo atual de cadastro de departamento (conteúdo fora do escopo desta demanda)"
         }
       ],
-      "postconditions": "Notificação enviada."
+      "postconditions": "Notificação enviada.",
+      "id": 856
     },
     {
       "title": "CT-033 Bloqueio de confirmação com dados inválidos, pendentes ou ausentes",
@@ -578,7 +610,8 @@
           "expected_result": "O sistema impede a criação e destaca visualmente os campos que precisam de correção"
         }
       ],
-      "postconditions": "Nenhum cadastro criado."
+      "postconditions": "Nenhum cadastro criado.",
+      "id": 857
     },
     {
       "title": "CT-034 Bloqueio de cadastro duplicado por CPF ou CNPJ",
@@ -596,7 +629,8 @@
           "expected_result": "O sistema impede a duplicidade e informa que o registro já existe (vale para PF e PJ)"
         }
       ],
-      "postconditions": "Nenhum cadastro duplicado criado."
+      "postconditions": "Nenhum cadastro duplicado criado.",
+      "id": 858
     },
     {
       "title": "CT-035 Falha de comunicação preserva dados preenchidos",
@@ -614,7 +648,8 @@
           "expected_result": "O sistema preserva os dados preenchidos e apresenta uma mensagem de erro adequada, sem exigir redigitação"
         }
       ],
-      "postconditions": "Nenhum cadastro criado; dados preservados no formulário."
+      "postconditions": "Nenhum cadastro criado; dados preservados no formulário.",
+      "id": 859
     },
     {
       "title": "CT-036 Confirmação e encerramento do formulário ao concluir",
@@ -632,7 +667,8 @@
           "expected_result": "O sistema apresenta uma mensagem de sucesso e encerra o formulário de cadastro rápido automaticamente"
         }
       ],
-      "postconditions": "Formulário de cadastro rápido fechado; registro disponível no campo de origem (ver CT-004)."
+      "postconditions": "Formulário de cadastro rápido fechado; registro disponível no campo de origem (ver CT-004).",
+      "id": 860
     },
     {
       "title": "CT-037 Placeholder do campo CNPJ",
@@ -649,7 +685,8 @@
           "data": "",
           "expected_result": "O placeholder exibido é XX.XXX.XXX/XXXX-XX"
         }
-      ]
+      ],
+      "id": 861
     }
   ],
   "shared_steps": []
