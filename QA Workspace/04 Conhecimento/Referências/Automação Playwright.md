@@ -139,14 +139,39 @@ Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` d
 
 ```bash
 cd playwright
-npm ci && npx playwright install chromium
-cp .env.example .env    # apontar para o homolog
-npm run test:seed       # obrigatório antes da primeira rodada
+npm install && npx playwright install chromium   # install, NÃO ci — ver aviso abaixo
+# montar o .env (ver tabela de variáveis logo abaixo)
+npm run test:infra      # valida config e guard-rails, sem tocar no ambiente
+npm run test:seed       # obrigatório antes da primeira rodada — bate no homolog
 npm run test:api
 npm run test:e2e
 npm run verify          # typecheck + lint + knip + independência + infra + audit
 node scripts/run.mjs --project=api --grep "A12"   # um caso só
 ```
+
+> [!warning] `npm ci` não funciona — o pacote não tem lockfile versionado
+> Não existe `package-lock.json` em `playwright/`, e o `.gitignore` **não** o exclui: simplesmente nunca foi commitado. `npm ci` falha de saída; use `npm install`.
+>
+> Consequência real: as dependências **diretas** estão pinadas (versões exatas, sem `^`), mas as **transitivas** não são reproduzíveis entre máquinas nem no CI. Vale propor ao time commitar o lockfile.
+
+> [!tip] Node: `.nvmrc` pede 24, `engines` aceita 22
+> O `package.json` declara `"node": ">=22.0.0"` e o `.nvmrc` diz `24`. Divergência interna do projeto. Rodou sem problema em **Node 22.22.1** (01/10/2026).
+
+### Variáveis do `.env`
+
+Derivam do `cypress.env.json` do lado Cypress. Todas obrigatórias para `seed`, `api` e `e2e` — o `config/env.ts` lança erro se faltar uma.
+
+| Variável | Vem de |
+|---|---|
+| `PW_BASE_URL` | `GUI_BASE_URL` |
+| `PW_GRAPHQL_URL` | `API_URL` |
+| `PW_AUTH_URL` | `API_URL_AUTH` |
+| `PW_ADMIN_USERNAME` / `PW_ADMIN_PASSWORD` | `ADMINISTRATOR_*` |
+| `PW_AGENT_PASSWORD` / `PW_CITIZEN_PASSWORD` | fixas no produto: `Teste123!` |
+| `PW_GMAIL_USER` / `PW_GMAIL_APP_PASSWORD` | `GMAIL_*` |
+| `PW_SEED_NAMESPACE` | qualquer string — **é obrigatória mas não é usada em lugar nenhum do código** (vestígio de design) |
+
+O `.env` está coberto por `.gitignore` (`.env*`), então não corre o risco dos `cypress.env.*` do lado Cypress.
 
 ## O que a migração NÃO cobriu
 
