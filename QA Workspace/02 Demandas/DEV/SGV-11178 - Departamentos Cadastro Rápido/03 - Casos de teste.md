@@ -1196,7 +1196,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional  
 > **Camada:** UI  
 > **Automação:** manual  
-> **Execução:** reprovado — [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]]
+> **Execução:** aprovado — fechado por decisão de produto (01/10/2026): o fallback Razão Social + CNPJ não será implementado; defeito [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]] descartado, substituído pela nova capacidade [[../SGV-11958 - Departamentos Cadastro Rápido E-mail PJ/01 - Demanda|SGV-11958]] (e-mail no cadastro rápido de PJ)
 
 ^ct-029
 

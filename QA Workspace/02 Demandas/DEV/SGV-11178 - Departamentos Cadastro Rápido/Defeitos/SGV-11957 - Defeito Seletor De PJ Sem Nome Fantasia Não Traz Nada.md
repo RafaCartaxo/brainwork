@@ -6,11 +6,11 @@ tags:
 task: "11957"
 pai: "SGV-11178"
 prioridade: media
-status: aberto
+status: descartado
 data_inicio: 2026-10-01
-data_fim:
+data_fim: 2026-10-01
 responsavel:
-aguardando: dev
+aguardando:
 pontos:
 cadastrado_por: ""
 modulo: servicos-pj
@@ -80,6 +80,7 @@ Pessoa jurídica sem Nome fantasia aparece no seletor como "Razão Social — CN
 ### Informações adicionais
 
 - Demanda relacionada: [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178]]
-- Observações: achado durante a validação da SGV-11178 — [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-029|CT-029]] (critério C29).
+- Observações: achado durante a validação da SGV-11178 — [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-029|CT-029]] (critério C29). **Descartado em 01/10/2026** — produto decidiu não implementar o fallback originalmente esperado (Razão Social + CNPJ); em vez disso, o protótipo do cadastro rápido de PJ foi atualizado pra também exibir e-mail, encaminhado como nova capacidade em [[QA Workspace/02 Demandas/DEV/SGV-11958 - Departamentos Cadastro Rápido E-mail PJ/01 - Demanda|SGV-11958]]. Não é "não reproduz" — o comportamento atual (PJ some do seletor sem Nome fantasia) segue o mesmo; o descarte é por mudança de escopo/design, não por confirmação de que o cenário não ocorre.
 - Histórico:
     - 2026-10-01 - 🐛 Defeito cadastrado (seletor não traz nenhuma opção quando a PJ não tem Nome fantasia)
+    - 2026-10-01 - 🗑️ Descartado — fallback original não será implementado; substituído pela nova capacidade [[QA Workspace/02 Demandas/DEV/SGV-11958 - Departamentos Cadastro Rápido E-mail PJ/01 - Demanda|SGV-11958]] (e-mail no cadastro rápido de PJ)
