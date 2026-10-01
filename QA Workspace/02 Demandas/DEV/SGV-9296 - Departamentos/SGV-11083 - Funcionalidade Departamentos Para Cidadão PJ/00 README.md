@@ -1,0 +1,64 @@
+---
+tags: [qa]
+task: "11083"
+pai: ""
+tipo: "funcionalidade"
+status: analise
+ambiente: dev
+prioridade: media
+etapa_atual: "QA · Casos de teste"
+modulo: servicos-pj
+responsavel: Rafael
+aguardando: ""
+cadastrado_por: ""
+data_inicio: 2026-09-02
+data_fim: ""
+pontos: ""
+---
+# SGV-11083 — Departamentos para cidadão Pessoa Jurídica
+
+> [!info]- Navegação QA/DEV
+> **Demanda:** [[01 - Demanda]]
+> **Plano de teste:** [[02 - Plano de teste]]
+> **Casos de teste:** [[03 - Casos de teste]]
+> **Validação:** [[04 - Validação dev]]
+> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Automação:** [[06 - Automação]]
+
+> [!settings]- Controle do card
+> **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
+> **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de teste),option(QA · Casos de teste),option(DEV · Análise técnica),option(DEV · Plano de execução),option(DEV · Implementação),option(DEV · Code review),option(QA · Validação),option(Concluído)):etapa_atual]`
+
+## Status do trabalho
+
+| Etapa | Estado |
+|---|---|
+| Demanda | ✅ Preparada |
+| Plano de teste | ⏳ |
+| Casos de teste | ✅ Preparados (CT-001 a CT-033) |
+| Validação | ⏳ Aguardando implementação — funcionalidade ainda em backlog no Notion, nenhum CT executado |
+| Preparação Qase | ⏳ |
+| Automação | ⏳ |
+
+**Próximo passo:** aguardar implementação (backlog) antes de iniciar a validação; 1 ponto em aberto (CT-021, contagem da coluna "Participantes") aguardando definição do Produto.
+
+> [!info]- Origem
+> **Parte 1** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184 (Parte 2)]]. SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros"). Refinado a partir de 3 documentos do Notion — mesa em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|Conhecimento/2 - Refinamento]]. Resumo em linguagem simples: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/1 - SGV-11083 - Resumo|Conhecimento/1 - Resumo]].
+
+Pacote para `SGV-11083`:
+
+```text
+SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/
+├── 00 README.md
+├── 01 - Demanda.md
+├── 02 - Plano de teste.md
+├── 03 - Casos de teste.md
+├── 04 - Validação dev.md
+├── 05 - Preparação Qase.md
+└── Conhecimento/
+    ├── 1 - SGV-11083 - Resumo.md
+    └── 2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ.md
+```
+
+---
