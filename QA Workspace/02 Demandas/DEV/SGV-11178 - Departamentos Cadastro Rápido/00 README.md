@@ -26,7 +26,7 @@ etapa_atual: "QA · Casos de teste"
 | Plano de teste | ✅ Preparado |
 | Casos de teste | ✅ Preparados (CT-001 a CT-038) |
 | Validação | 🔵 Em andamento — 37/38 CTs aprovados, 1 reprovado (CT-038 — defeito `Defeitos/SGV-11962`, modal de cadastro rápido sem responsividade, aguardando DEV) |
-| Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
+| Preparação Qase | 📤 Enviado (37 casos na suite SGV/361, 01/10/2026 — CT-038 aguarda o fix da SGV-11962) |
 
 **Próximo passo:** aguardar DEV implementar a responsividade (SGV-11962) antes de fechar a validação; Qase pode ser preparado em paralelo com os 37 CTs já aprovados.
 
