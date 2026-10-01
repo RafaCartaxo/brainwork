@@ -36,17 +36,7 @@ Recomendado validar a 11083 primeiro; 11176 e 11184 podem seguir em paralelo dep
 
 ## Ordem de leitura sugerida (por parte)
 
-Resumo → card (critérios + CTs) → mesa de refinamento (detalhe técnico), quando existir. As Partes 3, 4 e 5 nasceram já no pacote (`00 README` + `01 - Demanda` + CTs) — sem mesa de refinamento própria, por decisão explícita (requisito já veio completo do Notion).
-
-## Resumos em linguagem simples
-
-- [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/1 - SGV-11083 - Resumo|SGV-11083 - Resumo]]
-- [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/1 - SGV-11184 - Resumo|SGV-11184 - Resumo]]
-
-## Mesas de refinamento
-
-- [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|SGV-11083 - Refinamento]]
-- [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|SGV-11184 - Refinamento]]
+Card (`00 README` → `01 - Demanda`, critérios + CTs) → `04 - Validação dev` (execução) → `05 - Preparação Qase` (envio), pra todas as 5 partes — mesmo padrão de pacote em todas.
 
 ## Contexto de apoio (não é fonte de critério de aceite)
 

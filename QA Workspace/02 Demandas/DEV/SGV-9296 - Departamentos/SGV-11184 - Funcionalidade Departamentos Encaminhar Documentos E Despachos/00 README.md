@@ -44,7 +44,7 @@ pontos: ""
 **Próximo passo:** DEV corrigir o defeito SGV-11338 (truncamento de destinatário com nome extenso); executar os 6 CTs ainda aguardando (CT-003, 017-021).
 
 > [!info]- Origem
-> **Parte 2** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda|SGV-11083 (Parte 1)]]. SGV-11184 no Notion ("[Parte 2] Departamentos: Encaminhar documentos/despachos para o departamento"). Refinado a partir do requisito técnico do Notion — mesa em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos|Conhecimento/2 - Refinamento]]. Resumo em linguagem simples: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Conhecimento/1 - SGV-11184 - Resumo|Conhecimento/1 - Resumo]].
+> **Parte 2** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda|SGV-11083 (Parte 1)]]. SGV-11184 no Notion ("[Parte 2] Departamentos: Encaminhar documentos/despachos para o departamento"). Refinado a partir do requisito técnico do Notion.
 
 Pacote para `SGV-11184`:
 
@@ -56,11 +56,8 @@ SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/
 ├── 03 - Casos de teste.md
 ├── 04 - Validação dev.md
 ├── 05 - Preparação Qase.md
-├── Defeitos/
-│   └── SGV-11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo.md
-└── Conhecimento/
-    ├── 1 - SGV-11184 - Resumo.md
-    └── 2 - SGV-11184 - Refinamento Departamentos Encaminhar Documentos E Despachos.md
+└── Defeitos/
+    └── SGV-11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo.md
 ```
 
 ---

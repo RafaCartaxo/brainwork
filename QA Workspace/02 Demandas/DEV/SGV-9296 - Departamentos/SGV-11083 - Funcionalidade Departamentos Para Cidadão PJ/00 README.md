@@ -44,7 +44,7 @@ pontos: ""
 **Próximo passo:** aguardar implementação (backlog) antes de iniciar a validação; 1 ponto em aberto (CT-021, contagem da coluna "Participantes") aguardando definição do Produto.
 
 > [!info]- Origem
-> **Parte 1** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184 (Parte 2)]]. SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros"). Refinado a partir de 3 documentos do Notion — mesa em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|Conhecimento/2 - Refinamento]]. Resumo em linguagem simples: [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/1 - SGV-11083 - Resumo|Conhecimento/1 - Resumo]].
+> **Parte 1** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184 (Parte 2)]]. SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros"). Refinado a partir de 3 documentos do Notion (requisito técnico completo, doc de produto consolidado, resumo em formato de QA).
 
 Pacote para `SGV-11083`:
 
@@ -55,10 +55,7 @@ SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/
 ├── 02 - Plano de teste.md
 ├── 03 - Casos de teste.md
 ├── 04 - Validação dev.md
-├── 05 - Preparação Qase.md
-└── Conhecimento/
-    ├── 1 - SGV-11083 - Resumo.md
-    └── 2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ.md
+└── 05 - Preparação Qase.md
 ```
 
 ---

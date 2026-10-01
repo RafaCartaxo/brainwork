@@ -30,7 +30,7 @@ pontos_alocados: ""
 
 Nova funcionalidade: departamentos vinculados a cidadãos Pessoa Jurídica (PJ). Um servidor cria departamentos (nome + e-mail únicos por empresa) e vincula participantes (cidadãos do mesmo cliente/instância, cada um com um cargo). A listagem e a visualização de PJ passam a exibir razão social, quantidade de participantes e os departamentos da empresa. Departamentos podem ser excluídos (só se não têm participante nem documento tramitado) ou suspensos (só se não têm pendência) — departamento suspenso não pode ser usado em novas tramitações. Toda ação relevante gera notificação (sistema + e-mail) e registro no histórico do cidadão PJ.
 
-Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc de produto consolidado, resumo em formato de QA) — mesa em [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/Conhecimento/2 - SGV-11083 - Refinamento Departamentos Para Cidadao PJ|Conhecimento/2 - Refinamento]].
+Nasce do refinamento de 3 documentos do Notion (requisito técnico completo, doc de produto consolidado, resumo em formato de QA).
 
 ## Objetivo
 
