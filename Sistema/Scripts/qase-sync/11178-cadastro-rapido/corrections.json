@@ -1,0 +1,656 @@
+{
+  "_readme": "Payload de sincronização dos 37 CTs aplicáveis da SGV-11178 (Departamentos — cadastro rápido, Parte 5 da epic SGV-9296) na Qase (projeto SGV, suite 361, vazia). CT-038 (responsividade do modal, defeito SGV-11962) fica de fora até ser corrigido e retestado. Nenhum shared step nesta rodada — nenhum par de CTs tinha passo literalmente idêntico (campos diferentes por tipo de cadastro PF/PJ/Departamento). Ver rascunho legível em QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro Rápido/05 - Preparação Qase.md no vault.",
+  "project_code": "SGV",
+  "suite_id": 361,
+  "updates": [],
+  "delete": [],
+  "creates": [
+    {
+      "title": "CT-001 Atalho de cadastro rápido disponível no componente de seleção",
+      "description": "Cobre C1 — confirma que um componente de seleção de pessoa que permite adicionar cidadão disponibiliza o atalho de cadastro rápido. Parte da SGV-11178 (Departamentos — Cadastro rápido).",
+      "preconditions": "Servidor está em um campo do tipo pessoa ou componente de seleção de usuário que permite adicionar cidadão.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o componente de seleção",
+          "data": "",
+          "expected_result": "O sistema disponibiliza um atalho para o cadastro rápido, visível e acionável"
+        }
+      ]
+    },
+    {
+      "title": "CT-002 Atalho consistente entre os contextos de uso",
+      "description": "Cobre C2 — confirma que o atalho aparece de forma consistente nos quatro contextos previstos (campo solicitante, campo tipo pessoa PF/PJ, destinatário de despacho, seleção de signatário).",
+      "preconditions": "Servidor tem acesso aos quatro contextos: campo solicitante, campo tipo pessoa PF/PJ, destinatário de despacho, seleção de signatário.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o componente de seleção em cada um dos quatro contextos",
+          "data": "",
+          "expected_result": "O atalho de cadastro rápido é oferecido da mesma forma em todos, sem variação de disponibilidade"
+        }
+      ]
+    },
+    {
+      "title": "CT-003 Escolha entre Pessoa Física, Pessoa Jurídica e Departamento",
+      "description": "Cobre C3 — confirma que acionar o atalho exibe a opção de escolher entre os 3 tipos de cadastro.",
+      "preconditions": "Atalho de cadastro rápido disponível (CT-001).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Acionar o atalho",
+          "data": "",
+          "expected_result": "O formulário exibido permite escolher entre Pessoa Física, Pessoa Jurídica e Departamento"
+        }
+      ]
+    },
+    {
+      "title": "CT-004 Seleção automática do registro criado no campo de origem",
+      "description": "Cobre C4 — confirma que, ao concluir o cadastro rápido com sucesso, o registro criado é selecionado automaticamente no campo de origem.",
+      "preconditions": "Cadastro rápido concluído com sucesso (qualquer tipo) a partir de um campo compatível.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O sistema retornar ao componente de origem após a conclusão",
+          "data": "",
+          "expected_result": "O novo registro fica disponível e selecionado no campo, desde que compatível com os parâmetros desse campo"
+        }
+      ],
+      "postconditions": "Registro criado e vinculado ao campo de origem."
+    },
+    {
+      "title": "CT-005 Seletor radio button com as três opções",
+      "description": "Cobre C5 — confirma a apresentação do seletor de tipo do formulário de cadastro rápido.",
+      "preconditions": "Formulário de cadastro rápido aberto.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Visualizar as opções do formulário",
+          "data": "",
+          "expected_result": "O sistema apresenta um seletor do tipo radio button com as opções Pessoa Física, Pessoa Jurídica e Departamento, mutuamente exclusivas"
+        }
+      ]
+    },
+    {
+      "title": "CT-006 Apenas um formulário exibido por vez",
+      "description": "Cobre C6 — confirma que somente o formulário do tipo selecionado é exibido.",
+      "preconditions": "Formulário de cadastro rápido aberto, um tipo selecionado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Selecionar um tipo de cadastro",
+          "data": "",
+          "expected_result": "Somente o formulário correspondente é exibido; campos dos outros dois tipos ficam ocultos, não só desabilitados"
+        }
+      ]
+    },
+    {
+      "title": "CT-007 Preservação de dados ao alternar entre tipos",
+      "description": "Cobre C7 — confirma que dados preenchidos num tipo não se perdem ao alternar para outro e voltar.",
+      "preconditions": "Servidor preencheu parcial ou totalmente um formulário (ex.: Pessoa Física).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Alternar para outro tipo e retornar ao anterior",
+          "data": "",
+          "expected_result": "Os dados informados anteriormente permanecem preenchidos enquanto o cadastro rápido estiver aberto, sem nenhum campo limpo pela troca"
+        }
+      ]
+    },
+    {
+      "title": "CT-008 Campos do formulário de Pessoa Física",
+      "description": "Cobre C8 — confirma os campos apresentados no formulário de Pessoa Física.",
+      "preconditions": "Opção Pessoa Física selecionada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o formulário",
+          "data": "",
+          "expected_result": "São apresentados os campos CPF, Nome, E-mail e Telefone, sem campo adicional não previsto"
+        }
+      ]
+    },
+    {
+      "title": "CT-009 Estado inicial dos campos de Pessoa Física",
+      "description": "Cobre C9 — confirma o estado inicial do formulário antes de qualquer CPF válido consultado.",
+      "preconditions": "Formulário de Pessoa Física aberto, nenhum CPF consultado ainda.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir o formulário sem consultar um CPF válido",
+          "data": "",
+          "expected_result": "O campo Nome permanece desabilitado, e os campos E-mail e Telefone são opcionais (não bloqueiam a confirmação se vazios)"
+        }
+      ]
+    },
+    {
+      "title": "CT-010 Validação do CPF antes da consulta à API",
+      "description": "Cobre C10 — confirma que o CPF é validado no front antes de qualquer chamada à API.",
+      "preconditions": "Formulário de Pessoa Física aberto.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Informar um CPF e submeter à consulta",
+          "data": "",
+          "expected_result": "O sistema valida o CPF antes de consultar a API; CPF com formato/dígito verificador inválido não dispara chamada à API"
+        }
+      ],
+      "postconditions": "Nenhuma consulta realizada para CPF inválido."
+    },
+    {
+      "title": "CT-011 Preenchimento automático do Nome via API",
+      "description": "Cobre C11 — confirma o preenchimento automático do Nome quando a API retorna dados de um CPF válido.",
+      "preconditions": "CPF válido informado e submetido à consulta.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A API retornar os dados correspondentes",
+          "data": "",
+          "expected_result": "O sistema preenche automaticamente o Nome, mantendo o campo desabilitado para edição"
+        }
+      ],
+      "postconditions": "Formulário pronto para conclusão (Nome preenchido)."
+    },
+    {
+      "title": "CT-012 Conclusão do cadastro de Pessoa Física",
+      "description": "Cobre C12 — confirma que o cadastro é criado mesmo sem E-mail/Telefone, desde que CPF e Nome estejam validados.",
+      "preconditions": "CPF e Nome validados (CT-010/CT-011).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Confirmar o formulário",
+          "data": "",
+          "expected_result": "O sistema cria o cadastro da pessoa física com sucesso, independentemente do preenchimento de E-mail ou Telefone"
+        }
+      ],
+      "postconditions": "Pessoa física cadastrada no sistema."
+    },
+    {
+      "title": "CT-013 Notificação por e-mail ao concluir cadastro com e-mail informado",
+      "description": "Cobre C13 — confirma o envio de notificação ao cidadão quando um e-mail é informado no cadastro rápido de Pessoa Física.",
+      "preconditions": "Cadastro rápido de Pessoa Física concluído com e-mail preenchido.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Concluir o cadastro da pessoa física com e-mail informado",
+          "data": "",
+          "expected_result": "O cidadão recebe uma notificação por e-mail com as instruções para completar seu cadastro"
+        }
+      ],
+      "postconditions": "Notificação registrada/enviada."
+    },
+    {
+      "title": "CT-014 Falha na consulta de CPF",
+      "description": "Cobre C14 — confirma o tratamento de erro quando o CPF é inválido ou a API não retorna os dados necessários.",
+      "preconditions": "CPF inválido informado, ou API indisponível/sem retorno.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Processar a consulta",
+          "data": "",
+          "expected_result": "O sistema impede a conclusão do cadastro e apresenta uma mensagem de erro adequada"
+        }
+      ],
+      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados no formulário."
+    },
+    {
+      "title": "CT-015 Campos do formulário de Pessoa Jurídica",
+      "description": "Cobre C15 — confirma os campos apresentados no formulário de Pessoa Jurídica, incluindo o campo E-mail (adicionado em 01/10/2026, ver SGV-11958).",
+      "preconditions": "Opção Pessoa Jurídica selecionada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o formulário",
+          "data": "",
+          "expected_result": "São apresentados os campos CNPJ, Razão Social, Nome fantasia, Telefone, E-mail, CPF do responsável legal e Nome do responsável legal (7 campos), sem campo adicional não previsto"
+        }
+      ]
+    },
+    {
+      "title": "CT-016 Estado inicial dos campos de Pessoa Jurídica",
+      "description": "Cobre C16 — confirma o estado inicial do formulário antes de qualquer CNPJ válido consultado.",
+      "preconditions": "Formulário de Pessoa Jurídica aberto, nenhum CNPJ consultado ainda.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir o formulário sem consultar um CNPJ válido",
+          "data": "",
+          "expected_result": "Os campos Razão Social e Nome fantasia permanecem desabilitados"
+        }
+      ]
+    },
+    {
+      "title": "CT-017 Validação do CNPJ antes da consulta à API",
+      "description": "Cobre C17 — confirma que o CNPJ é validado no front antes de qualquer chamada à API.",
+      "preconditions": "Formulário de Pessoa Jurídica aberto.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Informar um CNPJ e submeter à consulta",
+          "data": "",
+          "expected_result": "O sistema valida o CNPJ antes de consultar a API; CNPJ com formato/dígito verificador inválido não dispara chamada à API"
+        }
+      ],
+      "postconditions": "Nenhuma consulta realizada para CNPJ inválido."
+    },
+    {
+      "title": "CT-018 Preenchimento automático de Razão Social e Nome fantasia",
+      "description": "Cobre C18 — confirma o preenchimento automático quando a API retorna dados de um CNPJ válido.",
+      "preconditions": "CNPJ válido informado e submetido à consulta.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A API retornar os dados correspondentes",
+          "data": "",
+          "expected_result": "O sistema preenche automaticamente a Razão Social e o Nome fantasia com os dados retornados"
+        }
+      ]
+    },
+    {
+      "title": "CT-019 Habilitação do Nome fantasia para edição",
+      "description": "Cobre C19 — confirma que, após o preenchimento automático, o Nome fantasia fica editável enquanto a Razão Social permanece bloqueada.",
+      "preconditions": "Razão Social e Nome fantasia preenchidos automaticamente (CT-018).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "O Nome fantasia é preenchido",
+          "data": "",
+          "expected_result": "O campo fica habilitado para edição, enquanto a Razão Social permanece desabilitada"
+        }
+      ]
+    },
+    {
+      "title": "CT-020 Conclusão do cadastro de Pessoa Jurídica sem campos opcionais",
+      "description": "Cobre C20 — confirma que o cadastro é concluído sem Telefone ou CPF do responsável legal.",
+      "preconditions": "CNPJ válido consultado, Razão Social/Nome fantasia preenchidos.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Concluir o formulário sem informar Telefone ou CPF do responsável legal",
+          "data": "",
+          "expected_result": "O sistema permite a conclusão do cadastro com sucesso mesmo com os dois campos opcionais vazios"
+        }
+      ],
+      "postconditions": "Pessoa jurídica cadastrada no sistema."
+    },
+    {
+      "title": "CT-021 Validação do CPF do responsável legal",
+      "description": "Cobre C21 — confirma a validação e consulta do CPF do responsável legal.",
+      "preconditions": "Formulário de Pessoa Jurídica aberto, CNPJ já validado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Informar o CPF do responsável legal",
+          "data": "",
+          "expected_result": "O sistema valida o CPF e consulta o nome correspondente na API, mesma regra do CPF de Pessoa Física"
+        }
+      ]
+    },
+    {
+      "title": "CT-022 Preenchimento automático do Nome do responsável legal",
+      "description": "Cobre C22 — confirma o preenchimento automático do nome do responsável legal via API.",
+      "preconditions": "CPF válido do responsável legal consultado (CT-021).",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "A API retornar os dados",
+          "data": "",
+          "expected_result": "O sistema preenche automaticamente o Nome do responsável legal, mantendo o campo desabilitado para edição"
+        }
+      ]
+    },
+    {
+      "title": "CT-023 Falha na consulta do CPF do responsável legal",
+      "description": "Cobre C23 — confirma o tratamento de erro quando o CPF do responsável legal é inválido ou a API não retorna o nome.",
+      "preconditions": "CPF do responsável legal informado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Processar a consulta (CPF inválido ou API sem retorno do nome)",
+          "data": "",
+          "expected_result": "O sistema impede a conclusão do cadastro e apresenta uma mensagem de erro específica ao campo do responsável legal"
+        }
+      ],
+      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados."
+    },
+    {
+      "title": "CT-024 Falha na consulta do CNPJ",
+      "description": "Cobre C24 — confirma o tratamento de erro quando o CNPJ é inválido ou a API não retorna os dados obrigatórios.",
+      "preconditions": "CNPJ inválido informado, ou API indisponível/sem retorno.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Processar a consulta",
+          "data": "",
+          "expected_result": "O sistema impede a conclusão do cadastro e apresenta uma mensagem de erro adequada"
+        }
+      ],
+      "postconditions": "Nenhum cadastro criado; dados preenchidos preservados."
+    },
+    {
+      "title": "CT-025 Campos do formulário de Departamento",
+      "description": "Cobre C25 — confirma os campos apresentados no formulário de Departamento.",
+      "preconditions": "Opção Departamento selecionada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o formulário",
+          "data": "",
+          "expected_result": "São apresentados o seletor de Pessoa Jurídica, o Nome do departamento e o E-mail (3 campos), sem campo adicional não previsto"
+        }
+      ]
+    },
+    {
+      "title": "CT-026 Obrigatoriedade dos campos de Departamento",
+      "description": "Cobre C26 — confirma que todos os campos do formulário de Departamento são obrigatórios.",
+      "preconditions": "Formulário de Departamento aberto.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Tentar concluir o cadastro com algum campo vazio",
+          "data": "",
+          "expected_result": "O sistema exige o preenchimento de todos os campos, bloqueando a confirmação até estarem completos"
+        }
+      ]
+    },
+    {
+      "title": "CT-027 Seletor de PJ lista somente cadastro completo",
+      "description": "Cobre C27 — confirma que o seletor de Pessoa Jurídica só lista PJs com cadastro completo.",
+      "preconditions": "Existem PJs com cadastro completo e incompleto no sistema.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Abrir o seletor de Pessoa Jurídica",
+          "data": "",
+          "expected_result": "O sistema lista somente pessoas jurídicas com cadastro completo; PJ com cadastro incompleto não aparece na lista"
+        }
+      ]
+    },
+    {
+      "title": "CT-028 Identificação da PJ com Nome fantasia no seletor",
+      "description": "Cobre C28 — confirma a apresentação da PJ no seletor quando ela possui Nome fantasia.",
+      "preconditions": "PJ com Nome fantasia cadastrado, disponível no seletor.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir a PJ no seletor",
+          "data": "",
+          "expected_result": "A opção apresenta o Nome fantasia e o CNPJ (\"Nome fantasia — CNPJ\", conforme o Figma)"
+        }
+      ]
+    },
+    {
+      "title": "CT-029 Identificação da PJ sem Nome fantasia no seletor",
+      "description": "Cobre C29 — confirma a apresentação da PJ no seletor quando ela não possui Nome fantasia. Comportamento confirmado correto em 01/10/2026 (achado de validação real era CT-027, cadastro incompleto — ver SGV-11957, descartado).",
+      "preconditions": "PJ sem Nome fantasia cadastrado, disponível no seletor.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir a PJ no seletor",
+          "data": "",
+          "expected_result": "A opção apresenta a Razão Social e o CNPJ (\"Razão Social — CNPJ\", conforme o Figma)"
+        }
+      ]
+    },
+    {
+      "title": "CT-030 Bloqueio de departamento com nome duplicado",
+      "description": "Cobre C30 — confirma o bloqueio de criação de departamento com nome já existente na mesma pessoa jurídica.",
+      "preconditions": "Pessoa jurídica selecionada já possui um departamento com determinado nome.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Tentar concluir o cadastro com o mesmo nome já existente",
+          "data": "",
+          "expected_result": "O sistema impede a criação e informa a duplicidade de nome"
+        }
+      ],
+      "postconditions": "Nenhum departamento criado."
+    },
+    {
+      "title": "CT-031 Bloqueio de departamento com e-mail duplicado",
+      "description": "Cobre C31 — confirma o bloqueio de criação de departamento com e-mail já existente na mesma pessoa jurídica.",
+      "preconditions": "Pessoa jurídica selecionada já possui um departamento com determinado e-mail.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Tentar concluir o cadastro com o mesmo e-mail já existente",
+          "data": "",
+          "expected_result": "O sistema impede a criação e informa a duplicidade de e-mail"
+        }
+      ],
+      "postconditions": "Nenhum departamento criado."
+    },
+    {
+      "title": "CT-032 Notificação de criação do departamento",
+      "description": "Cobre C32 — confirma o envio da notificação já usada no fluxo atual de cadastro de departamento.",
+      "preconditions": "Departamento criado com sucesso pelo cadastro rápido.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Concluir o cadastro",
+          "data": "",
+          "expected_result": "O sistema envia ao e-mail do departamento a mesma notificação utilizada no fluxo atual de cadastro de departamento (conteúdo fora do escopo desta demanda)"
+        }
+      ],
+      "postconditions": "Notificação enviada."
+    },
+    {
+      "title": "CT-033 Bloqueio de confirmação com dados inválidos, pendentes ou ausentes",
+      "description": "Cobre C33 — confirma o bloqueio transversal de confirmação quando há campo inválido, consulta pendente ou dado obrigatório ausente, em qualquer um dos 3 tipos.",
+      "preconditions": "Formulário de cadastro rápido (qualquer tipo) com campo inválido, consulta ainda em andamento, ou campo obrigatório vazio.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Tentar confirmar o cadastro",
+          "data": "",
+          "expected_result": "O sistema impede a criação e destaca visualmente os campos que precisam de correção"
+        }
+      ],
+      "postconditions": "Nenhum cadastro criado."
+    },
+    {
+      "title": "CT-034 Bloqueio de cadastro duplicado por CPF ou CNPJ",
+      "description": "Cobre C34 — confirma o bloqueio transversal de duplicidade de CPF (Pessoa Física) ou CNPJ (Pessoa Jurídica) já existente no sistema.",
+      "preconditions": "Já existe cidadão cadastrado com o CPF ou CNPJ que será informado.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Tentar realizar um novo cadastro com CPF ou CNPJ já existente",
+          "data": "",
+          "expected_result": "O sistema impede a duplicidade e informa que o registro já existe (vale para PF e PJ)"
+        }
+      ],
+      "postconditions": "Nenhum cadastro duplicado criado."
+    },
+    {
+      "title": "CT-035 Falha de comunicação preserva dados preenchidos",
+      "description": "Cobre C35 — confirma que uma falha de comunicação com a API ou no processamento não descarta os dados já preenchidos.",
+      "preconditions": "Formulário de cadastro rápido (qualquer tipo) preenchido, falha simulada na API/processamento.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Provocar uma falha de comunicação com a API ou no processamento do cadastro",
+          "data": "",
+          "expected_result": "O sistema preserva os dados preenchidos e apresenta uma mensagem de erro adequada, sem exigir redigitação"
+        }
+      ],
+      "postconditions": "Nenhum cadastro criado; dados preservados no formulário."
+    },
+    {
+      "title": "CT-036 Confirmação e encerramento do formulário ao concluir",
+      "description": "Cobre C36 — confirma que o sistema apresenta confirmação e encerra o formulário ao concluir o cadastro com sucesso.",
+      "preconditions": "Cadastro rápido (qualquer tipo) concluído com sucesso.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Finalizar a operação com o registro criado com sucesso",
+          "data": "",
+          "expected_result": "O sistema apresenta uma mensagem de sucesso e encerra o formulário de cadastro rápido automaticamente"
+        }
+      ],
+      "postconditions": "Formulário de cadastro rápido fechado; registro disponível no campo de origem (ver CT-004)."
+    },
+    {
+      "title": "CT-037 Placeholder do campo CNPJ",
+      "description": "Cobre C37 — confirma que o campo CNPJ exibe o placeholder no padrão correto. Achado de validação real (30/09/2026); retestado e aprovado no mesmo dia após correção do defeito SGV-11951.",
+      "preconditions": "Opção Pessoa Jurídica selecionada.",
+      "severity": "normal",
+      "type": "acceptance",
+      "behavior": "undefined",
+      "automation": "is-not-automated",
+      "steps_type": "classic",
+      "steps": [
+        {
+          "action": "Exibir o campo CNPJ vazio",
+          "data": "",
+          "expected_result": "O placeholder exibido é XX.XXX.XXX/XXXX-XX"
+        }
+      ]
+    }
+  ],
+  "shared_steps": []
+}
