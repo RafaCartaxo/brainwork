@@ -338,7 +338,7 @@ Tags da nota: manter somente `qa` e `qase`. Tags enviadas ao Qase: ID da demanda
 - [x] Projeto e suite confirmados (suite pré-existente ou criada com autorização explícita).
 - [x] Campos normalizados e passos separados.
 - [x] Tags limitadas ao ID da demanda e ao módulo.
-- [ ] Campos da API validados (`dry-run` rodado antes do `--apply`).
+- [x] Campos da API validados (`dry-run` rodado antes do `--apply`).
 - [ ] Envio realizado sem duplicação.
 - [ ] IDs da Qase registrados nesta nota.
 - [ ] Status alterado para `enviado`.
