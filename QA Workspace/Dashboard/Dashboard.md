@@ -193,9 +193,17 @@ flowchart TD
 > Cards ativos (DEV/HML/Hotfix/POCs) sem `responsavel:` preenchido — a ação atual não é de ninguém específico agora, seja porque estão livres pra qualquer QA pegar, seja porque estão aguardando outro time. Por isso não ocupam linha na fila pessoal ("A fazer hoje"), mas também não podem sumir de vista — é aqui que ficam visíveis. Convenção completa: [[Sistema/Contexto/PADROES_QA|PADROES_QA]] → `responsavel`.
 
 ```dataviewjs
+const AMBIENTES = ["DEV", "HML", "HOTFIX", "POCS"];
 const cards = dv.pages('"QA Workspace/02 Demandas"')
   .where(p => p.file.ext === "md")
-  .where(p => ["DEV", "HML", "Hotfix", "POCs"].includes(p.file.folder.split("/").pop()))
+  .where(p => {
+    // Prioriza o campo `ambiente` do frontmatter (funciona com qualquer aninhamento de pasta,
+    // ex. partes de uma epic dentro da pasta da epic); cai pro nome da última pasta quando o
+    // campo não existe, mantendo compatibilidade com cards antigos sem esse campo.
+    const doFrontmatter = p.ambiente ? String(p.ambiente).toUpperCase() : null;
+    if (doFrontmatter) return AMBIENTES.includes(doFrontmatter);
+    return ["DEV", "HML", "Hotfix", "POCs"].includes(p.file.folder.split("/").pop());
+  })
   .where(p => !p.responsavel || String(p.responsavel).trim() === "");
 
 const rotulos = {
