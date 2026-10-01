@@ -60,8 +60,8 @@ Pessoa jurídica sem Nome fantasia aparece no seletor como "Razão Social — CN
 **Então** a opção deve aparecer como "Razão Social — CNPJ"
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
