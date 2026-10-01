@@ -635,9 +635,9 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Dado** que a opção Pessoa Jurídica esteja selecionada  
 > **Quando** o formulário for exibido  
-> **Então** são apresentados os campos CNPJ, Razão Social, Nome fantasia, Telefone, CPF do responsável legal e Nome do responsável legal
+> **Então** são apresentados os campos CNPJ, Razão Social, Nome fantasia, Telefone, E-mail, CPF do responsável legal e Nome do responsável legal
 >
-> **Resultado esperado:** os 6 campos aparecem, sem campo adicional não previsto.
+> **Resultado esperado:** os 7 campos aparecem, sem campo adicional não previsto.
 >
 > **Pós-condição:** nenhuma.
 >
