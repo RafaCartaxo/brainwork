@@ -72,6 +72,9 @@ Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/02 Sincroniza
 
 ## Parte 4 — Automação
 
+> [!warning] O alvo mudou: Cypress → Playwright (01/10/2026)
+> O repo migrou para Playwright em setembro (merge `1d78bf9`), enquanto esta automação estava parada. **Tudo abaixo descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser **portado**. O lado Playwright não tem nenhuma cobertura do TR: zero ocorrências de `CT-0` em `playwright/`. Arquitetura e convenção nova em [[Automação Playwright]].
+
 🔄 Em andamento. Cypress, repo `sogov-automation-test`. **Rafael entra de férias em 04/09, volta 24/09 (quinta)** — ver [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] pra retomar rápido. Detalhe completo e atualizado a cada rodada: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Handoff de execução|Handoff de execução]] · [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] (processo).
 
 ### Suítes e status atual
@@ -111,7 +114,7 @@ Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/02 Sincroniza
 2. **6 CTs da Suíte 4 sem causa raiz** (CT-022/026/028/034/035/036) — mesma janela de investigação do item 1.
 3. **CT-029/030/033** — confirmação rápida com produto/backend se a divergência Licença × Férias é intencional.
 4. **CT-016/017/037** — aguardam captura de API nova (desbloqueio manual e endpoint de auditoria), depende do responsável capturar via DevTools/HAR.
-5. **Subida do código**: Suítes 1 e 2 (12 CTs, sem achado nem pendência) já commitadas e em branch/MR (`tr-1.24-1.25-auth-suite-1-2`) — confirmar review/merge no dia 24. Suítes 3/4/5 continuam sem commit, aguardando resolver os itens 1-4 acima.
+5. **Subida do código**: Suítes 1 e 2 (12 CTs) **mergeadas** no `origin/main` (commit `6c9188c`, 09/09). Suítes 3/4/5 (13 CTs verdes) **commitadas localmente** em 01/10 (`bdf5e9a`, branch `tr-1.24-1.25-suites-3-4-5`, sem push) — e **não sobem em Cypress**: o alvo passou a ser Playwright, então o próximo passo é portar, não abrir MR.
 
 ---
 
@@ -135,3 +138,4 @@ Detalhe: [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/02 Sincroniza
 - 2026-09-02 - Reestruturada pra virar a task **pai** do TR inteiro (4 partes), usando o novo template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade]] — decisão do Rafael de não abrir SGVs separados por parte "por enquanto"
 - 2026-09-04 - Suítes 1 e 2 (12 CTs) commitadas e enviadas em branch própria (`tr-1.24-1.25-auth-suite-1-2`, a partir do `origin/main` atualizado, sem conflito) — MR a criar/confirmar. Suíte 4 renomeada (CPF cru tirado do nome dos 5 agentes fixos) — pronta, não commitada, não re-rodada ainda. Rafael entra de férias, volta 24/09 — [[QA Workspace/02 Demandas/DEV/11262/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] criada
 - 2026-09-25 - Rafael de volta das férias. Confirmado: MR das Suítes 1/2 foi mergeado no `origin/main` (commit `6c9188c`). Scripts `qase-sync-*` (1.24-1.25, 9296-departamentos, 9982-tramitacao) removidos do repo `sogov-automation-test` e movidos pra [[Sistema/Scripts/qase-sync|Sistema/Scripts/qase-sync]] no vault (decisão do Rafael, reutilizáveis fora do repo, `.env`/`package.json` próprios). Nova branch de trabalho criada a partir do `origin/main` atualizado pra continuar as Suítes 3/4/5
+- 2026-10-01 - Sincronização do clone local com o `origin/main` (estava 149 commits atrás, desde 23/09). Descoberto que o repo **migrou para Playwright** em setembro (merge `1d78bf9`, 130 specs / 503 testes em `playwright/`), sem nenhum registro no vault — nota [[Automação Playwright]] criada pra fechar o buraco. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`) pra não se perderem na sincronização; **não vão pro remoto em Cypress**, serão portadas. Confirmado que os 11 commits que a `main` local tinha a mais eram redundantes (o remoto já trazia tudo, inclusive numa versão melhor: o cache de sessão migrou de `Cypress.env()` pra `cy.task()` no upgrade do Cypress 16).
