@@ -2,6 +2,7 @@
 status: analise
 demanda: SGV-11176
 tipo: funcionalidade
+ambiente: dev
 etapa_atual: "QA · Casos de teste"
 ---
 # SGV-11176 — Departamentos: Convites

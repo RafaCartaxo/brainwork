@@ -2,6 +2,7 @@
 status: analise
 demanda: SGV-11177
 tipo: funcionalidade
+ambiente: dev
 etapa_atual: "QA · Casos de teste"
 ---
 # SGV-11177 — Departamentos: Tramitação e assinaturas
