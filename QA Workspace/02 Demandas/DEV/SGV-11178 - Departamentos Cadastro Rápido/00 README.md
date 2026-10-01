@@ -25,10 +25,10 @@ etapa_atual: "QA · Casos de teste"
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
 | Casos de teste | ✅ Preparados (CT-001 a CT-037) |
-| Validação | 🔵 Em andamento — 33/37 CTs aprovados, 1 reprovado (CT-015 — defeito `Defeitos/SGV-11958`, campo E-mail ainda não implementado, aguardando DEV) e 3 aguardando execução |
+| Validação | ✅ 37/37 CTs aprovados (1 defeito encontrado e corrigido — `Defeitos/SGV-11958`, campo E-mail) |
 | Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
 
-**Próximo passo:** confirmar `pontos_alocados` em `01 - Demanda` e rotear para o DEV.
+**Próximo passo:** preparar os 37 CTs pra envio na Qase (mesmo processo da SGV-11177).
 
 > [!warning]- Escopo desta rodada  
 > Cobre o atalho de cadastro rápido (PF, PJ e Departamento) embutido nos componentes de seleção de pessoa (requisito de origem, Parte 5 da epic SGV-9296) — não cobre os fluxos de cadastro dedicados, nem as regras de departamento fora do cadastro em si (SGV-11083), convite (SGV-11176) ou tramitação/assinatura (SGV-11177).
