@@ -6,11 +6,11 @@ tags:
 task: "11958"
 pai: "SGV-11178"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-10-01
-data_fim:
+data_fim: 2026-10-01
 responsavel:
-aguardando: dev
+aguardando:
 pontos:
 cadastrado_por: ""
 modulo: servicos-pj
@@ -34,7 +34,11 @@ O critério [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro R�
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11958)
 
+**Antes da correção:**
 ![[11958 - Campo e-mail PJ não tem no formulário, incorreto.png]]
+
+**Retestado e aprovado (01/10/2026):**
+![[11958 - OK.png]]
 
 ---
 
@@ -46,7 +50,7 @@ Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, confor
 
 ### Critérios de aceite
 
-- [ ] Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, junto aos 6 já existentes
+- [x] Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, junto aos 6 já existentes
 
 ---
 
@@ -59,13 +63,13 @@ Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, confor
 **Então** deve aparecer o campo E-mail, junto aos 6 já existentes
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
 
-![[11958 - Campo e-mail PJ não tem no formulário, incorreto.png]]
+![[11958 - OK.png]]
 
 ---
 
@@ -82,3 +86,4 @@ Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, confor
 - Observações: detalhe adicional (obrigatoriedade do campo, validação, link do protótipo) registrado em comentário no Notion, não duplicado aqui.
 - Histórico:
     - 2026-10-01 - 🐛 Defeito cadastrado (C15/CT-015 atualizados pra exigir e-mail, ainda não implementado)
+    - 2026-10-01 - ✅ Retestado e aprovado — campo E-mail presente no formulário de cadastro rápido de PJ
