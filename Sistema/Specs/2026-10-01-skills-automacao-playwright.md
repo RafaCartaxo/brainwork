@@ -5,7 +5,7 @@ tags:
   - automacao
 tipo: referencia
 revisado: 2026-10-01
-status: proposta
+status: proposta (decisão de fundo respondida)
 ---
 # Proposta — adequar as skills de automação ao Playwright
 
@@ -25,21 +25,18 @@ Uma sessão que siga essas skills hoje escreve teste no framework que não receb
 | [[SKILL_REVISAO_CODIGO_AUTOMACAO]] | 141 | 15 | 🔴 alta — crivo inteiro montado sobre commands |
 | [[SKILL_REVISAO_AUTOMACAO_E2E]] | 91 | 13 | 🔴 alta — caminhos e seletores de arquivo são Cypress |
 
-## A decisão que não é minha
+## A decisão de fundo — respondida em 01/10/2026
 
-Antes de mexer em qualquer skill, uma pergunta de fundo precisa de resposta:
+> [!success] Playwright é o padrão. Cypress é legado.
+> **Decisão do Rafael (01/10/2026):** a migração está sendo finalizada. O Cypress **vai ser descartado — mas não agora**. A partir de hoje, **teste novo só se escreve em Playwright**.
 
-> **O Cypress continua recebendo teste novo, ou virou legado?**
+Isso resolve o que travava esta proposta e simplifica o caminho: as skills são **reescritas** para Playwright, não ganham seção por framework nem viram duas famílias. Convivência era a leitura do estado do repo em 01/10 (Cypress inteiro, CI só Cypress) — mas é estado **transitório**, não desenho.
 
-Hoje o repo é híbrido de verdade: o Cypress está inteiro, **o CI roda só Cypress**, e o Playwright, apesar de maior (130 specs / 503 testes), não tem pipeline. Isso não é estado de migração concluída — é convivência.
+O que decorre:
 
-| Se a resposta for | Então as skills |
-|---|---|
-| **Playwright é o padrão, Cypress é legado** | São **reescritas**. Mais simples, menos manutenção. |
-| **Os dois convivem** | Ganham **seção por framework**, ou viram duas famílias (`..._PW`). Mais trabalho, mas honesto com a realidade. |
-| **Ainda não se sabe** | Mexer só no mínimo: um aviso no topo de cada uma apontando para [[Automação Playwright]], e nada mais. |
-
-Essa pergunta provavelmente é do time, não só do Rafael — quem mantém o CI decide junto.
+- **Não investir em manter a parte Cypress das skills.** Descrever Cypress só onde for necessário para ler código legado, nunca como caminho para escrever.
+- **O CI continua rodando só Cypress por enquanto** — é a maior inconsistência aberta e não se resolve do lado do vault. Fica registrado como risco: até o pipeline mudar, o Playwright não protege merge nenhum.
+- A suíte Cypress **continua existindo e rodando** até o descarte. Nada de apagá-la ou tratá-la como morta antes da hora.
 
 ## O que muda em cada skill
 
@@ -97,10 +94,10 @@ Caminhos e gotchas são todos de Cypress. O que **sobrevive intacto** é o conhe
 
 ## Ordem sugerida
 
-1. **Responder a pergunta de fundo** (Cypress legado ou convivência?) — trava as outras.
-2. Enquanto não houver resposta: aviso no topo das 4 skills apontando para [[Automação Playwright]]. Custo baixo, evita que uma sessão escreva Cypress por engano.
+1. ~~Responder a pergunta de fundo~~ — **respondida em 01/10: Playwright é o padrão.**
+2. **Aviso no topo das 4 skills** apontando para [[Automação Playwright]]. Custo baixo, e impede que uma sessão escreva Cypress por engano enquanto as reescritas não saem. É o item mais urgente.
 3. `SKILL_REVISAO_CODIGO_AUTOMACAO` primeiro entre as reescritas — é a de maior gravidade e a que mais encolhe ao delegar para o ESLint.
-4. `SKILL_REVISAO_AUTOMACAO_E2E` depois, preservando o conhecimento de tela.
+4. `SKILL_REVISAO_AUTOMACAO_E2E` depois, preservando o conhecimento de tela (toast, gotchas MUI, rota por persona — tudo isso sobrevive).
 5. As duas 🟡🟢 por último — mudança pequena.
 
 ## Fora deste documento
