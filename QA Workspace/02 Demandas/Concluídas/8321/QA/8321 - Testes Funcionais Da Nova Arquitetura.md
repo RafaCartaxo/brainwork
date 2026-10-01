@@ -743,7 +743,22 @@ anterior/errada)
 
 ## Automação (`sogov-automation-test`)
 
-*Resumo pra quem for continuar rodando a suíte automatizada contra o novo ambiente.*
+> [!warning] Clone `devnet` aposentado em 01/10/2026
+> O `sogov-automation-test-devnet` **não existe mais**. Auditado antes de remover: das 2136 linhas não commitadas, 1780 eram `logs/log.txt` (8,1 MB de debug do reporter Qase, gerado numa máquina Windows, já coberto pelo `.gitignore`) e 10 dos 11 arquivos eram snapshot congelado de 31/08–03/09 de trabalho **já mergeado** no `origin/main`.
+>
+> **Corrigindo o que está escrito abaixo:** das "3 correções não commitadas", duas (`getCitizenOrCreate` e `selectMatterServiceModule`) já estavam replicadas, idênticas, no clone principal — e hoje estão commitadas lá (`bdf5e9a`). Só o pedaço do **CT de criação de Setor** (toast relaxado + asserção de que o setor aparece na árvore do Organograma, ~18 linhas) era exclusivo deste clone.
+>
+> Preservado em `~/Documentos/Sogov/backup-automacao-2026-10-01/devnet/`:
+> - `devnet-sector-teste1.patch` — as 18 linhas exclusivas, prontas pra aplicar
+> - `devnet-completo.patch` · `untracked.tar.gz` · `cypress.env.json.devnet` (apontamento pro `dev.sogov.net`)
+>
+> ⚠️ **Não aplicar o arquivo `sector.e2e.cy.js` inteiro** — o clone principal é melhor no teste 2 (setor fixo alternando entre dois estados, no lugar do `faker` que criava setor novo no banco a cada execução). Só o hunk do teste 1 serve.
+>
+> O `scripts/qase-sync-1.24-1.25/` do devnet era mais velho que a cópia canônica do vault em [[Sistema/Scripts/qase-sync|Sistema/Scripts/qase-sync]] — nada se perdeu.
+>
+> Para retomar esta frente hoje: o repo migrou para Playwright (ver [[Automação Playwright]]), então a suíte Cypress descrita abaixo não é mais o caminho padrão.
+
+*Resumo pra quem for continuar rodando a suíte automatizada contra o novo ambiente — **registro de 04/09/2026**, ver aviso acima.*
 
 - **Onde**: `sogov-automation-test-devnet` — cópia isolada de `sogov-automation-test`, criada
   pra não conflitar com outro trabalho no repo original. `cypress.env.json` aponta pro
