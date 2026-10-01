@@ -37,7 +37,7 @@ pontos_alocados: ""
 > **Próximo passo:** confirmar `projeto`/`pontos_alocados` antes de rotear para o DEV.
 
 > [!info] Epic  
-> **Parte 5** de cinco, irmã de [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083 (Parte 1)]], [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184 (Parte 2)]], [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda|SGV-11176 (Parte 3)]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177 (Parte 4)]] — todas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]].
+> **Parte 5** de cinco, irmã de [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda|SGV-11083 (Parte 1)]], [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184 (Parte 2)]], [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda|SGV-11176 (Parte 3)]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177 (Parte 4)]] — todas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]].
 
 ---
 
@@ -82,7 +82,7 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 ## Fora de escopo
 
 - Fluxo completo de cadastro dedicado (fora do atalho) para PF, PJ ou Departamento — este requisito cobre só o atalho embutido nos componentes de seleção.
-- Regras de criação, edição, exclusão e suspensão de departamento além do cadastro em si (já cobertas por [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/QA/11083 - Funcionalidade Departamentos Para Cidadao PJ|SGV-11083]]).
+- Regras de criação, edição, exclusão e suspensão de departamento além do cadastro em si (já cobertas por [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda|SGV-11083]]).
 - Entrada em departamento por convite ([[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda|SGV-11176]]) e tramitação/assinatura direcionada a membro/departamento ([[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177]]).
 - Revisão do componente legado apontado pela [[QA Workspace/02 Demandas/DEV/SGV-11926 - Bug Campo De Solicitante Desatualizado|SGV-11926]] além da adição do atalho em si (a SGV-11926 registra a lacuna; esta demanda entrega a capacidade que a fecha).
 - Conteúdo exato dos e-mails de notificação (PF e Departamento) — usa o texto já existente/definido em outro lugar (ver Pendências de decisão).

@@ -20,7 +20,7 @@ ambiente: DEV
 
 ### Descrição
 
-Não é possível solicitar assinatura de departamentos diferentes do mesmo cidadão PJ — a API bloqueia a segunda solicitação achando que já perguntou pro cidadão. Contraria a regra confirmada: um documento pode ter mais de um departamento como signatário, inclusive departamentos diferentes da mesma PJ (mesma regra de destinatário de tramitação, [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/QA/11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos|SGV-11184]], estendida à assinatura).
+Não é possível solicitar assinatura de departamentos diferentes do mesmo cidadão PJ — a API bloqueia a segunda solicitação achando que já perguntou pro cidadão. Contraria a regra confirmada: um documento pode ter mais de um departamento como signatário, inclusive departamentos diferentes da mesma PJ (mesma regra de destinatário de tramitação, [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184]], estendida à assinatura).
 
 **Retestado em 30/09/2026, falha novamente** — inclusive quando o cidadão já **assinou** (não só foi solicitado) pelo Departamento A: solicitar pelo Departamento B continua bloqueado/incorreto. Manifestação adicional observada no reteste: a solicitação de assinatura pro membro do departamento aparece na **lista de documentos pessoal** do cidadão, não na lista do departamento a que ele pertence — reforça que a causa raiz é o sistema escopando a solicitação pelo cidadão em si, não pelo departamento/signatário específico.
 
