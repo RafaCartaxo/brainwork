@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "🌟",
       "📔",
       "🚧",
       "LiNotebookTabs",
@@ -14,8 +15,7 @@
       "LiAlbum",
       "LiCalendarDays",
       "LiLayers",
-      "LiCode2",
-      "LiRocket"
+      "LiCode2"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
@@ -161,9 +161,13 @@
     "iconColor": "#7c3aed"
   },
   "QA Workspace/Evidências/Sem Card": "LiBackpack",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos": "LiStars",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos": {
+    "iconName": "LiStars",
+    "iconColor": "#fff833"
+  },
   "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido": "📔",
   "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas": "📔",
   "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites": "📔",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos": "🚧"
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos": "🚧",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/Defeitos": "🚧"
 }
