@@ -9,7 +9,7 @@ resultado: aguardando
 pontos: 0
 ct_resultados:
   ct_001: ✅ Aprovado
-  ct_002: ⏳ Aguardando
+  ct_002: ✅ Aprovado
   ct_003: ✅ Aprovado
   ct_004: ✅ Aprovado
   ct_005: ✅ Aprovado
