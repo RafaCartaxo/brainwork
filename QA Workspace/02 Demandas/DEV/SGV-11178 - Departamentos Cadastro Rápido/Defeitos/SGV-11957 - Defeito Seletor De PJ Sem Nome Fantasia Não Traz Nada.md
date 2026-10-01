@@ -34,7 +34,7 @@ Durante a validação real da SGV-11178 (Parte 5 da epic [[QA Workspace/02 Deman
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11957)
 
-**Reprodução (30/09/2026):**
+**Reprodução (30/09/2026):** Verificar a partir do minuto 6.
 ![[11957 - Seletor sem Nome fantasia não traz nada, incorreto.mp4]]
 
 ---
