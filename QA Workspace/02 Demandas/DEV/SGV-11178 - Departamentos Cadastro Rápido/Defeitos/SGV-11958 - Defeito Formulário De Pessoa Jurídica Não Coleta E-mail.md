@@ -34,7 +34,7 @@ O critério [[QA Workspace/02 Demandas/DEV/SGV-11178 - Departamentos Cadastro R�
 
 ### Evidências [📁](file:///home/sogov-rafael-cartaxo/Documentos/Sogov/Obsidian/BrainWork/QA%20Workspace/Evidências/Desenvolvimento/) [🔍](evidencia://11958)
 
-Sem evidência de vídeo — gap identificado pela atualização do critério C15, não por reprovação em execução.
+![[11958 - Campo e-mail PJ não tem no formulário, incorreto.png]]
 
 ---
 
@@ -65,7 +65,7 @@ Formulário de cadastro rápido de Pessoa Jurídica exibe o campo E-mail, confor
 
 **Evidências de Testes:**
 
-Sem evidência — pendente de implementação.
+![[11958 - Campo e-mail PJ não tem no formulário, incorreto.png]]
 
 ---
 
