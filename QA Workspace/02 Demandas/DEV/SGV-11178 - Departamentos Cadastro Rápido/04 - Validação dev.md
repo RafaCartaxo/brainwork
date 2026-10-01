@@ -42,7 +42,7 @@ ct_resultados:
   ct_032: ✅ Aprovado
   ct_033: ✅ Aprovado
   ct_034: ✅ Aprovado
-  ct_035: ⏳ Aguardando
+  ct_035: ✅ Aprovado
   ct_036: ⏳ Aguardando
   ct_037: ✅ Aprovado
 data_inicio: ""
