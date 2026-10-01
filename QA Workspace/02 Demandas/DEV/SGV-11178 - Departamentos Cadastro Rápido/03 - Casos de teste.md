@@ -64,6 +64,7 @@ pontos: ""
 | [[01 - Demanda#^c35\|C35]] | [[03 - Casos de teste#^ct-035\|CT-035]] |
 | [[01 - Demanda#^c36\|C36]] | [[03 - Casos de teste#^ct-036\|CT-036]] |
 | [[01 - Demanda#^c37\|C37]] | [[03 - Casos de teste#^ct-037\|CT-037]] |
+| [[01 - Demanda#^c38\|C38]] | [[03 - Casos de teste#^ct-038\|CT-038]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -1510,3 +1511,42 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** retestado e aprovado — [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto|SGV-11951]]
 
 ^ct-037
+
+
+> [!example]- CT-038 · Responsividade do modal de cadastro rápido
+>
+> ```meta-bind-button  
+> style: primary  
+> label: ↩ Validação  
+> action:  
+>   type: open  
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"  
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que o modal de cadastro rápido (seletor PF/PJ/Departamento e os formulários) se adapta a telas menores, conforme o protótipo mobile do Figma. Achado de validação real (01/10/2026).
+>
+> **Pré-condições:**  
+> - Modal de cadastro rápido acessado em uma tela/viewport reduzida (mobile).
+>
+> **Dado** que o modal de cadastro rápido esteja aberto  
+> **Quando** acessado em uma tela menor (mobile)  
+> **Então** o layout se adapta corretamente, sem quebra de conteúdo, conforme o protótipo Figma
+>
+> **Resultado esperado:** modal responsivo, igual ao protótipo mobile definido no Figma.
+>
+> **Pós-condição:** nenhuma.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c38|C38]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional  
+> **Camada:** UI  
+> **Automação:** manual  
+> **Execução:** reprovado — [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]]
+
+^ct-038
