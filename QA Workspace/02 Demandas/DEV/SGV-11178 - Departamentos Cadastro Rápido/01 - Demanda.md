@@ -145,6 +145,7 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 - C34. O sistema impede um novo cadastro quando já existe cidadão com o CPF ou CNPJ informado, informando que o registro já existe. ^c34
 - C35. Quando ocorre falha de comunicação com a API ou no processamento do cadastro, o sistema preserva os dados preenchidos e apresenta mensagem de erro adequada. ^c35
 - C36. Ao criar o registro com sucesso, o sistema apresenta uma confirmação e encerra o formulário de cadastro rápido. ^c36
+- C38. O modal de cadastro rápido (seletor Pessoa Física/Pessoa Jurídica/Departamento e os formulários) é responsivo, se adaptando corretamente a telas menores (mobile), conforme o protótipo [Figma — Refatoração Pessoa Jurídica (Interno/Externo)](https://www.figma.com/design/fgpK9HLfUsaQJm6vx9iocF/Refatora%C3%A7%C3%A3o-Pessoa-Jur%C3%ADdica--Interno---Externo-?node-id=1361-2992). *(achado durante validação real em 01/10/2026 — numeração fora de sequência pra não quebrar os anchors de C30 em diante.)* ^c38
 
 ---
 
@@ -168,3 +169,4 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 > - **C37** (placeholder do campo CNPJ, criado a partir deste achado) — [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto|SGV-11951]].
 > - **C29** (seletor não traz nenhuma opção pra PJ sem Nome fantasia, em vez do fallback Razão Social + CNPJ) — [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]]. **Descartado em 01/10/2026** — diagnóstico errado: CT-029 já funcionava certo, o achado real era [[03 - Casos de teste#^ct-027|CT-027]] (cadastro incompleto).
 > - **C15** (formulário de PJ não coletava e-mail, exigido pelo critério atualizado em 01/10/2026) — [[Defeitos/SGV-11958 - Defeito Formulário De Pessoa Jurídica Não Coleta E-mail|SGV-11958]]. **Corrigido e retestado no mesmo dia.**
+> - **C38** (modal de cadastro rápido sem responsividade, critério novo criado a partir deste achado) — [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]].
