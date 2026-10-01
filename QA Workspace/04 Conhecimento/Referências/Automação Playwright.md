@@ -13,14 +13,19 @@ revisado: 2026-10-01
 
 ## O estado em uma frase
 
-O repositório tem **duas suítes convivendo**: o Cypress histórico na raiz e o Playwright em `playwright/`, pacote NPM independente. O Playwright é a suíte nova e maior; **o CI ainda roda só Cypress**.
+**Playwright é o padrão. Cypress é legado em fim de vida.**
+
+> [!success] Decisão do Rafael, 01/10/2026
+> A migração está sendo finalizada. O Cypress **vai ser descartado — mas não agora**. **Teste novo só se escreve em Playwright.**
+>
+> A suíte Cypress continua existindo e rodando até o descarte: serve para ler o que já existe e como referência de regra de negócio. Não é lugar de escrever caso novo.
 
 | | Cypress (raiz) | Playwright (`playwright/`) |
 |---|---|---|
 | Specs | ~127 testes legados | **130 specs / 503 testes** |
 | Entrada | `cypress.config.js` | `playwright/playwright.config.ts` |
 | Roda no CI | ✅ sim (`.gitlab-ci.yml`) | ❌ **não** |
-| Estado | mantido | ativo, recebendo casos novos |
+| Estado | **legado**, a descartar (sem data) | **padrão** — todo caso novo vem pra cá |
 
 ## Como a migração entrou
 
@@ -146,8 +151,8 @@ node scripts/run.mjs --project=api --grep "A12"   # um caso só
 ## O que a migração NÃO cobriu
 
 > [!warning] Três lacunas abertas em 01/10/2026
-> 1. **O CI continua 100% Cypress** — `.gitlab-ci.yml` usa `image: cypress/included:16.0.0`. Nenhum pipeline roda Playwright.
-> 2. **As skills e agentes `.claude/` do repo ensinam Cypress** linha a linha (`cy.loginAgent`, `cy.apiRequest`, `cy.goToFresh`). Quem pedir "cria um teste" hoje é empurrado para o framework antigo.
+> 1. **O CI continua 100% Cypress** — `.gitlab-ci.yml` usa `image: cypress/included:16.0.0`. Nenhum pipeline roda Playwright. **Enquanto isso durar, a suíte Playwright não protege merge nenhum** — é a inconsistência mais séria, e não se resolve do lado do vault.
+> 2. **As skills e agentes `.claude/` do repo ensinam Cypress** linha a linha (`cy.loginAgent`, `cy.apiRequest`, `cy.goToFresh`). Quem pedir "cria um teste" hoje é empurrado para o framework que está sendo descartado. Proposta de correção: [[2026-10-01-skills-automacao-playwright]].
 > 3. **O TR 1.24-1.25 não existe no lado Playwright** — zero ocorrências de `CT-0` em `playwright/`. Há `tests/api/auth/{login,credentials}.spec.ts`, mas sem relação com a numeração CT-001…CT-038. Ver [[1.24-1.25 - Plano de Automação]].
 
 ## Antes de escrever o primeiro spec
