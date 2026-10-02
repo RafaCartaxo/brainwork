@@ -25,6 +25,19 @@ status: executado (Cypress) — a portar pra Playwright
 > [!info] Repo ainda não autorizado a mexer (02/10/2026)
 > Este achado foi só **verificação de estado real**, feita lendo arquivos existentes no repo — nenhuma linha de código foi escrita ou alterada. Confirmado com o Rafael: por ora seguimos só planejando no vault; escrever/portar teste novo no repo `sogov-automation-test`/`sogov-automation-playwright` é passo separado, que segue precisando de autorização explícita antes de começar.
 
+### Como a Suíte 1/2 ficou organizada no Playwright (pra usar de molde)
+
+Verificado no código real (`playwright/tests/api/auth/`):
+- **1 arquivo `.spec.ts` por suíte** (não por CT) — `login.spec.ts` (Suíte 1) e `credentials.spec.ts` (Suíte 2).
+- **1 `test.describe()` por suíte**, **1 `test()` por CT** dentro dele — mesmo molde já definido na seção 1 deste plano, confirmado seguido.
+- **Camada 100% API** — `POST` direto no endpoint de auth via `login()` (`src/auth/auth-client.ts`), sem browser. Sucesso = volta um id numérico de sessão; falha = promise rejeitada batendo numa regex que distingue recusa de credencial de erro de transporte (`LOGIN_REJECTED`).
+- Fixtures de alto nível (`src/fixtures/index.ts`): `seed` (ator base pré-criado por um projeto `seed` que roda antes, via `dependencies: ['seed']`), `actors.agentApi()`/`citizenApi()` (sessão API isolada e pronta, sem precisar logar na mão), `env` (config de ambiente). Muito mais estruturado que o `cy.session`/`AGENT_CPF` fixo do Cypress — paralelismo seguro por "pool" de atores por worker.
+
+### Suíte 5 (CT-037, CT-038) — investigação feita, sem tocar o repo (02/10/2026)
+
+- **CT-038 (sessões simultâneas) — pronto pra portar, zero investigação pendente.** O Cypress (`audit-sessions.api.cy.js`) faz: login 2x com o mesmo agente (2 tokens independentes) → confirma que os dois continuam válidos chamando `getPublicAgents` com cada um. No Playwright, **as duas peças já existem prontas**, usadas em outro domínio (`tests/api/public-agents/list-agent.spec.ts`): `actors.agentApi()` (fixture que loga e devolve uma sessão API isolada — chamar 2x dá 2 tokens independentes do mesmo agente) + `getPublicAgents(api, term)` (`src/api/services/users.ts`). **Não precisa escrever nenhum helper novo** — só o spec. `'agent'` (ator base) não está na lista de posse exclusiva (`src/data/seed/ownership.ts`), então usar 2x no mesmo teste não esbarra em restrição de paralelismo.
+- **CT-037 (log de auditoria) — continua bloqueado, confirmado de novo.** Busquei "audit"/"auditoria" em todo `src/`, `docs/` e no dump de queries GraphQL (`src/api/queries.ts`) do repo Playwright — zero ocorrência. Nenhuma investigação nova aconteceu desde 31/08. Segue precisando da mesma captura manual (DevTools/HAR, perfil Administrador, acessando relatório/log de auditoria) que só o Rafael pode fazer — mesma limitação já registrada pro desbloqueio da Suíte 3 (seção 4).
+
 > [!info] Sobre esta nota
 > Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test` (Cypress). Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Fonte única dos casos: [[../00 QA/03 - Casos de teste|03 - Casos de teste]].
 
