@@ -5,7 +5,7 @@ ambiente: dev
 versao: ""
 status: execucao
 responsavel: Rafael
-resultado: aguardando
+resultado: aprovado_com_ressalvas
 pontos: 0
 ct_resultados:
   ct_001: "✅ Aprovado"
@@ -13,7 +13,7 @@ ct_resultados:
   ct_002a: "⚪ Não executado"
   ct_002b: "⚪ Não executado"
   ct_002c: "✅ Aprovado"
-  ct_003: "⏳ Aguardando"
+  ct_003: "✅ Aprovado"
   ct_004: "✅ Aprovado"
   ct_005: "✅ Aprovado"
   ct_006: "⚪ Não executado"
@@ -30,11 +30,11 @@ ct_resultados:
   ct_014: "⚪ Não executado"
   ct_015: "✅ Aprovado"
   ct_016: "✅ Aprovado"
-  ct_017: "⏳ Aguardando"
-  ct_018: "⏳ Aguardando"
-  ct_019: "⏳ Aguardando"
-  ct_020: "⏳ Aguardando"
-  ct_021: "⏳ Aguardando"
+  ct_017: "✅ Aprovado"
+  ct_018: "✅ Aprovado"
+  ct_019: "✅ Aprovado"
+  ct_020: "✅ Aprovado"
+  ct_021: "✅ Aprovado"
   ct_022: "⚪ Não executado"
 data_inicio: ""
 data_fim: ""
@@ -56,7 +56,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real desde 03/09/2026 — 14/21 CTs aplicáveis aprovados, 1 reprovado (CT-012a, defeito SGV-11338 ainda aberto), 6 aguardando execução; 7 marcados "Não executado" (fora de escopo real desta entrega, nível "participantes" não implementado — ver `01 - Demanda`). 2 defeitos já corrigidos e retestados (SGV-11312, SGV-11319).
+> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Validação real desde 03/09/2026 — 14/21 CTs aplicáveis aprovados na época, mais 6 aprovados em 02/10/2026 via aprovação geral da task em DEV (CT-003, 017-021 — não executados individualmente neste vault). **20/21 CTs aplicáveis aprovados**, 1 reprovado (CT-012a, defeito SGV-11338 ainda aberto); 7 marcados "Não executado" (fora de escopo real desta entrega, nível "participantes" não implementado — ver `01 - Demanda`). 2 defeitos já corrigidos e retestados (SGV-11312, SGV-11319).
 
 ---
 
@@ -106,7 +106,7 @@ dv.list([
 | [[03 - Casos de teste#^ct-002a\|CT-002a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002a]` |  |  |  | `= choice(this.ct_resultados.ct_002a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-002b\|CT-002b]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002b]` |  |  |  | `= choice(this.ct_resultados.ct_002b = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-002c\|CT-002c]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002c]` | ![[11312 - área de clique não respeitada.mp4]]<br>![[11312 - OK.mp4]] | Reprovado em 03/09, aprovado no reteste | [[Defeitos/SGV-11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma\|SGV-11312]] (resolvido) | `= choice(this.ct_resultados.ct_002c = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` |  |  |  | `= choice(this.ct_resultados.ct_003 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_003 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-004\|CT-004]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_004]` |  |  |  | `= choice(this.ct_resultados.ct_004 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-005\|CT-005]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_005]` |  |  |  | `= choice(this.ct_resultados.ct_005 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-006\|CT-006]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_006]` |  |  |  | `= choice(this.ct_resultados.ct_006 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
@@ -123,11 +123,11 @@ dv.list([
 | [[03 - Casos de teste#^ct-014\|CT-014]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_014]` |  |  |  | `= choice(this.ct_resultados.ct_014 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-015\|CT-015]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_015]` |  |  |  | `= choice(this.ct_resultados.ct_015 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-016\|CT-016]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_016]` |  |  |  | `= choice(this.ct_resultados.ct_016 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-017\|CT-017]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_017]` |  |  |  | `= choice(this.ct_resultados.ct_017 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-018\|CT-018]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_018]` |  |  |  | `= choice(this.ct_resultados.ct_018 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-019\|CT-019]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_019]` |  |  |  | `= choice(this.ct_resultados.ct_019 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-020\|CT-020]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_020]` |  |  |  | `= choice(this.ct_resultados.ct_020 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-021\|CT-021]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_021]` |  |  |  | `= choice(this.ct_resultados.ct_021 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-017\|CT-017]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_017]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_017 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-018\|CT-018]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_018]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_018 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-019\|CT-019]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_019]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_019 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-020\|CT-020]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_020]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_020 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[03 - Casos de teste#^ct-021\|CT-021]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_021]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_021 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 | [[03 - Casos de teste#^ct-022\|CT-022]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_022]` |  |  |  | `= choice(this.ct_resultados.ct_022 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
@@ -172,12 +172,13 @@ if (tabela) {
 - **03/09/2026:** Defeito cadastrado (achado em teste exploratório): [[Defeitos/SGV-11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] (departamento não persistido ao retificar despacho).
 - **03/09/2026:** [[Defeitos/SGV-11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho|SGV-11319]] corrigido e aprovado em DEV — formalizado como CT-012b, já aprovado.
 - **04/09/2026:** CT-012a reprovado — defeito cadastrado: [[Defeitos/SGV-11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo|SGV-11338]] (truncamento de destinatário com nome extenso). **Ainda aberto.**
+- **02/10/2026:** Confirmado que a task já foi aprovada em DEV — CT-003, 017, 018, 019, 020 e 021 marcados aprovados via essa aprovação geral (execução individual não registrada neste vault). CT-012a/SGV-11338 segue aberto, sem alteração.
 
 ---
 
 ## Decisão
 
-**Resultado geral:** aguardando — falta corrigir SGV-11338 e executar os 6 CTs restantes (CT-003, 017-021).
+**Resultado geral:** aprovado com ressalvas — 20/21 CTs aplicáveis aprovados (6 via aprovação geral da task em DEV, 02/10/2026); falta corrigir SGV-11338 (CT-012a).
 
 ---
 

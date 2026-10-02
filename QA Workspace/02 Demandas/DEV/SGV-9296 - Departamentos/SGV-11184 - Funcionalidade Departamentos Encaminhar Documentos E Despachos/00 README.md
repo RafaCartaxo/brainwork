@@ -37,11 +37,11 @@ pontos: ""
 | Demanda | ✅ Preparada |
 | Plano de teste | ⏳ |
 | Casos de teste | ✅ Preparados (CT-001 a CT-022, com variantes a/b/c — 28 no total) |
-| Validação | 🔵 Em andamento — 14/21 CTs aplicáveis aprovados, 1 reprovado (CT-012a, defeito SGV-11338 aberto), 6 aguardando; 7 marcados Não se aplica (nível "participantes" fora desta entrega) |
+| Validação | 🟡 Aprovado com ressalvas — 20/21 CTs aplicáveis aprovados (6 via aprovação geral da task em DEV, 02/10/2026), 1 reprovado (CT-012a, defeito SGV-11338 aberto); 7 marcados Não se aplica (nível "participantes" fora desta entrega) |
 | Preparação Qase | 📤 Enviado (21 casos aplicáveis + 2 shared steps na suite SGV/220, 04/09/2026) |
 | Automação | ⏳ |
 
-**Próximo passo:** DEV corrigir o defeito SGV-11338 (truncamento de destinatário com nome extenso); executar os 6 CTs ainda aguardando (CT-003, 017-021).
+**Próximo passo:** DEV corrigir o defeito SGV-11338 (truncamento de destinatário com nome extenso); CT-012a é o único CT real ainda pendente.
 
 > [!info]- Origem
 > **Parte 2** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda|SGV-11083 (Parte 1)]]. SGV-11184 no Notion ("[Parte 2] Departamentos: Encaminhar documentos/despachos para o departamento"). Refinado a partir do requisito técnico do Notion.

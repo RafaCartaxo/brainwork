@@ -22,7 +22,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** DEV corrigir o defeito SGV-11338; executar os CTs ainda aguardando.
+> **Próximo passo:** DEV corrigir o defeito SGV-11338 (CT-012a) — demais 20 CTs aplicáveis já aprovados.
 
 ---
 
