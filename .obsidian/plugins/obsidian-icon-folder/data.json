@@ -6,6 +6,8 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiConstruction",
+      "LiStars",
       "LiBackpack",
       "LiAlbum",
       "LiCalendarDays",
@@ -13,9 +15,7 @@
       "LiCode2",
       "LiRocket",
       "LiFlaskConical",
-      "LiCheckSquare",
-      "LiShieldCheck",
-      "LiBookOpen"
+      "LiCheckSquare"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
@@ -160,5 +160,14 @@
     "iconName": "LiBot",
     "iconColor": "#7c3aed"
   },
-  "QA Workspace/Evidências/Sem Card": "LiBackpack"
+  "QA Workspace/Evidências/Sem Card": "LiBackpack",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos": "LiStars",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/Defeitos": "LiConstruction",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ": "LiPackage",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos": "LiPackage",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites": "LiPackage",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas": "LiPackage",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido": "LiPackage",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Defeitos": "LiConstruction",
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos": "LiConstruction"
 }
