@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiStar",
       "LiConstruction",
       "LiStars",
       "LiBackpack",
@@ -14,8 +15,7 @@
       "LiLayers",
       "LiCode2",
       "LiRocket",
-      "LiFlaskConical",
-      "LiCheckSquare"
+      "LiFlaskConical"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
@@ -161,13 +161,65 @@
     "iconColor": "#7c3aed"
   },
   "QA Workspace/Evidências/Sem Card": "LiBackpack",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos": "LiStars",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/Defeitos": "LiConstruction",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ": "LiPackage",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos": "LiPackage",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites": "LiPackage",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas": "LiPackage",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido": "LiPackage",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Defeitos": "LiConstruction",
-  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos": "LiConstruction"
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos": {
+    "iconName": "LiStars",
+    "iconColor": "#eab308"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/Defeitos": {
+    "iconName": "LiConstruction",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/Defeitos": {
+    "iconName": "LiConstruction",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/Defeitos": {
+    "iconName": "LiConstruction",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar": "LiStars",
+  "QA Workspace/02 Demandas/DEV/11262": {
+    "iconName": "LiKeyRound",
+    "iconColor": "#4338ca"
+  },
+  "QA Workspace/02 Demandas/DEV": {
+    "iconName": "LiCode2",
+    "iconColor": "#059669"
+  },
+  "QA Workspace/02 Demandas/HML": {
+    "iconName": "LiClipboardCheck",
+    "iconColor": "#ea580c"
+  },
+  "QA Workspace/02 Demandas/Hotfix": {
+    "iconName": "LiFlame",
+    "iconColor": "#dc2626"
+  },
+  "Sistema/Scripts": {
+    "iconName": "LiTerminal",
+    "iconColor": "#16a34a"
+  },
+  "Ambiente": {
+    "iconName": "LiBriefcase",
+    "iconColor": "#475569"
+  }
 }
