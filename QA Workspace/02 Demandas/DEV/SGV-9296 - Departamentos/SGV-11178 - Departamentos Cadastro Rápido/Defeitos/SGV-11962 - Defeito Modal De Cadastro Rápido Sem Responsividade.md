@@ -6,11 +6,11 @@ tags:
 task: "11962"
 pai: "SGV-11178"
 prioridade: media
-status: aberto
+status: resolvido
 data_inicio: 2026-10-01
-data_fim:
-responsavel:
-aguardando: dev
+data_fim: 2026-10-02
+responsavel: Rafael
+aguardando: ""
 pontos:
 cadastrado_por: ""
 modulo: servicos-pj
@@ -48,7 +48,7 @@ Modal de cadastro rápido responsivo em telas menores, conforme o protótipo mob
 
 ### Critérios de aceite
 
-- [ ] Modal de cadastro rápido se adapta corretamente a telas menores (mobile), conforme o protótipo Figma
+- [x] Modal de cadastro rápido se adapta corretamente a telas menores (mobile), conforme o protótipo Figma
 
 ---
 
@@ -61,11 +61,16 @@ Modal de cadastro rápido responsivo em telas menores, conforme o protótipo mob
 **Então** o layout deve se adaptar corretamente, sem quebra, conforme o protótipo Figma
 
 **Execução Passou?**
-- [ ] Sim
-- [x] Não
+- [x] Sim
+- [ ] Não
 - [ ] Não se aplica
 
 **Evidências de Testes:**
+
+![[11962 - Modal de cadastro rápido responsivo, ok.mp4]]
+
+> [!success]- Reprovado em 01/10/2026, aprovado no reteste de 02/10/2026
+> Corrigido e reteste passou — gravação do reteste embedada acima, junto com a evidência que registrou o problema original (abaixo).
 
 ![[SGV-11962 - Responsividade, incorreto.mp4]]
 
@@ -84,3 +89,4 @@ Modal de cadastro rápido responsivo em telas menores, conforme o protótipo mob
 - Observações: detalhe adicional (breakpoints, comportamento específico por campo) fica no próprio protótipo Figma vinculado, não duplicado aqui.
 - Histórico:
     - 2026-10-01 - 🐛 Defeito cadastrado (C38/CT-038 criados pra exigir responsividade, ainda não implementada)
+    - 2026-10-02 - ✅ Retestado e aprovado — modal de cadastro rápido responsivo, conforme protótipo Figma

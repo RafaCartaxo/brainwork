@@ -26,10 +26,10 @@ etapa_atual: "QA · Casos de teste"
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
 | Casos de teste | ✅ Preparados (CT-001 a CT-038) |
-| Validação | 🔵 Em andamento — 37/38 CTs aprovados, 1 reprovado (CT-038 — defeito `Defeitos/SGV-11962`, modal de cadastro rápido sem responsividade, aguardando DEV) |
-| Preparação Qase | 📤 Enviado (37 casos na suite SGV/361, 01/10/2026 — CT-038 aguarda o fix da SGV-11962) |
+| Validação | ✅ 38/38 CTs aprovados (02/10/2026) — CT-038 retestado e aprovado após correção do defeito `Defeitos/SGV-11962` (modal de cadastro rápido sem responsividade) |
+| Preparação Qase | 🟡 37 de 38 enviados (suite SGV/361, 01/10/2026) — falta enviar CT-038, que ficou de fora porque ainda estava reprovado na época |
 
-**Próximo passo:** aguardar DEV implementar a responsividade (SGV-11962) antes de fechar a validação; Qase pode ser preparado em paralelo com os 37 CTs já aprovados.
+**Próximo passo:** enviar CT-038 pra Qase (suite 361), junto com os outros 37.
 
 > [!warning]- Escopo desta rodada  
 > Cobre o atalho de cadastro rápido (PF, PJ e Departamento) embutido nos componentes de seleção de pessoa (requisito de origem, Parte 5 da epic SGV-9296) — não cobre os fluxos de cadastro dedicados, nem as regras de departamento fora do cadastro em si (SGV-11083), convite (SGV-11176) ou tramitação/assinatura (SGV-11177).
