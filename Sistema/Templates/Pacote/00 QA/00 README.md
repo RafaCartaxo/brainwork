@@ -63,7 +63,7 @@ pontos: ""
 > }
 > ```
 >
-> A busca sai de `QA/` (pasta deste arquivo) e sobe um nível até a raiz do pacote, pra incluir `Automação/` e `Defeitos/` automaticamente — não precisa de bloco separado somando cada subpasta. `pontos_alocados` fica só em `01-Demanda`/`01-Bug` (não duplicado aqui) — este bloco lê de lá pra calcular saldo/déficit.
+> A busca sai de `00 QA/` (pasta deste arquivo) e sobe um nível até a raiz do pacote, pra incluir `01 Automação/` e `Defeitos/` automaticamente — não precisa de bloco separado somando cada subpasta. `pontos_alocados` fica só em `01-Demanda`/`01-Bug` (não duplicado aqui) — este bloco lê de lá pra calcular saldo/déficit.
 
 Pacote para `<ID>`:
 

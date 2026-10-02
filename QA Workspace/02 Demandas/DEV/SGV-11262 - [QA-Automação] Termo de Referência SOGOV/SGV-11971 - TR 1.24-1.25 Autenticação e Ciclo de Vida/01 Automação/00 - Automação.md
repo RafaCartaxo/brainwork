@@ -44,18 +44,18 @@ pontos: ""
 
 | CT | Status | Observação |
 |---|---|---|
-| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-003\|CT-003]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-004\|CT-004]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-005\|CT-005]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-006\|CT-006]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-007\|CT-007]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-008\|CT-008]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-009\|CT-009]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-010\|CT-010]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-011\|CT-011]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-012\|CT-012]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
+| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-003\|CT-003]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-004\|CT-004]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-005\|CT-005]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-006\|CT-006]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-007\|CT-007]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-008\|CT-008]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-009\|CT-009]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-010\|CT-010]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/credentials.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-011\|CT-011]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/credentials.spec.ts`). |
+| [[../00 QA/03 - Casos de teste#^ct-012\|CT-012]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/credentials.spec.ts`). |
 | [[../00 QA/03 - Casos de teste#^ct-013\|CT-013]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
 | [[../00 QA/03 - Casos de teste#^ct-014\|CT-014]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
 | [[../00 QA/03 - Casos de teste#^ct-015\|CT-015]] | ⚠️ | Achado real em disputa: via automação, após o bloqueio na 5ª tentativa (log retorna `account-blocked`), a tentativa seguinte com a senha correta autentica. Validação manual do Rafael (tela e API) não reproduziu. Hipótese de corrida/timing não confirmada — 3 experimentos falharam por instabilidade do ambiente. |
@@ -92,7 +92,7 @@ pontos: ""
 
 ## Achados reais de produto
 
-> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado, vira **Defeito** — decisão de 02/10/2026: por ora os 4 abaixo seguem como achado de conformidade, sem SGV próprio (ver `../QA/00 README` → Próximo passo).
+> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado, vira **Defeito** — decisão de 02/10/2026: por ora os 4 abaixo seguem como achado de conformidade, sem SGV próprio (ver `../00 QA/00 README` → Próximo passo).
 
 - **CT-015** — em disputa: via automação, após o bloqueio na 5ª tentativa (log retorna `account-blocked`), a tentativa seguinte com a senha correta autentica. Validação manual do Rafael (tela e API) não reproduziu. Hipótese de corrida/timing não confirmada — 3 experimentos falharam por instabilidade do ambiente.
 - **CT-029 / CT-030** — em Férias, escrita e leitura não são bloqueadas, diferente de Licença (CT-023/CT-024), que bloqueia corretamente. Divergência entre os dois estados de quarentena — confirmar com produto se é intencional.
@@ -116,5 +116,5 @@ pontos: ""
 - [ ] 4 achados reais confirmados/triados com produto/backend.
 - [ ] 6 falhas sem causa raiz investigadas.
 - [ ] Suíte portada pra Playwright.
-- [ ] Cobertura por CT (tabela acima) refletida em `../QA/03 - Casos de teste` (campo `Automação` de cada CT).
+- [ ] Cobertura por CT (tabela acima) refletida em `../00 QA/03 - Casos de teste` (campo `Automação` de cada CT).
 - [ ] Status desta nota atualizado.

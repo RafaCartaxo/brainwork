@@ -12,7 +12,7 @@ Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Temp
 
 ### Instanciar o pacote de Bug — passo obrigatório de nomenclatura
 
-Os templates `QA/02 - Plano de teste`, `QA/03 - Casos de teste`, `QA/04 - Validação dev` e `QA/05 - Preparação Qase` vêm com `demanda: "[[01 - Demanda]]"` no frontmatter/nav por padrão (caso mais comum é Melhoria/Funcionalidade). **Ao copiá-los pra dentro de um pacote de Bug**, trocar `[[01 - Demanda]]` → `[[01 - Bug]]` nesses 4 arquivos **no mesmo passo** em que `<ID>` vira o SGV real — não depois, não como lembrete solto. Não editar os templates em si por causa disso. Se o bug também tiver automação, o hub `Automação/00 - Automação.md` tem o mesmo campo — trocar junto.
+Os templates `QA/02 - Plano de teste`, `QA/03 - Casos de teste`, `QA/04 - Validação dev` e `QA/05 - Preparação Qase` vêm com `demanda: "[[01 - Demanda]]"` no frontmatter/nav por padrão (caso mais comum é Melhoria/Funcionalidade). **Ao copiá-los pra dentro de um pacote de Bug**, trocar `[[01 - Demanda]]` → `[[01 - Bug]]` nesses 4 arquivos **no mesmo passo** em que `<ID>` vira o SGV real — não depois, não como lembrete solto. Não editar os templates em si por causa disso. Se o bug também tiver automação, o hub `01 Automação/00 - Automação.md` tem o mesmo campo — trocar junto.
 
 Toda referência cruzada entre pacotes (de uma daily, de outro pacote, ou de `Defeitos/` pro resto do próprio pacote) usa caminho completo, nunca nome curto — ver [[../Contexto/PADROES_QA.md#Link entre pacotes — sempre caminho completo|PADROES_QA → Link entre pacotes]].
 

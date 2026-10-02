@@ -11,6 +11,20 @@ status: executado (Cypress) — a portar pra Playwright
 > [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
 > O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
+## Porte pra Playwright — estado real (02/10/2026)
+
+> [!success] Achado: Suítes 1 e 2 já estão portadas — correção de uma conclusão errada
+> Uma busca anterior por `CT-0` literal em `playwright/` concluiu "zero cobertura". **Errado** — essa busca não comparava conteúdo, só o rótulo. Verificado agora por título, 1 a 1, contra o `03 - Casos de teste`:
+> - `playwright/tests/api/auth/login.spec.ts` — 9 testes (`A02-C01`...`A02-C09`), títulos idênticos a CT-001–CT-009 (Suíte 1, Tipos de acesso).
+> - `playwright/tests/api/auth/credentials.spec.ts` — 3 testes (`A01-C01`...`A01-C03`), títulos idênticos a CT-010–CT-012 (Suíte 2, Validação de credenciais).
+> - Confirmado verde num run real: `playwright/test-results/results.xml`, 01/10/2026, 398 testes no total, os 12 de auth todos passando.
+> - Commit de origem: `a8bc9c5` (migração geral de setembro) — não foi um porte dedicado deste TR, foi incidental à migração ampla, mas o conteúdo bate.
+
+**Restam 26 CTs a portar** — Suítes 3 (bloqueio, CT-013–019, 7 CTs), 4 (ciclo de vida, CT-020–036, 17 CTs) e 5 (transversais/auditoria, CT-037/038, 2 CTs). Pela ordem de faseamento já definida na seção 5 (menos dependente de gap primeiro), a próxima peça natural é a **Suíte 5** (só 2 CTs, sem achado real em disputa) — não a Suíte 3, que foi o que ficou combinado como "próximo piloto" antes desta correção.
+
+> [!info] Repo ainda não autorizado a mexer (02/10/2026)
+> Este achado foi só **verificação de estado real**, feita lendo arquivos existentes no repo — nenhuma linha de código foi escrita ou alterada. Confirmado com o Rafael: por ora seguimos só planejando no vault; escrever/portar teste novo no repo `sogov-automation-test`/`sogov-automation-playwright` é passo separado, que segue precisando de autorização explícita antes de começar.
+
 > [!info] Sobre esta nota
 > Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test` (Cypress). Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Fonte única dos casos: [[../00 QA/03 - Casos de teste|03 - Casos de teste]].
 

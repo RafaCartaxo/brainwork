@@ -22,7 +22,7 @@ pontos: ""
 > [!settings]- Controle da automação
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Esta nota registra o **estado da cobertura automatizada** dos CTs de `../QA/03 - Casos de teste` — não duplica o cenário (fica em `03`) nem o resultado da validação manual (fica em `04`), só o que é específico de automação: infraestrutura, achados encontrados rodando, e pendências. O campo `Automação` de cada CT em `03` (manual/automatizado) é a fonte de verdade de *o que* está automatizado; aqui fica o *como* e o *estado atual*.
+> Esta nota registra o **estado da cobertura automatizada** dos CTs de `../00 QA/03 - Casos de teste` — não duplica o cenário (fica em `03`) nem o resultado da validação manual (fica em `04`), só o que é específico de automação: infraestrutura, achados encontrados rodando, e pendências. O campo `Automação` de cada CT em `03` (manual/automatizado) é a fonte de verdade de *o que* está automatizado; aqui fica o *como* e o *estado atual*.
 
 Processo completo (investigação técnica → codar → validar → triar achado real × bug × instabilidade → documentação viva → subir): [[../../../Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]]. Antes de qualquer commit/MR, aplicar o crivo de [[../../../Skills/SKILL_REVISAO_CODIGO_AUTOMACAO|SKILL_REVISAO_CODIGO_AUTOMACAO]] (duplicação entre arquivos, reaproveitamento de dado de teste, comentários, impacto em código pré-existente).
 
@@ -72,5 +72,5 @@ Processo completo (investigação técnica → codar → validar → triar achad
 - [ ] Crivo de [[../../../Skills/SKILL_REVISAO_CODIGO_AUTOMACAO|SKILL_REVISAO_CODIGO_AUTOMACAO]] aplicado (duplicação, reaproveitamento de dado, comentários, impacto em código pré-existente).
 - [ ] Achados reais confirmados/triados — nenhum "conserto" de asserção sem essa triagem.
 - [ ] CTs com achado em disputa ou sem causa raiz identificada ficam de fora do commit (ou entram com `.skip()`/equivalente + comentário linkando o achado).
-- [ ] Cobertura por CT (tabela acima) refletida em `../QA/03 - Casos de teste` (campo `Automação` de cada CT).
+- [ ] Cobertura por CT (tabela acima) refletida em `../00 QA/03 - Casos de teste` (campo `Automação` de cada CT).
 - [ ] Status desta nota atualizado.
