@@ -5,14 +5,14 @@ tags:
 ---
 # Skill: Criação e Organização de Bugs
 
-Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Pacote/Bug/01%20-%20Bug.md))
+Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Pacote/QA/Bug/01%20-%20Bug.md))
 
 > [!important] A partir de 24/09/2026: pacote de arquivos, não nota única
-> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/00 README|Sistema/Templates/Pacote/]] (`00 README` + `Bug/01-Bug` + `02-Plano de teste` + `03-Casos de teste` + `04-Validação dev` + `05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 — nada mais os referencia como template ativo. Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
+> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/QA/00 README|Sistema/Templates/Pacote/]] (`QA/00 README` + `QA/Bug/01-Bug` + `QA/02-Plano de teste` + `QA/03-Casos de teste` + `QA/04-Validação dev` + `QA/05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 — nada mais os referencia como template ativo. **A partir de 02/10/2026**, `00`-`05` vivem dentro de uma subpasta `QA/` do pacote. Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
 
 ### Instanciar o pacote de Bug — passo obrigatório de nomenclatura
 
-Os templates `02 - Plano de teste`, `03 - Casos de teste`, `04 - Validação dev`, `05 - Preparação Qase` e `06 - Automação` vêm com `demanda: "[[01 - Demanda]]"` no frontmatter/nav por padrão (caso mais comum é Melhoria/Funcionalidade). **Ao copiá-los pra dentro de um pacote de Bug**, trocar `[[01 - Demanda]]` → `[[01 - Bug]]` nesses 5 arquivos **no mesmo passo** em que `<ID>` vira o SGV real — não depois, não como lembrete solto. Não editar os templates em si por causa disso.
+Os templates `QA/02 - Plano de teste`, `QA/03 - Casos de teste`, `QA/04 - Validação dev` e `QA/05 - Preparação Qase` vêm com `demanda: "[[01 - Demanda]]"` no frontmatter/nav por padrão (caso mais comum é Melhoria/Funcionalidade). **Ao copiá-los pra dentro de um pacote de Bug**, trocar `[[01 - Demanda]]` → `[[01 - Bug]]` nesses 4 arquivos **no mesmo passo** em que `<ID>` vira o SGV real — não depois, não como lembrete solto. Não editar os templates em si por causa disso. Se o bug também tiver automação, o hub `Automação/00 - Automação.md` tem o mesmo campo — trocar junto.
 
 Toda referência cruzada entre pacotes (de uma daily, de outro pacote, ou de `Defeitos/` pro resto do próprio pacote) usa caminho completo, nunca nome curto — ver [[../Contexto/PADROES_QA.md#Link entre pacotes — sempre caminho completo|PADROES_QA → Link entre pacotes]].
 
@@ -174,7 +174,7 @@ Quando ...
 Então ...
 ```
 
-O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[SKILL_CASOS_DE_TESTE]] (ou o formato `Dado/Quando/Então` do pacote, [[../Templates/Pacote/03 - Casos de teste|Pacote/03 - Casos de teste]]).
+O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[SKILL_CASOS_DE_TESTE]] (ou o formato `Dado/Quando/Então` do pacote, [[../Templates/Pacote/QA/03 - Casos de teste|Pacote/QA/03 - Casos de teste]]).
 
 Nunca usar lista numerada (`1. 2. 3.`) nem texto corrido: o passo a passo é o que o dev executa pra reproduzir, e a forma BDD deixa explícito o que é pré-condição, o que é ação e o que é o defeito observado.
 
