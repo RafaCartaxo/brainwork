@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBug",
       "LiStar",
       "LiConstruction",
       "LiStars",
@@ -14,8 +15,7 @@
       "LiCalendarDays",
       "LiLayers",
       "LiCode2",
-      "LiRocket",
-      "LiFlaskConical"
+      "LiRocket"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
