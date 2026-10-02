@@ -28,9 +28,9 @@ etapa_atual: "QA · Validação"
 | Casos de teste | ✅ Preparados (CT-001 a CT-038 + 3 extras fora de escopo) |
 | Validação | 🔄 Em andamento — **25/38 CTs confirmados** (01/10/2026); 4 achados reais, 6 falhas sem causa raiz, 3 sem código |
 | Preparação Qase | 📤 Enviado (projeto SGV, suite 4 — 25 atualizados, 2 deprecated, 1 criado, 31/08/2026) |
-| Automação | 🔄 Em andamento — 35/38 codados em Cypress; **12/38 (Suítes 1 e 2) já portados e confirmados passando em Playwright** (run de 01/10/2026); restam 26 a portar |
+| Automação | 🔄 Em andamento — 35/38 codados em Cypress; **13/38 já confirmados passando em Playwright** (Suítes 1, 2 + CT-038, 02/10/2026); restam 25 a portar |
 
-**Próximo passo:** decidir se os 4 achados reais de produto (CT-015, CT-029/030, CT-033) viram defeitos com SGV próprio ou seguem como achado de conformidade — decisão adiada em 02/10/2026. Em paralelo, portar o restante da suíte (Suítes 3, 4 e 5 — 26 CTs) de Cypress pra Playwright.
+**Próximo passo:** decidir se os 4 achados reais de produto (CT-015, CT-029/030, CT-033) viram defeitos com SGV próprio ou seguem como achado de conformidade — decisão adiada em 02/10/2026. Em paralelo, portar o restante da suíte (Suíte 3 inteira, Suíte 4 inteira, CT-037 — 25 CTs) de Cypress pra Playwright. CT-038 já portado e verde (`api/auth/audit-sessions.spec.ts`), ainda não commitado no repo — worktree em HEAD destacado, branch a definir.
 
 > [!warning]- O alvo da automação mudou: Cypress → Playwright (01/10/2026) — correção em 02/10/2026
 > O repo `sogov-automation-test` migrou pra Playwright em setembro (merge `1d78bf9`) enquanto esta automação estava parada. **Correção (02/10/2026):** ao contrário do que esta nota dizia antes ("zero cobertura, nenhuma ocorrência de `CT-0` em `playwright/`"), confirmado por evidência real (`playwright/test-results/results.xml`, run de 01/10/2026, 398 testes) que as **Suítes 1 e 2 (12 CTs) já foram portadas** — `playwright/tests/api/auth/login.spec.ts` (CT-001 a CT-009, rotulados `A02-C01`...`A02-C09`) e `credentials.spec.ts` (CT-010 a CT-012, rotulados `A01-C01`...`A01-C03`), títulos idênticos aos do `03 - Casos de teste`, todos verdes. A busca anterior por `CT-0` literal não achava porque o porte usa outro rótulo de teste. **Restam Suítes 3, 4 e 5 (26 CTs)** a portar. Arquitetura e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
@@ -42,16 +42,18 @@ Pacote QA para `SGV-11971`:
 
 ```text
 SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
-├── 00 README.md
-├── 01 - Demanda.md
-├── 02 - Plano de teste.md
-├── 03 - Casos de teste.md
-├── 04 - Validação dev.md
-├── 05 - Preparação Qase.md
-└── Automação/
-    ├── Plano de Automação.md
-    ├── Handoff de execução.md
-    └── Documentação de Entrega.md
+├── 00 QA/
+│   ├── 00 README.md
+│   ├── 01 - Demanda.md
+│   ├── 02 - Plano de teste.md
+│   ├── 03 - Casos de teste.md
+│   ├── 04 - Validação dev.md
+│   └── 05 - Preparação Qase.md
+└── 01 Automação/
+    ├── 00 - Automação.md
+    ├── 01 - Plano de automação.md
+    ├── 02 - Handoff de execução.md
+    └── 03 - Documentação de entrega.md
 ```
 
 ---

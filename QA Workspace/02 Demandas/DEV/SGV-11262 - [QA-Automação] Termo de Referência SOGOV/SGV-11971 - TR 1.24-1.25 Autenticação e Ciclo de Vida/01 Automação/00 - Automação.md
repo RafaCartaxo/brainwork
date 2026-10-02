@@ -81,7 +81,7 @@ pontos: ""
 | [[../00 QA/03 - Casos de teste#^ct-035\|CT-035]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
 | [[../00 QA/03 - Casos de teste#^ct-036\|CT-036]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
 | [[../00 QA/03 - Casos de teste#^ct-037\|CT-037]] | ❌ | Sem código — aguarda captura do endpoint de auditoria. |
-| [[../00 QA/03 - Casos de teste#^ct-038\|CT-038]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
+| [[../00 QA/03 - Casos de teste#^ct-038\|CT-038]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (02/10/2026, `api/auth/audit-sessions.spec.ts`, rótulo `A55-C01`) — rodado contra HML real, verde em 4.6s. Arquivo criado, ainda **não commitado** (worktree em HEAD destacado, branch a definir). |
 | [[../00 QA/03 - Casos de teste#^ct-e01\|CT-E01]] | ⏳ | Fora do escopo do Termo de Referência — não executado. |
 | [[../00 QA/03 - Casos de teste#^ct-e02\|CT-E02]] | ⏳ | Fora do escopo do Termo de Referência — não executado. |
 | [[../00 QA/03 - Casos de teste#^ct-e03\|CT-E03]] | ⏳ | Fora do escopo do Termo de Referência — não executado. |
@@ -106,7 +106,8 @@ pontos: ""
 2. **6 CTs sem causa raiz** (CT-022/026/028/034/035/036) — mesma janela de investigação do item 1.
 3. **CT-029/030/033** — confirmação rápida com produto/backend se a divergência Licença × Férias é intencional.
 4. **CT-016/017/037** — aguardam captura de API nova (desbloqueio manual e endpoint de auditoria).
-5. **Porte Cypress → Playwright** de toda a suíte, antes de qualquer MR novo.
+5. **Porte Cypress → Playwright** de toda a suíte, antes de qualquer MR novo — Suítes 1, 2 (12 CTs, já estava feito, achado em 02/10) e CT-038 (13º, portado em 02/10) prontos; restam 25 CTs (Suíte 3 inteira, Suíte 4 inteira, CT-037).
+6. **Commitar `audit-sessions.spec.ts`** — escrito e testado (verde), mas o worktree `sogov-automation-playwright` está em HEAD destacado; Rafael decide a branch antes de commitar.
 
 ---
 
