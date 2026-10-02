@@ -160,7 +160,7 @@ Reduz de 38 disparos para ~10-15 lotes, preservando 1 `it()` por CT no código f
 
 ## Dúvidas em aberto
 
-- [x] **CT-009** (coexistência servidor=cidadão com mesmo CPF) — **resolvido em 31/08**: Rafael confirmou os casos como descritos corretamente no Qase/arquivo de Casos de Teste. Já codado em `login.api.cy.js`, confirmado passando contra HML.
+- [ ] **CT-009** (coexistência servidor=cidadão com mesmo CPF) — **resolvido em 31/08**: Rafael confirmou os casos como descritos corretamente no Qase/arquivo de Casos de Teste. Já codado em `login.api.cy.js`, confirmado passando contra HML.
 - [x] **CT-018/019** (comportamento do contador de tentativas) — **resolvido em 31/08**, mesma confirmação acima. Já codados em `lockout.api.cy.js`, confirmados passando contra HML.
 - [ ] **Mecanismo de CT-025/033** (como a aplicação em tempo real de status é implementada — polling, revogação de token etc.): regra já confirmada (aplicar imediatamente), mecanismo técnico continua sem confirmação — os testes de `identity-lifecycle.api.cy.js` só observam o EFEITO (token antigo continua ou não funcionando após a mudança), sem presumir o mecanismo. Ainda sem confirmação de Rafael sobre COMO é implementado.
 
