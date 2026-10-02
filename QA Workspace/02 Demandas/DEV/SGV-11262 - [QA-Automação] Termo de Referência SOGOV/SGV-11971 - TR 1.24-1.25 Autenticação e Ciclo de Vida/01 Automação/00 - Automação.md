@@ -26,8 +26,8 @@ pontos: ""
 
 > [!info]- Documentos detalhados desta automação
 > - [[01 - Plano de automação|01 - Plano de automação]] — arquitetura, convenção de pastas/specs, faseamento.
-> - [[02 - Handoff de execução|02 - Handoff de execução]] — estado/orquestração entre rodadas, log cronológico.
-> - [[03 - Documentação de entrega|03 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz.
+> - [[03 - Handoff de execução|03 - Handoff de execução]] — estado/orquestração entre rodadas, log cronológico.
+> - [[04 - Documentação de entrega|04 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz.
 
 ---
 

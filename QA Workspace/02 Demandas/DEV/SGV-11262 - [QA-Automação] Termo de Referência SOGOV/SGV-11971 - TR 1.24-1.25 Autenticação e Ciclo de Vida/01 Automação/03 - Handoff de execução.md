@@ -12,7 +12,7 @@ revisado: 2026-08-31
 > O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 > [!info] Sobre esta nota
-> Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[01 - Plano de automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts, status atual), ver [[03 - Documentação de entrega]].
+> Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[01 - Plano de automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts, status atual), ver [[04 - Documentação de entrega]].
 
 > [!info] Onde este documento para no tempo
 > O log abaixo vai até 02/09/2026. O estado consolidado e atual do trabalho vive em [[../00 QA/04 - Validação dev|04 - Validação dev]] e [[../00 QA/00 README|00 README]] — incluindo o que mudou depois: as Suítes 1/2 foram mergeadas em 09/09 (`6c9188c`), as Suítes 3/4/5 ficaram commitadas só localmente em 01/10 (`bdf5e9a`) e o alvo passou a ser Playwright. A nota de retomada pós-férias foi absorvida e apagada em 02/10/2026.
@@ -177,7 +177,7 @@ git branch --show-current # esperado: main
 ## Referências
 
 - [[01 - Plano de automação]] — arquitetura completa, faseamento, achados da auditoria de coerência (26/08)
-- [[03 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz
+- [[04 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz
 - [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos 38 CTs ativos, Shared Steps SS-01 a SS-06
 - [[../00 QA/04 - Validação dev|04 - Validação dev]] — placar de conformidade por CT
 - Convenções deste vault: `Sistema/Contexto/REGRAS_IA`
