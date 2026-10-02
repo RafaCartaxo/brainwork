@@ -13,7 +13,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[Automação/Plano de Automação|Plano]] · [[Automação/Handoff de execução|Handoff de execução]] · [[Automação/Documentação de Entrega|Documentação de Entrega]]
+> **Automação:** [[../Automação/00 - Automação|Automação]]
 
 ## Objetivo
 

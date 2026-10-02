@@ -26,7 +26,7 @@ pontos_alocados: ""
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[Automação/Plano de Automação|Plano]] · [[Automação/Handoff de execução|Handoff de execução]] · [[Automação/Documentação de Entrega|Documentação de Entrega]]
+> **Automação:** [[../Automação/00 - Automação|Automação]]
 
 > [!settings]- Controle da demanda  
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`  
@@ -36,7 +36,7 @@ pontos_alocados: ""
 > **Próximo passo:** portar a suíte de Cypress pra Playwright e fechar os 4 achados reais de produto (CT-015, CT-029/030, CT-033) com produto/backend.
 
 > [!info] Ciclo da guarda-chuva
-> Este é o **primeiro ciclo** da [[../Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Cada Termo de Referência verificado vira um pacote irmão deste, dentro da mesma guarda-chuva.
+> Este é o **primeiro ciclo** da [[../../Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Cada Termo de Referência verificado vira um pacote irmão deste, dentro da mesma guarda-chuva.
 
 ---
 
