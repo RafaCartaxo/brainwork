@@ -15,7 +15,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[06 - Automação]]
+> **Automação:** [[../Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`

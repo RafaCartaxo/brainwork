@@ -13,7 +13,7 @@ pontos_alocados: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[06 - Automação]]
+> **Automação:** [[../Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > Bug simples (1-2 critérios, sem risco de regressão em outras camadas) pode pular `02 - Plano de teste.md` direto pra `03 - Casos de teste.md` — o plano não é obrigatório pra bug, só pra melhoria/funcionalidade.
 
@@ -65,4 +65,4 @@ Pendência — nenhuma evidência (vídeo/print) anexada ainda.
 - [ ] Casos de teste estão vinculados.
 - [ ] `pontos_alocados` foi preenchido.
 
-> **Defeito, não Bug?** Se este problema saiu da execução de um CT de uma task pai (melhoria/funcionalidade) em DEV, é **Defeito**, não Bug — troque a tag em `00 README.md` (`pai: "<ID da task pai>"`) e crie este pacote dentro de `<pai>/Defeitos/`, não como pacote solto. Regra completa: [[../../../Contexto/PADROES_QA.md#Defeito × Bug|PADROES_QA]].
+> **Defeito, não Bug?** Se este problema saiu da execução de um CT de uma task pai (melhoria/funcionalidade) em DEV, é **Defeito**, não Bug — troque a tag em `00 README.md` (`pai: "<ID da task pai>"`) e crie este pacote dentro de `<pai>/Defeitos/`, não como pacote solto. Regra completa: [[../../../../Contexto/PADROES_QA.md#Defeito × Bug|PADROES_QA]].

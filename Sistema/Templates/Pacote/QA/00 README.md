@@ -23,7 +23,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[06 - Automação]]
+> **Automação:** [[../Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
@@ -45,14 +45,15 @@ pontos: ""
 
 > [!tip]- Esforço e capacidade
 > ```dataviewjs
+> const raizDoPacote = dv.current().file.folder.split("/").slice(0, -1).join("/");
 > const atual = dv.current().pontos;
-> const paginas = dv.pages('"' + dv.current().file.folder + '"').where(p => typeof p.pontos === "number");
+> const paginas = dv.pages('"' + raizDoPacote + '"').where(p => typeof p.pontos === "number");
 > const total = paginas.array().reduce((soma, pagina) => soma + Number(pagina.pontos), 0);
 > dv.paragraph(`**Esforço desta etapa:** ${typeof atual === "number" ? atual : "a definir"} pontos`);
 > dv.table(["Artefato", "Pontos"], paginas.sort(p => p.file.name).map(p => [p.file.link, p.pontos]));
 > dv.paragraph(`**Esforço total do pacote:** ${total} pontos`);
 >
-> const demanda = dv.pages('"' + dv.current().file.folder + '"').where(p => p.pontos_alocados !== undefined && p.pontos_alocados !== "").first();
+> const demanda = dv.pages('"' + raizDoPacote + '"').where(p => p.pontos_alocados !== undefined && p.pontos_alocados !== "").first();
 > if (demanda) {
 >   const alocado = Number(demanda.pontos_alocados || 0);
 >   const diferenca = alocado - total;
@@ -62,20 +63,25 @@ pontos: ""
 > }
 > ```
 >
-> A busca por pasta (`dv.pages(file.folder)`) já inclui a subpasta `Defeitos/` automaticamente — não precisa de um bloco separado somando defeitos filhos (diferente do operating-vault, onde o pacote QA e o pacote DEV ficam em pastas irmãs distintas). `pontos_alocados` fica só em `01-Demanda`/`01-Bug` (não duplicado aqui) — este bloco lê de lá pra calcular saldo/déficit.
+> A busca sai de `QA/` (pasta deste arquivo) e sobe um nível até a raiz do pacote, pra incluir `Automação/` e `Defeitos/` automaticamente — não precisa de bloco separado somando cada subpasta. `pontos_alocados` fica só em `01-Demanda`/`01-Bug` (não duplicado aqui) — este bloco lê de lá pra calcular saldo/déficit.
 
 Pacote para `<ID>`:
 
 ```text
 <ID> - <título>/
-├── 00 README.md
-├── 01 - Demanda.md          (ou 01 - Bug.md)
-├── 02 - Plano de teste.md
-├── 03 - Casos de teste.md
-├── 04 - Validação dev.md
-├── 05 - Preparação Qase.md
-├── 06 - Automação.md        (opcional — só quando houver cobertura automatizada)
-└── Defeitos/                (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md)
+├── QA/
+│   ├── 00 README.md
+│   ├── 01 - Demanda.md          (ou 01 - Bug.md)
+│   ├── 02 - Plano de teste.md
+│   ├── 03 - Casos de teste.md
+│   ├── 04 - Validação dev.md
+│   └── 05 - Preparação Qase.md
+├── Automação/                   (opcional — só quando houver cobertura automatizada)
+│   ├── 00 - Automação.md        (obrigatório se a pasta existir — config, cobertura, achados)
+│   ├── 01 - Plano de automação.md   (opcional — automação grande o bastante pra ter plano próprio)
+│   ├── 02 - Handoff de execução.md (opcional — idem, log de execução entre rodadas)
+│   └── 03 - Documentação de entrega.md (opcional — idem, revisão cenário a cenário)
+└── Defeitos/                    (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md)
 ```
 
 ---

@@ -20,19 +20,19 @@ validacao_origem: "[[04 - Validação dev]]"
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[06 - Automação]]
+> **Automação:** [[../Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.
 
 > [!warning] Pendência
-> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Verificar suites existentes em `https://app.qase.io/project/SGV` antes do envio real.
+> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../../Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Verificar suites existentes em `https://app.qase.io/project/SGV` antes do envio real.
 
 ## Configuração
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `<a confirmar>`
 - **Origem:** [[03 - Casos de teste]] (CT-001 a CT-NNN — todos aplicáveis, nenhum "Não se aplica")
-- **Script/payload:** processo real descrito em [[../../Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
+- **Script/payload:** processo real descrito em [[../../../Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
 ## Mapeamento dos campos
 
