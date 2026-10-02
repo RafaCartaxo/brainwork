@@ -37,11 +37,11 @@ pontos: ""
 | Demanda | ✅ Preparada |
 | Plano de teste | ⏳ |
 | Casos de teste | ✅ Preparados (CT-001 a CT-033) |
-| Validação | ⏳ Aguardando implementação — funcionalidade ainda em backlog no Notion, nenhum CT executado |
+| Validação | ✅ 33/33 CTs aprovados — aprovação geral da task em DEV (02/10/2026), execução individual não registrada neste vault |
 | Preparação Qase | ⏳ |
 | Automação | ⏳ |
 
-**Próximo passo:** aguardar implementação (backlog) antes de iniciar a validação; 1 ponto em aberto (CT-021, contagem da coluna "Participantes") aguardando definição do Produto.
+**Próximo passo:** preparar os 33 CTs pra envio na Qase. 1 ponto em aberto (CT-021, contagem da coluna "Participantes") segue aguardando definição do Produto, sem bloquear a aprovação geral.
 
 > [!info]- Origem
 > **Parte 1** da epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]], irmã da [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184 (Parte 2)]]. SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros"). Refinado a partir de 3 documentos do Notion (requisito técnico completo, doc de produto consolidado, resumo em formato de QA).

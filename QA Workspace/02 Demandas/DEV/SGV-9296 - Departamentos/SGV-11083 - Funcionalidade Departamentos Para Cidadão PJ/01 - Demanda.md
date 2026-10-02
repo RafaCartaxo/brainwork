@@ -22,7 +22,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** aguardar implementação (backlog no Notion) antes de iniciar a validação.
+> **Próximo passo:** preparar os 33 CTs pra envio na Qase — task já aprovada em DEV (02/10/2026).
 
 ---
 
