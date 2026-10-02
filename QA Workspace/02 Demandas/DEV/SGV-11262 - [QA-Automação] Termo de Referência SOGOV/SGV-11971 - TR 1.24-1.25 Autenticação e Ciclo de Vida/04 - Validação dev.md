@@ -199,6 +199,11 @@ if (tabela) {
 - **2026-09-01 — CT-015 contestado.** A validação manual do Rafael (tela e API) não reproduziu o achado da automação. Experimento de timing tentado 3 vezes, inconclusivo por instabilidade do ambiente.
 - **2026-10-01 — placar consolidado.** 25/38 confirmados. Descoberto que o repo migrou pra Playwright; o código Cypress não sobe mais, será portado.
 
+> [!tip] Pistas de investigação (preservadas da nota de retomada, apagada em 02/10/2026)
+> - **6 falhas sem causa raiz:** comparar o CT-031, que passa, contra CT-022/026/028/036, que falham — a diferença entre eles é a pista mais direta pra causa comum.
+> - **CT-016/017/037:** falta capturar um HAR novo via DevTools (desbloqueio manual e endpoint de auditoria), do mesmo jeito que foi feito pra destravar a Suíte 4 em 31/08.
+> - **CT-015:** o script do experimento de timing já está pronto — só depende de o ambiente HML estabilizar.
+
 ---
 
 ## Decisão

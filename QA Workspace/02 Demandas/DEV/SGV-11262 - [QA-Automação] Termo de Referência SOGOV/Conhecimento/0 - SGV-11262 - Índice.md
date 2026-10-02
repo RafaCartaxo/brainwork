@@ -1,141 +1,78 @@
 ---
 tags:
-  - demanda
   - qa
-  - funcionalidade
-  - termo-de-referencia
-  - autenticacao
-task: "11262"
-pai: ""
-status: em andamento
-prioridade: media
-data_inicio: 2026-08-31
-responsavel: Rafael
-modulo: autenticacao
+  - conhecimento
+tipo: indice
 ---
-# Demanda: Verificação de Conformidade — TR 1.24-1.25 (Autenticação e ciclo de vida do usuário)
+# Índice: [QA-Automação] Termo de Referência SOGOV (SGV-11262)
 
-> [!info] Informações
-> - **Tipo:** Funcionalidade (verificação de conformidade com Termo de Referência) — task **pai**, guarda-chuva das 4 partes abaixo
-> - **Responsável QA:** Rafael
-> - **Vault:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/1.24-1.25 - Handoff Geral|Handoff Geral]] (visão de conjunto) · [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/README|pasta do Termo]]
-> - **Padrão reaproveitável:** [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Template — Verificação de Conformidade]] (usar pro próximo Termo de Referência)
+Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verificar, ciclo a ciclo, se a plataforma atende ao que o Termo exige, com cobertura automatizada e evidência reproduzível. Sem card nem CTs próprios — a validação acontece pelos ciclos.
 
----
+> [!info] Guarda-chuva aberta — 1 ciclo em andamento
+> **Reorganizada em 02/10/2026.** Antes, a SGV-11262 era uma pasta só, que misturava o processo de verificação de TR (reaproveitável) com o conteúdo do único Termo já trabalhado (1.24-1.25). O ciclo 1.24-1.25 virou pacote próprio com SGV próprio — **SGV-11971** — e esta pasta passou a ser só a guarda-chuva. Um Termo novo entra como pacote irmão da 11971, sem duplicar estrutura.
+>
+> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards.
 
-> [!abstract] Resumo
+## Ciclos
 
-Verificação de conformidade do Sogov com os itens **1.24** e **1.25** do Termo de Referência (Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas, ciclo de vida Ativo/Licença/Férias/Inativo/Suspenso). Decomposta em 4 partes sequenciais; por enquanto todas registradas aqui como seções — se alguma crescer o suficiente, vira task própria (SGV) depois, com esta como `pai:`.
+| Ciclo | SGV | O que cobre | Status |
+|---|---|---|---|
+| 1.24-1.25 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
 
----
+## Como um ciclo é organizado
 
-## Partes
+Cada ciclo é um pacote no padrão do vault (`Sistema/Templates/Pacote/`), com uma adição: a pasta `Automação/`, que os pacotes de funcionalidade comum não têm.
 
-| Parte | O que cobre | Status |
-|---|---|---|
-| 1. Análise | Leitura do Termo original, extração dos itens 1.24/1.25, primeira formalização dos casos de teste | ✅ Concluída (histórica, anterior a esta task) |
-| 2. Casos de teste | Consolidação de 3 versões divergentes numa fonte única no vault | ✅ Concluída (31/08) |
-| 3. Sincronização com a Qase | Alinhamento dos 39 casos no projeto Qase via API | ✅ Concluída (31/08) |
-| 4. Automação | Cobertura automatizada (Cypress) dos 38 CTs, validada contra homolog | 🔄 Em andamento — 25/38 confirmados, 12/38 já em MR |
+```text
+SGV-<n> - TR <ciclo> <assunto>/
+├── 00 README.md            ← estado do trabalho e próximo passo
+├── 01 - Demanda.md         ← itens do Termo viram critérios de aceite (C1..Cn)
+├── 02 - Plano de teste.md
+├── 03 - Casos de teste.md  ← fonte única dos CTs deste Termo
+├── 04 - Validação dev.md   ← conformidade por CT
+├── 05 - Preparação Qase.md
+└── Automação/              ← plano, handoff de execução e documentação de entrega
+```
 
----
+**O que é específico do Termo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
 
-## Parte 1 — Análise
+## Regras de uso (valem pra qualquer ciclo)
 
-Antes de existir uma fonte única de casos de teste, o Termo já tinha sido lido e transformado em CTs em **3 documentos separados e divergentes** (planilha original de Execução, uma versão "organizada para Qase", e uma versão em Gherkin no vault) — cada um capturando parte da informação, sem estarem sincronizados entre si. Essa divergência é o que a Parte 2 resolveu.
+1. **A fonte única é sempre o `03 - Casos de teste.md` do ciclo.** Nunca editar um CT só na Qase ou só num script — o vault é quem manda.
+2. **Toda correção de conteúdo segue a ordem:** atualizar o `03` primeiro, depois refletir na Qase (registrado no `05`).
+3. **O `05` e a pasta `Automação/` não são passos 2 e 3 de uma sequência** — são dois consumidores independentes do `03`, em paralelo. Sincronizar com a Qase não depende da automação terminar, e vice-versa.
+4. **Cada item do Termo vira um critério** no `01 - Demanda.md`, com o texto literal da regra e âncora `^cN`, para que todo CT seja rastreável até a redação original.
 
-> Não há um registro detalhado de quando/como essa primeira leitura do Termo aconteceu (é anterior ao início do rastreamento desta task) — os 3 documentos-fonte são o artefato que sobrou dela.
+## Achados técnicos da Qase (valem pra qualquer sincronização futura)
 
----
+Levantados na rodada de 31/08/2026 do ciclo 1.24-1.25:
 
-## Parte 2 — Casos de teste
+- Import via CSV **não faz merge** — duplica casos existentes em vez de atualizar. Usar sempre a API REST.
+- A API faz update parcial de verdade — **campo não enviado não é tocado**.
+- `severity` / `type` / `automation` / `status` são **números** na API real, mesmo que o export mostre texto. Sempre confirmar contra um `GET` real (`--inspect`) antes de escrever.
+- Exclusão via `DELETE` é definitiva, sem lixeira documentada — tratar como irreversível.
+- A Qase tem shared steps nativos (`GET /v1/shared_step/{code}`) — conferir se já existem antes de escrever conteúdo novo.
 
-✅ Concluída em 31/08. As **3 versões divergentes** foram consolidadas em **1 arquivo canônico**: 38 CTs ativos (+ 3 extras fora de escopo), cada um com Dado/Quando/Então, Prioridade, Requisito e Citação do Termo (texto literal da regra, conferido contra o PDF original).
+Processo passo a passo e o script: [[Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] e `Sistema/Scripts/qase-sync/`. Pra um ciclo novo, copiar o `sync.js` da versão mais recente (`9296-departamentos/`), **não** da `11971-tr-1-24-1-25/`, que é mais simples e está congelada.
 
-Correções de conteúdo feitas no caminho: precondição do CT-003 (cidadão PJ), granularidade do CT-018/019, e os nomes de nível de permissão do CT-020 (eram "Assistente/Auxiliar/Visualizador" — não existem no sistema; certo é **Especialista/Usuário básico/Somente leitura**, confirmado em 4 fontes: i18n da aplicação, migration do banco, docs de business-rules do QA, nota do vault).
+## Processo de automação
 
-Detalhe: [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/01 Casos de Teste/1.24-1.25 - Casos de Teste|Casos de Teste]].
+Não é duplicado aqui — está em [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]], que é a destilação do que foi aprendido no ciclo 1.24-1.25 (criar o card cedo, triagem de cada falha, nunca dar suíte por boa sem validação manual prévia, docs só por acréscimo).
 
----
+> [!warning] A skill ainda descreve Cypress
+> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 e **Playwright é o padrão** — teste novo só se escreve nele. A `SKILL_AUTOMACAO_TERMO_REFERENCIA` e os documentos de `Automação/` do ciclo 1.24-1.25 ainda estão escritos em Cypress. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
-## Parte 3 — Sincronização com a Qase
+## Padrão reaproveitável
 
-✅ Concluída em 31/08. A Qase (projeto `SGV`) estava desatualizada em relação ao vault: 23 casos vazios, 1 corrompido, 2 com regra já corrigida no vault mas não lá. Sincronizado via **API REST** (não CSV — duplica em vez de atualizar):
-
-- 25 casos atualizados, 2 excluídos (órfãos já absorvidos), 1 criado (equivalente ao CT-017, desbloqueio manual).
-- Ferramenta reutilizável em [[Sistema/Scripts/qase-sync/1.24-1.25/README|Sistema/Scripts/qase-sync/1.24-1.25]] (vault — decisão de 25/09 de tirar os scripts qase-sync do repo `sogov-automation-test`, mais fácil de acessar/reaproveitar aqui) — serve de modelo pro próximo Termo de Referência.
-- `priority` deixado de fora de propósito (preencher manualmente na Qase depois).
-
-Detalhe: [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/02 Sincronização Qase/1.24-1.25 - Sincronização com a Qase|Sincronização com a Qase]].
-
----
-
-## Parte 4 — Automação
-
-> [!warning] O alvo mudou: Cypress → Playwright (01/10/2026)
-> O repo migrou para Playwright em setembro (merge `1d78bf9`), enquanto esta automação estava parada. **Tudo abaixo descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser **portado**. O lado Playwright não tem nenhuma cobertura do TR: zero ocorrências de `CT-0` em `playwright/`. Arquitetura e convenção nova em [[Automação Playwright]].
-
-🔄 Em andamento. Cypress, repo `sogov-automation-test`. **Rafael entra de férias em 04/09, volta 24/09 (quinta)** — ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] pra retomar rápido. Detalhe completo e atualizado a cada rodada: [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/03 Automação/1.24-1.25 - Handoff de execução|Handoff de execução]] · [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] (processo).
-
-### Suítes e status atual
-
-| Suíte | CTs | Status |
-|---|---|---|
-| 1. Tipos de acesso | CT-001 a 009 (9) | ✅ Confirmados — branch `tr-1.24-1.25-auth-suite-1-2` no ar, MR a criar/confirmar |
-| 2. Validação de credenciais | CT-010 a 012 (3) | ✅ Confirmados — mesma branch |
-| 3. Bloqueio por tentativas | CT-013, 014, 018, 019 (4) | ✅ Confirmados — não commitado ainda |
-| 3. Bloqueio por tentativas | CT-015 | ⚠️ Em disputa — ver Achados |
-| 3. Bloqueio por tentativas | CT-016, 017 | ❌ Sem código (falta captura de API) |
-| 4. Ciclo de vida da identidade | CT-020, 021, 023, 024, 025, 027, 031, 032 (8) | ✅ Confirmados — não commitado ainda |
-| 4. Ciclo de vida da identidade | CT-029, 030, 033 (3) | ⚠️ Achados reais — ver Achados |
-| 4. Ciclo de vida da identidade | CT-022, 026, 028, 034, 035, 036 (6) | ❓ Falha sem causa raiz identificada |
-| 5. Transversais e auditoria | CT-038 | ✅ Confirmado — não commitado ainda |
-| 5. Transversais e auditoria | CT-037 | ❌ Sem código (falta captura de API) |
-
-**25 de 38 CTs 100% prontos e verdes contra homolog — 12 deles (Suítes 1 e 2) já em MR aberto, aguardando review.**
-
-**Pendente de decisão, código já pronto mas NÃO commitado**: os 5 agentes fixos da Suíte 4 foram renomeados (CPF cru tirado do nome, ex. `"Servidor Lifecycle Ativo Inativo"`) — mudança feita, mas nunca rodada de novo pra confirmar (fica pro dia 24). Também um fix de reaproveitamento de dado em `sector.e2e.cy.js` (fora do escopo da TR, feature de Organograma) — não commitado, decisão de quando subir é do Rafael.
-
-### Achados reais de produto (não são bugs da automação)
-
-- **CT-015** — depois de bloquear uma conta por 5 tentativas erradas (confirmado via log: a 5ª já retorna `"account-blocked"`), uma tentativa imediatamente seguinte com a senha correta autentica normalmente. **Em disputa**: o responsável testou manualmente (tela e API direto) e o bloqueio funcionou. Hipótese de condição de corrida/timing levantada, ainda não confirmada — 3 tentativas de experimento controlado falharam por instabilidade do ambiente (zero dado gerado ainda).
-- **CT-029 / CT-030** — em Férias, escrita e leitura não ficam bloqueadas, diferente de Licença (CT-023/CT-024), que bloqueia corretamente. Inconsistência real entre os dois estados de quarentena — vale confirmar se é intencional.
-- **CT-033** — uma sessão obtida antes da mudança de status para Inativo continua acessando o próprio perfil normalmente depois da mudança — sessão antiga não é revogada/checada.
-
-### Correções feitas no código do repositório (impactam código já existente, não só testes novos)
-
-- **Vazamento de cookie de sessão entre testes**: `cy.apiRequest`/`cy.request` sempre envia o cookie jar atual, independente do body da requisição — uma tentativa de login que deveria falhar podia "passar" por causa de um login bem-sucedido anterior no mesmo spec. Corrigido com `cy.clearCookies()` embutido nos commands de login "cru".
-- **Bug pré-existente em `finishAgentRegistry`** (`user.api.commands.js`) — faltava um `return` na chamada da API, nunca detectado porque nenhum teste anterior exercitava o caminho de "criar agente do zero" repetidamente.
-- Fix de nome de agente de teste isolado (limite de tamanho de campo no backend).
-
-### Pendências (ordem de prioridade combinada)
-
-1. **CT-015** — repetir o experimento de timing (script pronto) assim que o ambiente HML estabilizar.
-2. **6 CTs da Suíte 4 sem causa raiz** (CT-022/026/028/034/035/036) — mesma janela de investigação do item 1.
-3. **CT-029/030/033** — confirmação rápida com produto/backend se a divergência Licença × Férias é intencional.
-4. **CT-016/017/037** — aguardam captura de API nova (desbloqueio manual e endpoint de auditoria), depende do responsável capturar via DevTools/HAR.
-5. **Subida do código**: Suítes 1 e 2 (12 CTs) **mergeadas** no `origin/main` (commit `6c9188c`, 09/09). Suítes 3/4/5 (13 CTs verdes) **commitadas localmente** em 01/10 (`bdf5e9a`, branch `tr-1.24-1.25-suites-3-4-5`, sem push) — e **não sobem em Cypress**: o alvo passou a ser Playwright, então o próximo passo é portar, não abrir MR.
-
----
-
-> [!warning] Pontos de atenção
-
-- Esta task cobre o TR **inteiro** desde 02/09 — antes disso (31/08 a 01/09) ela só registrava a Parte 4 (automação). Ver Histórico.
-- `priority` dos 39 casos na Qase ficou pendente de preenchimento manual (decisão consciente, não esquecimento) — Parte 3.
-- A Parte 4 só fecha depois de resolver os 3 achados reais em disputa/confirmação (CT-015, CT-029/030, CT-033).
-
----
+O template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade (Termo de Referência)]] descreve as 4 fases do trabalho de QA sobre um Termo — Análise → Casos de teste → Sincronização Qase → Automação. Essas fases **não** são subdivisões do requisito: elas mapeiam nos arquivos do pacote (`01` ← Análise, `03` ← Casos de teste, `05` ← Sincronização, `Automação/` ← Automação). A subdivisão do requisito é outra coisa — são as suites temáticas dentro do `03`.
 
 ## Histórico
 
-- 2026-08-31 - Casos de teste padronizados numa fonte única no vault (Parte 2)
-- 2026-08-31 - 39 casos sincronizados com a Qase — 25 atualizados, 2 excluídos, 1 criado (Parte 3)
-- 2026-08-31 - Automação iniciada (Parte 4), Suítes 1/2/3 (18 CTs) — sem card vinculado ainda
-- 2026-08-31 - Captura de API da troca de status localizada (Downloads do responsável) — desbloqueou e permitiu codar a Suíte 4 inteira (17 CTs)
-- 2026-08-31 - Suíte 4 validada contra HML: 8/17 confirmados, 3 achados reais, 6 sem causa raiz
-- 2026-09-01 - CT-015 questionado pelo responsável (validação manual diverge do achado automatizado) — investigação de timing tentada, inconclusiva por instabilidade do ambiente
-- 2026-09-02 - Card criado (retroativo, só cobria a Parte 4/automação nesse momento), skill [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]] registrada no vault
-- 2026-09-02 - Reestruturada pra virar a task **pai** do TR inteiro (4 partes), usando o novo template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade]] — decisão do Rafael de não abrir SGVs separados por parte "por enquanto"
-- 2026-09-04 - Suítes 1 e 2 (12 CTs) commitadas e enviadas em branch própria (`tr-1.24-1.25-auth-suite-1-2`, a partir do `origin/main` atualizado, sem conflito) — MR a criar/confirmar. Suíte 4 renomeada (CPF cru tirado do nome dos 5 agentes fixos) — pronta, não commitada, não re-rodada ainda. Rafael entra de férias, volta 24/09 — [[QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)/Termo de Referência/03 Automação/1.24-1.25 - Retomada (volta 24-09)|nota de retomada]] criada
-- 2026-09-25 - Rafael de volta das férias. Confirmado: MR das Suítes 1/2 foi mergeado no `origin/main` (commit `6c9188c`). Scripts `qase-sync-*` (1.24-1.25, 9296-departamentos, 9982-tramitacao) removidos do repo `sogov-automation-test` e movidos pra [[Sistema/Scripts/qase-sync|Sistema/Scripts/qase-sync]] no vault (decisão do Rafael, reutilizáveis fora do repo, `.env`/`package.json` próprios). Nova branch de trabalho criada a partir do `origin/main` atualizado pra continuar as Suítes 3/4/5
-- 2026-10-01 - Sincronização do clone local com o `origin/main` (estava 149 commits atrás, desde 23/09). Descoberto que o repo **migrou para Playwright** em setembro (merge `1d78bf9`, 131 arquivos / 398 testes em `playwright/`), sem nenhum registro no vault — nota [[Automação Playwright]] criada pra fechar o buraco. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`) pra não se perderem na sincronização; **não vão pro remoto em Cypress**, serão portadas. Confirmado que os 11 commits que a `main` local tinha a mais eram redundantes (o remoto já trazia tudo, inclusive numa versão melhor: o cache de sessão migrou de `Cypress.env()` pra `cy.task()` no upgrade do Cypress 16).
+- 2026-08-31 - Ciclo 1.24-1.25: casos de teste consolidados numa fonte única no vault, a partir de 3 versões divergentes
+- 2026-08-31 - Ciclo 1.24-1.25: 39 casos sincronizados com a Qase (25 atualizados, 2 excluídos, 1 criado)
+- 2026-08-31 - Ciclo 1.24-1.25: automação iniciada; captura de API da troca de status localizada, desbloqueando a Suíte 4 inteira
+- 2026-09-01 - CT-015 contestado — validação manual do Rafael diverge do achado da automação; investigação de timing inconclusiva por instabilidade do ambiente
+- 2026-09-02 - Card SGV-11262 criado (retroativo) e reestruturado como task pai do TR inteiro, com o template de Verificação de Conformidade; skill de automação de TR registrada
+- 2026-09-25 - Scripts `qase-sync` movidos do repo `sogov-automation-test` pra `Sistema/Scripts/qase-sync/` no vault
+- 2026-10-01 - Descoberto que o repo migrou pra Playwright (merge `1d78bf9`) sem registro no vault — nota [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]] criada. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`); não sobem em Cypress, serão portadas
+- 2026-10-02 - SGV-11262 vira guarda-chuva de automação de Termo de Referência; o ciclo 1.24-1.25 ganha SGV próprio (SGV-11971) e vira pacote no padrão da epic SGV-9296
