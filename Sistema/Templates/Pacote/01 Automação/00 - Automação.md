@@ -1,7 +1,6 @@
 ---
 demanda: "[[../00 QA/01 - Demanda]]"
 casos_origem: "[[../00 QA/03 - Casos de teste]]"
-validacao_origem: "[[../00 QA/04 - Validação dev]]"
 repo: ""
 framework: ""
 status: planejado
@@ -22,15 +21,15 @@ pontos: ""
 > [!settings]- Controle da automação
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Esta nota registra o **estado da cobertura automatizada** dos CTs de `../00 QA/03 - Casos de teste` — não duplica o cenário (fica em `03`) nem o resultado da validação manual (fica em `04`), só o que é específico de automação: infraestrutura, achados encontrados rodando, e pendências. O campo `Automação` de cada CT em `03` (manual/automatizado) é a fonte de verdade de *o que* está automatizado; aqui fica o *como* e o *estado atual*.
+> Esta nota é o **hub de configuração** da automação — infraestrutura, pendências cross-cutting, checklist antes de subir. **Não guarda placar por CT** (isso é [[02 - Validação automação|02 - Validação automação]], sempre atual) nem narrativa de achado/correção (isso é [[03 - Handoff de execução|03 - Handoff de execução]], histórico). Guardar os dois aqui de novo é como esta pasta ficou confusa da primeira vez — não repetir.
 
 Processo completo (investigação técnica → codar → validar → triar achado real × bug × instabilidade → documentação viva → subir): [[../../../Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]]. Antes de qualquer commit/MR, aplicar o crivo de [[../../../Skills/SKILL_REVISAO_CODIGO_AUTOMACAO|SKILL_REVISAO_CODIGO_AUTOMACAO]] (duplicação entre arquivos, reaproveitamento de dado de teste, comentários, impacto em código pré-existente).
 
-> [!info]- Documentos opcionais desta pasta
-> Esta nota (`00`) é a única obrigatória sempre que `Automação/` existir. Quando a automação for grande o bastante pra precisar de plano de arquitetura, log de execução entre rodadas ou revisão cenário a cenário em separado, crie:
+> [!info]- Documentos desta pasta
+> Esta nota (`00`) e [[02 - Validação automação|02 - Validação automação]] são as únicas obrigatórias sempre que `Automação/` existir — uma configura, a outra registra o placar atual por CT. Quando a automação for grande o bastante pra precisar de plano de arquitetura, log de execução entre rodadas ou revisão cenário a cenário em separado, crie:
 > - [[01 - Plano de automação|01 - Plano de automação]] — arquitetura, convenções, faseamento.
-> - [[02 - Handoff de execução|02 - Handoff de execução]] — estado/orquestração pra outra sessão continuar, log cronológico por rodada.
-> - [[03 - Documentação de entrega|03 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz, pra revisão humana.
+> - [[03 - Handoff de execução|03 - Handoff de execução]] — estado/orquestração pra outra sessão continuar, log cronológico por rodada.
+> - [[04 - Documentação de entrega|04 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz, pra revisão humana.
 
 ---
 
@@ -43,25 +42,15 @@ Processo completo (investigação técnica → codar → validar → triar achad
 
 ---
 
-## Cobertura por CT
+## Status
 
-| CT | Status | Observação |
-|---|---|---|
-| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ⏳ | |
-
-> Legenda: ✅ confirmado passando · ⚠️ achado real de produto (ver seção abaixo) · ❓ falha sem causa raiz identificada · ❌ sem código ainda · ⏳ planejado.
-
----
-
-## Achados reais de produto
-
-> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado (não é instabilidade de ambiente nem suposição incorreta do teste), vira **Defeito** (não Bug solto): `pai: "<ID desta demanda>"`, pacote em `<pai>/Defeitos/` — mesma regra de [[../00 QA/Bug/01 - Bug|01 - Bug]] (seção "Defeito, não Bug?").
-
-- Nenhum achado registrado ainda.
+Placar completo, por CT: [[02 - Validação automação|02 - Validação automação]].
 
 ---
 
 ## Pendências
+
+> Só pendências **cross-cutting** (afetam mais de um CT ou a automação como um todo) — pendência de um CT específico fica na Observação da tabela de [[02 - Validação automação|02 - Validação automação]], com link pro detalhe no Handoff.
 
 - Nenhuma pendência registrada ainda.
 
@@ -72,5 +61,5 @@ Processo completo (investigação técnica → codar → validar → triar achad
 - [ ] Crivo de [[../../../Skills/SKILL_REVISAO_CODIGO_AUTOMACAO|SKILL_REVISAO_CODIGO_AUTOMACAO]] aplicado (duplicação, reaproveitamento de dado, comentários, impacto em código pré-existente).
 - [ ] Achados reais confirmados/triados — nenhum "conserto" de asserção sem essa triagem.
 - [ ] CTs com achado em disputa ou sem causa raiz identificada ficam de fora do commit (ou entram com `.skip()`/equivalente + comentário linkando o achado).
-- [ ] Cobertura por CT (tabela acima) refletida em `../00 QA/03 - Casos de teste` (campo `Automação` de cada CT).
+- [ ] [[02 - Validação automação|02 - Validação automação]] refletida em `../00 QA/03 - Casos de teste` (campo `Automação` de cada CT).
 - [ ] Status desta nota atualizado.

@@ -16,7 +16,9 @@ revisado: ""
 > **Automação:** [[00 - Automação]]
 
 > [!info] Sobre esta nota
-> Documento de transição pra **outra sessão de IA continuar** a automação. É a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa vive em [[01 - Plano de automação]] — **não duplicada aqui de propósito**, pra não criar duas fontes que divergem. Revisão cenário a cenário (o que cada CT faz, status atual) vive em [[03 - Documentação de entrega]].
+> Documento de transição pra **outra sessão de IA continuar** a automação. É a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa vive em [[01 - Plano de automação]] — **não duplicada aqui de propósito**, pra não criar duas fontes que divergem. Revisão cenário a cenário (o que cada CT faz) vive em [[04 - Documentação de entrega]].
+>
+> **O estado atual por CT vive em [[02 - Validação automação]], não aqui.** Esta nota é só o **log de como se chegou lá** — histórico cronológico por rodada/sessão. Quando um achado/decisão mudar o resultado de um CT, atualizar o `02` é o que importa; registrar aqui o *como e quando* é o complemento, não o lugar de consulta rápida.
 
 ---
 
@@ -72,6 +74,6 @@ revisado: ""
 ## Referências
 
 - [[01 - Plano de automação]] — arquitetura completa
-- [[03 - Documentação de entrega]] — revisão cenário a cenário
+- [[04 - Documentação de entrega]] — revisão cenário a cenário
 - [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos CTs
 - Repo: `<nome do repo>`

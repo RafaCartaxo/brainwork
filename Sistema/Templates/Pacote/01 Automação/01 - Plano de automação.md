@@ -17,7 +17,7 @@ status: planejando
 > **Automação:** [[00 - Automação]]
 
 > [!info] Sobre esta nota
-> Plano técnico de arquitetura pra automatizar os CTs de [[../00 QA/03 - Casos de teste|03 - Casos de teste]] no repositório `<repo>`. Escrito antes de tocar no repo — mexer no repo é passo separado, autorizado depois. Não duplica estado/progresso (fica em [[02 - Handoff de execução]]) nem revisão cenário a cenário (fica em [[03 - Documentação de entrega]]) — só arquitetura e decisões de como construir.
+> Plano técnico de arquitetura pra automatizar os CTs de [[../00 QA/03 - Casos de teste|03 - Casos de teste]] no repositório `<repo>`. Escrito antes de tocar no repo — mexer no repo é passo separado, autorizado depois. Não duplica placar por CT (fica em [[02 - Validação automação]]) nem estado/progresso de sessão (fica em [[03 - Handoff de execução]]) nem revisão cenário a cenário (fica em [[04 - Documentação de entrega]]) — só arquitetura e decisões de como construir.
 
 ---
 

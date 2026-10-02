@@ -77,10 +77,11 @@ Pacote para `<ID>`:
 │   ├── 04 - Validação dev.md
 │   └── 05 - Preparação Qase.md
 ├── 01 Automação/                (opcional — só quando houver cobertura automatizada)
-│   ├── 00 - Automação.md        (obrigatório se a pasta existir — config, cobertura, achados)
+│   ├── 00 - Automação.md        (obrigatório se a pasta existir — config, pendências, checklist)
 │   ├── 01 - Plano de automação.md   (opcional — automação grande o bastante pra ter plano próprio)
-│   ├── 02 - Handoff de execução.md (opcional — idem, log de execução entre rodadas)
-│   └── 03 - Documentação de entrega.md (opcional — idem, revisão cenário a cenário)
+│   ├── 02 - Validação automação.md (obrigatório se a pasta existir — placar atual por CT, sempre atual)
+│   ├── 03 - Handoff de execução.md (opcional — log de execução entre rodadas)
+│   └── 04 - Documentação de entrega.md (opcional — revisão cenário a cenário)
 └── Defeitos/                    (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md; numerada por último de propósito — é exceção, não parte da sequência QA → Automação)
 ```
 

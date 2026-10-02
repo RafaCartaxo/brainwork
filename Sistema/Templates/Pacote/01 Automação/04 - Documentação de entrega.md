@@ -16,7 +16,7 @@ revisado: ""
 > **Automação:** [[00 - Automação]]
 
 > [!info] Sobre esta nota
-> Documentação de entrega pra **revisão humana**: o que cada cenário de código faz. Complementar ao [[02 - Handoff de execução]] (que é estado/orquestração pra outra sessão de IA, não revisão de conteúdo). Pendências e achados **não são duplicados aqui** — ficam em [[02 - Handoff de execução]] e em [[00 - Automação#Achados reais de produto]].
+> Documentação de entrega pra **revisão humana**: o que cada cenário de código faz. Complementar ao [[03 - Handoff de execução]] (que é estado/orquestração pra outra sessão de IA, não revisão de conteúdo). **Estado atual por CT não é duplicado aqui** — fica em [[02 - Validação automação]]; achados e pendências detalhados ficam em [[03 - Handoff de execução]].
 
 ---
 
@@ -42,4 +42,4 @@ revisado: ""
 
 ## Pendências e achados — fonte única
 
-> Pendências e achados reais de produto vivem em [[00 - Automação#Pendências]] e [[00 - Automação#Achados reais de produto]] — não duplicar aqui.
+> Placar atual por CT vive em [[02 - Validação automação]]. Achados e pendências detalhados vivem em [[03 - Handoff de execução]] — não duplicar aqui.
