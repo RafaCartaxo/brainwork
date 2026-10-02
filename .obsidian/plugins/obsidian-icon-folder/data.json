@@ -198,12 +198,8 @@
     "iconColor": "#dc2626"
   },
   "QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar": {
-    "iconName": "LiStars",
-    "iconColor": "#eab308"
-  },
-  "QA Workspace/02 Demandas/DEV/11262": {
-    "iconName": "LiKeyRound",
-    "iconColor": "#4338ca"
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
   },
   "QA Workspace/02 Demandas/DEV": {
     "iconName": "LiCode2",
