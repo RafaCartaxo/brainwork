@@ -68,7 +68,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da verificação de conformidade. Os cenários permanecem em `03 - Casos de teste.md`. **A execução aqui é a suíte automatizada rodando contra HML**, não execução manual — por isso a coluna Evidência fica vazia: a evidência é o teste verde, detalhado em [[../01 Automação/03 - Documentação de entrega|Documentação de Entrega]].
+> Registro da verificação de conformidade. Os cenários permanecem em `03 - Casos de teste.md`. **A execução aqui é a suíte automatizada rodando contra HML**, não execução manual — por isso a coluna Evidência fica vazia: o placar atual por CT da automação é [[../01 Automação/02 - Validação automação|02 - Validação automação]]; o detalhe de cada cenário de código é [[../01 Automação/04 - Documentação de entrega|Documentação de Entrega]].
 
 ---
 

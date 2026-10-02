@@ -28,7 +28,7 @@ etapa_atual: "QA · Validação"
 | Casos de teste | ✅ Preparados (CT-001 a CT-038 + 3 extras fora de escopo) |
 | Validação | 🔄 Em andamento — **25/38 CTs confirmados** (01/10/2026); 4 achados reais, 6 falhas sem causa raiz, 3 sem código |
 | Preparação Qase | 📤 Enviado (projeto SGV, suite 4 — 25 atualizados, 2 deprecated, 1 criado, 31/08/2026) |
-| Automação | 🔄 Em andamento — 35/38 codados em Cypress; **13/38 já confirmados passando em Playwright** (Suítes 1, 2 + CT-038, 02/10/2026); restam 25 a portar |
+| Automação | 🔄 Em andamento — 35/38 codados em Cypress; **13/38 já confirmados passando em Playwright** (Suítes 1, 2 + CT-038, 02/10/2026); restam 25 a portar — placar completo em [[../01 Automação/02 - Validação automação\|02 - Validação automação]] |
 
 **Próximo passo:** decidir se os 4 achados reais de produto (CT-015, CT-029/030, CT-033) viram defeitos com SGV próprio ou seguem como achado de conformidade — decisão adiada em 02/10/2026. Em paralelo, portar o restante da suíte (Suíte 3 inteira, Suíte 4 inteira, CT-037 — 25 CTs) de Cypress pra Playwright. CT-038 já portado e verde (`api/auth/audit-sessions.spec.ts`), ainda não commitado no repo — worktree em HEAD destacado, branch a definir.
 
@@ -52,8 +52,9 @@ SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
 └── 01 Automação/
     ├── 00 - Automação.md
     ├── 01 - Plano de automação.md
-    ├── 02 - Handoff de execução.md
-    └── 03 - Documentação de entrega.md
+    ├── 02 - Validação automação.md
+    ├── 03 - Handoff de execução.md
+    └── 04 - Documentação de entrega.md
 ```
 
 ---

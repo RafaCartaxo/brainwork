@@ -11,38 +11,22 @@ status: executado (Cypress) — a portar pra Playwright
 > [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
 > O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
-## Porte pra Playwright — estado real (02/10/2026)
+> [!info] Estado atual do porte pra Playwright
+> O placar atual (quantos CTs já portados, em qual arquivo, qual rótulo) vive em [[02 - Validação automação|02 - Validação automação]] — não repetido aqui. O que segue abaixo é só **conhecimento de arquitetura reaproveitável** pro resto do porte.
 
-> [!success] Achado: Suítes 1 e 2 já estão portadas — correção de uma conclusão errada
-> Uma busca anterior por `CT-0` literal em `playwright/` concluiu "zero cobertura". **Errado** — essa busca não comparava conteúdo, só o rótulo. Verificado agora por título, 1 a 1, contra o `03 - Casos de teste`:
-> - `playwright/tests/api/auth/login.spec.ts` — 9 testes (`A02-C01`...`A02-C09`), títulos idênticos a CT-001–CT-009 (Suíte 1, Tipos de acesso).
-> - `playwright/tests/api/auth/credentials.spec.ts` — 3 testes (`A01-C01`...`A01-C03`), títulos idênticos a CT-010–CT-012 (Suíte 2, Validação de credenciais).
-> - Confirmado verde num run real: `playwright/test-results/results.xml`, 01/10/2026, 398 testes no total, os 12 de auth todos passando.
-> - Commit de origem: `a8bc9c5` (migração geral de setembro) — não foi um porte dedicado deste TR, foi incidental à migração ampla, mas o conteúdo bate.
-
-**Restam 26 CTs a portar** — Suítes 3 (bloqueio, CT-013–019, 7 CTs), 4 (ciclo de vida, CT-020–036, 17 CTs) e 5 (transversais/auditoria, CT-037/038, 2 CTs). Pela ordem de faseamento já definida na seção 5 (menos dependente de gap primeiro), a próxima peça natural é a **Suíte 5** (só 2 CTs, sem achado real em disputa) — não a Suíte 3, que foi o que ficou combinado como "próximo piloto" antes desta correção.
-
-> [!info] Repo ainda não autorizado a mexer (02/10/2026)
-> Este achado foi só **verificação de estado real**, feita lendo arquivos existentes no repo — nenhuma linha de código foi escrita ou alterada. Confirmado com o Rafael: por ora seguimos só planejando no vault; escrever/portar teste novo no repo `sogov-automation-test`/`sogov-automation-playwright` é passo separado, que segue precisando de autorização explícita antes de começar.
-
-### Como a Suíte 1/2 ficou organizada no Playwright (pra usar de molde)
+### Como a Suíte 1/2 ficaram organizadas no Playwright (pra usar de molde no resto do porte)
 
 Verificado no código real (`playwright/tests/api/auth/`):
 - **1 arquivo `.spec.ts` por suíte** (não por CT) — `login.spec.ts` (Suíte 1) e `credentials.spec.ts` (Suíte 2).
 - **1 `test.describe()` por suíte**, **1 `test()` por CT** dentro dele — mesmo molde já definido na seção 1 deste plano, confirmado seguido.
 - **Camada 100% API** — `POST` direto no endpoint de auth via `login()` (`src/auth/auth-client.ts`), sem browser. Sucesso = volta um id numérico de sessão; falha = promise rejeitada batendo numa regex que distingue recusa de credencial de erro de transporte (`LOGIN_REJECTED`).
 - Fixtures de alto nível (`src/fixtures/index.ts`): `seed` (ator base pré-criado por um projeto `seed` que roda antes, via `dependencies: ['seed']`), `actors.agentApi()`/`citizenApi()` (sessão API isolada e pronta, sem precisar logar na mão), `env` (config de ambiente). Muito mais estruturado que o `cy.session`/`AGENT_CPF` fixo do Cypress — paralelismo seguro por "pool" de atores por worker.
+- **CT-038 (Suíte 5) seguiu o mesmo molde** — reaproveitou `actors.agentApi()` + `getPublicAgents()` (já prontos em `tests/api/public-agents/list-agent.spec.ts`), zero helper novo. Rótulo de teste segue a sequência global do repo (`A0N`), não a numeração CT — confirmar o próximo livre em `planning/11-INVENTARIO-API.md` antes de escrever um spec novo.
 
-### Suíte 5 (CT-037, CT-038) — investigação feita, sem tocar o repo (02/10/2026)
-
-- **CT-038 (sessões simultâneas) — portado e confirmado (02/10/2026).** O Cypress (`audit-sessions.api.cy.js`) faz: login 2x com o mesmo agente (2 tokens independentes) → confirma que os dois continuam válidos chamando `getPublicAgents` com cada um. No Playwright, as duas peças já existiam prontas, usadas em outro domínio (`tests/api/public-agents/list-agent.spec.ts`): `actors.agentApi()` (fixture que loga e devolve uma sessão API isolada — chamar 2x dá 2 tokens independentes do mesmo agente) + `getPublicAgents(api, term)` (`src/api/services/users.ts`). Não precisou escrever nenhum helper novo — só o spec.
-
-  > [!success] Executado (02/10/2026)
-  > Arquivo criado: `playwright/tests/api/auth/audit-sessions.spec.ts`, rótulo `A55-C01` (próximo livre na sequência global do repo — confirmado em `planning/11-INVENTARIO-API.md` e varredura de `A01`-`A54` no código; `audit-sessions` nunca tinha sido inventariado, por ser específico deste TR, não da migração geral). `typecheck` e `lint` limpos. Rodado contra HML real (`npm run test:api -- tests/api/auth/audit-sessions.spec.ts`): **verde em 4.6s**, projeto `seed` rodou primeiro como dependência (1.3min, idempotente). **Ainda não commitado** — o worktree `sogov-automation-playwright` está em HEAD destacado (sem branch); Rafael decide a branch antes do commit.
-- **CT-037 (log de auditoria) — continua bloqueado, confirmado de novo.** Busquei "audit"/"auditoria" em todo `src/`, `docs/` e no dump de queries GraphQL (`src/api/queries.ts`) do repo Playwright — zero ocorrência. Nenhuma investigação nova aconteceu desde 31/08. Segue precisando da mesma captura manual (DevTools/HAR, perfil Administrador, acessando relatório/log de auditoria) que só o Rafael pode fazer — mesma limitação já registrada pro desbloqueio da Suíte 3 (seção 4).
+Histórico de como cada achado foi descoberto/corrigido: [[03 - Handoff de execução|03 - Handoff de execução]].
 
 > [!info] Sobre esta nota
-> Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test` (Cypress). Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Fonte única dos casos: [[../00 QA/03 - Casos de teste|03 - Casos de teste]].
+> Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test`. Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Fonte única dos casos: [[../00 QA/03 - Casos de teste|03 - Casos de teste]].
 
 ## Resumo
 
@@ -166,8 +150,8 @@ Reduz de 38 disparos para ~10-15 lotes, preservando 1 `it()` por CT no código f
 
 Os demais gaps originais (TC-17 desbloqueio, TC-38 sessões simultâneas, status "Suspenso") já têm decisão de produto registrada em 18/08 no Qase — falta só tradução técnica, não nova pergunta de produto. TC-38 (CT-038) já foi traduzido e confirmado; CT-017 (desbloqueio) segue sem captura técnica.
 
-> [!info] Status geral da automação (31/08) — ver handoff de execução pro detalhe completo
-> 35 dos 38 CTs têm código escrito; 26 confirmados passando contra HML (Suítes 1, 2, 3 quase completa, CT-038). A Suíte 4 (17 CTs, CT-020–036) está codada usando a mutation/enum confirmados acima, mas a validação contra HML travou repetidamente num timeout de rede — não é um bug de código conhecido, mas também não ficou 100% descartado. CT-020 teve os nomes dos níveis de permissão atualizados na citação do Termo (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível. CT-026 tem um gap de cobertura identificado (o Termo exige e-mail de notificação ao fim da Licença, não testado ainda). Detalhe completo, achados de produto (ex.: CT-015) e próximos passos: [[03 - Handoff de execução]].
+> [!info] Placar: ver [[02 - Validação automação]]
+> Não repetido aqui. Dois achados de escopo que vale reter (não são estado, são conhecimento): CT-020 teve os nomes dos níveis de permissão atualizados na citação do Termo (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível. CT-026 tem um gap de cobertura identificado (o Termo exige e-mail de notificação ao fim da Licença, não testado ainda) — pendência de cobertura, não falha do CT atual.
 
 > [!warning] Auditoria (26/08) — `Execução.md` está desatualizado em relação ao Qase
 > Recruzando os 3 arquivos-fonte diretamente, achei que `Execução.md` não reflete pelo menos 2 correções já feitas no Qase: (1) TC-09 continua marcado `[GAP]` mesmo o Qase já tratando CT-009 como resolvido; (2) TC-24/TC-30 ainda dizem que Licença/Férias "mantêm acesso de leitura", mas o Qase tem uma correção de 18/08 dizendo que isso está errado (comportamento real é zero visibilidade), já refletida no arquivo Dado-Quando-Então. **Regra superada em 31/08/2026:** as 3 versões divergentes foram consolidadas numa fonte única e as duas antigas (`Casos organizados para Qase` e `Execução`) foram arquivadas e depois apagadas em 02/10/2026 (recuperáveis no git). A fonte única passou a ser [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — não existe mais divergência entre fontes a resolver.

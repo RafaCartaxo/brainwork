@@ -1,7 +1,6 @@
 ---
 demanda: "[[../00 QA/01 - Demanda]]"
 casos_origem: "[[../00 QA/03 - Casos de teste]]"
-validacao_origem: "[[../00 QA/04 - Validação dev]]"
 repo: "sogov-automation-test"
 framework: "cypress — a portar pra playwright"
 status: executado
@@ -22,10 +21,11 @@ pontos: ""
 > [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
 > O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. O código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
-> Esta nota registra o **estado da cobertura automatizada** dos 38 CTs de [[../00 QA/03 - Casos de teste|03 - Casos de teste]] (+ 3 extras fora de escopo) — não duplica o cenário (fica em `03`) nem o resultado da validação manual (fica em `04`). O campo `Automação` de cada CT em `03` é a fonte de verdade de *o que* está automatizado; aqui fica o *como* e o *estado atual*.
+> Esta nota é o **hub de configuração** — infraestrutura, pendências cross-cutting, checklist. **Não guarda placar por CT** (isso é [[02 - Validação automação|02 - Validação automação]], sempre atual) nem narrativa de achado/correção (isso é [[03 - Handoff de execução|03 - Handoff de execução]], histórico) — guardar os dois aqui de novo é como esta pasta ficou confusa da primeira vez.
 
 > [!info]- Documentos detalhados desta automação
 > - [[01 - Plano de automação|01 - Plano de automação]] — arquitetura, convenção de pastas/specs, faseamento.
+> - [[02 - Validação automação|02 - Validação automação]] — placar atual por CT (framework, resultado, rótulo do teste).
 > - [[03 - Handoff de execução|03 - Handoff de execução]] — estado/orquestração entre rodadas, log cronológico.
 > - [[04 - Documentação de entrega|04 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz.
 
@@ -40,63 +40,9 @@ pontos: ""
 
 ---
 
-## Cobertura por CT
+## Status
 
-| CT | Status | Observação |
-|---|---|---|
-| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-003\|CT-003]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-004\|CT-004]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-005\|CT-005]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-006\|CT-006]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-007\|CT-007]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-008\|CT-008]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-009\|CT-009]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/login.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-010\|CT-010]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/credentials.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-011\|CT-011]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/credentials.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-012\|CT-012]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (run de 01/10/2026, `api/auth/credentials.spec.ts`). |
-| [[../00 QA/03 - Casos de teste#^ct-013\|CT-013]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-014\|CT-014]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-015\|CT-015]] | ⚠️ | Achado real em disputa: via automação, após o bloqueio na 5ª tentativa (log retorna `account-blocked`), a tentativa seguinte com a senha correta autentica. Validação manual do Rafael (tela e API) não reproduziu. Hipótese de corrida/timing não confirmada — 3 experimentos falharam por instabilidade do ambiente. |
-| [[../00 QA/03 - Casos de teste#^ct-016\|CT-016]] | ❌ | Sem código — aguarda captura de API do desbloqueio por link de e-mail. |
-| [[../00 QA/03 - Casos de teste#^ct-017\|CT-017]] | ❌ | Sem código — aguarda captura de API do desbloqueio manual por servidor. |
-| [[../00 QA/03 - Casos de teste#^ct-018\|CT-018]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-019\|CT-019]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-020\|CT-020]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-021\|CT-021]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-022\|CT-022]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
-| [[../00 QA/03 - Casos de teste#^ct-023\|CT-023]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-024\|CT-024]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-025\|CT-025]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-026\|CT-026]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
-| [[../00 QA/03 - Casos de teste#^ct-027\|CT-027]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-028\|CT-028]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
-| [[../00 QA/03 - Casos de teste#^ct-029\|CT-029]] | ⚠️ | Achado real: em Férias a escrita não é bloqueada, diferente de Licença (CT-023), que bloqueia corretamente. Divergência entre os dois estados de quarentena — confirmar com produto se é intencional. |
-| [[../00 QA/03 - Casos de teste#^ct-030\|CT-030]] | ⚠️ | Achado real: em Férias a leitura não é bloqueada, diferente de Licença (CT-024). Mesma divergência do CT-029. |
-| [[../00 QA/03 - Casos de teste#^ct-031\|CT-031]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-032\|CT-032]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). |
-| [[../00 QA/03 - Casos de teste#^ct-033\|CT-033]] | ⚠️ | Achado real: sessão obtida antes da mudança para Inativo segue acessando o próprio perfil depois da mudança — a sessão antiga não é revogada nem revalidada. |
-| [[../00 QA/03 - Casos de teste#^ct-034\|CT-034]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
-| [[../00 QA/03 - Casos de teste#^ct-035\|CT-035]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
-| [[../00 QA/03 - Casos de teste#^ct-036\|CT-036]] | ❓ | Falha na automação sem causa raiz identificada — investigar na mesma janela do CT-015. |
-| [[../00 QA/03 - Casos de teste#^ct-037\|CT-037]] | ❌ | Sem código — aguarda captura do endpoint de auditoria. |
-| [[../00 QA/03 - Casos de teste#^ct-038\|CT-038]] | ✅ | Confirmado contra HML pela suíte automatizada (31/08/2026). **Portado e confirmado passando em Playwright** (02/10/2026, `api/auth/audit-sessions.spec.ts`, rótulo `A55-C01`) — rodado contra HML real, verde em 4.6s. Arquivo criado, ainda **não commitado** (worktree em HEAD destacado, branch a definir). |
-| [[../00 QA/03 - Casos de teste#^ct-e01\|CT-E01]] | ⏳ | Fora do escopo do Termo de Referência — não executado. |
-| [[../00 QA/03 - Casos de teste#^ct-e02\|CT-E02]] | ⏳ | Fora do escopo do Termo de Referência — não executado. |
-| [[../00 QA/03 - Casos de teste#^ct-e03\|CT-E03]] | ⏳ | Fora do escopo do Termo de Referência — não executado. |
-
-> Legenda: ✅ confirmado passando · ⚠️ achado real de produto (ver seção abaixo) · ❓ falha sem causa raiz identificada · ❌ sem código ainda · ⏳ fora do escopo do Termo.
-
----
-
-## Achados reais de produto
-
-> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado, vira **Defeito** — decisão de 02/10/2026: por ora os 4 abaixo seguem como achado de conformidade, sem SGV próprio (ver `../00 QA/00 README` → Próximo passo).
-
-- **CT-015** — em disputa: via automação, após o bloqueio na 5ª tentativa (log retorna `account-blocked`), a tentativa seguinte com a senha correta autentica. Validação manual do Rafael (tela e API) não reproduziu. Hipótese de corrida/timing não confirmada — 3 experimentos falharam por instabilidade do ambiente.
-- **CT-029 / CT-030** — em Férias, escrita e leitura não são bloqueadas, diferente de Licença (CT-023/CT-024), que bloqueia corretamente. Divergência entre os dois estados de quarentena — confirmar com produto se é intencional.
-- **CT-033** — sessão obtida antes da mudança para Inativo segue acessando o próprio perfil depois da mudança — a sessão antiga não é revogada nem revalidada.
+Placar completo, por CT (resultado, framework, rótulo do teste): [[02 - Validação automação|02 - Validação automação]] — **25/38 aprovados, 13 no framework atual (Playwright)**. 4 achados reais em disputa/confirmação, 6 falhas sem causa raiz, 3 CTs sem código — detalhe de cada um na Observação da tabela e no [[03 - Handoff de execução|Handoff]].
 
 ---
 
@@ -117,5 +63,5 @@ pontos: ""
 - [ ] 4 achados reais confirmados/triados com produto/backend.
 - [ ] 6 falhas sem causa raiz investigadas.
 - [ ] Suíte portada pra Playwright.
-- [ ] Cobertura por CT (tabela acima) refletida em `../00 QA/03 - Casos de teste` (campo `Automação` de cada CT).
+- [ ] [[02 - Validação automação|02 - Validação automação]] refletida em `../00 QA/03 - Casos de teste` (campo `Automação` de cada CT).
 - [ ] Status desta nota atualizado.
