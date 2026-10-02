@@ -232,5 +232,13 @@
   "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida": {
     "iconName": "LiKeyRound",
     "iconColor": "#4338ca"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Automação": {
+    "iconName": "LiBot",
+    "iconColor": "#7c3aed"
   }
 }
