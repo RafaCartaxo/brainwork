@@ -8,16 +8,16 @@ status: planejando
 # Plano de Automação — <ID>
 
 > [!info]- Navegação QA
-> **README do card:** [[../QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[../QA/01 - Demanda]]
-> **Plano de teste:** [[../QA/02 - Plano de teste]]
-> **Casos de teste:** [[../QA/03 - Casos de teste]]
-> **Validação:** [[../QA/04 - Validação dev]]
-> **Preparação Qase:** [[../QA/05 - Preparação Qase]]
+> **README do card:** [[../00 QA/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[../00 QA/01 - Demanda]]
+> **Plano de teste:** [[../00 QA/02 - Plano de teste]]
+> **Casos de teste:** [[../00 QA/03 - Casos de teste]]
+> **Validação:** [[../00 QA/04 - Validação dev]]
+> **Preparação Qase:** [[../00 QA/05 - Preparação Qase]]
 > **Automação:** [[00 - Automação]]
 
 > [!info] Sobre esta nota
-> Plano técnico de arquitetura pra automatizar os CTs de [[../QA/03 - Casos de teste|03 - Casos de teste]] no repositório `<repo>`. Escrito antes de tocar no repo — mexer no repo é passo separado, autorizado depois. Não duplica estado/progresso (fica em [[02 - Handoff de execução]]) nem revisão cenário a cenário (fica em [[03 - Documentação de entrega]]) — só arquitetura e decisões de como construir.
+> Plano técnico de arquitetura pra automatizar os CTs de [[../00 QA/03 - Casos de teste|03 - Casos de teste]] no repositório `<repo>`. Escrito antes de tocar no repo — mexer no repo é passo separado, autorizado depois. Não duplica estado/progresso (fica em [[02 - Handoff de execução]]) nem revisão cenário a cenário (fica em [[03 - Documentação de entrega]]) — só arquitetura e decisões de como construir.
 
 ---
 
@@ -65,5 +65,5 @@ status: planejando
 
 ## Referências
 
-- [[../QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos CTs
+- [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos CTs
 - Repo: `<nome do repo>`

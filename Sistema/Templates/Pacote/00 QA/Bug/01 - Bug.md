@@ -13,7 +13,7 @@ pontos_alocados: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[../Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
+> **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > Bug simples (1-2 critérios, sem risco de regressão em outras camadas) pode pular `02 - Plano de teste.md` direto pra `03 - Casos de teste.md` — o plano não é obrigatório pra bug, só pra melhoria/funcionalidade.
 

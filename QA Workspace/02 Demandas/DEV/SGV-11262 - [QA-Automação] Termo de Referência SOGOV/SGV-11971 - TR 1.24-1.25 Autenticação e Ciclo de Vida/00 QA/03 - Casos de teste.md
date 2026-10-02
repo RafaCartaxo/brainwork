@@ -14,7 +14,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[../Automação/00 - Automação|Automação]]
+> **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > **Fonte única** dos casos deste Termo. Numeração `CT-001`–`CT-038`, única e contígua ao longo das 5 suites, mais 3 extras `CT-E01`–`CT-E03` fora do escopo do Termo. A precondição de cada caso vive na cláusula `Dado`, como no documento original do Termo.
 

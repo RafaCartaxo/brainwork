@@ -5,10 +5,10 @@ tags:
 ---
 # Skill: Criação e Organização de Bugs
 
-Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Pacote/QA/Bug/01%20-%20Bug.md))
+Criar, revisar e organizar bugs seguindo o padrão utilizado no Vault QA. ([Template](../Templates/Pacote/00 QA/Bug/01%20-%20Bug.md))
 
 > [!important] A partir de 24/09/2026: pacote de arquivos, não nota única
-> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/QA/00 README|Sistema/Templates/Pacote/]] (`QA/00 README` + `QA/Bug/01-Bug` + `QA/02-Plano de teste` + `QA/03-Casos de teste` + `QA/04-Validação dev` + `QA/05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 — nada mais os referencia como template ativo. **A partir de 02/10/2026**, `00`-`05` vivem dentro de uma subpasta `QA/` do pacote. Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
+> Bug/Defeito **novo** nasce como pacote em [[../Templates/Pacote/00 QA/00 README|Sistema/Templates/Pacote/]] (`00 QA/00 README` + `00 QA/Bug/01-Bug` + `00 QA/02-Plano de teste` + `00 QA/03-Casos de teste` + `00 QA/04-Validação dev` + `00 QA/05-Preparação Qase`), não mais como `Bug Report.md` autocontido. O resto desta skill (Bug × Defeito, modos de entrada, regras de nome/numeração) continua valendo — só o suporte de arquivo mudou: onde o texto abaixo disser "o card"/"o arquivo", leia "o pacote"/"o `00 README.md` do pacote". `Bug Report.md` e `Casos de teste.md` (template solto) foram **removidos** em 24/09/2026 — nada mais os referencia como template ativo. **A partir de 02/10/2026**, `00`-`05` vivem dentro de uma subpasta `00 QA/` do pacote. Detalhe completo: [[../Contexto/PADROES_QA.md#Templates|PADROES_QA]].
 
 ### Instanciar o pacote de Bug — passo obrigatório de nomenclatura
 
@@ -174,7 +174,7 @@ Quando ...
 Então ...
 ```
 
-O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[SKILL_CASOS_DE_TESTE]] (ou o formato `Dado/Quando/Então` do pacote, [[../Templates/Pacote/QA/03 - Casos de teste|Pacote/QA/03 - Casos de teste]]).
+O `E` é step válido pra encadear pré-condição ou ação (`E Assino o documento`). Mesma gramática dos **Casos de Teste** — ver [[SKILL_CASOS_DE_TESTE]] (ou o formato `Dado/Quando/Então` do pacote, [[../Templates/Pacote/00 QA/03 - Casos de teste|Pacote/00 QA/03 - Casos de teste]]).
 
 Nunca usar lista numerada (`1. 2. 3.`) nem texto corrido: o passo a passo é o que o dev executa pra reproduzir, e a forma BDD deixa explícito o que é pré-condição, o que é ação e o que é o defeito observado.
 

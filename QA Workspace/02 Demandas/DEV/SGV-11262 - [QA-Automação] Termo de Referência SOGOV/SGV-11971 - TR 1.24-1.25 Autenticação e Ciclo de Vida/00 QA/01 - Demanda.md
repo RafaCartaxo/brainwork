@@ -26,7 +26,7 @@ pontos_alocados: ""
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[../Automação/00 - Automação|Automação]]
+> **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > [!settings]- Controle da demanda  
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`  

@@ -8,7 +8,7 @@ tags:
 Criar e organizar casos de teste seguindo o padrão utilizado pelo QA.
 
 > [!important] A partir de 24/09/2026: pacote de arquivos
-> Demanda nova usa `03 - Casos de teste.md` do pacote ([Template](../Templates/Pacote/QA/03%20-%20Casos%20de%20teste.md) — formato `[!example]-` com âncora `^ct-NNN`, não mais o cabeçalho `#### **CT-NNN**` descrito abaixo). O template solto `Casos de teste.md` foi removido em 24/09/2026 — o formato `#### **CT-NNN**`/Sim-Não-Não se aplica descrito nesta skill segue valendo só pro que já existe em nota única (cards antigos em `Concluídas/`). O Termo de Referência 1.24-1.25, que era o exemplo citado aqui, **migrou pro padrão de pacote em 02/10/2026** — ver [[0 - SGV-11262 - Índice|SGV-11262]].
+> Demanda nova usa `03 - Casos de teste.md` do pacote ([Template](../Templates/Pacote/00 QA/03%20-%20Casos%20de%20teste.md) — formato `[!example]-` com âncora `^ct-NNN`, não mais o cabeçalho `#### **CT-NNN**` descrito abaixo). O template solto `Casos de teste.md` foi removido em 24/09/2026 — o formato `#### **CT-NNN**`/Sim-Não-Não se aplica descrito nesta skill segue valendo só pro que já existe em nota única (cards antigos em `Concluídas/`). O Termo de Referência 1.24-1.25, que era o exemplo citado aqui, **migrou pro padrão de pacote em 02/10/2026** — ver [[0 - SGV-11262 - Índice|SGV-11262]].
 
 ## Objetivos
 

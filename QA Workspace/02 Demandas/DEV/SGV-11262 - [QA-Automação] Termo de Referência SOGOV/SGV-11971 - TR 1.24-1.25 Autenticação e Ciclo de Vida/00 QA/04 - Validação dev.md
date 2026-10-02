@@ -61,14 +61,14 @@ data_fim: ""
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[../Automação/00 - Automação|Automação]]
+> **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > [!settings]- Controle da validação  
 > **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`  
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`  
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da verificação de conformidade. Os cenários permanecem em `03 - Casos de teste.md`. **A execução aqui é a suíte automatizada rodando contra HML**, não execução manual — por isso a coluna Evidência fica vazia: a evidência é o teste verde, detalhado em [[../Automação/03 - Documentação de entrega|Documentação de Entrega]].
+> Registro da verificação de conformidade. Os cenários permanecem em `03 - Casos de teste.md`. **A execução aqui é a suíte automatizada rodando contra HML**, não execução manual — por isso a coluna Evidência fica vazia: a evidência é o teste verde, detalhado em [[../01 Automação/03 - Documentação de entrega|Documentação de Entrega]].
 
 ---
 

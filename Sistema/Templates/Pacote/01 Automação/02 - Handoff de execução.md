@@ -7,12 +7,12 @@ revisado: ""
 # Handoff de execução — <ID>
 
 > [!info]- Navegação QA
-> **README do card:** [[../QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[../QA/01 - Demanda]]
-> **Plano de teste:** [[../QA/02 - Plano de teste]]
-> **Casos de teste:** [[../QA/03 - Casos de teste]]
-> **Validação:** [[../QA/04 - Validação dev]]
-> **Preparação Qase:** [[../QA/05 - Preparação Qase]]
+> **README do card:** [[../00 QA/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[../00 QA/01 - Demanda]]
+> **Plano de teste:** [[../00 QA/02 - Plano de teste]]
+> **Casos de teste:** [[../00 QA/03 - Casos de teste]]
+> **Validação:** [[../00 QA/04 - Validação dev]]
+> **Preparação Qase:** [[../00 QA/05 - Preparação Qase]]
 > **Automação:** [[00 - Automação]]
 
 > [!info] Sobre esta nota
@@ -46,7 +46,7 @@ revisado: ""
 
 ## Regras transversais (valem para toda automação deste pacote)
 
-- **Fonte única dos cenários é [[../QA/03 - Casos de teste|03 - Casos de teste]].** Nunca divergir dela.
+- **Fonte única dos cenários é [[../00 QA/03 - Casos de teste|03 - Casos de teste]].** Nunca divergir dela.
 - <demais regras específicas desta automação — login via command existente, não usar agente/dado global, docs só por acréscimo, etc.>
 
 ---
@@ -65,7 +65,7 @@ revisado: ""
 
 ## Cards relacionados
 
-- [[../QA/00 README|<ID>]] — o pacote a que esta automação pertence.
+- [[../00 QA/00 README|<ID>]] — o pacote a que esta automação pertence.
 
 ---
 
@@ -73,5 +73,5 @@ revisado: ""
 
 - [[01 - Plano de automação]] — arquitetura completa
 - [[03 - Documentação de entrega]] — revisão cenário a cenário
-- [[../QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos CTs
+- [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos CTs
 - Repo: `<nome do repo>`

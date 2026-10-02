@@ -13,7 +13,7 @@ etapa_atual: "QA · Validação"
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[../Automação/00 - Automação|Automação]]
+> **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > [!settings]- Controle do card  
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`  

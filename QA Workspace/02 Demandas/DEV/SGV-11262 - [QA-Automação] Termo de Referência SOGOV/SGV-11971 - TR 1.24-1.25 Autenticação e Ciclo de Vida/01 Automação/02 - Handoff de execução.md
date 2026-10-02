@@ -15,7 +15,7 @@ revisado: 2026-08-31
 > Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[01 - Plano de automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts, status atual), ver [[03 - Documentação de entrega]].
 
 > [!info] Onde este documento para no tempo
-> O log abaixo vai até 02/09/2026. O estado consolidado e atual do trabalho vive em [[../QA/04 - Validação dev|04 - Validação dev]] e [[../QA/00 README|00 README]] — incluindo o que mudou depois: as Suítes 1/2 foram mergeadas em 09/09 (`6c9188c`), as Suítes 3/4/5 ficaram commitadas só localmente em 01/10 (`bdf5e9a`) e o alvo passou a ser Playwright. A nota de retomada pós-férias foi absorvida e apagada em 02/10/2026.
+> O log abaixo vai até 02/09/2026. O estado consolidado e atual do trabalho vive em [[../00 QA/04 - Validação dev|04 - Validação dev]] e [[../00 QA/00 README|00 README]] — incluindo o que mudou depois: as Suítes 1/2 foram mergeadas em 09/09 (`6c9188c`), as Suítes 3/4/5 ficaram commitadas só localmente em 01/10 (`bdf5e9a`) e o alvo passou a ser Playwright. A nota de retomada pós-férias foi absorvida e apagada em 02/10/2026.
 
 > [!success] Atualização 31/08 (2ª rodada da sessão) — HAR encontrado, Suíte 4 codada, 26/38 CTs confirmados
 > O usuário indicou `~/Downloads/Termo de refência/` (grafado sem o 2º "e") — continha a captura real da mudança de status que faltava. Isso desbloqueou e permitiu codar a Suíte 4 inteira (17 CTs). Também achei e corrigi um vazamento real de cookie de sessão entre testes (sugestão do usuário, confirmada tecnicamente) que causava falsos-positivos. **Resultado final: 26 de 38 CTs confirmados passando contra HML** (17 da Suíte 1-3 + os 9 já estáveis antes). A Suíte 4 (17 CTs) está **codada mas não validada** — a validação travou 4 vezes seguidas num timeout de 120s numa chamada GraphQL dentro do `before()`, com evidência concreta de instabilidade de rede real do ambiente nessa janela de tempo (connect-timeout confirmado até fora do Cypress). Não é um bug conhecido do código — rodar de novo antes de investigar mais.
@@ -149,7 +149,7 @@ git branch --show-current # esperado: main
 - **Nunca usar o agente global do setup** (`AGENT_CPF`, cacheado via `cy.session` e reusado pelos 127 testes já existentes) para cenários de bloqueio ou mudança de status — sempre um agente de teste isolado e dedicado por cenário (bloqueio, Licença, Férias, Inativo, Suspenso).
 - **Docs** (`docs/business-rules/**`, `docs/commands/**`) só recebem **acréscimo** de seção — nunca reescrita do que já existe.
 - **Subagentes de teste** (`criar-teste-e2e`/`criar-teste-api`) não commitam — só reportam o que fizeram.
-- **Fonte única dos casos é [[../QA/03 - Casos de teste|03 - Casos de teste]]** — as 3 versões divergentes foram consolidadas em 31/08/2026 e as duas antigas apagadas em 02/10/2026 (recuperáveis no git). Não há mais divergência entre fontes a resolver.
+- **Fonte única dos casos é [[../00 QA/03 - Casos de teste|03 - Casos de teste]]** — as 3 versões divergentes foram consolidadas em 31/08/2026 e as duas antigas apagadas em 02/10/2026 (recuperáveis no git). Não há mais divergência entre fontes a resolver.
 - **Nenhuma suíte entra em automação sem estar validada manualmente em HML antes** (Fase 0 do faseamento — fluxo já estabelecido `SKILL_INICIAR_AUTOMACAO`/`FLUXOS.md`).
 - **Não tocar/commitar a mudança alheia** já presente no working tree (`gmail.helper.js`) — ver seção acima.
 
@@ -171,15 +171,15 @@ git branch --show-current # esperado: main
 
 ## Cards relacionados
 
-- [[../QA/00 README|SGV-11971]] — TR 1.24-1.25, o pacote a que esta automação pertence.
+- [[../00 QA/00 README|SGV-11971]] — TR 1.24-1.25, o pacote a que esta automação pertence.
 - [[../../Conhecimento/0 - SGV-11262 - Índice|SGV-11262]] — a guarda-chuva de automação de Termo de Referência.
 
 ## Referências
 
 - [[01 - Plano de automação]] — arquitetura completa, faseamento, achados da auditoria de coerência (26/08)
 - [[03 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz
-- [[../QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos 38 CTs ativos, Shared Steps SS-01 a SS-06
-- [[../QA/04 - Validação dev|04 - Validação dev]] — placar de conformidade por CT
+- [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos 38 CTs ativos, Shared Steps SS-01 a SS-06
+- [[../00 QA/04 - Validação dev|04 - Validação dev]] — placar de conformidade por CT
 - Convenções deste vault: `Sistema/Contexto/REGRAS_IA`
 - Repo: `sogov-automation-test` — `.claude/agents/criar-teste-{e2e,api}.md`, `.claude/skills/criar-teste-{e2e,api}/`, `cypress/support/commands/{api,e2e}/auth.*.commands.js`, `cypress/support/test-data/factories/user.factory.js`
 - O plan file da sessão anterior (`~/.claude/plans/bom-dia-voc-vai-fluffy-sifakis.md`) é **local ao ambiente daquela sessão** e pode não existir numa sessão nova — tudo que era relevante dele já foi incorporado nesta nota e na nota do plano. Não é preciso recuperá-lo.

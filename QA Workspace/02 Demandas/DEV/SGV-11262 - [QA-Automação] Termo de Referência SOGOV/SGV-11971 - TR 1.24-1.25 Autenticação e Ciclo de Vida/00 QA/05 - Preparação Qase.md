@@ -20,7 +20,7 @@ validacao_origem: "[[04 - Validação dev]]"
 > **Casos de teste:** [[03 - Casos de teste]]  
 > **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
-> **Automação:** [[../Automação/00 - Automação|Automação]]
+> **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > Registro da sincronização **já executada** em 31/08/2026. Diferente dos outros pacotes do vault, aqui os casos **já existiam na Qase antes** do vault ter uma fonte única — a rodada foi de correção do que estava lá, não de criação a partir do `03`.
 

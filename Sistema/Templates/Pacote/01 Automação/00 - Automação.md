@@ -1,7 +1,7 @@
 ---
-demanda: "[[../QA/01 - Demanda]]"
-casos_origem: "[[../QA/03 - Casos de teste]]"
-validacao_origem: "[[../QA/04 - Validação dev]]"
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../00 QA/03 - Casos de teste]]"
+validacao_origem: "[[../00 QA/04 - Validação dev]]"
 repo: ""
 framework: ""
 status: planejado
@@ -11,12 +11,12 @@ pontos: ""
 # Automação — <ID>
 
 > [!info]- Navegação QA
-> **README do card:** [[../QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[../QA/01 - Demanda]]
-> **Plano de teste:** [[../QA/02 - Plano de teste]]
-> **Casos de teste:** [[../QA/03 - Casos de teste]]
-> **Validação:** [[../QA/04 - Validação dev]]
-> **Preparação Qase:** [[../QA/05 - Preparação Qase]]
+> **README do card:** [[../00 QA/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[../00 QA/01 - Demanda]]
+> **Plano de teste:** [[../00 QA/02 - Plano de teste]]
+> **Casos de teste:** [[../00 QA/03 - Casos de teste]]
+> **Validação:** [[../00 QA/04 - Validação dev]]
+> **Preparação Qase:** [[../00 QA/05 - Preparação Qase]]
 > **Automação:** [[00 - Automação]]
 
 > [!settings]- Controle da automação
@@ -47,7 +47,7 @@ Processo completo (investigação técnica → codar → validar → triar achad
 
 | CT | Status | Observação |
 |---|---|---|
-| [[../QA/03 - Casos de teste#^ct-001\|CT-001]] | ⏳ | |
+| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ⏳ | |
 
 > Legenda: ✅ confirmado passando · ⚠️ achado real de produto (ver seção abaixo) · ❓ falha sem causa raiz identificada · ❌ sem código ainda · ⏳ planejado.
 
@@ -55,7 +55,7 @@ Processo completo (investigação técnica → codar → validar → triar achad
 
 ## Achados reais de produto
 
-> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado (não é instabilidade de ambiente nem suposição incorreta do teste), vira **Defeito** (não Bug solto): `pai: "<ID desta demanda>"`, pacote em `<pai>/Defeitos/` — mesma regra de [[../QA/Bug/01 - Bug|01 - Bug]] (seção "Defeito, não Bug?").
+> Achado de produto encontrado *pela* automação não é bug do teste — não "consertar" a asserção pra fazer passar. Quando confirmado (não é instabilidade de ambiente nem suposição incorreta do teste), vira **Defeito** (não Bug solto): `pai: "<ID desta demanda>"`, pacote em `<pai>/Defeitos/` — mesma regra de [[../00 QA/Bug/01 - Bug|01 - Bug]] (seção "Defeito, não Bug?").
 
 - Nenhum achado registrado ainda.
 

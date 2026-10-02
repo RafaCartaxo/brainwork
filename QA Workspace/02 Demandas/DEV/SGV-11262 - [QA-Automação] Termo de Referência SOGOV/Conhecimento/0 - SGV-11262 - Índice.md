@@ -17,30 +17,33 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 
 | Ciclo | SGV | O que cobre | Status |
 |---|---|---|---|
-| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
+| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
 
 ## Como um ciclo é organizado
 
-Cada ciclo é um pacote no padrão do vault (`Sistema/Templates/Pacote/`), com uma adição: a pasta `Automação/`, que os pacotes de funcionalidade comum não têm.
+Cada ciclo é um pacote no padrão do vault (`Sistema/Templates/Pacote/`), com uma adição: a pasta `01 Automação/`, que os pacotes de funcionalidade comum não têm.
 
 ```text
 SGV-<n> - TR <ciclo> <assunto>/
-├── 00 README.md            ← estado do trabalho e próximo passo
-├── 01 - Demanda.md         ← itens do Termo viram critérios de aceite (C1..Cn)
-├── 02 - Plano de teste.md
-├── 03 - Casos de teste.md  ← fonte única dos CTs deste Termo
-├── 04 - Validação dev.md   ← conformidade por CT
-├── 05 - Preparação Qase.md
-└── Automação/              ← plano, handoff de execução e documentação de entrega
+├── 00 QA/
+│   ├── 00 README.md            ← estado do trabalho e próximo passo
+│   ├── 01 - Demanda.md         ← itens do Termo viram critérios de aceite (C1..Cn)
+│   ├── 02 - Plano de teste.md
+│   ├── 03 - Casos de teste.md  ← fonte única dos CTs deste Termo
+│   ├── 04 - Validação dev.md   ← conformidade por CT
+│   └── 05 - Preparação Qase.md
+└── 01 Automação/                ← plano, handoff de execução e documentação de entrega
 ```
+
+As pastas são numeradas (`00 QA/`, `01 Automação/`) só pra ordem de leitura/execução no explorador de arquivos — QA vem antes porque é o que se faz primeiro; automação é consequência, quando houver.
 
 **O que é específico do Termo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
 
 ## Regras de uso (valem pra qualquer ciclo)
 
-1. **A fonte única é sempre o `03 - Casos de teste.md` do ciclo.** Nunca editar um CT só na Qase ou só num script — o vault é quem manda.
+1. **A fonte única é sempre o `00 QA/03 - Casos de teste.md` do ciclo.** Nunca editar um CT só na Qase ou só num script — o vault é quem manda.
 2. **Toda correção de conteúdo segue a ordem:** atualizar o `03` primeiro, depois refletir na Qase (registrado no `05`).
-3. **O `05` e a pasta `Automação/` não são passos 2 e 3 de uma sequência** — são dois consumidores independentes do `03`, em paralelo. Sincronizar com a Qase não depende da automação terminar, e vice-versa.
+3. **O `05` e a pasta `01 Automação/` não são passos 2 e 3 de uma sequência** — são dois consumidores independentes do `03`, em paralelo. Sincronizar com a Qase não depende da automação terminar, e vice-versa.
 4. **Cada item do Termo vira um critério** no `01 - Demanda.md`, com o texto literal da regra e âncora `^cN`, para que todo CT seja rastreável até a redação original.
 
 ## Achados técnicos da Qase (valem pra qualquer sincronização futura)
@@ -60,11 +63,11 @@ Processo passo a passo e o script: [[Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_Q
 Não é duplicado aqui — está em [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]], que é a destilação do que foi aprendido no ciclo 1.24-1.25 (criar o card cedo, triagem de cada falha, nunca dar suíte por boa sem validação manual prévia, docs só por acréscimo).
 
 > [!warning] A skill ainda descreve Cypress
-> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 e **Playwright é o padrão** — teste novo só se escreve nele. A `SKILL_AUTOMACAO_TERMO_REFERENCIA` e os documentos de `Automação/` do ciclo 1.24-1.25 ainda estão escritos em Cypress. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
+> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 e **Playwright é o padrão** — teste novo só se escreve nele. A `SKILL_AUTOMACAO_TERMO_REFERENCIA` e os documentos de `01 Automação/` do ciclo 1.24-1.25 ainda estão escritos em Cypress. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 ## Padrão reaproveitável
 
-O template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade (Termo de Referência)]] descreve as 4 fases do trabalho de QA sobre um Termo — Análise → Casos de teste → Sincronização Qase → Automação. Essas fases **não** são subdivisões do requisito: elas mapeiam nos arquivos do pacote (`01` ← Análise, `03` ← Casos de teste, `05` ← Sincronização, `Automação/` ← Automação). A subdivisão do requisito é outra coisa — são as suites temáticas dentro do `03`.
+O template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade (Termo de Referência)]] descreve as 4 fases do trabalho de QA sobre um Termo — Análise → Casos de teste → Sincronização Qase → Automação. Essas fases **não** são subdivisões do requisito: elas mapeiam nos arquivos do pacote (`01` ← Análise, `03` ← Casos de teste, `05` ← Sincronização, `01 Automação/` ← Automação). A subdivisão do requisito é outra coisa — são as suites temáticas dentro do `03`.
 
 ## Histórico
 

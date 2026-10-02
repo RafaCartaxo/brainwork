@@ -23,7 +23,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[../Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
+> **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
@@ -69,19 +69,21 @@ Pacote para `<ID>`:
 
 ```text
 <ID> - <título>/
-├── QA/
+├── 00 QA/
 │   ├── 00 README.md
 │   ├── 01 - Demanda.md          (ou 01 - Bug.md)
 │   ├── 02 - Plano de teste.md
 │   ├── 03 - Casos de teste.md
 │   ├── 04 - Validação dev.md
 │   └── 05 - Preparação Qase.md
-├── Automação/                   (opcional — só quando houver cobertura automatizada)
+├── 01 Automação/                (opcional — só quando houver cobertura automatizada)
 │   ├── 00 - Automação.md        (obrigatório se a pasta existir — config, cobertura, achados)
 │   ├── 01 - Plano de automação.md   (opcional — automação grande o bastante pra ter plano próprio)
 │   ├── 02 - Handoff de execução.md (opcional — idem, log de execução entre rodadas)
 │   └── 03 - Documentação de entrega.md (opcional — idem, revisão cenário a cenário)
-└── Defeitos/                    (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md)
+└── Defeitos/                    (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md; numerada por último de propósito — é exceção, não parte da sequência QA → Automação)
 ```
+
+A numeração das pastas (`00 QA/`, `01 Automação/`) é só pra ordem de leitura/execução no explorador de arquivos — nada no conteúdo ou nos links depende dela além do nome literal da pasta.
 
 ---

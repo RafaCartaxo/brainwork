@@ -7,12 +7,12 @@ revisado: ""
 # Documentação de Entrega — <ID> (Automação)
 
 > [!info]- Navegação QA
-> **README do card:** [[../QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[../QA/01 - Demanda]]
-> **Plano de teste:** [[../QA/02 - Plano de teste]]
-> **Casos de teste:** [[../QA/03 - Casos de teste]]
-> **Validação:** [[../QA/04 - Validação dev]]
-> **Preparação Qase:** [[../QA/05 - Preparação Qase]]
+> **README do card:** [[../00 QA/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[../00 QA/01 - Demanda]]
+> **Plano de teste:** [[../00 QA/02 - Plano de teste]]
+> **Casos de teste:** [[../00 QA/03 - Casos de teste]]
+> **Validação:** [[../00 QA/04 - Validação dev]]
+> **Preparação Qase:** [[../00 QA/05 - Preparação Qase]]
 > **Automação:** [[00 - Automação]]
 
 > [!info] Sobre esta nota
@@ -30,7 +30,7 @@ revisado: ""
 
 | CT | O que faz | Asserts | Status |
 |---|---|---|---|
-| [[../QA/03 - Casos de teste#^ct-001\|CT-001]] | | | |
+| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | | | |
 
 ---
 
