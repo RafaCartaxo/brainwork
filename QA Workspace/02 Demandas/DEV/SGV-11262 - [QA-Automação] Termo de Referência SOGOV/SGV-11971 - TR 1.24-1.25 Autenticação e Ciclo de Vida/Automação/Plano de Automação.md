@@ -3,13 +3,16 @@ tags:
   - qa
   - automacao
 criado: 2026-08-26
-revisado: 2026-08-26
-status: planejando (auditado)
+revisado: 2026-08-31
+status: executado (Cypress) — a portar pra Playwright
 ---
-# 1.24-1.25 — Plano de Automação
+# Plano de Automação — TR 1.24-1.25
+
+> [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
+> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 > [!info] Sobre esta nota
-> Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test` (Cypress). Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Ver [[1.24-1.25 - Casos organizados para Qase|casos organizados para Qase]], [[1.24-1.25: Execução|planilha de execução]] e [[1.24-1.25 - Casos de Teste|casos em Dado-Quando-Então]].
+> Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test` (Cypress). Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Fonte única dos casos: [[../03 - Casos de teste|03 - Casos de teste]].
 
 ## Resumo
 
@@ -134,10 +137,10 @@ Reduz de 38 disparos para ~10-15 lotes, preservando 1 `it()` por CT no código f
 Os demais gaps originais (TC-17 desbloqueio, TC-38 sessões simultâneas, status "Suspenso") já têm decisão de produto registrada em 18/08 no Qase — falta só tradução técnica, não nova pergunta de produto. TC-38 (CT-038) já foi traduzido e confirmado; CT-017 (desbloqueio) segue sem captura técnica.
 
 > [!info] Status geral da automação (31/08) — ver handoff de execução pro detalhe completo
-> 35 dos 38 CTs têm código escrito; 26 confirmados passando contra HML (Suítes 1, 2, 3 quase completa, CT-038). A Suíte 4 (17 CTs, CT-020–036) está codada usando a mutation/enum confirmados acima, mas a validação contra HML travou repetidamente num timeout de rede — não é um bug de código conhecido, mas também não ficou 100% descartado. CT-020 teve os nomes dos níveis de permissão atualizados na citação do Termo (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível. CT-026 tem um gap de cobertura identificado (o Termo exige e-mail de notificação ao fim da Licença, não testado ainda). Detalhe completo, achados de produto (ex.: CT-015) e próximos passos: `03 Automação/1.24-1.25 - Handoff de execução.md`.
+> 35 dos 38 CTs têm código escrito; 26 confirmados passando contra HML (Suítes 1, 2, 3 quase completa, CT-038). A Suíte 4 (17 CTs, CT-020–036) está codada usando a mutation/enum confirmados acima, mas a validação contra HML travou repetidamente num timeout de rede — não é um bug de código conhecido, mas também não ficou 100% descartado. CT-020 teve os nomes dos níveis de permissão atualizados na citação do Termo (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível. CT-026 tem um gap de cobertura identificado (o Termo exige e-mail de notificação ao fim da Licença, não testado ainda). Detalhe completo, achados de produto (ex.: CT-015) e próximos passos: [[Handoff de execução]].
 
 > [!warning] Auditoria (26/08) — `Execução.md` está desatualizado em relação ao Qase
-> Recruzando os 3 arquivos-fonte diretamente, achei que `Execução.md` não reflete pelo menos 2 correções já feitas no Qase: (1) TC-09 continua marcado `[GAP]` mesmo o Qase já tratando CT-009 como resolvido; (2) TC-24/TC-30 ainda dizem que Licença/Férias "mantêm acesso de leitura", mas o Qase tem uma correção de 18/08 dizendo que isso está errado (comportamento real é zero visibilidade), já refletida no arquivo Dado-Quando-Então. **Ao consultar os 3 arquivos-fonte e encontrar divergência, tratar `1.24-1.25 - Casos organizados para Qase.md` como autoritativo** — é o único dos três com as correções e revisões de 18-20/08 aplicadas; `Execução.md` é a planilha original e não foi atualizada após as correções.
+> Recruzando os 3 arquivos-fonte diretamente, achei que `Execução.md` não reflete pelo menos 2 correções já feitas no Qase: (1) TC-09 continua marcado `[GAP]` mesmo o Qase já tratando CT-009 como resolvido; (2) TC-24/TC-30 ainda dizem que Licença/Férias "mantêm acesso de leitura", mas o Qase tem uma correção de 18/08 dizendo que isso está errado (comportamento real é zero visibilidade), já refletida no arquivo Dado-Quando-Então. **Regra superada em 31/08/2026:** as 3 versões divergentes foram consolidadas numa fonte única e as duas antigas (`Casos organizados para Qase` e `Execução`) foram arquivadas e depois apagadas em 02/10/2026 (recuperáveis no git). A fonte única passou a ser [[../03 - Casos de teste|03 - Casos de teste]] — não existe mais divergência entre fontes a resolver.
 
 ## Aplicação no QA / Sogov
 
@@ -145,7 +148,7 @@ Este plano é o insumo direto pra Fase 1 (investigação técnica) quando a auto
 
 ## Referências
 
-- [[1.24-1.25 - Casos organizados para Qase]] — formato Qase com Shared Steps SS-01 a SS-06
-- [[1.24-1.25: Execução]] — planilha original com gaps marcados
-- [[1.24-1.25 - Casos de Teste]] — casos em Gherkin
+- [[../03 - Casos de teste|03 - Casos de teste]] — fonte única dos 38 CTs ativos (+ 3 extras fora de escopo)
+- [[../04 - Validação dev|04 - Validação dev]] — placar de conformidade por CT
+- [[../05 - Preparação Qase|05 - Preparação Qase]] — o que foi sincronizado com a Qase
 - Repo: `sogov-automation-test` (Cypress) — `.claude/agents/criar-teste-{e2e,api}.md`, `cypress/support/commands/{api,e2e}/auth.*.commands.js`, `cypress/support/test-data/factories/user.factory.js`

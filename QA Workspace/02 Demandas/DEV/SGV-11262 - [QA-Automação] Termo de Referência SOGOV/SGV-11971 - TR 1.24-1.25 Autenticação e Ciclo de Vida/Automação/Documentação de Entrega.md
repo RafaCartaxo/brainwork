@@ -6,10 +6,13 @@ tags:
 tipo: referencia
 revisado: 2026-09-02
 ---
-# 1.24-1.25 — Documentação de Entrega (Automação)
+# Documentação de Entrega — TR 1.24-1.25 (Automação)
+
+> [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
+> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 > [!info] Sobre esta nota
-> Documento de **revisão** pro Rafael conferir o grupo de testes de automação do TR 1.24-1.25 (Cypress, repo `sogov-automation-test`). Cobre os 36 CTs com código (de 38 no escopo): o que cada cenário faz, quais asserts ele executa, e o status atual. É complementar ao [[1.24-1.25 - Handoff de execução|Handoff de execução]] (que é a camada de estado/orquestração pra IA continuar o trabalho) — aqui o foco é só "o que o código faz", pra revisão humana.
+> Documento de **revisão** pro Rafael conferir o grupo de testes de automação do TR 1.24-1.25 (Cypress, repo `sogov-automation-test`). Cobre os 36 CTs com código (de 38 no escopo): o que cada cenário faz, quais asserts ele executa, e o status atual. É complementar ao [[Handoff de execução]] (que é a camada de estado/orquestração pra IA continuar o trabalho) — aqui o foco é só "o que o código faz", pra revisão humana.
 
 ## Como a suíte é construída
 
@@ -110,4 +113,4 @@ Os três dependem de uma captura de API (HAR) dedicada, que ainda não foi feita
 
 ## Pendências e achados — fonte única
 
-A lista de achados reais, prioridades e o que entra no próximo MR já estão documentados em [[1.24-1.25 - Handoff de execução|Handoff de execução]] (seção "Achados reais" e atualização de 02/09) — não duplicado aqui.
+A lista de achados reais, prioridades e o que entra no próximo MR já estão documentados em [[Handoff de execução]] (seção "Achados reais" e atualização de 02/09) — não duplicado aqui.

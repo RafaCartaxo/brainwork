@@ -36,7 +36,7 @@ pontos_alocados: ""
 > **Próximo passo:** portar a suíte de Cypress pra Playwright e fechar os 4 achados reais de produto (CT-015, CT-029/030, CT-033) com produto/backend.
 
 > [!info] Ciclo da guarda-chuva
-> Este é o **primeiro ciclo** da [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Cada Termo de Referência verificado vira um pacote irmão deste, dentro da mesma guarda-chuva.
+> Este é o **primeiro ciclo** da [[../Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Cada Termo de Referência verificado vira um pacote irmão deste, dentro da mesma guarda-chuva.
 
 ---
 

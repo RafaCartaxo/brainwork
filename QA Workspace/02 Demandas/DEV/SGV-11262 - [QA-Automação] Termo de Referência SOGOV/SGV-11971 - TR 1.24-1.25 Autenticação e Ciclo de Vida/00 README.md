@@ -36,7 +36,7 @@ etapa_atual: "QA · Validação"
 > O repo `sogov-automation-test` migrou pra Playwright em setembro (merge `1d78bf9`) enquanto esta automação estava parada. Tudo que está em `Automação/` descreve o trabalho em **Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. O lado Playwright não tem nenhuma cobertura deste TR (zero ocorrências de `CT-0` em `playwright/`). Arquitetura e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 > [!info]- Origem
-> **Primeiro ciclo** da guarda-chuva [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Verificação de conformidade do SOGOV com os itens 1.24 e 1.25 do Termo de Referência (mais os correlatos 1.13 e 1.27.x citados pelos casos). O trabalho começou em 31/08/2026 registrado só como automação; virou verificação do Termo inteiro em 02/09/2026 e ganhou SGV próprio em 02/10/2026.
+> **Primeiro ciclo** da guarda-chuva [[../Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Verificação de conformidade do SOGOV com os itens 1.24 e 1.25 do Termo de Referência (mais os correlatos 1.13 e 1.27.x citados pelos casos). O trabalho começou em 31/08/2026 registrado só como automação; virou verificação do Termo inteiro em 02/09/2026 e ganhou SGV próprio em 02/10/2026.
 
 Pacote QA para `SGV-11971`:
 

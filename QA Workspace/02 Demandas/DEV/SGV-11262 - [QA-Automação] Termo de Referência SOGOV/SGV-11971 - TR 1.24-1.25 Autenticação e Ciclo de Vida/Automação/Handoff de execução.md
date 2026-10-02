@@ -6,20 +6,23 @@ tags:
 tipo: referencia
 revisado: 2026-08-31
 ---
-# 1.24-1.25 — Handoff de execução
+# Handoff de execução — TR 1.24-1.25
+
+> [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
+> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 > [!info] Sobre esta nota
-> Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[1.24-1.25 - Plano de Automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts, status atual), ver [[1.24-1.25 - Documentação de Entrega (Automação)|Documentação de Entrega]].
+> Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[Plano de Automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts, status atual), ver [[Documentação de Entrega]].
 
-> [!success] Rafael de férias — volta 24/09/2026
-> Resumo rápido de onde parou, pra retomar sem reler tudo: [[1.24-1.25 - Retomada (volta 24-09)|Retomada (volta 24-09)]].
+> [!info] Onde este documento para no tempo
+> O log abaixo vai até 02/09/2026. O estado consolidado e atual do trabalho vive em [[../04 - Validação dev|04 - Validação dev]] e [[../00 README|00 README]] — incluindo o que mudou depois: as Suítes 1/2 foram mergeadas em 09/09 (`6c9188c`), as Suítes 3/4/5 ficaram commitadas só localmente em 01/10 (`bdf5e9a`) e o alvo passou a ser Playwright. A nota de retomada pós-férias foi absorvida e apagada em 02/10/2026.
 
 > [!success] Atualização 31/08 (2ª rodada da sessão) — HAR encontrado, Suíte 4 codada, 26/38 CTs confirmados
 > O usuário indicou `~/Downloads/Termo de refência/` (grafado sem o 2º "e") — continha a captura real da mudança de status que faltava. Isso desbloqueou e permitiu codar a Suíte 4 inteira (17 CTs). Também achei e corrigi um vazamento real de cookie de sessão entre testes (sugestão do usuário, confirmada tecnicamente) que causava falsos-positivos. **Resultado final: 26 de 38 CTs confirmados passando contra HML** (17 da Suíte 1-3 + os 9 já estáveis antes). A Suíte 4 (17 CTs) está **codada mas não validada** — a validação travou 4 vezes seguidas num timeout de 120s numa chamada GraphQL dentro do `before()`, com evidência concreta de instabilidade de rede real do ambiente nessa janela de tempo (connect-timeout confirmado até fora do Cypress). Não é um bug conhecido do código — rodar de novo antes de investigar mais.
 
 > [!success] Atualização 31/08 (3ª rodada) — vault reorganizado pelo usuário, doc de arquitetura corrigido
 > O usuário reorganizou a pasta do TR em outra sessão: `06 Estudos/Termo de Referência 1.24-1.25/` → `07 Termo de Referência/1.24-1.25/` (subpastas `01 Casos de Teste/`, `02 Sincronização Qase/`, `03 Automação/` — aqui —, `Histórico/`). `Casos organizados para Qase.md` e `Execução.md` foram arquivados; o conteúdo foi absorvido em `01 Casos de Teste/1.24-1.25 - Casos de Teste.md`, agora fonte única. Conferi (3 investigações em paralelo, cruzando com o histórico git do vault): **numeração dos 38 CTs, suítes e Shared Steps não mudaram** — sem impacto no código já escrito. Duas divergências reais encontradas e tratadas:
-> 1. **[[1.24-1.25 - Plano de Automação]] estava desatualizado** (ainda presumia `updatePublicAgent`/`UpdatePublicAgentInput`) — corrigido agora com a mutation/enum reais.
+> 1. **[[Plano de Automação]] estava desatualizado** (ainda presumia `updatePublicAgent`/`UpdatePublicAgentInput`) — corrigido agora com a mutation/enum reais.
 > 2. **CT-020 mudou de conteúdo**: nomes dos níveis de permissão atualizados (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível.
 >
 > **Achado novo de cobertura**: a citação literal do Termo adicionada ao CT-026 menciona que o servidor deve **receber um e-mail** ao fim da Licença (item 1.27.11.4) — o teste atual de CT-026 não verifica isso. Pendente decidir se implementa (repo já tem helper de Gmail reutilizável).
@@ -42,7 +45,7 @@ revisado: 2026-08-31
 >
 > **O que entra no MR quando for a hora de subir:** os 25 CTs 100% verdes entram sem controvérsia. CT-015 e os 6 sem causa raiz ficam de fora até resolver. CT-029/030/033 sobem com `.skip()` + comentário linkando o achado (preserva o código sem quebrar CI). CT-016/017/037 não entram, ainda sem código.
 >
-> **Antes de qualquer commit**: sessão de revisão de código conjunta (diff suíte por suíte), adaptando o checklist de [[SKILL_REVISAO_AUTOMACAO_E2E]] pra API. Também confirmar que nada do `git status` que não é meu (`gmail.helper.js`, `logs/log.txt`, `matters-services.e2e.command.js` — trabalho paralelo do Rafael) entra no stage.
+> **Antes de qualquer commit**: sessão de revisão de código conjunta (diff suíte por suíte), adaptando o checklist de [[Sistema/Skills/SKILL_REVISAO_AUTOMACAO_E2E|SKILL_REVISAO_AUTOMACAO_E2E]] pra API. Também confirmar que nada do `git status` que não é meu (`gmail.helper.js`, `logs/log.txt`, `matters-services.e2e.command.js` — trabalho paralelo do Rafael) entra no stage.
 
 > [!warning] Atualização 31/08 (4ª rodada) — Suíte 4 rodou de verdade, resultado misto — 8/17, 4 achados reais, 6 sem causa raiz confirmada
 > A verificação de e-mail do CT-026 foi implementada (`cy.task('waitForGmailMessage', ...)`) e **confirmada funcionando** — o e-mail chega e é encontrado. Duas rodadas completas rodaram sem travar (179s cada, ambiente estabilizado): **8 de 17 CTs passam de forma consistente e repetida**: CT-020, CT-021, CT-023, CT-024, CT-025, CT-027, CT-031, CT-032.
@@ -59,7 +62,7 @@ revisado: 2026-08-31
 > **Placar atualizado da automação**: 26 CTs confirmados (Suítes 1-3 + CT-038) + 8 da Suíte 4 = **34 de 38 CTs com evidência real de comportamento**. 6 CTs da Suíte 4 seguem indefinidos (nem confirmados passando nem confirmados como achado — causa raiz desconhecida). CT-016, CT-017, CT-037 continuam sem código.
 
 > [!important] Para a IA executora — leia isto primeiro
-> 1. [[1.24-1.25 - Plano de Automação]] é a fonte de verdade da arquitetura original — mas o shape real da mutation de status (seção 4) estava errado (presumia `UpdatePublicAgentInput`; o real é `changePublicAgentWorkStatus`/`Status`, ver `docs/business-rules/api/identity-lifecycle.md`). Atualizar essa nota também.
+> 1. [[Plano de Automação]] é a fonte de verdade da arquitetura original — mas o shape real da mutation de status (seção 4) estava errado (presumia `UpdatePublicAgentInput`; o real é `changePublicAgentWorkStatus`/`Status`, ver `docs/business-rules/api/identity-lifecycle.md`). Atualizar essa nota também.
 > 2. **35 de 38 CTs já têm código escrito.** 26 confirmados passando contra HML (Suítes 1, 2, 3 completas ou quase, + CT-038). Os 17 da Suíte 4 estão codados mas **ainda não rodaram com sucesso** — rodar `identity-lifecycle.api.cy.js` antes de mexer nele mais. Só CT-016, CT-017 e CT-037 continuam sem código (endpoints não capturados).
 > 3. **O repo tem uma mudança não commitada que NÃO é deste trabalho** — ver seção "Estado do repositório" abaixo. Não tocar, não commitar, não descartar.
 > 4. **CT-015 tem uma falha real e confirmada** (não é bug do teste) — ver "Achados" abaixo. Não "consertar" a asserção sem confirmar com Rafael antes.
@@ -146,7 +149,7 @@ git branch --show-current # esperado: main
 - **Nunca usar o agente global do setup** (`AGENT_CPF`, cacheado via `cy.session` e reusado pelos 127 testes já existentes) para cenários de bloqueio ou mudança de status — sempre um agente de teste isolado e dedicado por cenário (bloqueio, Licença, Férias, Inativo, Suspenso).
 - **Docs** (`docs/business-rules/**`, `docs/commands/**`) só recebem **acréscimo** de seção — nunca reescrita do que já existe.
 - **Subagentes de teste** (`criar-teste-e2e`/`criar-teste-api`) não commitam — só reportam o que fizeram.
-- **Em divergência entre os 3 arquivos-fonte do TR**, `1.24-1.25 - Casos organizados para Qase.md` é autoritativo — `Execução.md` está desatualizado em pelo menos 2 pontos (ver auditoria na nota do plano).
+- **Fonte única dos casos é [[../03 - Casos de teste|03 - Casos de teste]]** — as 3 versões divergentes foram consolidadas em 31/08/2026 e as duas antigas apagadas em 02/10/2026 (recuperáveis no git). Não há mais divergência entre fontes a resolver.
 - **Nenhuma suíte entra em automação sem estar validada manualmente em HML antes** (Fase 0 do faseamento — fluxo já estabelecido `SKILL_INICIAR_AUTOMACAO`/`FLUXOS.md`).
 - **Não tocar/commitar a mudança alheia** já presente no working tree (`gmail.helper.js`) — ver seção acima.
 
@@ -159,7 +162,7 @@ git branch --show-current # esperado: main
 
 ## Verificação final (antes de considerar a Fase 1 encerrada)
 
-- [ ] HAR capturado e o shape de `UpdatePublicAgentInput`/enum de status extraído e registrado em [[1.24-1.25 - Plano de Automação]] (seção 4).
+- [ ] HAR capturado e o shape de `UpdatePublicAgentInput`/enum de status extraído e registrado em [[Plano de Automação]] (seção 4).
 - [ ] Mutation de desbloqueio (CT-017) e endpoint de auditoria (CT-037) investigados (mesma restrição de introspection desligada — vai precisar de captura manual também).
 - [ ] Mecanismo técnico de CT-025/033 esclarecido com Rafael.
 - [x] CT-009 e CT-018/019 resolvidos (31/08) — os demais 18 CTs desbloqueados já foram codados (ver "Estado da Fase 2/3").
@@ -168,14 +171,15 @@ git branch --show-current # esperado: main
 
 ## Cards relacionados
 
-- Nenhum ainda — este trabalho não está vinculado a um card/SGV específico até o momento.
+- [[../00 README|SGV-11971]] — TR 1.24-1.25, o pacote a que esta automação pertence.
+- [[../../Conhecimento/0 - SGV-11262 - Índice|SGV-11262]] — a guarda-chuva de automação de Termo de Referência.
 
 ## Referências
 
-- [[1.24-1.25 - Plano de Automação]] — arquitetura completa, faseamento, achados da auditoria de coerência (26/08)
-- [[1.24-1.25 - Casos organizados para Qase]] — fonte autoritativa dos 38 CTs, Shared Steps SS-01 a SS-06
-- [[1.24-1.25: Execução]] — planilha original (desatualizada em relação ao Qase em pelo menos 2 pontos, ver plano)
-- [[1.24-1.25 - Casos de Teste]] — casos em Gherkin
+- [[Plano de Automação]] — arquitetura completa, faseamento, achados da auditoria de coerência (26/08)
+- [[Documentação de Entrega]] — revisão cenário a cenário do que cada CT de código faz
+- [[../03 - Casos de teste|03 - Casos de teste]] — fonte única dos 38 CTs ativos, Shared Steps SS-01 a SS-06
+- [[../04 - Validação dev|04 - Validação dev]] — placar de conformidade por CT
 - Convenções deste vault: `Sistema/Contexto/REGRAS_IA`
 - Repo: `sogov-automation-test` — `.claude/agents/criar-teste-{e2e,api}.md`, `.claude/skills/criar-teste-{e2e,api}/`, `cypress/support/commands/{api,e2e}/auth.*.commands.js`, `cypress/support/test-data/factories/user.factory.js`
 - O plan file da sessão anterior (`~/.claude/plans/bom-dia-voc-vai-fluffy-sifakis.md`) é **local ao ambiente daquela sessão** e pode não existir numa sessão nova — tudo que era relevante dele já foi incorporado nesta nota e na nota do plano. Não é preciso recuperá-lo.

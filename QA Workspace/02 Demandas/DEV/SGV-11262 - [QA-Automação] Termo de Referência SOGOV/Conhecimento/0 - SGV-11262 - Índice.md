@@ -17,7 +17,7 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 
 | Ciclo | SGV | O que cobre | Status |
 |---|---|---|---|
-| 1.24-1.25 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
+| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
 
 ## Como um ciclo é organizado
 
