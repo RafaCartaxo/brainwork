@@ -26,10 +26,10 @@ etapa_atual: "QA · Casos de teste"
 | Demanda | ✅ Preparada |
 | Plano de teste | ✅ Preparado |
 | Casos de teste | ✅ Preparados (CT-001 a CT-014) |
-| Validação | ⏳ Aguardando implementação do DEV |
+| Validação | ✅ 14/14 CTs aprovados — aprovação geral da task em DEV (02/10/2026), execução individual não registrada neste vault |
 | Preparação Qase | 📝 Rascunho (suite/projeto Qase ainda não confirmados) |
 
-**Próximo passo:** confirmar `pontos_alocados` em `01 - Demanda` e rotear para o DEV.
+**Próximo passo:** preparar os 14 CTs pra envio na Qase. Pendência aberta (revogação de convite, não coberta pelo requisito de origem) segue sem decisão, sem bloquear a aprovação geral.
 
 > [!warning]- Escopo desta rodada  
 > Cobre as 4 frentes do requisito de origem (Notion, Parte 3 da epic SGV-9296): link permanente do departamento, link temporário gerado por servidor, entrada no departamento pelo convite (com ou sem cadastro prévio) e filtro de solicitações por perfil/departamento.

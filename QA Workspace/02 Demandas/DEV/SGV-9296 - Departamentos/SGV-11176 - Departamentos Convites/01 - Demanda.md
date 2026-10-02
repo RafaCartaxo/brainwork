@@ -34,7 +34,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual  
-> **Próximo passo:** confirmar `projeto`/`pontos_alocados` antes de rotear para o DEV.
+> **Próximo passo:** preparar os 14 CTs pra envio na Qase — task já aprovada em DEV (02/10/2026).
 
 > [!info] Epic  
 > **Parte 3** de cinco, irmã de [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda|SGV-11083 (Parte 1)]], [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda|SGV-11184 (Parte 2)]], [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda|SGV-11177 (Parte 4)]] e [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/01 - Demanda|SGV-11178 (Parte 5)]] — todas sob a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]].
