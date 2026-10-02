@@ -45,7 +45,7 @@ ct_resultados:
   ct_035: ✅ Aprovado
   ct_036: ✅ Aprovado
   ct_037: ✅ Aprovado
-  ct_038: ❌ Falhou
+  ct_038: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---
