@@ -248,5 +248,61 @@
   "Sistema/Templates/Pacote/01 Automação": {
     "iconName": "LiBot",
     "iconColor": "#7c3aed"
+  },
+  "Sistema/Templates/Pacote": {
+    "iconName": "LiPackage",
+    "iconColor": "#0d9488"
+  },
+  "Sistema/Templates/Pacote/00 QA/Bug": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "Sistema/Templates/Pacote/00 QA/Melhoria": {
+    "iconName": "LiStars",
+    "iconColor": "#eab308"
+  },
+  "Sistema/Scripts/qase-sync": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "#16a34a"
+  },
+  "Sistema/Scripts/qase-sync/9296-departamentos": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "#16a34a"
+  },
+  "Sistema/Scripts/qase-sync/9982-tramitacao": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "#16a34a"
+  },
+  "Sistema/Scripts/qase-sync/11177-tramitacao-assinaturas": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "#16a34a"
+  },
+  "Sistema/Scripts/qase-sync/11178-cadastro-rapido": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "#16a34a"
+  },
+  "Sistema/Scripts/qase-sync/11971-tr-1-24-1-25": {
+    "iconName": "LiRefreshCw",
+    "iconColor": "#16a34a"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#e11d48"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Conhecimento": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#e11d48"
+  },
+  "QA Workspace/01 Daily/2026-08": {
+    "iconName": "LiCalendar",
+    "iconColor": "#d97706"
+  },
+  "QA Workspace/01 Daily/2026-09": {
+    "iconName": "LiCalendar",
+    "iconColor": "#d97706"
+  },
+  "QA Workspace/01 Daily/2026-10": {
+    "iconName": "LiCalendar",
+    "iconColor": "#d97706"
   }
 }
