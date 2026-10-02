@@ -5,7 +5,7 @@
 //
 // Versão de referência pra copiar em próximas sincronizações (04/09/2026) — tem
 // suporte a shared steps e escreve de volta id/hash no corrections.json depois de
-// aplicar, o que a versão anterior (qase-sync-1.24-1.25/sync.js) não tem.
+// aplicar, o que a versão anterior (11971-tr-1-24-1-25/sync.js) não tem.
 //
 // Uso:
 //   node sync.js --inspect=<id>   -> SÓ LEITURA: busca o case <id> na Qase e imprime o JSON cru.

@@ -32,7 +32,7 @@ via `--apply` de `updates` (não recriação):
 `corrections.json` deixou de ser só um log histórico do que foi enviado — agora é
 **estado idempotente de verdade** (guarda `id`/`hash` reais e pode ser reaplicado com
 segurança). Essa pasta é a **versão de referência** pra copiar em próximas
-sincronizações — `qase-sync-1.24-1.25/` ficou congelada, sem esse fix, com aviso
+sincronizações — `11971-tr-1-24-1-25/` ficou congelada, sem esse fix, com aviso
 no próprio `_readme` do seu `corrections.json` avisando pra não rodar `--apply` de
 novo sem revisar.
 
@@ -53,7 +53,7 @@ CTs próprios dos cards de defeito (`11312`/`11313`/`11319`/`11338`/`11273`, em
 ## Como preencher um próximo lote
 
 Cada entrada de `creates` segue o mesmo formato usado na sincronização anterior
-(TR 1.24-1.25, ver `../qase-sync-1.24-1.25/corrections.json` como referência):
+(TR 1.24-1.25, ver `../11971-tr-1-24-1-25/corrections.json` como referência):
 
 ```json
 {
