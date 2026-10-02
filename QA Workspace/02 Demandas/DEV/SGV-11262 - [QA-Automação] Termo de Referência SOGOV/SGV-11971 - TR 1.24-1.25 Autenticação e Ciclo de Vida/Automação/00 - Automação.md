@@ -112,7 +112,7 @@ pontos: ""
 
 ## Checklist antes de subir
 
-- [ ] Crivo de [[../../../Skills/SKILL_REVISAO_CODIGO_AUTOMACAO|SKILL_REVISAO_CODIGO_AUTOMACAO]] aplicado.
+- [ ] Crivo de [[Sistema/Skills/SKILL_REVISAO_CODIGO_AUTOMACAO|SKILL_REVISAO_CODIGO_AUTOMACAO]] aplicado.
 - [ ] 4 achados reais confirmados/triados com produto/backend.
 - [ ] 6 falhas sem causa raiz investigadas.
 - [ ] Suíte portada pra Playwright.
