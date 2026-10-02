@@ -198,8 +198,8 @@
     "iconColor": "#dc2626"
   },
   "QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar": {
-    "iconName": "LiPackage",
-    "iconColor": "#2563eb"
+    "iconName": "LiStars",
+    "iconColor": "#eab308"
   },
   "QA Workspace/02 Demandas/DEV": {
     "iconName": "LiCode2",
@@ -224,5 +224,9 @@
   "QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/Defeitos": {
     "iconName": "LiConstruction",
     "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - Verificação de Conformidade TR 1.24-1.25 (Autenticação e Ciclo de Vida)": {
+    "iconName": "LiKeyRound",
+    "iconColor": "#4338ca"
   }
 }
