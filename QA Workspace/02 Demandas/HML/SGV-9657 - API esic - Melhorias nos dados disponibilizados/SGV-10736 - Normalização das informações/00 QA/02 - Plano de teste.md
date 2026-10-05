@@ -56,11 +56,11 @@ Não se aplica (fluxo 3f, sem tela): unitário isolado de serviço (fica a crit�
 | [[03 - Casos de teste#^ct-007\|CT-007]] | Borda | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-008\|CT-008]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-009\|CT-009]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | Borda | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-010\|CT-010]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-011\|CT-011]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-012\|CT-012]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-013\|CT-013]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-014\|CT-014]] | Borda | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 
 ---
 
