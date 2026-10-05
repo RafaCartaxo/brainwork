@@ -5,24 +5,24 @@ ambiente: hml
 versao: ""
 status: execucao
 responsavel: Rafael
-resultado: aguardando
+resultado: reprovado
 pontos: 0
 ct_resultados:
-  ct_001: "⏳ Aguardando"
-  ct_002: "⏳ Aguardando"
-  ct_003: "⏳ Aguardando"
+  ct_001: "✅ Aprovado"
+  ct_002: "✅ Aprovado"
+  ct_003: "✅ Aprovado"
   ct_004: "⏳ Aguardando"
-  ct_005: "⏳ Aguardando"
+  ct_005: "✅ Aprovado"
   ct_006: "⏳ Aguardando"
-  ct_007: "⏳ Aguardando"
+  ct_007: "❌ Falhou"
   ct_008: "⏳ Aguardando"
   ct_009: "⏳ Aguardando"
-  ct_010: "⏳ Aguardando"
-  ct_011: "⏳ Aguardando"
+  ct_010: "❌ Falhou"
+  ct_011: "✅ Aprovado"
   ct_012: "⏳ Aguardando"
   ct_013: "⏳ Aguardando"
-  ct_014: "⏳ Aguardando"
-data_inicio: ""
+  ct_014: "✅ Aprovado"
+data_inicio: 2026-10-05
 data_fim: ""
 ---
 
@@ -47,8 +47,8 @@ data_fim: ""
 
 ## Contexto
 
-- Ambiente: homologação
-- Versão/build: a preencher na execução
+- Ambiente: homologação, cliente `prefeitura-de-cuite`
+- Versão/build: não informada
 
 ---
 
@@ -56,20 +56,20 @@ data_fim: ""
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` | | | | |
-| [[03 - Casos de teste#^ct-002\|CT-002]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002]` | | | | |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` | | | | |
-| [[03 - Casos de teste#^ct-004\|CT-004]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_004]` | | | | |
-| [[03 - Casos de teste#^ct-005\|CT-005]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_005]` | | | | |
-| [[03 - Casos de teste#^ct-006\|CT-006]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_006]` | | | | |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_007]` | | | | |
-| [[03 - Casos de teste#^ct-008\|CT-008]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_008]` | | | | |
-| [[03 - Casos de teste#^ct-009\|CT-009]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_009]` | | | | |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_010]` | | | | |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_011]` | | | | |
-| [[03 - Casos de teste#^ct-012\|CT-012]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012]` | | | | |
-| [[03 - Casos de teste#^ct-013\|CT-013]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_013]` | | | | |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_014]` | | | | |
+| [[03 - Casos de teste#^ct-001\|CT-001]] | ✅ Aprovado | `rankingRequesters` com 3 ids "Sem Nome" distintos (8540, 14098, 9679) e listagem com ids distintos por solicitante | — | — | |
+| [[03 - Casos de teste#^ct-002\|CT-002]] | ✅ Aprovado (ressalva) | `requester.type: "PF"/"PJ"` nos 10 registros reais | Distinção funciona; nomenclatura diverge do documentado (ver Pendências de decisão em `01 - Demanda`) | — | |
+| [[03 - Casos de teste#^ct-003\|CT-003]] | ✅ Aprovado (ressalva) | `individualPerson.birthDate`/`gender` preenchidos nos 7 solicitantes PF da amostra | Mesma ressalva de nomenclatura do CT-002 | — | |
+| [[03 - Casos de teste#^ct-004\|CT-004]] | ⏳ Aguardando | — | Nenhum solicitante PF sem `birthDate`/`gender` na amostra de 10 — falta massa de dados pra testar a borda | — | |
+| [[03 - Casos de teste#^ct-005\|CT-005]] | ✅ Aprovado | `orderDate` presente nos 10 registros reais | — | — | |
+| [[03 - Casos de teste#^ct-006\|CT-006]] | ⏳ Aguardando | — | Nenhuma solicitação com prazo configurado na amostra — todas vieram com `orderDateDeadline: null` | — | |
+| [[03 - Casos de teste#^ct-007\|CT-007]] | ❌ Falhou | `orderDateDeadline: null` em 10/10 registros | Bloqueia C5 | [[../../Bug Data Limite Da Solicitação Não É Calculada Quando Não Há Prazo Configurado/00 QA/00 README\|Bug — data limite não calculada]] | |
+| [[03 - Casos de teste#^ct-008\|CT-008]] | ⏳ Aguardando | — | Nenhuma solicitação "Respondido" nas 24 do cliente (todas "Encerrado") | — | |
+| [[03 - Casos de teste#^ct-009\|CT-009]] | ⏳ Aguardando | — | Só "Encerrado" confirmado nos dados reais; falta massa com os outros 3 status | — | |
+| [[03 - Casos de teste#^ct-010\|CT-010]] | ❌ Falhou | `status` sem a chave `totalAnswered` | Bloqueia C7 | [[../../Bug Total De Solicitações Respondidas Ausente No Retorno De Estatísticas/00 QA/00 README\|Bug — totalAnswered ausente]] | |
+| [[03 - Casos de teste#^ct-011\|CT-011]] | ✅ Aprovado | `id` distinto entre 3 "Sem Nome" do ranking | `name` do ranking tem bug à parte (PJ exibe "Sem Nome") — não invalida este CT (é sobre `id`), mas achado separado registrado | [[../../Bug Ranking De Solicitantes Exibe Sem Nome Para Pessoa Jurídica Cadastrada/00 QA/00 README\|Bug — ranking Sem Nome PJ]] | |
+| [[03 - Casos de teste#^ct-012\|CT-012]] | ⏳ Aguardando | — | 0 solicitações "timely" na amostra do cliente — sem caso pra confirmar a contagem | — | |
+| [[03 - Casos de teste#^ct-013\|CT-013]] | ⏳ Aguardando | — | 0 solicitações "delayed" na amostra do cliente — sem caso pra confirmar a contagem | — | |
+| [[03 - Casos de teste#^ct-014\|CT-014]] | ✅ Aprovado (ressalva) | `deadline.undefined: 24` bate com as 24 solicitações do cliente | Resultado tecnicamente correto, mas mascarado pelo Bug do CT-007 (tudo cai em "undefined" porque nada é calculado) — confirmar de novo quando o Bug for corrigido | [[../../Bug Data Limite Da Solicitação Não É Calculada Quando Não Há Prazo Configurado/00 QA/00 README\|Bug — data limite não calculada]] | |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 
@@ -77,21 +77,21 @@ data_fim: ""
 
 ## Histórico de validação
 
-Use esta seção somente quando houver reteste após correção.
+- **2026-10-05:** primeira rodada de execução real em homologação (cliente `prefeitura-de-cuite`). 7 CTs aprovados (3 com ressalva de nomenclatura pendente), 2 reprovados (CT-007, CT-010 — viraram Bug), 5 aguardando massa de dados (CT-004, CT-006, CT-008, CT-009, CT-012, CT-013). Achado adicional fora da lista de CTs: `rankingRequesters` com nome errado pra PJ (ver CT-011).
 
 ---
 
 ## Decisão
 
-**Resultado geral:** aguardando
+**Resultado geral:** reprovado — 2 Bugs abertos (data limite não calculada, totalAnswered ausente) bloqueiam o fechamento de C5 e C7. Retestar após correção; completar CT-004/006/008/009/012/013 quando houver massa de dados compatível (solicitante PF sem cadastro completo, solicitação com prazo configurado, solicitação "Respondido", solicitações timely/delayed).
 
 ---
 
 ## Checklist de encerramento QA
 
-- [ ] Todos os CTs executados ou com justificativa registrada.
-- [ ] Evidências e observações preenchidas quando necessário.
-- [ ] Bugs filhos vinculados na coluna **Defeito/Bug**.
-- [ ] Resultado geral definido.
-- [ ] Status da validação e da demanda atualizados.
-- [ ] Próximo passo registrado.
+- [x] Todos os CTs executados ou com justificativa registrada (5 aguardando massa de dados, justificativa na tabela acima).
+- [x] Evidências e observações preenchidas quando necessário.
+- [x] Bugs filhos vinculados na coluna **Defeito/Bug**.
+- [x] Resultado geral definido.
+- [ ] Status da validação e da demanda atualizados — aguardando correção dos 2 Bugs antes de fechar.
+- [x] Próximo passo registrado.

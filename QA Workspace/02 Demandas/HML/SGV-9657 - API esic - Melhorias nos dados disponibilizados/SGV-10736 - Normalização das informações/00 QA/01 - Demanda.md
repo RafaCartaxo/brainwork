@@ -91,4 +91,5 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 
 ## Pendências de decisão
 
-- Nenhuma quanto ao contrato da API. `pontos_alocados` em aberto (ver checklist acima).
+- `pontos_alocados` em aberto (ver checklist acima).
+- **Nomenclatura de campos diverge do documento `Retornos esperados (novos)`** (achado em 05/10/2026, validação real em homologação): o retorno usa `requester.type: "PF"/"PJ"` (não "Pessoa Física"/"Pessoa Jurídica"), `data.individualPerson`/`data.legalPerson` (não `PessoaFisica`/`PessoaJuridica`), `individualPerson.birthDate`/`gender`/`fullName` (não `dataNascimento`/`genero`/`NomeCompleto`), `legalPerson.companyName` (não `RazaoSocial`), `"Sem sigilo"` com case diferente de `"Sem Sigilo"`. Rafael decide se isso é o contrato final (e os CTs/esta Demanda são atualizados pra bater) ou se é desvio (vira Bug). Enquanto não decidido, `04 - Validação dev` trata CT-001/002/003/005/011/014 como aprovados com ressalva, não fechados.

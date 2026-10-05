@@ -36,10 +36,10 @@ pontos: ""
 | Demanda/Bug | ✅ |
 | Plano de teste | ✅ |
 | Casos de teste | ✅ |
-| Validação | ⏳ |
+| Validação | 🔴 reprovado (2 Bugs abertos) |
 | Preparação Qase | ⏳ |
 
-**Próximo passo:** validar os CTs em homologação via Postman/curl (sem esteira DEV — fluxo 3f) e registrar o resultado em `04 - Validação dev`.
+**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../../Bug Data Limite Da Solicitação Não É Calculada Quando Não Há Prazo Configurado/00 QA/00 README|data limite não calculada]], [[../../Bug Total De Solicitações Respondidas Ausente No Retorno De Estatísticas/00 QA/00 README|totalAnswered ausente]]), retestar, e decidir a pendência de nomenclatura de campos (ver `01 - Demanda`).
 
 Pacote para `SGV-10736`, parte de [[../../Conhecimento/0 - SGV-9657 - Índice|SGV-9657 (epic)]]:
 
