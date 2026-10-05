@@ -50,6 +50,9 @@ Confirmado também pelas estatísticas do mesmo cliente (`GET /solicitacoes/list
 
 Conforme a Demanda (SGV-10736, critério C5) e o retorno esperado (`novo-documentos.json`): `orderDateDeadline` deve vir preenchido com `date`, `days` e `type`, calculados a partir de uma regra padrão, mesmo quando a solicitação não tiver prazo configurado — permitindo saber se está dentro ou fora do prazo independente de configuração.
 
+> [!warning] Pendência confirmada em call (05/10/2026)
+> O comportamento está confirmado como real pelo time. Falta decisão de produto: **qual valor usar quando não há prazo configurado** (data de referência, regra de cálculo) — responsabilidade do Marcos. Bug segue aberto até essa decisão vir e ser implementada.
+
 ---
 
 ## Critérios de aceite

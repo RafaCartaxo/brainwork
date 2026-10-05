@@ -45,8 +45,7 @@ Pacote para este Bug, alocado dentro do próprio pacote da [[QA Workspace/02 Dem
 10736-CT-007/
 └── 00 QA/
     ├── 00 README.md
-    ├── Bug/
-    │   └── 01 - Bug.md
+    ├── 01 - Bug.md
     ├── 03 - Casos de teste.md
     └── 04 - Validação dev.md
 ```

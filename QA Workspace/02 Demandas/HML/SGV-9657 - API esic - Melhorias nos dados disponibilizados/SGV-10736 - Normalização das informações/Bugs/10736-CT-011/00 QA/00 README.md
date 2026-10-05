@@ -42,8 +42,7 @@ Pacote para este Bug, alocado dentro do próprio pacote da [[QA Workspace/02 Dem
 10736-CT-011/
 └── 00 QA/
     ├── 00 README.md
-    ├── Bug/
-    │   └── 01 - Bug.md
+    ├── 01 - Bug.md
     ├── 03 - Casos de teste.md
     └── 04 - Validação dev.md
 ```
@@ -53,3 +52,4 @@ Sem `02 - Plano de teste.md` (bug simples, 1 critério) nem `05 - Preparação Q
 ## Histórico
 
 - **2026-10-05:** 🐛 Bug confirmado (card criado) — achado cruzando o retorno real de estatísticas (`rankingRequesters`) com o retorno real da listagem para o mesmo `id`, durante a validação da SGV-10736.
+- **2026-10-05:** 🔎 Confirmado em call com os responsáveis que o problema também afeta solicitante Anônimo, não só PJ. Correção agendada pelo time (grupo "Parte 2" da call) — segue aberto, aguardando dev.

@@ -18,9 +18,12 @@ pontos_alocados: ""
 
 ---
 
+> [!info] Confirmado em call com os responsáveis (05/10/2026)
+> O problema também afeta solicitante **Anônimo**, não só Pessoa Jurídica. Correção agendada pelo time, agrupada com os demais fixes da call ("Parte 2") — não é imediata. Card segue aberto, aguardando dev.
+
 ## Descrição
 
-Durante validação foi identificado que o endpoint de estatísticas (`GET /solicitacoes/listar-estatisticas`) exibe `"name": "Sem Nome"` em `rankingRequesters` para um solicitante Pessoa Jurídica que tem razão social cadastrada — confirmado ao cruzar o `id` do ranking com o mesmo `id` na listagem de solicitações, que retorna o nome correto. O `id` em si bate entre os dois endpoints (correto), só o nome não é resolvido pra PJ.
+Durante validação foi identificado que o endpoint de estatísticas (`GET /solicitacoes/listar-estatisticas`) exibe `"name": "Sem Nome"` em `rankingRequesters` para um solicitante Pessoa Jurídica que tem razão social cadastrada — confirmado ao cruzar o `id` do ranking com o mesmo `id` na listagem de solicitações, que retorna o nome correto. O `id` em si bate entre os dois endpoints (correto), só o nome não é resolvido pra PJ. Confirmado em call de 05/10/2026 que o mesmo problema de resolução de nome afeta solicitante **Anônimo**.
 
 ---
 
@@ -67,7 +70,7 @@ Outros 2 solicitantes do ranking também aparecem como "Sem Nome" com `type: "Pe
 
 - [ ] `rankingRequesters[].name` traz a razão social para solicitante Pessoa Jurídica com cadastro completo
 - [ ] `rankingRequesters[].name` continua trazendo o nome completo para solicitante Pessoa Física (sem regressão)
-- [ ] "Sem Nome" continua aparecendo apenas quando o solicitante realmente não tem nome/razão social cadastrado (ex.: solicitação anônima)
+- [ ] `rankingRequesters[].name` resolve corretamente o solicitante Anônimo (confirmado afetado na call de 05/10/2026 — comportamento correto esperado a confirmar com o dev)
 
 ---
 
