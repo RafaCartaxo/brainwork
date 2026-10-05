@@ -22,7 +22,7 @@ pontos: ""
 
 ## Objetivo
 
-Validar que os endpoints de **listagem de solicitações** e de **estatísticas** da API e-SIC passam a retornar os campos novos descritos em `01 - Demanda` (C1–C11, exceto C7 — retirado do contrato em 05/10/2026), sem quebrar o contrato já existente usado pelos clientes (ex.: relatório da ATRICOM).
+Validar que os endpoints de **listagem de solicitações** e de **estatísticas** da API e-SIC passam a retornar os campos novos descritos em `01 - Demanda` (C1–C10), sem quebrar o contrato já existente usado pelos clientes (ex.: relatório da ATRICOM).
 
 ---
 
@@ -70,4 +70,4 @@ Não se aplica (fluxo 3f, sem tela): unitário isolado de serviço (fica a crit�
 ## Entrada e saída
 
 **Entrada:** ambiente de homologação com massa de dados de solicitações e-SIC variada (solicitantes PF com e sem cadastro completo, PJ, nomes repetidos, solicitações respondidas/em andamento/encerradas/sem prazo).
-**Saída:** todos os CTs executados com resultado registrado em `04 - Validação dev`; nenhum critério de aceite ativo (C1–C6, C8–C11) sem cobertura. C7 retirado do contrato.
+**Saída:** todos os CTs executados com resultado registrado em `04 - Validação dev`; nenhum critério de aceite (C1–C10) sem cobertura.

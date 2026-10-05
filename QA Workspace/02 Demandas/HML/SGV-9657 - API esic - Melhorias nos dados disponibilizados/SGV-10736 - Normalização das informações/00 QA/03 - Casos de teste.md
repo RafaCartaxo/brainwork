@@ -22,7 +22,7 @@ pontos: ""
 > Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. Todos os cenários são de **API** (fluxo 3f) — "Quando" chama o endpoint, "Então" valida o payload de resposta, sem tela envolvida.
 
 > [!info]- Renumeração de 05/10/2026 (call com os responsáveis)
-> CT-008 (status "Respondido" na listagem) e CT-010 (totalAnswered nas estatísticas) saíram da rodada ativa — "Respondido" não existe como status no sistema, confirmado por Marcos; totalAnswered foi retirado do contrato. Ver [[#G. Fora de execução — registro]]. CT-009 foi reescrito (não depende mais de "Respondido") e os CTs seguintes foram renumerados pra ficar contíguos: CT-011→CT-009, CT-012→CT-010, CT-013→CT-011, CT-014→CT-012. CT-013 e CT-014 atuais são novos, cobrindo os critérios C10/C11 (mensagem de erro em português e coerência status code↔message) que só entraram no escopo nesta call — ainda sem execução real.
+> CT-008 (status "Respondido" na listagem) e CT-010 (totalAnswered nas estatísticas) saíram da rodada ativa — "Respondido" não existe como status no sistema, confirmado por Marcos; totalAnswered foi retirado do contrato. Ver [[#G. Fora de execução — registro]]. CT-009 foi reescrito (não depende mais de "Respondido") e os CTs seguintes foram renumerados pra ficar contíguos: CT-011→CT-009, CT-012→CT-010, CT-013→CT-011, CT-014→CT-012. Os critérios da Demanda também foram renumerados no mesmo movimento (C8→C7, C9→C8, C10→C9, C11→C10). CT-013/CT-014 (agora cobrindo C9/C10) são novos, trazidos nesta call — ainda sem execução real.
 
 ---
 
@@ -36,11 +36,10 @@ pontos: ""
 | [[01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-005\|CT-005]] |
 | [[01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-006\|CT-006]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-007\|CT-007]] |
 | [[01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-008\|CT-008]] |
-| [[01 - Demanda#^c7\|C7]] | *(retirado do contrato — ver [[#G. Fora de execução — registro]])* |
-| [[01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]] |
-| [[01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]] |
-| [[01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] |
+| [[01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]] |
+| [[01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]] |
+| [[01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -375,7 +374,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
+> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
 >
 > ---
 >
@@ -413,7 +412,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -451,7 +450,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -489,7 +488,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -527,7 +526,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de dado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
+> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
 >
 > ---
 >
@@ -565,7 +564,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de dado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c11|C11]]
+> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
 >
 > ---
 >
@@ -587,4 +586,4 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 | Caso | Decisão | Motivo |
 |---|---|---|
 | CT-008 (antigo) · Retornar o status "Respondido" para solicitação respondida | **Removido — não se aplica** (Marcos, 05/10/2026) | Status "Respondido" não existe no sistema — a API deriva `orderStatus` do andamento interno do documento (tramitação), não do fato de já ter sido respondido ao cidadão. Confirmado em call com os responsáveis. |
-| CT-010 (antigo) · Contabilizar corretamente o total de solicitações respondidas nas estatísticas | **Removido — não se aplica** (Marcos, 05/10/2026) | Mesma causa: sem status "Respondido" no sistema, não há o que contar em `totalAnswered`. Requisito retirado do contrato (ver C7 em `01 - Demanda` e Bug [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README\|10736-CT-010]], fechado como requisito retirado). |
+| CT-010 (antigo) · Contabilizar corretamente o total de solicitações respondidas nas estatísticas | **Removido — não se aplica** (Marcos, 05/10/2026) | Mesma causa: sem status "Respondido" no sistema, não há o que contar em `totalAnswered`. Requisito retirado do contrato da Demanda (fora de escopo). Bug [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README\|10736-CT-010]] fechado como requisito retirado. |
