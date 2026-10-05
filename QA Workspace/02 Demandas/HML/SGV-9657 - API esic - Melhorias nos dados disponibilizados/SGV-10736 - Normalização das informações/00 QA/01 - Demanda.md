@@ -72,7 +72,7 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 - C3. Para solicitante pessoa física com cadastro completo, a listagem retorna data de nascimento e gênero; quando o cadastro não tiver esses dados, a API não quebra e os campos vêm ausentes/nulos. ^c3
 - C4. A listagem retorna `orderDate` (data de abertura) para toda solicitação. ^c4
 - C5. A listagem retorna `orderDateDeadline` com `date`, `days` e `type` calculados, mesmo quando a solicitação não tem prazo configurado. ^c5
-  - ⏳ **Pendente de decisão (Parte 3)** — qual valor usar quando não há prazo configurado é responsabilidade do Marcos, ainda sem task própria. Achado: [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]].
+  - ⏳ **Pendente de decisão (SGV-12019, Parte 3)** — qual valor usar quando não há prazo configurado é responsabilidade do Marcos. Achado: [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]].
 - C6. `orderStatus` distingue corretamente os status Recebido, Em Andamento e Encerrado. ^c6
 - C7. `rankingRequesters` retorna o ID de cada solicitante, diferenciando solicitantes de mesmo nome, com o nome correto (pessoa física, razão social de pessoa jurídica, ou identificação de anônimo). ^c7
 - C8. O endpoint de estatísticas retorna o detalhamento de prazo (`timely`/`delayed`/`undefined`) com totais consistentes com os dados da listagem. ^c8

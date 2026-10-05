@@ -39,7 +39,7 @@ pontos: ""
 | Validação | ✅ **Aprovado** (com ressalvas) |
 | Preparação Qase | ⏳ |
 
-**Próximo passo:** SGV-10736 aprovada no Notion (05/10/2026). C2 (tipo abreviado) corrigido como critério C14 da [[../../SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda|SGV-10735]] — Bug [[../Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]] encerrado por transferência. C5 (data limite sem prazo configurado) segue pendente de decisão do Marcos, sem task própria ainda ("Parte 3") — Bug [[../Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]] continua aberto. Bug de paginação reportado como já corrigido pelo dev — pendente reverificar.
+**Próximo passo:** SGV-10736 aprovada no Notion (05/10/2026). C2 (tipo abreviado) corrigido como critério C14 da [[../../SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda|SGV-10735]] — Bug [[../Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]] encerrado por transferência. C5 (data limite sem prazo configurado) segue pendente de decisão do Marcos em SGV-12019 (Parte 3, ainda vazia) — Bug [[../Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]] continua aberto. Bug de paginação reportado como já corrigido pelo dev — pendente reverificar.
 
 Pacote para `SGV-10736`, parte de [[../../Conhecimento/0 - SGV-9657 - Índice|SGV-9657 (epic)]]:
 
@@ -64,4 +64,4 @@ Sem `01 Automação/` por enquanto. `Bugs/` aqui cumpre o papel que `Defeitos/` 
 ## Histórico
 
 - **2026-10-05:** card criado a partir da descrição da SGV-9657/SGV-10736 no Notion e dos retornos esperados (novos) já fornecidos (`novo-documentos.json`, `novo-estatistica.json`). CTs definidos e prontos para execução em homologação.
-- **2026-10-05:** ✅ SGV-10736 aprovada no Notion. C2 corrigido na Parte 2 (SGV-10735, C14); C5 pendente de decisão do Marcos (Parte 3, sem task própria ainda).
+- **2026-10-05:** ✅ SGV-10736 aprovada no Notion. C2 corrigido na Parte 2 (SGV-10735, C14); C5 pendente de decisão do Marcos em SGV-12019 (Parte 3, ainda vazia).

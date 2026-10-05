@@ -6,10 +6,10 @@ tipo: indice
 ---
 # Índice: API e-SIC — Melhorias nos dados disponibilizados (SGV-9657)
 
-Task guarda-chuva do Notion ("[Melhoria-dev] API esic - Melhorias nos dados que são disponibilizados na API Adicionar ID para solicitante e ajustes na estrutura do json") que agrupa as duas partes da melhoria. Sem card/CTs próprios — a validação acontece pelas partes.
+Task guarda-chuva do Notion ("[Melhoria-dev] API esic - Melhorias nos dados que são disponibilizados na API Adicionar ID para solicitante e ajustes na estrutura do json") que agrupa as três partes da melhoria. Sem card/CTs próprios — a validação acontece pelas partes.
 
 > [!info] Epic aberta — Parte 1 aprovada (HML), Parte 2 com pacote criado (DEV)
-> Esta pasta vive em `HML/` (não em `Concluídas/`) enquanto a epic como um todo não fechar. **Parte 1 (SGV-10736)** aprovada no Notion em 05/10/2026 — fluxo 3f (API, sem esteira DEV), ver [[../../../../Sistema/Contexto/PADROES_QA#Tasks de API (fluxo 3f)|PADROES_QA#Tasks de API]]. Dois achados ficaram fora do ciclo sem bloquear a aprovação: tipo do solicitante abreviado (virou C14 da Parte 2) e data limite sem prazo configurado (pendente de decisão do Marcos, "Parte 3" — sem task própria ainda). **Parte 2 (SGV-10735)** destravou (backend de credenciais já com MR aprovado) — pacote criado em 05/10/2026, com 14 critérios (o 14º herdado da Parte 1), execução aguardando ambiente de teste/dev disponível. Regra: só mover esta pasta-índice pra `Concluídas/` quando as duas partes fecharem o ciclo completo.
+> Esta pasta vive em `HML/` (não em `Concluídas/`) enquanto a epic como um todo não fechar. **Parte 1 (SGV-10736)** aprovada no Notion em 05/10/2026 — fluxo 3f (API, sem esteira DEV), ver [[../../../../Sistema/Contexto/PADROES_QA#Tasks de API (fluxo 3f)|PADROES_QA#Tasks de API]]. Dois achados ficaram fora do ciclo sem bloquear a aprovação: tipo do solicitante abreviado (virou C14 da Parte 2) e data limite sem prazo configurado (pendente de decisão do Marcos em SGV-12019, Parte 3, ainda vazia). **Parte 2 (SGV-10735)** destravou (backend de credenciais já com MR aprovado) — pacote criado em 05/10/2026, com 14 critérios (o 14º herdado da Parte 1), execução aguardando ambiente de teste/dev disponível. Regra: só mover esta pasta-índice pra `Concluídas/` quando as três partes fecharem o ciclo completo.
 >
 > **Estrutura:** as partes vivem fisicamente dentro desta pasta da epic (`SGV-9657 - .../SGV-<n> - <título>/`), junto com `Conhecimento/`. Cada parte mantém seu próprio status/ciclo de vida no frontmatter (`ambiente:`/`status:`) — o card de cada uma não se move de pasta ao fechar. A Dashboard lê o campo `ambiente:` do frontmatter antes do nome da pasta, então esse aninhamento não esconde os cards sem responsável.
 
@@ -17,12 +17,13 @@ Task guarda-chuva do Notion ("[Melhoria-dev] API esic - Melhorias nos dados que 
 
 | Parte | SGV | O que é | Status |
 |---|---|---|---|
-| 1 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/01 - Demanda\|SGV-10736]] | Normalização das informações retornadas pela API — ID do solicitante, tipo PF/PJ, data de nascimento e gênero do solicitante, data de abertura/vencimento com cálculo de prazo | **Aprovada** (05/10/2026) — C2 transferido pra C14 da Parte 2, C5 pendente ("Parte 3") |
+| 1 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/01 - Demanda\|SGV-10736]] | Normalização das informações retornadas pela API — ID do solicitante, tipo PF/PJ, data de nascimento e gênero do solicitante, data de abertura/vencimento com cálculo de prazo | **Aprovada** (05/10/2026) — C2 transferido pra C14 da Parte 2, C5 pendente (SGV-12019, Parte 3) |
 | 2 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda\|SGV-10735]] | Criação da feature de integrações — tela onde o time interno ativa a API e-SIC por cliente, gera credenciais, seleciona módulos expostos e consulta histórico de alterações; herdou C14 (tipo por extenso) da Parte 1 | Pacote criado, aguardando ambiente de teste/dev pra iniciar execução |
+| 3 | SGV-12019 (sem pacote ainda) | Regra de cálculo do `orderDateDeadline` quando não há prazo configurado — decisão do Marcos (achado [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README\|10736-CT-007]] da Parte 1) | Task criada, ainda vazia no Notion |
 
 ## Dependência entre as partes
 
-Nenhuma dependência funcional direta: a Parte 1 normaliza o JSON já retornado pela API existente; a Parte 2 cria a tela de ativação/gestão da integração sobre essa mesma API. Podem ser testadas de forma independente.
+Nenhuma dependência funcional direta: a Parte 1 normaliza o JSON já retornado pela API existente; a Parte 2 cria a tela de ativação/gestão da integração sobre essa mesma API; a Parte 3 é só a decisão de regra de negócio (qual valor usar sem prazo configurado) que a Parte 1 já deixou pronta pra receber. Podem ser testadas de forma independente.
 
 ## Ordem de leitura sugerida
 
