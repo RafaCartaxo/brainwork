@@ -193,18 +193,39 @@ flowchart LR
 
 ## Como rodar
 
-Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` direto.
+Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` direto. Os scripts `npm run test:*` já chamam o launcher.
+
+### No dia a dia
 
 ```bash
-cd playwright
-npm install && npx playwright install chromium   # install, NÃO ci — ver aviso abaixo
-# montar o .env (ver tabela de variáveis logo abaixo)
-npm run test:infra      # valida config e guard-rails, sem tocar no ambiente
-npm run test:seed       # obrigatório antes da primeira rodada — bate no homolog
-npm run test:api
-npm run test:e2e
-npm run verify          # typecheck + lint + knip + independência + infra + audit
-node scripts/run.mjs --project=api --grep "A12"   # um caso só
+cd ~/Documentos/Sogov/sogov-automation-playwright/playwright
+
+npm run test:smoke    # 10 casos críticos — melhor primeiro comando, valida tudo em poucos minutos
+npm run test:api      # 202 testes
+npm run test:e2e      # 147 testes, bem mais lento
+npm run report        # abre o relatório da última rodada, com trace das falhas
+```
+
+Um caso ou um domínio específico:
+
+```bash
+node scripts/run.mjs --project=api --grep "A55"
+node scripts/run.mjs --project=e2e-chromium --grep @signatures
+```
+
+> [!danger] Não rode `npm run test`
+> A suíte inteira de uma vez satura o gerador de PDF do backend e produz falhas que **não são bugs reais** (`system.messages.pdf-generator-attachment-error`). Vá por domínio, em lotes de 15–20 min. Os specs de `signatures` são anormalmente lentos — trate à parte, com tempo reservado.
+>
+> Duas execuções simultâneas no mesmo ambiente também não são suportadas.
+
+### Setup da máquina (uma vez só)
+
+```bash
+cd ~/Documentos/Sogov/sogov-automation-playwright/playwright
+npm install                        # install, NÃO ci — ver aviso abaixo
+npx playwright install chromium
+# montar o .env (tabela de variáveis logo abaixo)
+npm run test:infra                 # confirma que a config está de pé, sem tocar no ambiente
 ```
 
 > [!warning] `npm ci` não funciona — o pacote não tem lockfile versionado
