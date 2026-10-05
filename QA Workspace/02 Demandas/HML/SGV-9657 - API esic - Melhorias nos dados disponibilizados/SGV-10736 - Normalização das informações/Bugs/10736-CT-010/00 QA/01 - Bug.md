@@ -6,6 +6,9 @@ pontos_alocados: ""
 
 # Bug — Total de solicitações respondidas ausente no retorno de estatísticas
 
+> [!success] Fechado em 05/10/2026 — requisito retirado do contrato
+> Confirmado em call com os responsáveis: o sistema não tem status "Respondido". `totalAnswered` deixou de ser critério de aceite da SGV-10736 (C7). Os critérios abaixo ficam registrados como histórico do que foi pedido originalmente — não serão corrigidos.
+
 > [!info]- Navegação QA/DEV
 > **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README|Abrir README do card]]
 > **Bug:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/01 - Bug]]
@@ -58,9 +61,11 @@ Conforme a Demanda (SGV-10736, critério C7) e o retorno esperado (`novo-estatis
 
 ## Critérios de aceite
 
-- [ ] `statistics.status.totalAnswered` está presente no retorno
-- [ ] O valor de `totalAnswered` corresponde à quantidade real de solicitações respondidas
-- [ ] Os demais contadores de status (`totalReceived`, `totalInProgress`, `totalClosed`) permanecem corretos após a correção
+*(Retirados em 05/10/2026 — ver callout no topo. Mantidos desmarcados por não terem sido exercitados; não representam mais trabalho pendente.)*
+
+- [ ] ~~`statistics.status.totalAnswered` está presente no retorno~~
+- [ ] ~~O valor de `totalAnswered` corresponde à quantidade real de solicitações respondidas~~
+- [ ] ~~Os demais contadores de status (`totalReceived`, `totalInProgress`, `totalClosed`) permanecem corretos após a correção~~
 
 ---
 
@@ -70,6 +75,6 @@ Conforme a Demanda (SGV-10736, critério C7) e o retorno esperado (`novo-estatis
 - [x] Resultado esperado está definido.
 - [x] Critérios de aceite são objetivos e testáveis.
 - [x] Casos de teste estão vinculados.
-- [ ] `pontos_alocados` foi preenchido.
+- [x] `pontos_alocados` não se aplica — card fechado sem ir a dev.
 
-> **Pendência:** sem SGV cadastrado no Notion ainda — obter o número e renomear (card, evidência, wikilinks, daily) quando chegar.
+> **Fechado sem SGV:** requisito retirado antes de precisar cadastrar no Notion — não entra a pendência de obter número.

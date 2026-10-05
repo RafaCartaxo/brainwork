@@ -53,6 +53,9 @@ pontos: ""
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** reprovado — campo `totalAnswered` ausente do retorno (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/04 - Validação dev]])
+> **Execução:** não se aplica — ver nota abaixo
+>
+> > [!info]- Por que não se aplica
+> > A pré-condição ("existir solicitação com status Respondido") é inalcançável: o sistema não tem esse status — `orderStatus` deriva do andamento interno do documento (tramitação), não do fato de já ter sido respondido ao cidadão. Confirmado em call com os responsáveis em 05/10/2026 (Marcos). O requisito foi retirado do contrato da SGV-10736 (C7), não é mais critério a satisfazer. Se o produto um dia introduzir um status "Respondido" de verdade, este CT volta a ser executável.
 
 ^ct-001
