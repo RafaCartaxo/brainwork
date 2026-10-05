@@ -304,5 +304,33 @@
   "QA Workspace/01 Daily/2026-10": {
     "iconName": "LiCalendar",
     "iconColor": "#d97706"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados": {
+    "iconName": "LiStars",
+    "iconColor": "#eab308"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/Conhecimento": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#e11d48"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs": {
+    "iconName": "LiConstruction",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
   }
 }
