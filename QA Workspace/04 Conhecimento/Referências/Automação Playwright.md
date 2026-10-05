@@ -195,6 +195,37 @@ flowchart LR
 
 Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` direto. Os scripts `npm run test:*` já chamam o launcher.
 
+```mermaid
+flowchart TD
+    A[Quero rodar a automação] --> B{Primeira vez nesta máquina?}
+    B -- Sim --> C[npm install + playwright install chromium]
+    C --> D[Montar o .env]
+    D --> E[npm run test:infra]
+    E --> F{50 de 50 verde?}
+    F -- Não --> G[Config ou .env errado: conferir variáveis]
+    G --> D
+    F -- Sim --> H
+    B -- Não --> H{O que você quer fazer?}
+    H -- Conferir que está tudo de pé --> I[npm run test:smoke]
+    H -- Estou escrevendo um caso --> J[run.mjs --project e --grep do ID]
+    H -- Fechar um domínio --> K[npm run test:api ou test:e2e]
+    H -- Vou commitar --> L[npm run verify]
+    I --> M{Verde?}
+    J --> M
+    K --> M
+    L --> M
+    M -- Sim --> N[Seguir em frente]
+    M -- Não --> O[npm run report: abrir o trace]
+    O --> P{Natureza da falha}
+    P -- Bug no meu teste --> Q[Corrigir o spec]
+    P -- Achado real de produto --> R[Registrar defeito, não mexer na asserção]
+    P -- Instabilidade ou PDF saturado --> S[Repetir em lote menor]
+    Q --> M
+    S --> M
+```
+
+O seed **não aparece no diagrama de propósito**: ele roda sozinho antes de `api`, `e2e-chromium` e `version`. Você nunca precisa chamá-lo — exceto no UI mode ou ao provisionar ator novo.
+
 ### No dia a dia
 
 ```bash
