@@ -32,7 +32,7 @@ A API retorna o JSON de solicitações e de estatísticas normalizado, com os ca
 
 ### Entrega desta capacidade
 
-Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no retorno). Não inclui nenhuma tela — a Parte 2 (SGV-10735, feature de integrações) está impedida e fora de escopo nesta rodada.
+Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no retorno). Não inclui nenhuma tela — a Parte 2 (SGV-10735, feature de integrações) tem pacote próprio.
 
 > [!important] Esta é uma task **só de API** (fluxo 3f)
 > Sem interface visual pra validar. A validação depende de chamadas diretas (Postman/curl/swagger) direto em homologação, sem esteira DEV — ver [[../../../../../Sistema/Contexto/PADROES_QA#Tasks de API (fluxo 3f)|PADROES_QA#Tasks de API (fluxo 3f)]].
@@ -58,7 +58,7 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 
 ## Fora de escopo
 
-- Qualquer tela ou fluxo de UI (Parte 2 — SGV-10735, impedida, sem pacote próprio).
+- Qualquer tela ou fluxo de UI (Parte 2 — [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda|SGV-10735]]).
 - Alterações em módulos além de solicitações/estatísticas do e-SIC.
 - Contagem de solicitações respondidas (`totalAnswered`) e status "Respondido" — o sistema não tem esse conceito de status; `orderStatus` reflete o andamento interno do documento (tramitação), não o fato de já ter sido respondido ao cidadão.
 
@@ -68,10 +68,11 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 
 - C1. A listagem de solicitações retorna o ID do solicitante, diferenciando solicitantes de mesmo nome. ^c1
 - C2. A listagem de solicitações retorna o tipo do solicitante (pessoa física ou jurídica) por extenso, no mesmo padrão já usado pelas estatísticas. ^c2
-  - 🔴 Bloqueado por [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002 — tipo do solicitante vem abreviado na listagem]] (achado 05/10/2026, correção já agendada).
+  - 🔁 **Corrigido na Parte 2** — critério C14 da [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda|SGV-10735]]. Achado original: [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]].
 - C3. Para solicitante pessoa física com cadastro completo, a listagem retorna data de nascimento e gênero; quando o cadastro não tiver esses dados, a API não quebra e os campos vêm ausentes/nulos. ^c3
 - C4. A listagem retorna `orderDate` (data de abertura) para toda solicitação. ^c4
 - C5. A listagem retorna `orderDateDeadline` com `date`, `days` e `type` calculados, mesmo quando a solicitação não tem prazo configurado. ^c5
+  - ⏳ **Pendente de decisão (Parte 3)** — qual valor usar quando não há prazo configurado é responsabilidade do Marcos, ainda sem task própria. Achado: [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]].
 - C6. `orderStatus` distingue corretamente os status Recebido, Em Andamento e Encerrado. ^c6
 - C7. `rankingRequesters` retorna o ID de cada solicitante, diferenciando solicitantes de mesmo nome, com o nome correto (pessoa física, razão social de pessoa jurídica, ou identificação de anônimo). ^c7
 - C8. O endpoint de estatísticas retorna o detalhamento de prazo (`timely`/`delayed`/`undefined`) com totais consistentes com os dados da listagem. ^c8

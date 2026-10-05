@@ -3,10 +3,10 @@ tags: [qa]
 task: "10736"
 pai: "9657"
 tipo: "melhoria"
-status: analise
+status: concluido
 ambiente: hml
 prioridade: media
-etapa_atual: "QA · Casos de teste"
+etapa_atual: "Concluído"
 modulo: "integracoes-esic"
 responsavel: Rafael
 aguardando: ""
@@ -36,10 +36,10 @@ pontos: ""
 | Demanda/Bug | ✅ |
 | Plano de teste | ✅ |
 | Casos de teste | ✅ |
-| Validação | 🔴 reprovado (2 Bugs abertos) |
+| Validação | ✅ **Aprovado** (com ressalvas) |
 | Preparação Qase | ⏳ |
 
-**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../Bugs/10736-CT-002/00 QA/00 README|tipo abreviado na listagem]], [[../Bugs/10736-CT-007/00 QA/00 README|data limite não calculada]] — valor esperado sem prazo pendente de decisão do Marcos), retestar, completar CTs que aguardam massa de dados. Ambos já com correção confirmada/agendada no grupo "Parte 2". Bug de paginação reportado como já corrigido pelo dev — pendente reverificar.
+**Próximo passo:** SGV-10736 aprovada no Notion (05/10/2026). C2 (tipo abreviado) corrigido como critério C14 da [[../../SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda|SGV-10735]] — Bug [[../Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]] encerrado por transferência. C5 (data limite sem prazo configurado) segue pendente de decisão do Marcos, sem task própria ainda ("Parte 3") — Bug [[../Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]] continua aberto. Bug de paginação reportado como já corrigido pelo dev — pendente reverificar.
 
 Pacote para `SGV-10736`, parte de [[../../Conhecimento/0 - SGV-9657 - Índice|SGV-9657 (epic)]]:
 
@@ -53,7 +53,7 @@ SGV-10736 - Normalização das informações/
 │   ├── 04 - Validação dev.md
 │   └── 05 - Preparação Qase.md
 └── Bugs/                        (achados em homologação, sem SGV ainda — numerados <melhoria>-CT-<NN> pelo CT de origem)
-    ├── 10736-CT-002/00 QA/...   (tipo do solicitante abreviado na listagem — aberto, correção agendada)
+    ├── 10736-CT-002/00 QA/...   (tipo do solicitante abreviado na listagem — fechado, transferido pra SGV-10735 C14)
     ├── 10736-CT-007/00 QA/...   (orderDateDeadline não calculada sem prazo — aberto)
     ├── 10736-CT-010/00 QA/...   (totalAnswered ausente — fechado 05/10/2026, requisito retirado)
     └── 10736-CT-011/00 QA/...   (ranking exibe Sem Nome para PJ e Anônimo — aberto, correção agendada)
@@ -64,3 +64,4 @@ Sem `01 Automação/` por enquanto. `Bugs/` aqui cumpre o papel que `Defeitos/` 
 ## Histórico
 
 - **2026-10-05:** card criado a partir da descrição da SGV-9657/SGV-10736 no Notion e dos retornos esperados (novos) já fornecidos (`novo-documentos.json`, `novo-estatistica.json`). CTs definidos e prontos para execução em homologação.
+- **2026-10-05:** ✅ SGV-10736 aprovada no Notion. C2 corrigido na Parte 2 (SGV-10735, C14); C5 pendente de decisão do Marcos (Parte 3, sem task própria ainda).
