@@ -59,3 +59,4 @@ Sem `01 Automação/` por enquanto (sem cobertura automatizada ainda).
 ## Histórico
 
 - **2026-10-05:** card criado a partir da descrição da SGV-10735 no Notion, do doc "Gerenciamento de clientes SOGOV" (seção Integrações — API e-SIC) e da confirmação da call de 05/10/2026 de que o front-end é a próxima frente de trabalho. Demanda, critérios e CTs definidos; execução real ainda não iniciou (sem ambiente de teste disponível até o momento).
+- **2026-10-05:** adicionado C14 (tipo do solicitante por extenso na listagem) — correção herdada da SGV-10736 (achado [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]]), confirmado na versão final da task no Notion. SGV-10736 aprovada com esse item explicitamente transferido pra cá.

@@ -72,4 +72,4 @@ Retorno esperado atualizado (`Retornos esperados (novos)/novo-estatistica-atuali
 - [x] Casos de teste estão vinculados.
 - [ ] `pontos_alocados` foi preenchido.
 
-> **Pendência:** sem SGV cadastrado no Notion ainda — obter o número e renomear (card, evidência, wikilinks, daily) quando chegar. Correção já confirmada/agendada no grupo "Parte 2" da call de 05/10/2026 — retestar quando o ambiente de teste estiver disponível.
+> **Fechado por transferência (05/10/2026):** a correção virou o critério C14 da SGV-10735 (Parte 2) — reteste acontece por lá, não aqui. Sem SGV próprio necessário.

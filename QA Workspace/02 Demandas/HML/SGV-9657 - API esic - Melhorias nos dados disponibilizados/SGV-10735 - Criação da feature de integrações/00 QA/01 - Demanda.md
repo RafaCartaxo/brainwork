@@ -53,13 +53,14 @@ Front-end da feature de integrações (tela de ativação, credenciais, seleçã
 - Exibição e cópia das credenciais (identificador do cliente, chave secreta mascarada).
 - Seleção de módulos expostos, restrita aos módulos contratados, com confirmação ao salvar e ao sair com alterações pendentes.
 - Histórico de alterações (ativação/desativação, inclusão/remoção de módulo, cópia de credencial), com responsável, data e hora.
+- Correção da nomenclatura de `requester.type` na listagem de solicitações da API e-SIC, por extenso (herdada da Parte 1 — achado [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]]).
 
 ---
 
 ## Fora de escopo
 
 - Backend de geração/persistência de credenciais (já entregue na Parte 1 — MR 1198).
-- Correções de bugs da API e-SIC já tratadas nos pacotes da SGV-10736 (ranking "Sem Nome" e paginação).
+- Correção do ranking "Sem Nome" para Pessoa Jurídica/Anônimo e correção de paginação — tratadas como achados da SGV-10736 ([[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|10736-CT-011]]), sem critério próprio aqui ainda.
 - Qualquer ambiente além do Técnico (não é tela voltada ao cliente final).
 
 ---
@@ -79,6 +80,7 @@ Front-end da feature de integrações (tela de ativação, credenciais, seleçã
 - C11. Desativar a integração exige confirmação e, ao concluir, exibe a mensagem "API e-SIC desativada." ^c11
 - C12. Reativar a integração exibe a mensagem "API e-SIC reativada. Credenciais mantidas." ^c12
 - C13. O histórico de alterações registra ativação/desativação, inclusão/remoção de módulo e cópia de credencial, com responsável, data e hora — acessível mesmo com a integração desativada. ^c13
+- C14. A listagem de solicitações retorna o tipo do solicitante (pessoa física ou jurídica) por extenso, no mesmo padrão já usado pelas estatísticas. ^c14
 
 ---
 

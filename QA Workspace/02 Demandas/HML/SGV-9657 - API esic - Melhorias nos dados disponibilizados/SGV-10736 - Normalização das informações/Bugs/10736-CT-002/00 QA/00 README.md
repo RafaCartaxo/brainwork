@@ -3,19 +3,22 @@ tags: [qa, bug]
 task: "10736-CT-002"
 pai: "10736"
 tipo: "bug"
-status: analise
+status: concluido
 ambiente: hml
 prioridade: media
-etapa_atual: "DEV · Análise técnica"
+etapa_atual: "Concluído"
 modulo: "integracoes-esic"
 responsavel: Rafael
-aguardando: "dev"
+aguardando: ""
 cadastrado_por: Rafael
 data_inicio: 2026-10-05
 data_fim: ""
 pontos: ""
 ---
 # Bug — Tipo do solicitante não vem por extenso na listagem
+
+> [!success] Fechado em 05/10/2026 — transferido pra Parte 2
+> A SGV-10736 foi aprovada no Notion com este item explicitamente fora do ciclo: a correção virou o critério C14 da [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda|SGV-10735]] (Parte 2). O achado continua válido (campo realmente vem abreviado) — só a responsabilidade de correção/reteste migrou pra lá. Acompanhamento segue em [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA/01 - Demanda#^c14|C14]].
 
 > [!info]- Navegação QA/DEV
 > **Bug:** [[01 - Bug]]
@@ -32,9 +35,9 @@ pontos: ""
 |---|---|
 | Bug | ✅ |
 | Casos de teste | ✅ |
-| Validação | ✅ (reprovado) |
+| Validação | ✅ (transferido pra Parte 2) |
 
-**Próximo passo:** correção confirmada/agendada pelo time (grupo "Parte 2" da call de 05/10/2026) — retestar quando disponível em ambiente de teste.
+**Próximo passo:** nenhum aqui — acompanhar pelo critério C14 da SGV-10735.
 
 Pacote para este Bug, alocado dentro do próprio pacote da [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/01 - Demanda|SGV-10736]] (sem SGV oficial ainda — numerado `10736-CT-002` pela melhoria de origem + o CT relacionado):
 
@@ -53,3 +56,4 @@ Sem `02 - Plano de teste.md` (bug simples, 1 critério) nem `05 - Preparação Q
 
 - **2026-10-05:** 🐛 Bug confirmado (card criado) — achado comparando o retorno real da listagem (`"type": "PF"/"PJ"`) com o retorno real das estatísticas (`rankingRequesters[].type: "Pessoa Jurídica"`) e com o `novo-estatistica-atualizado.txt` (Retornos esperados atualizados), que usa o tipo por extenso.
 - **2026-10-05:** 🔎 Confirmado pelo Rafael que a correção (listagem passar a retornar por extenso, igual às estatísticas) já está agendada no grupo "Parte 2" da call com os responsáveis.
+- **2026-10-05:** 🔁 Fechado por transferência — SGV-10736 aprovada no Notion, correção virou critério C14 da SGV-10735.

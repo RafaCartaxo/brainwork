@@ -24,13 +24,13 @@ validacao_origem: "[[04 - Validação dev]]"
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.
 
 > [!warning] Pendência
-> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Envio só deve acontecer **depois** dos 13 CTs executados e aprovados.
+> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Envio só deve acontecer **depois** dos 14 CTs executados e aprovados.
 
 ## Configuração
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `<a confirmar>`
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-013 — todos aplicáveis, nenhum "Não se aplica")
+- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-014 — todos aplicáveis, nenhum "Não se aplica")
 
 ## Casos preparados
 

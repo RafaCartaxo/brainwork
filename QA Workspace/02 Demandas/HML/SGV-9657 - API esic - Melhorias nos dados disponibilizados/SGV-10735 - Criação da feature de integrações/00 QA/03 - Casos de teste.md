@@ -40,6 +40,7 @@ pontos: ""
 | [[01 - Demanda#^c11\|C11]] | [[03 - Casos de teste#^ct-011\|CT-011]] |
 | [[01 - Demanda#^c12\|C12]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
 | [[01 - Demanda#^c13\|C13]] | [[03 - Casos de teste#^ct-013\|CT-013]] |
+| [[01 - Demanda#^c14\|C14]] | [[03 - Casos de teste#^ct-014\|CT-014]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -551,3 +552,41 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Execução:** planejado
 
 ^ct-013
+
+> [!example]- CT-014 · Retornar o tipo do solicitante por extenso na listagem
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que a listagem de solicitações retorna o tipo do solicitante por extenso, no mesmo padrão já usado pelas estatísticas — herdado como achado da Parte 1 (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]]).
+>
+> **Pré-condições:**
+> - Existir solicitação de solicitante Pessoa Física e de Pessoa Jurídica.
+>
+> **Dado** que existam solicitações de um solicitante Pessoa Física e de um solicitante Pessoa Jurídica
+> **Quando** a listagem de solicitações (`GET /solicitacoes/listar-documentos`) for consultada
+> **Então** `requester.type` deve vir por extenso ("Pessoa Física"/"Pessoa Jurídica"), não abreviado
+>
+> **Resultado esperado:** mesmo padrão de valor já usado em `rankingRequesters[].type` nas estatísticas.
+>
+> **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c14|C14]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** API
+> **Automação:** manual
+> **Execução:** planejado — reteste de [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]], aguardando correção
+
+^ct-014

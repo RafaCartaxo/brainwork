@@ -22,7 +22,7 @@ pontos: ""
 
 ## Objetivo
 
-Validar a tela de Integrações no Gerenciador de clientes (ativação, credenciais, seleção de módulos, desativação e histórico), conforme `01 - Demanda` (C1–C13).
+Validar a tela de Integrações no Gerenciador de clientes (ativação, credenciais, seleção de módulos, desativação e histórico), conforme `01 - Demanda` (C1–C14).
 
 ---
 
@@ -60,10 +60,11 @@ Não se aplica: API/contrato (coberto pela SGV-10736); unitário isolado de serv
 | [[03 - Casos de teste#^ct-011\|CT-011]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-012\|CT-012]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-013\|CT-013]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-014\|CT-014]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 
 ---
 
 ## Entrada e saída
 
 **Entrada:** ambiente de teste/dev com ao menos um cliente ativo e um inativo, cada um com módulos contratados variados; acesso ao Gerenciador de clientes com perfil interno.
-**Saída:** todos os CTs executados com resultado registrado em `04 - Validação dev`; nenhum critério de aceite (C1–C13) sem cobertura.
+**Saída:** todos os CTs executados com resultado registrado em `04 - Validação dev`; nenhum critério de aceite (C1–C14) sem cobertura.
