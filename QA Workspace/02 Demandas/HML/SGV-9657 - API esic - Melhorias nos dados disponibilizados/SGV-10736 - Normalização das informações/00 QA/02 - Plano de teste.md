@@ -22,7 +22,7 @@ pontos: ""
 
 ## Objetivo
 
-Validar que os endpoints de **listagem de solicitações** e de **estatísticas** da API e-SIC passam a retornar os campos novos descritos em `01 - Demanda` (C1–C9), sem quebrar o contrato já existente usado pelos clientes (ex.: relatório da ATRICOM).
+Validar que os endpoints de **listagem de solicitações** e de **estatísticas** da API e-SIC passam a retornar os campos novos descritos em `01 - Demanda` (C1–C11, exceto C7 — retirado do contrato em 05/10/2026), sem quebrar o contrato já existente usado pelos clientes (ex.: relatório da ATRICOM).
 
 ---
 

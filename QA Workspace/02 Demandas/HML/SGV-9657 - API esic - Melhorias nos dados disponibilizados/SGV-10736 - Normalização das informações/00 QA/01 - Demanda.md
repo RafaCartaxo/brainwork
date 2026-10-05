@@ -46,7 +46,8 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 
 - Dados do solicitante (ID, tipo PF/PJ, data de nascimento, gênero) só existem quando o solicitante tiver o cadastro correspondente preenchido — sem exigir recadastro retroativo.
 - A data limite (`orderDateDeadline`) deve ser calculada e retornada mesmo quando a solicitação não tiver prazo configurado, sinalizando isso explicitamente em vez de omitir o campo.
-- Novo status de solicitação "Respondido" (`totalAnswered`) passa a existir separado de "Em Andamento" (`totalInProgress`), tanto na listagem (`orderStatus`) quanto nas estatísticas.
+- ~~Novo status de solicitação "Respondido" (`totalAnswered`) passa a existir separado de "Em Andamento" (`totalInProgress`), tanto na listagem (`orderStatus`) quanto nas estatísticas.~~ **Retirado em 05/10/2026** — o sistema não tem status "Respondido" (confirmado por Marcos em call com os responsáveis): `orderStatus` deriva do andamento interno do documento (tramitação), não do fato de já ter sido respondido ao cidadão. Ver C7.
+- Mensagens de erro da API devem vir em português, e o status code HTTP deve ser coerente com a mensagem retornada (item trazido na call de 05/10/2026, ver C10/C11).
 
 ---
 
@@ -73,12 +74,17 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 - C4. A listagem retorna `orderDate` (data de abertura) para toda solicitação. ^c4
 - C5. A listagem retorna `orderDateDeadline` com `date`, `days` e `type` calculados, mesmo quando a solicitação não tiver prazo configurado (tipo "Dias úteis/Dias corridos" refletindo a regra aplicada). ^c5
   - 🔴 Bloqueado por [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007 — data limite não calculada sem prazo configurado]] (achado 05/10/2026).
-- C6. `orderStatus` distingue corretamente "Respondido" de "Em Andamento" e dos demais status existentes (Recebido, Encerrado). ^c6
-- C7. O endpoint de estatísticas retorna `totalAnswered` com a contagem correta de solicitações respondidas. ^c7
-  - 🔴 Bloqueado por [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README|10736-CT-010 — totalAnswered ausente nas estatísticas]] (achado 05/10/2026).
+- C6. `orderStatus` distingue corretamente os status Recebido, Em Andamento e Encerrado. ^c6
+  - *(Reescrito em 05/10/2026 — a versão original incluía "Respondido"; retirado, ver C7).*
+- ~~C7. O endpoint de estatísticas retorna `totalAnswered` com a contagem correta de solicitações respondidas.~~ ^c7
+  - 🗑️ **Retirado do contrato em 05/10/2026** (decisão de Marcos, em call com os responsáveis): o sistema não tem status "Respondido", logo não há o que contar em `totalAnswered`. Bug fechado como requisito retirado: [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README|10736-CT-010]].
 - C8. `rankingRequesters` retorna o `id` de cada solicitante, diferenciando solicitantes de mesmo nome no ranking. ^c8
-  - ✅ `id` confirmado em homologação. Achado à parte (não bloqueia este critério, que é sobre `id`): [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|10736-CT-011 — ranking exibe "Sem Nome" para Pessoa Jurídica cadastrada]] (achado 05/10/2026, campo `name`).
+  - ✅ `id` confirmado em homologação. Achado à parte (não bloqueia este critério, que é sobre `id`): [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|10736-CT-011 — ranking exibe "Sem Nome" para Pessoa Jurídica cadastrada]] (achado 05/10/2026, campo `name`) — confirmado na call que também afeta solicitante **Anônimo**, não só PJ. Correção agendada (grupo "Parte 2" da call).
 - C9. O endpoint de estatísticas retorna o detalhamento de prazo (`timely`/`delayed`/`undefined`) com totais consistentes com os dados da listagem. ^c9
+- C10. Em cenário de erro, a API retorna a mensagem (`message`) em português. ^c10
+  - *(Novo em 05/10/2026, trazido pela call de padronização de erros — ainda sem CT executado.)*
+- C11. O status code HTTP da resposta de erro é coerente com a mensagem retornada. ^c11
+  - *(Novo em 05/10/2026, idem C10 — ainda sem CT executado.)*
 
 ---
 
@@ -95,4 +101,5 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 ## Pendências de decisão
 
 - `pontos_alocados` em aberto (ver checklist acima).
-- **Nomenclatura de campos diverge do documento `Retornos esperados (novos)`** (achado em 05/10/2026, validação real em homologação): o retorno usa `requester.type: "PF"/"PJ"` (não "Pessoa Física"/"Pessoa Jurídica"), `data.individualPerson`/`data.legalPerson` (não `PessoaFisica`/`PessoaJuridica`), `individualPerson.birthDate`/`gender`/`fullName` (não `dataNascimento`/`genero`/`NomeCompleto`), `legalPerson.companyName` (não `RazaoSocial`), `"Sem sigilo"` com case diferente de `"Sem Sigilo"`. Rafael decide se isso é o contrato final (e os CTs/esta Demanda são atualizados pra bater) ou se é desvio (vira Bug). Enquanto não decidido, `04 - Validação dev` trata CT-001/002/003/005/011/014 como aprovados com ressalva, não fechados.
+- **Nomenclatura de campos diverge do documento `Retornos esperados (novos)`** (achado em 05/10/2026, validação real em homologação; confirmado na call de 05/10/2026 com os responsáveis): decisão é **padronizar todos os nomes de campo em inglês** — o `"Retornos esperados (novos)"` original (com nomes em português como `PessoaFisica`/`dataNascimento`) está desatualizado, não é mais o contrato-alvo. Nomenclatura final exata ainda não definida pelo time. Enquanto não vier a versão final, os CTs seguem tratando a distinção funcional (PF/PJ, dados presentes) como aprovada com ressalva, sem fechar o critério por nome de campo.
+- **Bug de paginação** (500 em `page=1&itemsPerPage=1000`, retorno vazio inesperado em `page=2`) — dev informou na call de 05/10/2026 que já foi corrigido no grupo "Parte 2". Pendente **reverificar em homologação**; se não estiver corrigido, cadastrar Bug formal.

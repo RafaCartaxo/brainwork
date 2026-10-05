@@ -2,7 +2,7 @@
 demanda: "[[01 - Demanda]]"
 plano: "[[02 - Plano de teste]]"
 validacao: "[[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev]]"
-status: planejado
+status: execucao
 pontos: ""
 ---
 
@@ -21,6 +21,9 @@ pontos: ""
 
 > Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. Todos os cenários são de **API** (fluxo 3f) — "Quando" chama o endpoint, "Então" valida o payload de resposta, sem tela envolvida.
 
+> [!info]- Renumeração de 05/10/2026 (call com os responsáveis)
+> CT-008 (status "Respondido" na listagem) e CT-010 (totalAnswered nas estatísticas) saíram da rodada ativa — "Respondido" não existe como status no sistema, confirmado por Marcos; totalAnswered foi retirado do contrato. Ver [[#G. Fora de execução — registro]]. CT-009 foi reescrito (não depende mais de "Respondido") e os CTs seguintes foram renumerados pra ficar contíguos: CT-011→CT-009, CT-012→CT-010, CT-013→CT-011, CT-014→CT-012. CT-013 e CT-014 atuais são novos, cobrindo os critérios C10/C11 (mensagem de erro em português e coerência status code↔message) que só entraram no escopo nesta call — ainda sem execução real.
+
 ---
 
 ## Matriz de cobertura
@@ -32,10 +35,12 @@ pontos: ""
 | [[01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-003\|CT-003]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-004\|CT-004]] |
 | [[01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-005\|CT-005]] |
 | [[01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-006\|CT-006]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-007\|CT-007]] |
-| [[01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-008\|CT-008]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]] |
-| [[01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]] |
-| [[01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] |
+| [[01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-008\|CT-008]] |
+| [[01 - Demanda#^c7\|C7]] | *(retirado do contrato — ver [[#G. Fora de execução — registro]])* |
+| [[01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]], [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]] |
+| [[01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]] |
+| [[01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -75,7 +80,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado — confirmado em homologação (05/10/2026)
 
 ^ct-001
 
@@ -98,9 +103,9 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Dado** que existam solicitações de um solicitante Pessoa Física e de um solicitante Pessoa Jurídica
 > **Quando** a listagem de solicitações for consultada
-> **Então** cada solicitação deve retornar `requester.type` correspondente ("Pessoa Física" ou "Pessoa Jurídica"), com os dados em `data.PessoaFisica` preenchidos para o primeiro e `data.PessoaJuridica` para o segundo
+> **Então** cada solicitação deve retornar `requester.type` correspondente, com os dados do solicitante preenchidos no bloco correto (pessoa física vs. pessoa jurídica)
 >
-> **Resultado esperado:** `requester.type` e o bloco `data` correspondente batem com o tipo real do solicitante.
+> **Resultado esperado:** `requester.type` e o bloco de dados correspondente batem com o tipo real do solicitante.
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
@@ -113,7 +118,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado com ressalva — distinção funciona (`PF`/`PJ`); nomenclatura final ainda em padronização (ver `01 - Demanda`, pendência de nomenclatura)
 
 ^ct-002
 
@@ -136,7 +141,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Dado** que exista uma solicitação de um solicitante Pessoa Física com data de nascimento e gênero cadastrados
 > **Quando** a listagem de solicitações for consultada
-> **Então** a solicitação deve retornar `data.PessoaFisica.dataNascimento` e `data.PessoaFisica.genero` preenchidos com os valores cadastrados
+> **Então** a solicitação deve retornar a data de nascimento e o gênero preenchidos com os valores cadastrados
 >
 > **Resultado esperado:** os dois campos aparecem com os valores corretos, sem formatação divergente da cadastrada.
 >
@@ -151,7 +156,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado — confirmado em homologação (05/10/2026)
 
 ^ct-003
 
@@ -174,7 +179,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Dado** que exista uma solicitação de um solicitante Pessoa Física sem data de nascimento e gênero cadastrados
 > **Quando** a listagem de solicitações for consultada
-> **Então** a API deve responder normalmente (sem erro 500), retornando a solicitação com `dataNascimento` e/ou `genero` ausentes ou nulos, sem quebrar os demais campos da solicitação
+> **Então** a API deve responder normalmente (sem erro 500), retornando a solicitação com os campos de nascimento/gênero ausentes ou nulos, sem quebrar os demais campos da solicitação
 >
 > **Resultado esperado:** resposta HTTP de sucesso, campos faltantes vêm ausentes/nulos, demais dados da solicitação intactos.
 >
@@ -189,7 +194,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** borda
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aguardando — sem registro de solicitante PF incompleto na massa de dados testada até agora
 
 ^ct-004
 
@@ -227,7 +232,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado — confirmado em homologação (05/10/2026)
 
 ^ct-005
 
@@ -265,7 +270,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aguardando — sem registro de solicitação com prazo configurado na massa de dados testada até agora
 
 ^ct-006
 
@@ -303,11 +308,11 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** borda
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** reprovado — `orderDateDeadline` veio `null` em 10/10 registros (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]]). Confirmado real na call de 05/10/2026 — qual valor usar quando não há prazo configurado é decisão pendente do Marcos.
 
 ^ct-007
 
-> [!example]- CT-008 · Retornar o status "Respondido" para solicitação respondida
+> [!example]- CT-008 · Distinguir corretamente os status Recebido, Em Andamento e Encerrado
 >
 > ```meta-bind-button
 > style: primary
@@ -319,16 +324,16 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > ## Cenário
 >
-> **Descrição:** confirma que uma solicitação já respondida é identificada com o novo status "Respondido", e não mais como "Em Andamento".
+> **Descrição:** confirma que a listagem distingue corretamente os três status de solicitação existentes no sistema — reescrito em 05/10/2026: a versão anterior também cobria "Respondido", status que não existe no sistema (confirmado por Marcos na call), removido do escopo (ver [[#G. Fora de execução — registro]]).
 >
 > **Pré-condições:**
-> - Existir solicitação já respondida pelo órgão.
+> - Existir ao menos uma solicitação em cada status: Recebido, Em Andamento e Encerrado.
 >
-> **Dado** que exista uma solicitação já respondida
+> **Dado** que existam solicitações em todos os status possíveis (Recebido, Em Andamento, Encerrado)
 > **Quando** a listagem de solicitações for consultada
-> **Então** a solicitação deve retornar `orderStatus` como "Respondido"
+> **Então** cada solicitação deve retornar o `orderStatus` correspondente ao seu estado real, sem sobreposição entre os três
 >
-> **Resultado esperado:** `orderStatus` = "Respondido" para essa solicitação.
+> **Resultado esperado:** os três status aparecem corretamente distribuídos entre as solicitações, sem sobreposição.
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
@@ -341,87 +346,11 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado com ressalva — "Encerrado" confirmado em 10/10 registros reais; "Recebido" e "Em Andamento" ainda sem exemplo cruzado na massa de dados testada
 
 ^ct-008
 
-> [!example]- CT-009 · Distinguir "Respondido" dos demais status (Recebido, Em Andamento, Encerrado)
->
-> ```meta-bind-button
-> style: primary
-> label: ↩ Validação
-> action:
->   type: open
->   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
-> ```
->
-> ## Cenário
->
-> **Descrição:** confirma que o novo status "Respondido" não se confunde com os demais status já existentes.
->
-> **Pré-condições:**
-> - Existir ao menos uma solicitação em cada status: Recebido, Em Andamento, Respondido e Encerrado.
->
-> **Dado** que existam solicitações em todos os status possíveis (Recebido, Em Andamento, Respondido, Encerrado)
-> **Quando** a listagem de solicitações for consultada
-> **Então** cada solicitação deve retornar o `orderStatus` correspondente ao seu estado real, sem nenhuma solicitação "Em Andamento" ou "Encerrada" sendo classificada como "Respondido" e vice-versa
->
-> **Resultado esperado:** os quatro status aparecem corretamente distribuídos entre as solicitações, sem sobreposição.
->
-> **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
->
-> **Critérios cobertos:** [[01 - Demanda#^c6|C6]]
->
-> ---
->
-> **Informações do CT**
->
-> **Tipo:** funcional
-> **Camada:** API
-> **Automação:** manual
-> **Execução:** planejado
-
-^ct-009
-
-> [!example]- CT-010 · Contabilizar corretamente o total de solicitações respondidas nas estatísticas
->
-> ```meta-bind-button
-> style: primary
-> label: ↩ Validação
-> action:
->   type: open
->   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
-> ```
->
-> ## Cenário
->
-> **Descrição:** confirma que o endpoint de estatísticas soma corretamente as solicitações com status "Respondido".
->
-> **Pré-condições:**
-> - Existir uma quantidade conhecida de solicitações com status "Respondido".
->
-> **Dado** que exista uma quantidade conhecida de solicitações respondidas
-> **Quando** o endpoint de estatísticas for consultado
-> **Então** `statistics.status.totalAnswered` deve corresponder exatamente à quantidade de solicitações com status "Respondido"
->
-> **Resultado esperado:** `totalAnswered` bate com a contagem real, sem incluir solicitações de outros status.
->
-> **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
->
-> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
->
-> ---
->
-> **Informações do CT**
->
-> **Tipo:** funcional
-> **Camada:** API
-> **Automação:** manual
-> **Execução:** planejado
-
-^ct-010
-
-> [!example]- CT-011 · Retornar o ID do solicitante no ranking, diferenciando nomes iguais
+> [!example]- CT-009 · Retornar o ID do solicitante no ranking, diferenciando nomes iguais
 >
 > ```meta-bind-button
 > style: primary
@@ -455,11 +384,11 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado — `id` distinto confirmado entre 3 entradas "Sem Nome" do ranking. Achado à parte (não invalida este CT): [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|10736-CT-011]] — o campo `name` vem errado pra PJ e Anônimo
 
-^ct-011
+^ct-009
 
-> [!example]- CT-012 · Contabilizar corretamente solicitações dentro do prazo
+> [!example]- CT-010 · Contabilizar corretamente solicitações dentro do prazo
 >
 > ```meta-bind-button
 > style: primary
@@ -493,11 +422,11 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aguardando — 0 solicitações "timely" na amostra testada do cliente
 
-^ct-012
+^ct-010
 
-> [!example]- CT-013 · Contabilizar corretamente solicitações fora do prazo
+> [!example]- CT-011 · Contabilizar corretamente solicitações fora do prazo
 >
 > ```meta-bind-button
 > style: primary
@@ -531,11 +460,11 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aguardando — 0 solicitações "delayed" na amostra testada do cliente
 
-^ct-013
+^ct-011
 
-> [!example]- CT-014 · Contabilizar corretamente solicitações sem prazo configurado
+> [!example]- CT-012 · Contabilizar corretamente solicitações sem prazo configurado
 >
 > ```meta-bind-button
 > style: primary
@@ -569,6 +498,93 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** borda
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado com ressalva — `undefined: 24` bate com as 24 solicitações do cliente, mas mascarado pelo Bug [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007]] (tudo cai em "undefined" porque nada é calculado) — confirmar de novo quando o Bug for corrigido
+
+^ct-012
+
+> [!example]- CT-013 · Retornar mensagem de erro em português
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que, em cenário de erro, a API retorna a mensagem (`message`) em português — item novo, trazido pela call de 05/10/2026 (padronização de erros).
+>
+> **Pré-condições:**
+> - Existir um cenário de erro reproduzível na API (ex.: parâmetro inválido, recurso não encontrado).
+>
+> **Dado** que uma chamada à API resulte em erro
+> **Quando** a resposta de erro for inspecionada
+> **Então** o campo `message` deve vir em português, descrevendo o problema de forma compreensível
+>
+> **Resultado esperado:** `message` em português, sem termos técnicos/internos vazando pro texto.
+>
+> **Pós-condição:** nenhuma alteração de dado.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** API
+> **Automação:** manual
+> **Execução:** planejado — ainda sem execução real; cenário de erro a definir com o time
+
+^ct-013
+
+> [!example]- CT-014 · Status code da resposta coerente com a mensagem de erro
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Descrição:** confirma que o status code HTTP retornado é coerente com a mensagem de erro — item novo, trazido pela call de 05/10/2026 (padronização de erros).
+>
+> **Pré-condições:**
+> - Existir um cenário de erro reproduzível na API (ex.: parâmetro inválido, recurso não encontrado, não autorizado).
+>
+> **Dado** que uma chamada à API resulte em erro
+> **Quando** a resposta de erro for inspecionada
+> **Então** o status code HTTP (ex.: 400, 404, 401) deve corresponder ao tipo de erro descrito na `message`
+>
+> **Resultado esperado:** nenhuma combinação incoerente (ex.: 200 com mensagem de erro, ou 500 para erro de validação de entrada).
+>
+> **Pós-condição:** nenhuma alteração de dado.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c11|C11]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** API
+> **Automação:** manual
+> **Execução:** planejado — ainda sem execução real; cenário de erro a definir com o time
 
 ^ct-014
+
+---
+
+## G. Fora de execução — registro
+
+*Casos considerados e deliberadamente não executados nesta rodada. Ficam aqui pra não sumirem do histórico e pra não abrirem buraco na numeração dos ativos.*
+
+| Caso | Decisão | Motivo |
+|---|---|---|
+| CT-008 (antigo) · Retornar o status "Respondido" para solicitação respondida | **Removido — não se aplica** (Marcos, 05/10/2026) | Status "Respondido" não existe no sistema — a API deriva `orderStatus` do andamento interno do documento (tramitação), não do fato de já ter sido respondido ao cidadão. Confirmado em call com os responsáveis. |
+| CT-010 (antigo) · Contabilizar corretamente o total de solicitações respondidas nas estatísticas | **Removido — não se aplica** (Marcos, 05/10/2026) | Mesma causa: sem status "Respondido" no sistema, não há o que contar em `totalAnswered`. Requisito retirado do contrato (ver C7 em `01 - Demanda` e Bug [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README\|10736-CT-010]], fechado como requisito retirado). |
