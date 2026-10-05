@@ -23,8 +23,8 @@ pontos_alocados: ""
 > [!info]- Navegação QA/DEV  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
 > [!settings]- Controle da demanda  
@@ -117,7 +117,7 @@ Os três dialogs de encerramento ganham o checkbox; a escolha é persistida por 
 - C8. Desmarcar o checkbox e confirmar o encerramento reverte a preferência para "voltar para a mesa". ^c8
 - C9. Os três dialogs usam o `modal` com `Type=Alert`, CTA primário "Encerrar", CTA secundário "Cancelar", com a copy exata definida no documento de origem. ^c9
 
-> C9 é coberto por [[03 - Casos de teste#^ct-012|CT-012]].
+> C9 é coberto por [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-012|CT-012]].
 
 ---
 

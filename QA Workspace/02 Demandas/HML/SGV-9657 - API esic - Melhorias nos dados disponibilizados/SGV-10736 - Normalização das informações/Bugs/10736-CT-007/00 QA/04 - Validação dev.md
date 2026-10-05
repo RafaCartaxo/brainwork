@@ -1,5 +1,5 @@
 ---
-demanda: "[[Bug/01 - Bug]]"
+demanda: "[[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/01 - Bug]]"
 execucao: ""
 ambiente: hml
 versao: ""
@@ -8,7 +8,7 @@ responsavel: Rafael
 resultado: reprovado
 pontos: 0
 ct_resultados:
-  ct_001: "❌ Falhou"
+  ct_001: ❌ Falhou
 data_inicio: 2026-10-05
 data_fim: ""
 ---
@@ -16,10 +16,10 @@ data_fim: ""
 # Validação — Bug data limite não calculada
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
-> **Bug:** [[Bug/01 - Bug]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|Abrir README do card]]
+> **Bug:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/01 - Bug]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/04 - Validação dev]]
 
 > [!settings]- Controle da validação
 > **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`
@@ -39,7 +39,7 @@ data_fim: ""
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | ❌ Falhou | `GET /solicitacoes/listar-documentos?page=1&itemsPerPage=10` — 10/10 registros com `orderDateDeadline: null` | Confirmado também por `deadline.undefined: 24` (todas as 24 solicitações do cliente) nas estatísticas | este próprio Bug | 0 |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ❌ Falhou | `GET /solicitacoes/listar-documentos?page=1&itemsPerPage=10` — 10/10 registros com `orderDateDeadline: null` | Confirmado também por `deadline.undefined: 24` (todas as 24 solicitações do cliente) nas estatísticas | este próprio Bug | 0 |
 
 ---
 

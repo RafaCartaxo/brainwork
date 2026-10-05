@@ -8,11 +8,11 @@ pontos: ""
 # Plano de teste — SGV-11184
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
+> **README do card:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/00 README|Abrir README do card]]
 > **Demanda/Bug:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
@@ -46,7 +46,7 @@ Validar seleção de departamento como destinatário (campo pessoa e despacho), 
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| [[03 - Casos de teste#^ct-001\|CT-001]] a [[03 - Casos de teste#^ct-022\|CT-022]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-001\|CT-001]] a [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-022\|CT-022]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/04 - Validação dev\|Registrar resultado]] |
 
 ---
 

@@ -4,21 +4,21 @@ tags:
   - qase
 tipo: referencia
 status: enviado
-tipo_card: "funcionalidade"
+tipo_card: funcionalidade
 projeto: ""
 modulo: autenticacao
 qase_projeto: SGV
 qase_suite_id: 4
-casos_origem: "[[03 - Casos de teste]]"
-validacao_origem: "[[04 - Validação dev]]"
+casos_origem: "[[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]]"
+validacao_origem: "[[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]"
 ---
 # Preparação Qase — SGV-11971 (TR 1.24-1.25)
 
 > [!info]- Navegação QA  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
@@ -31,7 +31,7 @@ validacao_origem: "[[04 - Validação dev]]"
 - **Projeto Qase:** `SGV`
 - **Suite:** `4`
 - **Script:** `Sistema/Scripts/qase-sync/11971-tr-1-24-1-25/` — `corrections.json` (payload) + `sync.js` (aplicação) + `README.md`
-- **Fonte dos casos:** [[03 - Casos de teste]] (fonte única desde 31/08/2026)
+- **Fonte dos casos:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]] (fonte única desde 31/08/2026)
 
 > [!warning] Esta versão do script está congelada
 > O `README.md` da raiz de `Sistema/Scripts/qase-sync/` desaconselha copiar daqui pra uma sincronização nova: esta versão é mais simples e não tem shared steps nem idempotência real. Pra um TR novo, copiar de `9296-departamentos/`, que é a versão mais recente.
@@ -57,7 +57,7 @@ Regra do payload: **campo ausente num `update` = não mexer nesse campo.** A API
 
 ## Shared steps
 
-Os shared steps deste Termo (`SS-01a` a `SS-06`, ver [[03 - Casos de teste#Legenda — Shared Steps]]) são **rastreabilidade do vault**, não shared steps nativos da Qase: cada `Quando`/`E` do caso já traz a ação por extenso, e nada foi criado via `POST /v1/shared_step/`. A Qase tem o recurso nativo (`GET /v1/shared_step/{code}`), e vale conferir se já existem antes de escrever conteúdo novo — mas nesta rodada a decisão foi não usá-los.
+Os shared steps deste Termo (`SS-01a` a `SS-06`, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#Legenda — Shared Steps]]) são **rastreabilidade do vault**, não shared steps nativos da Qase: cada `Quando`/`E` do caso já traz a ação por extenso, e nada foi criado via `POST /v1/shared_step/`. A Qase tem o recurso nativo (`GET /v1/shared_step/{code}`), e vale conferir se já existem antes de escrever conteúdo novo — mas nesta rodada a decisão foi não usá-los.
 
 *(Pacotes posteriores do vault — SGV-11177 e SGV-11178 — já usam shared steps nativos da Qase. Se este Termo for ressincronizado, vale alinhar.)*
 

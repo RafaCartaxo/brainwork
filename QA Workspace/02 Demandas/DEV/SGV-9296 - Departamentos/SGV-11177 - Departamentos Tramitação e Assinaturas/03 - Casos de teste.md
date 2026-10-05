@@ -1,7 +1,7 @@
 ---
 demanda: "[[01 - Demanda]]"
 plano: "[[02 - Plano de teste]]"
-validacao: "[[04 - Validação dev]]"
+validacao: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev]]"
 status: planejado
 pontos: ""
 ---
@@ -11,8 +11,8 @@ pontos: ""
 > [!info]- Navegação QA  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
@@ -27,42 +27,42 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]] |
-| [[01 - Demanda#^c2\|C2]] | [[03 - Casos de teste#^ct-002\|CT-002]] |
-| [[01 - Demanda#^c3\|C3]] | [[03 - Casos de teste#^ct-003\|CT-003]] |
-| [[01 - Demanda#^c4\|C4]] | [[03 - Casos de teste#^ct-004\|CT-004]] |
-| [[01 - Demanda#^c5\|C5]] | [[03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c6\|C6]] | [[03 - Casos de teste#^ct-006\|CT-006]] |
-| [[01 - Demanda#^c7\|C7]] | [[03 - Casos de teste#^ct-007\|CT-007]] |
-| [[01 - Demanda#^c8\|C8]] | [[03 - Casos de teste#^ct-008\|CT-008]] |
-| [[01 - Demanda#^c9\|C9]] | [[03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c10\|C10]] | [[03 - Casos de teste#^ct-010\|CT-010]] |
-| [[01 - Demanda#^c11\|C11]] | [[03 - Casos de teste#^ct-011\|CT-011]] |
-| [[01 - Demanda#^c12\|C12]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
-| [[01 - Demanda#^c13\|C13]] | [[03 - Casos de teste#^ct-013\|CT-013]] |
-| [[01 - Demanda#^c14\|C14]] | [[03 - Casos de teste#^ct-014\|CT-014]] |
-| [[01 - Demanda#^c15\|C15]] | [[03 - Casos de teste#^ct-015\|CT-015]] |
-| [[01 - Demanda#^c16\|C16]] | [[03 - Casos de teste#^ct-016\|CT-016]] |
-| [[01 - Demanda#^c17\|C17]] | [[03 - Casos de teste#^ct-017\|CT-017]] |
-| [[01 - Demanda#^c18\|C18]] | [[03 - Casos de teste#^ct-018\|CT-018]] |
-| [[01 - Demanda#^c19\|C19]] | [[03 - Casos de teste#^ct-019\|CT-019]] |
-| [[01 - Demanda#^c20\|C20]] | [[03 - Casos de teste#^ct-020\|CT-020]] |
-| [[01 - Demanda#^c21\|C21]] | [[03 - Casos de teste#^ct-021\|CT-021]] |
-| [[01 - Demanda#^c22\|C22]] | [[03 - Casos de teste#^ct-022\|CT-022]] |
-| [[01 - Demanda#^c23\|C23]] | [[03 - Casos de teste#^ct-023\|CT-023]] |
-| [[01 - Demanda#^c24\|C24]] | [[03 - Casos de teste#^ct-024\|CT-024]] |
-| [[01 - Demanda#^c25\|C25]] | [[03 - Casos de teste#^ct-025\|CT-025]] |
-| [[01 - Demanda#^c26\|C26]] | [[03 - Casos de teste#^ct-026\|CT-026]] |
-| [[01 - Demanda#^c27\|C27]] | [[03 - Casos de teste#^ct-027\|CT-027]] |
-| [[01 - Demanda#^c28\|C28]] | [[03 - Casos de teste#^ct-028\|CT-028]] |
-| [[01 - Demanda#^c29\|C29]] | [[03 - Casos de teste#^ct-029\|CT-029]] |
-| [[01 - Demanda#^c30\|C30]] | [[03 - Casos de teste#^ct-030\|CT-030]] |
-| [[01 - Demanda#^c31\|C31]] | [[03 - Casos de teste#^ct-031\|CT-031]] |
-| [[01 - Demanda#^c32\|C32]] | [[03 - Casos de teste#^ct-032\|CT-032]] |
-| [[01 - Demanda#^c33\|C33]] | [[03 - Casos de teste#^ct-033\|CT-033]] |
-| [[01 - Demanda#^c34\|C34]] | [[03 - Casos de teste#^ct-034\|CT-034]] |
-| [[01 - Demanda#^c35\|C35]] | [[03 - Casos de teste#^ct-035\|CT-035]] |
-| [[01 - Demanda#^c36\|C36]] | [[03 - Casos de teste#^ct-036\|CT-036]] |
+| [[01 - Demanda#^c1\|C1]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-001\|CT-001]] |
+| [[01 - Demanda#^c2\|C2]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-002\|CT-002]] |
+| [[01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-003\|CT-003]] |
+| [[01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-004\|CT-004]] |
+| [[01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-005\|CT-005]] |
+| [[01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-006\|CT-006]] |
+| [[01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-007\|CT-007]] |
+| [[01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-008\|CT-008]] |
+| [[01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-010\|CT-010]] |
+| [[01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-011\|CT-011]] |
+| [[01 - Demanda#^c12\|C12]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-012\|CT-012]] |
+| [[01 - Demanda#^c13\|C13]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-013\|CT-013]] |
+| [[01 - Demanda#^c14\|C14]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-014\|CT-014]] |
+| [[01 - Demanda#^c15\|C15]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-015\|CT-015]] |
+| [[01 - Demanda#^c16\|C16]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-016\|CT-016]] |
+| [[01 - Demanda#^c17\|C17]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-017\|CT-017]] |
+| [[01 - Demanda#^c18\|C18]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-018\|CT-018]] |
+| [[01 - Demanda#^c19\|C19]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-019\|CT-019]] |
+| [[01 - Demanda#^c20\|C20]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020\|CT-020]] |
+| [[01 - Demanda#^c21\|C21]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-021\|CT-021]] |
+| [[01 - Demanda#^c22\|C22]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-022\|CT-022]] |
+| [[01 - Demanda#^c23\|C23]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-023\|CT-023]] |
+| [[01 - Demanda#^c24\|C24]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-024\|CT-024]] |
+| [[01 - Demanda#^c25\|C25]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-025\|CT-025]] |
+| [[01 - Demanda#^c26\|C26]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-026\|CT-026]] |
+| [[01 - Demanda#^c27\|C27]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-027\|CT-027]] |
+| [[01 - Demanda#^c28\|C28]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-028\|CT-028]] |
+| [[01 - Demanda#^c29\|C29]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-029\|CT-029]] |
+| [[01 - Demanda#^c30\|C30]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-030\|CT-030]] |
+| [[01 - Demanda#^c31\|C31]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-031\|CT-031]] |
+| [[01 - Demanda#^c32\|C32]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032\|CT-032]] |
+| [[01 - Demanda#^c33\|C33]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033\|CT-033]] |
+| [[01 - Demanda#^c34\|C34]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034\|CT-034]] |
+| [[01 - Demanda#^c35\|C35]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-035\|CT-035]] |
+| [[01 - Demanda#^c36\|C36]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-036\|CT-036]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 

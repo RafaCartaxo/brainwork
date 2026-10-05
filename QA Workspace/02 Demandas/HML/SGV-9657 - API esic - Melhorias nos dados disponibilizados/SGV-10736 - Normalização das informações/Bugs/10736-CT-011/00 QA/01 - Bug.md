@@ -7,10 +7,10 @@ pontos_alocados: ""
 # Bug — Ranking de solicitantes exibe "Sem Nome" para Pessoa Jurídica cadastrada
 
 > [!info]- Navegação QA/DEV
-> **README do card:** [[../00 README|Abrir README do card]]
-> **Bug:** [[01 - Bug]]
-> **Casos de teste:** [[../03 - Casos de teste]]
-> **Validação:** [[../04 - Validação dev]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|Abrir README do card]]
+> **Bug:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/01 - Bug]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/04 - Validação dev]]
 
 > [!settings]- Controle do bug
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`

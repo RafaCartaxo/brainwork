@@ -1,7 +1,7 @@
 ---
-demanda: "[[Bug/01 - Bug]]"
+demanda: "[[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/01 - Bug]]"
 plano: ""
-validacao: "[[04 - Validação dev]]"
+validacao: "[[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/04 - Validação dev]]"
 status: concluido
 pontos: ""
 ---
@@ -9,10 +9,10 @@ pontos: ""
 # Casos de teste — Bug ranking "Sem Nome" para PJ
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
-> **Bug:** [[Bug/01 - Bug]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|Abrir README do card]]
+> **Bug:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/01 - Bug]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/04 - Validação dev]]
 
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
@@ -44,7 +44,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma alteração de dado — consulta somente leitura.
 >
-> **Critérios cobertos:** critério único do bug (ver [[Bug/01 - Bug]]).
+> **Critérios cobertos:** critério único do bug (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/01 - Bug]]).
 >
 > ---
 >
@@ -53,6 +53,6 @@ pontos: ""
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** reprovado — `id: 9679` ("INSTITUTO NACIONAL DO SEGURO SOCIAL" na listagem) aparece como "Sem Nome" no ranking (ver [[04 - Validação dev]])
+> **Execução:** reprovado — `id: 9679` ("INSTITUTO NACIONAL DO SEGURO SOCIAL" na listagem) aparece como "Sem Nome" no ranking (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/04 - Validação dev]])
 
 ^ct-001

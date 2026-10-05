@@ -20,8 +20,8 @@ pontos: ""
 > [!info]- Navegação QA/DEV
 > **Demanda:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 

@@ -1,24 +1,26 @@
 ---
-tags: [qa, qase]
+tags:
+  - qa
+  - qase
 tipo: referencia
 status: rascunho
-tipo_card: "melhoria"
+tipo_card: melhoria
 projeto: ""
 modulo: ""
 qase_projeto: SGV
 qase_suite_id: ""
 demanda: "[[01 - Demanda]]"
-casos_origem: "[[03 - Casos de teste]]"
-validacao_origem: "[[04 - Validação dev]]"
+casos_origem: "[[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]"
+validacao_origem: "[[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]"
 ---
 # Preparação Qase — <ID>
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
+> **README do card:** [[Sistema/Templates/Pacote/00 QA/00 README|Abrir README do card]]
 > **Demanda/Bug:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]
+> **Validação:** [[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
@@ -31,7 +33,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `<a confirmar>`
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-NNN — todos aplicáveis, nenhum "Não se aplica")
+- **Origem:** [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]] (CT-001 a CT-NNN — todos aplicáveis, nenhum "Não se aplica")
 - **Script/payload:** processo real descrito em [[../../../Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
 ## Mapeamento dos campos

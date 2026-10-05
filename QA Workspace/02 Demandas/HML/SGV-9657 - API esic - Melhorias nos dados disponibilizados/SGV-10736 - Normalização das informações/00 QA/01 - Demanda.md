@@ -9,11 +9,11 @@ pontos_alocados: ""
 **Ticket de origem:** SGV-10736 no Notion ("[DEV][PARTE 1] Normalização das informações"), item filho de SGV-9657 ("[Melhoria-dev] API esic - Melhorias nos dados que são disponibilizados na API...").
 
 > [!info]- Navegação QA/DEV
-> **README do card:** [[00 README|Abrir README do card]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/00 README|Abrir README do card]]
 > **Demanda:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
 > [!settings]- Controle da demanda

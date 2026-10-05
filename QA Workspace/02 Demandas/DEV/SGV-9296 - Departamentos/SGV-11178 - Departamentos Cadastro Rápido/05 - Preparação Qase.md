@@ -1,23 +1,25 @@
 ---
-tags: [qa, qase]
+tags:
+  - qa
+  - qase
 tipo: referencia
 status: enviado
-tipo_card: "funcionalidade"
+tipo_card: funcionalidade
 projeto: ""
 modulo: servicos-pj
 qase_projeto: SGV
 qase_suite_id: 361
 demanda: "[[01 - Demanda]]"
-casos_origem: "[[03 - Casos de teste]]"
-validacao_origem: "[[04 - Validação dev]]"
+casos_origem: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste]]"
+validacao_origem: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/04 - Validação dev]]"
 ---
 # Preparação Qase — SGV-11178
 
 > [!info]- Navegação QA  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
@@ -30,7 +32,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `361` — "11178 - Departamentos: Cadastro rápido"
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-038 — todos aplicáveis, nenhum "Não se aplica". **CT-038 ficou de fora do envio de 01/10/2026** porque o defeito [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]] ainda estava aberto — corrigido e retestado em 02/10/2026, pendente enviar esse 1 caso em separado)
+- **Origem:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste]] (CT-001 a CT-038 — todos aplicáveis, nenhum "Não se aplica". **CT-038 ficou de fora do envio de 01/10/2026** porque o defeito [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]] ainda estava aberto — corrigido e retestado em 02/10/2026, pendente enviar esse 1 caso em separado)
 - **Script/payload:** processo real descrito em [[../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
 ## Mapeamento dos campos

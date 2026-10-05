@@ -9,8 +9,8 @@ etapa_atual: "QA · Casos de teste"
 > [!info]- Navegação QA/DEV  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
 > [!settings]- Controle do card  

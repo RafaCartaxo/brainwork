@@ -10,8 +10,8 @@ pontos: ""
 > [!info]- Navegação QA  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
@@ -48,37 +48,37 @@ Validar a tramitação e a solicitação de assinatura direcionadas a um membro 
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-002\|CT-002]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-004\|CT-004]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-005\|CT-005]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-006\|CT-006]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-008\|CT-008]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-009\|CT-009]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-012\|CT-012]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-013\|CT-013]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-015\|CT-015]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-016\|CT-016]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-017\|CT-017]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-018\|CT-018]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-019\|CT-019]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-020\|CT-020]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-021\|CT-021]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-022\|CT-022]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-023\|CT-023]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-024\|CT-024]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-025\|CT-025]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-026\|CT-026]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-027\|CT-027]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-028\|CT-028]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-029\|CT-029]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-030\|CT-030]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-031\|CT-031]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-001\|CT-001]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-002\|CT-002]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-003\|CT-003]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-004\|CT-004]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-005\|CT-005]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-006\|CT-006]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-007\|CT-007]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-008\|CT-008]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-009\|CT-009]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-010\|CT-010]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-011\|CT-011]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-012\|CT-012]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-013\|CT-013]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-014\|CT-014]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-015\|CT-015]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-016\|CT-016]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-017\|CT-017]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-018\|CT-018]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-019\|CT-019]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020\|CT-020]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-021\|CT-021]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-022\|CT-022]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-023\|CT-023]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-024\|CT-024]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-025\|CT-025]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-026\|CT-026]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-027\|CT-027]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-028\|CT-028]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-029\|CT-029]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-030\|CT-030]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-031\|CT-031]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev\|Registrar resultado]] |
 
 ---
 

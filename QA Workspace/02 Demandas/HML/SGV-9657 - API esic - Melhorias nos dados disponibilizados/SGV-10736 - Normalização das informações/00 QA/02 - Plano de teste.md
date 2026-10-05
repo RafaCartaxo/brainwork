@@ -8,11 +8,11 @@ pontos: ""
 # Plano de teste — SGV-10736
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/00 README|Abrir README do card]]
 > **Demanda/Bug:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
 
 > [!settings]- Controle do plano de teste
@@ -47,20 +47,20 @@ Não se aplica (fluxo 3f, sem tela): unitário isolado de serviço (fica a crit�
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-002\|CT-002]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-004\|CT-004]] | Borda | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-005\|CT-005]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-006\|CT-006]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | Borda | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-008\|CT-008]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-009\|CT-009]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-012\|CT-012]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-013\|CT-013]] | Funcional | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | Borda | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-004\|CT-004]] | Borda | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-005\|CT-005]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-006\|CT-006]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-007\|CT-007]] | Borda | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-008\|CT-008]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]] | Funcional | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] | Borda | API | Manual | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev\|Registrar resultado]] |
 
 ---
 

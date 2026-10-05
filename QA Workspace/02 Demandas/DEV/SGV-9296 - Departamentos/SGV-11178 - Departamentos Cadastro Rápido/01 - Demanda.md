@@ -23,8 +23,8 @@ pontos_alocados: ""
 > [!info]- Navegação QA/DEV  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
@@ -167,6 +167,6 @@ Um atalho de cadastro rápido disponível nos componentes de seleção de pessoa
 
 > [!bug] Defeitos confirmados em validação real (30/09/2026)
 > - **C37** (placeholder do campo CNPJ, criado a partir deste achado) — [[Defeitos/SGV-11951 - Defeito Placeholder Campo CNPJ Incorreto|SGV-11951]].
-> - **C29** (seletor não traz nenhuma opção pra PJ sem Nome fantasia, em vez do fallback Razão Social + CNPJ) — [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]]. **Descartado em 01/10/2026** — diagnóstico errado: CT-029 já funcionava certo, o achado real era [[03 - Casos de teste#^ct-027|CT-027]] (cadastro incompleto).
+> - **C29** (seletor não traz nenhuma opção pra PJ sem Nome fantasia, em vez do fallback Razão Social + CNPJ) — [[Defeitos/SGV-11957 - Defeito Seletor De PJ Sem Nome Fantasia Não Traz Nada|SGV-11957]]. **Descartado em 01/10/2026** — diagnóstico errado: CT-029 já funcionava certo, o achado real era [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11178 - Departamentos Cadastro Rápido/03 - Casos de teste#^ct-027|CT-027]] (cadastro incompleto).
 > - **C15** (formulário de PJ não coletava e-mail, exigido pelo critério atualizado em 01/10/2026) — [[Defeitos/SGV-11958 - Defeito Formulário De Pessoa Jurídica Não Coleta E-mail|SGV-11958]]. **Corrigido e retestado no mesmo dia.**
 > - **C38** (modal de cadastro rápido sem responsividade, critério novo criado a partir deste achado) — [[Defeitos/SGV-11962 - Defeito Modal De Cadastro Rápido Sem Responsividade|SGV-11962]].

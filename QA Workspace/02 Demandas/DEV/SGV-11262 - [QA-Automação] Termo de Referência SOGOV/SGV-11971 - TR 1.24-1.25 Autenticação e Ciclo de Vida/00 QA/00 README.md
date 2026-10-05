@@ -10,8 +10,8 @@ etapa_atual: "QA · Validação"
 > [!info]- Navegação QA/DEV  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
