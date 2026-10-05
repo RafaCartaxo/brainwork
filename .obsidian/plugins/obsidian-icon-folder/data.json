@@ -337,6 +337,10 @@
     "iconName": "LiBug",
     "iconColor": "#dc2626"
   },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
   "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações": {
     "iconName": "LiPackage",
     "iconColor": "#2563eb"

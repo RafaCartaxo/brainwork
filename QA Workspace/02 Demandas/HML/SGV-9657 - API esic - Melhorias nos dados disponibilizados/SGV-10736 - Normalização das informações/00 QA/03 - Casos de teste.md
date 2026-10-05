@@ -117,7 +117,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** aprovado com ressalva — distinção funciona (`PF`/`PJ`); nomenclatura final ainda em padronização (ver `01 - Demanda`, pendência de nomenclatura)
+> **Execução:** reprovado — `requester.type` vem abreviado (`PF`/`PJ`), não por extenso como o padrão confirmado (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]]). Correção já agendada.
 
 ^ct-002
 

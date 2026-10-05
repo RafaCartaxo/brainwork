@@ -67,7 +67,8 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 ## Critérios de aceite
 
 - C1. A listagem de solicitações retorna o ID do solicitante, diferenciando solicitantes de mesmo nome. ^c1
-- C2. A listagem de solicitações retorna o tipo do solicitante (pessoa física ou jurídica) corretamente para cada um. ^c2
+- C2. A listagem de solicitações retorna o tipo do solicitante (pessoa física ou jurídica) por extenso, no mesmo padrão já usado pelas estatísticas. ^c2
+  - 🔴 Bloqueado por [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002 — tipo do solicitante vem abreviado na listagem]] (achado 05/10/2026, correção já agendada).
 - C3. Para solicitante pessoa física com cadastro completo, a listagem retorna data de nascimento e gênero; quando o cadastro não tiver esses dados, a API não quebra e os campos vêm ausentes/nulos. ^c3
 - C4. A listagem retorna `orderDate` (data de abertura) para toda solicitação. ^c4
 - C5. A listagem retorna `orderDateDeadline` com `date`, `days` e `type` calculados, mesmo quando a solicitação não tem prazo configurado. ^c5

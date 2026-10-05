@@ -36,10 +36,10 @@ pontos: ""
 | Demanda/Bug | ✅ |
 | Plano de teste | ✅ |
 | Casos de teste | ✅ |
-| Validação | 🔴 reprovado (1 Bug aberto) |
+| Validação | 🔴 reprovado (2 Bugs abertos) |
 | Preparação Qase | ⏳ |
 
-**Próximo passo:** aguardar correção do Bug aberto ([[../Bugs/10736-CT-007/00 QA/00 README|data limite não calculada]] — valor esperado sem prazo pendente de decisão do Marcos), retestar, completar CTs que aguardam massa de dados, e decidir a pendência de nomenclatura de campos (ver `01 - Demanda`). Bug de paginação reportado como já corrigido pelo dev — pendente reverificar.
+**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../Bugs/10736-CT-002/00 QA/00 README|tipo abreviado na listagem]], [[../Bugs/10736-CT-007/00 QA/00 README|data limite não calculada]] — valor esperado sem prazo pendente de decisão do Marcos), retestar, completar CTs que aguardam massa de dados. Ambos já com correção confirmada/agendada no grupo "Parte 2". Bug de paginação reportado como já corrigido pelo dev — pendente reverificar.
 
 Pacote para `SGV-10736`, parte de [[../../Conhecimento/0 - SGV-9657 - Índice|SGV-9657 (epic)]]:
 
@@ -53,6 +53,7 @@ SGV-10736 - Normalização das informações/
 │   ├── 04 - Validação dev.md
 │   └── 05 - Preparação Qase.md
 └── Bugs/                        (achados em homologação, sem SGV ainda — numerados <melhoria>-CT-<NN> pelo CT de origem)
+    ├── 10736-CT-002/00 QA/...   (tipo do solicitante abreviado na listagem — aberto, correção agendada)
     ├── 10736-CT-007/00 QA/...   (orderDateDeadline não calculada sem prazo — aberto)
     ├── 10736-CT-010/00 QA/...   (totalAnswered ausente — fechado 05/10/2026, requisito retirado)
     └── 10736-CT-011/00 QA/...   (ranking exibe Sem Nome para PJ e Anônimo — aberto, correção agendada)

@@ -9,7 +9,7 @@ resultado: reprovado
 pontos: 0
 ct_resultados:
   ct_001: "✅ Aprovado"
-  ct_002: "✅ Aprovado"
+  ct_002: "❌ Falhou"
   ct_003: "✅ Aprovado"
   ct_004: "⏳ Aguardando"
   ct_005: "✅ Aprovado"
@@ -60,8 +60,8 @@ data_fim: ""
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ✅ Aprovado | `requester.id` distinto entre solicitantes, inclusive "Sem Nome" repetidos (8540, 14098, 9679) | — | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ✅ Aprovado (ressalva) | `requester.type: "PF"/"PJ"` nos 10 registros reais | Distinção funciona; nomenclatura final ainda em padronização (ver `01 - Demanda`) | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | ✅ Aprovado (ressalva) | `individualPerson.birthDate`/`gender` preenchidos nos 7 solicitantes PF da amostra | Mesma ressalva de nomenclatura do CT-002 | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ❌ Falhou | `requester.type: "PF"/"PJ"` (abreviado) nos 10 registros reais; `novo-estatistica-atualizado.txt` confirma padrão por extenso | Correção já confirmada/agendada (grupo "Parte 2") | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README\|Bug — tipo abreviado na listagem]] | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | ✅ Aprovado | `individualPerson.birthDate`/`gender` preenchidos nos 7 solicitantes PF da amostra | Nomenclatura de chave confirmada (ver `01 - Demanda`) | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-004\|CT-004]] | ⏳ Aguardando | — | Nenhum solicitante PF sem `birthDate`/`gender` na amostra de 10 — falta massa de dados pra testar a borda | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-005\|CT-005]] | ✅ Aprovado | `orderDate` presente nos 10 registros reais | — | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-006\|CT-006]] | ⏳ Aguardando | — | Nenhuma solicitação com prazo configurado na amostra — todas vieram com `orderDateDeadline: null` | — | |
@@ -82,12 +82,13 @@ data_fim: ""
 
 - **2026-10-05:** primeira rodada de execução real em homologação (cliente `prefeitura-de-cuite`). 7 CTs aprovados (3 com ressalva de nomenclatura pendente), 1 reprovado (CT-007 — virou Bug), 4 aguardando massa de dados (CT-004, CT-006, CT-010, CT-011). Achado adicional fora da lista de CTs: `rankingRequesters` com nome errado pra PJ (CT-009).
 - **2026-10-05 (call com os responsáveis):** confirmado que o status "Respondido" não existe no sistema — CT-008/CT-010 antigos saíram de escopo (ver `03 - Casos de teste#G. Fora de execução`); CT-009 antigo reescrito como novo CT-008 (sem "Respondido"). Confirmado que o Bug do ranking (agora CT-009) também afeta solicitante Anônimo, correção agendada. Trazidos 2 critérios/CTs novos de padronização de erro (CT-013, CT-014), ainda sem execução. Bug de paginação (500 em page=1+itemsPerPage=1000) reportado pelo dev como já corrigido — pendente reverificar.
+- **2026-10-05 (Retornos esperados atualizados):** `novo-estatistica-atualizado.txt` confirma `requester.type` por extenso como padrão — a listagem real retorna abreviado (`PF`/`PJ`), CT-002 reprovado e virou Bug ([[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]]), correção já agendada no mesmo grupo "Parte 2".
 
 ---
 
 ## Decisão
 
-**Resultado geral:** reprovado — 1 Bug aberto (data limite não calculada, bloqueia C5) impede o fechamento total. CT-010/CT-011 (timely/delayed) e CT-004/CT-006 (bordas de cadastro/prazo) aguardam massa de dados compatível. CT-013/CT-014 (erro) ainda não têm cenário de execução definido. C7 (totalAnswered) retirado do contrato — não bloqueia mais nada.
+**Resultado geral:** reprovado — 2 Bugs abertos (data limite não calculada, bloqueia C5; tipo do solicitante abreviado, bloqueia C2 — ambos com correção já confirmada/agendada) impedem o fechamento total. CT-010/CT-011 (timely/delayed) e CT-004/CT-006 (bordas de cadastro/prazo) aguardam massa de dados compatível. CT-013/CT-014 (erro) ainda não têm cenário de execução definido.
 
 ---
 
