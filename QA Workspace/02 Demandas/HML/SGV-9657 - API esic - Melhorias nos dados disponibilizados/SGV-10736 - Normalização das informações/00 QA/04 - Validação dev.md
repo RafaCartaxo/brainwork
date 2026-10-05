@@ -15,13 +15,13 @@ ct_resultados:
   ct_005: "✅ Aprovado"
   ct_006: "⏳ Aguardando"
   ct_007: "❌ Falhou"
-  ct_008: "⏳ Aguardando"
-  ct_009: "⏳ Aguardando"
-  ct_010: "❌ Falhou"
-  ct_011: "✅ Aprovado"
-  ct_012: "⏳ Aguardando"
+  ct_008: "✅ Aprovado"
+  ct_009: "✅ Aprovado"
+  ct_010: "⏳ Aguardando"
+  ct_011: "⏳ Aguardando"
+  ct_012: "✅ Aprovado"
   ct_013: "⏳ Aguardando"
-  ct_014: "✅ Aprovado"
+  ct_014: "⏳ Aguardando"
 data_inicio: 2026-10-05
 data_fim: ""
 ---
@@ -43,6 +43,9 @@ data_fim: ""
 
 > Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Fluxo 3f (API) — sem esteira DEV, validação direta em homologação via Postman/curl/swagger.
 
+> [!info]- Renumeração de 05/10/2026 (call com os responsáveis)
+> CT-008/CT-010 antigos (status "Respondido"/totalAnswered) saíram da rodada — ver `03 - Casos de teste#G. Fora de execução`. A tabela abaixo já usa a numeração atual (CT-008 a CT-012 renumerados; CT-013/CT-014 são novos, ainda sem execução).
+
 ---
 
 ## Contexto
@@ -56,20 +59,20 @@ data_fim: ""
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ✅ Aprovado | `rankingRequesters` com 3 ids "Sem Nome" distintos (8540, 14098, 9679) e listagem com ids distintos por solicitante | — | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ✅ Aprovado (ressalva) | `requester.type: "PF"/"PJ"` nos 10 registros reais | Distinção funciona; nomenclatura diverge do documentado (ver Pendências de decisão em `01 - Demanda`) | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ✅ Aprovado | `requester.id` distinto entre solicitantes, inclusive "Sem Nome" repetidos (8540, 14098, 9679) | — | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | ✅ Aprovado (ressalva) | `requester.type: "PF"/"PJ"` nos 10 registros reais | Distinção funciona; nomenclatura final ainda em padronização (ver `01 - Demanda`) | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | ✅ Aprovado (ressalva) | `individualPerson.birthDate`/`gender` preenchidos nos 7 solicitantes PF da amostra | Mesma ressalva de nomenclatura do CT-002 | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-004\|CT-004]] | ⏳ Aguardando | — | Nenhum solicitante PF sem `birthDate`/`gender` na amostra de 10 — falta massa de dados pra testar a borda | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-005\|CT-005]] | ✅ Aprovado | `orderDate` presente nos 10 registros reais | — | — | |
 | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-006\|CT-006]] | ⏳ Aguardando | — | Nenhuma solicitação com prazo configurado na amostra — todas vieram com `orderDateDeadline: null` | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-007\|CT-007]] | ❌ Falhou | `orderDateDeadline: null` em 10/10 registros | Bloqueia C5 | [[../Bugs/10736-CT-007/00 QA/00 README\|Bug — data limite não calculada]] | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-008\|CT-008]] | ⏳ Aguardando | — | Nenhuma solicitação "Respondido" nas 24 do cliente (todas "Encerrado") | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] | ⏳ Aguardando | — | Só "Encerrado" confirmado nos dados reais; falta massa com os outros 3 status | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]] | ❌ Falhou | `status` sem a chave `totalAnswered` | Bloqueia C7 | [[../Bugs/10736-CT-010/00 QA/00 README\|Bug — totalAnswered ausente]] | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]] | ✅ Aprovado | `id` distinto entre 3 "Sem Nome" do ranking | `name` do ranking tem bug à parte (PJ exibe "Sem Nome") — não invalida este CT (é sobre `id`), mas achado separado registrado | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README\|Bug — ranking Sem Nome PJ]] | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]] | ⏳ Aguardando | — | 0 solicitações "timely" na amostra do cliente — sem caso pra confirmar a contagem | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]] | ⏳ Aguardando | — | 0 solicitações "delayed" na amostra do cliente — sem caso pra confirmar a contagem | — | |
-| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] | ✅ Aprovado (ressalva) | `deadline.undefined: 24` bate com as 24 solicitações do cliente | Resultado tecnicamente correto, mas mascarado pelo Bug do CT-007 (tudo cai em "undefined" porque nada é calculado) — confirmar de novo quando o Bug for corrigido | [[../Bugs/10736-CT-007/00 QA/00 README\|Bug — data limite não calculada]] | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-007\|CT-007]] | ❌ Falhou | `orderDateDeadline: null` em 10/10 registros | Bloqueia C5. Confirmado real na call de 05/10/2026 — valor esperado sem prazo configurado é decisão pendente do Marcos | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README\|Bug — data limite não calculada]] | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-008\|CT-008]] | ✅ Aprovado (ressalva) | "Encerrado" confirmado em 10/10 registros reais | CT reescrito em 05/10/2026 — não cobre mais "Respondido" (status inexistente, ver G. Fora de execução). "Recebido"/"Em Andamento" ainda sem exemplo cruzado | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-009\|CT-009]] | ✅ Aprovado | `id` distinto entre 3 "Sem Nome" do ranking | `name` do ranking tem bug à parte (PJ e Anônimo exibem "Sem Nome", confirmado na call) — não invalida este CT (é sobre `id`) | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README\|Bug — ranking Sem Nome PJ]] | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-010\|CT-010]] | ⏳ Aguardando | — | 0 solicitações "timely" na amostra do cliente — sem caso pra confirmar a contagem | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-011\|CT-011]] | ⏳ Aguardando | — | 0 solicitações "delayed" na amostra do cliente — sem caso pra confirmar a contagem | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-012\|CT-012]] | ✅ Aprovado (ressalva) | `deadline.undefined: 24` bate com as 24 solicitações do cliente | Resultado tecnicamente correto, mas mascarado pelo Bug do CT-007 (tudo cai em "undefined" porque nada é calculado) — confirmar de novo quando o Bug for corrigido | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README\|Bug — data limite não calculada]] | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-013\|CT-013]] | ⏳ Aguardando | — | Item novo (call 05/10/2026) — cenário de erro ainda não definido/executado | — | |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste#^ct-014\|CT-014]] | ⏳ Aguardando | — | Item novo (call 05/10/2026) — cenário de erro ainda não definido/executado | — | |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 
@@ -77,21 +80,22 @@ data_fim: ""
 
 ## Histórico de validação
 
-- **2026-10-05:** primeira rodada de execução real em homologação (cliente `prefeitura-de-cuite`). 7 CTs aprovados (3 com ressalva de nomenclatura pendente), 2 reprovados (CT-007, CT-010 — viraram Bug), 5 aguardando massa de dados (CT-004, CT-006, CT-008, CT-009, CT-012, CT-013). Achado adicional fora da lista de CTs: `rankingRequesters` com nome errado pra PJ (ver CT-011).
+- **2026-10-05:** primeira rodada de execução real em homologação (cliente `prefeitura-de-cuite`). 7 CTs aprovados (3 com ressalva de nomenclatura pendente), 1 reprovado (CT-007 — virou Bug), 4 aguardando massa de dados (CT-004, CT-006, CT-010, CT-011). Achado adicional fora da lista de CTs: `rankingRequesters` com nome errado pra PJ (CT-009).
+- **2026-10-05 (call com os responsáveis):** confirmado que o status "Respondido" não existe no sistema — CT-008/CT-010 antigos saíram de escopo (ver `03 - Casos de teste#G. Fora de execução`); CT-009 antigo reescrito como novo CT-008 (sem "Respondido"). Confirmado que o Bug do ranking (agora CT-009) também afeta solicitante Anônimo, correção agendada. Trazidos 2 critérios/CTs novos de padronização de erro (CT-013, CT-014), ainda sem execução. Bug de paginação (500 em page=1+itemsPerPage=1000) reportado pelo dev como já corrigido — pendente reverificar.
 
 ---
 
 ## Decisão
 
-**Resultado geral:** reprovado — 2 Bugs abertos (data limite não calculada, totalAnswered ausente) bloqueiam o fechamento de C5 e C7. Retestar após correção; completar CT-004/006/008/009/012/013 quando houver massa de dados compatível (solicitante PF sem cadastro completo, solicitação com prazo configurado, solicitação "Respondido", solicitações timely/delayed).
+**Resultado geral:** reprovado — 1 Bug aberto (data limite não calculada, bloqueia C5) impede o fechamento total. CT-010/CT-011 (timely/delayed) e CT-004/CT-006 (bordas de cadastro/prazo) aguardam massa de dados compatível. CT-013/CT-014 (erro) ainda não têm cenário de execução definido. C7 (totalAnswered) retirado do contrato — não bloqueia mais nada.
 
 ---
 
 ## Checklist de encerramento QA
 
-- [x] Todos os CTs executados ou com justificativa registrada (5 aguardando massa de dados, justificativa na tabela acima).
+- [x] Todos os CTs executados ou com justificativa registrada (4 aguardando massa de dados, 2 novos ainda sem cenário — justificativa na tabela acima).
 - [x] Evidências e observações preenchidas quando necessário.
 - [x] Bugs filhos vinculados na coluna **Defeito/Bug**.
 - [x] Resultado geral definido.
-- [ ] Status da validação e da demanda atualizados — aguardando correção dos 2 Bugs antes de fechar.
+- [ ] Status da validação e da demanda atualizados — aguardando correção do Bug de data limite antes de fechar.
 - [x] Próximo passo registrado.
