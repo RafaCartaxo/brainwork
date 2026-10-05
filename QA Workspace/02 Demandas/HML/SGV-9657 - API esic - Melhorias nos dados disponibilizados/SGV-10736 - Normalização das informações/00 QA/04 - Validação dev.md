@@ -62,14 +62,14 @@ data_fim: ""
 | [[03 - Casos de teste#^ct-004\|CT-004]] | ⏳ Aguardando | — | Nenhum solicitante PF sem `birthDate`/`gender` na amostra de 10 — falta massa de dados pra testar a borda | — | |
 | [[03 - Casos de teste#^ct-005\|CT-005]] | ✅ Aprovado | `orderDate` presente nos 10 registros reais | — | — | |
 | [[03 - Casos de teste#^ct-006\|CT-006]] | ⏳ Aguardando | — | Nenhuma solicitação com prazo configurado na amostra — todas vieram com `orderDateDeadline: null` | — | |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | ❌ Falhou | `orderDateDeadline: null` em 10/10 registros | Bloqueia C5 | [[../Bugs/10736-ct-007/00 QA/00 README\|Bug — data limite não calculada]] | |
+| [[03 - Casos de teste#^ct-007\|CT-007]] | ❌ Falhou | `orderDateDeadline: null` em 10/10 registros | Bloqueia C5 | [[../Bugs/10736-CT-007/00 QA/00 README\|Bug — data limite não calculada]] | |
 | [[03 - Casos de teste#^ct-008\|CT-008]] | ⏳ Aguardando | — | Nenhuma solicitação "Respondido" nas 24 do cliente (todas "Encerrado") | — | |
 | [[03 - Casos de teste#^ct-009\|CT-009]] | ⏳ Aguardando | — | Só "Encerrado" confirmado nos dados reais; falta massa com os outros 3 status | — | |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | ❌ Falhou | `status` sem a chave `totalAnswered` | Bloqueia C7 | [[../Bugs/10736-ct-010/00 QA/00 README\|Bug — totalAnswered ausente]] | |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | ✅ Aprovado | `id` distinto entre 3 "Sem Nome" do ranking | `name` do ranking tem bug à parte (PJ exibe "Sem Nome") — não invalida este CT (é sobre `id`), mas achado separado registrado | [[../Bugs/10736-ct-011/00 QA/00 README\|Bug — ranking Sem Nome PJ]] | |
+| [[03 - Casos de teste#^ct-010\|CT-010]] | ❌ Falhou | `status` sem a chave `totalAnswered` | Bloqueia C7 | [[../Bugs/10736-CT-010/00 QA/00 README\|Bug — totalAnswered ausente]] | |
+| [[03 - Casos de teste#^ct-011\|CT-011]] | ✅ Aprovado | `id` distinto entre 3 "Sem Nome" do ranking | `name` do ranking tem bug à parte (PJ exibe "Sem Nome") — não invalida este CT (é sobre `id`), mas achado separado registrado | [[../Bugs/10736-CT-011/00 QA/00 README\|Bug — ranking Sem Nome PJ]] | |
 | [[03 - Casos de teste#^ct-012\|CT-012]] | ⏳ Aguardando | — | 0 solicitações "timely" na amostra do cliente — sem caso pra confirmar a contagem | — | |
 | [[03 - Casos de teste#^ct-013\|CT-013]] | ⏳ Aguardando | — | 0 solicitações "delayed" na amostra do cliente — sem caso pra confirmar a contagem | — | |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | ✅ Aprovado (ressalva) | `deadline.undefined: 24` bate com as 24 solicitações do cliente | Resultado tecnicamente correto, mas mascarado pelo Bug do CT-007 (tudo cai em "undefined" porque nada é calculado) — confirmar de novo quando o Bug for corrigido | [[../Bugs/10736-ct-007/00 QA/00 README\|Bug — data limite não calculada]] | |
+| [[03 - Casos de teste#^ct-014\|CT-014]] | ✅ Aprovado (ressalva) | `deadline.undefined: 24` bate com as 24 solicitações do cliente | Resultado tecnicamente correto, mas mascarado pelo Bug do CT-007 (tudo cai em "undefined" porque nada é calculado) — confirmar de novo quando o Bug for corrigido | [[../Bugs/10736-CT-007/00 QA/00 README\|Bug — data limite não calculada]] | |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 

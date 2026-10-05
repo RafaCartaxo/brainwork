@@ -39,7 +39,7 @@ pontos: ""
 | Validação | 🔴 reprovado (2 Bugs abertos) |
 | Preparação Qase | ⏳ |
 
-**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../Bugs/10736-ct-007/00 QA/00 README|data limite não calculada]], [[../Bugs/10736-ct-010/00 QA/00 README|totalAnswered ausente]]), retestar, e decidir a pendência de nomenclatura de campos (ver `01 - Demanda`).
+**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../Bugs/10736-CT-007/00 QA/00 README|data limite não calculada]], [[../Bugs/10736-CT-010/00 QA/00 README|totalAnswered ausente]]), retestar, e decidir a pendência de nomenclatura de campos (ver `01 - Demanda`).
 
 Pacote para `SGV-10736`, parte de [[../../Conhecimento/0 - SGV-9657 - Índice|SGV-9657 (epic)]]:
 
@@ -52,10 +52,10 @@ SGV-10736 - Normalização das informações/
 │   ├── 03 - Casos de teste.md
 │   ├── 04 - Validação dev.md
 │   └── 05 - Preparação Qase.md
-└── Bugs/                        (achados em homologação, sem SGV ainda — numerados <melhoria>-ct-<NN> pelo CT de origem)
-    ├── 10736-ct-007/00 QA/...   (orderDateDeadline não calculada sem prazo)
-    ├── 10736-ct-010/00 QA/...   (totalAnswered ausente nas estatísticas)
-    └── 10736-ct-011/00 QA/...   (ranking exibe Sem Nome para PJ)
+└── Bugs/                        (achados em homologação, sem SGV ainda — numerados <melhoria>-CT-<NN> pelo CT de origem)
+    ├── 10736-CT-007/00 QA/...   (orderDateDeadline não calculada sem prazo)
+    ├── 10736-CT-010/00 QA/...   (totalAnswered ausente nas estatísticas)
+    └── 10736-CT-011/00 QA/...   (ranking exibe Sem Nome para PJ)
 ```
 
 Sem `01 Automação/` por enquanto. `Bugs/` aqui cumpre o papel que `Defeitos/` cumpriria numa Melhoria com esteira DEV — como a SGV-10736 valida direto em HML (fluxo 3f), o achado é tecnicamente Bug, não Defeito, mas fica alocado dentro do próprio pacote por decisão do Rafael (05/10/2026), não solto em `02 Demandas/HML/`.

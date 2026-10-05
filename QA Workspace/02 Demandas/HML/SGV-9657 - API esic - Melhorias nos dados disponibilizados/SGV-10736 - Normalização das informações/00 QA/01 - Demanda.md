@@ -72,9 +72,12 @@ Apenas a **Parte 1** (SGV-10736): mudanças de contrato da API (campos novos no 
 - C3. Para solicitante Pessoa Física com cadastro completo, a listagem retorna `dataNascimento` e `genero`; quando o cadastro não tiver esses dados, a API não quebra e os campos vêm ausentes/nulos. ^c3
 - C4. A listagem retorna `orderDate` (data de abertura) para toda solicitação. ^c4
 - C5. A listagem retorna `orderDateDeadline` com `date`, `days` e `type` calculados, mesmo quando a solicitação não tiver prazo configurado (tipo "Dias úteis/Dias corridos" refletindo a regra aplicada). ^c5
+  - 🔴 Bloqueado por [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007/00 QA/00 README|10736-CT-007 — data limite não calculada sem prazo configurado]] (achado 05/10/2026).
 - C6. `orderStatus` distingue corretamente "Respondido" de "Em Andamento" e dos demais status existentes (Recebido, Encerrado). ^c6
 - C7. O endpoint de estatísticas retorna `totalAnswered` com a contagem correta de solicitações respondidas. ^c7
+  - 🔴 Bloqueado por [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010/00 QA/00 README|10736-CT-010 — totalAnswered ausente nas estatísticas]] (achado 05/10/2026).
 - C8. `rankingRequesters` retorna o `id` de cada solicitante, diferenciando solicitantes de mesmo nome no ranking. ^c8
+  - ✅ `id` confirmado em homologação. Achado à parte (não bloqueia este critério, que é sobre `id`): [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011/00 QA/00 README|10736-CT-011 — ranking exibe "Sem Nome" para Pessoa Jurídica cadastrada]] (achado 05/10/2026, campo `name`).
 - C9. O endpoint de estatísticas retorna o detalhamento de prazo (`timely`/`delayed`/`undefined`) com totais consistentes com os dados da listagem. ^c9
 
 ---
