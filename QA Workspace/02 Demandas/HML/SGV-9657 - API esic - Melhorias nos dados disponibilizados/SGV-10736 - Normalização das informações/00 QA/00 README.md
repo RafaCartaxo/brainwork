@@ -39,22 +39,26 @@ pontos: ""
 | Validação | 🔴 reprovado (2 Bugs abertos) |
 | Preparação Qase | ⏳ |
 
-**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../../Bug Data Limite Da Solicitação Não É Calculada Quando Não Há Prazo Configurado/00 QA/00 README|data limite não calculada]], [[../../Bug Total De Solicitações Respondidas Ausente No Retorno De Estatísticas/00 QA/00 README|totalAnswered ausente]]), retestar, e decidir a pendência de nomenclatura de campos (ver `01 - Demanda`).
+**Próximo passo:** aguardar correção dos 2 Bugs abertos ([[../Bugs/10736-ct-007/00 QA/00 README|data limite não calculada]], [[../Bugs/10736-ct-010/00 QA/00 README|totalAnswered ausente]]), retestar, e decidir a pendência de nomenclatura de campos (ver `01 - Demanda`).
 
 Pacote para `SGV-10736`, parte de [[../../Conhecimento/0 - SGV-9657 - Índice|SGV-9657 (epic)]]:
 
 ```text
 SGV-10736 - Normalização das informações/
-└── 00 QA/
-    ├── 00 README.md
-    ├── 01 - Demanda.md
-    ├── 02 - Plano de teste.md
-    ├── 03 - Casos de teste.md
-    ├── 04 - Validação dev.md
-    └── 05 - Preparação Qase.md
+├── 00 QA/
+│   ├── 00 README.md
+│   ├── 01 - Demanda.md
+│   ├── 02 - Plano de teste.md
+│   ├── 03 - Casos de teste.md
+│   ├── 04 - Validação dev.md
+│   └── 05 - Preparação Qase.md
+└── Bugs/                        (achados em homologação, sem SGV ainda — numerados <melhoria>-ct-<NN> pelo CT de origem)
+    ├── 10736-ct-007/00 QA/...   (orderDateDeadline não calculada sem prazo)
+    ├── 10736-ct-010/00 QA/...   (totalAnswered ausente nas estatísticas)
+    └── 10736-ct-011/00 QA/...   (ranking exibe Sem Nome para PJ)
 ```
 
-Sem `01 Automação/` nem `Defeitos/` por enquanto — tarefa é só de API (fluxo 3f), ainda sem CT reprovado.
+Sem `01 Automação/` por enquanto. `Bugs/` aqui cumpre o papel que `Defeitos/` cumpriria numa Melhoria com esteira DEV — como a SGV-10736 valida direto em HML (fluxo 3f), o achado é tecnicamente Bug, não Defeito, mas fica alocado dentro do próprio pacote por decisão do Rafael (05/10/2026), não solto em `02 Demandas/HML/`.
 
 ## Histórico
 
