@@ -133,6 +133,64 @@ Regras que o lint cobra:
 
 Proibido pelo ESLint: `waitForTimeout`, `elementHandle`, asserção que não seja web-first, `expect` sem `await`.
 
+## Fluxo do QA com o repositório
+
+Do card validado até o teste entregue. Os dois primeiros losangos são **gates**: não se passa deles sem resposta.
+
+```mermaid
+flowchart TD
+    A[Card validado + CTs executados] --> B{Fix está no ambiente do .env?}
+    B -- Não --> Z[Parar: registrar pendência na daily]
+    B -- Sim --> C[Ler CTs e doc do módulo]
+    C --> D{O comportamento é verificável por API?}
+    D -- Sim --> E[tests/api/dominio]
+    D -- Só existe na tela --> F[tests/e2e/dominio]
+    E --> G{Altera cadastro compartilhado?}
+    F --> G
+    G -- Sim --> H[Ator exclusivo: baseline.ts + ownership.ts + tag shared-state]
+    G -- Não --> I[Usa o ator padrão do pool]
+    H --> J[Rodar seed para provisionar]
+    J --> K[Reservar ID livre: A-NN ou E-NN]
+    I --> K
+    K --> L[Escrever spec: fixtures, massa por API, comentário de origem]
+    L --> M[Rodar só o caso: run.mjs --grep ID]
+    M --> N{Verde?}
+    N -- Não --> O{É bug meu, achado real ou instabilidade?}
+    O -- Bug meu --> L
+    O -- Achado real --> P[Registrar defeito, não mexer na asserção]
+    O -- Instabilidade --> M
+    N -- Sim --> Q[npm run verify]
+    Q --> R[Revisão antes do commit]
+    R --> S[Commit + MR]
+```
+
+`Card validado → Gates → Camada → Ator → ID → Spec → Verde → Verify → Revisão`
+
+A triagem de falha em três categorias (bug meu × achado real × instabilidade) vem da [[SKILL_AUTOMACAO_TERMO_REFERENCIA]] e continua valendo igual — é independente de framework.
+
+### A ordem do que chamar
+
+| # | Comando | Quando |
+|---|---|---|
+| 1 | `npm run test:infra` | Depois de mexer em config, seed ou ownership. Local, não toca no ambiente |
+| 2 | `node scripts/run.mjs --project=api --grep "A55"` | Enquanto escreve — só o seu caso |
+| 3 | `npm run test:api` / `test:e2e` | Domínio inteiro, antes de considerar pronto |
+| 4 | `npm run verify` | Antes do commit: typecheck + lint + knip + independência + infra + audit |
+| 5 | `npm run report` | Ver o que falhou, com trace |
+
+> [!tip] O seed roda sozinho
+> `api`, `e2e-chromium` e `version` declaram `dependencies: ['seed']` — o Playwright executa o seed **automaticamente** antes deles. `npm run test:seed` avulso só é necessário em dois casos: no **UI mode** (`test:ui` não executa dependências) e para provisionar um ator novo que você acabou de declarar no `baseline.ts`.
+>
+> `infrastructure` **não** depende do seed: roda isolado, sem tocar no ambiente.
+
+```mermaid
+flowchart LR
+    S[seed] --> A[api]
+    S --> E[e2e-chromium]
+    S --> V[version]
+    I[infrastructure] -.->|sem dependência| X[não toca no ambiente]
+```
+
 ## Como rodar
 
 Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` direto.
