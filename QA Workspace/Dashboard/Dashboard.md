@@ -187,6 +187,49 @@ flowchart TD
 
 ---
 
+## Seus cards abertos
+
+> [!info] O que é isto
+> Cards ativos (DEV/HML/Hotfix/POCs) com `responsavel:` preenchido — visibilidade passiva de "o que está aberto e é meu", sem gerar pendência na daily todo dia. Desde 06/10/2026 a fila ("A fazer hoje") não injeta mais uma linha "Acompanhar" pra todo card aberto automaticamente (virava ruído sem necessidade — ver [[../../Sistema/Agentes/README|Agentes/README]]); quem quer ver o que está aberto olha aqui. Se tem ação pendente de verdade hoje, isso é escrito direto na daily, não gerado por varredura.
+
+```dataviewjs
+const AMBIENTES = ["DEV", "HML", "HOTFIX", "POCS"];
+const cards = dv.pages('"QA Workspace/02 Demandas"')
+  .where(p => p.file.ext === "md")
+  .where(p => {
+    const doFrontmatter = p.ambiente ? String(p.ambiente).toUpperCase() : null;
+    if (doFrontmatter) return AMBIENTES.includes(doFrontmatter);
+    return ["DEV", "HML", "Hotfix", "POCs"].includes(p.file.folder.split("/").pop());
+  })
+  .where(p => p.responsavel && String(p.responsavel).trim() !== "");
+
+const raiz = dv.el("details", "", { cls: "qa-semdono" });
+raiz.createEl("summary", { text: `📂 Seus cards abertos (${cards.length})` });
+
+if (cards.length === 0) {
+  raiz.createEl("p", { text: "Nenhum card aberto com dono no momento." });
+} else {
+  const grupos = {};
+  for (const c of cards) {
+    const chave = c.ambiente ? String(c.ambiente).toUpperCase() : (c.file.folder.split("/").pop() || "?").toUpperCase();
+    (grupos[chave] ??= []).push(c);
+  }
+  for (const chave of AMBIENTES) {
+    const lista = grupos[chave];
+    if (!lista || lista.length === 0) continue;
+    const sub = raiz.createEl("details", { cls: "qa-semdono-grupo" });
+    sub.createEl("summary", { text: `${chave} (${lista.length})` });
+    const ul = sub.createEl("ul");
+    for (const c of lista.sort((a, b) => a.file.name.localeCompare(b.file.name))) {
+      const li = ul.createEl("li");
+      li.createEl("a", { text: c.file.name, href: c.file.path, cls: "internal-link" });
+    }
+  }
+}
+```
+
+---
+
 ## Sem dono — disponível pra pegar
 
 > [!info] O que é isto
