@@ -18,7 +18,6 @@ date: 2026-07-13
 | Iconize                 | `obsidian-icon-folder`       | Ícones e cores personalizados por pasta/arquivo |
 | Omnisearch               | `omnisearch`                 | Busca full-text/semântica avançada no vault (atalho: Ctrl+L) |
 | Calendar                | `calendar`                   | Visualização calendário das notas diárias     |
-| Tasks                   | `obsidian-tasks-plugin`      | Gerenciamento de tarefas/checklists            |
 | Templater               | `templater-obsidian`         | Templates dinâmicos (ex.: data automática)    |
 | Dataview                | `dataview`                   | Consultas e listagens dinâmicas sobre notas (usado na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]]) |
 | Meta Bind               | `obsidian-meta-bind-plugin`  | Seletores `INPUT[inlineSelect(...)]` (status, ambiente, etapa, resultado de CT) e botões `meta-bind-button` — usado nos pacotes de demanda em `02 Demandas/<ambiente>/` (`00 README`, `01 - Demanda`/`01 - Bug`, `03 - Casos de teste`, `04 - Validação dev`) |
@@ -28,6 +27,9 @@ date: 2026-07-13
 | Homepage                | `homepage`                   | Abre a [[../../QA Workspace/Dashboard/Dashboard\|Dashboard]] automaticamente ao abrir o vault; botão na ribbon + comando com atalho |
 | Obsidian Git            | `obsidian-git`               | Versionamento/sincronização automática do vault (pull ao abrir; commit+push a cada 10 min) |
 | Style Settings          | `obsidian-style-settings`    | Controles de customização visual de tema/hierarquia (cores, cabeçalhos, contraste) — usado pelo tema Blue Topaz, ver [[#Tema (aparência)]] |
+
+> [!warning] Tasks (`obsidian-tasks-plugin`) — instalado, mas **desativado**
+> Fica fora de `community-plugins.json` (06/10/2026) desde que causou um bug de clique em checkbox errado no vault (ver memória da sessão). Se o sintoma voltar, checar primeiro se alguém reativou antes de investigar outra causa. Não reativar sem resolver o bug. Pasta `plugins/obsidian-skills/` também existe mas está **vazia** (sem manifest) — resíduo, não é plugin instalado de fato.
 
 ## Tema (aparência)
 
