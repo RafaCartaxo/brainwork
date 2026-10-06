@@ -8,20 +8,20 @@ responsavel: Rafael
 resultado: aguardando
 pontos: 0
 ct_resultados:
-  ct_001: "⏳ Aguardando"
-  ct_002: "⏳ Aguardando"
-  ct_003: "⏳ Aguardando"
-  ct_004: "⏳ Aguardando"
-  ct_005: "⏳ Aguardando"
-  ct_006: "⏳ Aguardando"
-  ct_007: "⏳ Aguardando"
-  ct_008: "⏳ Aguardando"
-  ct_009: "⏳ Aguardando"
-  ct_010: "⏳ Aguardando"
-  ct_011: "⏳ Aguardando"
-  ct_012: "⏳ Aguardando"
-  ct_013: "⏳ Aguardando"
-  ct_014: "⏳ Aguardando"
+  ct_001: ✅ Aprovado
+  ct_002: ✅ Aprovado
+  ct_003: ✅ Aprovado
+  ct_004: ✅ Aprovado
+  ct_005: ✅ Aprovado
+  ct_006: ✅ Aprovado
+  ct_007: ✅ Aprovado
+  ct_008: ✅ Aprovado
+  ct_009: ✅ Aprovado
+  ct_010: ✅ Aprovado
+  ct_011: ✅ Aprovado
+  ct_012: ✅ Aprovado
+  ct_013: ✅ Aprovado
+  ct_014: ⏳ Aguardando
 data_inicio: ""
 data_fim: ""
 ---
