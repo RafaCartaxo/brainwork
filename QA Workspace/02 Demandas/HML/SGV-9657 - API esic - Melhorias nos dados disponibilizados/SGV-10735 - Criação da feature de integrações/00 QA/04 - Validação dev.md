@@ -3,9 +3,9 @@ demanda: "[[01 - Demanda]]"
 execucao: ""
 ambiente: dev
 versao: ""
-status: execucao
+status: concluido
 responsavel: Rafael
-resultado: aguardando
+resultado: aprovado
 pontos: 0
 ct_resultados:
   ct_001: ✅ Aprovado
@@ -22,8 +22,8 @@ ct_resultados:
   ct_012: ✅ Aprovado
   ct_013: ✅ Aprovado
   ct_014: ✅ Aprovado
-data_inicio: ""
-data_fim: ""
+data_inicio: "2026-10-06"
+data_fim: "2026-10-06"
 ---
 
 # Validação — SGV-10735
@@ -41,18 +41,20 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Execução ainda não iniciou — sem ambiente de teste/dev disponível até 05/10/2026.
+> Registro da execução dos CTs e das evidências. Os cenários permanecem em `03 - Casos de teste.md`. Executado e aprovado em 06/10/2026, assim que o front-end ficou disponível em ambiente de teste.
 
 ---
 
 ## Contexto
 
-- Ambiente: a definir (dev)
-- Versão/build: a preencher na execução
+- Ambiente: dev
+- Versão/build: não informada
 
 ---
 
 ## Resultado dos casos de teste
+
+> Evidência geral da rodada (cobre os 14 CTs): ![[10735 - integrações e-SIC aprovadas.mp4]]
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
@@ -69,7 +71,7 @@ data_fim: ""
 | [[03 - Casos de teste#^ct-011\|CT-011]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_011]` | | | | |
 | [[03 - Casos de teste#^ct-012\|CT-012]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012]` | | | | |
 | [[03 - Casos de teste#^ct-013\|CT-013]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_013]` | | | | |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_014]` | | | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README\|10736-CT-002]] | |
+| [[03 - Casos de teste#^ct-014\|CT-014]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_014]` | ver vídeo acima | reteste do achado da SGV-10736 confirmado: `requester.type` agora vem por extenso | [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README\|10736-CT-002]] (fechado) | |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 
@@ -77,21 +79,21 @@ data_fim: ""
 
 ## Histórico de validação
 
-Use esta seção somente quando houver reteste após correção.
+- **2026-10-06:** front-end disponível em ambiente de teste — execução real realizada pelo Rafael. **14/14 CTs aprovados**, incluindo o CT-014 (reteste do achado [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]] da SGV-10736, confirmado corrigido).
 
 ---
 
 ## Decisão
 
-**Resultado geral:** aguardando — sem execução real até o front-end estar disponível em ambiente de teste/dev.
+**Resultado geral:** aprovado — 14/14 CTs aprovados em 06/10/2026.
 
 ---
 
 ## Checklist de encerramento QA
 
-- [ ] Todos os CTs executados ou com justificativa registrada.
-- [ ] Evidências e observações preenchidas quando necessário.
-- [ ] Bugs filhos vinculados na coluna **Defeito/Bug**.
-- [ ] Resultado geral definido.
-- [ ] Status da validação e da demanda atualizados.
-- [ ] Próximo passo registrado.
+- [x] Todos os CTs executados ou com justificativa registrada.
+- [x] Evidências e observações preenchidas quando necessário.
+- [x] Bugs filhos vinculados na coluna **Defeito/Bug**.
+- [x] Resultado geral definido.
+- [x] Status da validação e da demanda atualizados.
+- [x] Próximo passo registrado.

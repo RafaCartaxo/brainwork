@@ -2,7 +2,7 @@
 demanda: "[[01 - Demanda]]"
 plano: "[[02 - Plano de teste]]"
 validacao: "[[04 - Validação dev]]"
-status: planejado
+status: concluido
 pontos: ""
 ---
 
@@ -19,7 +19,7 @@ pontos: ""
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. Cenários em linguagem visual (tela), sem execução real ainda — sem ambiente de teste disponível até 05/10/2026.
+> Os critérios ficam em `01 - Demanda`; esta nota concentra os cenários executáveis. Executados e aprovados em 06/10/2026 — ver [[04 - Validação dev]].
 
 ---
 
@@ -80,7 +80,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-001
 
@@ -118,7 +118,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-002
 
@@ -156,7 +156,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-003
 
@@ -194,7 +194,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-004
 
@@ -233,7 +233,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-005
 
@@ -271,7 +271,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-006
 
@@ -309,7 +309,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-007
 
@@ -347,7 +347,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** borda
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-008
 
@@ -389,7 +389,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-009
 
@@ -427,7 +427,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-010
 
@@ -469,7 +469,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-011
 
@@ -507,7 +507,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-012
 
@@ -549,7 +549,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** UI
 > **Automação:** manual
-> **Execução:** planejado
+> **Execução:** aprovado (06/10/2026)
 
 ^ct-013
 
@@ -587,6 +587,6 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** planejado — reteste de [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]], aguardando correção
+> **Execução:** aprovado (06/10/2026) — reteste de [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|10736-CT-002]] confirmado: `requester.type` agora vem por extenso
 
 ^ct-014

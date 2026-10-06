@@ -24,7 +24,7 @@ validacao_origem: "[[04 - Validação dev]]"
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.
 
 > [!warning] Pendência
-> `qase_suite_id` ainda não confirmado — nunca assumir/criar suite sem perguntar (ver [[../../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2). Envio só deve acontecer **depois** dos 14 CTs executados e aprovados.
+> Os 14 CTs já estão executados e aprovados (06/10/2026) — falta só confirmar `qase_suite_id` antes do envio. Nunca assumir/criar suite sem perguntar (ver [[../../../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]], GATE 2).
 
 ## Configuração
 
@@ -34,7 +34,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 ## Casos preparados
 
-> Nenhum caso foi enviado ainda — execução ainda não iniciou.
+> Nenhum caso foi enviado ainda — aguardando confirmação do `qase_suite_id`.
 
 ## Checklist de envio
 
