@@ -21,7 +21,7 @@ ct_resultados:
   ct_011: ✅ Aprovado
   ct_012: ✅ Aprovado
   ct_013: ✅ Aprovado
-  ct_014: ⏳ Aguardando
+  ct_014: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---
