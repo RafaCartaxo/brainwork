@@ -17,17 +17,47 @@ data: 2026-10-06
 - **Artefatos:** `sogov-automation-playwright/playwright/.runtime/run-3a4d6ac4-6eb3-4cb7-b55e-0ca1a9a400dc/` (`summary.md`, `summary.json`, `results.xml`, `playwright-report/`)
 - **Resultado:** 399 casos — ok 355 · falhas 26 · flaky 0 · skip 18
 
-## Falhas (26) — por domínio
+## Falhas (26) — resumo por domínio
 
-| Domínio | Casos falhos | Hipótese |
+| Domínio | Qtd | Hipótese |
 |---|---|---|
-| `signatures` (large-page-attachment, long-document) | 4 (E34-S09/S10/S11/S12) | **Alta suspeita de ruído** — a própria doc já marca `signatures` como "anormalmente lento", e os nomes dos specs (anexo grande, documento longo) são exatamente o perfil que satura o gerador de PDF |
-| `signatures` (citizen, citizen-alphanumeric) | 8 (A30-C14/15/16/17, C21/22/23/24) | Mesma suspeita — mesmo domínio, mesmo gerador de PDF por trás da assinatura |
-| `contact-groups` | 5 (E58-C01/03/05, A50-C01/04) | Sem relação óbvia com PDF — candidato a investigar separado, não descartar como ruído sem rodar isolado |
-| `processing` (automated-document, associate-document, imported-document-share, label-document) | 4 (E08-C01, E12-C01, E61-C01, E45-C01) | Processing também depende do gerador de documento — mesma suspeita de saturação |
-| `models` | 1 (A07-C03) | Isolado — investigar |
-| `public-agents` | 1 (E43-C01) | Isolado — investigar |
-| `workboard` | 2 (E51-C01/02) | Isolado — investigar |
+| `signatures` | 12 | **Alta suspeita de ruído** — a própria doc já marca `signatures` como "anormalmente lento", e os specs envolvidos (anexo grande, documento longo, assinatura) são exatamente o perfil que satura o gerador de PDF |
+| `contact-groups` | 5 | Sem relação óbvia com PDF — investigar isolado, não descartar como ruído |
+| `processing` | 4 | Também depende do gerador de documento — mesma suspeita de saturação |
+| `models` | 2 | Sem relação óbvia com PDF — investigar isolado |
+| `workboard` | 2 | Sem relação óbvia com PDF — investigar isolado |
+| `public-agents` | 1 | Sem relação óbvia com PDF — investigar isolado |
+
+## Falhas (26) — caso por caso
+
+| ID | Camada | Domínio | Arquivo | Hipótese |
+|---|---|---|---|---|
+| E58-C01 | E2E | contact-groups | `contact-group.spec.ts` | investigar |
+| E58-C03 | E2E | contact-groups | `contact-group.spec.ts` | investigar |
+| E58-C05 | E2E | contact-groups | `contact-group.spec.ts` | investigar |
+| A50-C01 | API | contact-groups | `contact-group.spec.ts` | investigar |
+| A50-C04 | API | contact-groups | `contact-group.spec.ts` | investigar |
+| E08-C01 | E2E | models | `automated-document.spec.ts` | investigar |
+| A07-C03 | API | models | `automated-model.spec.ts` | investigar |
+| E12-C01 | E2E | processing | `associate-document.spec.ts` | ruído provável |
+| E61-C01 | E2E | processing | `imported-document-share.spec.ts` | ruído provável |
+| E45-C01 | E2E | processing | `label-document.spec.ts` | ruído provável |
+| A53-C01 | API | processing | `imported-document-share.spec.ts` | ruído provável |
+| E43-C01 | E2E | public-agents | `change-email-pending.spec.ts` | investigar |
+| E51-C01 | E2E | workboard | `date-filter-reopen.spec.ts` | investigar |
+| E51-C02 | E2E | workboard | `date-filter-reopen.spec.ts` | investigar |
+| E34-S09 | E2E | signatures | `long-document.spec.ts` | ruído provável |
+| E34-S10 | E2E | signatures | `long-document.spec.ts` | ruído provável |
+| E34-S11 | E2E | signatures | `large-page-attachment.spec.ts` | ruído provável |
+| E34-S12 | E2E | signatures | `large-page-attachment.spec.ts` | ruído provável |
+| A30-C14 | API | signatures | `citizen.spec.ts` | ruído provável |
+| A30-C15 | API | signatures | `citizen.spec.ts` | ruído provável |
+| A30-C16 | API | signatures | `citizen.spec.ts` | ruído provável |
+| A30-C17 | API | signatures | `citizen.spec.ts` | ruído provável |
+| A30-C21 | API | signatures | `citizen-alphanumeric.spec.ts` | ruído provável |
+| A30-C22 | API | signatures | `citizen-alphanumeric.spec.ts` | ruído provável |
+| A30-C23 | API | signatures | `citizen-alphanumeric.spec.ts` | ruído provável |
+| A30-C24 | API | signatures | `citizen-alphanumeric.spec.ts` | ruído provável |
 
 **Nenhuma falha caiu em `@auth`** (13 casos, 0 falhas) — os 13 CTs já confirmados em Playwright da [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|TR 1.24-1.25]] (CT-001 a CT-012 + CT-038) seguem verdes, inclusive no meio de um run saturado — reforça que são estáveis.
 
@@ -49,7 +79,7 @@ A tabela "Resultado por CT" do [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Au
 
 ## Próximo passo sugerido
 
-Rodar `contact-groups`, `models`, `public-agents` e `workboard` isolados (não saturados) pra confirmar se as 8 falhas desses domínios são reais ou também ruído — são os que **não** têm relação óbvia com o gerador de PDF, então merecem checagem antes de descartar.
+Rodar `contact-groups`, `models`, `public-agents` e `workboard` isolados (não saturados) pra confirmar se as 10 falhas desses domínios são reais ou também ruído — são os que **não** têm relação óbvia com o gerador de PDF, então merecem checagem antes de descartar.
 
 ## Referências
 
