@@ -29,7 +29,7 @@ date: 2026-07-13
 | Style Settings          | `obsidian-style-settings`    | Controles de customização visual de tema/hierarquia (cores, cabeçalhos, contraste) — usado pelo tema Blue Topaz, ver [[#Tema (aparência)]] |
 
 > [!warning] Tasks (`obsidian-tasks-plugin`) — instalado, mas **desativado**
-> Fica fora de `community-plugins.json` (06/10/2026) desde que causou um bug de clique em checkbox errado no vault (ver memória da sessão). Se o sintoma voltar, checar primeiro se alguém reativou antes de investigar outra causa. Não reativar sem resolver o bug. Pasta `plugins/obsidian-skills/` também existe mas está **vazia** (sem manifest) — resíduo, não é plugin instalado de fato.
+> Fica fora de `community-plugins.json` (06/10/2026) desde que causou um bug de clique em checkbox errado no vault (ver memória da sessão). Se o sintoma voltar, checar primeiro se alguém reativou antes de investigar outra causa. Não reativar sem resolver o bug.
 
 ## Tema (aparência)
 
