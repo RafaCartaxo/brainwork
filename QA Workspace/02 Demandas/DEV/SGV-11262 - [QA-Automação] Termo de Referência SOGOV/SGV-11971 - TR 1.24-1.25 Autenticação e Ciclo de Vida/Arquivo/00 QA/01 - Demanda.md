@@ -63,7 +63,7 @@ Confirmadas com o Rafael em 18/08/2026, a partir da arquitetura real (resolveram
 - Licença e Férias hoje **não** dão acesso nem de leitura — o "subconjunto mínimo de funcionalidades não transacionais" do Termo não obriga a incluir visibilidade (CT-024/CT-030).
 - "Suspenso" e "Inativo" são o mesmo estado no sistema (CT-035).
 - Múltiplas sessões simultâneas são permitidas — o Termo não proíbe (CT-038).
-- Os níveis de permissão corretos são **Especialista / Usuário básico / Somente leitura** (CT-020) — confirmado em 4 fontes (i18n, migration, docs de business-rules e nota do vault).
+- Os níveis de permissão corretos são **Especialista / Usuário básico / Somente leitura** (CT-020) — confirmado em 4 fontes (i18n, migration, docs de business-rules e nota do vault). **Correção de 07/10/2026 (SGV-12082):** são **5 níveis**, não 3 — faltavam os 2 administrativos de topo, **Administrador** e **Administrador setorial**, confirmados pelo Rafael contra o item 1.27.2 do Termo. Lista completa: Administrador, Administrador setorial, Especialista, Usuário básico, Somente leitura. Detalhe em [[../../Entrega 02 - Análise do projeto e preset do TR/00 QA/Matriz - Análise do preset provável|Matriz da SGV-12082]].
 
 ---
 
