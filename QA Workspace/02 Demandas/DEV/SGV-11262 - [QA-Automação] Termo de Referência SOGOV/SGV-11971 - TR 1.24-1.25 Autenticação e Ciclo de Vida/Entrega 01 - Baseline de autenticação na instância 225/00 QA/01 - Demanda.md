@@ -1,78 +1,98 @@
 ---
 prioridade: media
-origem: conversa
+origem: repo
 pontos_alocados: ""
 ---
 
 # Entrega 01 — Baseline de autenticação na instância 225
 
-**Ticket de origem:** SGV-11971 (demanda-pai) · **Iniciativa:** SGV-11262
+**Ticket de origem:** SGV-11971 · **Iniciativa:** SGV-11262
 
 > [!info]- Navegação QA/DEV
-> **README:** [[00 README]]
+> **README do card:** [[00 README|Abrir README do card]]
+> **Demanda:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
-> **Casos desta entrega:** [[03 - Casos de teste]]
+> **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
-> **Automação:** [[../01 Automação/00 - Automação|Pacote de automação]]
+> **Preparação Qase:** Não se aplica; esta entrega não cria casos funcionais novos na Qase.
+> **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
-> [!info] Próximo passo
-> Implementar a seleção explícita e segura da instância 225 no seed Playwright.
+> [!settings]- Controle da demanda
+> **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`
+> **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
+
+> [!info] Status atual
+> **Próximo passo:** confirmar o backend da instância 225 e resolver o destino do CT-038; em seguida, implementar a seleção segura do alvo no seed.
+
+---
 
 ## Problema / contexto
 
-O seed atual procura uma instância pelo nome fixo E2E Automatic Test e pode criar outra se não a encontrar. Foi criada para este piloto a instância 225, “Termo De Referência - Sogov”. O seed ainda não a seleciona e uma execução sem ajuste pode preparar outra instância.
+O seed procura uma instância pelo perfil fixo `E2E Automatic Test` e pode criar outra se não encontrar esse nome. Foi criada para este piloto a instância 225, “Termo De Referência - Sogov”, mas o seed atual não a seleciona. Sem uma seleção explícita, a preparação pode atingir outro cliente.
 
 ## Objetivo
 
-Preparar e validar o baseline Playwright de autenticação na instância 225, mantendo o comportamento atual como padrão para as demais suítes quando não houver configuração explícita do alvo.
+Permitir que o seed e os testes de autenticação usem uma instância de teste dedicada, sem alterar o alvo padrão das demais suítes.
 
 ### Entrega desta capacidade
 
-- Selecionar a instância pelo ID 225 quando a configuração específica estiver presente.
-- Conferir o nome esperado antes de provisionar dados.
-- Registrar o ID e o nome efetivamente usados no manifesto.
-- Interromper com erro claro se o ID não existir, o nome divergir ou o ambiente não corresponder.
-- Executar o seed de forma idempotente e validar CT-001–012 e CT-038 na instância dedicada.
+O seed aceitará o ID 225 como configuração explícita, validará que o nome corresponde à instância esperada, registrará o alvo no manifesto e interromperá sem criar outro cliente se a validação falhar. Sem configuração explícita, manterá o comportamento padrão. A entrega inclui a execução de CT-001–012 e CT-038 na instância 225.
+
+---
 
 ## Decisões de produto
 
-- A instância 225 é o alvo fixo do primeiro piloto; não criar uma instância nova a cada CT.
-- Sem configuração explícita do ID, manter o comportamento atual do seed.
-- O teste de criação de uma instância nova será uma entrega separada.
-- O Roteiro de Sanidade 01 serve como contexto de negócio; não será copiado como preset nesta entrega.
-- Os CTs funcionais pertencem à SGV-11971 e serão referenciados, não duplicados.
+- O primeiro alvo é a instância dedicada 225.
+- Sem ID explícito, o seed mantém seu comportamento padrão atual.
+- ID ausente ou nome divergente com alvo explícito interrompe a preparação antes de criar ou alterar dados.
+- Criar uma instância nova por execução fica para uma entrega separada.
+- O Roteiro de Sanidade 01 fornece contexto de negócio, sem ser replicado integralmente como preset nesta entrega.
+- CT-001–012 e CT-038 continuam definidos na fonte funcional da SGV-11971; esta entrega os referencia sem copiá-los.
+
+---
 
 ## Escopo
 
-- Seleção por ID com validação do nome esperado.
-- Proteção contra criação acidental de outro cliente quando o ID explícito foi informado.
-- Preservação do caminho padrão atual sem override.
-- Reexecução do seed e validação dos CTs de autenticação na instância 225.
+- Seleção explícita da instância 225 e validação da identidade.
+- Proteção contra criação acidental de outro cliente quando o ID foi informado.
+- Preservação do caminho padrão quando a configuração específica não existe.
+- Reexecução idempotente do seed e execução dos CTs de autenticação incluídos.
+- Quatro verificações técnicas do seed listadas em [[03 - Casos de teste]].
+
+---
 
 ## Fora de escopo
 
+- Criar uma nova instância em cada execução ou CT.
 - Alterar o destino padrão de todas as suítes Playwright.
-- Criar um cliente novo por execução.
-- Replicar todos os módulos, setores e dados descritos no roteiro de sanidade.
-- Portar outros CTs da SGV-11971.
+- Replicar todos os módulos, setores e dados do Roteiro de Sanidade 01.
+- Portar outros CTs da SGV-11971 ou ampliar o catálogo além desta fatia.
+
+---
 
 ## Critérios de aceite
 
-- C1. Com ID 225 configurado, o seed busca essa instância e confirma que seu nome é “Termo De Referência - Sogov”. ^c1
-- C2. Se o ID não existir ou o nome não corresponder, o seed encerra com erro antes de criar ou alterar dados de outra instância. ^c2
-- C3. Sem configuração explícita do ID, o seed conserva o alvo padrão atual. ^c3
-- C4. Duas execuções consecutivas com o ID 225 reutilizam a mesma instância e registram esse ID no manifesto. ^c4
-- C5. CT-001–012 e CT-038 podem consumir o ID do manifesto e concluir na instância 225, sem fixar o ID dentro dos specs. ^c5
+- C1. Com ID 225 explícito, o seed resolve a instância, confirma “Termo De Referência - Sogov” e grava ID/nome no manifesto. ^c1
+- C2. Se o ID não existir ou o nome divergir, o seed encerra antes de provisionar dados e não cria nem seleciona outro cliente. ^c2
+- C3. Sem ID explícito, o seed mantém o alvo padrão atual. ^c3
+- C4. Duas execuções consecutivas reutilizam a instância 225 e não duplicam instância nem atores-chave. ^c4
+- C5. CT-001–012 e CT-038 consomem o ID do manifesto e podem rodar na instância 225 sem fixar o ID nos specs. ^c5
+
+---
 
 ## Checklist de entrega ao DEV
 
-- [ ] Ambiente configurado corresponde ao backend da instância 225.
-- [ ] Critérios e escopo estão claros.
-- [ ] Plano e casos técnicos estão vinculados.
-- [ ] Estado da instância e acesso de administrador permitem a preparação.
-- [ ] Pontos alocados definidos no tracker, quando a demanda filha for registrada.
+- [x] Decisões de escopo e comportamento estão registradas.
+- [x] Escopo e fora de escopo estão claros.
+- [x] Critérios de aceite são objetivos e testáveis.
+- [x] Plano e casos de teste estão vinculados.
+- [ ] `pontos_alocados` será definido quando a entrega receber estimativa no tracker.
 
+---
 
 ## Pendências de decisão
 
-Não há decisões de produto pendentes. A confirmação do backend da instância 225 e o destino do CT-038 são gates técnicos registrados no plano de automação.
+- Confirmar que o ambiente configurado aponta ao backend onde a instância 225 foi criada.
+- Definir o destino do arquivo CT-038, hoje em `HEAD` destacado (`16c41e4`) e sem commit.
+
+São gates técnicos; não há decisão de produto pendente. Manter `status: analise` até resolvê-los.

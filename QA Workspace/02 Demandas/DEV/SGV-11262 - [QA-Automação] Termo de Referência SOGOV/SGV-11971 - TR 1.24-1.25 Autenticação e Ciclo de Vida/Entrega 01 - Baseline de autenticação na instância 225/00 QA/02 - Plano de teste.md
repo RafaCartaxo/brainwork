@@ -8,47 +8,58 @@ pontos: ""
 # Plano de teste — Entrega 01
 
 > [!info]- Navegação QA
-> **README:** [[00 README]]
-> **Demanda:** [[01 - Demanda]]
-> **Casos:** [[03 - Casos de teste]]
+> **README do card:** [[00 README|Abrir README do card]]
+> **Demanda/Bug:** [[01 - Demanda]]
+> **Plano de teste:** [[02 - Plano de teste]]
+> **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
-> **Automação:** [[../01 Automação/00 - Automação|Pacote de automação]]
+> **Preparação Qase:** Não se aplica nesta entrega.
+> **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
-> [!settings]- Controle do plano
+> [!settings]- Controle do plano de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
+
+---
 
 ## Objetivo
 
-Verificar que o seed seleciona com segurança a instância 225 quando configurado, mantém o comportamento padrão sem override e prepara os atores de autenticação de forma repetível.
+Verificar a seleção segura da instância 225 pelo seed, a preservação do padrão existente quando não há override, a idempotência e a execução dos CTs funcionais incluídos na entrega.
 
 ## Riscos e escopo
 
-- **Risco principal:** o seed atual pode criar E2E Automatic Test em vez de usar a 225.
-- **Risco adicional:** a configuração local pode apontar para outro backend; o ID 225 pode existir noutro ambiente ou estar indisponível para autenticação.
-- **Fora do escopo:** validar a implantação completa do cliente, os módulos do roteiro e os 25 CTs restantes da SGV-11971.
+- **Risco principal:** com o comportamento atual, o seed pode usar o perfil fixo `E2E Automatic Test` ou criar outra instância em vez de selecionar a 225.
+- **Risco adicional:** a configuração pode apontar para um backend diferente daquele em que a instância 225 foi criada.
+- **Fora do escopo desta rodada:** validar a implantação completa do cliente, reproduzir todos os módulos do roteiro e executar os 25 CTs funcionais restantes.
+
+---
 
 ## Estratégia de teste
 
-- Revisão/unitário do seletor de alvo: ID ausente, ID encontrado e nome divergente.
-- Integração com a API do ambiente: confirmar que ID 225 resolve para o nome esperado antes de provisionar.
-- Reexecução do seed: duas rodadas no mesmo backend; comparar ID de instância, identidade dos atores e manifesto.
-- Regressão limitada: sem override, preservar o caminho padrão do seed. Não executar a suíte completa apontada à 225.
-- Validação funcional: executar apenas CT-001–012 e CT-038 contra a instância 225 depois da preparação.
-- Não alterar nem limpar dados da instância 225 manualmente durante a validação; registrar os efeitos do seed.
+- Testar isoladamente a resolução do alvo: sem ID, ID existente e ID/nome divergente.
+- Confirmar pela API que o ID 225 pertence ao backend configurado e tem o nome esperado antes de provisionar dados.
+- Executar o seed duas vezes no mesmo backend e comparar instância, atores-chave e manifesto.
+- Sem override, verificar que o caminho padrão das demais suítes continua preservado.
+- Após a preparação, validar somente CT-001–012 e CT-038 na instância 225.
+- Não limpar dados manualmente na 225 durante a validação; registrar os efeitos do seed.
+
+
+---
 
 ## Matriz de cobertura
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| [[03 - Casos de teste#^ct-seed-001|SEED-001]] | Configuração do alvo | Unidade/API | Planejada | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-002|SEED-002]] | Fail-closed | Unidade/API | Planejada | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-003|SEED-003]] | Regressão do padrão atual | Unidade/API | Planejada | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-004|SEED-004]] | Idempotência/manifesto | API | Planejada | [[04 - Validação dev]] |
-| CT-001–012, CT-038 da SGV-11971 | Funcional | API | Playwright existente | [[../01 Automação/02 - Validação automação]] |
+| [[03 - Casos de teste#^ct-seed-001|SEED-001]] | Configuração do alvo | Seed/API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-002|SEED-002]] | Fail-closed | Unidade/API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-003|SEED-003]] | Regressão do alvo padrão | Unidade/API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-004|SEED-004]] | Idempotência e manifesto | API | Prevista | [[04 - Validação dev]] |
+| CT-001–012 e CT-038 da SGV-11971 | Autenticação | API | Playwright existente | [[../01 Automação/02 - Validação automação]] |
+
+> Replique a linha para cada CT do pacote.
+
+---
 
 ## Entrada e saída
 
-**Entrada:** alteração revisada; URL de ambiente confirmada; instância 225 acessível; destino do código CT-038 resolvido ou marcado como bloqueio explícito.
-
-**Saída:** evidência de seleção correta, proteção contra alvo incorreto, preservação do padrão, idempotência e resultados por CT da cobertura funcional.
-
+**Entrada:** backend confirmado; instância 225 acessível; implementação revisada; destino de CT-038 definido ou registrado como bloqueio.
+**Saída:** resultados e evidências dos quatro casos técnicos e placar atualizado dos CT-001–012 e CT-038.
