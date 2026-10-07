@@ -127,7 +127,7 @@ Manter somente `00` a `02`. A numeração é ordem de leitura; o plano não é o
 
 | Nota | Responde a | Deve conter | Não deve conter |
 |---|---|---|---|
-| `00 - Automação` | O que é esta automação e qual é o próximo passo? | Link da demanda e dos CTs; repo; framework; ambiente-alvo; status geral; próxima ação; link de MR quando existir; links para `01` e `02`. Pendências gerais só quando bloquearem várias suítes ou o trabalho todo. | Contagem manual de CTs, investigação detalhada, lista de asserts ou histórico de rodadas. |
+| `00 - Automação` | O que é esta automação e qual é o próximo passo? | Link da demanda e dos CTs; repo; framework; ambiente-alvo; status geral; próxima ação; link de MR quando existir; link para `02` e, se criado, `01`. Pendências gerais só quando bloquearem várias suítes ou o trabalho todo. | Contagem manual de CTs, investigação detalhada, lista de asserts ou histórico de rodadas. |
 | `01 - Plano de automação` | O que precisa ser construído e quais decisões/gates vêm antes do código? | CTs no escopo; suíte/camada; estratégia de reuso; preparação e isolamento/limpeza de dados; gaps técnicos; fases curtas e critério de pronto. Usar linhas de tabela e checkboxes. Criar só se houver decisão técnica, preparação especial, dependência ou múltiplas suítes. | Resultado de execução, cronologia, detalhes de cada assert ou explicação da arquitetura inteira do repo. |
 | `02 - Validação automação` | O que está passando no teste automatizado agora? | Uma linha por CT candidato, link ao CT fonte, identificador/caminho do teste, resultado atual e observação curta. Ambiente, build e data da rodada no topo. | Histórico; decisão de arquitetura; resumo escrito à mão que possa divergir da tabela. |
 
@@ -167,6 +167,149 @@ Acima ou abaixo da matriz, manter somente **objetivo/fora de escopo** e **crité
 | link ao CT de origem | caminho e ID do teste, ou `sem teste` | sem teste / aguardando / em andamento / aprovado / falhou / bloqueado | data + build/commit | causa curta ou link ao bug/pendência |
 
 O campo **Teste no repo** deixa claro quando ainda não existe cobertura. `Resultado atual` trata somente a última execução conhecida; falha sem causa confirmada continua falha e não vira defeito de produto por inferência. Ambiente fica no topo; a data/versão da execução é por CT quando os CTs foram rodados em momentos/builds diferentes. Se toda a tabela veio de uma única rodada, pode-se informar a rodada uma vez no topo.
+
+### Exemplo completo de como os templates ficariam
+
+Os exemplos abaixo são o formato proposto dos arquivos, não conteúdo novo da SGV-11971. Os campos entre `< >` são preenchidos ao copiar o template. O arquivo `01` só é criado se o trabalho passar pelo ramo com plano.
+
+#### `00 - Automação.md` — entrada e estado geral
+
+```markdown
+---
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../00 QA/03 - Casos de teste]]"
+repo: "<nome ou link do repositório>"
+framework: "Playwright"
+ambiente: hml
+status: planejado
+---
+
+# Automação — <ID>
+
+> [!info]- Navegação QA
+> **Demanda:** [[../00 QA/01 - Demanda]] · **Casos:** [[../00 QA/03 - Casos de teste]]
+> **Validação:** [[02 - Validação automação]]
+> Adicione **Plano:** [[01 - Plano de automação]] somente quando criar o plano.
+
+> [!settings]- Controle da automação
+> **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(bloqueado),option(concluido)):status]`
+
+**Instruções de execução:** <link para o README do repo>
+**Próxima ação:** <verbo + entrega concreta + responsável, se houver>
+**Plano:** <[[01 - Plano de automação]] / dispensado — execução direta>
+**Branch/MR:** <link quando existir>
+
+## Pendência geral
+
+- <somente bloqueio que afeta várias suítes ou a automação toda; apagar a seção se não houver>
+```
+
+As propriedades de repo/framework/ambiente ficam no frontmatter; não repeti-las na tabela do corpo. `status` descreve a etapa geral do trabalho, enquanto os resultados por CT ficam em `02`. Não escrever no hub “12/20 CTs passaram”.
+
+#### `01 - Plano de automação.md` — decisões antes da implementação
+
+```markdown
+---
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../00 QA/03 - Casos de teste]]"
+status: planejado
+---
+
+# Plano de automação — <ID>
+
+> [!info]- Navegação QA
+> **Automação:** [[00 - Automação]] · **Casos:** [[../00 QA/03 - Casos de teste]]
+> **Validação:** [[02 - Validação automação]]
+
+## Objetivo e escopo
+
+- **Objetivo:** <comportamento que a automação vai cobrir>
+- **CTs incluídos:** <suítes/CTs vinculados à origem>
+- **Fora do escopo:** <somente exclusões importantes>
+
+## Decisões de implementação
+
+| Suíte / CTs | Camada | Dados e estado inicial | Reuso / mudança necessária | Dependência ou gate |
+|---|---|---|---|---|
+| <suíte e CTs> | <API / E2E> | <ator, preset, limpeza> | <helper existente ou item a criar> | <captura, acesso, fix no ambiente> |
+
+## Pronto para codar quando
+
+- [ ] <comportamento e dados necessários estão confirmados>
+- [ ] <dependências resolvidas; CT bloqueado foi retirado do escopo desta rodada e registrado como próxima ação em 00>
+
+## Pronto para validar quando
+
+- [ ] <implementação concluída e CTs mapeados aos testes no repo>
+- [ ] <ambiente e instruções de execução confirmados>
+```
+
+Manter só o que muda a decisão de como construir. Se não houver estratégia, dado especial ou dependência para decidir, não criar esta nota e marcar `Plano: dispensado — execução direta` em `00`.
+
+#### `02 - Validação automação.md` — estado atual por CT
+
+```markdown
+---
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../00 QA/03 - Casos de teste]]"
+framework: "Playwright"
+ambiente: hml
+status: execucao
+build: "<commit ou versão>"
+executado_em: "<data>"
+ct_resultados:
+  ct_001: "🧩 Sem teste"
+---
+
+# Validação automação — <ID>
+
+> [!info]- Navegação QA
+> **Automação:** [[00 - Automação]] · **Casos:** [[../00 QA/03 - Casos de teste]]
+
+> [!settings]- Controle da validação
+> **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`
+> **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
+
+**Build/commit:** <identificador> · **Executado em:** <data>
+
+| CT | Teste no repo | Resultado atual | Última execução | Observação |
+|---|---|---|---|---|
+| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | <caminho + ID do teste; ou `sem teste`> | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | <data/build ou mesma rodada> | <curta; link ao bug se aplicável> |
+```
+
+Valores de `Resultado atual`: **Sem teste**, **Aguardando**, **Em andamento**, **Aprovado**, **Falhou**, **Bloqueado**. `Sem teste` significa que o código ainda não existe; `Aguardando` significa que há teste mapeado, mas ainda não executado. Para cada CT, substituir o valor anterior pelo resultado mais recente. Não acrescentar rodadas antigas embaixo.
+
+Quando muitos CTs compartilham a mesma execução, preencher ambiente/build/data uma vez no topo e deixar a coluna **Última execução** como `mesma rodada`. Se houver execuções parciais em builds diferentes, preencher a última execução por CT.
+
+Manter o resumo Dataview atual para contar aprovados e executados. Não preencher um segundo “resultado geral” à mão: ele repetiria o placar da tabela e poderia divergir dele.
+
+### Fluxograma do fluxo
+
+```mermaid
+flowchart TD
+    A[Demanda e CTs vinculados no pacote QA] --> B[Criar 00 Automação e registrar repo, framework, ambiente e próxima ação]
+    B --> C{Gates atuais cumpridos?}
+    C -- Não --> D[Registrar o bloqueio e a próxima ação em 00]
+    D --> C
+    C -- Sim --> E{Há decisão técnica, dados especiais ou dependências?}
+    E -- Não --> F[Dispensar 01 e seguir para implementação]
+    E -- Sim --> G[Criar 01 e fechar escopo, estratégia, dados e gates]
+    G --> H{Plano pronto para codar?}
+    H -- Não --> I[Resolver ou registrar dependência bloqueadora]
+    I --> G
+    H -- Sim --> J[Implementar no repositório]
+    F --> J
+    J --> K[Executar no ambiente-alvo]
+    K --> L[Triar falha: teste, produto ou ambiente]
+    L --> M[Atualizar o resultado atual do CT em 02]
+    M --> N{Cobertura planejada concluída ou restante justificado?}
+    N -- Não --> O[Definir próxima ação em 00 e continuar]
+    O --> J
+    N -- Sim --> P[Revisar no repo/MR e sincronizar cobertura nos CTs QA]
+    P --> Q[Atualizar status e link de entrega em 00]
+```
+
+O ramo `Não` em “Gates atuais cumpridos?” é uma espera com motivo e próxima ação clara; não é autorização para codar parcialmente. Para TRs, card e CTs são criados cedo para rastreabilidade, mas a implementação continua aguardando o gate manual indicado pela skill.
 
 ### Conteúdo mínimo que o template precisa pedir
 
