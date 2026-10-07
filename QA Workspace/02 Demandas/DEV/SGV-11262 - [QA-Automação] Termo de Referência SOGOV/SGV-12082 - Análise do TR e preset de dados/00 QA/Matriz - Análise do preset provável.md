@@ -108,9 +108,64 @@ A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-03
 
 > Agrupamento aplicado só onde ator, estado e preparação são idênticos (CT-002/005/009) — mantidos em linhas separadas porque cada um tem critério de aceite próprio (C2–C5), só a coluna de pré-condição aponta a equivalência.
 
-### CT-013 a CT-037 (exceto CT-038) — ainda não decompostos nesta rodada
+### CT-013 a CT-037 (exceto CT-038) — decomposto em 07/10/2026
 
-Pendentes por decisão de sequenciamento, não por esquecimento — continuam no critério de saída C2 da demanda. Ver placar histórico em [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|02 - Validação automação (Arquivo)]] pro estado conhecido de cada um.
+> [!warning] Achado que muda a leitura do placar histórico — corrigindo o rótulo "cypress (legado)"
+> O placar arquivado (`02 - Validação automação` do Arquivo) marca a maioria destes CTs como `cypress (legado)` com a nota genérica "código legado". Fui conferir o código real antes de propagar isso e **o rótulo esconde um detalhe que muda a avaliação**: o código **não está no commit atual** (`16c41e4`, HEAD do worktree `sogov-automation-playwright`, onde todo o resto desta investigação foi reconciliado). Ele existe no commit **`bdf5e9a`**, branch **`tr-1.24-1.25-suites-3-4-5`**, que hoje está **checked out no worktree irmão** `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-test` — não foi enviado ao remoto ("NÃO vai para o remoto: o alvo do port passou a ser Playwright", mensagem do commit). Ou seja: é código real, legível, mas **não roda em nenhuma pipeline hoje** (nem a Cypress do CI, que só vê a `main`) — mais frágil que "legado" sugere.
+>
+> **Confirmei lendo os 2 arquivos de teste reais** (`git show bdf5e9a:cypress/testes/api/entities/auth/{lockout,identity-lifecycle}.api.cy.js`) — não presumi a partir do placar. Resultado: **22 dos 25 CTs têm teste Cypress real e completo** (CT-013,014,015,018,019 — Suíte 3; CT-020 a CT-036 inteira — Suíte 4). **3 não têm código em lugar nenhum**: CT-016, CT-017 (desbloqueio — mutation nunca capturada) e CT-037 (auditoria — endpoint nunca confirmado).
+>
+> **Execução:** os comentários do próprio código afirmam "confirmado rodando contra HML" em vários pontos (e o commit diz "13 CTs verdes"), mas isso é uma **alegação do código antigo, não uma execução validada nesta rodada** — não rodei nada (fora do escopo desta entrega). Estado: **Confirmado** que o código existe e é coerente com o requisito; **Inferido** que passaria se rodado hoje (ambiente pode ter mudado desde 01/10/2026).
+
+**Pré-condições e dependências comuns aos 22 com código** (Confirmado, não repetido linha a linha):
+- Cada cenário usa um **servidor de teste isolado** (`createIsolatedTestAgent`), nunca o agente global — mudar status/bloquear o agente global quebraria os ~127 testes que o reusam.
+- Login sempre via `loginAgentExpectFailure` (primitiva sem `cy.session`) — mesmo nos casos de sucesso esperado, porque `cy.session` cachearia por CPF e mascararia uma segunda tentativa real no mesmo teste.
+- Mutação de status usa `changePublicAgentWorkStatus` (confirmada via captura de API, não introspection — GraphQL introspection está desabilitada em HML) + enum `WORK_STATUS` (`IN_ACTIVITY`/`LICENSE`/`VACATION`/`SUSPEND` — Inativo e Suspenso são o mesmo `SUSPEND`).
+- **Cliente/instância:** `Cypress.env("INSTANCE_ID")` — mesma instância de todo o resto da suíte Cypress, não parametrizada por teste. **Ambiente de implantação:** o que `cypress.env.json`/CI apontarem — não lido nesta rodada (fora do escopo, só leitura de teste).
+
+#### Suíte 3 — Bloqueio por tentativas (CT-013 a CT-019)
+
+| CT | Pré-condição específica | Dados/configuração | Mutação/limpeza | Lacuna ou observação |
+|---|---|---|---|---|
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-013\|CT-013]] | Agente isolado novo, senha correta conhecida | 4 tentativas erradas + 1ª que bloqueia (`attemptFailedLogins`, N=4 + 1) | Conta fica bloqueada ao fim do teste (não revertida) | Assinatura exata do erro na 5ª tentativa: `system.messages.account-blocked` |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-014\|CT-014]] | Agente isolado novo (diferente do CT-013) | 4 tentativas erradas, depois 1 correta | Nenhuma mutação de status — só confirma que não bloqueou | — |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-015\|CT-015]] | **Reaproveita a conta já bloqueada pelo CT-013** — depende de CT-013 ter rodado antes no mesmo arquivo | Mesma conta do CT-013, senha correta desta vez | Nenhuma | **Achado real em disputa, já documentado no código**: rodando contra HML, login com senha CORRETA numa conta bloqueada autenticou normalmente (200) — contradiz a regra esperada. O comentário do teste é explícito: "não é bug do teste — é uma discrepância real entre o Termo e o comportamento do backend" |
+| CT-016 | — | — | — | **Sem código.** Desbloqueio por link de e-mail — mutation nunca capturada (dependia de HAR que não chegou) |
+| CT-017 | — | — | — | **Sem código.** Desbloqueio manual por outro servidor — mesma causa de CT-016 |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-018\|CT-018]] | Agente isolado novo | 3 tentativas erradas → 1 correta → mais 3 erradas → 1 correta | Nenhuma (prova reset do contador, duas vezes) | — |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-019\|CT-019]] | 2 agentes isolados novos (A e B) | A leva ao bloqueio (4+1 erradas); B tenta com senha certa | Conta A fica bloqueada; conta B intacta | Prova isolamento entre contas — mesma assinatura de erro do CT-013 |
+
+#### Suíte 4 — Ciclo de vida da identidade (CT-020 a CT-036)
+
+5 agentes fixos (CPF fixo, reaproveitados entre rodadas — diferente da Suíte 3): `agentAtivoInativo` (CT-020/032/033/034), `agentLicenca` (CT-021/022/023/024/025/026), `agentFerias` (CT-027/028/029/030/031), `agentSuspenso` (CT-035), `agentTransitions` (CT-036).
+
+| CT | Pré-condição específica | Dados/configuração | Mutação/limpeza | Lacuna ou observação |
+|---|---|---|---|---|
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-020\|CT-020]] | `agentAtivoInativo` setado pra `IN_ACTIVITY` | Login + leitura do próprio perfil (`userInstanceInfo`) | `setWorkStatus(IN_ACTIVITY)` | Testa acesso "irrestrito" só por consulta de perfil — não varre todos os 5 níveis de permissão (achado relevante pro gap de nível "Somente leitura" já registrado) |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-033\|CT-033]] | Mesmo agente, token obtido **antes** da mudança | Token antigo + `setWorkStatus(SUSPEND)` no meio do teste | Agente fica Inativo (setup do CT-032) | **Achado real documentado no código**: mecanismo de revogação (polling vs. invalidação de token) não confirmado — teste só observa o efeito esperado, "se falhar não é bug do teste" |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-032\|CT-032]] | Depende do CT-033 já ter deixado o agente Inativo | Login com credenciais corretas | Nenhuma | Ordem de execução importa — não é independente dos outros `it()` do arquivo |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-034\|CT-034]] | Mesmo agente, reversão pra Ativo | `setWorkStatus(IN_ACTIVITY)`, espera 3s, login | Devolve o agente a Ativo | **Achado sem causa raiz**: login continuou recusando por alguns segundos após a reversão — atraso de propagação não explicado |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-035\|CT-035]] | Agente fixo próprio (`agentSuspenso`) | `setWorkStatus(SUSPEND)` → login → reverte pra `IN_ACTIVITY` no fim | Reversão obrigatória no mesmo teste (agente é reaproveitado entre rodadas) | Confirma que "Suspenso" usa o mesmo enum técnico de "Inativo" — não existe valor separado |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-025\|CT-025]] | `agentLicenca`, token obtido antes da mudança | `setWorkStatus(LICENSE)` + tentativa de edição com token antigo | Agente fica em Licença (setup pros CT-021/022/023/024) | Mesmo padrão de achado do CT-033 (ação de escrita com token antigo) |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-021\|CT-021]] | Depende do CT-025 (agente já em Licença) | Login com credenciais corretas | Nenhuma | Confirma login permitido em Licença (diferente de Inativo) |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-022\|CT-022]] | Depende do CT-025 | Consulta `workStatus` via `getPublicAgents` por nome | Nenhuma | **Achado sem causa raiz, documentado no código**: a busca por nome às vezes não encontra o agente recém-criado, mesmo existindo (login funciona nos testes vizinhos) — instabilidade de busca, não de dado |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-023\|CT-023]] | Depende do CT-025 | Tentativa de `editPublicAgent` com token próprio | Nenhuma | Confirma bloqueio de escrita em Licença |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-024\|CT-024]] | Depende do CT-025 | `userInstanceInfo` (leitura do próprio perfil) | Nenhuma | Confirma zero visibilidade em Licença — decisão de produto de 18/08 (sem leitura mínima) |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-026\|CT-026]] | `agentLicenca`, `statusEnd` no passado | `setWorkStatus` com `statusStart`/`statusEnd` retroativos | Verifica e-mail de notificação (`waitForGmailMessage`) + reversão automática | Único CT da suíte que depende de caixa de e-mail real; confirma o requisito 1.27.11.4 de notificação |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-027\|CT-027]] | `agentFerias` | `setWorkStatus(VACATION)` + login | Agente fica em Férias (setup pros CT-028/029/030) | Espelha CT-021 pra Férias |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-028\|CT-028]] | Depende do CT-027 | `workStatus` via `getPublicAgents` | Nenhuma | Espelha CT-022 |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-029\|CT-029]] | Depende do CT-027 | `editPublicAgent` com token próprio | Nenhuma | Espelha CT-023 |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-030\|CT-030]] | Depende do CT-027 | `userInstanceInfo` | Nenhuma | Espelha CT-024 |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-031\|CT-031]] | `agentFerias`, `statusEnd` no passado (15 dias) | `setWorkStatus` retroativo | Reversão automática esperada | Espelha CT-026, sem a parte de e-mail |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-036\|CT-036]] | `agentTransitions`, agente dedicado só pra este CT | 3 mutações de status em sequência (Licença→Inativo→Ativo), checando login a cada etapa | Termina em Ativo | Único CT que testa transição múltipla no mesmo teste; mesma nota de atraso de propagação do CT-034 |
+
+#### CT-037 (Suíte 5, restante)
+
+| CT | Situação |
+|---|---|
+| CT-037 | **Sem código em nenhum framework.** Log de auditoria de tentativas de login — endpoint nunca confirmado (mesma limitação de CT-016/017: sem captura real de API, não dá pra codar sem inventar endpoint) |
+
+> Fonte de todo este bloco: `git show bdf5e9a:cypress/testes/api/entities/auth/{lockout,identity-lifecycle}.api.cy.js`, lido por inteiro em 07/10/2026. Nenhum teste foi executado; nenhum arquivo foi alterado.
 
 ## Catálogo mínimo candidato
 

@@ -61,8 +61,22 @@ Depois do DISC-001, o Codex (planejador) e o Claude (execução) alinharam uma r
 
 **Entregue nesta rodada:** grafo CT→pré-condição→dados/configuração→mutação→lacuna dos 13 CTs Playwright, na [[../00 QA/Matriz - Análise do preset provável#Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)|Matriz]]. Zero divergência da tabela equivalente do Mapa do seed. **Evidência não é uniforme** (corrigido após revisão do Codex): CT-001–012 reconciliados contra o commit `16c41e4`; CT-038 é untracked no worktree, evidência é a execução manual confirmada contra o estado atual (não commitado), não contra `16c41e4`.
 
-> [!info] Pausa combinada com o Rafael
-> Terminado o recorte dos 13 CTs — aguardando revisão dele antes de decompor CT-013–037 ou propor qualquer forma de preset.
+> [!info] Pausa de 07/10 (concluída) — Codex/Rafael revisaram, encontraram 2 inconsistências (contagem 24→25, evidência do commit não cobrindo CT-038), corrigidas, e autorizaram prosseguir pro recorte completo abaixo.
+
+## DISC-002 concluído — síntese dos 38 CTs (07/10/2026)
+
+**38/38 rastreados** na [[../00 QA/Matriz - Análise do preset provável#CT-013 a CT-037 (exceto CT-038) — decomposto em 07/10/2026|Matriz]]. Três categorias de evidência, nenhuma delas "pronta pra proteger pipeline hoje":
+
+| Categoria | CTs | Onde está o código | O que falta |
+|---|---|---|---|
+| Playwright, commit atual | CT-001–012 | `16c41e4` (HEAD do worktree `sogov-automation-playwright`) | Nada — já roda no `api` project |
+| Playwright, não commitado | CT-038 | Worktree, untracked | Decidir branch e commitar |
+| Cypress, branch local não mesclado | CT-013,014,015,018,019,020–036 (22 CTs) | Commit `bdf5e9a`, branch `tr-1.24-1.25-suites-3-4-5`, checked out no worktree **`sogov-automation-test`** | Portar pra Playwright (alvo atual) — o Cypress não roda em nenhuma CI porque não está na `main` |
+| Sem código em nenhum framework | CT-016, CT-017, CT-037 | — | Captura de API/endpoint (desbloqueio e auditoria) — bloqueio de produto, não de teste |
+
+**Achado mais relevante pro preset** (dos 22 CTs em `bdf5e9a`): a Suíte 4 inteira já usa exatamente o padrão de "agente de teste isolado + mutação de status via `changePublicAgentWorkStatus`" que a seção de Preset deste mesmo Plano (ver "Estratégia por suíte" acima) já tinha identificado como necessário — só que em Cypress, não Playwright. Portar esse código (não reinventar a lógica) é provavelmente o caminho mais barato pra Suíte 4.
+
+**Achados de produto já documentados no código** (achados reais, não bugs de teste — preservados pra DISC-004 não redescobrir): CT-015 (conta bloqueada aceita login com senha correta — contradiz o Termo), CT-033 (mecanismo de revogação de token não confirmado), CT-022/CT-028 (busca por nome às vezes não encontra agente recém-criado), CT-034/CT-036 (atraso de propagação não explicado entre mudança de status e efeito).
 
 ---
 
