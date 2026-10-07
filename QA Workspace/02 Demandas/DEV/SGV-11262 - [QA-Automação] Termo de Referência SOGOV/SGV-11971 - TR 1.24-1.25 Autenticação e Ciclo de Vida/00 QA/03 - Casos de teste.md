@@ -80,7 +80,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.24.1. Servidor Público: Autenticação por CPF(Obrigatoriamente) e senha;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-001
@@ -116,7 +116,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.24.2. Cidadão (Pessoa Física): Autenticação por CPF(Obrigatoriamente) e senha;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-002
@@ -152,7 +152,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.24.3. Empresas e outras entidades (Pessoa Jurídica): Autenticação por CNPJ (Obrigatoriamente) e senha.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-003
@@ -189,7 +189,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.24.1. Servidor Público: Autenticação por CPF(Obrigatoriamente) e senha; (...) 1.24.3. Empresas e outras entidades (Pessoa Jurídica): Autenticação por CNPJ (Obrigatoriamente) e senha.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-004
@@ -225,7 +225,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.24.2. Cidadão (Pessoa Física): Autenticação por CPF(Obrigatoriamente) e senha; (...) 1.24.3. Empresas e outras entidades (Pessoa Jurídica): Autenticação por CNPJ (Obrigatoriamente) e senha.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-005
@@ -262,7 +262,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Regra de validação de formato não é explícita no documento] 1.24. "(...) o sistema deve permitir o login (...)"; 1.25. "O sistema deverá verificar as credenciais fornecidas (CPF ou CNPJ) obrigatoriamente e senha, validando-as de acordo com o cadastro do usuário em questão;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-006
@@ -299,7 +299,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Regra de validação de formato não é explícita no documento] 1.24.3. "Empresas e outras entidades (Pessoa Jurídica): Autenticação por CNPJ (Obrigatoriamente) e senha."; 1.25. "O sistema deverá verificar as credenciais fornecidas (CPF ou CNPJ) obrigatoriamente e senha, validando-as de acordo com o cadastro do usuário em questão;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-007
@@ -337,7 +337,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.24. O sistema deverá permitir o login para os seguintes tipos de usuários, observando que cada acesso deverá ser único e vinculado exclusivamente a um único CPF ou CNPJ:  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-008
@@ -373,7 +373,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Não há regra explícita no documento] Regra mais próxima — 1.24: "(...) observando que cada acesso deverá ser único e vinculado exclusivamente a um único CPF ou CNPJ:"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-009
@@ -411,7 +411,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25. O sistema deverá verificar as credenciais fornecidas (CPF ou CNPJ) obrigatoriamente e senha, validando-as de acordo com o cadastro do usuário em questão; 1.25.2. O sistema deverá exibir uma mensagem de erro clara quando as credenciais não forem reconhecidas;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-010
@@ -448,7 +448,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25. O sistema deverá verificar as credenciais fornecidas (CPF ou CNPJ) obrigatoriamente e senha, validando-as de acordo com o cadastro do usuário em questão; 1.25.2. O sistema deverá exibir uma mensagem de erro clara quando as credenciais não forem reconhecidas;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-011
@@ -485,7 +485,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Regra de obrigatoriedade de campos não é explícita no documento] 1.25. "O sistema deverá verificar as credenciais fornecidas (CPF ou CNPJ) obrigatoriamente e senha, validando-as de acordo com o cadastro do usuário em questão;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-012
@@ -523,7 +523,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.1. Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-013
@@ -560,7 +560,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.1. Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-014
@@ -596,7 +596,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.1. Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-015
@@ -704,7 +704,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Comportamento inferido, não literal no documento] 1.25.1. "Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-018
@@ -741,7 +741,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Comportamento inferido, não literal no documento] 1.25.1. "Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-019
@@ -779,7 +779,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.1. Estado Operacional Padrão (Ativo): O sistema deverá aplicar o conjunto completo de permissões e privilégios (entitlements) associados aos papéis do usuário cujo atributo de status funcional esteja definido como "Ativo", garantindo acesso irrestrito ao ambiente de trabalho conforme seu perfil de autorização;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-020
@@ -815,7 +815,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.2. Estado de Afastamento Legal (Licença): Para um usuário em estado de "Licença", o sistema deverá acionar uma política de quarentena de privilégios, apresentando um aviso de status e restringindo dinamicamente o acesso a um subconjunto mínimo de funcionalidades não transacionais, suspendendo temporariamente direitos de modificação e aprovação;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-021
@@ -851,7 +851,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.2. (...) apresentando um aviso de status e restringindo dinamicamente o acesso a um subconjunto mínimo de funcionalidades não transacionais, suspendendo temporariamente direitos de modificação e aprovação;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-022
@@ -887,7 +887,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.2. (...) suspendendo temporariamente direitos de modificação e aprovação;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-023
@@ -923,7 +923,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.2. (...) restringindo dinamicamente o acesso a um subconjunto mínimo de funcionalidades não transacionais (...)  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-024
@@ -959,7 +959,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Comportamento em sessão ativa não detalhado no documento] 1.25.3.2. "(...) o sistema deverá acionar uma política de quarentena de privilégios, apresentando um aviso de status e restringindo dinamicamente o acesso a um subconjunto mínimo de funcionalidades não transacionais, suspendendo temporariamente direitos de modificação e aprovação;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-025
@@ -995,7 +995,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.27.11.4. A partir da definição do período do novo status de atividade do servidor, esse deve receber um email informando da alteração realizada e no período definido as alterações do seu ambiente de trabalho devem ser aplicadas, de modo que, num cenário onde é definido que um usuário entrará em férias na próxima segunda e permanecerá por 30 dias, na segunda o usuário tenha o seu acesso à plataforma limitado, informando que ele está de férias e, ao término do período, o sistema restabeleça as funções para que o servidor retorne às suas atividades.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-026
@@ -1031,7 +1031,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.3. Estado de Afastamento Legal (Férias): De forma análoga ao estado de licença, um usuário cujo status seja "Férias" deverá ter seu acesso modulado pela mesma política de quarentena de privilégios, com a exibição de notificação e a suspensão de permissões de escrita e execução de fluxos de trabalho;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-027
@@ -1067,7 +1067,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.3. (...) com a exibição de notificação e a suspensão de permissões de escrita e execução de fluxos de trabalho;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-028
@@ -1103,7 +1103,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.3. (...) e a suspensão de permissões de escrita e execução de fluxos de trabalho;  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-029
@@ -1139,7 +1139,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Comportamento inferido por analogia ao estado de Licença, não literal no documento] 1.25.3.3. "(...) deverá ter seu acesso modulado pela mesma política de quarentena de privilégios (...)"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-030
@@ -1175,7 +1175,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.27.11.4. (...) e, ao término do período, o sistema restabeleça as funções para que o servidor retorne às suas atividades.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-031
@@ -1211,7 +1211,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3.4. Estado de Desprovisionamento Lógico (Inativo): Quando o vínculo do agente for encerrado (status "Inativo"), a plataforma deverá aplicar uma regra de negação explícita (explicit deny) a qualquer tentativa de autenticação, impossibilitando o acesso e exibindo uma mensagem de conta inativa.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-032
@@ -1247,7 +1247,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Comportamento em sessão ativa não detalhado no documento] 1.25.3.4. "(...) a plataforma deverá aplicar uma regra de negação explícita (explicit deny) a qualquer tentativa de autenticação, impossibilitando o acesso (...)"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-033
@@ -1283,7 +1283,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Comportamento inferido por reversão do status, não literal no documento] 1.25.3.1. "(...) O sistema deverá aplicar o conjunto completo de permissões e privilégios (entitlements) (...) garantindo acesso irrestrito ao ambiente de trabalho conforme seu perfil de autorização;"  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-034
@@ -1319,7 +1319,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Ausente no item 1.25.3] 1.27.10.1.e.iii. Suspenso - que deve representar servidores que tiverem seus acessos à plataforma suspensos; 1.27.11.2. (...) devendo existir, no mínimo, os seguintes status e possibilidades: a) Em atividade; b) Suspenso; c) Licença; d) Férias.  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-035
@@ -1355,7 +1355,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** 1.25.3. Controle de acesso dinâmico baseado no ciclo de vida da identidade funcional:  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
 
 ^ct-036
@@ -1430,7 +1430,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Citação do Termo:** [Não há regra explícita no documento sobre sessões simultâneas]  
 > **Tipo:** funcional  
 > **Camada:** API  
-> **Automação:** automatizado em Cypress — a portar pra Playwright  
+> **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
 > **Execução:** confirmado contra HML pela suíte automatizada (31/08/2026)
 
 ^ct-038

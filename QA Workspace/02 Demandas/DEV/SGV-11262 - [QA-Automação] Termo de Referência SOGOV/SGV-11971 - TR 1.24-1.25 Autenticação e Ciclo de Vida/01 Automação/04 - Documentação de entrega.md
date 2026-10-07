@@ -8,8 +8,8 @@ revisado: 2026-09-02
 ---
 # Documentação de Entrega — TR 1.24-1.25 (Automação)
 
-> [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
-> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
+> [!warning] Registro legado — não usar como estado atual
+> Esta revisão descreve código Cypress. Ela foi preservada como referência histórica e não determina porte futuro. O placar vigente está em [[02 - Validação automação|02 - Validação automação]] e a direção em [[../../Roadmap - Automação TR|Roadmap — Automação TR]].
 
 > [!info] Sobre esta nota
 > Documento de **revisão** pro Rafael conferir o grupo de testes de automação do TR 1.24-1.25 (Cypress, repo `sogov-automation-test`). Cobre os 36 CTs com código (de 38 no escopo): o que cada cenário faz e quais asserts ele executa. É complementar ao [[03 - Handoff de execução]] (que é a camada de estado/orquestração pra IA continuar o trabalho) — aqui o foco é só "o que o código faz", pra revisão humana. **Placar atual por CT não é duplicado aqui** — fica em [[02 - Validação automação]].

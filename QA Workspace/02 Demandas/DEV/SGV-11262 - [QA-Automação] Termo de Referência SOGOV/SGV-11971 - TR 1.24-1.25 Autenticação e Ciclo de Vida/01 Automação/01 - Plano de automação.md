@@ -4,12 +4,12 @@ tags:
   - automacao
 criado: 2026-08-26
 revisado: 2026-08-31
-status: executado (Cypress) — a portar pra Playwright
+status: legado-em-reconciliacao
 ---
 # Plano de Automação — TR 1.24-1.25
 
-> [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
-> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
+> [!warning] Plano histórico; não é o plano vigente do baseline
+> Esta nota foi escrita para Cypress e acumula investigação e decisões do ciclo antigo. Use-a como referência histórica de regras e descobertas, não como instrução para portar a suíte inteira. O estado por CT está em [[02 - Validação automação|02 - Validação automação]], o mapeamento do seed e dos 13 CTs Playwright em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]], e a sequência da iniciativa em [[../../Roadmap - Automação TR|Roadmap — Automação TR]]. A primeira entrega terá plano próprio no padrão `00–02`.
 
 > [!info] Estado atual do porte pra Playwright
 > O placar atual (quantos CTs já portados, em qual arquivo, qual rótulo) vive em [[02 - Validação automação|02 - Validação automação]] — não repetido aqui. O que segue abaixo é só **conhecimento de arquitetura reaproveitável** pro resto do porte.
@@ -26,7 +26,7 @@ Verificado no código real (`playwright/tests/api/auth/`):
 Histórico de como cada achado foi descoberto/corrigido: [[03 - Handoff de execução|03 - Handoff de execução]].
 
 > [!info] Sobre esta nota
-> Plano técnico para automatizar os 38 casos de teste dos itens 1.24/1.25 no repositório `sogov-automation-test`. Escrito antes de qualquer mudança no repo — mexer no repo é passo separado, autorizado depois. Fonte única dos casos: [[../00 QA/03 - Casos de teste|03 - Casos de teste]].
+> Registro técnico histórico relacionado aos 38 casos de teste dos itens 1.24/1.25. Fonte única dos casos: [[../00 QA/03 - Casos de teste|03 - Casos de teste]].
 
 ## Resumo
 

@@ -29,7 +29,7 @@ O placar de automação registra:
 
 - **25/38 CTs aprovados** no histórico de validação;
 - **13 CTs identificados em Playwright**, aprovados e sem falhas `@auth` no run de 06/10/2026;
-- **12 CTs aprovados ainda associados ao Cypress**, pendentes de porte para Playwright;
+- **12 CTs aprovados ainda associados ao Cypress**, sem porte Playwright confirmado; a prioridade e a fatia de porte devem ser definidas após a estabilização do baseline;
 - **4 CTs com falha/achado** (015, 029, 030 e 033);
 - **6 CTs bloqueados** (022, 026, 028, 034, 035 e 036);
 - **3 CTs aguardando código, captura de API ou investigação** (016, 017 e 037).
@@ -38,10 +38,7 @@ O fato de um CT estar verde não confirma, por si só, que seja independente e r
 
 **Mapeamento de código concluído em 07/10:** os 13 CTs são CT-001–012 e CT-038. Todos dependem do seed global, mas usam diretamente apenas a instância e atores por worker; nenhum usa módulo, serviço ou documento. O seed já é idempotente e grava um manifesto de IDs, mas hoje aponta para um perfil fixo de instância. O inventário detalhado e as ressalvas de cobertura estão em [[Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]].
 
-Segundo o hub atual da SGV-11971, CT-001–012 estão na `origin/main`; CT-038 passou em execuções repetidas, mas seu código ainda está em um worktree com `HEAD` destacado e sem commit. Confirmar essa situação ao reconciliar a baseline.
-
-> [!warning] Números sujeitos a reconciliação
-> As notas anteriores divergem sobre a quantidade restante a portar e algumas ainda descrevem Cypress como alvo. Até a revisão do pacote SGV-11971, use o placar em [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]] como referência dos estados por CT; o run de 06/10 cobre a suíte ampla e confirma apenas que os 13 CTs `@auth` não falharam naquela execução.
+Na verificação de 07/10, CT-001–012 estavam em `origin/main`. CT-038 passou nos runs registrados, mas seu arquivo ainda está em um worktree com `HEAD` destacado (`16c41e4`) e sem commit. O destino desse arquivo precisa ser resolvido antes de encerrar uma entrega que o inclua.
 
 ## Entregas existentes
 
@@ -58,8 +55,8 @@ As linhas abaixo são candidatas de roadmap, não demandas já criadas. O escopo
 
 | Ordem | Entrega / passo | Resultado esperado | Dependência | Situação |
 |---:|---|---|---|---|
-| 1 | **Reconciliar documentação e baseline** | Alinhar números, framework-alvo e status entre índice, README, hub e placar; confirmar estado do código CT-038 | Mapeamento de código já feito | 🔜 Próximo passo — atualização documental |
-| 2 | **Estabilizar o baseline de autenticação na instância dedicada** | Validar seed idempotente e atores por worker; executar e registrar CT-001–012 e CT-038 na instância dedicada. A entrega acompanha somente esses 13 CTs | Passo 1; pacote próprio `00–02`; branch/commit do CT-038 resolvido antes do encerramento | 📝 Primeira entrega candidata |
+| 1 | **Reconciliar documentação e baseline** | Alinhar números, framework-alvo e status entre índice, README, hub e placar; confirmar estado do código CT-038 | Mapeamento de código já feito | ✅ Documentos alinhados em 07/10; CT-038 confirmado em `HEAD` destacado, sem commit |
+| 2 | **Estabilizar o baseline de autenticação na instância dedicada** | Validar seed idempotente e atores por worker; executar e registrar CT-001–012 e CT-038 na instância dedicada. A entrega acompanha somente esses 13 CTs | Passo 1; pacote próprio `00–02`; resolver branch/commit do CT-038 antes do encerramento da entrega | 📝 Próxima entrega candidata |
 | 3 | **Preparar a próxima fatia funcional** | Separar CTs restantes por estado de negócio e dependência; definir aceite e preparação somente para o grupo escolhido | Baseline da autenticação estabilizado e CTs mapeados | 📝 Candidata; grupos a definir |
 | 4 | **Desbloquear CTs pendentes de comportamento/API** | Separar descoberta de API, investigação de falhas e decisões de produto da tarefa de porte | Evidência ou decisão técnica/produto por CT | ⏳ Dependências abertas |
 | 5 | **Expandir o seed conforme as próximas fatias** | Reutilizar o mecanismo atual e acrescentar estados/dados apenas quando um CT priorizado exigir | Necessidades confirmadas nas entregas de CTs | 📝 Candidata contínua |

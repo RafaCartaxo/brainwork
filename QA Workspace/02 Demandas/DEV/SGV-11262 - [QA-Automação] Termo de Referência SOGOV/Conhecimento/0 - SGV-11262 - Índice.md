@@ -19,7 +19,7 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 
 | Ciclo | SGV | O que cobre | Status |
 |---|---|---|---|
-| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
+| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Detalhe no placar da automação |
 
 ## Como um ciclo é organizado
 
@@ -34,8 +34,13 @@ SGV-<n> - TR <ciclo> <assunto>/
 │   ├── 03 - Casos de teste.md  ← fonte única dos CTs deste Termo
 │   ├── 04 - Validação dev.md   ← conformidade por CT
 │   └── 05 - Preparação Qase.md
-└── 01 Automação/                ← plano, handoff de execução e documentação de entrega
+└── 01 Automação/
+    ├── 00 - Automação.md        ← estado resumido e navegação
+    ├── 01 - Plano de automação.md
+    └── 02 - Validação automação.md ← placar por CT
 ```
+
+O pacote SGV-11971 ainda contém os arquivos `03 - Handoff de execução` e `04 - Documentação de entrega`, criados no formato antigo. Eles permanecem preservados enquanto suas informações são reconciliadas; o padrão atualizado usa somente `00–02`.
 
 As pastas são numeradas (`00 QA/`, `01 Automação/`) só pra ordem de leitura/execução no explorador de arquivos — QA vem antes porque é o que se faz primeiro; automação é consequência, quando houver.
 
@@ -65,7 +70,7 @@ Processo passo a passo e o script: [[Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_Q
 Não é duplicado aqui — está em [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]], que é a destilação do que foi aprendido no ciclo 1.24-1.25 (criar o card cedo, triagem de cada falha, nunca dar suíte por boa sem validação manual prévia, docs só por acréscimo).
 
 > [!warning] A skill ainda descreve Cypress
-> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 e **Playwright é o padrão** — teste novo só se escreve nele. A `SKILL_AUTOMACAO_TERMO_REFERENCIA` e os documentos de `01 Automação/` do ciclo 1.24-1.25 ainda estão escritos em Cypress. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
+> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 e **Playwright é o padrão** — teste novo só se escreve nele. A `SKILL_AUTOMACAO_TERMO_REFERENCIA` ainda precisa ser reconciliada com esse fluxo. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 ## Padrão reaproveitável
 
@@ -81,3 +86,4 @@ O template [[Sistema/Templates/Verificação de Conformidade (Termo de Referênc
 - 2026-09-25 - Scripts `qase-sync` movidos do repo `sogov-automation-test` pra `Sistema/Scripts/qase-sync/` no vault
 - 2026-10-01 - Descoberto que o repo migrou pra Playwright (merge `1d78bf9`) sem registro no vault — nota [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]] criada. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`); não sobem em Cypress, serão portadas
 - 2026-10-02 - SGV-11262 vira guarda-chuva de automação de Termo de Referência; o ciclo 1.24-1.25 ganha SGV próprio (SGV-11971) e vira pacote no padrão da epic SGV-9296
+- 2026-10-07 - Índice atualizado: 13 CTs Playwright (CT-001–012 e CT-038); 12 aprovados seguem associados ao Cypress. A instância dedicada com seed reconciliador foi escolhida como primeiro alvo do roadmap.

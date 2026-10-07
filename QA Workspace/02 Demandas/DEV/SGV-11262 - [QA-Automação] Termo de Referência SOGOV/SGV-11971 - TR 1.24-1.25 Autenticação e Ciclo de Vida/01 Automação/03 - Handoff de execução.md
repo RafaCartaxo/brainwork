@@ -8,6 +8,9 @@ revisado: 2026-08-31
 ---
 # Handoff de execução — TR 1.24-1.25
 
+> [!warning] Registro legado — não usar como estado atual
+> Este handoff foi mantido para preservar contexto histórico. O estado por CT está em [[02 - Validação automação|02 - Validação automação]], a direção da iniciativa em [[../../Roadmap - Automação TR|Roadmap — Automação TR]] e o mapeamento técnico atual em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]].
+
 > [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
 > O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 

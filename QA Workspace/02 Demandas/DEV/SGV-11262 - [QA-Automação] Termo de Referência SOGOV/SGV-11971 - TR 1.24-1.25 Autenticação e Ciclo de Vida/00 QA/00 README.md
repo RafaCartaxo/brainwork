@@ -28,12 +28,12 @@ etapa_atual: "QA · Validação"
 | Casos de teste | ✅ Preparados (CT-001 a CT-038 + 3 extras fora de escopo) |
 | Validação | 🔄 Em andamento — **25/38 CTs confirmados** (01/10/2026); 4 achados reais, 6 falhas sem causa raiz, 3 sem código |
 | Preparação Qase | 📤 Enviado (projeto SGV, suite 4 — 25 atualizados, 2 deprecated, 1 criado, 31/08/2026) |
-| Automação | 🔄 Em andamento — 35/38 codados em Cypress; **13/38 já confirmados passando em Playwright** (Suítes 1, 2 + CT-038, 02/10/2026); restam 25 a portar — placar completo em [[../01 Automação/02 - Validação automação\|02 - Validação automação]] |
+| Automação | 🔄 Em andamento — 13 CTs identificados em Playwright (CT-001–012 e CT-038); outros 12 CTs aprovados seguem associados ao Cypress. Os 13 passaram no run registrado de 06/10/2026; placar dos 38 CTs em [[../01 Automação/02 - Validação automação\|02 - Validação automação]] |
 
-**Próximo passo:** decidir se os 4 achados reais de produto (CT-015, CT-029/030, CT-033) viram defeitos com SGV próprio ou seguem como achado de conformidade — decisão adiada em 02/10/2026. Em paralelo, portar o restante da suíte (Suíte 3 inteira, Suíte 4 inteira, CT-037 — 25 CTs) de Cypress pra Playwright. CT-038 já portado e verde (`api/auth/audit-sessions.spec.ts`), ainda não commitado no repo — worktree em HEAD destacado, branch a definir.
+**Próxima entrega candidata da iniciativa:** estabilizar o seed na **instância de teste dedicada** e validar CT-001–012 e CT-038, com pacote próprio `00–02`. A leitura confirmou que o código de CT-038 ainda está em `HEAD` destacado (`16c41e4`), sem commit; definir seu destino antes de encerrar a entrega. Este README e o pacote SGV-11971 continuam registrando o ciclo funcional de 38 CTs. Direção e sequência em [[../../Roadmap - Automação TR|Roadmap — Automação TR]].
 
 > [!warning]- O alvo da automação mudou: Cypress → Playwright (01/10/2026) — correção em 02/10/2026
-> O repo `sogov-automation-test` migrou pra Playwright em setembro (merge `1d78bf9`) enquanto esta automação estava parada. **Correção (02/10/2026):** ao contrário do que esta nota dizia antes ("zero cobertura, nenhuma ocorrência de `CT-0` em `playwright/`"), confirmado por evidência real (`playwright/test-results/results.xml`, run de 01/10/2026, 398 testes) que as **Suítes 1 e 2 (12 CTs) já foram portadas** — `playwright/tests/api/auth/login.spec.ts` (CT-001 a CT-009, rotulados `A02-C01`...`A02-C09`) e `credentials.spec.ts` (CT-010 a CT-012, rotulados `A01-C01`...`A01-C03`), títulos idênticos aos do `03 - Casos de teste`, todos verdes. A busca anterior por `CT-0` literal não achava porque o porte usa outro rótulo de teste. **Restam Suítes 3, 4 e 5 (26 CTs)** a portar. Arquitetura e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
+> O repositório migrou pra Playwright em setembro (merge `1d78bf9`). A evidência registrada em 06/10/2026 confirma que CT-001–012 e CT-038 não falharam no run amplo. Isso confirma os resultados observados, mas não demonstra execução reproduzível em outra instância. O mapa do código e do seed está em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]].
 
 > [!info]- Origem
 > **Primeiro ciclo** da guarda-chuva [[../../Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Verificação de conformidade do SOGOV com os itens 1.24 e 1.25 do Termo de Referência (mais os correlatos 1.13 e 1.27.x citados pelos casos). O trabalho começou em 31/08/2026 registrado só como automação; virou verificação do Termo inteiro em 02/09/2026 e ganhou SGV próprio em 02/10/2026.
@@ -53,8 +53,10 @@ SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
     ├── 00 - Automação.md
     ├── 01 - Plano de automação.md
     ├── 02 - Validação automação.md
-    ├── 03 - Handoff de execução.md
-    └── 04 - Documentação de entrega.md
+    ├── 03 - Handoff de execução.md       ← arquivo do pacote antigo, em revisão
+    └── 04 - Documentação de entrega.md   ← arquivo do pacote antigo, em revisão
 ```
+
+O padrão atualizado da automação é `00 - Automação`, `01 - Plano de automação` e `02 - Validação automação`. Os arquivos `03` e `04` permanecem no pacote enquanto a informação útil é reconciliada; eles não fazem parte do fluxo novo.
 
 ---
