@@ -29,11 +29,11 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1|C1]] | [[#^ct-seed-001|SEED-001]] |
-| [[01 - Demanda#^c2|C2]] | [[#^ct-seed-002|SEED-002]] |
-| [[01 - Demanda#^c3|C3]] | [[#^ct-seed-003|SEED-003]] |
-| [[01 - Demanda#^c4|C4]] | [[#^ct-seed-004|SEED-004]] |
-| [[01 - Demanda#^c5|C5]] | CT-001–012 e CT-038 da SGV-11971; resultados em [[../01 Automação/02 - Validação automação]] |
+| [[01 - Demanda#^c1\|C1]] | [[#^ct-seed-001\|SEED-001]] |
+| [[01 - Demanda#^c2\|C2]] | [[#^ct-seed-002\|SEED-002]] |
+| [[01 - Demanda#^c3\|C3]] | [[#^ct-seed-003\|SEED-003]] |
+| [[01 - Demanda#^c4\|C4]] | [[#^ct-seed-004\|SEED-004]] |
+| [[01 - Demanda#^c5\|C5]] | CT-001–012 e CT-038 da SGV-11971; resultados em [[../01 Automação/02 - Validação automação]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 

@@ -50,10 +50,10 @@ Verificar a seleção segura da instância 225 pelo seed, a preservação do pad
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| [[03 - Casos de teste#^ct-seed-001|SEED-001]] | Configuração do alvo | Seed/API | Prevista | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-002|SEED-002]] | Interrupção sem fallback | Unidade/API | Prevista | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-003|SEED-003]] | Regressão do alvo padrão | Unidade/API | Prevista | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-004|SEED-004]] | Idempotência e manifesto | API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-001\|SEED-001]] | Configuração do alvo | Seed/API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-002\|SEED-002]] | Interrupção sem fallback | Unidade/API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-003\|SEED-003]] | Regressão do alvo padrão | Unidade/API | Prevista | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-004\|SEED-004]] | Idempotência e manifesto | API | Prevista | [[04 - Validação dev]] |
 | CT-001–012 e CT-038 da SGV-11971 | Autenticação | API | Playwright existente | [[../01 Automação/02 - Validação automação]] |
 
 
