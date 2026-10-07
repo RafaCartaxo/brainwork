@@ -22,6 +22,9 @@ O caminho começa pela estabilização e compreensão do que já existe. A execu
 
 O ciclo **TR 1.24–1.25 — Autenticação e ciclo de vida do usuário** está registrado na [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/00 README|SGV-11971]]. Seus artefatos de QA — demanda, plano, casos, validação e preparação Qase — permanecem próprios desse ciclo. Os 38 CTs dessa entrega continuam sendo a referência funcional do escopo.
 
+> [!success] Decisão de direção — 07/10/2026
+> O primeiro alvo será uma **instância de teste dedicada e estável**, criada ou reconciliada pelo seed. Não vamos apontar o piloto para uma instância de cliente existente. A execução em diferentes clientes/instâncias continua como direção futura, evoluindo depois que este baseline estiver estável.
+
 O placar de automação registra:
 
 - **25/38 CTs aprovados** no histórico de validação;
@@ -56,12 +59,12 @@ As linhas abaixo são candidatas de roadmap, não demandas já criadas. O escopo
 | Ordem | Entrega / passo | Resultado esperado | Dependência | Situação |
 |---:|---|---|---|---|
 | 1 | **Reconciliar documentação e baseline** | Alinhar números, framework-alvo e status entre índice, README, hub e placar; confirmar estado do código CT-038 | Mapeamento de código já feito | 🔜 Próximo passo — atualização documental |
-| 2 | **Definir o alvo de instância do seed** | Decidir se a execução cria/reusa uma instância de teste ou prepara uma instância existente; registrar permissões e parâmetros necessários | Inventário atual em [[Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] | 📝 Decisão necessária antes do desenho da implementação |
-| 3 | **Primeira entrega técnica: alvo configurável para a fatia de autenticação** | Executar CT-001–012 e CT-038 contra um alvo selecionado, preparando/reusando apenas os dados necessários e mantendo o resultado isolado por CT | Passos 1–2; critério de aceite próprio e escopo técnico confirmado | 📝 Candidata; não criar demanda até fechar a decisão do passo 2 |
-| 4 | **Portar e validar grupos restantes de CTs** | Evoluir Playwright em fatias funcionais delimitadas, cada qual com seu próprio pacote `00–02` e CTs exclusivos | Mapeamento dos dados/estados por grupo e decisões dos CTs incluídos | 📝 Candidata; grupos a definir |
-| 5 | **Desbloquear CTs pendentes de comportamento/API** | Separar descoberta de API, investigação de falhas e decisões de produto da tarefa de porte | Evidência ou decisão técnica/produto por CT | ⏳ Dependências abertas |
-| 6 | **Expandir preparação reutilizável conforme necessidade** | Acrescentar ao seed somente os dados e estados exigidos pelas próximas fatias; não criar um catálogo geral do SOGOV | Necessidades confirmadas nas entregas de CTs | 📝 Candidata contínua |
-| 7 | **Executar a sanidade por cliente/instância e ambiente** | Preparar e executar a cobertura validada com configuração explícita por alvo e ambiente | Passos 2–6, autenticação e acesso compatíveis | 🎯 Objetivo da iniciativa, evolução incremental |
+| 2 | **Estabilizar o baseline de autenticação na instância dedicada** | Validar seed idempotente e atores por worker; executar e registrar CT-001–012 e CT-038 na instância dedicada. A entrega acompanha somente esses 13 CTs | Passo 1; pacote próprio `00–02`; branch/commit do CT-038 resolvido antes do encerramento | 📝 Primeira entrega candidata |
+| 3 | **Preparar a próxima fatia funcional** | Separar CTs restantes por estado de negócio e dependência; definir aceite e preparação somente para o grupo escolhido | Baseline da autenticação estabilizado e CTs mapeados | 📝 Candidata; grupos a definir |
+| 4 | **Desbloquear CTs pendentes de comportamento/API** | Separar descoberta de API, investigação de falhas e decisões de produto da tarefa de porte | Evidência ou decisão técnica/produto por CT | ⏳ Dependências abertas |
+| 5 | **Expandir o seed conforme as próximas fatias** | Reutilizar o mecanismo atual e acrescentar estados/dados apenas quando um CT priorizado exigir | Necessidades confirmadas nas entregas de CTs | 📝 Candidata contínua |
+| 6 | **Selecionar perfis de instância por cliente/ambiente** | Evoluir da instância dedicada atual para execução controlada em diferentes instâncias/clientes e ambientes | Baseline dedicado estável; definir contrato de seleção, permissões e isolamento | 🎯 Objetivo futuro da iniciativa |
+| 7 | **Executar a sanidade por cliente/instância e ambiente** | Preparar e executar a cobertura validada com configuração explícita por alvo e ambiente | Passos 3–6, autenticação e acesso compatíveis | 🎯 Direção da iniciativa, evolução incremental |
 
 Cada futura entrega acompanhará apenas os CTs do seu escopo em seu pacote `00–02`. Se uma entrega for de preparação/infraestrutura, terá critérios de aceite próprios e CTs-piloto explícitos. O placar consolidado desta iniciativa deverá apontar para os resultados por entrega, sem duplicar a validação detalhada dos CTs.
 
@@ -69,14 +72,14 @@ Cada futura entrega acompanhará apenas os CTs do seu escopo em seu pacote `00�
 
 ```mermaid
 flowchart TD
-    M[Mapa do seed e dependências atuais<br/>documentado] --> A[Reconciliar documentação e baseline]
-    A --> B[Definir como selecionar/criar/reusar a instância]
-    B --> C[Planejar entrega-piloto com escopo e aceite próprios]
-    C --> D[Preparar os dados necessários ao escopo]
-    D --> E[Validar CTs do piloto no alvo configurado]
-    E --> F[Estender a cobertura em entregas delimitadas]
-    G[Resolver investigação, API e decisões de produto] --> F
-    F --> H[Sanidade reproduzível por cliente/instância e ambiente]
+    M[Mapa atual do seed e CTs<br/>documentado] --> A[Reconciliar documentação e baseline]
+    A --> B[Estabilizar seed na instância dedicada]
+    B --> C[Validar CT-001–012 e CT-038]
+    C --> D[Escolher e planejar a próxima fatia funcional]
+    E[Resolver investigação, API e decisões de produto] --> D
+    D --> F[Expandir preparação do seed somente se necessária]
+    F --> G[Selecionar perfis de cliente/instância e ambiente]
+    G --> H[Sanidade reproduzível em diferentes alvos]
 ```
 
 ## Critérios para abrir uma nova entrega

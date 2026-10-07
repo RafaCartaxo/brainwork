@@ -80,6 +80,10 @@ Os CTs de autenticação usam apenas o cidadão PJ da chave `citizen` (reapontad
 
 ## Reprodutibilidade e limites de configuração
 
+### Alvo do primeiro piloto
+
+Decisão da iniciativa em 07/10/2026: começar numa **instância de teste dedicada e estável**, criada ou reconciliada pelo seed. A seleção de uma instância de cliente existente fica para uma etapa futura. O código atual já cria/reusa um perfil fixo de instância dentro do ambiente configurado; este mapa não confirma uma execução limpa recente do seed nem prova ainda a estabilidade em outro ambiente.
+
 **O que já é reproduzível:**
 
 - O seed procura/reconcilia recursos por identidades naturais e revalida o resultado pela API.
