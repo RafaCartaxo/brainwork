@@ -73,11 +73,15 @@ Esta visão cobre os requisitos do PDF (1.1–1.43). As linhas agrupam requisito
 
 A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-038, cruzar cenário/pré-condição com código Playwright/Cypress ou execução manual, identificando ator, identificador, status inicial, preparação, mutação/limpeza, credenciais/configuração e evidência. O estado prévio dos CTs deve ser revalidado; não inferir resultado atual a partir do placar histórico.
 
-**Sequenciamento decidido em 07/10/2026 (Codex + Rafael):** priorizar rastreabilidade profunda dos **13 CTs já em Playwright** (único recorte com execução real/verde registrada) antes de decompor os 24 restantes das Suítes 3/4. Isso reordena o trabalho — **não remove** CT-013–037 do critério de saída do DISC-002.
+**Sequenciamento decidido em 07/10/2026 (Codex + Rafael):** priorizar rastreabilidade profunda dos **13 CTs já em Playwright** (único recorte com execução real/verde registrada) antes de decompor os **25 restantes** das Suítes 3/4 (CT-013 a CT-037 — 037-013+1 = 25, não 24; correção de 07/10/2026 após revisão do Codex). Isso reordena o trabalho — **não remove** CT-013–037 do critério de saída do DISC-002.
 
 ### Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)
 
-Reconciliado contra o código no commit `16c41e4` (mesmo commit do DISC-001) e contra a tabela equivalente do [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] — sem divergência entre os dois.
+> [!warning] Evidência não é uniforme entre os 13 — corrigido após revisão do Codex (07/10/2026)
+> **CT-001–012** (`login.spec.ts`, `credentials.spec.ts`) estão commitados em `origin/main` — reconciliados contra o commit `16c41e4` (mesmo commit do DISC-001).
+> **CT-038** (`audit-sessions.spec.ts`) é diferente: o arquivo está **untracked no worktree**, não faz parte do commit `16c41e4` nem de nenhum commit. A evidência dele é a execução manual confirmada contra o estado atual (não commitado) do worktree — não "contra o commit 16c41e4". Mantido nos 13/38 porque o teste existe e passa, mas a rastreabilidade de código dele é mais frágil (pode ser perdido se o worktree for descartado antes de commitar).
+>
+> Contra a tabela equivalente do [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] — sem divergência, para os 13.
 
 **Pré-condições e dependências comuns aos 13** (Confirmado, não repetido linha a linha):
 - Projeto `seed` do Playwright já rodou (`dependencies: ['seed']` no `playwright.config.ts`) e gravou `seed-manifest.json`.

@@ -59,7 +59,7 @@ Depois do DISC-001, o Codex (planejador) e o Claude (execução) alinharam uma r
 3. Só o observado em execução real conta como **Confirmado**; reuso entre ambientes/instâncias é **Inferido** até teste explícito — nenhum teste foi rodado nesta rodada.
 4. **Prioridade reordenada, não reduzida**: os 13 CTs Playwright (único recorte com execução verde real) entram primeiro, de rastreabilidade profunda. CT-013–037 (Suítes 3/4) continuam no critério de saída C2 — ficam pendentes por sequenciamento, não removidos.
 
-**Entregue nesta rodada:** grafo CT→pré-condição→dados/configuração→mutação→lacuna dos 13 CTs Playwright, na [[../00 QA/Matriz - Análise do preset provável#Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)|Matriz]]. Reconciliado contra o mesmo commit do DISC-001 (`16c41e4`), zero divergência da tabela equivalente do Mapa do seed.
+**Entregue nesta rodada:** grafo CT→pré-condição→dados/configuração→mutação→lacuna dos 13 CTs Playwright, na [[../00 QA/Matriz - Análise do preset provável#Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)|Matriz]]. Zero divergência da tabela equivalente do Mapa do seed. **Evidência não é uniforme** (corrigido após revisão do Codex): CT-001–012 reconciliados contra o commit `16c41e4`; CT-038 é untracked no worktree, evidência é a execução manual confirmada contra o estado atual (não commitado), não contra `16c41e4`.
 
 > [!info] Pausa combinada com o Rafael
 > Terminado o recorte dos 13 CTs — aguardando revisão dele antes de decompor CT-013–037 ou propor qualquer forma de preset.
