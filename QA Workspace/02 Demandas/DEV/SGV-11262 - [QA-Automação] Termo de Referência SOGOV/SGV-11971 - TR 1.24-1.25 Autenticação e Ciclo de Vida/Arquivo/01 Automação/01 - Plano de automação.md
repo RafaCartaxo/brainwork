@@ -9,10 +9,10 @@ status: legado-em-reconciliacao
 # Plano de Automação — TR 1.24-1.25
 
 > [!warning] Plano histórico; não é o plano vigente do baseline
-> Esta nota foi escrita para Cypress e acumula investigação e decisões do ciclo antigo. Use-a como referência histórica de regras e descobertas, não como instrução para portar a suíte inteira. O estado por CT está em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]], o mapeamento do seed e dos 13 CTs Playwright em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]], e a sequência da iniciativa em [[../../Roadmap - Automação TR|Roadmap — Automação TR]]. A primeira entrega terá plano próprio no padrão `00–02`.
+> Esta nota foi escrita para Cypress e acumula investigação e decisões do ciclo antigo. Use-a como referência histórica de regras e descobertas, não como instrução para portar a suíte inteira. O estado por CT está em [[02 - Validação automação|02 - Validação automação]], o mapeamento do seed e dos 13 CTs Playwright em [[Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]], e a sequência da iniciativa em [[Roadmap - Automação TR|Roadmap — Automação TR]]. A primeira entrega terá plano próprio no padrão `00–02`.
 
 > [!info] Estado atual do porte pra Playwright
-> O placar atual (quantos CTs já portados, em qual arquivo, qual rótulo) vive em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]] — não repetido aqui. O que segue abaixo é só **conhecimento de arquitetura reaproveitável** pro resto do porte.
+> O placar atual (quantos CTs já portados, em qual arquivo, qual rótulo) vive em [[02 - Validação automação|02 - Validação automação]] — não repetido aqui. O que segue abaixo é só **conhecimento de arquitetura reaproveitável** pro resto do porte.
 
 ### Como a Suíte 1/2 ficaram organizadas no Playwright (pra usar de molde no resto do porte)
 
@@ -150,7 +150,7 @@ Reduz de 38 disparos para ~10-15 lotes, preservando 1 `it()` por CT no código f
 
 Os demais gaps originais (TC-17 desbloqueio, TC-38 sessões simultâneas, status "Suspenso") já têm decisão de produto registrada em 18/08 no Qase — falta só tradução técnica, não nova pergunta de produto. TC-38 (CT-038) já foi traduzido e confirmado; CT-017 (desbloqueio) segue sem captura técnica.
 
-> [!info] Placar: ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação]]
+> [!info] Placar: ver [[02 - Validação automação]]
 > Não repetido aqui. Dois achados de escopo que vale reter (não são estado, são conhecimento): CT-020 teve os nomes dos níveis de permissão atualizados na citação do Termo (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível. CT-026 tem um gap de cobertura identificado (o Termo exige e-mail de notificação ao fim da Licença, não testado ainda) — pendência de cobertura, não falha do CT atual.
 
 > [!warning] Auditoria (26/08) — `Execução.md` está desatualizado em relação ao Qase

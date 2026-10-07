@@ -16,10 +16,10 @@ data_fim: ""
 # Validação — Bug tipo do solicitante abreviado
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|Abrir README do card]]
 > **Bug:** [[01 - Bug]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/04 - Validação dev]]
 
 > [!settings]- Controle da validação
 > **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`
@@ -39,7 +39,7 @@ data_fim: ""
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | ❌ Falhou | `requester.type: "PF"`/`"PJ"` em 10/10 registros reais; `novo-estatistica-atualizado.txt` confirma padrão por extenso | Correção já confirmada/agendada pelo dev (grupo "Parte 2" da call de 05/10/2026) | este próprio Bug | 0 |
+| [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | ❌ Falhou | `requester.type: "PF"`/`"PJ"` em 10/10 registros reais; `novo-estatistica-atualizado.txt` confirma padrão por extenso | Correção já confirmada/agendada pelo dev (grupo "Parte 2" da call de 05/10/2026) | este próprio Bug | 0 |
 
 ---
 

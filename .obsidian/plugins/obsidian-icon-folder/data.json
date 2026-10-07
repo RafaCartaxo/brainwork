@@ -233,14 +233,6 @@
     "iconName": "LiKeyRound",
     "iconColor": "#4338ca"
   },
-  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA": {
-    "iconName": "LiClipboardList",
-    "iconColor": "#2563eb"
-  },
-  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação": {
-    "iconName": "LiBot",
-    "iconColor": "#7c3aed"
-  },
   "Sistema/Templates/Pacote/00 QA": {
     "iconName": "LiClipboardList",
     "iconColor": "#2563eb"
@@ -346,6 +338,14 @@
     "iconColor": "#2563eb"
   },
   "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação": {
+    "iconName": "LiBot",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA": {
     "iconName": "LiClipboardList",
     "iconColor": "#2563eb"
   }

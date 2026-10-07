@@ -1,7 +1,7 @@
 ---
 demanda: "[[01 - Bug]]"
 plano: ""
-validacao: "[[04 - Validação dev]]"
+validacao: "[[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/04 - Validação dev]]"
 status: concluido
 pontos: ""
 ---
@@ -9,10 +9,10 @@ pontos: ""
 # Casos de teste — Bug tipo do solicitante abreviado
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
+> **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/00 README|Abrir README do card]]
 > **Bug:** [[01 - Bug]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/04 - Validação dev]]
 
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
@@ -53,6 +53,6 @@ pontos: ""
 > **Tipo:** funcional
 > **Camada:** API
 > **Automação:** manual
-> **Execução:** reprovado — `requester.type` veio `"PF"`/`"PJ"` (abreviado) em 10/10 registros reais (ver [[04 - Validação dev]]); correção já agendada
+> **Execução:** reprovado — `requester.type` veio `"PF"`/`"PJ"` (abreviado) em 10/10 registros reais (ver [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002/00 QA/04 - Validação dev]]); correção já agendada
 
 ^ct-001

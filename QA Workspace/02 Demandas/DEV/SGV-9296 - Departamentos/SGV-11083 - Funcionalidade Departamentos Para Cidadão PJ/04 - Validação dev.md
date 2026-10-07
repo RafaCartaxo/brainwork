@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda]]"
 execucao: ""
 ambiente: dev
 versao: ""
@@ -8,39 +8,39 @@ responsavel: Rafael
 resultado: aprovado
 pontos: 0
 ct_resultados:
-  ct_001: "✅ Aprovado"
-  ct_002: "✅ Aprovado"
-  ct_003: "✅ Aprovado"
-  ct_004: "✅ Aprovado"
-  ct_005: "✅ Aprovado"
-  ct_006: "✅ Aprovado"
-  ct_007: "✅ Aprovado"
-  ct_008: "✅ Aprovado"
-  ct_009: "✅ Aprovado"
-  ct_010: "✅ Aprovado"
-  ct_011: "✅ Aprovado"
-  ct_012: "✅ Aprovado"
-  ct_013: "✅ Aprovado"
-  ct_014: "✅ Aprovado"
-  ct_015: "✅ Aprovado"
-  ct_016: "✅ Aprovado"
-  ct_017: "✅ Aprovado"
-  ct_018: "✅ Aprovado"
-  ct_019: "✅ Aprovado"
-  ct_020: "✅ Aprovado"
-  ct_021: "✅ Aprovado"
-  ct_022: "✅ Aprovado"
-  ct_023: "✅ Aprovado"
-  ct_024: "✅ Aprovado"
-  ct_025: "✅ Aprovado"
-  ct_026: "✅ Aprovado"
-  ct_027: "✅ Aprovado"
-  ct_028: "✅ Aprovado"
-  ct_029: "✅ Aprovado"
-  ct_030: "✅ Aprovado"
-  ct_031: "✅ Aprovado"
-  ct_032: "✅ Aprovado"
-  ct_033: "✅ Aprovado"
+  ct_001: ✅ Aprovado
+  ct_002: ✅ Aprovado
+  ct_003: ✅ Aprovado
+  ct_004: ✅ Aprovado
+  ct_005: ✅ Aprovado
+  ct_006: ✅ Aprovado
+  ct_007: ✅ Aprovado
+  ct_008: ✅ Aprovado
+  ct_009: ✅ Aprovado
+  ct_010: ✅ Aprovado
+  ct_011: ✅ Aprovado
+  ct_012: ✅ Aprovado
+  ct_013: ✅ Aprovado
+  ct_014: ✅ Aprovado
+  ct_015: ✅ Aprovado
+  ct_016: ✅ Aprovado
+  ct_017: ✅ Aprovado
+  ct_018: ✅ Aprovado
+  ct_019: ✅ Aprovado
+  ct_020: ✅ Aprovado
+  ct_021: ✅ Aprovado
+  ct_022: ✅ Aprovado
+  ct_023: ✅ Aprovado
+  ct_024: ✅ Aprovado
+  ct_025: ✅ Aprovado
+  ct_026: ✅ Aprovado
+  ct_027: ✅ Aprovado
+  ct_028: ✅ Aprovado
+  ct_029: ✅ Aprovado
+  ct_030: ✅ Aprovado
+  ct_031: ✅ Aprovado
+  ct_032: ✅ Aprovado
+  ct_033: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---
@@ -49,11 +49,11 @@ data_fim: ""
 
 > [!info]- Navegação QA
 > **README do card:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
+> **Demanda/Bug:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/02 - Plano de teste]]
 > **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/03 - Casos de teste]]
 > **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle da validação

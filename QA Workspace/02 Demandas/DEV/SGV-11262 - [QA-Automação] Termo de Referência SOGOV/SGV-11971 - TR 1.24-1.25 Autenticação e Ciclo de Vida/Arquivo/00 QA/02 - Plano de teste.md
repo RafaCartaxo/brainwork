@@ -10,8 +10,8 @@ pontos: ""
 > [!info]- Navegação QA  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]]  
-> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]  
+> **Casos de teste:** [[03 - Casos de teste]]  
+> **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
@@ -35,10 +35,10 @@ Verificar, com cobertura automatizada e reproduzível, que o SOGOV atende aos 16
 
 ## Matriz de cobertura
 
-A matriz critério ↔ CT vive em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#Matriz de cobertura]], gerada a partir do item do Termo que cada caso cita. São 16 critérios cobertos por 38 casos ativos.
+A matriz critério ↔ CT vive em [[03 - Casos de teste#Matriz de cobertura]], gerada a partir do item do Termo que cada caso cita. São 16 critérios cobertos por 38 casos ativos.
 
 ## Entrada e saída
 
 - **Entrada:** Termo de Referência do SOGOV (PDF original, itens até 1.26) e o backlog de casos herdado das 3 versões divergentes consolidadas em 31/08/2026.
-- **Saída:** 38 casos ativos na Qase (projeto SGV, suite 4), suíte automatizada no repo `sogov-automation-test` e o registro de conformidade em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]].
+- **Saída:** 38 casos ativos na Qase (projeto SGV, suite 4), suíte automatizada no repo `sogov-automation-test` e o registro de conformidade em [[04 - Validação dev]].
 

@@ -1,56 +1,53 @@
 ---
-demanda_pai: SGV-11262
-ciclo_referencia: SGV-11971
-casos_origem: "[[../../00 QA/03 - Casos de teste]]"
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../../Arquivo/00 QA/03 - Casos de teste]]"
 casos_entrega: "[[../00 QA/03 - Casos de teste]]"
 repo: sogov-automation-playwright
 status: planejado
 ---
+# Plano de automação — Entrega 01: Baseline na instância 225
 
-# Plano de automação — Baseline de autenticação na instância 225
-
-> [!info]- Navegação
-> **Hub:** [[00 - Automação]]
+> [!info]- Navegação QA
+> **README:** [[../00 QA/00 README|Entrega 01]]
+> **Demanda:** [[../00 QA/01 - Demanda]]
+> **Casos da entrega:** [[../00 QA/03 - Casos de teste]]
+> **Casos funcionais de origem:** [[../../Arquivo/00 QA/03 - Casos de teste|SGV-11971]]
+> **Automação:** [[00 - Automação]]
 > **Validação:** [[02 - Validação automação]]
-> **Roadmap:** [[../../../Roadmap - Automação TR|Roadmap da SGV-11262]]
-> **Casos de origem:** [[../../00 QA/03 - Casos de teste|38 CTs da SGV-11971]]
 
 > [!settings]- Controle do plano
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
+> Este plano registra o recorte, a estratégia e as dependências antes da implementação. Os quatro casos técnicos de seleção/preparação estão no QA desta entrega; abaixo fica a estratégia de automação dos CTs funcionais incluídos.
+
 ## Objetivo e escopo
 
-- **Objetivo:** executar o seed existente e os CTs de autenticação numa instância de teste dedicada já criada.
-- **Instância:** ID 225 — “Termo De Referência - Sogov”.
-- **CTs incluídos:** CT-001–012 e CT-038.
-- **Fora do escopo:** demais CTs da SGV-11971, teste de criação de cliente por execução, implementação do Roteiro de Sanidade 01 como preset e ampliação do catálogo atual.
+- **Objetivo:** usar de forma segura e repetível a instância de teste dedicada 225 e validar nela a cobertura de autenticação incluída.
+- **CTs incluídos:** CT-001–012 e CT-038, definidos na SGV-11971.
+- **Fora do escopo:** demais CTs da SGV-11971, criação de nova instância por execução, alteração do destino padrão de todas as suítes e expansão do seed para além dos atores necessários.
 
-## Estratégia
+## Estratégia por suíte
 
-| Grupo | Camada | Dados/estado inicial | Reuso ou mudança | Dependência/gate |
+| Suíte / CTs | Camada | Dados e estado inicial | Reuso / mudança necessária | Dependência ou gate |
 |---|---|---|---|---|
-| CT-001–012, CT-038 | API | Instância 225 acessível; atores de servidor e cidadão provisionados pelo seed | Reusar specs, fixtures e pools atuais. Adicionar seleção explícita por PW_INSTANCE_ID (ou configuração equivalente), conferir identidade da instância e gravar o resultado no manifesto | Confirmar que as URLs configuradas apontam ao mesmo backend onde a 225 existe; confirmar disponibilidade do login no estado atual da instância; resolver CT-038 sem commit |
-| Seed global do projeto API | API/setup | Baseline amplo atual do repositório | Preservar o caminho padrão das demais suítes. Quando ID explícito estiver configurado, não criar instância como fallback; interromper se a validação do ID/nome falhar | Execução dedicada apenas para esta fatia; reconhecer que o seed atual também provisiona outros recursos globais |
-
-O parâmetro de instância deve ser opcional: sem ele, o comportamento padrão atual continua usando E2E Automatic Test. Com o alvo explícito, o seed deve buscar a instância pelo ID, validar o nome esperado e falhar sem criar outra instância caso não consiga confirmar o alvo. O manifesto deve registrar o ID e o nome efetivamente usados; sua impressão digital deve distinguir o alvo dedicado.
-
-O seed atual prepara recursos globais de outras suítes além dos atores usados pelos 13 CTs. Esta entrega não os amplia nem afirma que os 13 CTs dependem deles. Uma eventual divisão do seed global é decisão técnica separada.
+| CT-001–009 | API | Instância 225 acessível; atores de servidor e cidadão por worker | Reusar specs, fixtures e pools atuais; permitir seleção explícita de instância e registrar alvo no manifesto | Confirmar backend da 225 e estado/autenticação dos atores |
+| CT-010–012 | API | Instância 225 acessível; credenciais inválidas ou identificador gerado pelo teste | Reusar specs e fixtures existentes; garantir que a instância resolvida vem do manifesto | Confirmar backend da 225 |
+| CT-038 | API | Sessão/auditoria no alvo configurado | Reusar spec existente após resolver o destino do arquivo no worktree | CT-038 está em `HEAD` destacado (`16c41e4`), sem commit |
+| Setup global | API/setup | Seed amplo usado pelo projeto atualmente | Sem override, manter padrão. Com ID explícito, validar ID e nome e falhar sem fallback de criação | Executar somente o escopo desta entrega; não apontar a suíte toda à 225 |
 
 ## Pronto para implementar quando
 
-- [ ] Confirmado que o ambiente configurado corresponde ao backend onde a instância 225 foi criada.
-- [ ] Confirmado que a instância está num estado em que os atores podem ser preparados e autenticar.
-- [ ] Seleção explícita por ID e verificação do nome estão definidas sem fallback para criação.
-- [ ] Fica preservado o comportamento padrão quando a configuração específica não é fornecida.
-- [ ] Destino do código CT-038 foi definido ou o CT foi explicitamente bloqueado nesta rodada.
+- [ ] Backend configurado corresponde ao ambiente em que a instância 225 foi criada.
+- [ ] Identidade esperada e acesso administrativo à instância foram confirmados.
+- [ ] Seleção explícita por ID valida o nome e falha sem criar outro cliente.
+- [ ] Com configuração ausente, o comportamento padrão atual permanece.
+- [ ] Destino de CT-038 definido ou CT explicitamente bloqueado nesta rodada.
 
 ## Pronto para validar quando
 
-- [ ] Alteração implementada no repositório e revisada.
-- [ ] Seed executado duas vezes; ambas as execuções registram ID 225 e não criam cliente adicional.
-- [ ] CT-001–012 e CT-038 executados na instância 225, com resultados em [[02 - Validação automação]].
-- [ ] O escopo de execução e os artefatos do run foram registrados.
+- [ ] Alteração implementada e revisada.
+- [ ] Seed executado duas vezes; ambas reutilizam ID 225 sem instância duplicada.
+- [ ] CT-001–012 e CT-038 executados e registrados em [[02 - Validação automação]].
+- [ ] Ambiente, instância e artefatos do run registrados.
 
-## Execução
-
-A primeira validação deve rodar somente o seed e os CTs deste escopo, com a opção de instância explícita habilitada. Não apontar a suíte completa para a 225 nesta entrega. A criação de cliente novo por execução deve ser tratada numa entrega separada, com política de unicidade e retenção dos clientes criados.
+**Execução direta:** se não houver outra escolha técnica, manter a tabela curta, indicar API, o reuso atual e o gate aplicável. O plano continua obrigatório mesmo quando a mudança for pequena.

@@ -34,7 +34,7 @@ Preparar e validar o baseline Playwright de autenticação na instância 225, ma
 - Interromper com erro claro se o ID não existir, o nome divergir ou o ambiente não corresponder.
 - Executar o seed de forma idempotente e validar CT-001–012 e CT-038 na instância dedicada.
 
-## Decisões
+## Decisões de produto
 
 - A instância 225 é o alvo fixo do primeiro piloto; não criar uma instância nova a cada CT.
 - Sem configuração explícita do ID, manter o comportamento atual do seed.
@@ -72,3 +72,7 @@ Preparar e validar o baseline Playwright de autenticação na instância 225, ma
 - [ ] Estado da instância e acesso de administrador permitem a preparação.
 - [ ] Pontos alocados definidos no tracker, quando a demanda filha for registrada.
 
+
+## Pendências de decisão
+
+Não há decisões de produto pendentes. A confirmação do backend da instância 225 e o destino do CT-038 são gates técnicos registrados no plano de automação.

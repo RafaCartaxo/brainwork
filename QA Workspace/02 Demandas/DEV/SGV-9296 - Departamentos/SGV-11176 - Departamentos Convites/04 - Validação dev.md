@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda]]"
 execucao: ""
 ambiente: dev
 versao: ""
@@ -8,20 +8,20 @@ responsavel: ""
 resultado: aprovado
 pontos: 0
 ct_resultados:
-  ct_001: "✅ Aprovado"
-  ct_002: "✅ Aprovado"
-  ct_003: "✅ Aprovado"
-  ct_004: "✅ Aprovado"
-  ct_005: "✅ Aprovado"
-  ct_006: "✅ Aprovado"
-  ct_007: "✅ Aprovado"
-  ct_008: "✅ Aprovado"
-  ct_009: "✅ Aprovado"
-  ct_010: "✅ Aprovado"
-  ct_011: "✅ Aprovado"
-  ct_012: "✅ Aprovado"
-  ct_013: "✅ Aprovado"
-  ct_014: "✅ Aprovado"
+  ct_001: ✅ Aprovado
+  ct_002: ✅ Aprovado
+  ct_003: ✅ Aprovado
+  ct_004: ✅ Aprovado
+  ct_005: ✅ Aprovado
+  ct_006: ✅ Aprovado
+  ct_007: ✅ Aprovado
+  ct_008: ✅ Aprovado
+  ct_009: ✅ Aprovado
+  ct_010: ✅ Aprovado
+  ct_011: ✅ Aprovado
+  ct_012: ✅ Aprovado
+  ct_013: ✅ Aprovado
+  ct_014: ✅ Aprovado
 data_inicio: ""
 data_fim: ""
 ---
@@ -29,11 +29,11 @@ data_fim: ""
 # Validação — SGV-11176
 
 > [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/02 - Plano de teste]]  
 > **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste]]  
 > **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle da validação  

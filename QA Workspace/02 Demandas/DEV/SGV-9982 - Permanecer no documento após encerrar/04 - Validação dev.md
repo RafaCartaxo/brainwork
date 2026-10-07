@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]"
 execucao: ""
 ambiente: dev
 versao: ""
@@ -27,11 +27,11 @@ data_fim: ""
 # Validação — SGV-9982
 
 > [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/02 - Plano de teste]]  
 > **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]  
 > **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/05 - Preparação Qase]]
 
 > [!settings]- Controle da validação  
 > **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`  

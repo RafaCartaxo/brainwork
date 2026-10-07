@@ -10,10 +10,10 @@ pontos: 0
 data_inicio: ""
 data_fim: ""
 ct_resultados:
-  seed_001: "⏳ Aguardando"
-  seed_002: "⏳ Aguardando"
-  seed_003: "⏳ Aguardando"
-  seed_004: "⏳ Aguardando"
+  seed_001: ⏳ Aguardando
+  seed_002: ⏳ Aguardando
+  seed_003: ⏳ Aguardando
+  seed_004: ⏳ Aguardando
 ---
 
 # Validação QA/DEV — Entrega 01

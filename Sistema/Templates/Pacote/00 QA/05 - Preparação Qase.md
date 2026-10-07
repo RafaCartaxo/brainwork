@@ -9,7 +9,7 @@ projeto: ""
 modulo: ""
 qase_projeto: SGV
 qase_suite_id: ""
-demanda: "[[01 - Demanda]]"
+demanda: "[[Sistema/Templates/Pacote/00 QA/Melhoria/01 - Demanda]]"
 casos_origem: "[[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]"
 validacao_origem: "[[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]"
 ---
@@ -17,11 +17,11 @@ validacao_origem: "[[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]"
 
 > [!info]- Navegação QA
 > **README do card:** [[Sistema/Templates/Pacote/00 QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
+> **Demanda/Bug:** [[Sistema/Templates/Pacote/00 QA/Melhoria/01 - Demanda]]
+> **Plano de teste:** [[Sistema/Templates/Pacote/00 QA/02 - Plano de teste]]
 > **Casos de teste:** [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]
 > **Validação:** [[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[Sistema/Templates/Pacote/00 QA/05 - Preparação Qase]]
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.

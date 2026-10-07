@@ -23,8 +23,8 @@ pontos_alocados: ""
 > [!info]- Navegação QA/DEV  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]]  
-> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]  
+> **Casos de teste:** [[03 - Casos de teste]]  
+> **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
@@ -36,7 +36,7 @@ pontos_alocados: ""
 > **Próximo passo:** portar a suíte de Cypress pra Playwright e fechar os 4 achados reais de produto (CT-015, CT-029/030, CT-033) com produto/backend.
 
 > [!info] Ciclo da guarda-chuva
-> Este é o **primeiro ciclo** da [[../../Conhecimento/0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Cada Termo de Referência verificado vira um pacote irmão deste, dentro da mesma guarda-chuva.
+> Este é o **primeiro ciclo** da [[0 - SGV-11262 - Índice|SGV-11262 — [QA-Automação] Termo de Referência SOGOV]]. Cada Termo de Referência verificado vira um pacote irmão deste, dentro da mesma guarda-chuva.
 
 ---
 
@@ -120,5 +120,5 @@ Cada critério é um item do Termo de Referência, com o texto literal da regra.
 
 - Os 4 achados reais (CT-015, CT-029/030, CT-033) ainda **não** viraram defeitos com SGV próprio — decisão adiada em 02/10/2026, ver `00 README`.
 - `priority` dos casos na Qase segue pendente de preenchimento manual (decisão consciente de 31/08, não esquecimento).
-- A suíte está em Cypress e o alvo passou a ser Playwright ([[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]]) — o código precisa ser portado antes de subir.
+- A suíte está em Cypress e o alvo passou a ser Playwright ([[../../../../../../04 Conhecimento/Referências/Automação Playwright|Automação Playwright]]) — o código precisa ser portado antes de subir.
 

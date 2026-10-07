@@ -20,7 +20,7 @@ O caminho começa pela estabilização e compreensão do que já existe. A execu
 
 ## Estado atual
 
-O ciclo **TR 1.24–1.25 — Autenticação e ciclo de vida do usuário** está registrado na [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/00 README|SGV-11971]]. Seus artefatos de QA — demanda, plano, casos, validação e preparação Qase — permanecem próprios desse ciclo. Os 38 CTs dessa entrega continuam sendo a referência funcional do escopo.
+O ciclo **TR 1.24–1.25 — Autenticação e ciclo de vida do usuário** está registrado na [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|SGV-11971]]. O pacote funcional original está preservado em `SGV-11971/Arquivo/`; seus casos continuam sendo a origem dos 38 CTs. As novas entregas executáveis ficam fora dessa pasta de arquivo e cada uma tem seus próprios pacotes QA e automação.
 
 > [!success] Decisão de direção — 07/10/2026
 > O primeiro alvo será uma **instância de teste dedicada e estável**, criada ou reconciliada pelo seed. Não vamos apontar o piloto para uma instância de cliente existente. A execução em diferentes clientes/instâncias continua como direção futura, evoluindo depois que este baseline estiver estável.
@@ -44,10 +44,10 @@ Na verificação de 07/10, CT-001–012 estavam em `origin/main`. CT-038 passou 
 
 | Entrega | Escopo | Situação |
 |---|---|---|
-| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/00 README\|SGV-11971 — TR 1.24–1.25]] | Ciclo funcional de autenticação e ciclo de vida: critérios, 38 CTs, validação e automação associada | 🔄 Em andamento; fonte atual dos CTs e do placar |
+| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|Arquivo funcional da SGV-11971]] | Pacote original do ciclo: requisitos, 38 CTs e evidências históricas | 🗄️ Preservado como referência; casos reutilizados pelas entregas no escopo aplicável |
 | [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README|Entrega 01 — Baseline na instância 225]] | Critérios próprios do seed + CT-001–012 e CT-038 da SGV-11971 | 📋 Pacotes QA e automação preparados; implementação e validação na 225 pendentes |
 
-A Entrega 01 está organizada dentro da SGV-11971 em dois pacotes: `00 QA/` para escopo, plano, critérios técnicos e validação; `01 Automação/` para o hub, plano técnico e placar dos CTs funcionais incluídos. Cada próxima entrega seguirá o mesmo recorte e conterá apenas os CTs do seu escopo. Os arquivos `03 - Handoff de execução` e `04 - Documentação de entrega` ainda existem no pacote antigo; não são parte do padrão atualizado. Sua destinação será decidida ao reconciliar a documentação, preservando informação útil.
+A Entrega 01 está organizada dentro da SGV-11971 em dois pacotes: `00 QA/` para escopo, plano, critérios técnicos e validação; `01 Automação/` para o hub, plano técnico e placar dos CTs funcionais incluídos. Cada próxima entrega seguirá o mesmo recorte e conterá apenas os CTs do seu escopo. O pacote original completo está em `SGV-11971/Arquivo/`, inclusive documentos históricos de handoff e revisão. Eles servem como referência e não definem a estrutura das entregas novas.
 
 ## Próximos passos e entregas candidatas
 
@@ -63,7 +63,7 @@ As linhas abaixo são candidatas de roadmap, não demandas já criadas. O escopo
 | 6 | **Selecionar perfis de instância por cliente/ambiente** | Evoluir da instância dedicada atual para execução controlada em diferentes instâncias/clientes e ambientes | Baseline dedicado estável; definir contrato de seleção, permissões e isolamento | 🎯 Objetivo futuro da iniciativa |
 | 7 | **Executar a sanidade por cliente/instância e ambiente** | Preparar e executar a cobertura validada com configuração explícita por alvo e ambiente | Passos 3–6, autenticação e acesso compatíveis | 🎯 Direção da iniciativa, evolução incremental |
 
-Cada futura entrega acompanhará apenas os CTs do seu escopo em seu pacote `00–02`. Se uma entrega for de preparação/infraestrutura, terá critérios de aceite próprios e CTs-piloto explícitos. O placar consolidado desta iniciativa deverá apontar para os resultados por entrega, sem duplicar a validação detalhada dos CTs.
+Cada entrega terá uma pasta própria dentro de SGV-11971, com `00 QA/` e `01 Automação/`. Em QA, usar a estrutura de melhoria (`00 README`, `01 Demanda`, `02 Plano de teste`, `03 Casos de teste`, `04 Validação dev`); criar `05 - Preparação Qase` apenas quando houver casos a sincronizar. Em automação, usar `00 - Automação`, `01 - Plano de automação` e `02 - Validação automação`. Cada pacote acompanha somente seu escopo. Se uma entrega for de preparação/infraestrutura, terá critérios de aceite próprios e CTs-piloto explícitos. O placar consolidado desta iniciativa deverá apontar para os resultados por entrega, sem duplicar a validação detalhada dos CTs.
 
 ## Ordem sugerida
 

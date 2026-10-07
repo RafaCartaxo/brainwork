@@ -1,7 +1,7 @@
 ---
 demanda: "[[01 - Demanda]]"
 plano: "[[02 - Plano de teste]]"
-validacao: "[[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]"
+validacao: "[[04 - Validação dev]]"
 status: executado
 pontos: ""
 ---
@@ -11,8 +11,8 @@ pontos: ""
 > [!info]- Navegação QA  
 > **Demanda:** [[01 - Demanda]]  
 > **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste]]  
-> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]  
+> **Casos de teste:** [[03 - Casos de teste]]  
+> **Validação:** [[04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
@@ -597,7 +597,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** reprovado — achado real de produto, ver [[04 - Validação dev]]
 
 ^ct-015
 
@@ -852,7 +852,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** falha sem causa raiz identificada, ver [[04 - Validação dev]]
 
 ^ct-022
 
@@ -996,7 +996,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** falha sem causa raiz identificada, ver [[04 - Validação dev]]
 
 ^ct-026
 
@@ -1068,7 +1068,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** falha sem causa raiz identificada, ver [[04 - Validação dev]]
 
 ^ct-028
 
@@ -1104,7 +1104,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** reprovado — achado real de produto, ver [[04 - Validação dev]]
 
 ^ct-029
 
@@ -1140,7 +1140,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** reprovado — achado real de produto, ver [[04 - Validação dev]]
 
 ^ct-030
 
@@ -1248,7 +1248,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** reprovado — achado real de produto, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** reprovado — achado real de produto, ver [[04 - Validação dev]]
 
 ^ct-033
 
@@ -1284,7 +1284,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** falha sem causa raiz identificada, ver [[04 - Validação dev]]
 
 ^ct-034
 
@@ -1320,7 +1320,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** falha sem causa raiz identificada, ver [[04 - Validação dev]]
 
 ^ct-035
 
@@ -1356,7 +1356,7 @@ Os 2 casos de desbloqueio (CT-016/CT-017) não têm shared step próprio — cad
 > **Tipo:** funcional  
 > **Camada:** API  
 > **Automação:** consultar o estado atual no [[../01 Automação/02 - Validação automação|placar de automação]]  
-> **Execução:** falha sem causa raiz identificada, ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]
+> **Execução:** falha sem causa raiz identificada, ver [[04 - Validação dev]]
 
 ^ct-036
 
@@ -1553,22 +1553,22 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 
 | Critério | Item do Termo | CTs |
 |---|---|---|
-| [[01 - Demanda#^c1\|C1]] | 1.13 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-037\|CT-037]] |
-| [[01 - Demanda#^c2\|C2]] | 1.24 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-006\|CT-006]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-007\|CT-007]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-008\|CT-008]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-009\|CT-009]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-038\|CT-038]] |
-| [[01 - Demanda#^c3\|C3]] | 1.24.1 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-001\|CT-001]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-004\|CT-004]] |
-| [[01 - Demanda#^c4\|C4]] | 1.24.2 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-002\|CT-002]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c5\|C5]] | 1.24.3 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-003\|CT-003]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-004\|CT-004]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c6\|C6]] | 1.25 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-006\|CT-006]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-007\|CT-007]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-010\|CT-010]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-011\|CT-011]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-012\|CT-012]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-037\|CT-037]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-038\|CT-038]] |
-| [[01 - Demanda#^c7\|C7]] | 1.25.1 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-013\|CT-013]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-014\|CT-014]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-015\|CT-015]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-016\|CT-016]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-017\|CT-017]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-018\|CT-018]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-019\|CT-019]] |
-| [[01 - Demanda#^c8\|C8]] | 1.25.2 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-010\|CT-010]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-011\|CT-011]] |
-| [[01 - Demanda#^c9\|C9]] | 1.25.3 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-035\|CT-035]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-036\|CT-036]] |
-| [[01 - Demanda#^c10\|C10]] | 1.25.3.1 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-020\|CT-020]] |
-| [[01 - Demanda#^c11\|C11]] | 1.25.3.2 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-021\|CT-021]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-022\|CT-022]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-023\|CT-023]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-024\|CT-024]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-025\|CT-025]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-026\|CT-026]] |
-| [[01 - Demanda#^c12\|C12]] | 1.25.3.3 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-027\|CT-027]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-028\|CT-028]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-029\|CT-029]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-030\|CT-030]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-031\|CT-031]] |
-| [[01 - Demanda#^c13\|C13]] | 1.25.3.4 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-032\|CT-032]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-033\|CT-033]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-034\|CT-034]] |
-| [[01 - Demanda#^c14\|C14]] | 1.27.10 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-035\|CT-035]] |
-| [[01 - Demanda#^c15\|C15]] | 1.27.11.2 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-035\|CT-035]] |
-| [[01 - Demanda#^c16\|C16]] | 1.27.11.4 | [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-026\|CT-026]] · [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste#^ct-031\|CT-031]] |
+| [[01 - Demanda#^c1|C1]] | 1.13 | [[03 - Casos de teste#^ct-037|CT-037]] |
+| [[01 - Demanda#^c2|C2]] | 1.24 | [[03 - Casos de teste#^ct-006|CT-006]] · [[03 - Casos de teste#^ct-007|CT-007]] · [[03 - Casos de teste#^ct-008|CT-008]] · [[03 - Casos de teste#^ct-009|CT-009]] · [[03 - Casos de teste#^ct-038|CT-038]] |
+| [[01 - Demanda#^c3|C3]] | 1.24.1 | [[03 - Casos de teste#^ct-001|CT-001]] · [[03 - Casos de teste#^ct-004|CT-004]] |
+| [[01 - Demanda#^c4|C4]] | 1.24.2 | [[03 - Casos de teste#^ct-002|CT-002]] · [[03 - Casos de teste#^ct-005|CT-005]] |
+| [[01 - Demanda#^c5|C5]] | 1.24.3 | [[03 - Casos de teste#^ct-003|CT-003]] · [[03 - Casos de teste#^ct-004|CT-004]] · [[03 - Casos de teste#^ct-005|CT-005]] |
+| [[01 - Demanda#^c6|C6]] | 1.25 | [[03 - Casos de teste#^ct-006|CT-006]] · [[03 - Casos de teste#^ct-007|CT-007]] · [[03 - Casos de teste#^ct-010|CT-010]] · [[03 - Casos de teste#^ct-011|CT-011]] · [[03 - Casos de teste#^ct-012|CT-012]] · [[03 - Casos de teste#^ct-037|CT-037]] · [[03 - Casos de teste#^ct-038|CT-038]] |
+| [[01 - Demanda#^c7|C7]] | 1.25.1 | [[03 - Casos de teste#^ct-013|CT-013]] · [[03 - Casos de teste#^ct-014|CT-014]] · [[03 - Casos de teste#^ct-015|CT-015]] · [[03 - Casos de teste#^ct-016|CT-016]] · [[03 - Casos de teste#^ct-017|CT-017]] · [[03 - Casos de teste#^ct-018|CT-018]] · [[03 - Casos de teste#^ct-019|CT-019]] |
+| [[01 - Demanda#^c8|C8]] | 1.25.2 | [[03 - Casos de teste#^ct-010|CT-010]] · [[03 - Casos de teste#^ct-011|CT-011]] |
+| [[01 - Demanda#^c9|C9]] | 1.25.3 | [[03 - Casos de teste#^ct-035|CT-035]] · [[03 - Casos de teste#^ct-036|CT-036]] |
+| [[01 - Demanda#^c10|C10]] | 1.25.3.1 | [[03 - Casos de teste#^ct-020|CT-020]] |
+| [[01 - Demanda#^c11|C11]] | 1.25.3.2 | [[03 - Casos de teste#^ct-021|CT-021]] · [[03 - Casos de teste#^ct-022|CT-022]] · [[03 - Casos de teste#^ct-023|CT-023]] · [[03 - Casos de teste#^ct-024|CT-024]] · [[03 - Casos de teste#^ct-025|CT-025]] · [[03 - Casos de teste#^ct-026|CT-026]] |
+| [[01 - Demanda#^c12|C12]] | 1.25.3.3 | [[03 - Casos de teste#^ct-027|CT-027]] · [[03 - Casos de teste#^ct-028|CT-028]] · [[03 - Casos de teste#^ct-029|CT-029]] · [[03 - Casos de teste#^ct-030|CT-030]] · [[03 - Casos de teste#^ct-031|CT-031]] |
+| [[01 - Demanda#^c13|C13]] | 1.25.3.4 | [[03 - Casos de teste#^ct-032|CT-032]] · [[03 - Casos de teste#^ct-033|CT-033]] · [[03 - Casos de teste#^ct-034|CT-034]] |
+| [[01 - Demanda#^c14|C14]] | 1.27.10 | [[03 - Casos de teste#^ct-035|CT-035]] |
+| [[01 - Demanda#^c15|C15]] | 1.27.11.2 | [[03 - Casos de teste#^ct-035|CT-035]] |
+| [[01 - Demanda#^c16|C16]] | 1.27.11.4 | [[03 - Casos de teste#^ct-026|CT-026]] · [[03 - Casos de teste#^ct-031|CT-031]] |
 
 ---
 

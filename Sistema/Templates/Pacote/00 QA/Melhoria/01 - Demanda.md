@@ -10,11 +10,11 @@ pontos_alocados: ""
 
 > [!info]- Navegação QA/DEV
 > **README do card:** [[Sistema/Templates/Pacote/00 QA/00 README|Abrir README do card]]
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
+> **Demanda:** [[Sistema/Templates/Pacote/00 QA/Melhoria/01 - Demanda]]
+> **Plano de teste:** [[Sistema/Templates/Pacote/00 QA/02 - Plano de teste]]
 > **Casos de teste:** [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]
 > **Validação:** [[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[Sistema/Templates/Pacote/00 QA/05 - Preparação Qase]]
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > [!settings]- Controle da demanda

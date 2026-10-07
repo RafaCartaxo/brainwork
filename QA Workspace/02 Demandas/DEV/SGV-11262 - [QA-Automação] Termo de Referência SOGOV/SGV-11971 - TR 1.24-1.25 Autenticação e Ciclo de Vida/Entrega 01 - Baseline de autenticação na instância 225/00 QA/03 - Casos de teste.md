@@ -15,7 +15,7 @@ pontos: ""
 > **Validação:** [[04 - Validação dev]]
 > **Automação funcional:** [[../01 Automação/02 - Validação automação]]
 
-> Estes quatro casos verificam o comportamento de seleção e preparação do seed. Os CT-001–012 e CT-038 continuam definidos somente na [[../../00 QA/03 - Casos de teste|SGV-11971]]; esta nota não os copia nem renumera.
+> Estes quatro casos verificam o comportamento de seleção e preparação do seed. Os CT-001–012 e CT-038 continuam definidos somente na [[../../Arquivo/00 QA/03 - Casos de teste|SGV-11971]]; esta nota não os copia nem renumera.
 
 ## Matriz de cobertura
 
@@ -43,6 +43,13 @@ pontos: ""
 
 **Resultado esperado:** manifesto registra ID 225 e nome confirmado; nenhuma outra instância é criada.
 
+
+**Pós-condição:** o manifesto identifica a instância 225 confirmada.
+
+**Tipo:** técnico
+**Camada:** seed/API
+**Automação:** automatizado nesta entrega
+**Execução:** planejado
 ^ct-seed-001
 
 ---
@@ -59,6 +66,13 @@ pontos: ""
 
 **Resultado esperado:** falha clara; nenhuma entidade criada ou alterada.
 
+
+**Pós-condição:** não há recursos criados nem alterados em outro cliente.
+
+**Tipo:** técnico
+**Camada:** unidade/API
+**Automação:** automatizado nesta entrega
+**Execução:** planejado
 ^ct-seed-002
 
 ---
@@ -75,6 +89,13 @@ pontos: ""
 
 **Resultado esperado:** o alvo padrão e sua impressão digital permanecem compatíveis com as execuções atuais.
 
+
+**Pós-condição:** o fluxo padrão continua disponível às suítes existentes.
+
+**Tipo:** regressão técnica
+**Camada:** unidade/API
+**Automação:** automatizado nesta entrega
+**Execução:** planejado
 ^ct-seed-003
 
 ---
@@ -91,5 +112,12 @@ pontos: ""
 
 **Resultado esperado:** ambos os manifestos registram ID 225; a segunda execução conclui sem duplicações.
 
+
+**Pós-condição:** manifesto e dados-base continuam associados ao mesmo ID 225, sem duplicação.
+
+**Tipo:** técnico
+**Camada:** API
+**Automação:** automatizado nesta entrega
+**Execução:** planejado
 ^ct-seed-004
 

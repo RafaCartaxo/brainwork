@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/01 - Demanda]]"
 execucao: ""
 ambiente: hml
 versao: ""
@@ -8,20 +8,20 @@ responsavel: Rafael
 resultado: aprovado_com_ressalvas
 pontos: 0
 ct_resultados:
-  ct_001: "✅ Aprovado"
-  ct_002: "❌ Falhou"
-  ct_003: "✅ Aprovado"
-  ct_004: "⏳ Aguardando"
-  ct_005: "✅ Aprovado"
-  ct_006: "⏳ Aguardando"
-  ct_007: "❌ Falhou"
-  ct_008: "✅ Aprovado"
-  ct_009: "✅ Aprovado"
-  ct_010: "⏳ Aguardando"
-  ct_011: "⏳ Aguardando"
-  ct_012: "✅ Aprovado"
-  ct_013: "⏳ Aguardando"
-  ct_014: "⏳ Aguardando"
+  ct_001: ✅ Aprovado
+  ct_002: ❌ Falhou
+  ct_003: ✅ Aprovado
+  ct_004: ⏳ Aguardando
+  ct_005: ✅ Aprovado
+  ct_006: ⏳ Aguardando
+  ct_007: ❌ Falhou
+  ct_008: ✅ Aprovado
+  ct_009: ✅ Aprovado
+  ct_010: ⏳ Aguardando
+  ct_011: ⏳ Aguardando
+  ct_012: ✅ Aprovado
+  ct_013: ⏳ Aguardando
+  ct_014: ⏳ Aguardando
 data_inicio: 2026-10-05
 data_fim: ""
 ---
@@ -30,11 +30,11 @@ data_fim: ""
 
 > [!info]- Navegação QA
 > **README do card:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
+> **Demanda/Bug:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/02 - Plano de teste]]
 > **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/03 - Casos de teste]]
 > **Validação:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA/05 - Preparação Qase]]
 
 > [!settings]- Controle da validação
 > **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`

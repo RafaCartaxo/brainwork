@@ -2,7 +2,7 @@
 
 Corrige os 39 casos do projeto `SGV` na Qase (suite id 4) para bater com o conteúdo
 validado no vault (fonte única desde 31/08):
-`QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/03 - Casos de teste.md`
+`QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste.md`
 *(caminho atualizado em 02/10/2026 — o Termo virou a SGV-11971, pacote no padrão do vault; esta pasta foi renomeada de `1.24-1.25/` pra `11971-tr-1-24-1-25/` na mesma data, seguindo a convenção `<card>-<contexto>` das demais.)*
 
 ## Por que via API, e não CSV

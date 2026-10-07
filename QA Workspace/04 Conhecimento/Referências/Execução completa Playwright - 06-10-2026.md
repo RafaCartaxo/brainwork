@@ -59,7 +59,7 @@ data: 2026-10-06
 | A30-C23 | API | signatures | `citizen-alphanumeric.spec.ts` | ruído provável |
 | A30-C24 | API | signatures | `citizen-alphanumeric.spec.ts` | ruído provável |
 
-**Nenhuma falha caiu em `@auth`** (13 casos, 0 falhas) — os 13 CTs já confirmados em Playwright da [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|TR 1.24-1.25]] (CT-001 a CT-012 + CT-038) seguem verdes, inclusive no meio de um run saturado — reforça que são estáveis.
+**Nenhuma falha caiu em `@auth`** (13 casos, 0 falhas) — os 13 CTs já confirmados em Playwright da [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|TR 1.24-1.25]] (CT-001 a CT-012 + CT-038) seguem verdes, inclusive no meio de um run saturado — reforça que são estáveis.
 
 Os 4 "bugs de produto conhecidos" (`test.fail`, SGV-8395 e mais 2 sem SGV) continuam falhando como esperado — não são novidade, não entram na contagem de 26.
 
@@ -75,7 +75,7 @@ Três execuções reais confirmam CT-038 estável, nenhuma delas isolada da outr
 
 ## Achado corrigido nesta rodada
 
-A tabela "Resultado por CT" do [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]] da SGV-11971 guardava o caminho do spec sem o prefixo `tests/` (ex. `` `api/auth/login.spec.ts` `` em vez de `` `tests/api/auth/login.spec.ts` ``) — as 13 linhas foram corrigidas.
+A tabela "Resultado por CT" do [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|02 - Validação automação]] da SGV-11971 guardava o caminho do spec sem o prefixo `tests/` (ex. `` `api/auth/login.spec.ts` `` em vez de `` `tests/api/auth/login.spec.ts` ``) — as 13 linhas foram corrigidas.
 
 ## Próximo passo sugerido
 
@@ -84,4 +84,4 @@ Rodar `contact-groups`, `models`, `public-agents` e `workboard` isolados (não s
 ## Referências
 
 - [[Automação Playwright]] — arquitetura, convenção de execução, o aviso sobre não rodar a suíte inteira
-- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação (SGV-11971)]]
+- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|02 - Validação automação (SGV-11971)]]

@@ -109,7 +109,7 @@ Portanto, a capacidade atual é **preparar/reusar uma instância de teste conhec
 
 ### Roteiro de Sanidade 01 — referência de contexto de negócio
 
-O [[BrainWork/QA Workspace/03 Sanidades/Roteiro de Sanidade 01 - Implantação|Roteiro de Sanidade 01]] é uma referência para entender a implantação do SOGOV: estrutura de órgãos e setores, tipos de módulo, configuração de assuntos/serviços e perfis de servidor com permissões diferentes. Ele dá contexto para analisar CTs e escolher atores/estados quando esses conceitos fizerem parte do escopo.
+O [[../../../../03 Sanidades/Roteiro de Sanidade 01 - Implantação|Roteiro de Sanidade 01]] é uma referência para entender a implantação do SOGOV: estrutura de órgãos e setores, tipos de módulo, configuração de assuntos/serviços e perfis de servidor com permissões diferentes. Ele dá contexto para analisar CTs e escolher atores/estados quando esses conceitos fizerem parte do escopo.
 
 O roteiro **não define o preset do seed nem deve ser reproduzido como pacote de dados**. A primeira entrega foca na instância dedicada e nos atores necessários aos 13 CTs de autenticação. Esses CTs não usam módulos, serviços, documentos nem perfis variados de permissão. Hoje, porém, o projeto `api` depende do seed global, que prepara também recursos usados por outras suítes. Isso é comportamento existente do repositório, não uma necessidade dos 13 CTs; qualquer redução ou separação do seed global precisa ser avaliada como decisão técnica própria. Quando uma próxima fatia exigir regras de módulos ou permissões, consultar o roteiro para entender o negócio e preparar somente o necessário àquela fatia.
 

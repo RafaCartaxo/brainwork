@@ -1,6 +1,6 @@
 ---
-demanda: "[[01 - Demanda]]"
-plano: "[[02 - Plano de teste]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda]]"
+plano: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/02 - Plano de teste]]"
 validacao: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/04 - Validação dev]]"
 status: planejado
 pontos: ""
@@ -9,11 +9,11 @@ pontos: ""
 # Casos de teste — SGV-11176
 
 > [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/02 - Plano de teste]]  
 > **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste]]  
 > **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle dos casos de teste  
@@ -27,20 +27,20 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-001\|CT-001]] |
-| [[01 - Demanda#^c2\|C2]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-002\|CT-002]] |
-| [[01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-003\|CT-003]] |
-| [[01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-004\|CT-004]] |
-| [[01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-006\|CT-006]] |
-| [[01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-007\|CT-007]] |
-| [[01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-008\|CT-008]] |
-| [[01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-010\|CT-010]] |
-| [[01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-011\|CT-011]] |
-| [[01 - Demanda#^c12\|C12]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-012\|CT-012]] |
-| [[01 - Demanda#^c13\|C13]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-013\|CT-013]] |
-| [[01 - Demanda#^c14\|C14]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-014\|CT-014]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c1\|C1]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-001\|CT-001]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c2\|C2]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-002\|CT-002]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-003\|CT-003]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-004\|CT-004]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-005\|CT-005]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-006\|CT-006]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-007\|CT-007]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-008\|CT-008]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-010\|CT-010]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-011\|CT-011]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c12\|C12]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-012\|CT-012]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c13\|C13]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-013\|CT-013]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c14\|C14]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/03 - Casos de teste#^ct-014\|CT-014]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -71,7 +71,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** link permanente disponível para uso em qualquer momento futuro.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c1|C1]]
 >
 > ---
 >
@@ -109,7 +109,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de estado além do envio do e-mail.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2|C2]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c2|C2]]
 >
 > ---
 >
@@ -148,7 +148,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** convite ativo, ainda não utilizado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c3|C3]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c3|C3]]
 >
 > ---
 >
@@ -186,7 +186,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** convite ativo, ainda não utilizado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c4|C4]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -224,7 +224,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c5|C5]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c5|C5]]
 >
 > ---
 >
@@ -262,7 +262,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** convite marcado como usado ou expirado, conforme o caso testado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c6|C6]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c6|C6]]
 >
 > ---
 >
@@ -300,7 +300,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhum vínculo ou cadastro criado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c7|C7]]
 >
 > ---
 >
@@ -341,7 +341,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** registro do convite completo com as duas pontas.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -380,7 +380,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** participante listado no departamento (mesma listagem coberta pela SGV-11083).
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c9|C9]]
 >
 > ---
 >
@@ -419,7 +419,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** participante listado no departamento; cadastro novo ativo no SOGOV.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c10|C10]]
 >
 > ---
 >
@@ -457,7 +457,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c11|C11]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c11|C11]]
 >
 > ---
 >
@@ -495,7 +495,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c12|C12]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c12|C12]]
 >
 > ---
 >
@@ -533,7 +533,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c13|C13]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c13|C13]]
 >
 > ---
 >
@@ -571,7 +571,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c14|C14]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11176 - Departamentos Convites/01 - Demanda#^c14|C14]]
 >
 > ---
 >

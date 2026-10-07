@@ -1,62 +1,52 @@
 ---
-demanda_pai: SGV-11262
-ciclo_referencia: SGV-11971
-casos_origem: "[[../../00 QA/03 - Casos de teste]]"
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../../Arquivo/00 QA/03 - Casos de teste]]"
 casos_entrega: "[[../00 QA/03 - Casos de teste]]"
 repo: sogov-automation-playwright
 framework: playwright
 ambiente: hml
 status: planejado
 ---
+# Automação — Entrega 01: Baseline na instância 225
 
-# Automação — Baseline de autenticação na instância 225
-
-> [!info] Propósito desta entrega
-> Tornar seguro e reproduzível o uso da instância dedicada **ID 225 — “Termo De Referência - Sogov”** pelo seed existente e validar nela os 13 CTs de autenticação da SGV-11971. Esta entrega é vinculada à iniciativa SGV-11262 e usa os CTs da SGV-11971 como escopo de validação.
-
-## Navegação
-
-- [[01 - Plano de automação|01 — Plano de automação]]
-- [[02 - Validação automação|02 — Validação automação]]
-- [[../../../Roadmap - Automação TR|Roadmap da iniciativa]]
-- [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed e da instância 225]]
-- [[../../00 QA/03 - Casos de teste|Casos de teste da SGV-11971]]
+> [!info]- Navegação QA
+> **README:** [[../00 QA/00 README|Entrega 01]]
+> **Demanda:** [[../00 QA/01 - Demanda]]
+> **Casos da entrega:** [[../00 QA/03 - Casos de teste]]
+> **Casos funcionais de origem:** [[../../Arquivo/00 QA/03 - Casos de teste|SGV-11971]]
+> **Plano:** [[01 - Plano de automação]]
+> **Validação:** [[02 - Validação automação]]
+> **Roadmap:** [[../../../Roadmap - Automação TR|SGV-11262]]
+> **Mapa do seed:** [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa técnico]]
 
 > [!settings]- Controle da automação
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(bloqueado),option(concluido)):status]`
 > **Framework:** `INPUT[inlineSelect(option(playwright),option(cypress_legado),option(outro)):framework]`
 > **Ambiente-alvo:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
+> Entrada do pacote automatizado desta entrega. Os critérios técnicos do seed estão em QA; este placar cobre somente os CTs funcionais incluídos.
+
 ## Estado
 
-- **Instância alvo:** ID 225 — “Termo De Referência - Sogov”.
-- **Rastreio no tracker:** pacote local de planejamento; ainda sem ID de demanda filha.
-- **Comportamento atual do seed:** procura E2E Automatic Test pelo nome e pode criar outra instância. Ainda não seleciona a 225.
-- **Escopo CT:** CT-001–012 e CT-038.
-- **Decisão:** selecionar a 225 explicitamente e validar sua identidade; se o ID não existir ou o nome não corresponder, interromper sem criar outro cliente.
-- **Execução:** ainda não iniciada. Confirmar que o ambiente configurado no run é o mesmo backend onde a 225 foi criada.
+- **Alvo:** instância dedicada ID 225 — “Termo De Referência - Sogov”.
+- **CTs funcionais incluídos:** CT-001–012 e CT-038, originados na SGV-11971 e sem cópia nesta entrega.
+- **Situação:** implementação e execução específica na instância 225 pendentes.
+- **Bloqueio conhecido:** CT-038 está em worktree com `HEAD` destacado (`16c41e4`), sem commit; resolver o destino antes do encerramento.
+- **Pré-condição de execução:** confirmar que a configuração aponta ao backend onde a instância 225 existe.
 
 ## Próxima ação
 
-Implementar a seleção explícita e segura da instância 225 no seed, preservando o alvo padrão atual quando a configuração específica não for fornecida. Depois, rodar o seed duas vezes e validar o escopo definido no plano.
+Implementar no seed a seleção segura da instância 225, conforme o plano; depois executar o seed duas vezes e validar apenas os CTs deste escopo.
 
 ## Repositório e entrega
 
-- **Repositório:** /home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright
+- **Repositório:** `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`
 - **Branch/MR:** ainda não iniciado.
-- **CT-038:** consta no worktree com HEAD destacado (16c41e4) e sem commit; resolver sua inclusão antes da validação final desta entrega.
 
-## Fora do escopo
+## Checklist de encerramento
 
-- Criar uma instância nova em cada execução; essa possibilidade fica como teste separado.
-- Replicar integralmente o Roteiro de Sanidade 01.
-- Expandir o seed além dos dados que ele já provisiona e dos atores necessários à cobertura atual.
-- Mudar o destino padrão das demais suítes Playwright.
-
-## Critério de encerramento
-
-- [ ] Seed aponta à instância 225 e confere o nome esperado.
-- [ ] ID 225 ausente ou identidade divergente causa interrupção, sem fallback de criação.
-- [ ] Duas execuções do seed mantêm o mesmo ID 225 e não criam outra instância.
-- [ ] CT-001–012 e CT-038 são executados e registrados em [[02 - Validação automação]].
-- [ ] Status, evidências e próxima ação atualizados.
+- [ ] Plano e escopo atualizados em [[01 - Plano de automação]].
+- [ ] Resultado atual de cada CT registrado em [[02 - Validação automação]].
+- [ ] Cobertura sincronizada nos CTs de origem quando aplicável.
+- [ ] Revisão de código concluída no repositório/MR.
+- [ ] Status e próxima ação atualizados.
