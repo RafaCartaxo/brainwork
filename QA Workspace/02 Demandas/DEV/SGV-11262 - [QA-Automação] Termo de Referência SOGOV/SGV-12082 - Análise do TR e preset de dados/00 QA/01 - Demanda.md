@@ -6,7 +6,7 @@ pontos_alocados: ""
 
 # SGV-12082 — Entender a automação do TR e propor o preset de dados
 
-**Ticket de origem:** SGV-12082 · **Demanda pai:** SGV-11971 · **Iniciativa:** SGV-11262
+**Ticket de origem:** SGV-12082 · **Demanda pai:** SGV-11262 · **Ciclo de referência (fonte dos 38 CTs):** SGV-11971
 
 > [!info]- Navegação QA/DEV
 > **README:** [[00 README|Abrir README do card]]

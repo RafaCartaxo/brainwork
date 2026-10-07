@@ -33,7 +33,7 @@ pontos: ""
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de teste),option(QA · Casos de teste),option(DEV · Análise técnica),option(DEV · Plano de execução),option(DEV · Implementação),option(DEV · Code review),option(QA · Validação),option(Concluído)):etapa_atual]`
 
 > [!warning] Registro histórico do piloto
-> Esta entrega fica preservada como hipótese inicial de baseline na instância 225. O escopo ativo passou para a [[../../Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README|SGV-12082]], que vai mapear o projeto, os dados dos CTs e a preparação entre ambientes antes de definir se o seed precisa mudar. Não executar esta implementação até a recomendação da análise.
+> Esta entrega fica preservada como hipótese inicial de baseline na instância 225. O escopo ativo passou para a [[../../../SGV-12082 - Análise do TR e preset de dados/00 QA/00 README|SGV-12082]] (pacote irmão, direto sob a SGV-11262), que vai mapear o projeto, os dados dos CTs e a preparação entre ambientes antes de definir se o seed precisa mudar. Não executar esta implementação até a recomendação da análise.
 
 ## Status do trabalho
 

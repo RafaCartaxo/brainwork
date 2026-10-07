@@ -1,7 +1,7 @@
 ---
 tags: [qa]
 task: "SGV-12082"
-pai: SGV-11971
+pai: SGV-11262
 tipo: "melhoria"
 status: analise
 ambiente: dev
@@ -23,8 +23,8 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Matriz do preset:** [[Matriz - Análise do preset provável]]
-> **Roadmap:** [[../../../Roadmap - Automação TR|Roadmap da iniciativa]]
-> **Ciclo de origem:** [[../../Arquivo/00 QA/00 README|SGV-11971 — TR 1.24–1.25]]
+> **Roadmap:** [[../../Roadmap - Automação TR|Roadmap da iniciativa]]
+> **Ciclo de origem:** [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|SGV-11971 — TR 1.24–1.25]]
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > [!settings]- Controle do card

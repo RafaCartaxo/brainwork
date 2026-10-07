@@ -25,7 +25,7 @@ status: planejado
 > Ponto de entrada da cobertura automatizada. O escopo e a estratégia ficam em [[01 - Plano de automação]]; os resultados atuais por CT ficam em [[02 - Validação automação]]. Os casos técnicos desta entrega estão em `00 QA/`; a cobertura funcional é definida na SGV-11971 e referenciada aqui.
 
 > [!warning] Escopo histórico
-> O piloto na instância 225 não foi executado nem validado. A análise ativa está na [[../../Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README|SGV-12082]]; aguardar sua recomendação antes de implementar ou executar o seed.
+> O piloto na instância 225 não foi executado nem validado. A análise ativa está na [[../../../SGV-12082 - Análise do TR e preset de dados/00 QA/00 README|SGV-12082]] (pacote irmão, direto sob a SGV-11262); aguardar sua recomendação antes de implementar ou executar o seed.
 
 ## Próxima ação
 

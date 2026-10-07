@@ -1,7 +1,7 @@
 ---
 tags: [qa, automacao, dados, matriz]
 task: SGV-12082
-pai: SGV-11971
+pai: SGV-11262
 tipo: matriz-analise
 status: em levantamento
 ---
@@ -10,7 +10,7 @@ status: em levantamento
 > [!info] Propósito
 > Esta matriz vai da regra/caso aos dados e ao mecanismo atual de preparação. Ela deve orientar a recomendação do preset inicial; não é um catálogo geral do SOGOV nem uma especificação aprovada de seed.
 >
-> **Fonte funcional:** [[../../Arquivo/00 QA/03 - Casos de teste|38 CTs da SGV-11971]] · **Demanda:** [[01 - Demanda]] · **Plano:** [[02 - Plano de teste]] · **Roadmap:** [[../../../Roadmap - Automação TR|Automação TR]]
+> **Fonte funcional:** [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste|38 CTs da SGV-11971]] · **Demanda:** [[01 - Demanda]] · **Plano:** [[02 - Plano de teste]] · **Roadmap:** [[../../Roadmap - Automação TR|Automação TR]]
 
 ## Como preencher
 
@@ -34,7 +34,7 @@ Esta visão cobre os requisitos do PDF (1.1–1.43). As linhas agrupam requisito
 > [!success] Verificação contra o PDF de origem (07/10/2026)
 > **Fonte:** `Downloads/SGV-12082/Requisitos Sogov.pdf` (20 páginas, itens 1.1 a 1.43 — é mais completo que o PDF usado em 31/08/2026 pra conferir o ciclo 1.24-1.25, que ia só até o item 1.26). Lido por inteiro e conferido item a item contra a tabela abaixo: os intervalos descritos em cada linha (1.1–1.23, 1.26 a 1.43) batem com o conteúdo real do PDF — nenhuma linha precisou ser corrigida na descrição de escopo.
 >
-> **Confirmado, palavra por palavra**: os itens 1.24, 1.25 (incluindo 1.25.1 a 1.25.3.4), 1.27.10.1 e 1.27.11.2/1.27.11.4 batem exatamente com o texto citado em C1–C16 do [[../../Arquivo/00 QA/01 - Demanda|01 - Demanda da SGV-11971]] — a checagem de 31/08 se confirma também nesta versão mais completa do documento.
+> **Confirmado, palavra por palavra**: os itens 1.24, 1.25 (incluindo 1.25.1 a 1.25.3.4), 1.27.10.1 e 1.27.11.2/1.27.11.4 batem exatamente com o texto citado em C1–C16 do [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda|01 - Demanda da SGV-11971]] — a checagem de 31/08 se confirma também nesta versão mais completa do documento.
 >
 > **✅ Discrepância resolvida — níveis de permissão (CT-020), confirmado pelo Rafael em 07/10/2026:** o item **1.27.2** do PDF lista os nomes de rascunho (`Administrador`, `Administrador setorial`, `Assistente administrativo`, `Auxiliar administrativo`, `Visualizador`), mas o produto real usa **`Administrador`, `Administrador setorial`, `Especialista`, `Usuário básico`, `Somente leitura`** — os 2 níveis administrativos de topo mantiveram o nome do Termo; os 3 operacionais de baixo foram renomeados no produto (Assistente administrativo → Especialista, Auxiliar administrativo → Usuário básico, Visualizador → Somente leitura). São **5 níveis**, não 3 — a decisão anterior da SGV-11971 ("Especialista/Usuário básico/Somente leitura, confirmado em 4 fontes") capturou só os 3 operacionais, sem registrar os 2 administrativos de topo. Vale atualizar o `01 - Demanda` da SGV-11971 (CT-020) pra refletir os 5 nomes completos.
 

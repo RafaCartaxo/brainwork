@@ -13,7 +13,9 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 > [!info] Guarda-chuva aberta — 1 ciclo em andamento
 > **Reorganizada em 02/10/2026.** Antes, a SGV-11262 era uma pasta só, que misturava o processo de verificação de TR (reaproveitável) com o conteúdo do único Termo já trabalhado (1.24-1.25). O ciclo 1.24-1.25 virou pacote próprio com SGV próprio — **SGV-11971** — e esta pasta passou a ser só a guarda-chuva. O pacote funcional original foi movido para `SGV-11971/Arquivo/`; as entregas novas ficam diretamente dentro da pasta SGV-11971, cada uma com QA e automação próprios. Um Termo novo entra como pacote irmão da 11971, sem duplicar estrutura.
 >
-> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[../../SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards. A análise atual está na entrega filha SGV-12082; as próximas implementações só serão abertas após sua recomendação.
+> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[../../SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards.
+>
+> **Reorganizado em 07/10/2026:** a investigação do preset (antes "Entrega 02", aninhada dentro da SGV-11971) virou pacote próprio e irmão — **SGV-12082**, direto sob a SGV-11262 — porque seu escopo real é o Termo completo (itens 1.1–1.43), não só o ciclo 1.24-1.25. Decisão do Codex (planejador desta rodada), executada pelo Claude. A análise ativa está lá; as próximas implementações só serão abertas após sua recomendação.
 
 ## Ciclos
 
@@ -21,12 +23,17 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 |---|---|---|---|
 | 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Histórico em [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação\|placar arquivado]] |
 
-## Entregas de automação
+## Investigação da iniciativa
+
+| Investigação | Referência | Escopo | Status |
+|---|---|---|---|
+| [[../SGV-12082 - Análise do TR e preset de dados/00 QA/00 README\|SGV-12082 — Análise do TR e preset de dados]] | Iniciativa SGV-11262; PDF completo do Termo (itens 1.1–1.43); 38 CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] como cobertura existente de 1.24–1.25 | Entender o projeto de automação, mapear cobertura do TR completo, dados/ambientes e propor preset provável | 🔄 Em análise; levantamento pendente |
+
+## Entregas dentro do ciclo 1.24-1.25
 
 | Entrega | Referência | Escopo | Status |
 |---|---|---|---|
-| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico da hipótese; não executada nem validada |
-| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Projeto de automação e 38 CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Entender o projeto, mapear cobertura do TR completo, dados/ambientes e propor preset provável; 38 CTs existentes cobrem 1.24–1.25 | 🔄 Em análise; levantamento pendente |
+| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico da hipótese; não executada nem validada; decisão técnica reaberta pela SGV-12082 |
 
 ## Como um ciclo é organizado
 
@@ -51,27 +58,33 @@ Os documentos antigos de SGV-11971 estão preservados em `Arquivo/` e podem ser 
 
 As pastas são numeradas (`00 QA/`, `01 Automação/`) só pra ordem de leitura/execução no explorador de arquivos — QA vem antes porque é o que se faz primeiro; automação é consequência, quando houver.
 
-### Entregas menores dentro do ciclo
+### Entregas menores dentro de um ciclo
 
-Quando uma iniciativa precisar de execução em fatias, cada entrega fica dentro da pasta do ciclo pai. O pai mantém os requisitos e CTs funcionais de origem; cada filha mantém o escopo, os critérios técnicos e a validação QA próprios, além do plano e placar de automação limitados aos CTs incluídos. Assim, a Entrega 01 pode validar quatro verificações do seed e automatizar CT-001–012 e CT-038 sem duplicar os casos funcionais da SGV-11971.
+Quando um ciclo específico (ex. 1.24-1.25) precisar de execução em fatias, cada entrega fica dentro da pasta do ciclo pai. O pai mantém os requisitos e CTs funcionais de origem; cada filha mantém o escopo, os critérios técnicos e a validação QA próprios, além do plano e placar de automação limitados aos CTs incluídos. Assim, a Entrega 01 pode validar quatro verificações do seed e automatizar CT-001–012 e CT-038 sem duplicar os casos funcionais da SGV-11971.
 
 ```text
 SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
 ├── Arquivo/                ← pacote funcional original e histórico preservados
 │   ├── 00 QA/              ← fonte dos 38 CTs do ciclo
 │   └── 01 Automação/       ← evidências e documentos anteriores
-├── Entrega 01 - Baseline de autenticação na instância 225/
-│   ├── 00 QA/              ← escopo e quatro verificações técnicas do seed
-│   └── 01 Automação/       ← plano e placar de CT-001–012 e CT-038
-├── Entrega 02 - Análise do projeto e preset do TR/
-│   ├── 00 QA/              ← SGV-12082, matriz dos CTs e validação da análise
-│   └── 01 Automação/       ← leitura técnica e placar da investigação
-└── Entrega NN - <escopo confirmado pela investigação>/ (criar após a análise)
-    ├── 00 QA/
-    └── 01 Automação/
+└── Entrega 01 - Baseline de autenticação na instância 225/
+    ├── 00 QA/              ← escopo e quatro verificações técnicas do seed
+    └── 01 Automação/       ← plano e placar de CT-001–012 e CT-038
 ```
 
-**O que é específico do Termo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
+**Investigações da iniciativa inteira** (escopo maior que um único ciclo, ex. o Termo completo) **não** ficam aninhadas dentro de um ciclo — vivem como pacote irmão, direto sob a SGV-11262:
+
+```text
+SGV-11262 - [QA-Automação] Termo de Referência SOGOV/
+├── Conhecimento/
+├── Roadmap - Automação TR.md
+├── SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/   ← ciclo 1.24-1.25
+└── SGV-12082 - Análise do TR e preset de dados/              ← investigação do Termo completo (1.1-1.43)
+    ├── 00 QA/              ← demanda, matriz do preset, PDF fonte em Fontes/
+    └── 01 Automação/        ← leitura técnica e placar da investigação
+```
+
+**O que é específico de um Termo/ciclo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que é da iniciativa inteira** (investigação, roadmap, preset) vive em pacotes irmãos sob a SGV-11262. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
 
 ## Regras de uso (valem pra qualquer ciclo)
 
