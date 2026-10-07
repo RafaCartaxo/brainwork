@@ -26,7 +26,7 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 | Entrega | Referência | Escopo | Status |
 |---|---|---|---|
 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico da hipótese; não executada nem validada |
-| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Projeto de automação e 38 CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Entender o projeto, mapear dados/ambientes e propor preset provável | 🔄 Em análise; levantamento pendente |
+| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Projeto de automação e 38 CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Entender o projeto, mapear cobertura do TR completo, dados/ambientes e propor preset provável; 38 CTs existentes cobrem 1.24–1.25 | 🔄 Em análise; levantamento pendente |
 
 ## Como um ciclo é organizado
 

@@ -55,9 +55,9 @@ pontos: ""
 >
 > **Descrição:** conferir a rastreabilidade integral da fonte funcional para a matriz de análise.
 >
-> **Dado** que a SGV-11971 contém CT-001–CT-038  
-> **Quando** cada caso for comparado ao seu cenário, pré-condições e situação de automação conhecida  
-> **Então** cada CT deve constar individualmente ou em grupo explicitamente justificado, com dependências e dúvidas registradas.
+> **Dado** que o PDF contém o TR completo e a SGV-11971 mantém 38 CTs para os requisitos 1.24–1.25  
+> **Quando** requisitos e casos existentes forem comparados com a matriz  
+> **Então** todos os itens do TR devem estar representados e os 38 CTs devem ser rastreados como cobertura parcial do documento, com lacunas e tipo de evidência explícitos.
 >
 > **Resultado esperado:** nenhum CT desaparece por estar fora dos 13 já mapeados em Playwright.
 >
@@ -76,11 +76,11 @@ pontos: ""
 >
 > **Descrição:** verificar se a matriz descreve a massa necessária com proveniência suficiente para decidir reutilização.
 >
-> **Dado** cada CT/grupo e seus pré-requisitos  
-> **Quando** forem comparados com seed, fixtures, criação no próprio teste e configuração ambiental  
-> **Então** a matriz deve indicar ator/entidade/estado, preparação e ambiente relevante, marcando como “a confirmar” o que não tiver evidência.
+> **Dado** cada requisito relevante e os CTs/testes já existentes  
+> **Quando** forem comparados com seed, fixtures, criação no próprio teste, configuração ambiental e tipo de evidência exigida  
+> **Então** a matriz deve indicar se há dados/estados para preparar ou se a validação depende de evidência técnica/operacional, marcando como “a confirmar” o que não tiver evidência.
 >
-> **Resultado esperado:** massa preparada globalmente não é apresentada como massa consumida sem comprovação.
+> **Resultado esperado:** massa preparada globalmente não é apresentada como massa consumida sem comprovação, e requisitos de infraestrutura não são convertidos artificialmente em preset de dados.
 >
 > **Critérios cobertos:** [[01 - Demanda#^c3|C3]]
 >

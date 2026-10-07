@@ -9,7 +9,7 @@ prioridade: media
 etapa_atual: "QA · Análise da demanda"
 modulo: Automação
 responsavel: ""
-aguardando: "Concluir inventário e matriz dos 38 CTs"
+aguardando: "Mapear os requisitos do PDF e relacionar a cobertura existente"
 cadastrado_por: ""
 data_inicio: ""
 data_fim: ""
@@ -43,7 +43,7 @@ pontos: ""
 | Matriz do preset | 🟡 Estrutura criada; levantamento pendente |
 | Automação | 📋 Análise do projeto e dos dados; sem alteração de código nesta entrega |
 
-**Próximo passo:** percorrer os 38 CTs de origem e registrar para cada grupo o fluxo, os dados, o estado inicial, a preparação atual e as diferenças entre ambientes na [[Matriz - Análise do preset provável]].
+**Próximo passo:** classificar os requisitos 1.1–1.43 do [[Fontes/Requisitos Sogov.pdf|TR completo]] e relacionar cobertura, tipo de evidência e dados necessários; mapear em detalhe os 38 CTs existentes de 1.24–1.25 na [[Matriz - Análise do preset provável]].
 
 > [!warning] Escopo em análise
 > A Entrega 01 sobre a instância 225 fica preservada como histórico do piloto. A SGV-12082 investiga o estado real antes de decidir se o seed precisa ser refatorado, configurado ou apenas melhor documentado. Nenhuma execução do seed é autorizada por esta entrega.
@@ -54,5 +54,7 @@ pontos: ""
 > const paginas = dv.pages('"' + raizDoPacote + '"').where(p => typeof p.pontos === "number");
 > dv.table(["Artefato", "Pontos"], paginas.sort(p => p.file.name).map(p => [p.file.link, p.pontos]));
 > ```
+
+O PDF fonte foi preservado em [[Fontes/Requisitos Sogov.pdf|Fontes/Requisitos Sogov.pdf]]. Os 38 CTs da SGV-11971 cobrem apenas autenticação/ciclo de vida (1.24–1.25), não o TR completo.
 
 Esta entrega segue o pacote de melhoria dos templates: `00 QA/` reúne demanda, plano, casos e validação; `01 Automação/` registra a leitura técnica, sem criar uma implementação antes da análise.

@@ -22,11 +22,11 @@ status: planejado
 > **Framework:** `INPUT[inlineSelect(option(playwright),option(cypress_legado),option(outro)):framework]`
 > **Ambiente-alvo:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-Esta entrega analisa a automação e a massa atual para recomendar próximos passos. Não inclui alteração nem execução do seed.
+Esta entrega analisa o projeto de automação e o TR completo (itens 1.1–1.43), identifica cobertura/dados reutilizáveis e recomenda próximos passos. Os 38 CTs atuais da SGV-11971 representam somente os itens 1.24–1.25. Não inclui alteração nem execução do seed.
 
 ## Próxima ação
 
-- Mapear os CTs de origem caso a caso e cruzar com código, fixtures e configuração ambiental, registrando evidências na matriz.
+- Classificar os requisitos do PDF por cobertura e tipo de evidência; rastrear os 38 CTs atuais de 1.24–1.25 e localizar automação/dados para os demais requisitos.
 
 ## Repositório e entrega
 

@@ -20,7 +20,7 @@ pontos: ""
 
 ## Objetivo
 
-Verificar por inspeção documentada que a análise cobre o projeto de automação, os CTs do TR, suas dependências de dados e as opções de preparação/reuso, e que as recomendações são rastreáveis às evidências.
+Verificar por inspeção documentada que a análise cobre os requisitos 1.1–1.43 do PDF, identifica o tipo de evidência aplicável, mapeia a automação e os dados existentes (incluindo os 38 CTs de 1.24–1.25) e fundamenta as opções de preparação/reuso.
 
 ## Riscos e escopo
 
@@ -29,9 +29,9 @@ Verificar por inspeção documentada que a análise cobre o projeto de automaç�
 
 ## Estratégia de teste
 
-- Revisar a fonte de casos da SGV-11971 e conferir a cobertura de CT-001–038 na matriz.
+- Revisar a PDF fonte completo e a fonte de casos da SGV-11971; conferir a cobertura do TR e rastrear CT-001–038 como casos existentes de 1.24–1.25.
 - Inspecionar código/configuração/documentação do projeto Playwright em modo somente leitura; registrar caminho/trecho como evidência.
-- Para cada grupo de CTs, comparar pré-condições do caso com fixtures, seed, dados próprios do teste e limpeza.
+- Para cada requisito, identificar se a validação requer teste funcional, dados/estado, evidência operacional/técnica ou documentação; para CTs automatizados, comparar pré-condições com fixtures, seed, dados próprios do teste e limpeza.
 - Separar cada achado em confirmado por código/documento, confirmado por execução já registrada, inferência ou pendente de confirmação.
 - Revisar se a recomendação de preset contém somente dados e estados necessários ao escopo e lista dependências ambientais.
 
@@ -46,6 +46,6 @@ Verificar por inspeção documentada que a análise cobre o projeto de automaç�
 
 ## Entrada e saída
 
-**Entrada:** fonte dos 38 CTs da SGV-11971, mapa do seed atual, repositório Playwright e configuração/documentação de ambientes acessível sem segredos.
+**Entrada:** [[Fontes/Requisitos Sogov.pdf|PDF completo do TR]], casos da SGV-11971, mapa do seed atual, repositório Playwright e configuração/documentação de ambientes acessível sem segredos.
 
-**Saída:** mapa do projeto, matriz completa e revisão da cobertura, recomendação fundamentada do preset provável e sequência de entregas candidatas.
+**Saída:** mapa do projeto; matriz de cobertura dos requisitos do TR; rastreabilidade dos 38 CTs existentes de 1.24–1.25; recomendação fundamentada do preset provável e sequência de entregas candidatas.

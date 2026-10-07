@@ -46,7 +46,7 @@ Na verificação de 07/10, CT-001–012 estavam em `origin/main`. CT-038 passou 
 |---|---|---|
 | [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README\|Arquivo funcional da SGV-11971]] | Pacote original do ciclo: requisitos, 38 CTs e evidências históricas | 🗄️ Preservado como referência; casos reutilizados pelas entregas no escopo aplicável |
 | [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Piloto de seleção do alvo pelo seed + CT-001–012 e CT-038 | 🗄️ Preservada como histórico; não executada nem validada na 225; decisão técnica reaberta pela SGV-12082 |
-| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Entender automação, reaproveitamento de massa entre ambientes e mapear o preset provável para os 38 CTs | 🔄 Em análise; pacote criado, levantamento pendente |
+| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Entender automação, avaliar reuso de massa entre ambientes e mapear o preset provável para o TR completo; os 38 CTs existentes cobrem 1.24–1.25 | 🔄 Em análise; pacote criado, levantamento pendente |
 
 A Entrega 01 permanece arquivada como registro da hipótese de piloto na 225; seu pacote não representa uma implementação validada. A Entrega 02 (SGV-12082) usa `00 QA/` para escopo e verificações da análise e `01 Automação/` para mapear tecnicamente o projeto e acompanhar essa análise. As entregas de implementação serão abertas depois que a matriz identificar fatias executáveis e seus CTs. O pacote original completo está em `SGV-11971/Arquivo/`, inclusive documentos históricos de handoff e revisão. Eles servem como referência e não definem a estrutura das entregas novas.
 
@@ -58,12 +58,12 @@ As linhas futuras permanecem candidatas; somente a SGV-12082 está aberta como e
 |---:|---|---|---|---|
 | 1 | **Entender o projeto e o estado atual** | Explicar fluxo Playwright, setup, seed, fixtures, manifesto, ambientes e situação real dos testes | Acesso de leitura ao repositório/configuração e documentos | 🔄 SGV-12082 em análise |
 | 2 | **Mapear dados e dependências dos 38 CTs** | Identificar atores, módulos/serviços, estados, preparação, consumo, limpeza e lacunas por CT/grupo | Fonte funcional da SGV-11971; mapa técnico existente como ponto de partida | 🔄 Incluído na SGV-12082 |
-| 3 | **Propor preset inicial e pequenas entregas** | Matriz rastreável, recomendação do menor conjunto de dados/estados e sequência de entregas com CTs próprios | Conclusão dos passos 1–2 | 🔄 Incluído na SGV-12082; recomendação pendente |
+| 3 | **Propor preset inicial e pequenas entregas** | Matriz dos requisitos 1.1–1.43 com cobertura/evidência, detalhamento dos 38 CTs existentes de 1.24–1.25, recomendação do preset provável e sequência de entregas | Conclusão dos passos 1–2 | 🔄 Incluído na SGV-12082; recomendação pendente |
 | 4 | **Implementar a primeira fatia recomendada** | Entrega pequena, com QA, automação e validação próprias, conforme resultado da investigação | Recomendação aprovada pela equipe; dependências e aceite definidos | 📝 Candidata; não abrir pasta/demanda ainda |
 | 5 | **Expandir o preset conforme os próximos CTs priorizados** | Acrescentar somente os dados/estados exigidos pela próxima fatia | Resultado e limites da fatia anterior | 📝 Candidata incremental |
 | 6 | **Reproduzir sanidade por cliente/instância e ambiente** | Selecionar alvo de forma explícita, segura e repetível em diferentes ambientes/clientes | Evolução incremental do preset, configuração, isolamento, permissões e evidência de execução | 🎯 Direção futura da iniciativa |
 
-A matriz da SGV-12082 registra os CTs do Termo, os dados consumidos, o mecanismo atual de preparação e as diferenças ambientais. Cada implementação que nascer dessa análise seguirá o pacote dos templates: `00 QA/` e `01 Automação/`, contendo apenas critérios e CTs do seu escopo. `05 - Preparação Qase` só será criado quando houver casos novos a sincronizar.
+A matriz da SGV-12082 usa o PDF completo como fonte e registra cobertura dos requisitos 1.1–1.43, tipo de evidência e dados necessários. Os 38 CTs existentes da SGV-11971 cobrem apenas 1.24–1.25 e serão mapeados detalhadamente como cobertura parcial. Cada implementação que nascer dessa análise seguirá o pacote dos templates: `00 QA/` e `01 Automação/`, contendo apenas critérios e CTs do seu escopo. `05 - Preparação Qase` só será criado quando houver casos novos a sincronizar.
 
 ## Ordem sugerida
 
@@ -82,4 +82,4 @@ flowchart TD
 
 Criar uma demanda filha somente quando a análise confirmar uma fatia executável e revisável. O plano de cada entrega deve declarar problema, objetivo, CTs incluídos e excluídos, dados/estados necessários, dependências, estratégia e critério de aceite. A validação registra apenas os CTs daquela fatia; a nota da iniciativa mantém a visão geral e links para as entregas.
 
-Não abrir agora demandas para todas as entregas futuras nem assumir que é necessário refatorar o seed ou construir um mecanismo chamado `Preset`. A análise da SGV-12082 deve cobrir os 38 CTs, usando o inventário dos 13 Playwright como insumo, e recomendar a forma e a sequência das primeiras implementações.
+Não abrir agora demandas para todas as entregas futuras nem assumir que é necessário refatorar o seed ou construir um mecanismo chamado `Preset`. A análise da SGV-12082 deve classificar os requisitos do PDF completo (1.1–1.43), mapear em detalhe os 38 CTs existentes de 1.24–1.25 e localizar cobertura/dados de automação para as demais áreas, usando o inventário dos 13 Playwright como ponto de partida.

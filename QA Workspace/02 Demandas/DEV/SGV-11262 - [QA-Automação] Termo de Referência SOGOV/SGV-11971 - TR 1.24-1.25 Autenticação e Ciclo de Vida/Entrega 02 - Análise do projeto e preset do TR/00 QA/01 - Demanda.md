@@ -17,13 +17,13 @@ pontos_alocados: ""
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
 
 > [!info] Status atual
-> **Próximo passo:** levantar os 38 CTs de origem e completar a matriz com evidência rastreável.
+> **Próximo passo:** classificar os requisitos 1.1–1.43 do PDF fonte e mapear os 38 CTs existentes de 1.24–1.25 com evidência rastreável.
 
 ---
 
 ## Problema / contexto
 
-A iniciativa já tem 13 CTs em Playwright e um seed global que prepara mais dados do que esses CTs de autenticação consomem. Ainda falta uma visão única que explique como o projeto está organizado, como os 38 CTs do TR preparam e usam dados, o que varia entre ambientes e quais mecanismos atuais podem ser reaproveitados. Sem esse mapa, não há base suficiente para escolher uma evolução segura do seed ou dividir o trabalho em entregas implementáveis.
+O [[Fontes/Requisitos Sogov.pdf|PDF de requisitos SOGOV]] contém o TR completo, dos itens 1.1 a 1.43. A cobertura funcional organizada disponível na SGV-11971 contém 38 CTs focados nos itens 1.24 e 1.25; ela não representa a cobertura integral do TR. Também existe automação Playwright e um seed global, mas ainda falta uma visão que relacione requisitos do documento, automações existentes, dados necessários, mecanismos de preparação e diferenças entre ambientes. Sem essa visão, não há base para recomendar um preset nem dividir a evolução em entregas pequenas.
 
 A Entrega 01, voltada ao piloto na instância 225, fica preservada como histórico enquanto esta análise redefine o próximo passo. Refatorar o seed é uma hipótese a avaliar, não uma decisão de escopo.
 
@@ -34,9 +34,10 @@ Produzir uma leitura clara e verificável do projeto de automação e uma matriz
 ### Entrega desta capacidade
 
 - Mapa legível dos componentes e do fluxo atual de execução/preparação.
-- Matriz rastreável dos 38 CTs do TR, agrupados somente quando compartilham dados e preparação.
+- Matriz de cobertura do TR completo (itens 1.1–1.43), relacionando requisitos, automação/testes existentes, tipo de evidência e situação; agrupar subitens somente quando a regra e a validação forem comuns.
+- Mapeamento detalhado dos 38 CTs existentes de 1.24–1.25, além de localizar automações/dados existentes para outros requisitos quando houver.
 - Visão das diferenças de configuração e disponibilidade de massa entre ambientes, distinguindo evidência de suposição.
-- Recomendação de preset inicial limitado aos dados e estados realmente usados pelos CTs mapeados.
+- Recomendação de preset provável, limitada aos dados e estados exigidos pelos escopos automatizáveis identificados; requisitos de infraestrutura/documentação devem indicar a evidência apropriada, sem forçá-los a virar dados de seed.
 - Proposta de próximas fatias implementáveis, cada uma com CTs próprios e critérios de aceite sugeridos.
 
 ## Decisões de produto
@@ -49,7 +50,9 @@ Produzir uma leitura clara e verificável do projeto de automação e uma matriz
 ## Escopo
 
 - Entender a estrutura do projeto Playwright, seus pontos de entrada, configuração de ambiente, seed, fixtures, manifesto e isolamento por worker.
-- Mapear CT-001–CT-038 da fonte da SGV-11971, incluindo framework/estado conhecido e dependências.
+- Analisar todos os requisitos do PDF do TR (1.1–1.43) e distinguir o que pode ser coberto por automação funcional/dados de teste e o que exige evidência de infraestrutura, segurança, operação ou documentação.
+- Mapear individualmente CT-001–CT-038 da SGV-11971 como cobertura existente dos itens 1.24–1.25, incluindo framework/estado conhecido e dependências.
+- Localizar cobertura automatizada e dados existentes para outros requisitos sem presumir que todo o catálogo do seed é necessário.
 - Identificar atores, entidades, módulo/serviço, permissões, estado inicial, operações de preparação e limpeza exigidas por cada CT/grupo.
 - Comparar como a preparação e a configuração se relacionam com os ambientes atualmente usados, sem executar preparação destrutiva.
 - Registrar fatos com caminho de código/documento ou execução existente; marcar explicitamente o que ainda precisa ser confirmado.
@@ -66,7 +69,7 @@ Produzir uma leitura clara e verificável do projeto de automação e uma matriz
 ## Critérios de aceite
 
 - C1. O mapa do projeto explica os componentes relevantes e o caminho de uma execução Playwright até os dados preparados, com referências verificáveis. ^c1
-- C2. Os 38 CTs têm linha ou agrupamento justificável na [[Matriz - Análise do preset provável]], com dependências conhecidas e lacunas marcadas; nenhum CT fica silenciosamente omitido. ^c2
+- C2. Os requisitos do TR completo (itens 1.1–1.43 e subitens aplicáveis) estão representados na [[Matriz - Análise do preset provável]], individualmente ou em grupos justificados, com situação de cobertura e tipo de evidência; os 38 CTs existentes de 1.24–1.25 estão rastreados sem serem apresentados como cobertura total do TR. ^c2
 - C3. A matriz distingue dados/estados consumidos, mecanismo atual de preparação e variação por ambiente; afirmações sem evidência estão marcadas como “a confirmar”. ^c3
 - C4. O preset provável e suas lacunas estão descritos sem pressupor refatoração; as alternativas e recomendação têm justificativa ligada aos CTs. ^c4
 - C5. As primeiras entregas candidatas estão ordenadas por dependência e cada uma indica CTs/resultado esperado; nenhuma demanda futura é criada nesta entrega. ^c5
@@ -81,4 +84,5 @@ Produzir uma leitura clara e verificável do projeto de automação e uma matriz
 ## Pendências de decisão
 
 - Confirmar quais ambientes/repositórios serão considerados “em uso” nesta rodada e obter evidência/configuração sem expor segredos.
+- Distinguir, no TR completo, requisitos validáveis por dados/testes funcionais daqueles que dependem de evidência técnica ou operacional.
 - Determinar, com base na matriz, se a próxima fatia requer alteração de seed, configuração por ambiente, isolamento/preparação por CT ou apenas documentação.
