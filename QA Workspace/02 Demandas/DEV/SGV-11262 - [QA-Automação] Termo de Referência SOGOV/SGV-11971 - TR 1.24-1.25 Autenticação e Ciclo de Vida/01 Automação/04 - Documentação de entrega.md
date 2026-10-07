@@ -9,10 +9,10 @@ revisado: 2026-09-02
 # Documentação de Entrega — TR 1.24-1.25 (Automação)
 
 > [!warning] Registro legado — não usar como estado atual
-> Esta revisão descreve código Cypress. Ela foi preservada como referência histórica e não determina porte futuro. O placar vigente está em [[02 - Validação automação|02 - Validação automação]] e a direção em [[../../Roadmap - Automação TR|Roadmap — Automação TR]].
+> Esta revisão descreve código Cypress. Ela foi preservada como referência histórica e não determina porte futuro. O placar vigente está em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]] e a direção em [[../../Roadmap - Automação TR|Roadmap — Automação TR]].
 
 > [!info] Sobre esta nota
-> Documento de **revisão** pro Rafael conferir o grupo de testes de automação do TR 1.24-1.25 (Cypress, repo `sogov-automation-test`). Cobre os 36 CTs com código (de 38 no escopo): o que cada cenário faz e quais asserts ele executa. É complementar ao [[03 - Handoff de execução]] (que é a camada de estado/orquestração pra IA continuar o trabalho) — aqui o foco é só "o que o código faz", pra revisão humana. **Placar atual por CT não é duplicado aqui** — fica em [[02 - Validação automação]].
+> Documento de **revisão** pro Rafael conferir o grupo de testes de automação do TR 1.24-1.25 (Cypress, repo `sogov-automation-test`). Cobre os 36 CTs com código (de 38 no escopo): o que cada cenário faz e quais asserts ele executa. É complementar ao [[03 - Handoff de execução]] (que é a camada de estado/orquestração pra IA continuar o trabalho) — aqui o foco é só "o que o código faz", pra revisão humana. **Placar atual por CT não é duplicado aqui** — fica em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação]].
 
 ## Como a suíte é construída
 
@@ -113,4 +113,4 @@ Os três dependem de uma captura de API (HAR) dedicada, que ainda não foi feita
 
 ## Pendências e achados — fonte única
 
-Placar atual por CT: [[02 - Validação automação]]. Achados reais, prioridades e o que entra no próximo MR já estão documentados em [[03 - Handoff de execução]] (seção "Achados reais" e atualização de 02/09) — não duplicado aqui.
+Placar atual por CT: [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação]]. Achados reais, prioridades e o que entra no próximo MR já estão documentados em [[03 - Handoff de execução]] (seção "Achados reais" e atualização de 02/09) — não duplicado aqui.

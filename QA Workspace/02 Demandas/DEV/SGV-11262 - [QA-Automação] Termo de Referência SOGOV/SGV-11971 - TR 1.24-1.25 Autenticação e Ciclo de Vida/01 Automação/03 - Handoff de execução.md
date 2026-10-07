@@ -9,25 +9,25 @@ revisado: 2026-08-31
 # Handoff de execução — TR 1.24-1.25
 
 > [!warning] Registro legado — não usar como estado atual
-> Este handoff foi mantido para preservar contexto histórico. O estado por CT está em [[02 - Validação automação|02 - Validação automação]], a direção da iniciativa em [[../../Roadmap - Automação TR|Roadmap — Automação TR]] e o mapeamento técnico atual em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]].
+> Este handoff foi mantido para preservar contexto histórico. O estado por CT está em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]], a direção da iniciativa em [[../../Roadmap - Automação TR|Roadmap — Automação TR]] e o mapeamento técnico atual em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]].
 
 > [!warning] Escrito pra Cypress — o alvo mudou pra Playwright em 01/10/2026
 > O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 (merge `1d78bf9`) enquanto esta automação estava parada. **Tudo nesta nota descreve o trabalho em Cypress** — continua válido como levantamento de regra de negócio, captura de API e placar de CT, mas o código terá de ser portado. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
 
 > [!info] Sobre esta nota
-> Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[01 - Plano de automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts), ver [[04 - Documentação de entrega]].
+> Documento de transição para **outra sessão de IA continuar** a automação dos 38 casos de teste do TR 1.24/1.25 no repositório `sogov-automation-test`. Esta nota é a **camada de estado/orquestração**: o que já foi feito, o que está pendente, o que não pode ser esquecido. A arquitetura completa (organização de pastas, commands, faseamento, split API/E2E) vive em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação]] — **não está duplicada aqui de propósito**, para não criar duas fontes que divergem. Pra revisão cenário a cenário (o que cada CT faz, quais asserts), ver [[04 - Documentação de entrega]].
 >
-> **O estado atual por CT vive em [[02 - Validação automação]], não aqui.** Esta nota é só o **log de como se chegou lá** — histórico cronológico por rodada/sessão. Quando um achado/decisão mudar o resultado de um CT, atualizar o `02` é o que importa; registrar aqui o *como e quando* é o complemento, não o lugar de consulta rápida.
+> **O estado atual por CT vive em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação]], não aqui.** Esta nota é só o **log de como se chegou lá** — histórico cronológico por rodada/sessão. Quando um achado/decisão mudar o resultado de um CT, atualizar o `02` é o que importa; registrar aqui o *como e quando* é o complemento, não o lugar de consulta rápida.
 
 > [!info] Onde este documento para no tempo
-> O log abaixo vai até 02/09/2026. O placar atual por CT vive em [[02 - Validação automação|02 - Validação automação]] — incluindo o que mudou depois: as Suítes 1/2 foram mergeadas em 09/09 (`6c9188c`), as Suítes 3/4/5 ficaram commitadas só localmente em 01/10 (`bdf5e9a`), o alvo passou a ser Playwright, e as Suítes 1/2 + CT-038 já foram confirmadas em Playwright (02/10). A nota de retomada pós-férias foi absorvida e apagada em 02/10/2026.
+> O log abaixo vai até 02/09/2026. O placar atual por CT vive em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 - Validação automação]] — incluindo o que mudou depois: as Suítes 1/2 foram mergeadas em 09/09 (`6c9188c`), as Suítes 3/4/5 ficaram commitadas só localmente em 01/10 (`bdf5e9a`), o alvo passou a ser Playwright, e as Suítes 1/2 + CT-038 já foram confirmadas em Playwright (02/10). A nota de retomada pós-férias foi absorvida e apagada em 02/10/2026.
 
 > [!success] Atualização 31/08 (2ª rodada da sessão) — HAR encontrado, Suíte 4 codada, 26/38 CTs confirmados
 > O usuário indicou `~/Downloads/Termo de refência/` (grafado sem o 2º "e") — continha a captura real da mudança de status que faltava. Isso desbloqueou e permitiu codar a Suíte 4 inteira (17 CTs). Também achei e corrigi um vazamento real de cookie de sessão entre testes (sugestão do usuário, confirmada tecnicamente) que causava falsos-positivos. **Resultado final: 26 de 38 CTs confirmados passando contra HML** (17 da Suíte 1-3 + os 9 já estáveis antes). A Suíte 4 (17 CTs) está **codada mas não validada** — a validação travou 4 vezes seguidas num timeout de 120s numa chamada GraphQL dentro do `before()`, com evidência concreta de instabilidade de rede real do ambiente nessa janela de tempo (connect-timeout confirmado até fora do Cypress). Não é um bug conhecido do código — rodar de novo antes de investigar mais.
 
 > [!success] Atualização 31/08 (3ª rodada) — vault reorganizado pelo usuário, doc de arquitetura corrigido
 > O usuário reorganizou a pasta do TR em outra sessão: `06 Estudos/Termo de Referência 1.24-1.25/` → `07 Termo de Referência/1.24-1.25/` (subpastas `01 Casos de Teste/`, `02 Sincronização Qase/`, `03 Automação/` — aqui —, `Histórico/`). `Casos organizados para Qase.md` e `Execução.md` foram arquivados; o conteúdo foi absorvido em `01 Casos de Teste/1.24-1.25 - Casos de Teste.md`, agora fonte única. Conferi (3 investigações em paralelo, cruzando com o histórico git do vault): **numeração dos 38 CTs, suítes e Shared Steps não mudaram** — sem impacto no código já escrito. Duas divergências reais encontradas e tratadas:
-> 1. **[[01 - Plano de automação]] estava desatualizado** (ainda presumia `updatePublicAgent`/`UpdatePublicAgentInput`) — corrigido agora com a mutation/enum reais.
+> 1. **[[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação]] estava desatualizado** (ainda presumia `updatePublicAgent`/`UpdatePublicAgentInput`) — corrigido agora com a mutation/enum reais.
 > 2. **CT-020 mudou de conteúdo**: nomes dos níveis de permissão atualizados (Assistente/Auxiliar/Visualizador → Especialista/Usuário básico/Somente leitura) — sem impacto no teste, que não referencia nomes de nível.
 >
 > **Achado novo de cobertura**: a citação literal do Termo adicionada ao CT-026 menciona que o servidor deve **receber um e-mail** ao fim da Licença (item 1.27.11.4) — o teste atual de CT-026 não verifica isso. Pendente decidir se implementa (repo já tem helper de Gmail reutilizável).
@@ -67,7 +67,7 @@ revisado: 2026-08-31
 > **Placar atualizado da automação**: 26 CTs confirmados (Suítes 1-3 + CT-038) + 8 da Suíte 4 = **34 de 38 CTs com evidência real de comportamento**. 6 CTs da Suíte 4 seguem indefinidos (nem confirmados passando nem confirmados como achado — causa raiz desconhecida). CT-016, CT-017, CT-037 continuam sem código.
 
 > [!important] Para a IA executora — leia isto primeiro
-> 1. [[01 - Plano de automação]] é a fonte de verdade da arquitetura original — mas o shape real da mutation de status (seção 4) estava errado (presumia `UpdatePublicAgentInput`; o real é `changePublicAgentWorkStatus`/`Status`, ver `docs/business-rules/api/identity-lifecycle.md`). Atualizar essa nota também.
+> 1. [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação]] é a fonte de verdade da arquitetura original — mas o shape real da mutation de status (seção 4) estava errado (presumia `UpdatePublicAgentInput`; o real é `changePublicAgentWorkStatus`/`Status`, ver `docs/business-rules/api/identity-lifecycle.md`). Atualizar essa nota também.
 > 2. **35 de 38 CTs já têm código escrito.** 26 confirmados passando contra HML (Suítes 1, 2, 3 completas ou quase, + CT-038). Os 17 da Suíte 4 estão codados mas **ainda não rodaram com sucesso** — rodar `identity-lifecycle.api.cy.js` antes de mexer nele mais. Só CT-016, CT-017 e CT-037 continuam sem código (endpoints não capturados).
 > 3. **O repo tem uma mudança não commitada que NÃO é deste trabalho** — ver seção "Estado do repositório" abaixo. Não tocar, não commitar, não descartar.
 > 4. **CT-015 tem uma falha real e confirmada** (não é bug do teste) — ver "Achados" abaixo. Não "consertar" a asserção sem confirmar com Rafael antes.
@@ -167,7 +167,7 @@ git branch --show-current # esperado: main
 
 ## Verificação final (antes de considerar a Fase 1 encerrada)
 
-- [ ] HAR capturado e o shape de `UpdatePublicAgentInput`/enum de status extraído e registrado em [[01 - Plano de automação]] (seção 4).
+- [ ] HAR capturado e o shape de `UpdatePublicAgentInput`/enum de status extraído e registrado em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação]] (seção 4).
 - [ ] Mutation de desbloqueio (CT-017) e endpoint de auditoria (CT-037) investigados (mesma restrição de introspection desligada — vai precisar de captura manual também).
 - [ ] Mecanismo técnico de CT-025/033 esclarecido com Rafael.
 - [x] CT-009 e CT-018/019 resolvidos (31/08) — os demais 18 CTs desbloqueados já foram codados (ver "Estado da Fase 2/3").
@@ -181,7 +181,7 @@ git branch --show-current # esperado: main
 
 ## Referências
 
-- [[01 - Plano de automação]] — arquitetura completa, faseamento, achados da auditoria de coerência (26/08)
+- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação]] — arquitetura completa, faseamento, achados da auditoria de coerência (26/08)
 - [[04 - Documentação de entrega]] — revisão cenário a cenário do que cada CT de código faz
 - [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos 38 CTs ativos, Shared Steps SS-01 a SS-06
 - [[../00 QA/04 - Validação dev|04 - Validação dev]] — placar de conformidade por CT

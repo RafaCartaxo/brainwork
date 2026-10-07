@@ -11,13 +11,13 @@ status: planejado
 > **README do card:** [[../00 QA/00 README|Abrir README do card]]
 > **Demanda/Bug:** [[../00 QA/01 - Demanda]]
 > **Casos de teste:** [[../00 QA/03 - Casos de teste]]
-> **Automação:** [[00 - Automação]]
-> **Validação automação:** [[02 - Validação automação]]
+> **Automação:** [[Sistema/Templates/Pacote/01 Automação/00 - Automação]]
+> **Validação automação:** [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]]
 
 > [!settings]- Controle do plano
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Este plano registra o escopo, a estratégia e as dependências antes da implementação. Mantenha as decisões curtas e ligadas aos CTs; o andamento geral fica em [[00 - Automação]] e os resultados executados ficam em [[02 - Validação automação]].
+> Este plano registra o escopo, a estratégia e as dependências antes da implementação. Mantenha as decisões curtas e ligadas aos CTs; o andamento geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]] e os resultados executados ficam em [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]].
 
 ## Objetivo e escopo
 

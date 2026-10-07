@@ -15,8 +15,8 @@ pontos: ""
 
 - [[../00 QA/00 README|README da SGV-11971]] — estado do ciclo de QA.
 - [[../00 QA/03 - Casos de teste|Casos de teste]] — fonte única dos 38 CTs.
-- [[01 - Plano de automação|01 — Plano de automação]] — escopo, abordagem e preparação.
-- [[02 - Validação automação|02 — Validação automação]] — resultado atual por CT.
+- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação|01 — Plano de automação]] — escopo, abordagem e preparação.
+- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/02 - Validação automação|02 — Validação automação]] — resultado atual por CT.
 - [[../../Roadmap - Automação TR|Roadmap da iniciativa SGV-11262]] — direção e sequência das entregas.
 - [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed atual]] — dados e estados consumidos pelos 13 CTs Playwright.
 

@@ -57,7 +57,7 @@ data_fim: ""
 > **Casos de teste:** [[../00 QA/03 - Casos de teste]]
 > **Validação:** [[../00 QA/04 - Validação dev]]
 > **Preparação Qase:** [[../00 QA/05 - Preparação Qase]]
-> **Automação:** [[00 - Automação]]
+> **Automação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/00 - Automação]]
 
 > [!settings]- Controle da validação
 > **Status:** `INPUT[inlineSelect(option(execucao),option(concluido)):status]`

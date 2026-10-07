@@ -21,6 +21,12 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 |---|---|---|---|
 | 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Detalhe no placar da automação |
 
+## Entregas de automação
+
+| Entrega | Referência | Escopo | Status |
+|---|---|---|---|
+| [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação\|Baseline de autenticação na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste\|SGV-11971]] | Seleção segura da instância 225 pelo seed e validação de CT-001–012 e CT-038 | 📋 Pacote `00–02` preparado; implementação pendente, sem ID de demanda filha |
+
 ## Como um ciclo é organizado
 
 Cada ciclo é um pacote no padrão do vault (`Sistema/Templates/Pacote/`), com uma adição: a pasta `01 Automação/`, que os pacotes de funcionalidade comum não têm.
