@@ -26,12 +26,12 @@ pontos: ""
 - Placar histórico: **25 aprovados**, 4 falharam, 6 bloqueados e 3 aguardam implementação ou evidência.
 - Framework atual: **Playwright**. CT-001–012 e CT-038 estão identificados no código Playwright; os 12 outros CTs aprovados ainda estão associados à suíte Cypress legada.
 - Os 13 CTs Playwright não falharam no run amplo registrado em 06/10/2026. Ainda falta demonstrar execução reproduzível em uma instância dedicada.
-- Primeiro alvo definido no roadmap: **instância de teste dedicada, criada ou reconciliada pelo seed**.
+- Instância dedicada de teste criada: **ID 225 — “Termo De Referência - Sogov”**. O seed atual ainda procura o nome fixo `E2E Automatic Test` e pode criar outra instância; ajustar o alvo antes de executá-lo.
 - CT-038 consta como verde no registro disponível, mas seu código está em worktree com `HEAD` destacado (`16c41e4`) e sem commit na verificação de 07/10. Definir branch e commit antes de encerrar qualquer entrega que o inclua.
 
 ## Próxima ação
 
-Preparar a primeira entrega candidata de estabilização, com pacote próprio `00–02` para CT-001–012 e CT-038. Ela deve validar o seed idempotente na instância dedicada e cobrir apenas os dados que esses CTs exigem. Antes de encerrar essa entrega, resolver o destino do código ainda sem branch/commit do CT-038.
+Preparar a primeira entrega candidata de estabilização, com pacote próprio `00–02` para CT-001–012 e CT-038. Primeiro, fazer o seed selecionar a instância 225 no mesmo backend e impedir a criação involuntária de outro cliente. Depois, validar a preparação e os CTs nessa instância. Antes de encerrar a entrega, resolver o destino do código ainda sem branch/commit do CT-038.
 
 ## Documentos deste pacote
 

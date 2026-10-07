@@ -82,7 +82,12 @@ Os CTs de autenticação usam apenas o cidadão PJ da chave `citizen` (reapontad
 
 ### Alvo do primeiro piloto
 
-Decisão da iniciativa em 07/10/2026: começar numa **instância de teste dedicada e estável**, criada ou reconciliada pelo seed. A seleção de uma instância de cliente existente fica para uma etapa futura. O código atual já cria/reusa um perfil fixo de instância dentro do ambiente configurado; este mapa não confirma uma execução limpa recente do seed nem prova ainda a estabilidade em outro ambiente.
+Decisão da iniciativa em 07/10/2026: começar numa **instância de teste dedicada e estável**, criada ou reconciliada pelo seed. A seleção de uma instância de cliente existente fica para uma etapa futura.
+
+> [!important] Instância dedicada criada para teste — ainda não selecionada pelo seed
+> Em 07/10/2026 foi criada a instância **ID 225 — “Termo De Referência - Sogov”**. O seed atual, porém, não seleciona por ID: `provisionBaseline` chama `getInstanceOrCreate` com o nome fixo de `BASELINE.instance`; a busca é pelo nome exato, sem distinção entre maiúsculas/minúsculas. Se não encontrar esse nome, a função cria outro cliente e inicia a implantação. Como o nome configurado hoje é diferente, **não executar o seed antes de ajustar sua seleção para a instância 225**. Também confirmar que a configuração de ambiente do run aponta para o mesmo backend onde a instância 225 foi criada.
+
+Após o ajuste, os specs de autenticação consumirão o ID retornado no manifesto, então não precisam fixar `225` em cada teste nem na URL. O que precisa ser explícito é o alvo do seed e a proteção contra criação acidental de outro cliente.
 
 **O que já é reproduzível:**
 
