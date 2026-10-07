@@ -6,6 +6,8 @@ tipo: indice
 ---
 # Índice: [QA-Automação] Termo de Referência SOGOV (SGV-11262)
 
+> **Direção e sequência da iniciativa:** [[../Roadmap - Automação TR|Roadmap — Automação TR]]. Este índice fica dedicado à navegação e à localização dos ciclos e documentos.
+
 Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verificar, ciclo a ciclo, se a plataforma atende ao que o Termo exige, com cobertura automatizada e evidência reproduzível. Sem card nem CTs próprios — a validação acontece pelos ciclos.
 
 > [!info] Guarda-chuva aberta — 1 ciclo em andamento
