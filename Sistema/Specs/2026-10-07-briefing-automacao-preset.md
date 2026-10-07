@@ -112,39 +112,71 @@ Há duplicação concreta na SGV-11971: resumo e pendências aparecem no hub, o 
 
 ### Estrutura recomendada
 
-Manter a pasta `01 Automação/`, mas reduzi-la a três notas-base e uma nota opcional. A numeração representa ordem de leitura, não uma fila de etapas.
+Manter somente `00` a `02`. A numeração é ordem de leitura; o plano não é obrigatório em automação simples.
 
 ```text
 01 Automação/
-├── 00 - Automação.md          hub curto: contexto, estado e próximo passo
-├── 01 - Plano de automação.md plano curto, necessário quando houver decisão técnica
-├── 02 - Validação automação.md placar atual por CT; fonte única dos resultados
-└── 03 - Histórico e handoff.md opcional: decisões, achados e contexto para retomar
+├── 00 - Automação.md          entrada e visão geral do trabalho
+├── 01 - Plano de automação.md opcional: decisões antes de codar
+└── 02 - Validação automação.md resultado atual por CT
 ```
 
-`04 - Documentação de entrega.md` deixa de ser um arquivo padrão. Para automações grandes que realmente precisem de revisão detalhada, a tabela por CT pode ser uma seção opcional do plano ou um apêndice da nota de histórico. A entrega de código continua apontada pelo repo, branch/MR e revisão correspondente; não precisa de uma segunda narrativa de code review no vault.
+`03 - Handoff de execução.md` e `04 - Documentação de entrega.md` saem do pacote padrão. Não criar um histórico substituto. Se houver uma decisão duradoura de arquitetura/regra de negócio, documentá-la na fonte técnica do repo; o andamento do dia fica no registro de trabalho já usado. A revisão de código ocorre no repo/MR, e o hub aponta para esse endereço.
 
-### Quando criar cada nota
+### Divisão dos três templates
 
-| Nota | Regra de uso | Fonte única para |
-|---|---|---|
-| `00 - Automação` | Sempre que a pasta existir. | Identificação do repo/framework, estado geral e próxima ação. |
-| `01 - Plano de automação` | Se houver escolha de camada, preparação especial de dados, dependência técnica ou mais de uma suíte/fase. Em automação direta, registrar no hub que não houve plano separado. | Escopo automatizado e decisões de construção ainda válidas. |
-| `02 - Validação automação` | Sempre que houver ao menos um CT automatizado. | Resultado atual de cada CT no framework atual, arquivo/spec, ambiente e observação curta. |
-| `03 - Histórico e handoff` | Só quando outra sessão/pessoa precisar continuar ou quando decisões e achados exigirem histórico. | Linha do tempo curta, decisões tomadas, pendências com responsável/próxima ação e instruções de retomada. |
+| Nota | Responde a | Deve conter | Não deve conter |
+|---|---|---|---|
+| `00 - Automação` | O que é esta automação e qual é o próximo passo? | Link da demanda e dos CTs; repo; framework; ambiente-alvo; status geral; próxima ação; link de MR quando existir; links para `01` e `02`. Pendências gerais só quando bloquearem várias suítes ou o trabalho todo. | Contagem manual de CTs, investigação detalhada, lista de asserts ou histórico de rodadas. |
+| `01 - Plano de automação` | O que precisa ser construído e quais decisões/gates vêm antes do código? | CTs no escopo; suíte/camada; estratégia de reuso; preparação e isolamento/limpeza de dados; gaps técnicos; fases curtas e critério de pronto. Usar linhas de tabela e checkboxes. Criar só se houver decisão técnica, preparação especial, dependência ou múltiplas suítes. | Resultado de execução, cronologia, detalhes de cada assert ou explicação da arquitetura inteira do repo. |
+| `02 - Validação automação` | O que está passando no teste automatizado agora? | Uma linha por CT candidato, link ao CT fonte, identificador/caminho do teste, resultado atual e observação curta. Ambiente, build e data da rodada no topo. | Histórico; decisão de arquitetura; resumo escrito à mão que possa divergir da tabela. |
 
-Não manter `03` como diário obrigatório: registrar apenas mudanças que expliquem o estado atual ou evitem repetir investigação. O resultado atual permanece em `02`.
+No caso direto, o fluxo documental é `00 → 02`; no caso com decisões técnicas é `00 → 01 → 02`. `00` continua sendo a porta de entrada e aponta qual caminho foi usado; não se cria um arquivo vazio para completar numeração.
+
+### Esqueleto de leitura de cada nota
+
+**`00 - Automação`** deve caber numa tela e responder estado/próximo passo:
+
+```text
+Automação — <ID>
+Demanda: <link> · Casos de origem: <link>
+Repo: <link/nome> · Framework: <Playwright> · Ambiente-alvo: <HML>
+Como executar: <link para README/instruções do repo>
+Status geral: <planejado | em execução | bloqueado | concluído>
+Próxima ação: <verbo + entrega concreta + responsável, se houver>
+Plano: <link para 01 | dispensado — execução direta>
+Validação: <link para 02>
+Branch/MR: <link quando existir>
+Pendência geral: <somente se bloquear mais de um CT ou a automação toda>
+```
+
+Status geral descreve a etapa do trabalho; `02` descreve o resultado dos testes. Assim os dois campos não competem. Não exibir contagem digitada manualmente no hub.
+
+**`01 - Plano de automação`** é uma matriz curta de decisão, não um relatório:
+
+| Suíte / CTs | Camada | Dados e estado inicial | Reuso / mudança necessária | Dependência ou gate |
+|---|---|---|---|---|
+| <suíte e links aos CTs> | API / E2E | <ator, preset, cleanup> | <helper existente ou item a criar> | <captura, acesso, fix no ambiente> |
+
+Acima ou abaixo da matriz, manter somente **objetivo/fora de escopo** e **critério de pronto**. O plano termina antes da implementação: depois disso, código e progresso vivem no repo e o resultado executado vive em `02`.
+
+**`02 - Validação automação`** separa existência de código do último resultado:
+
+| CT | Teste no repo | Resultado atual | Última execução | Observação |
+|---|---|---|---|---|
+| link ao CT de origem | caminho e ID do teste, ou `sem teste` | sem teste / aguardando / em andamento / aprovado / falhou / bloqueado | data + build/commit | causa curta ou link ao bug/pendência |
+
+O campo **Teste no repo** deixa claro quando ainda não existe cobertura. `Resultado atual` trata somente a última execução conhecida; falha sem causa confirmada continua falha e não vira defeito de produto por inferência. Ambiente fica no topo; a data/versão da execução é por CT quando os CTs foram rodados em momentos/builds diferentes. Se toda a tabela veio de uma única rodada, pode-se informar a rodada uma vez no topo.
 
 ### Conteúdo mínimo que o template precisa pedir
 
 O conjunto deve permitir que uma pessoa entenda **o que será automatizado, onde está o código, como preparar/rodar com segurança e o que está passando agora**, sem ler um relato longo.
 
-- **Hub (`00`)**: ID/link da demanda e CTs de origem; repo e framework; link de branch/MR quando houver; ambiente; estado geral; próxima ação objetiva; links para plano/validação/histórico existentes.
-- **Plano (`01`)**: objetivo e CTs incluídos/excluídos; estratégia por suíte/camada; código e dados existentes a reaproveitar; dados/estado especial necessário e como será preparado/limpo; riscos de estado compartilhado; dependências ou lacunas que bloqueiam implementação; etapas/gates e critério de pronto. Cada linha deve ser decisão ou ação verificável, não narrativa de investigação.
-- **Validação (`02`)**: uma linha por CT automatizado ou explicitamente fora/bloqueado; ID de CT ligado à origem; caminho do teste e rótulo; framework; resultado; observação curta/link ao histórico; ambiente e data/build da execução. O resumo e a tabela precisam usar estados compatíveis, sem contagens escritas manualmente em duas notas.
-- **Histórico (`03`)**: data/rodada, o que mudou, decisão/achado e efeito no próximo passo. Instrução de retomada deve começar pelo estado atual e próxima ação, não recontar o projeto.
+- **Hub (`00`)**: ID/link da demanda e dos CTs de origem; repo; framework; ambiente; status geral; próxima ação; branch/MR quando houver. A contagem atual vem de `02`, não é digitada de novo.
+- **Plano (`01`)**: CTs incluídos; estratégia por suíte/camada; o que reutilizar; dados/estado especial e forma segura de preparar/limpar; risco de estado compartilhado; lacunas que bloqueiam; gates e critério de pronto. Cada item é uma decisão ou ação verificável.
+- **Validação (`02`)**: uma linha por CT no escopo; link ao CT original; caminho e ID do teste; resultado atual; observação curta; ambiente/build/data da execução. Sem histórico ou segunda contagem manual.
 
-O template atual cobre repo, framework, ambiente, placar, arquitetura, fases e pendências. Precisa tornar explícitos a **origem e o escopo dos CTs**, o **preparo e limpeza de dados**, os **riscos de estado compartilhado**, os **comandos/condições de execução**, e **quem faz o próximo passo**. Esses campos cabem numa tabela/checklist curta; não exigem seções narrativas separadas.
+O template atual cobre repo, framework, ambiente, placar, arquitetura, fases e pendências. Precisa tornar explícitos a **origem e o escopo dos CTs**, o **preparo e limpeza de dados**, os **riscos de estado compartilhado**, um **link para as instruções de execução mantidas no repo** e **quem faz o próximo passo**. O vault aponta para o comando canônico em vez de duplicá-lo; os demais campos cabem numa tabela/checklist curta.
 
 ### Aplicação ao preset
 
@@ -152,6 +184,18 @@ Para este pacote, “preset” deve ser tratado inicialmente como **preparo repe
 
 No plano, o preset entra como uma linha de preparação: estado desejado → mecanismo confirmado → identidade isolada → limpeza/limites → CTs consumidores. Até `changePublicAgentWorkStatus` e as regras de bloqueio estarem implementadas e validadas no Playwright, registrá-lo como dependência/pendência, sem prometer que os CTs já podem rodar.
 
+### Fluxo de trabalho e encaixe no pacote QA
+
+O pacote QA continua sendo a fonte dos critérios e cenários. A pasta `01 Automação/` registra a cobertura automatizada desses mesmos CTs; não abre um fluxo de teste paralelo.
+
+1. **Decidir/iniciar**: após o gatilho de automação, criar `01 Automação/00` e vincular demanda e CTs. Na automação de card comum, cumprir primeiro os gates atuais: validação manual concluída e correção disponível no ambiente-alvo. No fluxo de TR, criar/linkar o card e CTs cedo, depois cumprir o gate manual antes de codar.
+2. **Planejar se necessário**: criar `01` apenas se houver escolha de API/E2E, dados especiais/preset, investigação de API, bloqueio técnico ou várias suítes. Registrar decisões e condições de pronto; não registrar diário de investigação.
+3. **Construir no repo**: escrever/reusar código conforme guia do repo. O vault não replica arquitetura detalhada nem código; `00` pode apontar para repo/branch/MR.
+4. **Executar e triar**: rodar no ambiente-alvo. Para cada CT, separar defeito do teste, achado real de produto e instabilidade. Atualizar a linha daquele CT em `02` para o estado atual. Observação deve ser curta; bug/pedido de produto ganha seu próprio registro, e instabilidade bloqueadora aparece em `00` como próxima ação/pendência geral.
+5. **Revisar e fechar**: aplicar a revisão de código existente antes do commit/MR; registrar link de revisão/entrega em `00`; sincronizar o campo de automação dos CTs na nota QA. Fechar `00` quando a cobertura planejada estiver concluída ou quando o restante tiver justificativa e próximo passo claros.
+
+Assim, a leitura é simples: abrir `00` para saber o estado e para onde ir; consultar `01` somente se for preciso entender as decisões de construção; consultar `02` para saber o resultado atual de cada CT.
+
 ### Migração e alcance
 
-Esta proposta é para os templates e novos pacotes. A SGV-11971 contém histórico técnico útil e não deve ser reescrita só para caber no modelo curto; quando houver migração, preservar os detalhes como material de referência e atualizar apenas hub/placar para apontarem às fontes corretas. Antes de aplicar a estrutura aos templates, revisar também o mapa de pastas no `00 QA/00 README.md` e a descrição em `PADROES_QA.md`, que hoje ainda descrevem os cinco nomes antigos.
+Esta proposta é para os templates e novos pacotes. A SGV-11971 contém histórico técnico útil e não deve ser reescrita só para caber no modelo curto; seus detalhes podem permanecer como material daquele caso, fora do pacote-base. Antes de aplicar a estrutura aos templates, revisar também o mapa de pastas no `00 QA/00 README.md` e a descrição em `PADROES_QA.md`, que hoje ainda descrevem os cinco nomes antigos.
