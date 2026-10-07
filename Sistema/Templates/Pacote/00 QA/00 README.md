@@ -23,7 +23,7 @@ pontos: ""
 > **Casos de teste:** [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]
 > **Validação:** [[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
+> **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — quando a automação for planejada; antes de começar a codar)*
 
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
@@ -76,12 +76,10 @@ Pacote para `<ID>`:
 │   ├── 03 - Casos de teste.md
 │   ├── 04 - Validação dev.md
 │   └── 05 - Preparação Qase.md
-├── 01 Automação/                (opcional — só quando houver cobertura automatizada)
-│   ├── 00 - Automação.md        (obrigatório se a pasta existir — config, pendências, checklist)
-│   ├── 01 - Plano de automação.md   (opcional — automação grande o bastante pra ter plano próprio)
-│   ├── 02 - Validação automação.md (obrigatório se a pasta existir — placar atual por CT, sempre atual)
-│   ├── 03 - Handoff de execução.md (opcional — log de execução entre rodadas)
-│   └── 04 - Documentação de entrega.md (opcional — revisão cenário a cenário)
+├── 01 Automação/                (opcional — quando a automação for planejada)
+│   ├── 00 - Automação.md        entrada, configuração e próxima ação
+│   ├── 01 - Plano de automação.md escopo, estratégia, dados e dependências
+│   └── 02 - Validação automação.md placar atual por CT
 └── Defeitos/                    (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md; numerada por último de propósito — é exceção, não parte da sequência QA → Automação)
 ```
 

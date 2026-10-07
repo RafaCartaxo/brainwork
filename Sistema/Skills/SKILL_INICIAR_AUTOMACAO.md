@@ -43,11 +43,11 @@ Gate aberto → registrar bloqueio na fila da daily como pendência `⏳` com o 
    - **Dados de teste**: o cenário exige personas/setores/documentos/permissões que já existem no env do repo (`cypress.env.set.json`) ou falta provisionar? Falta = pré-trabalho de setup.
    - **Cobertura/commands**: já existe command/fluxo no repo pro que o cenário precisa, ou terá de ser criado?
    - **Camada**: dá pra cobrir por **API** (mais rápido, menos frágil) ou exige **E2E de UI**? Preferir começar por API quando o comportamento é verificável por API; E2E quando é interação de tela.
-   - **Registrar os gaps** (na daily e/ou no plano do card em `04 Conhecimento/`) — eles viram as primeiras tarefas da automação.
+   - **Registrar os gaps** no [[../Templates/Pacote/01 Automação/01 - Plano de automação|plano de automação]]; a próxima ação geral fica no hub `00`. Achados técnicos duradouros ficam na documentação do repo.
 3. **Escrever o(s) teste(s)** seguindo o guia do repo `.claude/agents/criar-teste-e2e.md` (convenções, estrutura, selectors, personas). Reaproveitar antes de criar.
 4. **Rodar localmente** contra o ambiente-alvo e confirmar verde — incluindo regressão dos fluxos que o fix tocou.
 5. **Entregar pra revisão** via [[SKILL_REVISAO_AUTOMACAO_E2E]] antes do commit/MR.
-6. **Registrar na daily** (`## Atividades → ### Planejamento`, copies do [[../../QA Workspace/01 Daily/README|01 Daily/README]]) o início/andamento, com wikilink pro card; atualizar o Histórico do card quando a cobertura automatizada existir.
+6. **Registrar na daily** (`## Atividades → ### Planejamento`, copies do [[../../QA Workspace/01 Daily/README|01 Daily/README]]) o início/andamento, com wikilink pro card; manter `00 - Automação` com status/próxima ação, `01 - Plano de automação` com estratégia, e `02 - Validação automação` com o resultado atual por CT. Sincronizar a cobertura no campo **Automação** dos CTs.
 
 ## Resultado Esperado
 

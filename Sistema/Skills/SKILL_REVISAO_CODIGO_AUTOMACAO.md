@@ -93,13 +93,15 @@ ls cypress/testes/api/entities/<dominio>/*.cy.js cypress/testes/e2e/entities/<do
       1. Explicar o **PORQUÊ** não-óbvio (uma restrição, um bug real, uma decisão) — nunca repetir
          o que o código já deixa claro pelo nome.
       2. **Nunca citar uma pessoa** (nem "confirmado com Fulano", nem "perguntar pro Fulano") — se é
-         regra confirmada, registrar a regra em si; se está em aberto, isso é conteúdo de
-         doc/handoff, não de comentário de código.
+         regra confirmada, registrar a regra em si; se está em aberto, registrar o CT e a
+         observação em `02 - Validação automação` e a próxima ação em `00 - Automação`, não no
+         comentário de código.
       3. Ser **fato, não diário de investigação** — descrever o comportamento atual conhecido (o
          quê + evidência mínima), nunca narrar a jornada de debug ("testei isso, não resolveu,
-         ainda preciso ver X") — isso pertence à documentação viva (Handoff/Entrega), não ao código.
-      4. **Sem plano de próxima sessão embutido** — "próximo passo: investigar Y" vai pro Handoff,
-         nunca pro comentário. *Exemplo real: comentários com "PENDENTE — achado não totalmente
+         ainda preciso ver X") — o resultado atual pertence a `02 - Validação automação`; fatos
+         duradouros pertencem à documentação técnica do repo, não ao comentário de código.
+      4. **Sem plano de próxima sessão embutido** — "próximo passo: investigar Y" vai para
+         `00 - Automação`, nunca para o comentário. *Exemplo real: comentários com "PENDENTE — achado não totalmente
          diagnosticado... precisa de uma rodada isolada pra..." em `identity-lifecycle.api.cy.js`
          reescritos como fato direto ("Achado sem causa raiz conhecida: X não encontra Y, testado
          Z, sem efeito"), sem a narrativa de próximos passos.*
