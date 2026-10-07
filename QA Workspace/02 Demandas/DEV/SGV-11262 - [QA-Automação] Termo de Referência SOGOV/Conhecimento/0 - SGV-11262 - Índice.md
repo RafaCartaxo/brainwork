@@ -25,7 +25,7 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 
 | Entrega | Referência | Escopo | Status |
 |---|---|---|---|
-| [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação\|Baseline de autenticação na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste\|SGV-11971]] | Seleção segura da instância 225 pelo seed e validação de CT-001–012 e CT-038 | 📋 Pacote `00–02` preparado; implementação pendente, sem ID de demanda filha |
+| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline de autenticação na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/03 - Casos de teste\|SGV-11971]] | Seleção segura da instância 225 pelo seed e validação de CT-001–012 e CT-038 | 📋 Pacotes `00 QA` e `01 Automação/00–02` preparados; implementação pendente, sem ID de demanda filha |
 
 ## Como um ciclo é organizado
 
@@ -49,6 +49,19 @@ SGV-<n> - TR <ciclo> <assunto>/
 O pacote SGV-11971 ainda contém os arquivos `03 - Handoff de execução` e `04 - Documentação de entrega`, criados no formato antigo. Eles permanecem preservados enquanto suas informações são reconciliadas; o padrão atualizado usa somente `00–02`.
 
 As pastas são numeradas (`00 QA/`, `01 Automação/`) só pra ordem de leitura/execução no explorador de arquivos — QA vem antes porque é o que se faz primeiro; automação é consequência, quando houver.
+
+### Entregas menores dentro do ciclo
+
+Quando uma iniciativa precisar de execução em fatias, cada entrega fica dentro da pasta do ciclo pai. O pai mantém os requisitos e CTs funcionais de origem; cada filha mantém o escopo, os critérios técnicos e a validação QA próprios, além do plano e placar de automação limitados aos CTs incluídos. Assim, a Entrega 01 pode validar quatro verificações do seed e automatizar CT-001–012 e CT-038 sem duplicar os casos funcionais da SGV-11971.
+
+```text
+SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
+├── 00 QA/                  ← ciclo funcional completo e fonte dos 38 CTs
+├── 01 Automação/           ← visão consolidada/histórica do ciclo
+└── Entrega 01 - Baseline de autenticação na instância 225/
+    ├── 00 QA/              ← escopo e quatro verificações técnicas do seed
+    └── 01 Automação/       ← implementação e placar dos 13 CTs desta fatia
+```
 
 **O que é específico do Termo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
 

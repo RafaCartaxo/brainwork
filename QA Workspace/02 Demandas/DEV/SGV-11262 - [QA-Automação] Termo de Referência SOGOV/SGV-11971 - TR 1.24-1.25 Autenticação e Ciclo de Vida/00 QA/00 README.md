@@ -14,6 +14,7 @@ etapa_atual: "QA · Validação"
 > **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/04 - Validação dev]]  
 > **Preparação Qase:** [[05 - Preparação Qase]]  
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
+> **Entrega 01 — baseline na instância 225:** [[../Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README|Pacote QA]] · [[../Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação|Pacote de automação]]
 
 > [!settings]- Controle do card  
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`  
@@ -30,7 +31,7 @@ etapa_atual: "QA · Validação"
 | Preparação Qase | 📤 Enviado (projeto SGV, suite 4 — 25 atualizados, 2 deprecated, 1 criado, 31/08/2026) |
 | Automação | 🔄 Em andamento — 13 CTs identificados em Playwright (CT-001–012 e CT-038); outros 12 CTs aprovados seguem associados ao Cypress. Os 13 passaram no run registrado de 06/10/2026; placar dos 38 CTs em [[../01 Automação/02 - Validação automação\|02 - Validação automação]] |
 
-**Próxima entrega candidata da iniciativa:** estabilizar o seed na **instância de teste dedicada** e validar CT-001–012 e CT-038, com pacote próprio `00–02`. A leitura confirmou que o código de CT-038 ainda está em `HEAD` destacado (`16c41e4`), sem commit; definir seu destino antes de encerrar a entrega. Este README e o pacote SGV-11971 continuam registrando o ciclo funcional de 38 CTs. Direção e sequência em [[../../Roadmap - Automação TR|Roadmap — Automação TR]].
+**Entrega 01 da iniciativa:** pacote `00 QA` + `01 Automação/00–02` preparado para estabilizar o seed na **instância de teste dedicada** e validar CT-001–012 e CT-038. A implementação ainda não começou. A leitura confirmou que o código de CT-038 ainda está em `HEAD` destacado (`16c41e4`), sem commit; definir seu destino antes de encerrar a entrega. Este README e o pacote SGV-11971 continuam registrando o ciclo funcional de 38 CTs. Direção e sequência em [[../../Roadmap - Automação TR|Roadmap — Automação TR]].
 
 > [!warning]- O alvo da automação mudou: Cypress → Playwright (01/10/2026) — correção em 02/10/2026
 > O repositório migrou pra Playwright em setembro (merge `1d78bf9`). A evidência registrada em 06/10/2026 confirma que CT-001–012 e CT-038 não falharam no run amplo. Isso confirma os resultados observados, mas não demonstra execução reproduzível em outra instância. O mapa do código e do seed está em [[../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]].

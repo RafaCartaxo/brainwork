@@ -25,8 +25,8 @@ ct_resultados:
 # Validação automação — Baseline de autenticação na instância 225
 
 > [!info]- Navegação
-> **Hub:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação]]
-> **Plano:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/01 - Plano de automação]]
+> **Hub:** [[00 - Automação]]
+> **Plano:** [[01 - Plano de automação]]
 > **Casos de origem:** [[../../00 QA/03 - Casos de teste|Casos da SGV-11971]]
 > **Mapa do seed:** [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa técnico]]
 
@@ -86,4 +86,4 @@ dv.list([
 - [ ] Todas as verificações de preparação têm resultado e evidência.
 - [ ] Cada CT do escopo foi executado ou tem bloqueio justificado.
 - [ ] Resultados correspondem ao ambiente e à instância 225.
-- [ ] Status e próxima ação atualizados em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação]].
+- [ ] Status e próxima ação atualizados em [[00 - Automação]].

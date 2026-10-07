@@ -10,8 +10,8 @@ status: planejado
 # Plano de automação — Baseline de autenticação na instância 225
 
 > [!info]- Navegação
-> **Hub:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação]]
-> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/02 - Validação automação]]
+> **Hub:** [[00 - Automação]]
+> **Validação:** [[02 - Validação automação]]
 > **Roadmap:** [[../../../Roadmap - Automação TR|Roadmap da SGV-11262]]
 > **Casos de origem:** [[../../00 QA/03 - Casos de teste|38 CTs da SGV-11971]]
 
@@ -48,7 +48,7 @@ O seed atual prepara recursos globais de outras suítes além dos atores usados 
 
 - [ ] Alteração implementada no repositório e revisada.
 - [ ] Seed executado duas vezes; ambas as execuções registram ID 225 e não criam cliente adicional.
-- [ ] CT-001–012 e CT-038 executados na instância 225, com resultados em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/02 - Validação automação]].
+- [ ] CT-001–012 e CT-038 executados na instância 225, com resultados em [[02 - Validação automação]].
 - [ ] O escopo de execução e os artefatos do run foram registrados.
 
 ## Execução

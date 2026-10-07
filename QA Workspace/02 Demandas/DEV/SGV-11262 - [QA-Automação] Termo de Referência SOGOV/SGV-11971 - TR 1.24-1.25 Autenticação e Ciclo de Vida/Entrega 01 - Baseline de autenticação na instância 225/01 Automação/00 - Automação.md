@@ -16,8 +16,8 @@ status: planejado
 
 ## Navegação
 
-- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/01 - Plano de automação|01 — Plano de automação]]
-- [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/02 - Validação automação|02 — Validação automação]]
+- [[01 - Plano de automação|01 — Plano de automação]]
+- [[02 - Validação automação|02 — Validação automação]]
 - [[../../../Roadmap - Automação TR|Roadmap da iniciativa]]
 - [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed e da instância 225]]
 - [[../../00 QA/03 - Casos de teste|Casos de teste da SGV-11971]]
@@ -58,5 +58,5 @@ Implementar a seleção explícita e segura da instância 225 no seed, preservan
 - [ ] Seed aponta à instância 225 e confere o nome esperado.
 - [ ] ID 225 ausente ou identidade divergente causa interrupção, sem fallback de criação.
 - [ ] Duas execuções do seed mantêm o mesmo ID 225 e não criam outra instância.
-- [ ] CT-001–012 e CT-038 são executados e registrados em [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/02 - Validação automação]].
+- [ ] CT-001–012 e CT-038 são executados e registrados em [[02 - Validação automação]].
 - [ ] Status, evidências e próxima ação atualizados.

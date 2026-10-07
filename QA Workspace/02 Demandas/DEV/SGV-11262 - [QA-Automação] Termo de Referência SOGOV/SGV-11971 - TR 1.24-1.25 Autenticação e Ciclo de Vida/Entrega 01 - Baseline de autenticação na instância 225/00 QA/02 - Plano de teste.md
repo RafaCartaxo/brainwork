@@ -43,7 +43,7 @@ Verificar que o seed seleciona com segurança a instância 225 quando configurad
 | [[03 - Casos de teste#^ct-seed-001|SEED-001]] | Configuração do alvo | Unidade/API | Planejada | [[04 - Validação dev]] |
 | [[03 - Casos de teste#^ct-seed-002|SEED-002]] | Fail-closed | Unidade/API | Planejada | [[04 - Validação dev]] |
 | [[03 - Casos de teste#^ct-seed-003|SEED-003]] | Regressão do padrão atual | Unidade/API | Planejada | [[04 - Validação dev]] |
-| [[03 - Casos de teste#^ct-seed-004|SEED-004]] | Idempotência/manifesta | API | Planejada | [[04 - Validação dev]] |
+| [[03 - Casos de teste#^ct-seed-004|SEED-004]] | Idempotência/manifesto | API | Planejada | [[04 - Validação dev]] |
 | CT-001–012, CT-038 da SGV-11971 | Funcional | API | Playwright existente | [[../01 Automação/02 - Validação automação]] |
 
 ## Entrada e saída
