@@ -1,28 +1,45 @@
 ---
 demanda: "[[../00 QA/01 - Demanda]]"
 casos_origem: "[[../00 QA/03 - Casos de teste]]"
+casos_funcionais_origem: "[[../../Arquivo/00 QA/03 - Casos de teste]]"
 framework: playwright
 ambiente: hml
 status: planejado
 ct_resultados:
-  ct_001: "🧩 Sem teste"
+  seed_001: "⏳ Aguardando"
+  seed_002: "⏳ Aguardando"
+  seed_003: "⏳ Aguardando"
+  seed_004: "⏳ Aguardando"
+  ct_001: "⏳ Aguardando"
+  ct_002: "⏳ Aguardando"
+  ct_003: "⏳ Aguardando"
+  ct_004: "⏳ Aguardando"
+  ct_005: "⏳ Aguardando"
+  ct_006: "⏳ Aguardando"
+  ct_007: "⏳ Aguardando"
+  ct_008: "⏳ Aguardando"
+  ct_009: "⏳ Aguardando"
+  ct_010: "⏳ Aguardando"
+  ct_011: "⏳ Aguardando"
+  ct_012: "⏳ Aguardando"
+  ct_038: "🚫 Bloqueado"
 ---
-
-# Validação automação — <ID>
+# Validação automação — Entrega 01: Baseline na instância 225
 
 > [!info]- Navegação QA
 > **README do card:** [[../00 QA/00 README|Abrir README do card]]
-> **Demanda/Bug:** [[../00 QA/01 - Demanda]]
-> **Casos de teste:** [[../00 QA/03 - Casos de teste]]
-> **Automação:** [[Sistema/Templates/Pacote/01 Automação/00 - Automação]]
-> **Plano de automação:** [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação]]
+> **Demanda:** [[../00 QA/01 - Demanda]]
+> **Casos técnicos da entrega:** [[../00 QA/03 - Casos de teste]]
+> **Casos funcionais de origem:** [[../../Arquivo/00 QA/03 - Casos de teste|CTs da SGV-11971]]
+> **Automação:** [[00 - Automação]]
+> **Plano de automação:** [[01 - Plano de automação]]
 
 > [!settings]- Controle da validação
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 > **Framework:** `INPUT[inlineSelect(option(playwright),option(cypress_legado),option(outro)):framework]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Esta tabela é o **placar atual por CT**. Atualize o resultado existente quando o CT for executado de novo; não acrescente rodadas antigas. O plano fica em [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação]] e a próxima ação geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]].
+> Esta tabela registra o resultado atual por CT incluído na automação. Os quatro casos técnicos também têm validação QA em [[../00 QA/04 - Validação dev]]. Os resultados funcionais aqui são específicos da execução na instância 225; os resultados históricos permanecem preservados na origem.
 
 ## Resumo da execução
 
@@ -42,15 +59,31 @@ dv.list([
 
 ## Resultado por CT
 
-| CT | Teste no repo | Resultado atual | Última execução (data/build) | Observação |
+| CT | Teste no repositório | Resultado atual | Última execução (data/build) | Observação |
 |---|---|---|---|---|
-| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | <caminho + ID do teste; ou `sem teste`> | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | — | |
+| [[../00 QA/03 - Casos de teste#^ct-seed-001|SEED-001]] | `seed selector / explicit id` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.seed_001]` | — | ID 225 resolves and expected name matches |
+| [[../00 QA/03 - Casos de teste#^ct-seed-002|SEED-002]] | `seed selector / invalid target` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.seed_002]` | — | Fail closed; no creation or provisioning |
+| [[../00 QA/03 - Casos de teste#^ct-seed-003|SEED-003]] | `seed selector / default` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.seed_003]` | — | No override preserves current target |
+| [[../00 QA/03 - Casos de teste#^ct-seed-004|SEED-004]] | `seed / reconciliation` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.seed_004]` | — | Second run reuses ID 225 without duplicates |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-001|CT-001]] | `tests/api/auth/login.spec.ts / A02-C01` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | — | Executar na instância 225 |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-002|CT-002]] | `tests/api/auth/login.spec.ts / A02-C02` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_002]` | — | CPF do servidor na rota de cidadão |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-003|CT-003]] | `tests/api/auth/login.spec.ts / A02-C03` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_003]` | — | Cidadão PJ do pool por worker |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-004|CT-004]] | `tests/api/auth/login.spec.ts / A02-C04` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_004]` | — | CNPJ do cidadão PJ no login de servidor |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-005|CT-005]] | `tests/api/auth/login.spec.ts / A02-C05` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_005]` | — | Usa CPF do servidor |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-006|CT-006]] | `tests/api/auth/login.spec.ts / A02-C06` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_006]` | — | Identificador inválido |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-007|CT-007]] | `tests/api/auth/login.spec.ts / A02-C07` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_007]` | — | Identificador inválido |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-008|CT-008]] | `tests/api/auth/login.spec.ts / A02-C08` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_008]` | — | Rejeição de cadastro duplicado |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-009|CT-009]] | `tests/api/auth/login.spec.ts / A02-C09` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_009]` | — | Usa CPF do servidor |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-010|CT-010]] | `tests/api/auth/credentials.spec.ts / A01-C01` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_010]` | — | Senha incorreta |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-011|CT-011]] | `tests/api/auth/credentials.spec.ts / A01-C02` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_011]` | — | CPF inexistente gerado pelo teste |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-012|CT-012]] | `tests/api/auth/credentials.spec.ts / A01-C03` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_012]` | — | Rejeição via API; não valida bloqueio na interface |
+| [[../../Arquivo/00 QA/03 - Casos de teste#^ct-038|CT-038]] | `tests/api/auth/audit-sessions.spec.ts / A55-C01` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_038]` | — | Arquivo em HEAD destacado (16c41e4), sem commit; resolver destino |
 
-**Estados:** `Sem teste` = código ainda não existe; `Aguardando` = há teste mapeado, mas ainda não foi executado; `Em andamento` = execução iniciada; `Aprovado` = passou; `Falhou` = falha observada ainda a triar; `Bloqueado` = não foi possível concluir por dependência/ambiente. Falha observada não significa, por si só, defeito confirmado no produto.
+**Estados:** `Sem teste` = código ainda não existe; `Aguardando` = teste mapeado, mas ainda não executado nesta instância; `Em andamento` = execução iniciada; `Aprovado` = passou; `Falhou` = falha observada ainda a triar; `Bloqueado` = dependência ou ambiente impede conclusão.
 
 ## Encerramento
 
-- [ ] Todos os CTs do escopo têm resultado atual ou justificativa para estarem sem teste/bloqueados.
-- [ ] Observações e links para defeitos/pendências foram registrados quando necessários.
-- [ ] Campo **Automação** dos CTs foi sincronizado em `../00 QA/03 - Casos de teste`.
-- [ ] Status da validação e próxima ação em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]] foram atualizados.
+- [ ] Todos os CTs deste escopo têm resultado atual ou justificativa para estarem sem teste/bloqueados.
+- [ ] Ambiente, instância e links para pendências/defeitos foram registrados.
+- [ ] Cobertura técnica e funcional sincronizada nas respectivas notas de casos, quando aplicável.
+- [ ] Status da validação e próxima ação em [[00 - Automação]] foram atualizados.

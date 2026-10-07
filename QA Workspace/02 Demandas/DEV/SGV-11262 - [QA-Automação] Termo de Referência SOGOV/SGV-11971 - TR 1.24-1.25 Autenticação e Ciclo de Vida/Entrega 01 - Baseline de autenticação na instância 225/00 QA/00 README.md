@@ -22,6 +22,8 @@ pontos: ""
 > **Plano de teste:** [[02 - Plano de teste]]
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
+> **Casos funcionais de origem:** [[../../Arquivo/00 QA/03 - Casos de teste|SGV-11971]]
+> **Roadmap:** [[../../../Roadmap - Automação TR|SGV-11262]]
 > **Preparação Qase:** Não se aplica; os casos funcionais já pertencem à Qase da SGV-11971 e os casos de seed são técnicos.
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — quando a automação for planejada; antes de começar a codar)*
 

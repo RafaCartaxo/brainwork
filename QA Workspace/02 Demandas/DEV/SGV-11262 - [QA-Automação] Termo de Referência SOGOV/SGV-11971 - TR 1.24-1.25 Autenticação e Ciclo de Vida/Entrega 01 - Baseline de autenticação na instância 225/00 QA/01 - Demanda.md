@@ -1,6 +1,6 @@
 ---
 prioridade: media
-origem: repo
+origem: conversa
 pontos_alocados: ""
 ---
 
@@ -13,6 +13,7 @@ pontos_alocados: ""
 > **Demanda:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
 > **Casos de teste:** [[03 - Casos de teste]]
+> **Casos funcionais de origem:** [[../../Arquivo/00 QA/03 - Casos de teste|CTs da SGV-11971]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** Não se aplica; esta entrega não cria casos funcionais novos na Qase.
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
@@ -47,7 +48,7 @@ O seed aceitará o ID 225 como configuração explícita, validará que o nome c
 - ID ausente ou nome divergente com alvo explícito interrompe a preparação antes de criar ou alterar dados.
 - Criar uma instância nova por execução fica para uma entrega separada.
 - O Roteiro de Sanidade 01 fornece contexto de negócio, sem ser replicado integralmente como preset nesta entrega.
-- CT-001–012 e CT-038 continuam definidos na fonte funcional da SGV-11971; esta entrega os referencia sem copiá-los.
+- CT-001–012 e CT-038 continuam definidos nos [[../../Arquivo/00 QA/03 - Casos de teste|casos funcionais da SGV-11971]]; esta entrega os referencia sem copiá-los.
 
 ---
 

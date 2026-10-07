@@ -23,6 +23,7 @@ data_fim: ""
 > **Demanda/Bug:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
 > **Casos de teste:** [[03 - Casos de teste]]
+> **Casos funcionais de origem:** [[../../Arquivo/00 QA/03 - Casos de teste|CTs da SGV-11971]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** Não se aplica nesta entrega.
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
@@ -104,7 +105,7 @@ const tabela = Array.from(raiz.querySelectorAll("table")).find((item) => item.in
 if (tabela) {
   const pontosPorCT = totalCTs ? pontosEtapa / totalCTs : 0;
   Array.from(tabela.querySelectorAll("tbody tr")).forEach((linha, indice) => {
-    const chave = `ct_${String(indice + 1).padStart(3, "0")}`;
+    const chave = `seed_${String(indice + 1).padStart(3, "0")}`;
     const celula = linha.lastElementChild;
     if (celula) {
       const pontos = pontosPorCT * pesoDoStatus(resultados[chave]);
