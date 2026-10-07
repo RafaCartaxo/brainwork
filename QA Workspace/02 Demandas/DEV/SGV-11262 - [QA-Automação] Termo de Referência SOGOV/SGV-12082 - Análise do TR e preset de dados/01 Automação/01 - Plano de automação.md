@@ -50,4 +50,27 @@ status: planejado
 
 ---
 
+## DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)
+
+> [!success] Commit analisado
+> `16c41e4` (HEAD do worktree `sogov-automation-playwright`, detached — sem branch). Único item não commitado no repo: `playwright/tests/api/auth/audit-sessions.spec.ts` (untracked, CT-038/A55-C01, já confirmado passando).
+
+**Fluxo confirmado, ponta a ponta** (configuração/comandos → setup e seed → provisionamento/manifesto → fixtures/pools → specs):
+
+1. **`playwright.config.ts`** — 5 projects: `infrastructure` (sem dependência), `seed` (`tests/setup/seed.setup.ts`), `e2e-chromium`/`version`/`api` (todos `dependencies: ['seed']`).
+2. **`config/env.ts`** (não `src/config/env.ts` — correção de um erro de caminho que eu tinha anotado antes) — parseia só variáveis `PW_*` (URLs, credenciais, `PW_RUN_ID`, `PW_WORKERS`). Nenhum parâmetro de cliente/instância.
+3. **`tests/setup/seed.setup.ts`** — entry point do project `seed`: abre sessão admin, chama `provisionBaseline`, grava o manifesto.
+4. **`src/data/seed/baseline.ts`** (`BASELINE`) — contei linha a linha contra o código: **15 módulos** (14 no objeto `modules` + 1 em `subsectors.module`), **12 serviços**, **29 servidores nomeados**, **5 cidadãos nomeados**, pools de 4 (servidor/cidadão PJ/cidadão alfanumérico). Bate exatamente com o [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] — **nenhuma divergência encontrada**.
+5. **`src/data/seed/provision.ts`** (`provisionBaseline`) — orquestra na ordem: instância → setores (GP/SCTA/DIR) → módulos → serviços → árvore de subsetores (+ módulo dedicado) → servidores → cidadãos → workflows. Idempotente por identidade natural (nome/CPF/CNPJ), revalida pela API a cada execução.
+6. **`src/data/seed/manifest.ts`** — `SEED_SCHEMA_VERSION = 12` (confirmado no código), grava `.runtime/<runId>/seed-manifest.json`.
+7. **`src/data/seed/pool.ts`** (`bindWorkerActors`) — troca os atores padrão (`agents.agent`, `citizens.citizen`, `citizens.alphanumeric`) pelo slot do worker (`parallelIndex`).
+8. **`src/fixtures/index.ts`** — `env`/`seed`/`actors`/`cleanup`/`diagnostics`/`pace`; `actors.*` resolvem `instanceId = seed.instance.id` internamente, nunca de variável de ambiente.
+9. **Specs de autenticação** (`tests/api/auth/{login,credentials,audit-sessions}.spec.ts`) — sem mudança desde a última leitura; continuam usando só `seed.agents.agent`/`seed.citizens.citizen` (pool), sem módulo/serviço/documento.
+
+**Achado lateral, fora do escopo de DISC-001 mas relevante pra DISC-002/matriz:** os servidores `seqBasic`/`seqSpecialist`/`seqSectorAdmin`/`seqAdmin` em `baseline.ts` já usam `accessLevel` 2/3/4/5 respectivamente, com comentário "Quatro níveis de acesso distintos no MESMO setor" — isso é evidência de **código** alinhada com a correção dos 5 níveis de permissão fechada hoje (Administrador=5, Administrador setorial=4, Especialista=3, Usuário básico=2; falta achar onde "Somente leitura"/nível 1 aparece nomeado no seed, se aparecer).
+
+**Conclusão do DISC-001:** o mapa técnico existente (`Mapa do seed Playwright atual - SGV-11971.md`) está correto e atualizado contra o commit `16c41e4` — não precisou de correção, só desta reconciliação registrada.
+
+---
+
 **Execução direta:** nesta entrega, “pronto para validar” significa revisão da análise e rastreabilidade; não significa código ou execução funcional.
