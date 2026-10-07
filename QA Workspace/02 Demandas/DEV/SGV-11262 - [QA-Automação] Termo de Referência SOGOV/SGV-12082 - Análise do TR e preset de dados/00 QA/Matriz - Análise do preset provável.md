@@ -27,6 +27,15 @@ status: em levantamento
 | Inferido | Interpretação provável que ainda precisa de validação |
 | A confirmar | Evidência ausente, ambiente inacessível ou comportamento não verificado |
 
+## Dois eixos que não podem virar um termo só
+
+> [!important] Decisão de planejamento (Codex + Claude, 07/10/2026)
+> **"Ambiente" é genérico demais e não entra mais sozinho nesta matriz.** Dois eixos diferentes, com evidência de naturezas diferentes:
+> - **Ambiente de implantação** — dev/hml/prod: backend e URLs diferentes (`PW_BASE_URL`/`PW_GRAPHQL_URL`/`PW_AUTH_URL`). Hoje só há **um** configurado e usado de fato.
+> - **Cliente/instância/tenant** — ex.: a instância do baseline do seed, ou a instância 225 criada em 07/10/2026. Mesmo backend, tenant diferente (`x-tenant`/`instanceId`).
+>
+> Reuso entre um e outro são afirmações **separadas**. Nesta rodada, registrar como **Confirmado** só o que foi observado rodando (há uma configuração de backend atual, usada pelos 13 CTs); capacidade de reproduzir em outro ambiente de implantação ou noutra instância/tenant fica **Inferida** até teste explícito — não executar nada pra "confirmar" isso agora.
+
 ## Matriz de cobertura do TR completo
 
 Esta visão cobre os requisitos do PDF (1.1–1.43). As linhas agrupam requisitos correlatos para orientar a investigação; subitens específicos devem ser desmembrados quando tiverem cobertura, dados ou evidências diferentes. **Os 38 CTs atuais cobrem os itens 1.24–1.25 apenas.**
@@ -64,11 +73,40 @@ Esta visão cobre os requisitos do PDF (1.1–1.43). As linhas agrupam requisito
 
 A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-038, cruzar cenário/pré-condição com código Playwright/Cypress ou execução manual, identificando ator, identificador, status inicial, preparação, mutação/limpeza, credenciais/configuração e evidência. O estado prévio dos CTs deve ser revalidado; não inferir resultado atual a partir do placar histórico.
 
-| CT | Requisito/subitem | Framework/teste localizado | Ator e estado | Dados consumidos/alterados | Preparação/limpeza | Ambiente e evidência | Situação |
-|---|---|---|---|---|---|---|---|
-| CT-001–CT-038 | 1.24–1.25 | A decompor caso a caso; 13 conhecidos em Playwright (CT-001–012 e CT-038) | A preencher pela fonte de cada caso | A preencher pela fonte de cada caso | A cruzar com seed, fixtures e setup manual/API | A confirmar por ambiente | Em levantamento |
+**Sequenciamento decidido em 07/10/2026 (Codex + Rafael):** priorizar rastreabilidade profunda dos **13 CTs já em Playwright** (único recorte com execução real/verde registrada) antes de decompor os 24 restantes das Suítes 3/4. Isso reordena o trabalho — **não remove** CT-013–037 do critério de saída do DISC-002.
 
-> O resumo de 13 CTs é um ponto de partida conhecido; decompor em linhas individuais e agrupar apenas CTs com pré-condições e preparação equivalentes.
+### Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)
+
+Reconciliado contra o código no commit `16c41e4` (mesmo commit do DISC-001) e contra a tabela equivalente do [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] — sem divergência entre os dois.
+
+**Pré-condições e dependências comuns aos 13** (Confirmado, não repetido linha a linha):
+- Projeto `seed` do Playwright já rodou (`dependencies: ['seed']` no `playwright.config.ts`) e gravou `seed-manifest.json`.
+- Fixture `seed` troca os atores padrão (`agents.agent`, `citizens.citizen`) pelo slot do worker (`pool.ts`/`parallelIndex`) — identidade real variável por worker, nunca `Servidor Publico 01`/`Cidadão 01` fixos.
+- `instanceId` sempre vem de `seed.instance.id` (resolvido pelo seed), nunca de env var — não existe parametrização de cliente/instância hoje.
+- **Cliente/instância:** a do baseline reconciliado pelo seed — Confirmado. **Ambiente de implantação:** o backend atual de `PW_BASE_URL`/`PW_GRAPHQL_URL`/`PW_AUTH_URL` — Confirmado. Reuso em outro ambiente de implantação ou outra instância/tenant (ex. 225) — Inferido, sem teste.
+- Nenhum dos 13 muda estado de conta (bloqueio, status, cadastro novo) como resultado esperado — todos são leitura/validação de credencial.
+
+| CT | Rótulo/arquivo | Pré-condição específica | Dados/configuração consumidos | Mutação/limpeza | Lacuna ou observação |
+|---|---|---|---|---|---|
+| [[03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01` / `tests/api/auth/login.spec.ts` | Servidor do pool existe e está ativo | CPF do servidor (`seed.agents.agent.cpf`), `env.agentPass` | Nenhuma | — |
+| [[03 - Casos de teste#^ct-002\|CT-002]] | `A02-C02` / `login.spec.ts` | Mesma identidade de CT-001, testada no login de cidadão | CPF do servidor (emprestado), `env.agentPass` | Nenhuma | Baseline **não tem cidadão PF puro** — usa o CPF do próprio servidor. Lacuna de massa, não de teste |
+| [[03 - Casos de teste#^ct-003\|CT-003]] | `A02-C03` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão (`seed.citizens.citizen.cnpj`), `env.citizenPass` | Nenhuma | Username PJ só é aceito em formato RAW (só dígitos) — achado da origem Cypress, preservado no Playwright |
+| [[03 - Casos de teste#^ct-004\|CT-004]] | `A02-C04` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão, `env.citizenPass`, login tipo `public-agent` | Nenhuma (espera rejeição) | Prova segregação de contexto servidor×cidadão |
+| [[03 - Casos de teste#^ct-005\|CT-005]] | `A02-C05` / `login.spec.ts` | Igual a CT-002 | Igual a CT-002 | Nenhuma | Redundante com CT-002 por design — mesmo mecanismo, reafirma CPF nunca vira contexto Empresa |
+| [[03 - Casos de teste#^ct-006\|CT-006]] | `A02-C06` / `login.spec.ts` | Nenhuma (identificador gerado no teste) | CPF inválido fixo (`'12345678900'`), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed — é um literal no spec |
+| [[03 - Casos de teste#^ct-007\|CT-007]] | `A02-C07` / `login.spec.ts` | Nenhuma | CNPJ inválido fixo (`'12345678000100'`), `env.citizenPass` | Nenhuma (espera rejeição) | Idem CT-006, literal no spec |
+| [[03 - Casos de teste#^ct-008\|CT-008]] | `A02-C08` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão já existente, via `makeCitizenPJAutoRegistration` | Nenhuma (espera rejeição do `signup`) | Testa duplicidade, não cria conta nova |
+| [[03 - Casos de teste#^ct-009\|CT-009]] | `A02-C09` / `login.spec.ts` | Igual a CT-002/005 | Igual a CT-002/005 | Nenhuma | Mesma identidade emprestada — 3º caso com o mesmo mecanismo (CT-002, CT-005, CT-009) |
+| [[03 - Casos de teste#^ct-010\|CT-010]] | `A01-C01` / `tests/api/auth/credentials.spec.ts` | Servidor do pool existe | CPF do servidor, senha deliberadamente errada (literal no spec) | Nenhuma (espera rejeição) | — |
+| [[03 - Casos de teste#^ct-011\|CT-011]] | `A01-C02` / `credentials.spec.ts` | Nenhuma | CPF gerado (`generateCPF()`, inexistente), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed |
+| [[03 - Casos de teste#^ct-012\|CT-012]] | `A01-C03` / `credentials.spec.ts` | Nenhuma | Campos vazios (`''`) | Nenhuma (espera rejeição) | É chamada de API pura — não verifica se a **UI** impede o envio com campo vazio. Se o requisito exigir isso, falta cobertura de tela |
+| [[03 - Casos de teste#^ct-038\|CT-038]] | `A55-C01` / `tests/api/auth/audit-sessions.spec.ts` | Servidor do pool existe | Credenciais do servidor, 2 sessões API abertas no mesmo teste | Nenhuma (2 sessões ficam abertas até o teste encerrar, sem revogação explícita) | Spec ainda **não commitado** no repo (worktree em HEAD destacado) |
+
+> Agrupamento aplicado só onde ator, estado e preparação são idênticos (CT-002/005/009) — mantidos em linhas separadas porque cada um tem critério de aceite próprio (C2–C5), só a coluna de pré-condição aponta a equivalência.
+
+### CT-013 a CT-037 (exceto CT-038) — ainda não decompostos nesta rodada
+
+Pendentes por decisão de sequenciamento, não por esquecimento — continuam no critério de saída C2 da demanda. Ver placar histórico em [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|02 - Validação automação (Arquivo)]] pro estado conhecido de cada um.
 
 ## Catálogo mínimo candidato
 

@@ -6,7 +6,7 @@ ambiente: dev
 status: planejado
 ct_resultados:
   ct_001: "✅ Aprovado"
-  ct_002: "🧩 Sem teste"
+  ct_002: "🔵 Em andamento"
   ct_003: "🧩 Sem teste"
   ct_004: "🧩 Sem teste"
 ---
@@ -37,7 +37,7 @@ Registrar o total de verificações documentais revisadas quando houver evidênc
 | CT | Teste no repo | Resultado atual | Última execução (data/build) | Observação |
 |---|---|---|---|---|
 | [[../00 QA/03 - Casos de teste#^ct-001\|DISC-001]] | não se aplica — revisão técnica | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | 07/10/2026 (commit `16c41e4`) | Mapa reconciliado contra o código, 0 divergências — ver [[01 - Plano de automação#DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)\|DISC-001 no Plano]] |
-| [[../00 QA/03 - Casos de teste#^ct-002\|DISC-002]] | não se aplica — revisão de cobertura | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_002]` | — | Cobertura explícita de CT-001–038 |
+| [[../00 QA/03 - Casos de teste#^ct-002\|DISC-002]] | não se aplica — revisão de cobertura | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_002]` | 07/10/2026 (commit `16c41e4`) | 13/38 CTs Playwright decompostos (grafo completo na Matriz, pausado pra revisão do Rafael) — CT-013–037 pendentes por sequenciamento |
 | [[../00 QA/03 - Casos de teste#^ct-003\|DISC-003]] | não se aplica — inspeção de preparação | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_003]` | — | Dados consumidos e variação ambiental |
 | [[../00 QA/03 - Casos de teste#^ct-004\|DISC-004]] | não se aplica — revisão da recomendação | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_004]` | — | Preset candidato e sequência de entregas |
 

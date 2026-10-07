@@ -50,6 +50,22 @@ status: planejado
 
 ---
 
+## Decisão de sequenciamento (Codex + Claude, alinhado com o Rafael, 07/10/2026)
+
+Depois do DISC-001, o Codex (planejador) e o Claude (execução) alinharam uma reordenação do DISC-002, com 4 ressalvas acordadas:
+
+1. **"Ambiente" deixou de ser um termo único** — separado em **ambiente de implantação** (dev/hml/prod, backend/URLs) e **cliente/instância/tenant** (ex.: instância 225). Ver [[../00 QA/Matriz - Análise do preset provável#Dois eixos que não podem virar um termo só|seção da Matriz]].
+2. A tabela "O que os 13 CTs consomem" do [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] foi reaproveitada como base, não refeita do zero.
+3. Só o observado em execução real conta como **Confirmado**; reuso entre ambientes/instâncias é **Inferido** até teste explícito — nenhum teste foi rodado nesta rodada.
+4. **Prioridade reordenada, não reduzida**: os 13 CTs Playwright (único recorte com execução verde real) entram primeiro, de rastreabilidade profunda. CT-013–037 (Suítes 3/4) continuam no critério de saída C2 — ficam pendentes por sequenciamento, não removidos.
+
+**Entregue nesta rodada:** grafo CT→pré-condição→dados/configuração→mutação→lacuna dos 13 CTs Playwright, na [[../00 QA/Matriz - Análise do preset provável#Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)|Matriz]]. Reconciliado contra o mesmo commit do DISC-001 (`16c41e4`), zero divergência da tabela equivalente do Mapa do seed.
+
+> [!info] Pausa combinada com o Rafael
+> Terminado o recorte dos 13 CTs — aguardando revisão dele antes de decompor CT-013–037 ou propor qualquer forma de preset.
+
+---
+
 ## DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)
 
 > [!success] Commit analisado
