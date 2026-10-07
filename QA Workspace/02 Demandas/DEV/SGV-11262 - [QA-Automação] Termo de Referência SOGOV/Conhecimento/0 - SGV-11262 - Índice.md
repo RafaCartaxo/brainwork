@@ -13,19 +13,20 @@ Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verifi
 > [!info] Guarda-chuva aberta — 1 ciclo em andamento
 > **Reorganizada em 02/10/2026.** Antes, a SGV-11262 era uma pasta só, que misturava o processo de verificação de TR (reaproveitável) com o conteúdo do único Termo já trabalhado (1.24-1.25). O ciclo 1.24-1.25 virou pacote próprio com SGV próprio — **SGV-11971** — e esta pasta passou a ser só a guarda-chuva. O pacote funcional original foi movido para `SGV-11971/Arquivo/`; as entregas novas ficam diretamente dentro da pasta SGV-11971, cada uma com QA e automação próprios. Um Termo novo entra como pacote irmão da 11971, sem duplicar estrutura.
 >
-> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[../../SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards.
+> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[../../SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards. A análise atual está na entrega filha SGV-12082; as próximas implementações só serão abertas após sua recomendação.
 
 ## Ciclos
 
 | Ciclo | SGV | O que cobre | Status |
 |---|---|---|---|
-| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Histórico em [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|placar arquivado]] |
+| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Histórico em [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação\|placar arquivado]] |
 
 ## Entregas de automação
 
 | Entrega | Referência | Escopo | Status |
 |---|---|---|---|
-| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README|Entrega 01 — Baseline de autenticação na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste|SGV-11971]] | Seleção segura da instância 225 pelo seed e validação de CT-001–012 e CT-038 | 📋 Pacotes `00 QA` e `01 Automação/00–02` preparados; implementação pendente, sem ID de demanda filha |
+| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico da hipótese; não executada nem validada |
+| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Projeto de automação e 38 CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Entender o projeto, mapear dados/ambientes e propor preset provável | 🔄 Em análise; levantamento pendente |
 
 ## Como um ciclo é organizado
 
@@ -62,7 +63,10 @@ SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
 ├── Entrega 01 - Baseline de autenticação na instância 225/
 │   ├── 00 QA/              ← escopo e quatro verificações técnicas do seed
 │   └── 01 Automação/       ← plano e placar de CT-001–012 e CT-038
-└── Entrega NN - <escopo confirmado pela investigação>/
+├── Entrega 02 - Análise do projeto e preset do TR/
+│   ├── 00 QA/              ← SGV-12082, matriz dos CTs e validação da análise
+│   └── 01 Automação/       ← leitura técnica e placar da investigação
+└── Entrega NN - <escopo confirmado pela investigação>/ (criar após a análise)
     ├── 00 QA/
     └── 01 Automação/
 ```
@@ -109,4 +113,4 @@ O template [[../../../../../Sistema/Templates/Verificação de Conformidade (Ter
 - 2026-09-25 - Scripts `qase-sync` movidos do repo `sogov-automation-test` pra `Sistema/Scripts/qase-sync/` no vault
 - 2026-10-01 - Descoberto que o repo migrou pra Playwright (merge `1d78bf9`) sem registro no vault — nota [[../../../../04 Conhecimento/Referências/Automação Playwright|Automação Playwright]] criada. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`); não sobem em Cypress, serão portadas
 - 2026-10-02 - SGV-11262 vira guarda-chuva de automação de Termo de Referência; o ciclo 1.24-1.25 ganha SGV próprio (SGV-11971) e vira pacote no padrão da epic SGV-9296
-- 2026-10-07 - Índice atualizado: 13 CTs Playwright (CT-001–012 e CT-038); 12 aprovados seguem associados ao Cypress. A instância dedicada com seed reconciliador foi escolhida como primeiro alvo do roadmap.
+- 2026-10-07 - Índice atualizado: 13 CTs Playwright (CT-001–012 e CT-038); 12 aprovados seguem associados ao Cypress. A análise SGV-12082 foi definida como próximo passo; o piloto da instância 225 fica histórico até a recomendação baseada no levantamento.

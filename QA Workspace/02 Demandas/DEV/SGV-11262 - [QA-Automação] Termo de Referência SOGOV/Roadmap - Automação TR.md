@@ -16,14 +16,14 @@ status: ativo
 
 Evoluir a automação dos requisitos do Termo de Referência em entregas pequenas, cada uma com escopo e validação próprios. A direção é permitir uma execução reproduzível da sanidade do SOGOV por cliente/instância e ambiente, reaproveitando os mecanismos de preparação já existentes sempre que fizer sentido.
 
-O caminho começa pela estabilização e compreensão do que já existe. A execução configurável em diferentes clientes/instâncias e ambientes é objetivo da iniciativa e será alcançada incrementalmente, conforme os pré-requisitos técnicos forem conhecidos e entregues.
+O próximo passo é compreender e documentar o que já existe antes de escolher uma mudança técnica. A execução reproduzível em diferentes clientes/instâncias e ambientes continua como direção da iniciativa e será alcançada incrementalmente, conforme os pré-requisitos forem conhecidos e entregues.
 
 ## Estado atual
 
 O ciclo **TR 1.24–1.25 — Autenticação e ciclo de vida do usuário** está registrado na [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|SGV-11971]]. O pacote funcional original está preservado em `SGV-11971/Arquivo/`; seus casos continuam sendo a origem dos 38 CTs. As novas entregas executáveis ficam fora dessa pasta de arquivo e cada uma tem seus próprios pacotes QA e automação.
 
-> [!success] Decisão de direção — 07/10/2026
-> O primeiro alvo será uma **instância de teste dedicada e estável**, criada ou reconciliada pelo seed. Não vamos apontar o piloto para uma instância de cliente existente. A execução em diferentes clientes/instâncias continua como direção futura, evoluindo depois que este baseline estiver estável.
+> [!info] Direção revisada — 07/10/2026
+> A Entrega 01 propôs como piloto a instância dedicada **225 — “Termo De Referência - Sogov”**, mas o seed não foi ajustado nem validado nela. Com a mudança de escopo, esse pacote fica preservado como histórico do piloto. A SGV-12082 vai mapear o projeto, a massa dos CTs e as diferenças entre ambientes antes de recomendar o próximo passo. Refatorar o seed permanece uma hipótese, não uma decisão.
 
 O placar de automação registra:
 
@@ -44,43 +44,42 @@ Na verificação de 07/10, CT-001–012 estavam em `origin/main`. CT-038 passou 
 
 | Entrega | Escopo | Situação |
 |---|---|---|
-| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|Arquivo funcional da SGV-11971]] | Pacote original do ciclo: requisitos, 38 CTs e evidências históricas | 🗄️ Preservado como referência; casos reutilizados pelas entregas no escopo aplicável |
-| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README|Entrega 01 — Baseline na instância 225]] | Critérios próprios do seed + CT-001–012 e CT-038 da SGV-11971 | 📋 Pacotes QA e automação preparados; implementação e validação na 225 pendentes |
+| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README\|Arquivo funcional da SGV-11971]] | Pacote original do ciclo: requisitos, 38 CTs e evidências históricas | 🗄️ Preservado como referência; casos reutilizados pelas entregas no escopo aplicável |
+| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Piloto de seleção do alvo pelo seed + CT-001–012 e CT-038 | 🗄️ Preservada como histórico; não executada nem validada na 225; decisão técnica reaberta pela SGV-12082 |
+| [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 02 - Análise do projeto e preset do TR/00 QA/00 README\|Entrega 02 — Análise do projeto e preset do TR (SGV-12082)]] | Entender automação, reaproveitamento de massa entre ambientes e mapear o preset provável para os 38 CTs | 🔄 Em análise; pacote criado, levantamento pendente |
 
-A Entrega 01 está organizada dentro da SGV-11971 em dois pacotes: `00 QA/` para escopo, plano, critérios técnicos e validação; `01 Automação/` para o hub, plano técnico e placar dos CTs funcionais incluídos. Cada próxima entrega seguirá o mesmo recorte e conterá apenas os CTs do seu escopo. O pacote original completo está em `SGV-11971/Arquivo/`, inclusive documentos históricos de handoff e revisão. Eles servem como referência e não definem a estrutura das entregas novas.
+A Entrega 01 permanece arquivada como registro da hipótese de piloto na 225; seu pacote não representa uma implementação validada. A Entrega 02 (SGV-12082) usa `00 QA/` para escopo e verificações da análise e `01 Automação/` para mapear tecnicamente o projeto e acompanhar essa análise. As entregas de implementação serão abertas depois que a matriz identificar fatias executáveis e seus CTs. O pacote original completo está em `SGV-11971/Arquivo/`, inclusive documentos históricos de handoff e revisão. Eles servem como referência e não definem a estrutura das entregas novas.
 
 ## Próximos passos e entregas candidatas
 
-As linhas abaixo são candidatas de roadmap, não demandas já criadas. O escopo final das implementações depende da investigação inicial.
+As linhas futuras permanecem candidatas; somente a SGV-12082 está aberta como entrega de investigação. Não se assume que o seed será refatorado: a recomendação deve comparar as alternativas com base nos CTs e nas evidências.
 
 | Ordem | Entrega / passo | Resultado esperado | Dependência | Situação |
 |---:|---|---|---|---|
-| 1 | **Reconciliar documentação e baseline** | Alinhar números, framework-alvo e status entre índice, README, hub e placar; confirmar estado do código CT-038 | Mapeamento de código já feito | ✅ Documentos alinhados em 07/10; CT-038 confirmado em `HEAD` destacado, sem commit |
-| 2 | **Estabilizar o baseline de autenticação na instância dedicada** | Usar a instância **ID 225 — “Termo De Referência - Sogov”**, configurar o seed para selecioná-la sem criar outra e validar atores por worker; depois executar CT-001–012 e CT-038. A entrega acompanha somente esses 13 CTs | Configuração do seed apontando ao mesmo backend da instância 225; resolver branch/commit do CT-038 antes do encerramento | 📋 Pacotes `00 QA` e `01 Automação/00–02` preparados dentro da SGV-11971; implementação pendente, sem ID de demanda filha |
-| 3 | **Preparar a próxima fatia funcional** | Separar CTs restantes por estado de negócio e dependência; definir aceite e preparação somente para o grupo escolhido | Baseline da autenticação estabilizado e CTs mapeados | 📝 Candidata; grupos a definir |
-| 4 | **Desbloquear CTs pendentes de comportamento/API** | Separar descoberta de API, investigação de falhas e decisões de produto da tarefa de porte | Evidência ou decisão técnica/produto por CT | ⏳ Dependências abertas |
-| 5 | **Expandir a preparação conforme CTs priorizados** | Acrescentar apenas dados e estados necessários à próxima fatia; consultar o Roteiro de Sanidade 01 como contexto de negócio quando envolver implantação, órgãos, módulos ou permissões | Escopo e dependências confirmados para cada grupo de CTs | 📝 Candidata contínua; referência no [[Conhecimento/Mapa do seed Playwright atual - SGV-11971#Roteiro de Sanidade 01 — referência de contexto de negócio|Mapa do seed]] |
-| 6 | **Selecionar perfis de instância por cliente/ambiente** | Evoluir da instância dedicada atual para execução controlada em diferentes instâncias/clientes e ambientes | Baseline dedicado estável; definir contrato de seleção, permissões e isolamento | 🎯 Objetivo futuro da iniciativa |
-| 7 | **Executar a sanidade por cliente/instância e ambiente** | Preparar e executar a cobertura validada com configuração explícita por alvo e ambiente | Passos 3–6, autenticação e acesso compatíveis | 🎯 Direção da iniciativa, evolução incremental |
+| 1 | **Entender o projeto e o estado atual** | Explicar fluxo Playwright, setup, seed, fixtures, manifesto, ambientes e situação real dos testes | Acesso de leitura ao repositório/configuração e documentos | 🔄 SGV-12082 em análise |
+| 2 | **Mapear dados e dependências dos 38 CTs** | Identificar atores, módulos/serviços, estados, preparação, consumo, limpeza e lacunas por CT/grupo | Fonte funcional da SGV-11971; mapa técnico existente como ponto de partida | 🔄 Incluído na SGV-12082 |
+| 3 | **Propor preset inicial e pequenas entregas** | Matriz rastreável, recomendação do menor conjunto de dados/estados e sequência de entregas com CTs próprios | Conclusão dos passos 1–2 | 🔄 Incluído na SGV-12082; recomendação pendente |
+| 4 | **Implementar a primeira fatia recomendada** | Entrega pequena, com QA, automação e validação próprias, conforme resultado da investigação | Recomendação aprovada pela equipe; dependências e aceite definidos | 📝 Candidata; não abrir pasta/demanda ainda |
+| 5 | **Expandir o preset conforme os próximos CTs priorizados** | Acrescentar somente os dados/estados exigidos pela próxima fatia | Resultado e limites da fatia anterior | 📝 Candidata incremental |
+| 6 | **Reproduzir sanidade por cliente/instância e ambiente** | Selecionar alvo de forma explícita, segura e repetível em diferentes ambientes/clientes | Evolução incremental do preset, configuração, isolamento, permissões e evidência de execução | 🎯 Direção futura da iniciativa |
 
-Cada entrega terá uma pasta própria dentro de SGV-11971, com `00 QA/` e `01 Automação/`. Em QA, usar a estrutura de melhoria (`00 README`, `01 Demanda`, `02 Plano de teste`, `03 Casos de teste`, `04 Validação dev`); criar `05 - Preparação Qase` apenas quando houver casos a sincronizar. Em automação, usar `00 - Automação`, `01 - Plano de automação` e `02 - Validação automação`. Cada pacote acompanha somente seu escopo. Se uma entrega for de preparação/infraestrutura, terá critérios de aceite próprios e CTs-piloto explícitos. O placar consolidado desta iniciativa deverá apontar para os resultados por entrega, sem duplicar a validação detalhada dos CTs.
+A matriz da SGV-12082 registra os CTs do Termo, os dados consumidos, o mecanismo atual de preparação e as diferenças ambientais. Cada implementação que nascer dessa análise seguirá o pacote dos templates: `00 QA/` e `01 Automação/`, contendo apenas critérios e CTs do seu escopo. `05 - Preparação Qase` só será criado quando houver casos novos a sincronizar.
 
 ## Ordem sugerida
 
 ```mermaid
 flowchart TD
-    M[Mapa atual do seed e CTs<br/>documentado] --> A[Reconciliar documentação e baseline]
-    A --> B[Estabilizar seed na instância dedicada]
-    B --> C[Validar CT-001–012 e CT-038]
-    C --> D[Escolher e planejar a próxima fatia funcional]
-    E[Resolver investigação, API e decisões de produto] --> D
-    D --> F[Expandir preparação do seed somente se necessária]
-    F --> G[Selecionar perfis de cliente/instância e ambiente]
-    G --> H[Sanidade reproduzível em diferentes alvos]
+    A[Projeto e estado atual] --> B[Mapear CTs, dados e dependências]
+    B --> C[Comparar preparação entre ambientes]
+    C --> D[Recomendar preset mínimo e alternativas]
+    D --> E[Definir pequenas entregas com CTs e aceite próprios]
+    E --> F[Implementar e validar uma fatia por vez]
+    F --> G[Expandir dados conforme necessidade comprovada]
+    G --> H[Sanidade reproduzível por cliente/instância e ambiente]
 ```
 
 ## Critérios para abrir uma nova entrega
 
 Criar uma demanda filha somente quando a análise confirmar uma fatia executável e revisável. O plano de cada entrega deve declarar problema, objetivo, CTs incluídos e excluídos, dados/estados necessários, dependências, estratégia e critério de aceite. A validação registra apenas os CTs daquela fatia; a nota da iniciativa mantém a visão geral e links para as entregas.
 
-Não abrir agora demandas para todos os grupos restantes, nem assumir que é necessário construir um mecanismo chamado `Preset`. A investigação do código e dos 13 CTs atuais deve determinar a forma e a sequência das primeiras implementações.
+Não abrir agora demandas para todas as entregas futuras nem assumir que é necessário refatorar o seed ou construir um mecanismo chamado `Preset`. A análise da SGV-12082 deve cobrir os 38 CTs, usando o inventário dos 13 Playwright como insumo, e recomendar a forma e a sequência das primeiras implementações.
