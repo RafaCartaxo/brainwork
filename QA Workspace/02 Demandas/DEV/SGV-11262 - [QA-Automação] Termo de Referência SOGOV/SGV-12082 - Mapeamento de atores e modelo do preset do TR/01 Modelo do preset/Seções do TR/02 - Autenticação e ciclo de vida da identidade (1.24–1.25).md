@@ -59,11 +59,15 @@ status: aprovado
 | Estado funcional | determina | conjunto de permissões/acesso | 1.25.3.1–1.25.3.4 | Confirmado |
 | 5 tentativas malsucedidas | aciona | bloqueio da conta | 1.25.1 | Confirmado como regra; **relação com os 4 estados do ciclo de vida não é explícita no texto** — ver dúvida abaixo |
 
-## Dúvidas/ambiguidades
+## Dúvidas/ambiguidades e contexto complementar
 
-- **Categorias de usuário dos 4 estados funcionais:** o TR não afirma explicitamente se os estados de 1.25.3 se aplicam a Cidadão (PF) e Empresa (PJ), além de Servidor Público — o texto usa "identidade funcional"/"vínculo do agente". **A confirmar.** - Sogov atualmente: Apenas servidores.
-- **Bloqueio como 5º estado ou mecanismo separado:** o TR não afirma se o bloqueio por tentativas (1.25.1) equivale a um dos 4 estados nomeados ou é um mecanismo à parte. **A confirmar.** - Sogov atualmente: Mecanismo separado
-- **Reversão do bloqueio:** o TR não descreve como/quando uma conta bloqueada por tentativas deixa de estar bloqueada. **A confirmar.** - Sogov atualmente: Pode
+O TR continua sendo a fonte para os requisitos contratuais. As respostas abaixo vêm de documentação funcional do SOGOV e ajudam a entender o contexto atual; não alteram o que está explícito ou ausente no TR.
+
+| Questão que o TR não resolve | Contexto documentado fora do TR | Fonte e limite da evidência |
+|---|---|---|
+| A quem se aplicam os estados funcionais de 1.25.3? | A documentação do Login descreve status do servidor: **Em Atividade**, Licença, Férias e Inativo. servidores em Licença ou Férias mantêm acesso total ao ambiente cidadão; Inativo bloqueia o workspace, mas o usuário pode acessar outros workspaces ou o ambiente cidadão. | [[QA Workspace/04 Conhecimento/Módulos/Login|Módulo Login]] (importado do Notion; documentação funcional, não validação feita nesta análise). Há uma diferença a preservar: o TR usa **Ativo** e diz que **Inativo** nega qualquer autenticação (1.25.3.4), enquanto a documentação do Login delimita o bloqueio ao workspace. O contexto não resolve o escopo contratual nem confirma o comportamento em execução. |
+| O bloqueio por tentativas é um quinto estado ou mecanismo separado? | A especificação de Gestão de Desbloqueio trata “Bloqueado” separadamente do status de origem e prevê restaurar o status anterior após o desbloqueio. | [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos|Gestão de Desbloqueio de Acessos]]. A própria nota informa que a funcionalidade está em especificação e ainda não foi testada; portanto, isso não confirma o comportamento em produção. |
+| Como o bloqueio é revertido? | A especificação prevê que, ao concluir o fluxo de redefinição de senha — manual ou sistêmico —, o usuário seja removido da lista de bloqueios e retorne ao status anterior. | [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos#Fluxo de desbloqueio e sincronização|Fluxo de desbloqueio e sincronização]]. Regra documentada, ainda não validada em execução. O TR não descreve esse procedimento. |
 
 ## Fontes/evidências
 

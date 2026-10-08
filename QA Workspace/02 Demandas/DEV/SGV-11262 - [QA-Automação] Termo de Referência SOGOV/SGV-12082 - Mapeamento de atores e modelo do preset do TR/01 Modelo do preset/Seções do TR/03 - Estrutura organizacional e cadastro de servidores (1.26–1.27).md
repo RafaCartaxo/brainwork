@@ -17,87 +17,87 @@ status: aprovado
 
 ## Cobertura dos itens
 
-| Item do TR | Situação | Justificativa ou pendência |
-|---|---|---|
-| 1.26 | Mapeado | Organograma: plataforma estrutura o órgão em setores/subsetores, com representação hierárquica. |
-| 1.26.1 | Mapeado | Cadastro de setores, atribuição de usuários e tramitação de documentos com base na hierarquia. |
-| 1.26.2 | Não aplicável | Visualização em árvore (tree view) interativa — requisito de interface. |
-| 1.26.3 | Não aplicável | Arquitetura sem limite de quantidade de setores/subsetores — requisito de capacidade/escalabilidade. |
-| 1.26.4 | Mapeado | Edição/gerenciamento de setores; adição e suspensão de setores. |
-| 1.26.5 | Mapeado | Visualização e atribuição/remoção de usuários por setor/subsetor. |
-| 1.26.6 | Mapeado | Suspensão temporária de setor/subsetor impede tramitação de documentos enquanto durar. |
-| 1.26.7 | Mapeado | Verificação de pendências (documentos, fluxos, usuários atribuídos) antes de permitir suspensão. |
-| 1.26.8 | Mapeado | Reativação de setor suspenso restabelece funcionalidades/documentos associados. |
-| 1.26.9 | Não aplicável | Estatística agregada (total de setores e de usuários alocados), não elemento de ator/entidade. |
-| 1.26.10 | Mapeado | Renomear setor/subsetor preserva o nome antigo em documentos já tramitados. |
-| 1.26.11 | Mapeado | Cada setor pode ter regras próprias de tramitação por categoria de documento, configuráveis por usuário com permissão. |
-| 1.26.11.1 | Mapeado | Regra de tramitação: criar documentos. |
-| 1.26.11.2 | Mapeado | Regra de tramitação: receber e tramitar documentos. |
-| 1.26.11.3 | Mapeado | Regra de tramitação: interagir com o cidadão (casos com interação externa). |
-| 1.26.11.4 | Mapeado | Regra de tramitação: visualização de dados sigilosos. |
-| 1.26.11.5 | Mapeado | Regra de tramitação: recebimento automático de documentos. |
-| 1.26.12 | Mapeado | Setor/subsetor pode ser reparentado para outra hierarquia; subsetores são arrastados junto. |
-| 1.27 | Mapeado | Cadastro/gerenciamento do quadro de servidores; vínculo a setor(es), com nível de permissão específico por setor vinculado. |
-| 1.27.1 | Mapeado | Cadastro controlado por fluxo de convite, pré-cadastro e homologação. |
-| 1.27.2 | Mapeado | Introduz os 5 níveis de usuário exigidos (nomes nos subitens a seguir). |
-| 1.27.2.1 | Mapeado | Nível "Administrador". |
-| 1.27.2.2 | Mapeado | Nível "Administrador setorial". |
-| 1.27.2.3 | Mapeado | Nível "Assistente administrativo". |
-| 1.27.2.4 | Mapeado | Nível "Auxiliar administrativo". |
-| 1.27.2.5 | Mapeado | Nível "Visualizador". |
-| 1.27.3 | Mapeado | Nível Administrador: acesso master a todas as funcionalidades/configurações. |
-| 1.27.4 | Mapeado | Permissões do nível Administrador setorial, detalhadas nos subitens a seguir. |
-| 1.27.4.1 | Mapeado | Administrador setorial no organograma: visualizar tudo; cadastrar/editar/suspender setores e vincular/desvincular servidores, restrito à hierarquia do próprio setor. |
-| 1.27.4.2 | Mapeado | Administrador setorial em servidores: visualizar todos; cadastrar, restrito à hierarquia do próprio setor. |
-| 1.27.4.3 | Mapeado | Administrador setorial em contatos externos: visualizar e cadastrar (PF/PJ). |
-| 1.27.4.4 | Mapeado | Administrador setorial em assuntos/serviços: visualizar, cadastrar, editar, inativar (dos módulos disponíveis). |
-| 1.27.5 | Mapeado | Assistente administrativo: mesmas 4 áreas do Administrador setorial, mas mais restrito — ver 1.27.5.1–1.27.5.4. |
-| 1.27.5.1 | Mapeado | No organograma: visualizar tudo; cadastrar/editar setores (sem suspender); vincular/desvincular servidores — restrito ao próprio setor. |
-| 1.27.5.2 | Mapeado | Em servidores: visualizar todos; cadastrar/editar/suspender — restrito ao próprio setor. |
-| 1.27.5.3 | Mapeado | Em contatos externos: visualizar e cadastrar (PF/PJ) — igual ao Administrador setorial. |
-| 1.27.5.4 | Mapeado | Em assuntos/serviços: só visualizar (sem cadastrar/editar/inativar). |
-| 1.27.6 | Mapeado | Auxiliar administrativo: só 3 áreas (sem assuntos/serviços) — ver 1.27.6.1–1.27.6.3. |
-| 1.27.6.1 | Mapeado | No organograma: só visualizar. |
-| 1.27.6.2 | Mapeado | Em servidores: só visualizar. |
-| 1.27.6.3 | Mapeado | Em contatos externos: visualizar e cadastrar (PF/PJ). |
-| 1.27.7 | Mapeado | Visualizador: nível só-leitura — ver 1.27.7.1–1.27.7.4. |
-| 1.27.7.1 | Mapeado | No organograma: só visualizar. |
-| 1.27.7.2 | Mapeado | Em servidores: só visualizar. |
-| 1.27.7.3 | Mapeado | Em contatos externos: só visualizar (sem cadastrar). |
-| 1.27.7.4 | Mapeado | Na tramitação: pode acessar, mas sem poder interagir diretamente nos documentos dos setores dos quais faz parte. |
-| 1.27.8 | Mapeado | Permissões extras, concedidas individualmente no cadastro/edição por um administrador — associadas/complementares às permissões já existentes no nível; independência não especificada pelo texto. |
-| 1.27.8.1 | Mapeado | Concessão de permissão extra exige servidor administrador ou nível com permissão para isso. |
-| 1.27.8.2 | Mapeado | Lista de 24 permissões extras possíveis (setores/subsetores, servidores, pré-cadastros, assuntos/serviços, acesso a mesas de outros setores, fluxos de trabalho). |
-| 1.27.9 | Mapeado | Cadastro simplificado: ao menos 2 meios (interno e externo). |
-| 1.27.9.1 | Mapeado | Cadastro interno: usuário com permissão cadastra; servidor recebe e-mail de confirmação de vínculo. |
-| 1.27.9.2 | Mapeado | Cadastro externo em massa: link direto por setor, pré-cadastro sujeito a aprovação de administrador. |
-| 1.27.9.3 | Mapeado | Dados exigidos no cadastro interno: CPF (validado por API, não editável), e-mail, matrícula (se houver), setor(es)+nível, permissões extras (se houver). |
-| 1.27.9.3.2 | Mapeado | E-mail de confirmação enviado ao novo servidor. |
-| 1.27.9.3.3 | Mapeado | Pré-cadastro pendente: pode ser excluído (perde a possibilidade de conclusão), reenviado, ou editado (exceto CPF). |
-| 1.27.9.3.4 | Mapeado | Dados que o próprio novo servidor insere na conclusão: CPF de confirmação (deve bater com o do pré-cadastro), assinatura textual, cargo de contrato, senha (critérios de força), aceite de termos. |
-| 1.27.9.3.5 | Mapeado | Após o preenchimento, redireciona para login com as permissões atribuídas. |
-| 1.27.9.4 | Mapeado | Cadastro externo: link gerado para um setor específico, enviado a um ou mais servidores. |
-| 1.27.9.4.1 | Mapeado | Cadastro via link passa por aprovação de usuário com permissão. |
-| 1.27.9.4.2 | Mapeado | Dados exigidos no cadastro externo: CPF (via API), e-mail, data de nascimento, sexo, telefone, assinatura textual, cargo de contrato, matrícula, cargo no setor do link, senha (só forte), aceite de termos. |
-| 1.27.9.4.3 | Mapeado | Servidor pode indicar, no mesmo fluxo, outros setores dos quais também faz parte. |
-| 1.27.9.4.4 | Mapeado | Pré-cadastro externo fica exibido internamente numa área específica. |
-| 1.27.9.4.5 | Mapeado | Na aprovação, usuário com permissão define o nível e setor(es); pode recusar com justificativa enviada por e-mail. |
-| 1.27.9.4.6 | Mapeado | Após aprovação, servidor recebe e-mail com link de login. |
-| 1.27.10 | Mapeado | Área de listagem de todos os servidores cadastrados. |
-| 1.27.10.1 | Mapeado | Dados mínimos na listagem: nome, cargo, setor principal, e-mail, status (5 valores — ver dúvida sobre estados abaixo). |
-| 1.27.10.2 | Não aplicável | Estatística agregada (total de servidores; total de ativos). |
-| 1.27.10.3 | Mapeado | Dados detalhados (sem edição): nome, cargo de contrato, status, assinatura textual, CPF (parcialmente protegido por LGPD), e-mail, matrícula, dados de aprovação do pré-cadastro, setor principal (nível+cargo), setores adicionais (nível+cargo cada). |
-| 1.27.10.4 | Não aplicável | Busca por palavra-chave e filtros (interface de listagem) — valores de filtro já cobertos em 1.27.10.1. |
-| 1.27.10.4.2 | Não aplicável | Uso combinado de filtro e busca — interface. |
-| 1.27.11 | Mapeado | Edição de cadastros e pré-cadastros de servidores. |
-| 1.27.11.1 | Mapeado | Editáveis: assinatura textual, e-mail institucional, matrícula, setor principal (nível/cargo), setores adicionais (adicionar/remover, nível/cargo), permissões extras. |
-| 1.27.11.2 | Mapeado | Status de atividade editável (4 valores — ver dúvida sobre estados abaixo). |
-| 1.27.11.3 | Mapeado | Troca livre entre status, exigindo data de início e fim do novo status. |
-| 1.27.11.4 | Mapeado | A partir do período definido, e-mail informa a mudança; acesso é limitado/restabelecido automaticamente nas datas definidas. |
-| 1.27.11.5 | Mapeado | Dados pessoais na tela de edição, com regra de quem pode editar — ver 1.27.11.5.1. |
-| 1.27.11.5.1 | Mapeado | CPF (não editável por ninguém); nome (não editável, vem da API); telefone, sexo e data de nascimento (editáveis só pelo próprio servidor). |
-| 1.27.11.6 | Mapeado | Pré-cadastros internos/externos têm área própria de gerenciamento. |
-| 1.27.11.6.1 | Mapeado | Pré-cadastros externos podem ser aprovados/reprovados; reprovação exige justificativa. |
+| Item do TR  | Situação      | Justificativa ou pendência                                                                                                                                                                                                                              |
+| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.26        | Mapeado       | Organograma: plataforma estrutura o órgão em setores/subsetores, com representação hierárquica.                                                                                                                                                         |
+| 1.26.1      | Mapeado       | Cadastro de setores, atribuição de usuários e tramitação de documentos com base na hierarquia.                                                                                                                                                          |
+| 1.26.2      | Não aplicável | Visualização em árvore (tree view) interativa — requisito de interface.                                                                                                                                                                                 |
+| 1.26.3      | Não aplicável | Arquitetura sem limite de quantidade de setores/subsetores — requisito de capacidade/escalabilidade.                                                                                                                                                    |
+| 1.26.4      | Mapeado       | Edição/gerenciamento de setores; adição e suspensão de setores.                                                                                                                                                                                         |
+| 1.26.5      | Mapeado       | Visualização e atribuição/remoção de usuários por setor/subsetor.                                                                                                                                                                                       |
+| 1.26.6      | Mapeado       | Suspensão temporária de setor/subsetor impede tramitação de documentos enquanto durar.                                                                                                                                                                  |
+| 1.26.7      | Mapeado       | Verificação de pendências (documentos, fluxos, usuários atribuídos) antes de permitir suspensão.                                                                                                                                                        |
+| 1.26.8      | Mapeado       | Reativação de setor suspenso restabelece funcionalidades/documentos associados.                                                                                                                                                                         |
+| 1.26.9      | Não aplicável | Estatística agregada (total de setores e de usuários alocados), não elemento de ator/entidade.                                                                                                                                                          |
+| 1.26.10     | Mapeado       | Renomear setor/subsetor preserva o nome antigo em documentos já tramitados.                                                                                                                                                                             |
+| 1.26.11     | Mapeado       | Cada setor pode ter regras próprias de tramitação por categoria de documento, configuráveis por usuário com permissão.                                                                                                                                  |
+| 1.26.11.1   | Mapeado       | Regra de tramitação: criar documentos.                                                                                                                                                                                                                  |
+| 1.26.11.2   | Mapeado       | Regra de tramitação: receber e tramitar documentos.                                                                                                                                                                                                     |
+| 1.26.11.3   | Mapeado       | Regra de tramitação: interagir com o cidadão (casos com interação externa).                                                                                                                                                                             |
+| 1.26.11.4   | Mapeado       | Regra de tramitação: visualização de dados sigilosos.                                                                                                                                                                                                   |
+| 1.26.11.5   | Mapeado       | Regra de tramitação: recebimento automático de documentos.                                                                                                                                                                                              |
+| 1.26.12     | Mapeado       | Setor/subsetor pode ser reparentado para outra hierarquia; subsetores são arrastados junto.                                                                                                                                                             |
+| 1.27        | Mapeado       | Cadastro/gerenciamento do quadro de servidores; vínculo a setor(es), com nível de permissão específico por setor vinculado.                                                                                                                             |
+| 1.27.1      | Mapeado       | Cadastro controlado por fluxo de convite, pré-cadastro e homologação.                                                                                                                                                                                   |
+| 1.27.2      | Mapeado       | Introduz os 5 níveis de usuário exigidos (nomes nos subitens a seguir).                                                                                                                                                                                 |
+| 1.27.2.1    | Mapeado       | Nível "Administrador".                                                                                                                                                                                                                                  |
+| 1.27.2.2    | Mapeado       | Nível "Administrador setorial".                                                                                                                                                                                                                         |
+| 1.27.2.3    | Mapeado       | Nível "Assistente administrativo".                                                                                                                                                                                                                      |
+| 1.27.2.4    | Mapeado       | Nível "Auxiliar administrativo".                                                                                                                                                                                                                        |
+| 1.27.2.5    | Mapeado       | Nível "Visualizador".                                                                                                                                                                                                                                   |
+| 1.27.3      | Mapeado       | Nível Administrador: acesso master a todas as funcionalidades/configurações.                                                                                                                                                                            |
+| 1.27.4      | Mapeado       | Permissões do nível Administrador setorial, detalhadas nos subitens a seguir.                                                                                                                                                                           |
+| 1.27.4.1    | Mapeado       | Administrador setorial no organograma: visualizar tudo; cadastrar/editar/suspender setores e vincular/desvincular servidores, restrito à hierarquia do próprio setor.                                                                                   |
+| 1.27.4.2    | Mapeado       | Administrador setorial em servidores: visualizar todos; cadastrar, restrito à hierarquia do próprio setor.                                                                                                                                              |
+| 1.27.4.3    | Mapeado       | Administrador setorial em contatos externos: visualizar e cadastrar (PF/PJ).                                                                                                                                                                            |
+| 1.27.4.4    | Mapeado       | Administrador setorial em assuntos/serviços: visualizar, cadastrar, editar, inativar (dos módulos disponíveis).                                                                                                                                         |
+| 1.27.5      | Mapeado       | Assistente administrativo: mesmas 4 áreas do Administrador setorial, mas mais restrito — ver 1.27.5.1–1.27.5.4.                                                                                                                                         |
+| 1.27.5.1    | Mapeado       | No organograma: visualizar tudo; cadastrar/editar setores (sem suspender); vincular/desvincular servidores — restrito ao próprio setor.                                                                                                                 |
+| 1.27.5.2    | Mapeado       | Em servidores: visualizar todos; cadastrar/editar/suspender — restrito ao próprio setor.                                                                                                                                                                |
+| 1.27.5.3    | Mapeado       | Em contatos externos: visualizar e cadastrar (PF/PJ) — igual ao Administrador setorial.                                                                                                                                                                 |
+| 1.27.5.4    | Mapeado       | Em assuntos/serviços: só visualizar (sem cadastrar/editar/inativar).                                                                                                                                                                                    |
+| 1.27.6      | Mapeado       | Auxiliar administrativo: só 3 áreas (sem assuntos/serviços) — ver 1.27.6.1–1.27.6.3.                                                                                                                                                                    |
+| 1.27.6.1    | Mapeado       | No organograma: só visualizar.                                                                                                                                                                                                                          |
+| 1.27.6.2    | Mapeado       | Em servidores: só visualizar.                                                                                                                                                                                                                           |
+| 1.27.6.3    | Mapeado       | Em contatos externos: visualizar e cadastrar (PF/PJ).                                                                                                                                                                                                   |
+| 1.27.7      | Mapeado       | Visualizador: nível só-leitura — ver 1.27.7.1–1.27.7.4.                                                                                                                                                                                                 |
+| 1.27.7.1    | Mapeado       | No organograma: só visualizar.                                                                                                                                                                                                                          |
+| 1.27.7.2    | Mapeado       | Em servidores: só visualizar.                                                                                                                                                                                                                           |
+| 1.27.7.3    | Mapeado       | Em contatos externos: só visualizar (sem cadastrar).                                                                                                                                                                                                    |
+| 1.27.7.4    | Mapeado       | Na tramitação: pode acessar, mas sem poder interagir diretamente nos documentos dos setores dos quais faz parte.                                                                                                                                        |
+| 1.27.8      | Mapeado       | Permissões extras, concedidas individualmente no cadastro/edição por um administrador — associadas/complementares às permissões já existentes no nível; independência não especificada pelo texto.                                                      |
+| 1.27.8.1    | Mapeado       | Concessão de permissão extra exige servidor administrador ou nível com permissão para isso.                                                                                                                                                             |
+| 1.27.8.2    | Mapeado       | Lista de 24 permissões extras possíveis (setores/subsetores, servidores, pré-cadastros, assuntos/serviços, acesso a mesas de outros setores, fluxos de trabalho).                                                                                       |
+| 1.27.9      | Mapeado       | Cadastro simplificado: ao menos 2 meios (interno e externo).                                                                                                                                                                                            |
+| 1.27.9.1    | Mapeado       | Cadastro interno: usuário com permissão cadastra; servidor recebe e-mail de confirmação de vínculo.                                                                                                                                                     |
+| 1.27.9.2    | Mapeado       | Cadastro externo em massa: link direto por setor, pré-cadastro sujeito a aprovação de administrador.                                                                                                                                                    |
+| 1.27.9.3    | Mapeado       | Dados exigidos no cadastro interno: CPF (validado por API, não editável), e-mail, matrícula (se houver), setor(es)+nível, permissões extras (se houver).                                                                                                |
+| 1.27.9.3.2  | Mapeado       | E-mail de confirmação enviado ao novo servidor.                                                                                                                                                                                                         |
+| 1.27.9.3.3  | Mapeado       | Pré-cadastro pendente: pode ser excluído (perde a possibilidade de conclusão), reenviado, ou editado (exceto CPF).                                                                                                                                      |
+| 1.27.9.3.4  | Mapeado       | Dados que o próprio novo servidor insere na conclusão: CPF de confirmação (deve bater com o do pré-cadastro), assinatura textual, cargo de contrato, senha (critérios de força), aceite de termos.                                                      |
+| 1.27.9.3.5  | Mapeado       | Após o preenchimento, redireciona para login com as permissões atribuídas.                                                                                                                                                                              |
+| 1.27.9.4    | Mapeado       | Cadastro externo: link gerado para um setor específico, enviado a um ou mais servidores.                                                                                                                                                                |
+| 1.27.9.4.1  | Mapeado       | Cadastro via link passa por aprovação de usuário com permissão.                                                                                                                                                                                         |
+| 1.27.9.4.2  | Mapeado       | Dados exigidos no cadastro externo: CPF (via API), e-mail, data de nascimento, sexo, telefone, assinatura textual, cargo de contrato, matrícula, cargo no setor do link, senha (só forte), aceite de termos.                                            |
+| 1.27.9.4.3  | Mapeado       | Servidor pode indicar, no mesmo fluxo, outros setores dos quais também faz parte.                                                                                                                                                                       |
+| 1.27.9.4.4  | Mapeado       | Pré-cadastro externo fica exibido internamente numa área específica.                                                                                                                                                                                    |
+| 1.27.9.4.5  | Mapeado       | Na aprovação, usuário com permissão define o nível e setor(es); pode recusar com justificativa enviada por e-mail.                                                                                                                                      |
+| 1.27.9.4.6  | Mapeado       | Após aprovação, servidor recebe e-mail com link de login.                                                                                                                                                                                               |
+| 1.27.10     | Mapeado       | Área de listagem de todos os servidores cadastrados.                                                                                                                                                                                                    |
+| 1.27.10.1   | Mapeado       | Dados mínimos na listagem: nome, cargo, setor principal, e-mail, status (5 valores — ver dúvida sobre estados abaixo).                                                                                                                                  |
+| 1.27.10.2   | Não aplicável | Estatística agregada (total de servidores; total de ativos).                                                                                                                                                                                            |
+| 1.27.10.3   | Mapeado       | Dados detalhados (sem edição): nome, cargo de contrato, status, assinatura textual, CPF (parcialmente protegido por LGPD), e-mail, matrícula, dados de aprovação do pré-cadastro, setor principal (nível+cargo), setores adicionais (nível+cargo cada). |
+| 1.27.10.4   | Não aplicável | Busca por palavra-chave e filtros (interface de listagem) — valores de filtro já cobertos em 1.27.10.1.                                                                                                                                                 |
+| 1.27.10.4.2 | Não aplicável | Uso combinado de filtro e busca — interface.                                                                                                                                                                                                            |
+| 1.27.11     | Mapeado       | Edição de cadastros e pré-cadastros de servidores.                                                                                                                                                                                                      |
+| 1.27.11.1   | Mapeado       | Editáveis: assinatura textual, e-mail institucional, matrícula, setor principal (nível/cargo), setores adicionais (adicionar/remover, nível/cargo), permissões extras.                                                                                  |
+| 1.27.11.2   | Mapeado       | Status de atividade editável (4 valores — ver dúvida sobre estados abaixo).                                                                                                                                                                             |
+| 1.27.11.3   | Mapeado       | Troca livre entre status, exigindo data de início e fim do novo status.                                                                                                                                                                                 |
+| 1.27.11.4   | Mapeado       | A partir do período definido, e-mail informa a mudança; acesso é limitado/restabelecido automaticamente nas datas definidas.                                                                                                                            |
+| 1.27.11.5   | Mapeado       | Dados pessoais na tela de edição, com regra de quem pode editar — ver 1.27.11.5.1.                                                                                                                                                                      |
+| 1.27.11.5.1 | Mapeado       | CPF (não editável por ninguém); nome (não editável, vem da API); telefone, sexo e data de nascimento (editáveis só pelo próprio servidor).                                                                                                              |
+| 1.27.11.6   | Mapeado       | Pré-cadastros internos/externos têm área própria de gerenciamento.                                                                                                                                                                                      |
+| 1.27.11.6.1 | Mapeado       | Pré-cadastros externos podem ser aprovados/reprovados; reprovação exige justificativa.                                                                                                                                                                  |
 
 **Resultado do recorte:** 79/79 itens (incluindo subitens numerados) considerados; 72 Mapeados, 7 Não aplicáveis (interface/usabilidade ou estatística agregada — 1.26.2, 1.26.3, 1.26.9, 1.27.10.2, 1.27.10.4, 1.27.10.4.2). Nenhum item pendente de leitura.
 
