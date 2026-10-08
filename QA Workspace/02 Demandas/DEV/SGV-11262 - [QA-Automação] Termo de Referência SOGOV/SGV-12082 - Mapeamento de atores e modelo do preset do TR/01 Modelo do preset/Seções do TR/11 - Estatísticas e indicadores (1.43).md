@@ -13,7 +13,7 @@ status: a-analisar
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — proposto, pendente de confirmação
-> Item do TR: **1.43**. Páginas do PDF a conferir: **p. 19–20** (última seção do documento) de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: estatísticas de uso, setores, documentos, servidores e consumo de recursos — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda. Renumerado de "10" para "11" em 08/10/2026, após o desmembramento do antigo recorte 09 em dois (09 e 10) — conteúdo deste arquivo não mudou, só o número de ordem.
+> Item do TR: **1.43**. Páginas do PDF a conferir: **p. 19–20** (última seção do documento) de [[../../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]. Leitura prévia sugere o tema: estatísticas de uso, setores, documentos, servidores e consumo de recursos — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda. Renumerado de "10" para "11" em 08/10/2026, após o desmembramento do antigo recorte 09 em dois (09 e 10) — conteúdo deste arquivo não mudou, só o número de ordem.
 
 ## Cobertura dos itens
 
@@ -39,4 +39,4 @@ status: a-analisar
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 19–20.
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 19–20.

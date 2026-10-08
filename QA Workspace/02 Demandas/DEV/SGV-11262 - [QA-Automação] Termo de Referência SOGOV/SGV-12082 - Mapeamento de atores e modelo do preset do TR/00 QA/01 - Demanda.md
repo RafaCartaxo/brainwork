@@ -14,7 +14,7 @@ pontos_alocados: ""
 > **Revisão da análise:** [[04 - Revisão da análise]]
 > **Mapa geral:** [[../01 Modelo do preset/00 - Mapa geral]]
 > **Matriz de atores e relações:** [[../01 Modelo do preset/01 - Matriz de atores e relações]]
-> **Fontes:** [[../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]
+> **Fontes:** [[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
 
 > [!settings]- Controle da demanda
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`
@@ -93,5 +93,5 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 
 Não há bloqueio atual nesta demanda. Duas decisões são **deliberadamente adiadas**, não pendências que travam o início do trabalho:
 
-- A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026) — não é mais uma proposta em aberto. O conteúdo de cada recorte continua não analisado, exceto o que já estiver registrado, recorte a recorte, nas próprias notas (`Seções do TR/`); a fonte de autoridade permanece exclusivamente o PDF (`Fontes/Requisitos Sogov.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
+- A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026) — não é mais uma proposta em aberto. O conteúdo de cada recorte continua não analisado, exceto o que já estiver registrado, recorte a recorte, nas próprias notas (`Seções do TR/`); a fonte de autoridade permanece exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
 - Se haverá entregas futuras separadas (casos de teste, preset executável) será decidido depois do mapeamento completo, com os achados em mãos — não nesta demanda.

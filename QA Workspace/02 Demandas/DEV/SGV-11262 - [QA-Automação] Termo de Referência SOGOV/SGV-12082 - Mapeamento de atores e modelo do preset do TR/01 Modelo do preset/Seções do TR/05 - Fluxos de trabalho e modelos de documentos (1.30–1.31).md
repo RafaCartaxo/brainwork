@@ -69,4 +69,4 @@ status: lido
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 11–13 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 11–13 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.

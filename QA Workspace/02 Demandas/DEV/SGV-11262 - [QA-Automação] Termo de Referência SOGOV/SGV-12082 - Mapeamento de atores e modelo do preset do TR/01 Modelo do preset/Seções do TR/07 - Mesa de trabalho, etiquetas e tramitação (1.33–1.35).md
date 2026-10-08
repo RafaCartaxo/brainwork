@@ -13,7 +13,7 @@ status: a-analisar
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — proposto, pendente de confirmação
-> Itens do TR: **1.33–1.35**. Páginas do PDF a conferir: **p. 13–16** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: mesa de trabalho/filas/alertas/busca (1.33), etiquetas (1.34) e tramitação/histórico/estados/prazos de documentos (1.35) — agrupados por serem a experiência interna do servidor ao redor do documento — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda.
+> Itens do TR: **1.33–1.35**. Páginas do PDF a conferir: **p. 13–16** de [[../../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]. Leitura prévia sugere o tema: mesa de trabalho/filas/alertas/busca (1.33), etiquetas (1.34) e tramitação/histórico/estados/prazos de documentos (1.35) — agrupados por serem a experiência interna do servidor ao redor do documento — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda.
 
 ## Cobertura dos itens
 
@@ -41,4 +41,4 @@ status: a-analisar
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 13–16.
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 13–16.

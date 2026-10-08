@@ -12,7 +12,7 @@ status: lido
 > [!info]- Navegação
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
-> [!info] Escopo deste recorte — lido em 08/10/2026, aguardando revisão do Codex
+> [!info] Escopo deste recorte — lido e revisado pelo Codex em 08/10/2026
 > Itens do TR: **1.28–1.29**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (29 linhas na Cobertura — 6 sob 1.28, 23 sob 1.29). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.28–1.28.1 (p. 7–8); 1.28.1.2–1.29.1 (p. 8–9); 1.29.2–1.29.8 (p. 9–10); 1.29.9–1.29.10.4 (p. 10–11). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR.
 
 ## Cobertura dos itens
@@ -103,4 +103,4 @@ status: lido
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 7–11 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 7–11 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.

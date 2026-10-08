@@ -13,7 +13,7 @@ status: aprovado
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
-> Itens do TR: **1.1–1.23**. Página do PDF: **p. 1** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]] (fonte de autoridade; esta nota é só registro/rastreabilidade, nunca substitui o PDF). Lida diretamente por render de página (imagem), não por extração textual — a camada de texto do PDF é conhecida por corromper caracteres, então não foi usada como evidência. Todos os 23 itens deste recorte são requisitos de infraestrutura/operação técnica, sem subitens. Classificação abaixo é um primeiro passe, pendente de revisão.
+> Itens do TR: **1.1–1.23**. Página do PDF: **p. 1** de [[../../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]] (fonte de autoridade; esta nota é só registro/rastreabilidade, nunca substitui o PDF). Lida diretamente por render de página (imagem), não por extração textual — a camada de texto do PDF é conhecida por corromper caracteres, então não foi usada como evidência. Todos os 23 itens deste recorte são requisitos de infraestrutura/operação técnica, sem subitens. Classificação abaixo é um primeiro passe, pendente de revisão.
 
 ## Cobertura dos itens
 
@@ -72,4 +72,4 @@ Nenhuma destas notas altera a classificação dos itens acima.
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 1 — lida por render de página (imagem), conferida diretamente nesta sessão em 08/10/2026. Nenhum trecho textual extraído (potencialmente corrompido) foi usado como evidência.
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 1 — lida por render de página (imagem), conferida diretamente nesta sessão em 08/10/2026. Nenhum trecho textual extraído (potencialmente corrompido) foi usado como evidência.

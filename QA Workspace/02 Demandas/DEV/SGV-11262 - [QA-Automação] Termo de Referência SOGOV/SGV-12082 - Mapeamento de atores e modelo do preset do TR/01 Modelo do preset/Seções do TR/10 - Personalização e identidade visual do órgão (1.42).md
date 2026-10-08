@@ -13,7 +13,7 @@ status: a-analisar
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — proposto, pendente de confirmação
-> Item do TR: **1.42**. Páginas do PDF a conferir: **p. 19** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: personalização de informações cadastrais e identidade visual do órgão (cores temáticas, imagens institucionais) — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda. Desmembrado em 08/10/2026 do antigo recorte combinado "Chaves de acesso e personalização (1.41–1.42)" para não juntar dois temas distintos (delegação de permissão vs. personalização visual) num único arquivo.
+> Item do TR: **1.42**. Páginas do PDF a conferir: **p. 19** de [[../../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]. Leitura prévia sugere o tema: personalização de informações cadastrais e identidade visual do órgão (cores temáticas, imagens institucionais) — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda. Desmembrado em 08/10/2026 do antigo recorte combinado "Chaves de acesso e personalização (1.41–1.42)" para não juntar dois temas distintos (delegação de permissão vs. personalização visual) num único arquivo.
 
 ## Cobertura dos itens
 
@@ -39,4 +39,4 @@ status: a-analisar
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 19.
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 19.

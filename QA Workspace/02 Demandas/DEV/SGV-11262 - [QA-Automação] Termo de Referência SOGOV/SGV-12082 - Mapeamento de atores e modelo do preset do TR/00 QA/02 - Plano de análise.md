@@ -62,6 +62,6 @@ Um item por recorte temático — lista completa e os links das notas vivem no [
 
 ## Entrada e saída
 
-**Entrada:** PDF do TR completo (itens 1.1–1.43), em [[../Fontes/Requisitos Sogov.pdf|Fontes/Requisitos Sogov.pdf]]; segmentação em recortes temáticos (`01 Modelo do preset/Seções do TR/`).
+**Entrada:** PDF do TR completo (itens 1.1–1.43), em [[../Fontes/Termo de Referência SOGOV.pdf|Fontes/Termo de Referência SOGOV.pdf]]; segmentação em recortes temáticos (`01 Modelo do preset/Seções do TR/`).
 
 **Saída:** notas temáticas com cobertura/elementos/relações/dúvidas/fontes por recorte; matriz como índice consolidado, sem duplicar o conteúdo; mapa geral (Mermaid) como síntese; registro de cobertura, lacunas e ambiguidades para revisão.

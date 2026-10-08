@@ -41,4 +41,4 @@ status: a-analisar
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 13 (1.32) e p. 16 (1.36–1.37).
+- PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 13 (1.32) e p. 16 (1.36–1.37).
