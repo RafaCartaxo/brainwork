@@ -18,7 +18,7 @@ Construir um modelo de **atores, entidades, configurações, estados, relações
 ## Estado atual
 
 - **Abordagem anterior:** arquivada para consulta em [[Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência de consulta, **não é fluxo ativo**.
-- **SGV-12082 (atual):** em **scaffold** — estrutura de pastas e notas criada em 08/10/2026 (`00 QA/`, `01 Modelo do preset/`, `Fontes/`), sem conteúdo analítico ainda. Estrutura inicial aprovada; pacote sendo alinhado antes do início do mapeamento.
+- **SGV-12082 (atual):** segmentação em 11 recortes temáticos **aprovada pelo Rafael** (08/10/2026). Leitura iniciada pelo **recorte 1** (itens 1.1–1.23), lido e classificado contra o PDF, aguardando revisão do Codex. **Recortes 2–11 ainda não lidos** — a análise não está completa.
 
 ## Entregas existentes
 
@@ -27,7 +27,7 @@ Construir um modelo de **atores, entidades, configurações, estados, relações
 | Ciclo 1.24-1.25 | [[Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README\|SGV-11971]] | Autenticação e ciclo de vida do usuário (itens 1.24–1.25) | 🗄️ Histórico arquivado |
 | Entrega 01 — Baseline na instância 225 | [[Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico arquivado; não executada nem validada |
 | SGV-12082 — Análise do TR e preset de dados (anterior) | [[Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/00 README\|SGV-12082 anterior]] | Mapa do projeto de automação, cobertura do TR (DISC-001–004) e recomendação de porte | 🗄️ Histórico arquivado; concluída com recomendação registrada |
-| SGV-12082 — Mapeamento de atores e modelo do preset do TR (atual) | [[SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README\|SGV-12082 atual]] | Modelo de atores/entidades/relações a partir do TR completo | 🧱 Escopo/plano estruturados e TR segmentado em 11 recortes temáticos propostos — tudo aguardando confirmação; leitura ainda não iniciada |
+| SGV-12082 — Mapeamento de atores e modelo do preset do TR (atual) | [[SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README\|SGV-12082 atual]] | Modelo de atores/entidades/relações a partir do TR completo | 🔵 Segmentação (11 recortes) aprovada; recorte 1 (1.1–1.23) lido, aguardando revisão do Codex; recortes 2–11 não iniciados |
 
 ## Sequência macro da SGV-12082
 
@@ -57,7 +57,7 @@ flowchart TD
 
 ## Direção futura (condicionada, sem compromisso de implementação)
 
-Uma direção possível, **ainda futura e condicionada ao resultado desta análise**: usar o modelo de atores/relações como base para avaliar e preparar um preset de dados reproduzível por **cliente/instância** e por **ambiente**. Isso não é uma decisão de implementação — é um horizonte que só se torna concreto depois que o modelo tiver evidência suficiente (passos 1–6 acima).
+Uma direção possível, **ainda futura e condicionada ao resultado desta análise**: usar o modelo de atores/relações como base para avaliar e preparar um preset de dados reproduzível por **cliente/instância** e por **ambiente**. Isso não é uma decisão de implementação — é um horizonte que só se torna concreto depois que o modelo tiver evidência suficiente (passos 1–5 acima).
 
 ---
 

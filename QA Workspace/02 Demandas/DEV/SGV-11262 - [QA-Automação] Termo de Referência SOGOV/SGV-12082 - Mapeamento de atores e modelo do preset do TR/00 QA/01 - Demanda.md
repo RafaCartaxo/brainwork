@@ -21,7 +21,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** revisão/aprovação desta demanda e do [[02 - Plano de análise|plano de análise]] — a leitura/mapeamento do TR só começa depois disso.
+> **Próximo passo:** revisão do Codex sobre o recorte 1 (itens 1.1–1.23, já lido e classificado contra o PDF) — os recortes 2–11 só começam depois dessa revisão.
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
@@ -47,7 +47,7 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 ## Decisões de método e escopo
 
 - O TR completo (itens 1.1–1.43) é a fonte de escopo desta análise. Contexto externo pode esclarecer, mas não vira requisito sem identificação da fonte e validação.
-- Os blocos temáticos usados para percorrer o TR — nomes, quantidade e fronteiras — são definidos durante a leitura, não antecipados nesta demanda.
+- Os 11 recortes temáticos usados para percorrer o TR (nomes, quantidade e fronteiras) foram **aprovados pelo Rafael em 08/10/2026** — a segmentação não é mais definida durante a leitura. O que resta é analisar o conteúdo de cada recorte contra o PDF, um de cada vez, com pausa para revisão entre eles.
 - Esta análise produz o modelo conceitual; não implementa seed/preset, automação, testes funcionais nem sincronização com a Qase. Isso é trabalho separado, a decidir depois, com os achados em mãos.
 
 ---
@@ -93,5 +93,5 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 
 Não há bloqueio atual nesta demanda. Duas decisões são **deliberadamente adiadas**, não pendências que travam o início do trabalho:
 
-- A segmentação do TR em recortes temáticos já foi **proposta** (11 notas em `Seções do TR/`, ver matriz) e está pendente de confirmação antes da leitura — ajuste de agrupamento, se necessário, acontece nessa confirmação, não durante a leitura em si.
-- Se haverá entregas futuras separadas (casos de teste, preset executável) será decidido depois do mapeamento, com os achados em mãos — não nesta demanda.
+- A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026) — não é mais uma proposta em aberto. O conteúdo de cada recorte continua não analisado, exceto o que já estiver registrado, recorte a recorte, nas próprias notas (`Seções do TR/`); a fonte de autoridade permanece exclusivamente o PDF (`Fontes/Requisitos Sogov.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
+- Se haverá entregas futuras separadas (casos de teste, preset executável) será decidido depois do mapeamento completo, com os achados em mãos — não nesta demanda.

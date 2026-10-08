@@ -32,8 +32,8 @@ pontos: ""
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
 
-> [!info] Escopo desta pasta — estrutura pronta para revisão, mapeamento do TR ainda não iniciado
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. Demanda e plano já têm escopo/método estruturados, aguardando revisão; o TR completo (1.1–1.43) foi segmentado em **11 recortes temáticos propostos** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]), também pendentes de confirmação — nenhum ator, entidade ou achado do TR foi registrado ainda.
+> [!info] Escopo desta pasta — segmentação aprovada, leitura por recorte em andamento
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. O TR completo (1.1–1.43) foi segmentado em **11 recortes temáticos, aprovados pelo Rafael** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]). A leitura começou pelo recorte 1 (itens 1.1–1.23) — ver resultado na própria nota; os recortes 2–11 ainda não foram lidos. **A análise não está completa.**
 
 ## Status do trabalho
 
@@ -41,12 +41,13 @@ pontos: ""
 |---|---|
 | Demanda | 📝 Preparada, aguardando revisão |
 | Plano de análise | 📝 Preparado, aguardando revisão |
-| Segmentação em recortes temáticos (`Seções do TR/`) | 📝 Proposta (11 recortes), aguardando confirmação |
-| Leitura/mapeamento por recorte (elementos/relações) | ⏳ Não iniciado |
+| Segmentação em recortes temáticos (`Seções do TR/`) | ✅ Aprovada pelo Rafael (11 recortes) |
+| Recorte 1 — Infraestrutura técnica e operacional (1.1–1.23) | 🔵 Lido e classificado, aguardando revisão do Codex |
+| Recortes 2–11 | ⏳ Não iniciados |
 | Síntese visual (mapa geral) | ⏳ Não iniciado |
 | Revisão da análise | ⏳ Não iniciado |
 
-**Próximo passo:** revisão/aprovação do escopo ([[01 - Demanda]]), do plano ([[02 - Plano de análise]]) e da segmentação em recortes temáticos ([[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]) — só depois disso iniciar a leitura/mapeamento.
+**Próximo passo:** revisão do Codex sobre o recorte 1; só depois dessa revisão o recorte 2 começa.
 
 Pacote para `SGV-12082`:
 

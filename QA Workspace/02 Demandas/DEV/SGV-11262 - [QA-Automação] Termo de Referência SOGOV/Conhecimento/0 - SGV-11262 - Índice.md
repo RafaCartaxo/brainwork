@@ -15,7 +15,7 @@ A SGV-11262 é a demanda pai da iniciativa de QA sobre o Termo de Referência do
 
 [[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] — modelo conceitual de atores, entidades, configurações, estados, relações e dependências a partir do **TR completo** (itens 1.1–1.43). Não inclui casos de teste, Qase nem automação nesta demanda.
 
-**Estado factual:** documentação/estrutura (demanda, plano de análise, matriz, mapa geral) preparada para revisão; o mapeamento do conteúdo do TR ainda não começou.
+**Estado factual:** segmentação em 11 recortes temáticos aprovada pelo Rafael (08/10/2026). Recorte 1 (itens 1.1–1.23) lido e classificado contra o PDF, aguardando revisão do Codex; recortes 2–11 ainda não foram lidos. **A análise não está completa.**
 
 ## Material arquivado para consulta
 
