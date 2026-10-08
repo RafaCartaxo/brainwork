@@ -24,7 +24,7 @@ pontos_alocados: ""
 > **Próximo passo:** revisão/aprovação desta demanda e do [[02 - Plano de análise|plano de análise]] — a leitura/mapeamento do TR só começa depois disso.
 
 > [!note] Abordagem anterior preservada
-> A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão intactos em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
+> A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
 
 ---
 

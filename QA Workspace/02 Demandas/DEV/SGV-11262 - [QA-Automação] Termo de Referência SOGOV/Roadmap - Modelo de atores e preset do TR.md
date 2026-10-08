@@ -17,7 +17,7 @@ Construir um modelo de **atores, entidades, configurações, estados, relações
 
 ## Estado atual
 
-- **Abordagem anterior:** arquivada, intacta, em [[Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência de consulta, **não é fluxo ativo**.
+- **Abordagem anterior:** arquivada para consulta em [[Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência de consulta, **não é fluxo ativo**.
 - **SGV-12082 (atual):** em **scaffold** — estrutura de pastas e notas criada em 08/10/2026 (`00 QA/`, `01 Modelo do preset/`, `Fontes/`), sem conteúdo analítico ainda. Estrutura inicial aprovada; pacote sendo alinhado antes do início do mapeamento.
 
 ## Entregas existentes

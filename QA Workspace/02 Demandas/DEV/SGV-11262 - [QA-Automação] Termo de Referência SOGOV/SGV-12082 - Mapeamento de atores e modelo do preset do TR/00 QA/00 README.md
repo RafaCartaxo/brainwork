@@ -19,6 +19,7 @@ pontos: ""
 
 > [!info]- Navegação QA
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]]
+> **Roadmap da iniciativa:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]
 > **Demanda:** [[01 - Demanda]]
 > **Plano de análise:** [[02 - Plano de análise]]
 > **Revisão da análise:** [[04 - Revisão da análise]]
@@ -32,7 +33,7 @@ pontos: ""
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
 
 > [!info] Escopo desta pasta — estrutura pronta para revisão, mapeamento do TR ainda não iniciado
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está preservada, intacta, em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. Demanda e plano já têm escopo/método estruturados, aguardando revisão; o conteúdo do TR ainda não foi lido/mapeado — nenhum ator, entidade ou achado do TR foi registrado ainda.
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. Demanda e plano já têm escopo/método estruturados, aguardando revisão; o conteúdo do TR ainda não foi lido/mapeado — nenhum ator, entidade ou achado do TR foi registrado ainda.
 
 ## Status do trabalho
 
