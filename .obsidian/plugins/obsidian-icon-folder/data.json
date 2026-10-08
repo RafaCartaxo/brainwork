@@ -229,6 +229,30 @@
     "iconName": "LiBot",
     "iconColor": "#7c3aed"
   },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo": {
+    "iconName": "LiArchive",
+    "iconColor": "#78350f"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior": {
+    "iconName": "LiArchive",
+    "iconColor": "#64748b"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset": {
+    "iconName": "LiNetwork",
+    "iconColor": "#4338ca"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/Fontes": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#ca8a04"
+  },
   "Sistema/Templates/Pacote/00 QA": {
     "iconName": "LiClipboardList",
     "iconColor": "#2563eb"
