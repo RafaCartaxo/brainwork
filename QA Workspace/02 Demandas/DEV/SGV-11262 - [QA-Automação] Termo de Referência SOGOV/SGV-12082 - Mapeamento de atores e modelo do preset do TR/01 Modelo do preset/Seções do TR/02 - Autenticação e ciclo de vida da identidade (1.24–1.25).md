@@ -61,7 +61,7 @@ status: aprovado
 
 ## Dúvidas/ambiguidades
 
-- **Categorias de usuário dos 4 estados funcionais:** o TR não afirma explicitamente se os estados de 1.25.3 se aplicam a Cidadão (PF) e Empresa (PJ), além de Servidor Público — o texto usa "identidade funcional"/"vínculo do agente". **A confirmar.**
+- **Categorias de usuário dos 4 estados funcionais:** o TR não afirma explicitamente se os estados de 1.25.3 se aplicam a Cidadão (PF) e Empresa (PJ), além de Servidor Público — o texto usa "identidade funcional"/"vínculo do agente". **A confirmar.** - Sogov atual
 - **Bloqueio como 5º estado ou mecanismo separado:** o TR não afirma se o bloqueio por tentativas (1.25.1) equivale a um dos 4 estados nomeados ou é um mecanismo à parte. **A confirmar.**
 - **Reversão do bloqueio:** o TR não descreve como/quando uma conta bloqueada por tentativas deixa de estar bloqueada. **A confirmar.**
 
