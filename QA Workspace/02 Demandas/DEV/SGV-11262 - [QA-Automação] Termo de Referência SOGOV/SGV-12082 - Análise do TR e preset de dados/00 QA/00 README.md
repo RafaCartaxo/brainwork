@@ -46,7 +46,7 @@ pontos: ""
 **Próximo passo:** revisão final do Rafael sobre a recomendação do [[../01 Automação/01 - Plano de automação#DISC-004 — Síntese e recomendação (07/10/2026)\|DISC-004]] — só depois disso encerrar a SGV-12082 ou abrir a primeira entrega pequena.
 
 > [!warning] Escopo em análise — nenhuma execução/implementação feita
-> A Entrega 01 sobre a instância 225 fica preservada como histórico do piloto. A SGV-12082 investigou o estado real (projeto, 38 CTs, dados por eixo) e recomendou um caminho — portar os mecanismos de estado já confirmados em Cypress pro Playwright, na instância atual, em 5 entregas pequenas. Nenhuma execução do seed foi feita; nenhuma pasta/demanda de implementação foi criada.
+> A Entrega 01 sobre a instância 225 fica preservada como histórico do piloto. A SGV-12082 investigou o estado real (projeto, 38 CTs, dados por eixo) e recomendou um caminho — portar os mecanismos de estado já confirmados em Cypress pro Playwright, na instância atual, em 6 entregas pequenas (os 3 CTs sem código ficam fora dessa conta, como candidatos sem porte previsto). Nenhuma execução do seed foi feita; nenhuma pasta/demanda de implementação foi criada.
 
 > [!tip]- Esforço e capacidade
 > ```dataviewjs

@@ -26,7 +26,7 @@ Esta entrega analisa o projeto de automação e o TR completo (itens 1.1–1.43)
 
 ## Próxima ação
 
-**DISC-001–004 concluídos (07/10/2026).** Aguardando revisão final do Rafael sobre a recomendação do [[01 - Plano de automação#DISC-004 — Síntese e recomendação (07/10/2026)|DISC-004]] antes de encerrar esta entrega ou abrir a primeira das 5 entregas pequenas recomendadas.
+**DISC-001–004 concluídos (07/10/2026).** Aguardando revisão final do Rafael sobre a recomendação do [[01 - Plano de automação#DISC-004 — Síntese e recomendação (07/10/2026)|DISC-004]] antes de encerrar esta entrega ou abrir a primeira das **6 entregas pequenas** recomendadas (os 3 CTs sem código — 016/017/037 — ficam fora dessa conta, sem porte previsto).
 
 ## Repositório e entrega
 
