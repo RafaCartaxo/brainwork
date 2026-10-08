@@ -15,7 +15,7 @@ status: planejado
 > **Revisão da análise:** [[../00 QA/04 - Revisão da análise]]
 
 > [!info] Esta nota é agora o índice/visão consolidada (08/10/2026)
-> O TR completo (1.1–1.43) foi dividido em **recortes temáticos**, cada um com nota própria na pasta `Seções do TR/` (ver tabela abaixo) — fonte dos achados detalhados (cobertura por item, elementos, relações, dúvidas, fontes). Esta nota **não duplica** esse conteúdo: lista os recortes, seus intervalos de itens/páginas, status e o link pra nota correspondente. A fonte de autoridade continua sendo exclusivamente o PDF (`Fontes/Requisitos Sogov.pdf`) — esta matriz e as notas temáticas são registro/rastreabilidade, nunca substituem o PDF. Segmentação aprovada pelo Rafael (08/10/2026); recortes 1 e 2 revisados e aprovados pelo Codex; recorte 3 lido, aguardando revisão do Codex; recortes 4–11 ainda não lidos.
+> O TR completo (1.1–1.43) foi dividido em **recortes temáticos**, cada um com nota própria na pasta `Seções do TR/` (ver tabela abaixo) — fonte dos achados detalhados (cobertura por item, elementos, relações, dúvidas, fontes). Esta nota **não duplica** esse conteúdo: lista os recortes, seus intervalos de itens/páginas, status e o link pra nota correspondente. A fonte de autoridade continua sendo exclusivamente o PDF (`Fontes/Requisitos Sogov.pdf`) — esta matriz e as notas temáticas são registro/rastreabilidade, nunca substituem o PDF. Segmentação aprovada pelo Rafael (08/10/2026); recortes 1–3 revisados e aprovados pelo Codex; recorte 4 lido, aguardando revisão do Codex; recortes 5–11 ainda não lidos.
 
 ## Como preencher (vale para as notas de `Seções do TR/`)
 
@@ -39,8 +39,8 @@ status: planejado
 |---|---|---|---|---|---|
 | 1 | Infraestrutura técnica e operacional | 1.1–1.23 | p. 1 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/01 - Infraestrutura técnica e operacional (1.1–1.23)]] |
 | 2 | Autenticação e ciclo de vida da identidade | 1.24–1.25 | p. 1–2 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/02 - Autenticação e ciclo de vida da identidade (1.24–1.25)]] |
-| 3 | Estrutura organizacional e cadastro de servidores | 1.26–1.27 | p. 2–7 | 🔵 Lido, aguardando revisão do Codex | [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]] |
-| 4 | Serviços, assuntos e categorias de documentos | 1.28–1.29 | p. 7–11 | 🧱 Proposto, não lido | [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]] |
+| 3 | Estrutura organizacional e cadastro de servidores | 1.26–1.27 | p. 2–7 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]] |
+| 4 | Serviços, assuntos e categorias de documentos | 1.28–1.29 | p. 7–11 | 🔵 Lido, aguardando revisão do Codex | [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]] |
 | 5 | Fluxos de trabalho e modelos de documentos | 1.30–1.31 | p. 11–13 | 🧱 Proposto, não lido | [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]] |
 | 6 | Atores externos e atendimento ao cidadão | 1.32, 1.36–1.37 | p. 13, p. 16 | 🧱 Proposto, não lido | [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]] |
 | 7 | Mesa de trabalho, etiquetas e tramitação | 1.33–1.35 | p. 13–16 | 🧱 Proposto, não lido | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |

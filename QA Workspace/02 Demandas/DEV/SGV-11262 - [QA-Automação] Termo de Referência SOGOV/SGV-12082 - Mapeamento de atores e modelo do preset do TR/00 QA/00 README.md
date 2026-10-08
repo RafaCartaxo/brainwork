@@ -32,8 +32,8 @@ pontos: ""
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
 
-> [!info] Escopo desta pasta — recortes 1 e 2 aprovados, recorte 3 lido aguardando revisão
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. O TR completo (1.1–1.43) foi segmentado em **11 recortes temáticos, aprovados pelo Rafael** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]). Recortes 1 (itens 1.1–1.23) e 2 (itens 1.24–1.25) revisados e aprovados pelo Codex; recorte 3 (itens 1.26–1.27) lido, aguardando revisão do Codex; recortes 4–11 ainda não iniciados. **A análise não está completa.**
+> [!info] Escopo desta pasta — recortes 1–3 aprovados, recorte 4 lido aguardando revisão
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. O TR completo (1.1–1.43) foi segmentado em **11 recortes temáticos, aprovados pelo Rafael** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]). Recortes 1–3 (itens 1.1–1.27) revisados e aprovados pelo Codex; recorte 4 (itens 1.28–1.29) lido, aguardando revisão do Codex; recortes 5–11 ainda não iniciados. **A análise não está completa.**
 
 ## Status do trabalho
 
@@ -44,12 +44,13 @@ pontos: ""
 | Segmentação em recortes temáticos (`Seções do TR/`) | ✅ Aprovada pelo Rafael (11 recortes) |
 | Recorte 1 — Infraestrutura técnica e operacional (1.1–1.23) | ✅ Revisado e aprovado pelo Codex |
 | Recorte 2 — Autenticação e ciclo de vida da identidade (1.24–1.25) | ✅ Revisado e aprovado pelo Codex |
-| Recorte 3 — Estrutura organizacional e cadastro de servidores (1.26–1.27) | 🔵 Lido, aguardando revisão do Codex |
-| Recortes 4–11 | ⏳ Não iniciados |
+| Recorte 3 — Estrutura organizacional e cadastro de servidores (1.26–1.27) | ✅ Revisado e aprovado pelo Codex |
+| Recorte 4 — Serviços, assuntos e categorias de documentos (1.28–1.29) | 🔵 Lido, aguardando revisão do Codex |
+| Recortes 5–11 | ⏳ Não iniciados |
 | Síntese visual (mapa geral) | ⏳ Não iniciado |
 | Revisão da análise | ⏳ Não iniciado |
 
-**Próximo passo:** revisão do Codex sobre o recorte 3; só depois dessa revisão o recorte 4 começa.
+**Próximo passo:** revisão do Codex sobre o recorte 4; só depois dessa revisão o recorte 5 começa.
 
 Pacote para `SGV-12082`:
 
