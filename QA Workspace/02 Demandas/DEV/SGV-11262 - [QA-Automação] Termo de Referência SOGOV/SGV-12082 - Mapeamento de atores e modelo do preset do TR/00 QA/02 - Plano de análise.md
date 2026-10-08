@@ -21,7 +21,7 @@ pontos: ""
 
 ## Objetivo
 
-Percorrer o TR completo (itens 1.1–1.43) e produzir, de forma rastreável, o modelo de atores/entidades/configurações/estados/relações/dependências do SOGOV — registrado na [[../01 Modelo do preset/01 - Matriz de atores e relações|matriz]] e sintetizado no [[../01 Modelo do preset/00 - Mapa geral|mapa geral]].
+Percorrer o TR completo (itens 1.1–1.43) e produzir, de forma rastreável, o modelo de atores/entidades/configurações/estados/relações/dependências do SOGOV — registrado nas notas temáticas de cada recorte (`01 Modelo do preset/Seções do TR/`, indexadas pela [[../01 Modelo do preset/01 - Matriz de atores e relações|matriz]]) e sintetizado no [[../01 Modelo do preset/00 - Mapa geral|mapa geral]].
 
 ---
 
@@ -34,11 +34,11 @@ Percorrer o TR completo (itens 1.1–1.43) e produzir, de forma rastreável, o m
 
 ## Estratégia de análise
 
-1. Confirmar fonte e escopo — PDF do TR completo (itens 1.1–1.43).
-2. Percorrer o TR progressivamente, por blocos temáticos definidos durante a própria leitura (não antecipados aqui).
-3. Lançar cada elemento e relação identificado na matriz, com a referência do item do TR e o estado de conhecimento.
-4. Sintetizar o mapa geral (Mermaid) a partir do que já estiver registrado na matriz — nunca o contrário.
-5. Revisar cobertura (todo item do TR mapeado, não aplicável com justificativa, ou pendente) e consistência entre matriz e mapa.
+1. Confirmar fonte e escopo — PDF do TR completo (itens 1.1–1.43) — e **confirmar a segmentação em recortes temáticos** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações|índice de recortes na matriz]]) antes de começar a ler.
+2. Ler e registrar cobertura por nota temática — cada recorte em `01 Modelo do preset/Seções do TR/` recebe sua própria leitura, com cobertura/classificação dos itens, elementos e relações identificados, dúvidas e fontes.
+3. Consolidar atores/elementos/estados/relações **sem duplicação** — a matriz central só indexa os recortes (intervalo de itens/páginas, status, link); elementos e relações vivem exclusivamente na nota temática correspondente.
+4. Sintetizar o mapa geral (Mermaid) a partir do que já estiver **confirmado** nas notas temáticas — nunca antecipar conteúdo que elas ainda não tenham.
+5. Revisar cobertura (todo item do TR mapeado, não aplicável com justificativa, ou pendente) e consistência entre as notas temáticas e o mapa — só então fechar a análise e considerar entregáveis futuros.
 
 ### Critérios de classificação
 
@@ -52,16 +52,16 @@ Percorrer o TR completo (itens 1.1–1.43) e produzir, de forma rastreável, o m
 
 ## Itens de verificação
 
+Um item por recorte temático — lista completa e os links das notas vivem no [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice de recortes da matriz]]; esta tabela não duplica essa lista.
+
 | Item | Tipo | Fonte | Situação |
 |---|---|---|---|
-| <placeholder — bloco temático a definir durante a leitura> | Mapeamento documental | PDF do TR completo | A confirmar |
-
-> Replique a linha para cada bloco temático conforme for definido durante a leitura do TR. Não antecipar nomes/quantidade de blocos nesta etapa.
+| Confirmar/ajustar a segmentação proposta (11 recortes) | Revisão de escopo | PDF do TR completo | A confirmar |
 
 ---
 
 ## Entrada e saída
 
-**Entrada:** PDF do TR completo (itens 1.1–1.43), em [[../Fontes/Requisitos Sogov.pdf|Fontes/Requisitos Sogov.pdf]].
+**Entrada:** PDF do TR completo (itens 1.1–1.43), em [[../Fontes/Requisitos Sogov.pdf|Fontes/Requisitos Sogov.pdf]]; segmentação em recortes temáticos (`01 Modelo do preset/Seções do TR/`).
 
-**Saída:** matriz de atores e relações com rastreabilidade ao TR; mapa geral (Mermaid) como síntese; registro de cobertura, lacunas e ambiguidades para revisão.
+**Saída:** notas temáticas com cobertura/elementos/relações/dúvidas/fontes por recorte; matriz como índice consolidado, sem duplicar o conteúdo; mapa geral (Mermaid) como síntese; registro de cobertura, lacunas e ambiguidades para revisão.

@@ -15,7 +15,7 @@ status: planejado
 > **Revisão da análise:** [[../00 QA/04 - Revisão da análise]]
 
 > [!info] Esqueleto estrutural — sem conteúdo de domínio ainda
-> Scaffold criado em 08/10/2026. Este mapa é sempre um **resumo visual derivado da [[01 - Matriz de atores e relações|matriz]]** — nunca uma fonte própria de fato. O diagrama abaixo é um placeholder vazio, sem atores/relações reais; só será atualizado depois que a matriz tiver elementos/relações registrados, e deve permanecer consistente com ela.
+> Scaffold criado em 08/10/2026. Este mapa é sempre um **resumo visual derivado das notas temáticas** (`Seções do TR/`, indexadas pela [[01 - Matriz de atores e relações|matriz]]) — nunca uma fonte própria de fato. O diagrama abaixo é um placeholder vazio, sem atores/relações reais; só será atualizado depois que as notas temáticas tiverem elementos/relações confirmados, e deve permanecer consistente com elas.
 
 ## Diagrama (placeholder)
 

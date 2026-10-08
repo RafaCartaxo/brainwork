@@ -3,23 +3,23 @@ tags: [qa]
 task: SGV-12082
 pai: SGV-11262
 tipo: secao-tr
-itens_tr: "1.43"
-paginas_pdf: "p. 19–20"
+itens_tr: "1.42"
+paginas_pdf: "p. 19"
 status: a-analisar
 ---
-# 10 - Estatísticas e indicadores (item 1.43)
+# 10 - Personalização e identidade visual do órgão (item 1.42)
 
 > [!info]- Navegação
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — proposto, pendente de confirmação
-> Item do TR: **1.43**. Páginas do PDF a conferir: **p. 19–20** (última seção do documento) de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: estatísticas de uso, setores, documentos, servidores e consumo de recursos — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda.
+> Item do TR: **1.42**. Páginas do PDF a conferir: **p. 19** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: personalização de informações cadastrais e identidade visual do órgão (cores temáticas, imagens institucionais) — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda. Desmembrado em 08/10/2026 do antigo recorte combinado "Chaves de acesso e personalização (1.41–1.42)" para não juntar dois temas distintos (delegação de permissão vs. personalização visual) num único arquivo.
 
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |
 |---|---|---|
-| 1.43 | A analisar | |
+| 1.42 | A analisar | |
 
 ## Elementos identificados
 
@@ -39,4 +39,4 @@ status: a-analisar
 
 ## Fontes/evidências
 
-- PDF: `Fontes/Requisitos Sogov.pdf`, p. 19–20.
+- PDF: `Fontes/Requisitos Sogov.pdf`, p. 19.

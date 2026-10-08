@@ -34,12 +34,12 @@ O Termo de Referência do SOGOV (itens 1.1–1.43) ainda não tem um modelo conc
 
 ## Objetivo
 
-Produzir um modelo conceitual rastreável do TR completo: para cada item/bloco, identificar atores/entidades, dados/atributos, configurações, estados e relações/dependências, registrados na matriz com a referência do item do TR e o estado de conhecimento (Confirmado/Inferido/A confirmar), e sintetizados visualmente no mapa geral.
+Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte, identificar atores/entidades, dados/atributos, configurações, estados e relações/dependências, registrados na nota temática do recorte correspondente (`01 Modelo do preset/Seções do TR/`) com a referência do item do TR e o estado de conhecimento (Confirmado/Inferido/A confirmar) — a matriz apenas indexa os recortes, sem duplicá-los — e sintetizados visualmente no mapa geral, derivado das notas temáticas confirmadas.
 
 ### Entrega desta capacidade
 
-- Matriz de atores e relações cobrindo o TR completo, com cada item mapeado, marcado como não aplicável (sem elemento relevante para este modelo, com justificativa) ou registrado como pendente.
-- Mapa geral (Mermaid) como síntese visual consistente da matriz — nunca uma fonte própria de fato.
+- Notas temáticas (por recorte do TR, ver `01 Modelo do preset/Seções do TR/`) cobrindo o TR completo, com cada item mapeado, marcado como não aplicável (sem elemento relevante para este modelo, com justificativa) ou registrado como pendente; a matriz central indexa os recortes, sem duplicar elementos/relações.
+- Mapa geral (Mermaid) como síntese visual consistente das notas temáticas — nunca uma fonte própria de fato.
 - Lacunas e ambiguidades encontradas registradas para revisão, não resolvidas por suposição.
 
 ---
@@ -54,10 +54,10 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/bloco, 
 
 ## Escopo
 
-- Percorrer o TR completo (1.1–1.43), de forma progressiva, por blocos temáticos definidos durante a leitura.
-- Registrar na matriz cada ator/entidade/configuração/estado identificado, com papel/descrição, dados/atributos relevantes, relações/dependências, referência ao item do TR e estado de conhecimento.
-- Sintetizar o mapa geral (Mermaid) a partir do que estiver registrado na matriz.
-- Revisar cobertura (todo item do TR mapeado, não aplicável ou pendente) e consistência entre matriz e mapa.
+- Percorrer o TR completo (1.1–1.43), de forma progressiva, pelos recortes temáticos (`01 Modelo do preset/Seções do TR/`).
+- Registrar, na nota temática de cada recorte, todo ator/entidade/configuração/estado identificado, com papel/descrição, dados/atributos relevantes, relações/dependências, referência ao item do TR e estado de conhecimento.
+- Sintetizar o mapa geral (Mermaid) a partir do que estiver confirmado nas notas temáticas.
+- Revisar cobertura (todo item do TR mapeado, não aplicável ou pendente) e consistência entre as notas temáticas e o mapa.
 
 ---
 
@@ -72,9 +72,9 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/bloco, 
 ## Critérios de aceite
 
 - C1. Todo item do TR completo (1.1–1.43) foi considerado; cada item está rastreável como mapeado, não aplicável (sem elemento relevante para este modelo, com justificativa) ou pendente. ^c1
-- C2. Cada elemento mapeado na matriz aponta a referência/item do TR correspondente e seu estado de conhecimento (Confirmado/Inferido/A confirmar). ^c2
-- C3. A matriz representa tanto os elementos quanto as relações/dependências entre eles. ^c3
-- C4. O mapa geral (Mermaid) é uma síntese consistente do que está registrado na matriz, sem conteúdo que a matriz não sustente. ^c4
+- C2. Cada elemento mapeado na nota temática correspondente aponta a referência/item do TR e seu estado de conhecimento (Confirmado/Inferido/A confirmar). ^c2
+- C3. Os elementos e as relações/dependências entre eles estão representados nas notas temáticas correspondentes; a matriz central indexa os recortes (intervalo de itens/páginas, status, link), sem duplicá-los. ^c3
+- C4. O mapa geral (Mermaid) é uma síntese consistente do que está registrado nas notas temáticas, sem conteúdo que elas não sustentem. ^c4
 - C5. Lacunas e ambiguidades encontradas durante o mapeamento estão registradas explicitamente para revisão, não resolvidas por suposição. ^c5
 
 ---
@@ -82,8 +82,8 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/bloco, 
 ## Checklist de fechamento da análise
 
 - [ ] Todo item do TR (1.1–1.43) está mapeado, não aplicável (com justificativa) ou pendente.
-- [ ] Cada elemento/relação na matriz aponta a referência do item do TR correspondente.
-- [ ] Matriz e mapa geral (Mermaid) estão consistentes entre si.
+- [ ] Cada elemento/relação, registrado na nota temática correspondente, aponta a referência do item do TR.
+- [ ] Notas temáticas e mapa geral (Mermaid) estão consistentes entre si.
 - [ ] Lacunas e ambiguidades encontradas estão registradas para revisão.
 - [ ] A [[04 - Revisão da análise|revisão da análise]] foi concluída.
 
@@ -93,5 +93,5 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/bloco, 
 
 Não há bloqueio atual nesta demanda. Duas decisões são **deliberadamente adiadas**, não pendências que travam o início do trabalho:
 
-- Os blocos temáticos usados para percorrer o TR (nomes, quantidade, fronteiras) serão definidos durante a própria leitura, não antes.
+- A segmentação do TR em recortes temáticos já foi **proposta** (11 notas em `Seções do TR/`, ver matriz) e está pendente de confirmação antes da leitura — ajuste de agrupamento, se necessário, acontece nessa confirmação, não durante a leitura em si.
 - Se haverá entregas futuras separadas (casos de teste, preset executável) será decidido depois do mapeamento, com os achados em mãos — não nesta demanda.

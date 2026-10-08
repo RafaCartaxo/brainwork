@@ -33,7 +33,7 @@ pontos: ""
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
 
 > [!info] Escopo desta pasta — estrutura pronta para revisão, mapeamento do TR ainda não iniciado
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. Demanda e plano já têm escopo/método estruturados, aguardando revisão; o conteúdo do TR ainda não foi lido/mapeado — nenhum ator, entidade ou achado do TR foi registrado ainda.
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. Demanda e plano já têm escopo/método estruturados, aguardando revisão; o TR completo (1.1–1.43) foi segmentado em **11 recortes temáticos propostos** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]), também pendentes de confirmação — nenhum ator, entidade ou achado do TR foi registrado ainda.
 
 ## Status do trabalho
 
@@ -41,11 +41,12 @@ pontos: ""
 |---|---|
 | Demanda | 📝 Preparada, aguardando revisão |
 | Plano de análise | 📝 Preparado, aguardando revisão |
-| Mapeamento na matriz (atores/entidades/relações) | ⏳ Não iniciado |
+| Segmentação em recortes temáticos (`Seções do TR/`) | 📝 Proposta (11 recortes), aguardando confirmação |
+| Leitura/mapeamento por recorte (elementos/relações) | ⏳ Não iniciado |
 | Síntese visual (mapa geral) | ⏳ Não iniciado |
 | Revisão da análise | ⏳ Não iniciado |
 
-**Próximo passo:** revisão/aprovação do escopo ([[01 - Demanda]]) e do plano ([[02 - Plano de análise]]) — só depois disso iniciar a leitura/mapeamento do TR por blocos temáticos.
+**Próximo passo:** revisão/aprovação do escopo ([[01 - Demanda]]), do plano ([[02 - Plano de análise]]) e da segmentação em recortes temáticos ([[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]) — só depois disso iniciar a leitura/mapeamento.
 
 Pacote para `SGV-12082`:
 
@@ -58,7 +59,8 @@ SGV-12082 - Mapeamento de atores e modelo do preset do TR/
 │   └── 04 - Revisão da análise.md
 ├── 01 Modelo do preset/
 │   ├── 00 - Mapa geral.md              (esqueleto Mermaid, sem conteúdo de domínio)
-│   └── 01 - Matriz de atores e relações.md  (cabeçalho/colunas, sem linhas preenchidas)
+│   ├── 01 - Matriz de atores e relações.md  (índice dos recortes temáticos, sem duplicar seu conteúdo)
+│   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes)
 └── Fontes/
     └── Requisitos Sogov.pdf             (cópia de trabalho; original preservado no Arquivo)
 ```

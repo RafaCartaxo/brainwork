@@ -3,24 +3,23 @@ tags: [qa]
 task: SGV-12082
 pai: SGV-11262
 tipo: secao-tr
-itens_tr: "1.41–1.42"
+itens_tr: "1.41"
 paginas_pdf: "p. 18–19"
 status: a-analisar
 ---
-# 09 - Chaves de acesso e personalização (itens 1.41–1.42)
+# 09 - Chaves de acesso e criação delegada (item 1.41)
 
 > [!info]- Navegação
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — proposto, pendente de confirmação
-> Itens do TR: **1.41–1.42**. Páginas do PDF a conferir: **p. 18–19** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: chaves de acesso e criação delegada (1.41) e personalização/identidade visual do órgão (1.42) — agrupados por serem configurações pontuais, de menor porte, remanescentes entre os blocos maiores — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda.
+> Item do TR: **1.41**. Páginas do PDF a conferir: **p. 18–19** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]]. Leitura prévia sugere o tema: chaves de acesso e criação delegada de documentos (delegação de tarefas administrativas sem comprometer credenciais) — **confirmar contra o PDF, não contra esta nota**. Nenhum elemento/relação foi analisado ainda. Desmembrado em 08/10/2026 do antigo recorte combinado "Chaves de acesso e personalização (1.41–1.42)" para não juntar dois temas distintos (delegação de permissão vs. personalização visual) num único arquivo.
 
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |
 |---|---|---|
 | 1.41 | A analisar | |
-| 1.42 | A analisar | |
 
 ## Elementos identificados
 
