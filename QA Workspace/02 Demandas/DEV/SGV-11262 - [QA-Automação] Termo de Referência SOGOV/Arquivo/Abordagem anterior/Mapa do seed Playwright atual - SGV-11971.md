@@ -89,7 +89,7 @@ Decisão da iniciativa em 07/10/2026: começar numa **instância de teste dedica
 
 Após o ajuste, os specs de autenticação consumirão o ID retornado no manifesto, então não precisam fixar `225` em cada teste nem na URL. O que precisa ser explícito é o alvo do seed e a proteção contra criação acidental de outro cliente.
 
-O escopo, os critérios de segurança e a validação desta primeira entrega estão em [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação|Entrega 01 — Baseline na instância 225]].
+O escopo, os critérios de segurança e a validação desta primeira entrega estão em [[SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação/00 - Automação|Entrega 01 — Baseline na instância 225]].
 
 **O que já é reproduzível:**
 
