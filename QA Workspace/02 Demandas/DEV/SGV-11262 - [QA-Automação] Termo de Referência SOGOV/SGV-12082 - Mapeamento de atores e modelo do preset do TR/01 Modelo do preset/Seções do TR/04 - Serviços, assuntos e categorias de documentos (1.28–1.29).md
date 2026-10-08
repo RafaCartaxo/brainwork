@@ -13,7 +13,7 @@ status: lido
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
 > [!info] Escopo deste recorte — lido em 08/10/2026, aguardando revisão do Codex
-> Itens do TR: **1.28–1.29**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (28 linhas na Cobertura — 5 sob 1.28, 23 sob 1.29). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.28–1.28.1 (p. 7–8); 1.28.1.2–1.29.1 (p. 8–9); 1.29.2–1.29.8 (p. 9–10); 1.29.9–1.29.10.4 (p. 10–11). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR.
+> Itens do TR: **1.28–1.29**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (29 linhas na Cobertura — 6 sob 1.28, 23 sob 1.29). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.28–1.28.1 (p. 7–8); 1.28.1.2–1.29.1 (p. 8–9); 1.29.2–1.29.8 (p. 9–10); 1.29.9–1.29.10.4 (p. 10–11). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR.
 
 ## Cobertura dos itens
 
@@ -21,7 +21,8 @@ status: lido
 |---|---|---|
 | 1.28 | Mapeado | Gerenciamento de Serviços e Assuntos: CRUD de categorias/subcategorias, serviços e assuntos, com filtros e busca. |
 | 1.28.1 | Mapeado | Campos mínimos do cadastro de serviço/assunto: nome, descrição, categoria de documento vinculada, abertura externa, setores de interação externa, sigilo (com/sem/anônimo), setores com acesso a dados sigilosos, setores que abrem/recebem processos, envio automático a setor, prazo oficial (dias úteis/corridos, prorrogação limitada e justificável), numeração oficial pré-existente (reinício anual ou sequência infinita). |
-| 1.28.1.2 | Mapeado | Tipos de campo personalizável do formulário do serviço/assunto — enum detalhado abaixo. |
+| 1.28.1.2 | Mapeado | Introduz a customização de campos personalizados do serviço/assunto, após os parâmetros base definidos. |
+| 1.28.1.2.1 | Mapeado | Define o conjunto de tipos de campo personalizado; detalhado abaixo. |
 | 1.28.1.3 | Mapeado | Configuração por campo: título, visibilidade (servidor/cidadão/ambos), obrigatoriedade, repetição, sensibilidade (LGPD), uso como título do documento/mesa de trabalho. |
 | 1.28.1.4 | Não aplicável | Reordenação visual dos campos no formulário — requisito de interface. |
 | 1.29 | Mapeado | Categorias de documentos para geração de processos/comunicação oficial, com regras de tramitação pré-estabelecidas por categoria e módulo, sem limite de quantidade. |
@@ -48,34 +49,53 @@ status: lido
 | 1.29.10.3 | Mapeado | Servidores (com permissão) gerenciam zoneamentos e categorias de uso. |
 | 1.29.10.4 | Mapeado | Entidades Zona e Categoria de uso, criação manual ou por upload de arquivo (.kmz), com histórico completo e publicação no portal de transparência — detalhado abaixo. |
 
-**Resultado do recorte:** 28/28 itens (incluindo subitens numerados) considerados; 27 Mapeados, 1 Não aplicável (1.28.1.4 — interface). Nenhum item pendente de leitura.
+**Resultado do recorte:** 29/29 itens (incluindo subitens numerados) considerados; 28 Mapeados, 1 Não aplicável (1.28.1.4 — interface). Nenhum item pendente de leitura.
 
 ## Elementos identificados
 
 | Referência do TR | Elemento | Tipo | Papel/descrição | Dados ou atributos relevantes | Certeza/evidência |
 |---|---|---|---|---|---|
-| 1.28.1 | Serviço/Assunto | Entidade | Unidade configurável de tramitação, vinculada a uma categoria de documento | nome, descrição, categoria de documento, abertura externa (sim/não), setores de interação externa, sigilo (com sigilo/sem sigilo/anônimo), setores com acesso a dados sigilosos, setores que abrem/recebem processos, envio automático a setor, prazo oficial (dias úteis/corridos + regras de prorrogação com limite e justificativa), numeração oficial pré-existente (reinício anual ou sequência infinita) | Confirmado |
-| 1.28.1.2 | Campo personalizado (tipo) | Configuração (enum) | Tipo de campo do formulário de um serviço/assunto | Texto curto; Texto grande (com texto pré-definido); Número (subtipos: simples, porcentagem, moeda BR, telefone, celular, CPF, CNPJ, m², m³); E-mail; Mapa; Link; Arquivo; Data e hora; Escolha única/múltipla; Grupo de campos (aninhável); Texto informativo (não preenchível); Seleção de referência (Pessoas — cidadãos/empresas/servidores — ou Setores) | Confirmado |
+| 1.28 | Categoria (de assuntos e serviços) | Entidade | Nomeada no título de 1.28 e em 1.27.8.2.o ("cadastrar categorias e subcategorias de assuntos e serviços"); o TR não detalha atributos próprios além do nome do conceito e da ação de cadastro | — (sem atributos próprios confirmados neste recorte) | Confirmado que o conceito existe e é cadastrável; estrutura/atributos **não especificados** |
+| 1.28 | Subcategoria (de assuntos e serviços) | Entidade | Mesma fonte que Categoria (1.28, 1.27.8.2.o); relação com Categoria sugerida pelo nome composto, mas não detalhada | — (sem atributos próprios confirmados neste recorte) | Confirmado que o conceito existe; relação com Categoria **Inferida** do nome, não descrita explicitamente |
+| 1.28, 1.28.1 | Serviço | Entidade | Unidade configurável de tramitação, tratada lado a lado com Assunto | ver bloco de configuração compartilhada abaixo | Confirmado — o TR nomeia "serviços" separadamente de "assuntos" (título de 1.28), mas descreve os campos de cadastro em conjunto ("esse serviço ou assunto") |
+| 1.28, 1.28.1 | Assunto | Entidade | Unidade configurável de tramitação, tratada lado a lado com Serviço | ver bloco de configuração compartilhada abaixo | Confirmado — mesma observação da linha Serviço |
+| 1.28.1 | Configuração de cadastro (compartilhada por Serviço e Assunto) | Configuração | O TR não diferencia atributos entre Serviço e Assunto; descreve o mesmo bloco de campos para "esse serviço ou assunto" | nome, descrição, categoria de documento vinculada, abertura externa (sim/não), setores de interação externa, sigilo (com sigilo/sem sigilo/anônimo), setores com acesso a dados sigilosos, setores que abrem/recebem processos, envio automático a setor, prazo oficial (dias úteis/corridos + regras de prorrogação com limite e justificativa), numeração oficial pré-existente (reinício anual ou sequência infinita) | Confirmado |
+| 1.28.1.2.1 | Campo personalizado (tipo) | Configuração (enum) | Tipo de campo do formulário de um serviço/assunto | Texto curto; Texto grande (com texto pré-definido); Número (subtipos: simples, porcentagem, moeda BR, telefone, celular, CPF, CNPJ, m², m³); E-mail; Mapa; Link; Arquivo; Data e hora; Escolha única/múltipla; Grupo de campos (aninhável); Texto informativo (não preenchível); Seleção de referência (Pessoas — cidadãos/empresas/servidores — ou Setores) | Confirmado |
 | 1.28.1.3 | Configuração do campo | Configuração | Parâmetros aplicáveis a qualquer campo personalizado | título, visibilidade (servidor/cidadão/ambos), descrição, dica, obrigatório (sim/não), repetível (sim/não), sensível/LGPD (protegido e não exibido externamente), é título do documento/mesa de trabalho | Confirmado |
 | 1.29.1 | Categoria de documento (base) | Entidade (enum, 3 valores-base) | Classificação macro de todo documento gerado | Documento oficial; Comunicação oficial; Processo administrativo | Confirmado |
 | 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6, 1.29.7, 1.29.8, 1.29.9 | Categoria de documento (específica) | Entidade (enum, 8 valores) | Subtipo de documento, cada um com campos próprios | Memorando; Circular; Ofício; Processo administrativo (genérico); Processo administrativo – solicitação externa; Ouvidoria; e-SIC; Ato oficial | Confirmado |
 | 1.29.2.1, 1.29.3.1, 1.29.4.1, 1.29.5.1, 1.29.6.1, 1.29.7.1, 1.29.8.1, 1.29.9.1 | Campos por categoria específica | Dado/atributo | Cada categoria define seu próprio conjunto de campos obrigatórios (ver Cobertura acima, item a item) | numeração, setor de origem/destinatário, assunto, texto+anexos, e variações específicas (demandante externo, sigilo, notificação, prazo legal) conforme a categoria | Confirmado |
 | 1.29.6, 1.29.7, 1.29.8 | Demandante (ator externo) | Ator | Quem solicita um processo administrativo externamente (contribuinte, fornecedor, cidadão, empresa) | identificação do solicitante; pode ser anônimo (só na Ouvidoria, 1.29.7.1) | Confirmado |
 | 1.29.9 | Ato oficial (subtipo) | Dado/atributo (enum) | Tipos de ato dentro da categoria Documento oficial | Lei; Portaria; Decreto; Resolução; Instrução normativa | Confirmado |
-| 1.29.10.4 | Zona | Entidade | Unidade de zoneamento urbano | nome, descrição, bairros/localidades, categorias de uso associadas; histórico completo de criação/edição/associações | Confirmado |
-| 1.29.10.4 | Categoria de uso | Entidade | Uso permitido associável a uma Zona | nome, descrição, parâmetros (unidade de medida + valor); histórico completo | Confirmado |
+| 1.29.10.4 | Zona | Entidade | Unidade de zoneamento urbano; ponto de partida para abertura de processo urbanístico | nome, descrição, bairros/localidades, categorias de uso associadas; arquivo georreferenciado associado (1.29.10.4.d); estado de publicação (publicado/não publicado — 1.29.10.4.e); histórico completo de criação/edição/associações/dissociações (1.29.10.4.f) | Confirmado |
+| 1.29.10.4 | Categoria de uso | Entidade | Uso permitido associável a uma Zona | nome, descrição, parâmetros (unidade de medida + valor); histórico completo de criação/edição (1.29.10.4.f) | Confirmado |
+| 1.29.10.4 | Processo urbanístico | Entidade/processo | Processo iniciado por ator externo a partir da consulta a uma Zona publicada | zona de origem (relação direta); anexos (ver linha abaixo) | Confirmado (1.29.10.4.g–h) |
+| 1.29.10.4 | Anexo de processo urbanístico | Entidade/estado | Arquivo inserido no processo (upload ou despacho), sujeito a revisão | estado (revisado, aprovado, reprovado); comentários/anotações e destaque de áreas feitos por analista do órgão | Confirmado (1.29.10.4.i–j) |
 
 ## Relações/dependências identificadas
 
 | Origem | Relação/dependência | Destino | Referência do TR | Certeza/evidência ou pendência |
 |---|---|---|---|---|
-| Serviço/Assunto | tem (1:N) | Campo personalizado | 1.28.1.2 | Confirmado |
-| Serviço/Assunto | vinculado a | Categoria de documento | 1.28.1 | Confirmado |
-| Processo administrativo (1.29.5) / Solicitação externa (1.29.6) | herda campos personalizados de | Serviço/Assunto selecionado | 1.29.5.1, 1.29.6.1 | Confirmado |
-| Categoria de documento específica | é subtipo de | Categoria de documento (base, 1.29.1) | 1.29.2–1.29.9 | Confirmado para Memorando/Circular/Ofício/Processo administrativo/Ouvidoria/e-SIC/Ato oficial |
+| Categoria (de assuntos e serviços) | organiza | Subcategoria (de assuntos e serviços) | 1.27.8.2.o | Inferido do nome composto "categorias e subcategorias" — o texto não descreve a mecânica da relação |
+| Serviço | tem (1:N) | Campo personalizado | 1.28.1.2.1 | Confirmado |
+| Assunto | tem (1:N) | Campo personalizado | 1.28.1.2.1 | Confirmado |
+| Serviço | vinculado a | Categoria de documento | 1.28.1.c | Confirmado |
+| Assunto | vinculado a | Categoria de documento | 1.28.1.c | Confirmado |
+| Processo administrativo (1.29.5) / Solicitação externa (1.29.6) | herda campos personalizados de | Serviço ou Assunto selecionado | 1.29.5.1, 1.29.6.1 | Confirmado |
+| Memorando | é subtipo de | Comunicação oficial (base) | 1.29.1.b, 1.29.2 | Confirmado |
+| Circular | é subtipo de | Comunicação oficial (base) | 1.29.1.b, 1.29.3 | Confirmado |
+| Ofício | é subtipo de | Comunicação oficial (base) | 1.29.1.b, 1.29.4 | Confirmado |
+| Processo administrativo (genérico) | é subtipo de | Processo administrativo (base) | 1.29.1.c, 1.29.5 | Confirmado |
+| Processo administrativo — solicitação externa | é subtipo de | Processo administrativo (base) | 1.29.1.c, 1.29.6 | Confirmado |
+| Ouvidoria | é subtipo de | Processo administrativo (base) | 1.29.1.c, 1.29.7 | Confirmado |
+| e-SIC | é subtipo de | Processo administrativo (base) | 1.29.1.c, 1.29.8 | Confirmado |
+| Ato oficial | é subtipo de | Documento oficial (base) | 1.29.1.a, 1.29.9 | Confirmado |
 | Categoria "Zoneamento" (1.29.10) | é subtipo de | Categoria de documento (base, 1.29.1) | 1.29.1, 1.29.10 | **A confirmar — ver dúvida abaixo** |
-| Zona | associada a (N:N) | Categoria de uso | 1.29.10.4 | Confirmado |
+| Zona | associada a | Categoria de uso | 1.29.10.4.a, c | Confirmado — o TR não explicita multiplicidade (ex.: N:N) nos dois sentidos |
 | Upload de arquivo de zoneamento (.kmz) | sobrescreve | Zonas já existentes | 1.29.10.4.b | Confirmado |
+| Cidadão/Empresa (ator externo) | consulta | Zona publicada e suas categorias de uso | 1.29.10.4.g | Confirmado |
+| Cidadão/Empresa (ator externo) | inicia, a partir de uma Zona | Processo urbanístico | 1.29.10.4.h | Confirmado |
+| Servidor (com permissão) | revisa/aprova/reprova | Anexo de processo urbanístico | 1.29.10.4.i–j | Confirmado |
 
 ## Dúvidas/ambiguidades
 
