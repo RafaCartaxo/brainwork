@@ -3,13 +3,13 @@ tags: [qa]
 task: "SGV-12082"
 pai: SGV-11262
 tipo: "melhoria"
-status: analise
+status: validacao
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Análise da demanda"
+etapa_atual: "QA · Validação"
 modulo: Automação
 responsavel: ""
-aguardando: "Mapear os requisitos do PDF e relacionar a cobertura existente"
+aguardando: "Revisão final do Rafael antes de encerrar ou abrir entregas"
 cadastrado_por: ""
 data_inicio: ""
 data_fim: ""
@@ -39,14 +39,14 @@ pontos: ""
 | Demanda | ✅ Escopo de investigação definido |
 | Plano de teste | ✅ Critérios de conclusão registrados |
 | Casos de teste | ✅ Verificações documentais definidas |
-| Validação | ⏳ Aguardando análise e evidências |
-| Matriz do preset | 🟡 Estrutura criada; levantamento pendente |
-| Automação | 📋 Análise do projeto e dos dados; sem alteração de código nesta entrega |
+| Validação | ✅ DISC-001–004 concluídos (07/10/2026) — aguardando revisão final do Rafael |
+| Matriz do preset | ✅ TR completo classificado; 38/38 CTs rastreados; recomendação registrada |
+| Automação | ✅ Mapa do projeto, dados por eixo e recomendação prontos; sem alteração de código nesta entrega |
 
-**Próximo passo:** classificar os requisitos 1.1–1.43 do [[Fontes/Requisitos Sogov.pdf|TR completo]] e relacionar cobertura, tipo de evidência e dados necessários; mapear em detalhe os 38 CTs existentes de 1.24–1.25 na [[Matriz - Análise do preset provável]].
+**Próximo passo:** revisão final do Rafael sobre a recomendação do [[../01 Automação/01 - Plano de automação#DISC-004 — Síntese e recomendação (07/10/2026)\|DISC-004]] — só depois disso encerrar a SGV-12082 ou abrir a primeira entrega pequena.
 
-> [!warning] Escopo em análise
-> A Entrega 01 sobre a instância 225 fica preservada como histórico do piloto. A SGV-12082 investiga o estado real antes de decidir se o seed precisa ser refatorado, configurado ou apenas melhor documentado. Nenhuma execução do seed é autorizada por esta entrega.
+> [!warning] Escopo em análise — nenhuma execução/implementação feita
+> A Entrega 01 sobre a instância 225 fica preservada como histórico do piloto. A SGV-12082 investigou o estado real (projeto, 38 CTs, dados por eixo) e recomendou um caminho — portar os mecanismos de estado já confirmados em Cypress pro Playwright, na instância atual, em 5 entregas pequenas. Nenhuma execução do seed foi feita; nenhuma pasta/demanda de implementação foi criada.
 
 > [!tip]- Esforço e capacidade
 > ```dataviewjs

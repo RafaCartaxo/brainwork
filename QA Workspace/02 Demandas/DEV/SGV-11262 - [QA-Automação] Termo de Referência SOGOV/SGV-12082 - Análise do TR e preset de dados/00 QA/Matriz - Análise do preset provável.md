@@ -204,11 +204,42 @@ A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-03
 - O `changePublicAgentWorkStatus` realmente ainda funciona contra o ambiente atual (API pode ter mudado desde 01/10/2026, quando foi confirmado)? Não testado nesta rodada.
 - Rodar Cypress e Playwright ao mesmo tempo contra a mesma instância já aconteceu alguma vez, e com que resultado? Sem evidência encontrada.
 
-## Decisões ao concluir
+## DISC-004 — Comparação de alternativas e recomendação (07/10/2026)
 
-- **O que entra no preset:** apenas massa/estados necessários a requisitos que serão validados por automação; requisitos de infraestrutura ou operação devem apontar para evidência adequada.
-- **Forma recomendada do preset:** a preencher com comparação fundamentada (perfil/configuração, seed reconciliador, preparação específica por suíte ou combinação) — **DISC-004, ainda não iniciado**.
-- **Escopo mínimo inicial:** CTs, atores, entidades e estados que a matriz comprovar necessários.
-- **Diferenças por ambiente:** ver "Diferenças e lacunas por eixo" acima — endpoint/URLs por ambiente de implantação; instância sempre fixa por nome, sem seleção paramétrica, em ambos os frameworks.
-- **Riscos de isolamento e concorrência:** Cypress sobrescreve um único arquivo de manifesto (`cypress.env.set.json`) a cada run; Playwright isola por `runId`. Rodar os dois ao mesmo tempo contra o mesmo ambiente não tem proteção cruzada conhecida (a preencher com mais evidência, se necessário).
-- **Primeiras entregas sugeridas:** a preencher com escopo pequeno, dependências e aceite próprio — **DISC-004**.
+> [!info] Natureza desta seção
+> **Síntese/recomendação documental.** Nenhuma implementação, nenhuma execução, nenhuma pasta/demanda criada. Baseada só no que DISC-001–003 confirmaram — onde a base é fraca, digo isso explicitamente em vez de preencher com suposição.
+
+### Alternativas comparadas
+
+| Alternativa | O que seria | Prós | Contras / risco | Por que não é a recomendação agora |
+|---|---|---|---|---|
+| **A. Portar os mecanismos do Cypress pro Playwright, na instância fixa atual** | Trazer `changePublicAgentWorkStatus`/`WORK_STATUS` e o padrão `createIsolatedTestAgent` pra `src/api/services/users.ts`, sem mexer em seleção de instância | Reaproveita lógica **já confirmada** (não reinventa); escopo pequeno e isolado; não depende de resolver clienteId primeiro | Não avança a direção de "sanidade por cliente/instância" da iniciativa — fica só no alvo atual | — (**é a recomendação**, ver abaixo) |
+| **B. Construir seleção paramétrica de cliente/instância primeiro** | Criar um mecanismo de `clienteId`/instância configurável antes de portar qualquer CT de estado | Ataca direto o objetivo final da iniciativa | Maior, mais arriscado: nenhum framework tem isso hoje; esbarra na regra D4 (não criar instância em execução normal) se envolver instância nova; a própria Entrega 01 já tentou uma versão disso e ficou só como histórico, sem seed ajustado | Prematuro — o Roadmap já lista "sanidade por cliente/instância" como a **última** etapa (passo 6 de 6), não a primeira; fazer isso antes de ter qualquer CT de estado portado não tem CT nenhum pra validar a seleção contra |
+| **C. Não portar nada agora; só documentar e esperar** | Deixar Suítes 3/4 como estão, sem investir em porte | Zero risco de execução | Os 22 CTs ficam presos num branch não mesclado, cada vez mais desatualizados em relação ao `main` do Playwright | Desperdiça o achado mais barato desta análise (código já pronto, só precisa ser portado) |
+
+### Recomendação
+
+**Alternativa A** — portar os mecanismos de estado do Cypress pro Playwright, mantendo a instância fixa atual (sem seleção paramétrica ainda). Justificativa ligada aos achados:
+
+- DISC-002 confirmou que 22 dos 25 CTs pendentes já têm lógica real e específica (`changePublicAgentWorkStatus`, `createIsolatedTestAgent`) — não é preciso desenhar nada novo, só portar.
+- DISC-003 confirmou que nenhum framework resolve clienteId hoje — ou seja, resolver isso não é pré-requisito pra portar os CTs de estado; são preocupações independentes.
+- A regra D4 e a ausência de API de exclusão de instância (achados de sessões anteriores) tornam qualquer trabalho de seleção de instância nova/225 mais delicado e mais lento de validar — não é o caminho de menor risco pra começar.
+
+**Seleção segura da instância 225 fica como trilha separada, não bloqueante** — pode evoluir em paralelo (ex.: entender como apontar o seed pra ela com segurança), mas não precisa terminar antes da Alternativa A começar.
+
+### Entregas pequenas e sequenciadas (recomendadas, não abertas como pasta/demanda)
+
+| Ordem | Entrega candidata | Objetivo | CTs no escopo | Dependências | Aceite/evidência | Riscos |
+|---|---|---|---|---|---|---|
+| 1 | Portar bloqueio por tentativas (parcial) | Portar `createIsolatedTestAgent` + contagem de tentativas pro Playwright | CT-013, 014, 018, 019 | Nenhuma nova — só ler o Cypress já confirmado (`bdf5e9a`) | 4 CTs passando em Playwright contra o ambiente atual, evidência de execução real (não só leitura de código) | Baixo — mecanismo já confirmado, só port |
+| 2 | Resolver o achado do CT-015 antes de portar | Confirmar com produto se "conta bloqueada aceita login com senha correta" é bug ou comportamento esperado | CT-015 | Resposta de produto/dev | Decisão registrada; só depois disso portar o CT (a asserção depende da resposta) | Médio — pode revelar bug real de produto, fora do controle da automação |
+| 3 | Portar ciclo de vida "limpo" (sem achado em disputa) | Portar `changePublicAgentWorkStatus`/`WORK_STATUS` + os CTs de Licença/Férias/Ativo/Suspenso sem achado pendente | CT-020, 021, 022, 023, 024, 025, 026, 027, 028, 031, 035, 036 | Entrega 1 (reaproveita o padrão de agente isolado) | CTs passando em Playwright; e-mail de notificação (CT-026) confirmado via Gmail real | Baixo-médio — CT-026 depende de infra de e-mail, mais frágil que os outros |
+| 4 | Resolver achados do CT-033 (token) e CT-029/030 antes de portar | CT-033 já tem achado documentado no código (mecanismo de revogação não confirmado). **CT-032 e CT-034 dependem do mesmo agente/sequência do CT-033** (`agentAtivoInativo`, ordem CT-020→033→032→034 no arquivo) — não são portáveis isoladamente enquanto CT-033 estiver em disputa, por isso entram aqui também, não na entrega 3. **CT-029/030 têm discrepância entre fontes**: o código lido não registra achado nenhum (espelham CT-023/024 "limpos"), mas o placar histórico da SGV-11971 lista os três (015, 029, 030, 033) como "falha/achado" — não resolvi essa discrepância, fica registrada pro Rafael decidir qual fonte vale | CT-029, 030, 032, 033, 034 | Resposta de produto sobre CT-033; Rafael decidir a divergência de fonte do CT-029/030 | Decisão registrada antes de portar | Médio — risco de portar uma asserção errada se a fonte errada for seguida, ou de quebrar a sequência de agente compartilhado |
+| 5 | Trilha separada — seleção segura da instância 225 | Entender/desenhar como apontar o seed pra uma instância existente (225) com validação explícita do alvo, sem tocar no seed de verdade ainda | Nenhum CT — é infraestrutura de teste | DISC-001–003 (já concluído) | Proposta técnica revisada, sem execução | Baixo enquanto for só design; alto se pular pra execução sem validação do alvo |
+| — | **Fora do escopo, candidatos futuros, sem porte previsto** | CT-016, CT-017 (desbloqueio, mutation nunca capturada) e CT-037 (auditoria, endpoint nunca confirmado) — bloqueio de produto/backend, não de automação | CT-016, 017, 037 | Captura de API/endpoint pelo time de produto/backend | — | — |
+
+### O que esta recomendação não é
+
+- Não é uma decisão de implementar — é uma recomendação pro Rafael aprovar, ajustar ou rejeitar.
+- Não presume que a Alternativa A vai passar de primeira contra o ambiente atual — "já confirmado em Cypress" é evidência histórica, não garantia.
+- Não resolve a seleção de instância/clienteId de forma geral — só recomenda não deixar isso bloquear o que já está pronto pra portar.

@@ -89,6 +89,20 @@ Detalhe completo (mapa de reutilização, tabela por dado/estado, eixos, pressup
 
 Nenhum teste foi rodado, nenhuma configuração foi alterada nesta verificação.
 
+## DISC-004 — Síntese e recomendação (07/10/2026)
+
+Detalhe completo (comparação de alternativas, entregas sequenciadas com CTs/dependências/aceite/risco) vive na [[../00 QA/Matriz - Análise do preset provável#DISC-004 — Comparação de alternativas e recomendação (07/10/2026)|Matriz]]. Resumo:
+
+> [!info] Natureza desta seção
+> Só recomendação documental — nenhuma implementação, execução ou pasta/demanda criada. O Rafael decide se aprova, ajusta ou rejeita.
+
+- **Recomendação:** portar pro Playwright os mecanismos de estado que já existem confirmados em Cypress (`changePublicAgentWorkStatus`, `createIsolatedTestAgent`), mantendo a instância fixa atual — **não** começar pela seleção de cliente/instância (isso é a última etapa do Roadmap, não a primeira, e nenhum CT de estado existe ainda pra validar essa seleção contra).
+- **5 entregas candidatas, sequenciadas** (nenhuma aberta como pasta ainda): (1) portar bloqueio limpo — CT-013/014/018/019; (2) resolver com produto o achado do CT-015 antes de portá-lo; (3) portar ciclo de vida limpo — 12 CTs sem achado pendente; (4) resolver achados do CT-033 (+ CT-032/034, que dependem da mesma sequência de agente) e a discrepância de fonte do CT-029/030; (5) trilha **separada e não bloqueante** — desenhar seleção segura da instância 225.
+- **Fora de escopo, sem porte previsto:** CT-016, CT-017, CT-037 — bloqueio de produto/backend (endpoint/mutation nunca confirmados), não lacuna de automação.
+- **Achado de discrepância não resolvido, registrado para o Rafael decidir:** o código real de CT-029/030 não mostra nenhum achado (espelham CT-023/024, "limpos"), mas o placar histórico da SGV-11971 lista os dois junto com CT-015/033 como "falha/achado" — as duas fontes divergem e não escolhi uma sozinho.
+
+Quando este DISC-004 for revisado e aprovado, as entregas futuras nascem do template de demanda (pacote `00 QA/` + `01 Automação/`), uma de cada vez — regra já combinada, não alterada aqui.
+
 ---
 
 ## DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)

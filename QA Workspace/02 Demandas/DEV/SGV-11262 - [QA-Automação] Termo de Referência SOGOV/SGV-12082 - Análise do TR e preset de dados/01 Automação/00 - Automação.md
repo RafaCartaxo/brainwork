@@ -26,21 +26,22 @@ Esta entrega analisa o projeto de automação e o TR completo (itens 1.1–1.43)
 
 ## Próxima ação
 
-- Classificar os requisitos do PDF por cobertura e tipo de evidência; rastrear os 38 CTs atuais de 1.24–1.25 e localizar automação/dados para os demais requisitos.
+**DISC-001–004 concluídos (07/10/2026).** Aguardando revisão final do Rafael sobre a recomendação do [[01 - Plano de automação#DISC-004 — Síntese e recomendação (07/10/2026)|DISC-004]] antes de encerrar esta entrega ou abrir a primeira das 5 entregas pequenas recomendadas.
 
 ## Repositório e entrega
 
-- **Repositório:** `sogov-automation-playwright` (leitura; confirmar branch/commit da análise).
-- **Branch/MR:** não se aplica nesta entrega de investigação.
+- **Repositório:** `sogov-automation-playwright` (leitura). Commit analisado: `16c41e4` (HEAD, worktree detached). Código das Suítes 3/4 (22 CTs) está no commit `bdf5e9a`, branch `tr-1.24-1.25-suites-3-4-5`, checked out no worktree irmão `sogov-automation-test` — não mesclado.
+- **Branch/MR:** não se aplica nesta entrega de investigação — nenhum código foi escrito ou alterado.
 
 ## Pendências gerais
 
-- Confirmar os ambientes e a configuração disponíveis para inspeção sem revelar valores secretos.
-- Reconciliar framework e estado de cada CT que não esteja entre os 13 já identificados em Playwright.
+- Revisão final do Rafael sobre a recomendação do DISC-004.
+- Identidade real do alvo entre `.env` (Playwright) e `cypress.env*.json` (Cypress) não verificada — mesmo nome de instância, backend real não comparado.
 
 ## Checklist de encerramento
 
-- [ ] Mapa do projeto e da execução atual ligados a evidências.
-- [ ] A matriz cobre os CTs incluídos na demanda.
-- [ ] A recomendação técnica e as lacunas foram revisadas.
-- [ ] O placar desta entrega registra as verificações de análise, sem confundi-las com execução funcional.
+- [x] Mapa do projeto e da execução atual ligados a evidências (DISC-001).
+- [x] A matriz cobre os 38 CTs incluídos na demanda (DISC-002).
+- [x] Dados/preparação/eixos mapeados, lacunas registradas (DISC-003).
+- [x] A recomendação técnica e as lacunas foram documentadas (DISC-004) — falta só a revisão do Rafael.
+- [x] O placar desta entrega registra as verificações de análise, sem confundi-las com execução funcional.
