@@ -12,6 +12,9 @@ status: em levantamento
 >
 > **Fonte funcional:** [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste|38 CTs da SGV-11971]] · **Demanda:** [[01 - Demanda]] · **Plano:** [[02 - Plano de teste]] · **Roadmap:** [[../../Roadmap - Automação TR|Automação TR]]
 
+> [!tip] Esta nota é um índice (reorganizado em 08/10/2026)
+> O conteúdo detalhado das verificações DISC-001–004 foi movido pra notas próprias, pra manter esta página curta. Nenhum conteúdo, evidência ou achado foi alterado — só reorganizado. Ver "Análises detalhadas" abaixo.
+
 ## Como preencher
 
 - Use uma linha por CT quando as pré-condições ou dados diferirem; agrupe apenas quando ator, estado e preparação forem iguais.
@@ -27,225 +30,24 @@ status: em levantamento
 | Inferido | Interpretação provável que ainda precisa de validação |
 | A confirmar | Evidência ausente, ambiente inacessível ou comportamento não verificado |
 
-## Dois eixos que não podem virar um termo só
+## Visão rápida
 
-> [!important] Decisão de planejamento (Codex + Claude, 07/10/2026)
-> **"Ambiente" é genérico demais e não entra mais sozinho nesta matriz.** Dois eixos diferentes, com evidência de naturezas diferentes:
-> - **Ambiente de implantação** — dev/hml/prod: backend e URLs diferentes (`PW_BASE_URL`/`PW_GRAPHQL_URL`/`PW_AUTH_URL`). Hoje só há **um** configurado e usado de fato.
-> - **Cliente/instância/tenant** — ex.: a instância do baseline do seed, ou a instância 225 criada em 07/10/2026. Mesmo backend, tenant diferente (`x-tenant`/`instanceId`).
->
-> Reuso entre um e outro são afirmações **separadas**. Nesta rodada, registrar como **Confirmado** só o que foi observado rodando (há uma configuração de backend atual, usada pelos 13 CTs); capacidade de reproduzir em outro ambiente de implantação ou noutra instância/tenant fica **Inferida** até teste explícito — não executar nada pra "confirmar" isso agora.
+| Verificação | O que cobre | Situação | Onde está o detalhe |
+|---|---|---|---|
+| DISC-001 — Arquitetura | Auditoria do projeto Playwright (config, seed, manifesto, fixtures/pools), reconciliada contra o commit `16c41e4` | Concluído, 0 divergências contra o mapa existente | Seção própria em [[../01 Automação/01 - Plano de automação#DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)\|01 - Plano de automação]] |
+| DISC-002 — Cobertura do TR e dos 38 CTs | TR completo (1.1–1.43) classificado; 38/38 CTs rastreados (13 Playwright, 22 Cypress em branch não mesclado, 3 sem código) | Concluído | [[DISC-002 - Cobertura do TR e rastreabilidade dos CTs]] |
+| DISC-003 — Dados, preparação e eixos | Mapa de reuso por dado/estado; eixos ambiente×instância separados; pressupostos e perguntas em aberto | Concluído | [[DISC-003 - Dados, preparação e eixos]] |
+| DISC-004 — Alternativas e recomendação | Comparação de alternativas, recomendação e 6 entregas candidatas sequenciadas | Concluído — aguardando revisão final do Rafael | [[DISC-004 - Alternativas e recomendação]] |
+| Fluxo do preset | Diagrama Mermaid do fluxo atual (Playwright/Cypress) e da direção candidata | Novo (08/10/2026) | [[Fluxo - Preset de dados]] |
 
-## Matriz de cobertura do TR completo
+**Achado-resumo mais importante** (ver detalhe no DISC-003): Playwright e Cypress resolvem a instância pelo **mesmo nome fixo** (`"E2E Automatic Test"`), mas a **identidade real do alvo nunca foi comparada** entre os dois `.env`/`cypress.env*.json` — nome igual não é prova de instância real igual. Nenhum dos dois frameworks tem hoje parâmetro de `clienteId`/instância alternativa.
 
-Esta visão cobre os requisitos do PDF (1.1–1.43). As linhas agrupam requisitos correlatos para orientar a investigação; subitens específicos devem ser desmembrados quando tiverem cobertura, dados ou evidências diferentes. **Os 38 CTs atuais cobrem os itens 1.24–1.25 apenas.**
+**Recomendação em uma frase** (ver detalhe no DISC-004): portar pro Playwright os mecanismos de estado já confirmados em Cypress (`changePublicAgentWorkStatus`, `createIsolatedTestAgent`), mantendo a instância fixa atual, em 6 entregas pequenas e sequenciadas; seleção segura da instância 225 fica como trilha separada e posterior, não bloqueante.
 
-> [!success] Verificação contra o PDF de origem (07/10/2026)
-> **Fonte:** `Downloads/SGV-12082/Requisitos Sogov.pdf` (20 páginas, itens 1.1 a 1.43 — é mais completo que o PDF usado em 31/08/2026 pra conferir o ciclo 1.24-1.25, que ia só até o item 1.26). Lido por inteiro e conferido item a item contra a tabela abaixo: os intervalos descritos em cada linha (1.1–1.23, 1.26 a 1.43) batem com o conteúdo real do PDF — nenhuma linha precisou ser corrigida na descrição de escopo.
->
-> **Confirmado, palavra por palavra**: os itens 1.24, 1.25 (incluindo 1.25.1 a 1.25.3.4), 1.27.10.1 e 1.27.11.2/1.27.11.4 batem exatamente com o texto citado em C1–C16 do [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda|01 - Demanda da SGV-11971]] — a checagem de 31/08 se confirma também nesta versão mais completa do documento.
->
-> **✅ Discrepância resolvida — níveis de permissão (CT-020), confirmado pelo Rafael em 07/10/2026:** o item **1.27.2** do PDF lista os nomes de rascunho (`Administrador`, `Administrador setorial`, `Assistente administrativo`, `Auxiliar administrativo`, `Visualizador`), mas o produto real usa **`Administrador`, `Administrador setorial`, `Especialista`, `Usuário básico`, `Somente leitura`** — os 2 níveis administrativos de topo mantiveram o nome do Termo; os 3 operacionais de baixo foram renomeados no produto (Assistente administrativo → Especialista, Auxiliar administrativo → Usuário básico, Visualizador → Somente leitura). São **5 níveis**, não 3 — a decisão anterior da SGV-11971 ("Especialista/Usuário básico/Somente leitura, confirmado em 4 fontes") capturou só os 3 operacionais, sem registrar os 2 administrativos de topo. Vale atualizar o `01 - Demanda` da SGV-11971 (CT-020) pra refletir os 5 nomes completos.
+## Análises detalhadas
 
-| Itens do TR | Área/requisito | Automação/evidência atual a localizar | Massa/preset a investigar | Situação |
-|---|---|---|---|---|
-| 1.1–1.23 | Infraestrutura, hospedagem, disponibilidade, banco de dados, rede, e-mail, segredos, segurança, armazenamento, filas, criptografia e monitoramento | Requisitos predominantemente técnicos/operacionais; confirmar se há testes no projeto e qual evidência os valida | Não presumir preset de dados; mapear dependências ambientais e evidência exigida | A confirmar |
-| 1.24–1.25 | Autenticação e ciclo de vida da identidade funcional | 38 CTs existentes na SGV-11971; 13 localizados em Playwright (CT-001–012, CT-038); estado dos demais deve ser reconciliado | Seed global, fixtures/pools e credenciais do ambiente; detalhes no mapa atual do seed | Parcialmente conhecido; portabilidade entre ambientes não demonstrada |
-| 1.26 | Organograma, setores/subsetores, suspensão, hierarquia e permissões de setor | Localizar cobertura existente; não assumir que os CTs de 1.24–1.25 cobrem este requisito | Seed declara setores/subsetores; dependência por teste e estado de execução a mapear | A confirmar |
-| 1.27 | Cadastro de servidores, 5 níveis (nomes do produto, confirmado pelo Rafael: Administrador, Administrador setorial, Especialista, Usuário básico, Somente leitura — item 1.27.2 do PDF tinha nomes de rascunho pros 3 operacionais, ver achado acima), permissões extras, convites, listagem e ciclo de vida | Localizar testes e separar atores/papéis necessários pelos 5 níveis reais | Seed declara muitos servidores e perfis; relação com testes/TR a mapear | Requisito e nomenclatura confirmados; automação/massa por nível segue a confirmar |
-| 1.28 | Gerenciamento de serviços/assuntos e campos configuráveis | Localizar testes que criam ou consomem serviços/assuntos | Seed declara serviços; dependências, configuração por ambiente e reuso a mapear | A confirmar |
-| 1.29 | Categorias de documentos e módulos, formulários e zoneamento | Localizar suítes e dados dependentes por categoria | Seed declara módulos; determinar subconjunto realmente consumido | A confirmar |
-| 1.30 | Fluxos de trabalho e etapas | Localizar testes e estados de workflow exigidos | Seed declara três workflows; mapear correspondência, estabilidade e reset | A confirmar |
-| 1.31 | Modelos simples e automatizados de documentos | Localizar testes, modelos e documentos próprios do teste | Mapa atual aponta que o seed não fornece massa-base de documentos para os CTs de autenticação; demais suítes a investigar | A confirmar |
-| 1.32 | Cadastro de contatos externos e notificação por e-mail | Localizar testes, identidade externa e requisitos de caixa de e-mail | Seed declara cidadãos; mapear contatos, e-mail e limitações de ambiente | A confirmar |
-| 1.33 | Mesa de trabalho, filas, visões, alertas e busca | Localizar testes e massa de documentos/atribuições | Mapear dependências de setores, documentos, estados, datas e usuários | A confirmar |
-| 1.34 | Etiquetas e aplicação/compartilhamento por setor | Localizar testes e relações com documentos/setores | A verificar no seed e nos dados criados pelos testes | A confirmar |
-| 1.35 | Tramitação, histórico e estados de documentos/processos | Localizar testes, transições, prazos e limpeza | Mapear documentos, workflows, setores e atores; verificar isolamento e reset | A confirmar |
-| 1.36–1.37 | Central de atendimento e acompanhamento por usuários externos | Localizar fluxos externos e identidades PF/PJ | Seed declara cidadãos; mapear cadastro, solicitações e massa entre ambientes | A confirmar |
-| 1.38 | Divulgação/publicação de documentos (jornal/transparência) | Localizar testes, permissões, estado de publicação e documentos | A verificar no seed e nos dados próprios de cada teste | A confirmar |
-| 1.39 | Exportação e impressão de documentos/processos | Localizar formatos, tamanho e dados documentais exigidos | Mapear documentos/árvore processual e dependências de armazenamento | A confirmar |
-| 1.40 | Assinaturas eletrônicas/digitais e solicitações | Localizar atores, tipos, ordem e estado de assinatura | Seed lista perfis relacionados a assinatura; confirmar consumo, configuração e dependências externas | A confirmar |
-| 1.41 | Chaves de acesso e criação delegada | Localizar permissões, limites, documentos e ciclo de vida da chave | Seed declara módulo accessKey e servidor dedicado; confirmar cobertura e massa exigida | A confirmar |
-| 1.42 | Personalização e identidade visual do órgão | Localizar testes e dados de configuração do cliente | Provável configuração da instância; validar se automatizável e se pertence ao preset | A confirmar |
-| 1.43 | Estatísticas de uso, setores, documentos, servidores e recursos | Localizar testes e massa agregada necessária aos cálculos | Mapear volume, variedade e consistência dos dados; avaliar se seed é apropriado | A confirmar |
-
-## Detalhamento dos 38 CTs de 1.24–1.25
-
-A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-038, cruzar cenário/pré-condição com código Playwright/Cypress ou execução manual, identificando ator, identificador, status inicial, preparação, mutação/limpeza, credenciais/configuração e evidência. O estado prévio dos CTs deve ser revalidado; não inferir resultado atual a partir do placar histórico.
-
-**Sequenciamento decidido em 07/10/2026 (Codex + Rafael):** priorizar rastreabilidade profunda dos **13 CTs já em Playwright** (único recorte com execução **Playwright atual, reconciliada nesta análise**) antes de decompor os **25 restantes** das Suítes 3/4 (CT-013 a CT-037 — 037-013+1 = 25, não 24; correção de 07/10/2026 após revisão do Codex). **Correção de redação** (07/10/2026, após o DISC-002 encontrar os 22 CTs em Cypress no commit `bdf5e9a`): "único recorte com execução real" não é mais preciso — existem relatos históricos de execução verde em Cypress pra 22 desses 25, só que não revalidados nesta rodada e num branch não mesclado. A frase original falava só do estado conhecido até aquele ponto da investigação (antes do DISC-002 ler o código das Suítes 3/4). Isso reordena o trabalho — **não remove** CT-013–037 do critério de saída do DISC-002.
-
-### Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)
-
-> [!warning] Evidência não é uniforme entre os 13 — corrigido após revisão do Codex (07/10/2026)
-> **CT-001–012** (`login.spec.ts`, `credentials.spec.ts`) estão commitados em `origin/main` — reconciliados contra o commit `16c41e4` (mesmo commit do DISC-001).
-> **CT-038** (`audit-sessions.spec.ts`) é diferente: o arquivo está **untracked no worktree**, não faz parte do commit `16c41e4` nem de nenhum commit. A evidência dele é a execução manual confirmada contra o estado atual (não commitado) do worktree — não "contra o commit 16c41e4". Mantido nos 13/38 porque o teste existe e passa, mas a rastreabilidade de código dele é mais frágil (pode ser perdido se o worktree for descartado antes de commitar).
->
-> Contra a tabela equivalente do [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] — sem divergência, para os 13.
-
-**Pré-condições e dependências comuns aos 13** (Confirmado, não repetido linha a linha):
-- Projeto `seed` do Playwright já rodou (`dependencies: ['seed']` no `playwright.config.ts`) e gravou `seed-manifest.json`.
-- Fixture `seed` troca os atores padrão (`agents.agent`, `citizens.citizen`) pelo slot do worker (`pool.ts`/`parallelIndex`) — identidade real variável por worker, nunca `Servidor Publico 01`/`Cidadão 01` fixos.
-- `instanceId` sempre vem de `seed.instance.id` (resolvido pelo seed), nunca de env var — não existe parametrização de cliente/instância hoje.
-- **Cliente/instância:** a do baseline reconciliado pelo seed — Confirmado. **Ambiente de implantação:** o backend atual de `PW_BASE_URL`/`PW_GRAPHQL_URL`/`PW_AUTH_URL` — Confirmado. Reuso em outro ambiente de implantação ou outra instância/tenant (ex. 225) — Inferido, sem teste.
-- Nenhum dos 13 muda estado de conta (bloqueio, status, cadastro novo) como resultado esperado — todos são leitura/validação de credencial.
-
-| CT | Rótulo/arquivo | Pré-condição específica | Dados/configuração consumidos | Mutação/limpeza | Lacuna ou observação |
-|---|---|---|---|---|---|
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01` / `tests/api/auth/login.spec.ts` | Servidor do pool existe e está ativo | CPF do servidor (`seed.agents.agent.cpf`), `env.agentPass` | Nenhuma | — |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | `A02-C02` / `login.spec.ts` | Mesma identidade de CT-001, testada no login de cidadão | CPF do servidor (emprestado), `env.agentPass` | Nenhuma | Baseline **não tem cidadão PF puro** — usa o CPF do próprio servidor. Lacuna de massa, não de teste |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | `A02-C03` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão (`seed.citizens.citizen.cnpj`), `env.citizenPass` | Nenhuma | Username PJ só é aceito em formato RAW (só dígitos) — achado da origem Cypress, preservado no Playwright |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-004\|CT-004]] | `A02-C04` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão, `env.citizenPass`, login tipo `public-agent` | Nenhuma (espera rejeição) | Prova segregação de contexto servidor×cidadão |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-005\|CT-005]] | `A02-C05` / `login.spec.ts` | Igual a CT-002 | Igual a CT-002 | Nenhuma | Redundante com CT-002 por design — mesmo mecanismo, reafirma CPF nunca vira contexto Empresa |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-006\|CT-006]] | `A02-C06` / `login.spec.ts` | Nenhuma (identificador gerado no teste) | CPF inválido fixo (`'12345678900'`), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed — é um literal no spec |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-007\|CT-007]] | `A02-C07` / `login.spec.ts` | Nenhuma | CNPJ inválido fixo (`'12345678000100'`), `env.citizenPass` | Nenhuma (espera rejeição) | Idem CT-006, literal no spec |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-008\|CT-008]] | `A02-C08` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão já existente, via `makeCitizenPJAutoRegistration` | Nenhuma (espera rejeição do `signup`) | Testa duplicidade, não cria conta nova |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-009\|CT-009]] | `A02-C09` / `login.spec.ts` | Igual a CT-002/005 | Igual a CT-002/005 | Nenhuma | Mesma identidade emprestada — 3º caso com o mesmo mecanismo (CT-002, CT-005, CT-009) |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-010\|CT-010]] | `A01-C01` / `tests/api/auth/credentials.spec.ts` | Servidor do pool existe | CPF do servidor, senha deliberadamente errada (literal no spec) | Nenhuma (espera rejeição) | — |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-011\|CT-011]] | `A01-C02` / `credentials.spec.ts` | Nenhuma | CPF gerado (`generateCPF()`, inexistente), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-012\|CT-012]] | `A01-C03` / `credentials.spec.ts` | Nenhuma | Campos vazios (`''`) | Nenhuma (espera rejeição) | É chamada de API pura — não verifica se a **UI** impede o envio com campo vazio. Se o requisito exigir isso, falta cobertura de tela |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-038\|CT-038]] | `A55-C01` / `tests/api/auth/audit-sessions.spec.ts` | Servidor do pool existe | Credenciais do servidor, 2 sessões API abertas no mesmo teste | Nenhuma (2 sessões ficam abertas até o teste encerrar, sem revogação explícita) | Spec ainda **não commitado** no repo (worktree em HEAD destacado) |
-
-> Agrupamento aplicado só onde ator, estado e preparação são idênticos (CT-002/005/009) — mantidos em linhas separadas porque cada um tem critério de aceite próprio (C2–C5), só a coluna de pré-condição aponta a equivalência.
-
-### CT-013 a CT-037 (exceto CT-038) — decomposto em 07/10/2026
-
-> [!warning] Achado que muda a leitura do placar histórico — corrigindo o rótulo "cypress (legado)"
-> O placar arquivado (`02 - Validação automação` do Arquivo) marca a maioria destes CTs como `cypress (legado)` com a nota genérica "código legado". Fui conferir o código real antes de propagar isso e **o rótulo esconde um detalhe que muda a avaliação**: o código **não está no commit atual** (`16c41e4`, HEAD do worktree `sogov-automation-playwright`, onde todo o resto desta investigação foi reconciliado). Ele existe no commit **`bdf5e9a`**, branch **`tr-1.24-1.25-suites-3-4-5`**, que hoje está **checked out no worktree irmão** `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-test` — não foi enviado ao remoto ("NÃO vai para o remoto: o alvo do port passou a ser Playwright", mensagem do commit). Ou seja: é código real, legível, mas num branch não mesclado — mais frágil que "legado" sugere. **Sobre rodar em CI, com precisão** (`.gitlab-ci.yml` do `sogov-automation-test`): o job `e2e-tests` dispara automaticamente só em push pra `main`, mas as `rules` também aceitam `$CI_PIPELINE_SOURCE == "trigger"` (API) ou `"web"` (disparo manual pela interface) em **qualquer branch** — não é tecnicamente impossível rodar esta branch em CI, só não roda **automaticamente**. Não verifiquei se algum pipeline manual/API já rodou contra ela.
->
-> **Confirmei lendo os 2 arquivos de teste reais** (`git show bdf5e9a:cypress/testes/api/entities/auth/{lockout,identity-lifecycle}.api.cy.js`) — não presumi a partir do placar. Resultado: **22 dos 25 CTs têm teste Cypress real e completo** (CT-013,014,015,018,019 — Suíte 3; CT-020 a CT-036 inteira — Suíte 4). **3 não têm código em lugar nenhum**: CT-016, CT-017 (desbloqueio — mutation nunca capturada) e CT-037 (auditoria — endpoint nunca confirmado).
->
-> **Execução:** os comentários do próprio código afirmam "confirmado rodando contra HML" em vários pontos (e o commit diz "13 CTs verdes"), mas isso é uma **alegação do código antigo, não uma execução validada nesta rodada** — não rodei nada (fora do escopo desta entrega). Estado: **Confirmado** que o código existe e é coerente com o requisito; **Inferido** que passaria se rodado hoje (ambiente pode ter mudado desde 01/10/2026).
-
-**Pré-condições e dependências comuns aos 22 com código** (Confirmado, não repetido linha a linha):
-- Cada cenário usa um **servidor de teste isolado** (`createIsolatedTestAgent`), nunca o agente global — mudar status/bloquear o agente global quebraria os ~127 testes que o reusam.
-- Login sempre via `loginAgentExpectFailure` (primitiva sem `cy.session`) — mesmo nos casos de sucesso esperado, porque `cy.session` cachearia por CPF e mascararia uma segunda tentativa real no mesmo teste.
-- Mutação de status usa `changePublicAgentWorkStatus` (confirmada via captura de API, não introspection — GraphQL introspection está desabilitada em HML) + enum `WORK_STATUS` (`IN_ACTIVITY`/`LICENSE`/`VACATION`/`SUSPEND` — Inativo e Suspenso são o mesmo `SUSPEND`).
-- **Cliente/instância:** `Cypress.env("INSTANCE_ID")` — mesma instância de todo o resto da suíte Cypress, não parametrizada por teste. **Ambiente de implantação:** o que `cypress.env.json`/CI apontarem — não lido nesta rodada (fora do escopo, só leitura de teste).
-
-#### Suíte 3 — Bloqueio por tentativas (CT-013 a CT-019)
-
-| CT | Pré-condição específica | Dados/configuração | Mutação/limpeza | Lacuna ou observação |
-|---|---|---|---|---|
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-013\|CT-013]] | Agente isolado novo, senha correta conhecida | 4 tentativas erradas + 1ª que bloqueia (`attemptFailedLogins`, N=4 + 1) | Conta fica bloqueada ao fim do teste (não revertida) | Assinatura exata do erro na 5ª tentativa: `system.messages.account-blocked` |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-014\|CT-014]] | Agente isolado novo (diferente do CT-013) | 4 tentativas erradas, depois 1 correta | Nenhuma mutação de status — só confirma que não bloqueou | — |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-015\|CT-015]] | **Reaproveita a conta já bloqueada pelo CT-013** — depende de CT-013 ter rodado antes no mesmo arquivo | Mesma conta do CT-013, senha correta desta vez | Nenhuma | **Achado real em disputa, já documentado no código**: rodando contra HML, login com senha CORRETA numa conta bloqueada autenticou normalmente (200) — contradiz a regra esperada. O comentário do teste é explícito: "não é bug do teste — é uma discrepância real entre o Termo e o comportamento do backend" |
-| CT-016 | — | — | — | **Sem código.** Desbloqueio por link de e-mail — mutation nunca capturada (dependia de HAR que não chegou) |
-| CT-017 | — | — | — | **Sem código.** Desbloqueio manual por outro servidor — mesma causa de CT-016 |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-018\|CT-018]] | Agente isolado novo | 3 tentativas erradas → 1 correta → mais 3 erradas → 1 correta | Nenhuma (prova reset do contador, duas vezes) | — |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-019\|CT-019]] | 2 agentes isolados novos (A e B) | A leva ao bloqueio (4+1 erradas); B tenta com senha certa | Conta A fica bloqueada; conta B intacta | Prova isolamento entre contas — mesma assinatura de erro do CT-013 |
-
-#### Suíte 4 — Ciclo de vida da identidade (CT-020 a CT-036)
-
-5 agentes fixos (CPF fixo, reaproveitados entre rodadas — diferente da Suíte 3): `agentAtivoInativo` (CT-020/032/033/034), `agentLicenca` (CT-021/022/023/024/025/026), `agentFerias` (CT-027/028/029/030/031), `agentSuspenso` (CT-035), `agentTransitions` (CT-036).
-
-| CT | Pré-condição específica | Dados/configuração | Mutação/limpeza | Lacuna ou observação |
-|---|---|---|---|---|
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-020\|CT-020]] | `agentAtivoInativo` setado pra `IN_ACTIVITY` | Login + leitura do próprio perfil (`userInstanceInfo`) | `setWorkStatus(IN_ACTIVITY)` | Testa acesso "irrestrito" só por consulta de perfil — não varre todos os 5 níveis de permissão (achado relevante pro gap de nível "Somente leitura" já registrado) |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-033\|CT-033]] | Mesmo agente, token obtido **antes** da mudança | Token antigo + `setWorkStatus(SUSPEND)` no meio do teste | Agente fica Inativo (setup do CT-032) | **Achado real documentado no código**: mecanismo de revogação (polling vs. invalidação de token) não confirmado — teste só observa o efeito esperado, "se falhar não é bug do teste" |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-032\|CT-032]] | Depende do CT-033 já ter deixado o agente Inativo | Login com credenciais corretas | Nenhuma | Ordem de execução importa — não é independente dos outros `it()` do arquivo |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-034\|CT-034]] | Mesmo agente, reversão pra Ativo | `setWorkStatus(IN_ACTIVITY)`, espera 3s, login | Devolve o agente a Ativo | **Achado sem causa raiz**: login continuou recusando por alguns segundos após a reversão — atraso de propagação não explicado |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-035\|CT-035]] | Agente fixo próprio (`agentSuspenso`) | `setWorkStatus(SUSPEND)` → login → reverte pra `IN_ACTIVITY` no fim | Reversão obrigatória no mesmo teste (agente é reaproveitado entre rodadas) | Confirma que "Suspenso" usa o mesmo enum técnico de "Inativo" — não existe valor separado |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-025\|CT-025]] | `agentLicenca`, token obtido antes da mudança | `setWorkStatus(LICENSE)` + tentativa de edição com token antigo | Agente fica em Licença (setup pros CT-021/022/023/024) | Mesmo padrão de achado do CT-033 (ação de escrita com token antigo) |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-021\|CT-021]] | Depende do CT-025 (agente já em Licença) | Login com credenciais corretas | Nenhuma | Confirma login permitido em Licença (diferente de Inativo) |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-022\|CT-022]] | Depende do CT-025 | Consulta `workStatus` via `getPublicAgents` por nome | Nenhuma | **Achado sem causa raiz, documentado no código**: a busca por nome às vezes não encontra o agente recém-criado, mesmo existindo (login funciona nos testes vizinhos) — instabilidade de busca, não de dado |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-023\|CT-023]] | Depende do CT-025 | Tentativa de `editPublicAgent` com token próprio | Nenhuma | Confirma bloqueio de escrita em Licença |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-024\|CT-024]] | Depende do CT-025 | `userInstanceInfo` (leitura do próprio perfil) | Nenhuma | Confirma zero visibilidade em Licença — decisão de produto de 18/08 (sem leitura mínima) |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-026\|CT-026]] | `agentLicenca`, `statusEnd` no passado | `setWorkStatus` com `statusStart`/`statusEnd` retroativos | Verifica e-mail de notificação (`waitForGmailMessage`) + reversão automática | Único CT da suíte que depende de caixa de e-mail real; confirma o requisito 1.27.11.4 de notificação |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-027\|CT-027]] | `agentFerias` | `setWorkStatus(VACATION)` + login | Agente fica em Férias (setup pros CT-028/029/030) | Espelha CT-021 pra Férias |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-028\|CT-028]] | Depende do CT-027 | `workStatus` via `getPublicAgents` | Nenhuma | Espelha CT-022 |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-029\|CT-029]] | Depende do CT-027 | `editPublicAgent` com token próprio | Nenhuma | Espelha CT-023 |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-030\|CT-030]] | Depende do CT-027 | `userInstanceInfo` | Nenhuma | Espelha CT-024 |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-031\|CT-031]] | `agentFerias`, `statusEnd` no passado (15 dias) | `setWorkStatus` retroativo | Reversão automática esperada | Espelha CT-026, sem a parte de e-mail |
-| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-036\|CT-036]] | `agentTransitions`, agente dedicado só pra este CT | 3 mutações de status em sequência (Licença→Inativo→Ativo), checando login a cada etapa | Termina em Ativo | Único CT que testa transição múltipla no mesmo teste; mesma nota de atraso de propagação do CT-034 |
-
-#### CT-037 (Suíte 5, restante)
-
-| CT | Situação |
-|---|---|
-| CT-037 | **Sem código em nenhum framework.** Log de auditoria de tentativas de login — endpoint nunca confirmado (mesma limitação de CT-016/017: sem captura real de API, não dá pra codar sem inventar endpoint) |
-
-> Fonte de todo este bloco: `git show bdf5e9a:cypress/testes/api/entities/auth/{lockout,identity-lifecycle}.api.cy.js`, lido por inteiro em 07/10/2026. Nenhum teste foi executado; nenhum arquivo foi alterado.
-
-## DISC-003 — Dados, preparação e diferenças por eixo (07/10/2026)
-
-> [!info] Escopo e método
-> Cruzei os 3 mecanismos do DISC-002 (Playwright atual, Cypress no branch `bdf5e9a`, sem código) contra seed/fixtures, configuração disponível, seleção de cliente/instância, credenciais, preparação/reset e dependência externa (Gmail). Lido: `playwright/config/env.ts`, `.env.example`; `cypress/support/e2e.js` (709 linhas, só os trechos de resolução de instância/setores/módulos); nomes de chave (não valores) de `cypress.env.json`, `cypress.env.set.json`, `cypress.env.set.dev.json`. **Nenhum segredo foi copiado** — só nomes de variável, por regra desta matriz. Nenhum teste rodado, nenhuma config alterada.
-
-### Mapa do que é reutilizável hoje
-
-| Dado/estado candidato | CTs que justificam | Preparação existente (Confirmado) | Reuso entre ambientes/instâncias | Evidência/pendência |
-|---|---|---|---|---|
-| Instância-alvo | Todos os 38 | **Os dois frameworks usam o mesmo nome fixo** `"E2E Automatic Test"` — Playwright via `BASELINE.instance.name` + `getInstanceOrCreate`; Cypress via `instanceName` hardcoded em `cypress/support/e2e.js:78` + mesma função. **Confirmado: mesmo nome nos dois códigos. Não confirmado: identidade real do alvo** — se os dois `.env`/`cypress.env*.json` apontam pro mesmo backend/registro, ou só coincidem no nome, não foi verificado (exigiria comparar valores de configuração, fora do escopo desta leitura) | **Nenhum dos dois frameworks tem parâmetro de `clienteId`/instância alternativa hoje** — achado chave, não presumido: procurei explicitamente por isso e não existe em nenhum dos dois | A confirmar: identidade real do alvo entre os dois configs; e o que aconteceria se os dois rodassem ao mesmo tempo contra o mesmo backend (concorrência entre frameworks, não só entre workers) |
-| Setores/módulos/serviços/workflows | CT-020–036 (via setup) + resto do seed (fora do escopo do TR) | Ambos os frameworks usam `getXOrCreate` idempotente, por nome — Playwright em `src/api/services/*.ts`, Cypress nos commands equivalentes (`organizational.api.command.js`, etc., tocados no mesmo commit `bdf5e9a`) | Mesmo padrão nos dois frameworks (reconciliação por identidade natural, não por ID fixo) | — |
-| Atores de servidor (CT-001-012/038, Suítes 3/4) | Playwright: pool por worker (CPF/senha de `env.agentPass`). Cypress: `createIsolatedTestAgent` por cenário (CPF/senha geradas ou fixas por código) | **Playwright não cria agente isolado por cenário** — só reusa o pool padrão do worker (não se aplica a bloqueio/status). **Cypress cria um agente dedicado por CT/cenário** (`createIsolatedTestAgent`) e, na Suíte 4, usa CPF **fixo** (reaproveitado entre rodadas) em vez de gerado | A confirmar — Playwright nunca implementou o equivalente de "agente isolado" porque os 13 CTs atuais não precisam | Se a Suíte 4 for portada, decidir se o padrão "CPF fixo reaproveitado" do Cypress é reaproveitado ou se vira sempre-novo (como o resto do Playwright prefere) |
-| Estados de conta (bloqueio, licença, férias, inativo/suspenso) | CT-013-015,018-019 (bloqueio) e CT-020-036 (status) | **Confirmado, só no Cypress**: `cy.changePublicAgentWorkStatus` + `WORK_STATUS` enum (mutation real, capturada por request/response). **Não existe no Playwright** — `src/api/services/users.ts` não tem essa mutation portada | Mutation é a mesma API em ambos os casos (GraphQL do backend, não muda por framework) — só falta portar o client-side | Portar `changePublicAgentWorkStatus`/`WORK_STATUS` pro Playwright é a peça técnica que destrava qualquer preset pra Suíte 4 |
-| Credenciais (senha por papel) | Todos | **Mesmo padrão nos dois**: senha única por papel via variável de ambiente — Playwright: `PW_AGENT_PASSWORD`/`PW_CITIZEN_PASSWORD`; Cypress: `AGENT_PASSWORD`/`CITIZEN_PASSWORD` (chave sem prefixo) | Mesmo padrão, nomenclatura de variável diferente | A confirmar se os valores são os mesmos entre os dois `.env` — não comparei valores (são segredo) |
-| Dependência externa — Gmail (confirmação de cadastro/notificação) | CT-008 (signup), CT-026 (e-mail de fim de Licença), criação de cidadão/servidor em geral | **Mesmo padrão nos dois**: polling IMAP — Playwright: `PW_GMAIL_USER`/`PW_GMAIL_APP_PASSWORD`; Cypress: `GMAIL_USER`/`GMAIL_APP_PASSWORD` + `cy.task('waitForGmailMessage'/'deleteGmailMessage')` | Mesmo papel, implementação separada por framework | A confirmar se é a mesma caixa de e-mail nos dois `.env` (não comparei valores) |
-| Preparação/reset — mecanismo de manifesto | — | **Mesmo padrão nos dois, implementações diferentes**: Playwright grava manifesto por execução em `.runtime/<runId>/seed-manifest.json` (schema versionado, `SEED_SCHEMA_VERSION=12`). Cypress regrava **um único arquivo fixo** `cypress.env.set.json` toda vez que `cypress/support/e2e.js` roda (`cy.writeFile`, limpa e reescreve) | Playwright isola por run (`runId`); Cypress sobrescreve sempre o mesmo arquivo — rodar Cypress e Playwright em paralelo contra o mesmo ambiente não tem proteção cruzada conhecida | A confirmar: nunca testado rodar os dois frameworks ao mesmo tempo |
-
-### Diferenças e lacunas por eixo
-
-> **Ambiente de implantação** (dev/hml/prod, backend/URLs) vs. **cliente/instância/tenant** (ex.: instância 225) — eixos sempre separados, por decisão já registrada no Plano.
-
-- **Ambiente de implantação**: só **um** configurado de fato hoje (o que `PW_BASE_URL`/`PW_GRAPHQL_URL`/`PW_AUTH_URL` e o `cypress.env*.json` ativo apontam). Não há evidência, nesta análise, de execução confirmada contra um segundo ambiente de implantação. Playwright e Cypress usam **nomes de variável diferentes** pro mesmo papel (prefixo `PW_` vs. sem prefixo) — isso por si só não é um problema, mas significa que apontar os dois frameworks pro mesmo ambiente novo exige configurar duas vezes.
-- **Cliente/instância/tenant**: ambos os frameworks resolvem **sempre pelo mesmo nome de instância fixo** — não existe hoje nenhum parâmetro (env var, CLI, config) que troque qual instância é usada. **A identidade real do alvo entre os dois configs não foi verificada** (não comparei valores). A instância 225 (criada em 07/10) não é selecionada por nenhum dos dois ainda.
-- **Lacuna mais concreta pro preset**: a mutation de status (`changePublicAgentWorkStatus`) e o padrão de agente isolado por cenário existem **só no Cypress**. Enquanto não forem portados, qualquer preset de "estado de conta" pra Playwright teria que reimplementar essa mutation do zero (ela já está confirmada/testada, só não portada).
-
-### Pressupostos para sanidade reproduzível
-
-- Pressupõe que a instância-alvo **já existe e está provisionada** (nenhum dos dois frameworks testa criação de instância nova em execução normal — regra D4, documentada em `planning/13-REVISAO-E-ONDAS-DREAM.md`).
-- Pressupõe que rodar **um** framework por vez contra um ambiente — não há evidência (nem teste) de comportamento com os dois simultâneos.
-- Pressupõe que `enable_system_commands`/mutações de estado tocam uma instância compartilhada — qualquer preset de estado de conta precisa de isolamento por ator (como o Cypress já faz com agente isolado), não do agente global.
-
-### Perguntas que ainda precisam de evidência
-
-- Os valores reais de `.env` do Playwright e `cypress.env*.json` do Cypress apontam pro **mesmo** ambiente/instância hoje, ou são ambientes diferentes por coincidência de nome igual ("E2E Automatic Test" pode existir em mais de um backend)? Não comparei valores (são segredo) — só os nomes das chaves.
-- O `changePublicAgentWorkStatus` realmente ainda funciona contra o ambiente atual (API pode ter mudado desde 01/10/2026, quando foi confirmado)? Não testado nesta rodada.
-- Rodar Cypress e Playwright ao mesmo tempo contra a mesma instância já aconteceu alguma vez, e com que resultado? Sem evidência encontrada.
-
-## DISC-004 — Comparação de alternativas e recomendação (07/10/2026)
-
-> [!info] Natureza desta seção
-> **Síntese/recomendação documental.** Nenhuma implementação, nenhuma execução, nenhuma pasta/demanda criada. Baseada só no que DISC-001–003 confirmaram — onde a base é fraca, digo isso explicitamente em vez de preencher com suposição.
-
-### Alternativas comparadas
-
-| Alternativa | O que seria | Prós | Contras / risco | Por que não é a recomendação agora |
-|---|---|---|---|---|
-| **A. Portar os mecanismos do Cypress pro Playwright, na instância fixa atual** | Trazer `changePublicAgentWorkStatus`/`WORK_STATUS` e o padrão `createIsolatedTestAgent` pra `src/api/services/users.ts`, sem mexer em seleção de instância | Reaproveita lógica **já confirmada** (não reinventa); escopo pequeno e isolado; não depende de resolver clienteId primeiro | Não avança a direção de "sanidade por cliente/instância" da iniciativa — fica só no alvo atual | — (**é a recomendação**, ver abaixo) |
-| **B. Construir seleção paramétrica de cliente/instância primeiro** | Criar um mecanismo de `clienteId`/instância configurável antes de portar qualquer CT de estado | Ataca direto o objetivo final da iniciativa | Maior, mais arriscado: nenhum framework tem isso hoje; esbarra na regra D4 (não criar instância em execução normal) se envolver instância nova; a própria Entrega 01 já tentou uma versão disso e ficou só como histórico, sem seed ajustado | Prematuro — o Roadmap já lista "sanidade por cliente/instância" como a **última** etapa (passo 6 de 6), não a primeira; fazer isso antes de ter qualquer CT de estado portado não tem CT nenhum pra validar a seleção contra |
-| **C. Não portar nada agora; só documentar e esperar** | Deixar Suítes 3/4 como estão, sem investir em porte | Zero risco de execução | Os 22 CTs ficam presos num branch não mesclado, cada vez mais desatualizados em relação ao `main` do Playwright | Desperdiça o achado mais barato desta análise (código já pronto, só precisa ser portado) |
-
-### Recomendação
-
-**Alternativa A** — portar os mecanismos de estado do Cypress pro Playwright, mantendo a instância fixa atual (sem seleção paramétrica ainda). Justificativa ligada aos achados:
-
-- DISC-002 confirmou que 22 dos 25 CTs pendentes já têm lógica real e específica (`changePublicAgentWorkStatus`, `createIsolatedTestAgent`) — não é preciso desenhar nada novo, só portar.
-- DISC-003 confirmou que nenhum framework resolve clienteId hoje — ou seja, resolver isso não é pré-requisito pra portar os CTs de estado; são preocupações independentes.
-- A regra D4 e a ausência de API de exclusão de instância (achados de sessões anteriores) tornam qualquer trabalho de seleção de instância nova/225 mais delicado e mais lento de validar — não é o caminho de menor risco pra começar.
-
-**Seleção segura da instância 225 fica como trilha separada, não bloqueante** — pode evoluir em paralelo (ex.: entender como apontar o seed pra ela com segurança), mas não precisa terminar antes da Alternativa A começar.
-
-### Entregas pequenas e sequenciadas (recomendadas, não abertas como pasta/demanda)
-
-> **São 6 entregas candidatas, não 5** — correção de contagem (07/10/2026): a antiga "3b" virou Entrega 4 própria, não subentrega. Os 3 CTs sem código (016/017/037) **não contam** nessa lista — ficam à parte, fora de escopo, sem numeração de entrega.
-
-| Ordem | Entrega candidata | Objetivo | CTs no escopo | Dependências | Aceite/evidência | Riscos |
-|---|---|---|---|---|---|---|
-| 1 | Portar bloqueio por tentativas (parcial) | Portar `createIsolatedTestAgent` + contagem de tentativas pro Playwright | CT-013, 014, 018, 019 | Nenhuma nova — só ler o Cypress já confirmado (`bdf5e9a`) | 4 CTs passando em Playwright contra o ambiente atual, evidência de execução real (não só leitura de código) | Baixo — mecanismo já confirmado, só port |
-| 2 | Resolver o achado do CT-015 antes de portar | Confirmar com produto se "conta bloqueada aceita login com senha correta" é bug ou comportamento esperado | CT-015 | Resposta de produto/dev | Decisão registrada; só depois disso portar o CT (a asserção depende da resposta) | Médio — pode revelar bug real de produto, fora do controle da automação |
-| 3 | Portar ciclo de vida **sem nenhuma lacuna conhecida** | Portar `changePublicAgentWorkStatus`/`WORK_STATUS` + os CTs onde o código não registra nenhum achado/instabilidade | CT-020, 021, 023, 024, 026, 027, 031, 035 | Entrega 1 (reaproveita o padrão de agente isolado) | CTs passando em Playwright; e-mail de notificação (CT-026) confirmado via Gmail real | Baixo-médio — CT-026 depende de infra de e-mail, mais frágil que os outros |
-| 4 | Portar ciclo de vida **com gate de instabilidade conhecida** (entrega própria, não bloqueante — é hipótese de flakiness de teste, não disputa de produto) | Portar os mesmos CTs, mas com salvaguarda explícita pras 2 instabilidades já documentadas no código: **busca por nome às vezes não encontra o agente recém-criado** (CT-022, CT-028 — sem causa raiz, agente existe de fato) e **atraso de propagação entre mudança de status e efeito** (CT-036 — mesma natureza do achado do CT-034, mas CT-036 usa agente próprio/`agentTransitions`, não depende da cadeia do CT-033). **Gate explícito exigido** (correção de 07/10/2026, revisão do Codex): timeout **máximo e explícito** por tentativa de verificação (ex.: retry curto com teto fixo — não retry ilimitado); se o teto for excedido, **o teste falha de verdade** — não mascarar com espera maior nem considerar "passou porque retentou". A causa segue **sem raiz confirmada**: isto é uma hipótese de instabilidade de teste a validar na execução real, não um fato assumido. Se, ao rodar, o limite for excedido de forma consistente (não só uma vez), **tratar como achado de produto/consistência** (mesma categoria do CT-033/CT-034), não como flakiness a ignorar | CT-022, 028, 036 | Entrega 1/3 (mesmo padrão de agente) | CTs passando com o gate de timeout explícito no código; registrar quantas vezes o retry foi necessário (não só se passou) | Médio — se o teto for excedido com frequência na execução real, deixa de ser flakiness e vira achado de produto a resolver fora da automação |
-| 5 | Resolver achados de **produto** antes de portar (precisam de decisão externa, não só de teste) | CT-033 (mecanismo de revogação de token não confirmado) e **CT-025, que compartilha a mesma pergunta** (ação de escrita com token antigo, mesma nota do CT-033). **CT-032 e CT-034 dependem do mesmo agente/sequência do CT-033** (`agentAtivoInativo`, ordem CT-020→033→032→034 no arquivo) — não são portáveis isoladamente enquanto CT-033 estiver em disputa. **CT-029/030 têm discrepância entre fontes**: o código lido não registra achado nenhum (espelham CT-023/024), mas o placar histórico da SGV-11971 lista os três (015, 029, 030, 033) como "falha/achado" — não resolvi essa discrepância, fica registrada pro Rafael decidir qual fonte vale | CT-025, 029, 030, 032, 033, 034 | Resposta de produto sobre CT-025/033; Rafael decidir a divergência de fonte do CT-029/030 | Decisão registrada antes de portar | Médio-alto — risco de portar uma asserção errada se a fonte errada for seguida, ou de quebrar a sequência de agente compartilhado |
-| 6 | Trilha separada — seleção segura da instância 225 | Entender/desenhar como apontar o seed pra uma instância existente (225) com validação explícita do alvo, sem tocar no seed de verdade ainda | Nenhum CT — é infraestrutura de teste | DISC-001–003 (já concluído) | Proposta técnica revisada, sem execução | Baixo enquanto for só design; alto se pular pra execução sem validação do alvo |
-| — | **Fora do escopo, candidatos futuros, sem porte previsto (não é entrega numerada)** | CT-016, CT-017 (desbloqueio, mutation nunca capturada) e CT-037 (auditoria, endpoint nunca confirmado) — bloqueio de produto/backend, não de automação | CT-016, 017, 037 | Captura de API/endpoint pelo time de produto/backend | — | — |
-
-> **Regra aplicada nesta correção**: nenhum CT com achado/instabilidade documentada no código fica implícito num grupo "limpo" — ou vai pra uma entrega própria com gate explícito (4, hipótese de flakiness de teste, com teto de timeout e falha preservada se exceder), ou pra uma entrega de resolução externa (5, disputa/achado de produto). A distinção entre as duas: a Entrega 4 é algo que a própria automação tenta resolver com um limite claro (e se não resolver, vira achado, não é escondida); a Entrega 5 depende de alguém fora da automação decidir antes mesmo de tentar portar.
-
-### O que esta recomendação não é
-
-- Não é uma decisão de implementar — é uma recomendação pro Rafael aprovar, ajustar ou rejeitar.
-- Não presume que a Alternativa A vai passar de primeira contra o ambiente atual — "já confirmado em Cypress" é evidência histórica, não garantia.
-- Não resolve a seleção de instância/clienteId de forma geral — só recomenda não deixar isso bloquear o que já está pronto pra portar.
-- Não rotula nenhum CT com achado conhecido como "limpo" — ver regra acima.
+- **DISC-001 — Auditoria do projeto:** permanece como seção própria em [[../01 Automação/01 - Plano de automação#DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)|01 - Plano de automação]] (não foi extraída pra esta pasta — é a mesma camada do Plano, não da Matriz).
+- **DISC-002 — Cobertura do TR completo (1.1–1.43) e rastreabilidade dos 38 CTs:** [[DISC-002 - Cobertura do TR e rastreabilidade dos CTs]].
+- **DISC-003 — Dois eixos (ambiente×instância), dados reutilizáveis, pressupostos e perguntas em aberto:** [[DISC-003 - Dados, preparação e eixos]].
+- **DISC-004 — Alternativas comparadas, recomendação e as 6 entregas candidatas:** [[DISC-004 - Alternativas e recomendação]].
+- **Fluxo visual (Mermaid) do preset atual e da direção candidata:** [[Fluxo - Preset de dados]].
