@@ -78,6 +78,17 @@ Depois do DISC-001, o Codex (planejador) e o Claude (execução) alinharam uma r
 
 **Achados de produto já documentados no código** (achados reais, não bugs de teste — preservados pra DISC-004 não redescobrir): CT-015 (conta bloqueada aceita login com senha correta — contradiz o Termo), CT-033 (mecanismo de revogação de token não confirmado), CT-022/CT-028 (busca por nome às vezes não encontra agente recém-criado), CT-034/CT-036 (atraso de propagação não explicado entre mudança de status e efeito).
 
+## DISC-003 — síntese (07/10/2026)
+
+Detalhe completo (mapa de reutilização, tabela por dado/estado, eixos, pressupostos e perguntas em aberto) vive na [[../00 QA/Matriz - Análise do preset provável#DISC-003 — Dados, preparação e diferenças por eixo (07/10/2026)|Matriz]]. Resumo:
+
+- **Achado principal**: Playwright e Cypress resolvem a **mesma instância fixa por nome** (`"E2E Automatic Test"`) — confirmado lendo `cypress/support/e2e.js:78` (`instanceName` hardcoded) contra `src/data/seed/baseline.ts`. **Nenhum dos dois frameworks tem hoje um parâmetro de `clienteId`/instância alternativa** — não é uma lacuna só do Playwright, é dos dois.
+- A mutation de mudança de estado de conta (`changePublicAgentWorkStatus`) e o padrão de agente isolado por cenário (`createIsolatedTestAgent`) só existem no lado Cypress — é a peça que, portada, destrava qualquer preset de estado pra Playwright.
+- Cypress reescreve um **único arquivo fixo** de manifesto (`cypress.env.set.json`) a cada run; Playwright isola por `runId`. Rodar os dois frameworks ao mesmo tempo contra o mesmo ambiente não tem proteção cruzada conhecida — não testado.
+- Credenciais e dependência de Gmail seguem o mesmo padrão conceitual nos dois frameworks, só com nomes de variável diferentes (`PW_*` vs. sem prefixo) — não comparei valores (segredo), só nomes de chave.
+
+Nenhum teste foi rodado, nenhuma configuração foi alterada nesta verificação.
+
 ---
 
 ## DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)

@@ -92,19 +92,19 @@ A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-03
 
 | CT | Rótulo/arquivo | Pré-condição específica | Dados/configuração consumidos | Mutação/limpeza | Lacuna ou observação |
 |---|---|---|---|---|---|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01` / `tests/api/auth/login.spec.ts` | Servidor do pool existe e está ativo | CPF do servidor (`seed.agents.agent.cpf`), `env.agentPass` | Nenhuma | — |
-| [[03 - Casos de teste#^ct-002\|CT-002]] | `A02-C02` / `login.spec.ts` | Mesma identidade de CT-001, testada no login de cidadão | CPF do servidor (emprestado), `env.agentPass` | Nenhuma | Baseline **não tem cidadão PF puro** — usa o CPF do próprio servidor. Lacuna de massa, não de teste |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | `A02-C03` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão (`seed.citizens.citizen.cnpj`), `env.citizenPass` | Nenhuma | Username PJ só é aceito em formato RAW (só dígitos) — achado da origem Cypress, preservado no Playwright |
-| [[03 - Casos de teste#^ct-004\|CT-004]] | `A02-C04` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão, `env.citizenPass`, login tipo `public-agent` | Nenhuma (espera rejeição) | Prova segregação de contexto servidor×cidadão |
-| [[03 - Casos de teste#^ct-005\|CT-005]] | `A02-C05` / `login.spec.ts` | Igual a CT-002 | Igual a CT-002 | Nenhuma | Redundante com CT-002 por design — mesmo mecanismo, reafirma CPF nunca vira contexto Empresa |
-| [[03 - Casos de teste#^ct-006\|CT-006]] | `A02-C06` / `login.spec.ts` | Nenhuma (identificador gerado no teste) | CPF inválido fixo (`'12345678900'`), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed — é um literal no spec |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | `A02-C07` / `login.spec.ts` | Nenhuma | CNPJ inválido fixo (`'12345678000100'`), `env.citizenPass` | Nenhuma (espera rejeição) | Idem CT-006, literal no spec |
-| [[03 - Casos de teste#^ct-008\|CT-008]] | `A02-C08` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão já existente, via `makeCitizenPJAutoRegistration` | Nenhuma (espera rejeição do `signup`) | Testa duplicidade, não cria conta nova |
-| [[03 - Casos de teste#^ct-009\|CT-009]] | `A02-C09` / `login.spec.ts` | Igual a CT-002/005 | Igual a CT-002/005 | Nenhuma | Mesma identidade emprestada — 3º caso com o mesmo mecanismo (CT-002, CT-005, CT-009) |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | `A01-C01` / `tests/api/auth/credentials.spec.ts` | Servidor do pool existe | CPF do servidor, senha deliberadamente errada (literal no spec) | Nenhuma (espera rejeição) | — |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | `A01-C02` / `credentials.spec.ts` | Nenhuma | CPF gerado (`generateCPF()`, inexistente), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed |
-| [[03 - Casos de teste#^ct-012\|CT-012]] | `A01-C03` / `credentials.spec.ts` | Nenhuma | Campos vazios (`''`) | Nenhuma (espera rejeição) | É chamada de API pura — não verifica se a **UI** impede o envio com campo vazio. Se o requisito exigir isso, falta cobertura de tela |
-| [[03 - Casos de teste#^ct-038\|CT-038]] | `A55-C01` / `tests/api/auth/audit-sessions.spec.ts` | Servidor do pool existe | Credenciais do servidor, 2 sessões API abertas no mesmo teste | Nenhuma (2 sessões ficam abertas até o teste encerrar, sem revogação explícita) | Spec ainda **não commitado** no repo (worktree em HEAD destacado) |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01` / `tests/api/auth/login.spec.ts` | Servidor do pool existe e está ativo | CPF do servidor (`seed.agents.agent.cpf`), `env.agentPass` | Nenhuma | — |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | `A02-C02` / `login.spec.ts` | Mesma identidade de CT-001, testada no login de cidadão | CPF do servidor (emprestado), `env.agentPass` | Nenhuma | Baseline **não tem cidadão PF puro** — usa o CPF do próprio servidor. Lacuna de massa, não de teste |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | `A02-C03` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão (`seed.citizens.citizen.cnpj`), `env.citizenPass` | Nenhuma | Username PJ só é aceito em formato RAW (só dígitos) — achado da origem Cypress, preservado no Playwright |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-004\|CT-004]] | `A02-C04` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão, `env.citizenPass`, login tipo `public-agent` | Nenhuma (espera rejeição) | Prova segregação de contexto servidor×cidadão |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-005\|CT-005]] | `A02-C05` / `login.spec.ts` | Igual a CT-002 | Igual a CT-002 | Nenhuma | Redundante com CT-002 por design — mesmo mecanismo, reafirma CPF nunca vira contexto Empresa |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-006\|CT-006]] | `A02-C06` / `login.spec.ts` | Nenhuma (identificador gerado no teste) | CPF inválido fixo (`'12345678900'`), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed — é um literal no spec |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-007\|CT-007]] | `A02-C07` / `login.spec.ts` | Nenhuma | CNPJ inválido fixo (`'12345678000100'`), `env.citizenPass` | Nenhuma (espera rejeição) | Idem CT-006, literal no spec |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-008\|CT-008]] | `A02-C08` / `login.spec.ts` | Cidadão PJ do pool existe | CNPJ do cidadão já existente, via `makeCitizenPJAutoRegistration` | Nenhuma (espera rejeição do `signup`) | Testa duplicidade, não cria conta nova |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-009\|CT-009]] | `A02-C09` / `login.spec.ts` | Igual a CT-002/005 | Igual a CT-002/005 | Nenhuma | Mesma identidade emprestada — 3º caso com o mesmo mecanismo (CT-002, CT-005, CT-009) |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-010\|CT-010]] | `A01-C01` / `tests/api/auth/credentials.spec.ts` | Servidor do pool existe | CPF do servidor, senha deliberadamente errada (literal no spec) | Nenhuma (espera rejeição) | — |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-011\|CT-011]] | `A01-C02` / `credentials.spec.ts` | Nenhuma | CPF gerado (`generateCPF()`, inexistente), `env.agentPass` | Nenhuma (espera rejeição) | Identificador não vem do seed |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-012\|CT-012]] | `A01-C03` / `credentials.spec.ts` | Nenhuma | Campos vazios (`''`) | Nenhuma (espera rejeição) | É chamada de API pura — não verifica se a **UI** impede o envio com campo vazio. Se o requisito exigir isso, falta cobertura de tela |
+| [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste#^ct-038\|CT-038]] | `A55-C01` / `tests/api/auth/audit-sessions.spec.ts` | Servidor do pool existe | Credenciais do servidor, 2 sessões API abertas no mesmo teste | Nenhuma (2 sessões ficam abertas até o teste encerrar, sem revogação explícita) | Spec ainda **não commitado** no repo (worktree em HEAD destacado) |
 
 > Agrupamento aplicado só onde ator, estado e preparação são idênticos (CT-002/005/009) — mantidos em linhas separadas porque cada um tem critério de aceite próprio (C2–C5), só a coluna de pré-condição aponta a equivalência.
 
@@ -167,22 +167,48 @@ A tabela acima não substitui o mapeamento caso a caso. Para cada CT-001–CT-03
 
 > Fonte de todo este bloco: `git show bdf5e9a:cypress/testes/api/entities/auth/{lockout,identity-lifecycle}.api.cy.js`, lido por inteiro em 07/10/2026. Nenhum teste foi executado; nenhum arquivo foi alterado.
 
-## Catálogo mínimo candidato
+## DISC-003 — Dados, preparação e diferenças por eixo (07/10/2026)
 
-Preencher somente após cruzar os CTs com código e fontes de dados. Manter cada entrada ligada aos CTs que a exigem.
+> [!info] Escopo e método
+> Cruzei os 3 mecanismos do DISC-002 (Playwright atual, Cypress no branch `bdf5e9a`, sem código) contra seed/fixtures, configuração disponível, seleção de cliente/instância, credenciais, preparação/reset e dependência externa (Gmail). Lido: `playwright/config/env.ts`, `.env.example`; `cypress/support/e2e.js` (709 linhas, só os trechos de resolução de instância/setores/módulos); nomes de chave (não valores) de `cypress.env.json`, `cypress.env.set.json`, `cypress.env.set.dev.json`. **Nenhum segredo foi copiado** — só nomes de variável, por regra desta matriz. Nenhum teste rodado, nenhuma config alterada.
 
-| Dado/estado candidato | CTs que justificam | Preparação existente | Reuso entre ambientes | Ação candidata | Evidência/pendência |
-|---|---|---|---|---|---|
-| Instância-alvo e configuração de endpoint | CTs que executam contra a instância | Perfil fixo no baseline; URLs fornecidas pelo ambiente | Não demonstrado para seleção de instância diferente | Avaliar parametrização segura com validação explícita do alvo | Confirmar ambientes e proteção contra criação acidental |
-| Atores de servidor/cidadão e credenciais de teste | CTs de autenticação/estado | Pools por worker e credenciais ambientais no baseline Playwright | Reuso de atores no mesmo backend existe; entre ambientes a confirmar | Documentar pré-condições, ownership e reset por ambiente | Validar estado real e política de credenciais de teste |
-| Estados de conta (bloqueio, licença, férias, inativo/suspenso) | CTs de 1.24–1.25 correspondentes após mapeamento individual | A verificar por CT | A confirmar | Determinar se são provisionados, alterados em teste ou preparados por API | Registrar operação inversa/limpeza e isolamento |
-| Módulo/serviço/permissões | Requisitos e testes que comprovarem dependência | Seed declara catálogo mais amplo; consumo de cada CT a verificar | A confirmar | Incluir apenas dependências rastreadas | Cruzar passos/precondições e código dos testes |
+### Mapa do que é reutilizável hoje
+
+| Dado/estado candidato | CTs que justificam | Preparação existente (Confirmado) | Reuso entre ambientes/instâncias | Evidência/pendência |
+|---|---|---|---|---|
+| Instância-alvo | Todos os 38 | **Os dois frameworks resolvem pelo mesmo nome fixo** `"E2E Automatic Test"` — Playwright via `BASELINE.instance.name` + `getInstanceOrCreate`; Cypress via `instanceName` hardcoded em `cypress/support/e2e.js:78` + mesma função. **Não são instâncias diferentes** — é a mesma instância, resolvida duas vezes por código separado | **Nenhum dos dois frameworks tem parâmetro de `clienteId`/instância alternativa hoje** — achado chave, não presumido: procurei explicitamente por isso e não existe em nenhum dos dois | A confirmar: o que aconteceria se os dois rodassem ao mesmo tempo contra a mesma instância (concorrência entre frameworks, não só entre workers) |
+| Setores/módulos/serviços/workflows | CT-020–036 (via setup) + resto do seed (fora do escopo do TR) | Ambos os frameworks usam `getXOrCreate` idempotente, por nome — Playwright em `src/api/services/*.ts`, Cypress nos commands equivalentes (`organizational.api.command.js`, etc., tocados no mesmo commit `bdf5e9a`) | Mesmo padrão nos dois frameworks (reconciliação por identidade natural, não por ID fixo) | — |
+| Atores de servidor (CT-001-012/038, Suítes 3/4) | Playwright: pool por worker (CPF/senha de `env.agentPass`). Cypress: `createIsolatedTestAgent` por cenário (CPF/senha geradas ou fixas por código) | **Playwright não cria agente isolado por cenário** — só reusa o pool padrão do worker (não se aplica a bloqueio/status). **Cypress cria um agente dedicado por CT/cenário** (`createIsolatedTestAgent`) e, na Suíte 4, usa CPF **fixo** (reaproveitado entre rodadas) em vez de gerado | A confirmar — Playwright nunca implementou o equivalente de "agente isolado" porque os 13 CTs atuais não precisam | Se a Suíte 4 for portada, decidir se o padrão "CPF fixo reaproveitado" do Cypress é reaproveitado ou se vira sempre-novo (como o resto do Playwright prefere) |
+| Estados de conta (bloqueio, licença, férias, inativo/suspenso) | CT-013-015,018-019 (bloqueio) e CT-020-036 (status) | **Confirmado, só no Cypress**: `cy.changePublicAgentWorkStatus` + `WORK_STATUS` enum (mutation real, capturada por request/response). **Não existe no Playwright** — `src/api/services/users.ts` não tem essa mutation portada | Mutation é a mesma API em ambos os casos (GraphQL do backend, não muda por framework) — só falta portar o client-side | Portar `changePublicAgentWorkStatus`/`WORK_STATUS` pro Playwright é a peça técnica que destrava qualquer preset pra Suíte 4 |
+| Credenciais (senha por papel) | Todos | **Mesmo padrão nos dois**: senha única por papel via variável de ambiente — Playwright: `PW_AGENT_PASSWORD`/`PW_CITIZEN_PASSWORD`; Cypress: `AGENT_PASSWORD`/`CITIZEN_PASSWORD` (chave sem prefixo) | Mesmo padrão, nomenclatura de variável diferente | A confirmar se os valores são os mesmos entre os dois `.env` — não comparei valores (são segredo) |
+| Dependência externa — Gmail (confirmação de cadastro/notificação) | CT-008 (signup), CT-026 (e-mail de fim de Licença), criação de cidadão/servidor em geral | **Mesmo padrão nos dois**: polling IMAP — Playwright: `PW_GMAIL_USER`/`PW_GMAIL_APP_PASSWORD`; Cypress: `GMAIL_USER`/`GMAIL_APP_PASSWORD` + `cy.task('waitForGmailMessage'/'deleteGmailMessage')` | Mesmo papel, implementação separada por framework | A confirmar se é a mesma caixa de e-mail nos dois `.env` (não comparei valores) |
+| Preparação/reset — mecanismo de manifesto | — | **Mesmo padrão nos dois, implementações diferentes**: Playwright grava manifesto por execução em `.runtime/<runId>/seed-manifest.json` (schema versionado, `SEED_SCHEMA_VERSION=12`). Cypress regrava **um único arquivo fixo** `cypress.env.set.json` toda vez que `cypress/support/e2e.js` roda (`cy.writeFile`, limpa e reescreve) | Playwright isola por run (`runId`); Cypress sobrescreve sempre o mesmo arquivo — rodar Cypress e Playwright em paralelo contra o mesmo ambiente não tem proteção cruzada conhecida | A confirmar: nunca testado rodar os dois frameworks ao mesmo tempo |
+
+### Diferenças e lacunas por eixo
+
+> **Ambiente de implantação** (dev/hml/prod, backend/URLs) vs. **cliente/instância/tenant** (ex.: instância 225) — eixos sempre separados, por decisão já registrada no Plano.
+
+- **Ambiente de implantação**: só **um** configurado de fato hoje (o que `PW_BASE_URL`/`PW_GRAPHQL_URL`/`PW_AUTH_URL` e o `cypress.env*.json` ativo apontam). Não há evidência, nesta análise, de execução confirmada contra um segundo ambiente de implantação. Playwright e Cypress usam **nomes de variável diferentes** pro mesmo papel (prefixo `PW_` vs. sem prefixo) — isso por si só não é um problema, mas significa que apontar os dois frameworks pro mesmo ambiente novo exige configurar duas vezes.
+- **Cliente/instância/tenant**: ambos os frameworks resolvem **sempre a mesma instância fixa por nome** — não existe hoje nenhum parâmetro (env var, CLI, config) que troque qual instância é usada. A instância 225 (criada em 07/10) não é selecionada por nenhum dos dois ainda.
+- **Lacuna mais concreta pro preset**: a mutation de status (`changePublicAgentWorkStatus`) e o padrão de agente isolado por cenário existem **só no Cypress**. Enquanto não forem portados, qualquer preset de "estado de conta" pra Playwright teria que reimplementar essa mutation do zero (ela já está confirmada/testada, só não portada).
+
+### Pressupostos para sanidade reproduzível
+
+- Pressupõe que a instância-alvo **já existe e está provisionada** (nenhum dos dois frameworks testa criação de instância nova em execução normal — regra D4, documentada em `planning/13-REVISAO-E-ONDAS-DREAM.md`).
+- Pressupõe que rodar **um** framework por vez contra um ambiente — não há evidência (nem teste) de comportamento com os dois simultâneos.
+- Pressupõe que `enable_system_commands`/mutações de estado tocam uma instância compartilhada — qualquer preset de estado de conta precisa de isolamento por ator (como o Cypress já faz com agente isolado), não do agente global.
+
+### Perguntas que ainda precisam de evidência
+
+- Os valores reais de `.env` do Playwright e `cypress.env*.json` do Cypress apontam pro **mesmo** ambiente/instância hoje, ou são ambientes diferentes por coincidência de nome igual ("E2E Automatic Test" pode existir em mais de um backend)? Não comparei valores (são segredo) — só os nomes das chaves.
+- O `changePublicAgentWorkStatus` realmente ainda funciona contra o ambiente atual (API pode ter mudado desde 01/10/2026, quando foi confirmado)? Não testado nesta rodada.
+- Rodar Cypress e Playwright ao mesmo tempo contra a mesma instância já aconteceu alguma vez, e com que resultado? Sem evidência encontrada.
 
 ## Decisões ao concluir
 
 - **O que entra no preset:** apenas massa/estados necessários a requisitos que serão validados por automação; requisitos de infraestrutura ou operação devem apontar para evidência adequada.
-- **Forma recomendada do preset:** a preencher com comparação fundamentada (perfil/configuração, seed reconciliador, preparação específica por suíte ou combinação).
+- **Forma recomendada do preset:** a preencher com comparação fundamentada (perfil/configuração, seed reconciliador, preparação específica por suíte ou combinação) — **DISC-004, ainda não iniciado**.
 - **Escopo mínimo inicial:** CTs, atores, entidades e estados que a matriz comprovar necessários.
-- **Diferenças por ambiente:** endpoint, credenciais, disponibilidade de entidades, permissões e limpeza.
-- **Riscos de isolamento e concorrência:** a preencher.
-- **Primeiras entregas sugeridas:** a preencher com escopo pequeno, dependências e aceite próprio.
+- **Diferenças por ambiente:** ver "Diferenças e lacunas por eixo" acima — endpoint/URLs por ambiente de implantação; instância sempre fixa por nome, sem seleção paramétrica, em ambos os frameworks.
+- **Riscos de isolamento e concorrência:** Cypress sobrescreve um único arquivo de manifesto (`cypress.env.set.json`) a cada run; Playwright isola por `runId`. Rodar os dois ao mesmo tempo contra o mesmo ambiente não tem proteção cruzada conhecida (a preencher com mais evidência, se necessário).
+- **Primeiras entregas sugeridas:** a preencher com escopo pequeno, dependências e aceite próprio — **DISC-004**.
