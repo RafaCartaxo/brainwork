@@ -56,7 +56,7 @@ Um item por recorte temático — lista completa e os links das notas vivem no [
 
 | Item | Tipo | Fonte | Situação |
 |---|---|---|---|
-| Confirmar/ajustar a segmentação proposta (11 recortes) | Revisão de escopo | PDF do TR completo | A confirmar |
+| Confirmar/ajustar a segmentação proposta (11 recortes) | Revisão de escopo | PDF do TR completo | ✅ Concluído — aprovado pelo Rafael (08/10/2026) |
 
 ---
 
