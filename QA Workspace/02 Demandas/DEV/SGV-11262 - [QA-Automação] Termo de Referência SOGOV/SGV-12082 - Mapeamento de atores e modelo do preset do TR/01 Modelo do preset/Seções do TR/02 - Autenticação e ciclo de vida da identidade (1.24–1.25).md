@@ -5,14 +5,14 @@ pai: SGV-11262
 tipo: secao-tr
 itens_tr: "1.24–1.25"
 paginas_pdf: "p. 1–2"
-status: lido
+status: aprovado
 ---
 # 02 - Autenticação e ciclo de vida da identidade (itens 1.24–1.25)
 
 > [!info]- Navegação
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
-> [!info] Escopo deste recorte — lido em 08/10/2026, aguardando revisão do Codex
+> [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.24–1.25**, cobertos em nível de subitem (1.24.1–1.24.3; 1.25.1–1.25.3.4). Páginas do PDF: **1.24–1.24.2 na p. 1; 1.24.3 em diante na p. 2** de [[../../Fontes/Requisitos Sogov.pdf|Requisitos Sogov.pdf]] (fonte de autoridade). Lido diretamente por render de página, não por extração textual. **O material arquivado da SGV-11971 não foi usado como evidência** — cobre os mesmos itens sob outra ótica (automação/CTs), mas não é fonte para este modelo conceitual.
 
 ## Cobertura dos itens
@@ -42,7 +42,7 @@ status: lido
 | 1.24.2 | Cidadão (Pessoa Física) | Ator | Tipo de usuário autenticável | CPF (identificador, obrigatório), senha | Confirmado |
 | 1.24.3 | Empresas e outras entidades (Pessoa Jurídica) | Ator | Tipo de usuário autenticável | CNPJ (identificador, obrigatório), senha | Confirmado |
 | 1.24 | Identificador único de acesso | Dado/atributo | Vincula cada acesso a um único CPF ou CNPJ | CPF ou CNPJ | Confirmado |
-| 1.25.1 | Bloqueio por tentativas | Configuração/regra | Bloqueia a conta após 5 tentativas malsucedidas | Contador de tentativas (quantidade: 5) | Confirmado |
+| 1.25.1 | Bloqueio por tentativas | Configuração/regra | Bloqueia a conta após tentativas malsucedidas | Limite de tentativas malsucedidas: 5 | Confirmado |
 | 1.25.3.1 | Estado Ativo | Estado | Acesso irrestrito, conjunto completo de permissões | — | Confirmado |
 | 1.25.3.2 | Estado Licença | Estado | Quarentena de privilégios; restringe a funcionalidades não transacionais; sem modificação/aprovação | — | Confirmado |
 | 1.25.3.3 | Estado Férias | Estado | Mesma quarentena da Licença; sem escrita/execução de fluxo de trabalho | — | Confirmado |
@@ -55,14 +55,15 @@ status: lido
 | Servidor Público | autentica com | CPF + senha | 1.24.1 | Confirmado |
 | Cidadão (Pessoa Física) | autentica com | CPF + senha | 1.24.2 | Confirmado |
 | Empresas/outras entidades (Pessoa Jurídica) | autentica com | CNPJ + senha | 1.24.3 | Confirmado |
-| Usuário (qualquer ator) | tem estado | {Ativo, Licença, Férias, Inativo} | 1.25.3 | Confirmado — são os 4 estados nomeados do "ciclo de vida da identidade funcional" |
-| Estado do usuário | determina | conjunto de permissões/acesso | 1.25.3.1–1.25.3.4 | Confirmado |
+| Usuário/identidade com status funcional | tem estado | {Ativo, Licença, Férias, Inativo} | 1.25.3 | Estados/consequências confirmados; aplicabilidade às categorias de usuário a confirmar (ver dúvida abaixo) |
+| Estado funcional | determina | conjunto de permissões/acesso | 1.25.3.1–1.25.3.4 | Confirmado |
 | 5 tentativas malsucedidas | aciona | bloqueio da conta | 1.25.1 | Confirmado como regra; **relação com os 4 estados do ciclo de vida não é explícita no texto** — ver dúvida abaixo |
 
 ## Dúvidas/ambiguidades
 
-- **"Bloqueado" é um 5º estado, ou mecanismo separado?** O item 1.25.3 enumera exatamente 4 estados nomeados ("Ativo", "Licença", "Férias", "Inativo"), cada um com rótulo formal "Estado ... (Nome)". O bloqueio por tentativas malsucedidas (1.25.1) é descrito antes dessa lista, numa seção distinta, sem receber um rótulo de estado equivalente. O texto **não afirma explicitamente** se uma conta bloqueada por tentativas é tecnicamente o mesmo que "Inativo", um estado à parte, ou um atributo independente dos 4 estados. **A confirmar.**
-- **Reversão do bloqueio:** o item 1.25.1 não descreve como/quando uma conta bloqueada por tentativas deixa de estar bloqueada (não há subitem equivalente a isso neste recorte). **A confirmar** — pode estar fora do escopo de 1.24–1.25 ou não ter sido encontrado em outro ponto do TR ainda não lido.
+- **Categorias de usuário dos 4 estados funcionais:** o TR não afirma explicitamente se os estados de 1.25.3 se aplicam a Cidadão (PF) e Empresa (PJ), além de Servidor Público — o texto usa "identidade funcional"/"vínculo do agente". **A confirmar.**
+- **Bloqueio como 5º estado ou mecanismo separado:** o TR não afirma se o bloqueio por tentativas (1.25.1) equivale a um dos 4 estados nomeados ou é um mecanismo à parte. **A confirmar.**
+- **Reversão do bloqueio:** o TR não descreve como/quando uma conta bloqueada por tentativas deixa de estar bloqueada. **A confirmar.**
 
 ## Fontes/evidências
 
