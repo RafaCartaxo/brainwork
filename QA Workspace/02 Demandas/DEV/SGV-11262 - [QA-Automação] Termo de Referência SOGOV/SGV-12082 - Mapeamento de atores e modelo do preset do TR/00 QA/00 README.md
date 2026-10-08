@@ -29,21 +29,22 @@ pontos: ""
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
-> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de teste),option(QA · Casos de teste),option(DEV · Análise técnica),option(DEV · Plano de execução),option(DEV · Implementação),option(DEV · Code review),option(QA · Validação),option(Concluído)):etapa_atual]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
 
-> [!info] Escopo desta pasta — scaffold, sem conteúdo analítico ainda
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está preservada, intacta, em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR — e nasce vazia: só estrutura e placeholders, nenhuma análise/dado preenchido ainda.
+> [!info] Escopo desta pasta — estrutura pronta para revisão, mapeamento do TR ainda não iniciado
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está preservada, intacta, em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. Demanda e plano já têm escopo/método estruturados, aguardando revisão; o conteúdo do TR ainda não foi lido/mapeado — nenhum ator, entidade ou achado do TR foi registrado ainda.
 
 ## Status do trabalho
 
 | Etapa | Estado |
 |---|---|
-| Demanda | ⏳ |
-| Plano de análise | ⏳ |
-| Modelo do preset (mapa geral + matriz) | ⏳ |
-| Revisão da análise | ⏳ |
+| Demanda | 📝 Preparada, aguardando revisão |
+| Plano de análise | 📝 Preparado, aguardando revisão |
+| Mapeamento na matriz (atores/entidades/relações) | ⏳ Não iniciado |
+| Síntese visual (mapa geral) | ⏳ Não iniciado |
+| Revisão da análise | ⏳ Não iniciado |
 
-**Próximo passo:** <registrar a próxima ação objetiva — preencher demanda/plano antes de iniciar o mapeamento>.
+**Próximo passo:** revisão/aprovação do escopo ([[01 - Demanda]]) e do plano ([[02 - Plano de análise]]) — só depois disso iniciar a leitura/mapeamento do TR por blocos temáticos.
 
 Pacote para `SGV-12082`:
 

@@ -31,9 +31,13 @@ responsavel: ""
 
 | Item | O que verifica | Resultado | Observação |
 |---|---|---|---|
-| <placeholder> | <preencher> | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_001]` | |
+| Cobertura completa do TR | Todo item do TR (1.1–1.43) está mapeado, marcado não aplicável (com justificativa) ou pendente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_001]` | |
+| Rastreabilidade das linhas | Cada elemento/relação na matriz aponta a referência do item do TR correspondente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_002]` | |
+| Separação fato/inferência/pendência | Confirmado/Inferido/A confirmar aplicados corretamente, sem lacuna virar fato | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_003]` | |
+| Consistência do mapa com a matriz | O mapa geral (Mermaid) não contém nada que a matriz não sustente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_004]` | |
+| Decisão sobre lacunas/ambiguidades | Lacunas e ambiguidades encontradas estão registradas explicitamente, não resolvidas por suposição | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_005]` | |
 
-> Replique a linha para cada item revisado.
+> Esta revisão é documental — sem CT, execução, Qase ou automação.
 
 ---
 
@@ -45,7 +49,9 @@ responsavel: ""
 
 ## Checklist de encerramento
 
-- [ ] Itens revisados têm resultado e observação registrados.
-- [ ] Mapa geral e matriz de atores e relações foram conferidos contra as fontes.
-- [ ] Fatos, inferências e pendências estão distinguidos.
+- [ ] Cobertura completa do TR confirmada (mapeado/não aplicável/pendente, sem item omitido).
+- [ ] Rastreabilidade das linhas da matriz ao TR confirmada.
+- [ ] Separação entre fato, inferência e pendência confirmada.
+- [ ] Consistência entre o mapa geral (Mermaid) e a matriz confirmada.
+- [ ] Lacunas/ambiguidades têm decisão registrada (resolvidas ou mantidas como pendência explícita).
 - [ ] Status e próximo passo da demanda foram atualizados.

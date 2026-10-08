@@ -1,7 +1,6 @@
 ---
 tags: [qa, automacao, roadmap]
-task: SGV-12082
-pai: SGV-11262
+task: SGV-11262
 tipo: roadmap
 status: ativo
 ---
@@ -19,7 +18,7 @@ Construir um modelo de **atores, entidades, configurações, estados, relações
 ## Estado atual
 
 - **Abordagem anterior:** arquivada, intacta, em [[Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência de consulta, **não é fluxo ativo**.
-- **SGV-12082 (atual):** em **scaffold** — estrutura de pastas e notas criada em 08/10/2026 (`00 QA/`, `01 Modelo do preset/`, `Fontes/`), sem conteúdo analítico ainda. Aguardando a estrutura ser aprovada antes de qualquer preenchimento.
+- **SGV-12082 (atual):** em **scaffold** — estrutura de pastas e notas criada em 08/10/2026 (`00 QA/`, `01 Modelo do preset/`, `Fontes/`), sem conteúdo analítico ainda. Estrutura inicial aprovada; pacote sendo alinhado antes do início do mapeamento.
 
 ## Entregas existentes
 
@@ -28,7 +27,7 @@ Construir um modelo de **atores, entidades, configurações, estados, relações
 | Ciclo 1.24-1.25 | [[Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README\|SGV-11971]] | Autenticação e ciclo de vida do usuário (itens 1.24–1.25) | 🗄️ Histórico arquivado |
 | Entrega 01 — Baseline na instância 225 | [[Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico arquivado; não executada nem validada |
 | SGV-12082 — Análise do TR e preset de dados (anterior) | [[Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/00 README\|SGV-12082 anterior]] | Mapa do projeto de automação, cobertura do TR (DISC-001–004) e recomendação de porte | 🗄️ Histórico arquivado; concluída com recomendação registrada |
-| SGV-12082 — Mapeamento de atores e modelo do preset do TR (atual) | [[SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README\|SGV-12082 atual]] | Modelo de atores/entidades/relações a partir do TR completo | 🧱 Scaffold criado, aguardando estrutura aprovada |
+| SGV-12082 — Mapeamento de atores e modelo do preset do TR (atual) | [[SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README\|SGV-12082 atual]] | Modelo de atores/entidades/relações a partir do TR completo | 🧱 Estrutura aprovada; pacote em alinhamento antes do mapeamento |
 
 ## Sequência macro da SGV-12082
 
