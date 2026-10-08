@@ -6,34 +6,37 @@ tipo: indice
 ---
 # Índice: [QA-Automação] Termo de Referência SOGOV (SGV-11262)
 
-> **Direção e sequência da iniciativa:** [[../Roadmap - Automação TR|Roadmap — Automação TR]]. **Inventário técnico do seed atual:** [[Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]]. Este índice fica dedicado à navegação e à localização dos ciclos e documentos.
+> **Direção e sequência da abordagem anterior (arquivada):** [[../Arquivo/Abordagem anterior/Roadmap - Automação TR|Roadmap — Automação TR]]. **Inventário técnico do seed (abordagem anterior, arquivado):** [[../Arquivo/Abordagem anterior/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]]. Este índice fica dedicado à navegação e à localização dos ciclos e documentos.
 
 Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verificar, ciclo a ciclo, se a plataforma atende ao que o Termo exige, com cobertura automatizada e evidência reproduzível. Sem card nem CTs próprios — a validação acontece pelos ciclos.
 
-> [!info] Guarda-chuva aberta — 1 ciclo em andamento
+> [!info] Guarda-chuva — abordagem anterior arquivada, nova frente em scaffold
 > **Reorganizada em 02/10/2026.** Antes, a SGV-11262 era uma pasta só, que misturava o processo de verificação de TR (reaproveitável) com o conteúdo do único Termo já trabalhado (1.24-1.25). O ciclo 1.24-1.25 virou pacote próprio com SGV próprio — **SGV-11971** — e esta pasta passou a ser só a guarda-chuva. O pacote funcional original foi movido para `SGV-11971/Arquivo/`; as entregas novas ficam diretamente dentro da pasta SGV-11971, cada uma com QA e automação próprios. Um Termo novo entra como pacote irmão da 11971, sem duplicar estrutura.
 >
-> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[../../SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards.
+> **Estrutura:** a SGV-11262 é **contêiner/índice**, modelo semelhante à epic [[../../SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] — cada pacote filho vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada pacote mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar**. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards.
 >
-> **Reorganizado em 07/10/2026:** a investigação do preset (antes "Entrega 02", aninhada dentro da SGV-11971) virou pacote próprio e irmão — **SGV-12082**, direto sob a SGV-11262 — porque seu escopo real é o Termo completo (itens 1.1–1.43), não só o ciclo 1.24-1.25. Decisão do Codex (planejador desta rodada), executada pelo Claude. A análise ativa está lá; as próximas implementações só serão abertas após sua recomendação.
+> **Reorganizado em 07/10/2026:** a investigação do preset (antes "Entrega 02", aninhada dentro da SGV-11971) virou pacote próprio e irmão — **SGV-12082**, direto sob a SGV-11262 — porque seu escopo real é o Termo completo (itens 1.1–1.43), não só o ciclo 1.24-1.25. Decisão do Codex (planejador desta rodada), executada pelo Claude. A matriz dessa investigação concluiu DISC-001–004 e uma recomendação (6 entregas candidatas), aguardando revisão final do Rafael.
+>
+> **Reorganizado em 08/10/2026 (autorização do Rafael):** a abordagem anterior inteira — ciclo **SGV-11971**, a investigação original **SGV-12082 — Análise do TR e preset de dados** (com DISC-001–004 e a recomendação), o **Roadmap** e o **Mapa do seed** — foi movida **intacta**, sem alteração de conteúdo, para [[../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. No lugar, nasce uma nova frente — **SGV-12082 — Mapeamento de atores e modelo do preset do TR** (mesmo número de ticket, novo recorte/pasta) — hoje só **scaffold vazio** (`00 QA/`, `01 Modelo do preset/`, `Fontes/`, sem `03 Casos de teste`/`05 Qase`/`01 Automação` ainda): nenhum ator, relação ou análise foi preenchido. Pausado para revisão visual do Rafael antes de qualquer conteúdo entrar.
 
 ## Ciclos
 
 | Ciclo | SGV | O que cobre | Status |
 |---|---|---|---|
-| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Histórico em [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação\|placar arquivado]] |
+| 1.24-1.25 | [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🗄️ Arquivado em 08/10/2026 (abordagem anterior) — 25/38 CTs aprovados no histórico: 13 em Playwright (CT-001–012, CT-038) e 12 ainda em Cypress; 4 falharam, 6 bloqueados, 3 aguardam. Histórico em [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação\|placar arquivado]] |
 
 ## Investigação da iniciativa
 
 | Investigação | Referência | Escopo | Status |
 |---|---|---|---|
-| [[../SGV-12082 - Análise do TR e preset de dados/00 QA/00 README\|SGV-12082 — Análise do TR e preset de dados]] | Iniciativa SGV-11262; PDF completo do Termo (itens 1.1–1.43); 38 CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] como cobertura existente de 1.24–1.25 | Entender o projeto de automação, mapear cobertura do TR completo, dados/ambientes e propor preset provável | 🔄 Em análise; levantamento pendente |
+| [[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README\|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] (atual) | Iniciativa SGV-11262; mesmo ticket SGV-12082, novo recorte/pasta | Mapear atores, relações e modelo do preset do TR | 🧱 Scaffold criado em 08/10/2026 — estrutura vazia, aguardando revisão visual do Rafael antes de preencher |
+| [[../Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/00 README\|SGV-12082 — Análise do TR e preset de dados]] (abordagem anterior, arquivada) | Iniciativa SGV-11262; PDF completo do Termo (itens 1.1–1.43); 38 CTs da [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] como cobertura existente de 1.24–1.25 | Entender o projeto de automação, mapear cobertura do TR completo, dados/ambientes e propor preset provável | 🗄️ Concluída (DISC-001–004 + recomendação); arquivada intacta em 08/10/2026 |
 
-## Entregas dentro do ciclo 1.24-1.25
+## Entregas dentro do ciclo 1.24-1.25 (abordagem anterior, arquivada)
 
 | Entrega | Referência | Escopo | Status |
 |---|---|---|---|
-| [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Iniciativa SGV-11262; CTs da [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico da hipótese; não executada nem validada; decisão técnica reaberta pela SGV-12082 |
+| [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README\|Entrega 01 — Baseline na instância 225]] | Iniciativa SGV-11262; CTs da [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/03 - Casos de teste\|SGV-11971]] | Piloto de seleção da instância 225 pelo seed | 🗄️ Histórico da hipótese; não executada nem validada; arquivada em 08/10/2026 junto com o restante da abordagem anterior |
 
 ## Como um ciclo é organizado
 
@@ -72,16 +75,21 @@ SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/
     └── 01 Automação/       ← plano e placar de CT-001–012 e CT-038
 ```
 
-**Investigações da iniciativa inteira** (escopo maior que um único ciclo, ex. o Termo completo) **não** ficam aninhadas dentro de um ciclo — vivem como pacote irmão, direto sob a SGV-11262:
+**Investigações da iniciativa inteira** (escopo maior que um único ciclo, ex. o Termo completo) **não** ficam aninhadas dentro de um ciclo — vivem como pacote irmão, direto sob a SGV-11262. A abordagem anterior fica preservada intacta em `Arquivo/Abordagem anterior/`, não é mais pacote irmão ativo:
 
 ```text
 SGV-11262 - [QA-Automação] Termo de Referência SOGOV/
-├── Conhecimento/
-├── Roadmap - Automação TR.md
-├── SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/   ← ciclo 1.24-1.25
-└── SGV-12082 - Análise do TR e preset de dados/              ← investigação do Termo completo (1.1-1.43)
-    ├── 00 QA/              ← demanda, matriz do preset, PDF fonte em Fontes/
-    └── 01 Automação/        ← leitura técnica e placar da investigação
+├── Conhecimento/                                              ← índice e navegação da iniciativa (este arquivo)
+├── Arquivo/
+│   └── Abordagem anterior/                                     ← preservado intacto em 08/10/2026; referência histórica, não fonte de critério
+│       ├── Roadmap - Automação TR.md
+│       ├── Mapa do seed Playwright atual - SGV-11971.md
+│       ├── SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/   ← ciclo 1.24-1.25, com seu próprio Arquivo/ e Entrega 01/
+│       └── SGV-12082 - Análise do TR e preset de dados/               ← investigação original do Termo completo (DISC-001–004 + recomendação)
+└── SGV-12082 - Mapeamento de atores e modelo do preset do TR/   ← frente ativa (scaffold, 08/10/2026 — sem conteúdo analítico ainda)
+    ├── 00 QA/                 ← demanda, plano de análise, revisão da análise
+    ├── 01 Modelo do preset/   ← mapa geral (Mermaid) + matriz de atores e relações
+    └── Fontes/                ← PDF de requisitos (cópia de trabalho; original também preservado no Arquivo)
 ```
 
 **O que é específico de um Termo/ciclo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que é da iniciativa inteira** (investigação, roadmap, preset) vive em pacotes irmãos sob a SGV-11262. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
@@ -127,3 +135,4 @@ O template [[../../../../../Sistema/Templates/Verificação de Conformidade (Ter
 - 2026-10-01 - Descoberto que o repo migrou pra Playwright (merge `1d78bf9`) sem registro no vault — nota [[../../../../04 Conhecimento/Referências/Automação Playwright|Automação Playwright]] criada. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`); não sobem em Cypress, serão portadas
 - 2026-10-02 - SGV-11262 vira guarda-chuva de automação de Termo de Referência; o ciclo 1.24-1.25 ganha SGV próprio (SGV-11971) e vira pacote no padrão da epic SGV-9296
 - 2026-10-07 - Índice atualizado: 13 CTs Playwright (CT-001–012 e CT-038); 12 aprovados seguem associados ao Cypress. A análise SGV-12082 foi definida como próximo passo; o piloto da instância 225 fica histórico até a recomendação baseada no levantamento.
+- 2026-10-08 - Reorganização autorizada pelo Rafael: abordagem anterior (ciclo SGV-11971 com sua Entrega 01, investigação original SGV-12082 — Análise do TR e preset de dados com DISC-001–004 e recomendação, Roadmap e Mapa do seed) movida **intacta**, sem alteração de conteúdo, para `Arquivo/Abordagem anterior/`. Nova frente **SGV-12082 — Mapeamento de atores e modelo do preset do TR** criada como scaffold vazio (`00 QA/` + `01 Modelo do preset/` + `Fontes/`, sem `03 Casos de teste`/`05 Qase`/`01 Automação` ainda) — nenhum conteúdo analítico preenchido. Pausado para revisão visual do Rafael.
