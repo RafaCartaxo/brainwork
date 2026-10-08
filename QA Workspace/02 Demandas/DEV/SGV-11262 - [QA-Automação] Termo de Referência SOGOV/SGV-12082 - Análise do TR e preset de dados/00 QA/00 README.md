@@ -23,6 +23,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Matriz do preset:** [[Matriz - Análise do preset provável]]
+> **Fluxo do preset:** [[Fluxo - Preset de dados]]
 > **Roadmap:** [[../../Roadmap - Automação TR|Roadmap da iniciativa]]
 > **Ciclo de origem:** [[../../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|SGV-11971 — TR 1.24–1.25]]
 > **Automação:** [[../01 Automação/00 - Automação|Automação]]
