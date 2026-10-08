@@ -30,7 +30,7 @@ Este placar acompanha as verificações de análise da automação. “Sem teste
 
 ## Resumo da execução
 
-3 de 4 verificações concluídas (07/10/2026): DISC-001 (mapa do projeto reconciliado contra o commit `16c41e4`), DISC-002 (38/38 CTs rastreados — **13 em Playwright** no commit atual/worktree, **22 em Cypress** num branch local não mesclado (`bdf5e9a`), **3 sem código** em nenhum framework) e DISC-003 (dados/preparação/eixos — achado chave: os dois frameworks resolvem a mesma instância fixa por nome, nenhum tem seleção paramétrica de cliente/instância hoje; a mutation de estado de conta só existe no Cypress, não portada). Só DISC-004 (recomendação) segue pendente.
+3 de 4 verificações concluídas (07/10/2026): DISC-001 (mapa do projeto reconciliado contra o commit `16c41e4`), DISC-002 (38/38 CTs rastreados — **13 em Playwright** no commit atual/worktree, **22 em Cypress** num branch local não mesclado (`bdf5e9a`), **3 sem código** em nenhum framework) e DISC-003 (dados/preparação/eixos — achado chave: os dois frameworks usam o mesmo nome fixo de instância, mas a identidade real do alvo entre os dois configs não foi verificada; nenhum tem seleção paramétrica de cliente/instância hoje; a mutation de estado de conta só existe no Cypress, não portada). Só DISC-004 (recomendação) segue pendente.
 
 ## Resultado por CT
 
