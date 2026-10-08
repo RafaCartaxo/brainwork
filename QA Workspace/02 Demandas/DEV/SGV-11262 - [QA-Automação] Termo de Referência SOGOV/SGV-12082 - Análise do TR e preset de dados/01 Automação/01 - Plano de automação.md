@@ -12,6 +12,7 @@ status: planejado
 > **Demanda:** [[../00 QA/01 - Demanda]]
 > **Casos de análise:** [[../00 QA/03 - Casos de teste]]
 > **Matriz:** [[../00 QA/Matriz - Análise do preset provável]]
+> **Fluxo do preset:** [[../00 QA/Fluxo - Preset de dados]]
 > **Automação:** [[00 - Automação]]
 > **Validação:** [[02 - Validação automação]]
 
@@ -54,18 +55,18 @@ status: planejado
 
 Depois do DISC-001, o Codex (planejador) e o Claude (execução) alinharam uma reordenação do DISC-002, com 4 ressalvas acordadas:
 
-1. **"Ambiente" deixou de ser um termo único** — separado em **ambiente de implantação** (dev/hml/prod, backend/URLs) e **cliente/instância/tenant** (ex.: instância 225). Ver [[../00 QA/Matriz - Análise do preset provável#Dois eixos que não podem virar um termo só|seção da Matriz]].
+1. **"Ambiente" deixou de ser um termo único** — separado em **ambiente de implantação** (dev/hml/prod, backend/URLs) e **cliente/instância/tenant** (ex.: instância 225). Ver [[../00 QA/DISC-003 - Dados, preparação e eixos#Dois eixos que não podem virar um termo só|seção do DISC-003]].
 2. A tabela "O que os 13 CTs consomem" do [[../../../Conhecimento/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] foi reaproveitada como base, não refeita do zero.
 3. Só o observado em execução real conta como **Confirmado**; reuso entre ambientes/instâncias é **Inferido** até teste explícito — nenhum teste foi rodado nesta rodada.
 4. **Prioridade reordenada, não reduzida**: os 13 CTs Playwright (execução atual, já reconciliada nesta análise contra o commit `16c41e4`) entram primeiro, de rastreabilidade profunda — **correção de 07/10/2026**: não é mais o único recorte com "execução verde" alegada, já que o DISC-002 encontrou relatos históricos de execução verde em Cypress pra mais 22 CTs (não revalidados, branch não mesclado). CT-013–037 (Suítes 3/4) continuam no critério de saída C2 — ficam pendentes por sequenciamento, não removidos.
 
-**Entregue nesta rodada:** grafo CT→pré-condição→dados/configuração→mutação→lacuna dos 13 CTs Playwright, na [[../00 QA/Matriz - Análise do preset provável#Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)|Matriz]]. Zero divergência da tabela equivalente do Mapa do seed. **Evidência não é uniforme** (corrigido após revisão do Codex): CT-001–012 reconciliados contra o commit `16c41e4`; CT-038 é untracked no worktree, evidência é a execução manual confirmada contra o estado atual (não commitado), não contra `16c41e4`.
+**Entregue nesta rodada:** grafo CT→pré-condição→dados/configuração→mutação→lacuna dos 13 CTs Playwright, no [[../00 QA/DISC-002 - Cobertura do TR e rastreabilidade dos CTs#Grafo confirmado — os 13 CTs Playwright (CT-001–012, CT-038)|DISC-002]]. Zero divergência da tabela equivalente do Mapa do seed. **Evidência não é uniforme** (corrigido após revisão do Codex): CT-001–012 reconciliados contra o commit `16c41e4`; CT-038 é untracked no worktree, evidência é a execução manual confirmada contra o estado atual (não commitado), não contra `16c41e4`.
 
 > [!info] Pausa de 07/10 (concluída) — Codex/Rafael revisaram, encontraram 2 inconsistências (contagem 24→25, evidência do commit não cobrindo CT-038), corrigidas, e autorizaram prosseguir pro recorte completo abaixo.
 
 ## DISC-002 concluído — síntese dos 38 CTs (07/10/2026)
 
-**38/38 rastreados** na [[../00 QA/Matriz - Análise do preset provável#CT-013 a CT-037 (exceto CT-038) — decomposto em 07/10/2026|Matriz]]. Três categorias de evidência, nenhuma delas "pronta pra proteger pipeline hoje":
+**38/38 rastreados** no [[../00 QA/DISC-002 - Cobertura do TR e rastreabilidade dos CTs#CT-013 a CT-037 (exceto CT-038) — decomposto em 07/10/2026|DISC-002]]. Três categorias de evidência, nenhuma delas "pronta pra proteger pipeline hoje":
 
 | Categoria | CTs | Onde está o código | O que falta |
 |---|---|---|---|
@@ -80,7 +81,7 @@ Depois do DISC-001, o Codex (planejador) e o Claude (execução) alinharam uma r
 
 ## DISC-003 — síntese (07/10/2026)
 
-Detalhe completo (mapa de reutilização, tabela por dado/estado, eixos, pressupostos e perguntas em aberto) vive na [[../00 QA/Matriz - Análise do preset provável#DISC-003 — Dados, preparação e diferenças por eixo (07/10/2026)|Matriz]]. Resumo:
+Detalhe completo (mapa de reutilização, tabela por dado/estado, eixos, pressupostos e perguntas em aberto) vive no [[../00 QA/DISC-003 - Dados, preparação e eixos#DISC-003 — Dados, preparação e diferenças por eixo (07/10/2026)|DISC-003]]. Resumo:
 
 - **Achado principal**: Playwright e Cypress usam **o mesmo nome fixo de instância** (`"E2E Automatic Test"`) — confirmado lendo `cypress/support/e2e.js:78` (`instanceName` hardcoded) contra `src/data/seed/baseline.ts`. **Correção de precisão (07/10/2026)**: isso é "mesmo nome", não "mesma instância confirmada" — a identidade real do alvo (se os dois `.env`/`cypress.env*.json` apontam pro mesmo backend/registro, ou só coincidem no nome) **não foi verificada**, porque isso exigiria comparar valores de configuração, não só código. **Nenhum dos dois frameworks tem hoje um parâmetro de `clienteId`/instância alternativa** — não é uma lacuna só do Playwright, é dos dois.
 - A mutation de mudança de estado de conta (`changePublicAgentWorkStatus`) e o padrão de agente isolado por cenário (`createIsolatedTestAgent`) só existem no lado Cypress — é a peça que, portada, destrava qualquer preset de estado pra Playwright.
@@ -91,7 +92,7 @@ Nenhum teste foi rodado, nenhuma configuração foi alterada nesta verificação
 
 ## DISC-004 — Síntese e recomendação (07/10/2026)
 
-Detalhe completo (comparação de alternativas, entregas sequenciadas com CTs/dependências/aceite/risco) vive na [[../00 QA/Matriz - Análise do preset provável#DISC-004 — Comparação de alternativas e recomendação (07/10/2026)|Matriz]]. Resumo:
+Detalhe completo (comparação de alternativas, entregas sequenciadas com CTs/dependências/aceite/risco) vive no [[../00 QA/DISC-004 - Alternativas e recomendação#DISC-004 — Comparação de alternativas e recomendação (07/10/2026)|DISC-004]]. Resumo:
 
 > [!info] Natureza desta seção
 > Só recomendação documental — nenhuma implementação, execução ou pasta/demanda criada. O Rafael decide se aprova, ajusta ou rejeita.
