@@ -25,7 +25,7 @@ pontos: ""
 > **Revisão da análise:** [[04 - Revisão da análise]]
 > **Mapa geral:** [[../01 Modelo do preset/00 - Mapa geral]]
 > **Matriz de atores e relações:** [[../01 Modelo do preset/01 - Matriz de atores e relações]]
-> **Especificação do preset piloto:** [[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto (TR 1.24–1.27)]], [[../01 Modelo do preset/03 - Especificação do preset piloto (TR 1.28–1.29)|03 - Especificação do preset piloto (TR 1.28–1.29)]], [[../01 Modelo do preset/04 - Especificação do preset piloto (TR 1.30–1.31)|04 - Especificação do preset piloto (TR 1.30–1.31)]]
+> **Especificação do preset piloto:** [[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto (TR 1.24–1.27)]], [[../01 Modelo do preset/03 - Especificação do preset piloto (TR 1.28–1.29)|03 - Especificação do preset piloto (TR 1.28–1.29)]], [[../01 Modelo do preset/04 - Especificação do preset piloto (TR 1.30–1.31)|04 - Especificação do preset piloto (TR 1.30–1.31)]], [[../01 Modelo do preset/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)]]
 > **Fontes:** [[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
 
 > [!settings]- Controle do card
@@ -53,8 +53,9 @@ pontos: ""
 | Especificação do preset piloto (TR 1.24–1.27) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.28–1.29) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/03 - Especificação do preset piloto (TR 1.28–1.29)|03 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.30–1.31) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/04 - Especificação do preset piloto (TR 1.30–1.31)|04 - Especificação do preset piloto]] |
+| Especificação do preset piloto (TR 1.32, 1.36–1.37) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05 - Especificação do preset piloto]] |
 
-**Próximo passo:** definição do Codex sobre a próxima fatia da especificação do preset (após 1.24–1.27, 1.28–1.29 e 1.30–1.31, todas revisadas e aprovadas). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
+**Próximo passo:** definição do Codex sobre a próxima fatia da especificação do preset (após 1.24–1.27, 1.28–1.29, 1.30–1.31 e 1.32/1.36–1.37, todas revisadas e aprovadas). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
 
 Pacote para `SGV-12082`:
 
