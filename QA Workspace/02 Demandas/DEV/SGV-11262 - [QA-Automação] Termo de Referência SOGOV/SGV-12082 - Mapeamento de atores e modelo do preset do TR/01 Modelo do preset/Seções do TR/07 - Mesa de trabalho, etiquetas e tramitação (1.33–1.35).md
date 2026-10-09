@@ -5,14 +5,14 @@ pai: SGV-11262
 tipo: secao-tr
 itens_tr: "1.33–1.35"
 paginas_pdf: "p. 13–16"
-status: lido
+status: aprovado
 ---
 # 07 - Mesa de trabalho, etiquetas e tramitação (itens 1.33–1.35)
 
 > [!info]- Navegação
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
-> [!info] Escopo deste recorte — lido em 08/10/2026, aguardando revisão do Codex
+> [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.33–1.35**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (50 linhas na Cobertura). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.33–1.33.3.5 (p. 13); 1.33.3.6–1.35 (p. 14); 1.35.1–1.35.2.7.a (p. 15); 1.35.2.7.b–1.35.5 (p. 16, antes de 1.36). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — exceto onde o próprio TR numera. Nesta rodada, a análise usou exclusivamente o texto do TR — Conhecimento > Módulos não foi consultado para este recorte.
 
 ## Cobertura dos itens
@@ -64,7 +64,7 @@ status: lido
 | 1.35.2.4 | Mapeado | Solicitação de revisão de documentos/comunicações oficiais ainda em estado pré-elaboração (antes da emissão oficial). |
 | 1.35.2.5 | Mapeado | Edição do documento de abertura (documento/comunicação oficial) ainda em estado pré-elaboração, com histórico de cada edição. |
 | 1.35.2.6 | Mapeado | Definição de prazos para documentos, aplicados hierarquicamente a setores/servidores envolvidos. |
-| 1.35.2.7 | Mapeado | Hierarquia de prazos: (a) Prazo oficial (lei, parametrizado no módulo/serviço/assunto — vira o prazo do documento, imutável); (b) Prazo do documento (prazo macro quando não há oficial, aplicado a todos os envolvidos); (c) Prazo de assinatura (respeita obrigatoriamente o prazo do documento/oficial); (d) Prazo individual (servidor define para si, respeita obrigatoriamente o prazo do documento/oficial). |
+| 1.35.2.7 | Mapeado | Prazos (a-d): prazo oficial, quando existente, torna-se o prazo do documento e não pode ser alterado (a); sem prazo oficial, define-se prazo do documento aplicado a todos os envolvidos (b); prazo de assinatura respeita o prazo do documento ou oficial, se houver (c); prazo individual respeita o prazo do documento ou oficial, se houver (d). |
 | 1.35.3 | Mapeado | Encerramento flexível de tramitações, no mínimo: (a) individual por servidor (mantém tramitação normal nos demais); (b) por setor envolvido (encerra em massa nas mesas dos servidores do setor, mantendo tramitação normal nos demais setores); (c) total do documento (setor responsável encerra em todos os setores/servidores de uma vez). |
 | 1.35.4 | Mapeado | Possibilidade de gerar documento de outro módulo e associá-lo automaticamente ao processo/documento em questão, conforme parametrização prévia. |
 | 1.35.4.1 | Mapeado | Documento associado fica identificado no documento/processo que o associou, incluído também na impressão. |
@@ -76,14 +76,17 @@ status: lido
 
 | Referência do TR | Elemento | Tipo | Papel/descrição | Dados ou atributos relevantes | Certeza/evidência |
 |---|---|---|---|---|---|
-| 1.33, 1.33.1, 1.33.3 | Mesa de trabalho | Entidade | Espaço de trabalho do servidor (pessoal) e do setor, reunindo documentos/processos relacionados | visualização (Kanban padrão / Lista — 1.33.3.1, 1.33.3.2); alertas de prazo/status/novas demandas (1.33.3.3, 1.33.3.4); filtros de prazo (1.33.3.5); filtros/buscas/ordenação (1.33.4, 11 critérios); resumo de demandas na tela de boas-vindas (1.33.2, 1.33.2.1) | Confirmado |
-| 1.33.3.6, 1.35.2, 1.35.2.1 | Documento/Processo | Entidade | Unidade central tramitada entre setores, com estado e histórico próprios | status (Em aberto, Em elaboração, Em tramitação, Pausado, Encerrado — mesmo enum citado em 1.33.3.6 e 1.35.2.1); setor responsável (1.33.5.1); data/hora da última atividade (1.33.5.2); notificações (1.33.5.3); prazo (hierarquia — ver Prazo abaixo); linha do tempo de tramitação (1.35.1); documentos associados (1.35.2.2.1.2.a, 1.35.4) | Confirmado |
+| 1.33, 1.33.1, 1.33.3 | Mesa de trabalho | Entidade | Espaço de trabalho do servidor (pessoal) e do setor, reunindo documentos/processos relacionados | visualização (Kanban padrão / Lista — 1.33.3.1, 1.33.3.2); alertas de prazo/status/novas demandas (1.33.3.3, 1.33.3.4); filtros de prazo (1.33.3.5); filtros/buscas/ordenação (1.33.4, 11 critérios); resumo de demandas na tela de boas-vindas (1.33.2, 1.33.2.1); **status da própria mesa** (mesmo enum de 1.33.3.6 — ver linha "Status" abaixo) | Confirmado |
+| 1.33.3.6, 1.35.2.1 | Status (Em aberto, Em elaboração, Em tramitação, Pausado, Encerrado) | Estado/enum | Enum único citado pelo TR duas vezes (1.33.3.6 e 1.35.2.1), aplicado explicitamente tanto a Documento/Processo quanto à Mesa de trabalho (1.33.3.6: "status dos documentos **e das mesas de trabalho**") | 5 valores: Em aberto, Em elaboração, Em tramitação, Pausado, Encerrado. TR não detalha regra de agregação (como o status da mesa se relaciona ao dos documentos nela) | Confirmado quanto ao enum e à dupla aplicação; regra de agregação — A confirmar |
+| 1.33.3.6, 1.35.2, 1.35.2.1 | Documento/Processo | Entidade | Unidade central tramitada entre setores, com estado e histórico próprios | status (ver enum acima); setor responsável (1.33.5.1); data/hora da última atividade (1.33.5.2); notificações (1.33.5.3); prazo (ver Prazo abaixo); linha do tempo de tramitação (1.35.1); documento apensado via despacho (1.35.2.2.1.2.a) e/ou documento associado automaticamente (1.35.4) — mecanismos distintos, ver nota | Confirmado |
 | 1.35.1 | Linha do tempo da tramitação | Entidade/registro | Auditoria de toda ação ocorrida durante a tramitação de um Documento/Processo | usuário executor; setor do usuário (se executor foi servidor); data/hora da ação; registro de visualizações (quem, quantas vezes, data/hora da última) | Confirmado |
-| 1.35.2.2.1, 1.35.2.2.1.1–1.35.2.2.1.6 | Despacho | Entidade | Ação realizada por um setor envolvido durante a tramitação de um processo administrativo (já identificado no recorte 05, 1.30.2, com atributos adicionais aqui) | campo de livre preenchimento; anexos; destinatários (inclusive setores em cópia); possibilidade de apensar outro documento (1.35.2.2.1.2.a); sigiloso ou não; prazo (respeita prazo oficial/do documento); assinatura (nativa ou ICP); impressão | Confirmado |
+| 1.35.2.2.1, 1.35.2.2.1.1–1.35.2.2.1.6 | Despacho | Entidade | Ação realizada por um setor envolvido durante a tramitação de um processo administrativo | campo de livre preenchimento; destinatário(s), inclusive setores em cópia (1.35.2.2.1.1); possibilidade de apensar outro documento (1.35.2.2.1.2.a); sigiloso ou não; prazo dirigido aos destinatários (respeita prazo oficial/do documento pré-existente — 1.35.2.2.1.4); assinatura (nativa ou ICP); impressão | Confirmado (atributos deste item); vínculo de identidade com o "Despacho" do recorte 05 (1.30.2) — **A confirmar**, ver dúvida abaixo |
 | 1.34, 1.34.1 | Etiqueta | Entidade | Marcação usada para organizar/filtrar/identificar documentos nas mesas de trabalho | tipo (pessoal — só na mesa do próprio servidor / compartilhada — setores ou hierarquias de setores); nome; cor; setor(es) de compartilhamento; subetiqueta (vínculo a etiqueta principal — 1.34.2.2); etiqueta padrão "Urgente" (fixa, não excluível — 1.34.1.2) | Confirmado |
-| 1.35.2.7 | Prazo | Atributo/conceito (hierárquico) associado a Documento/Processo e a Despacho | 4 tipos em ordem hierárquica: Prazo oficial (lei; imutável) > Prazo do documento (macro) > Prazo de assinatura > Prazo individual (os 3 últimos devem respeitar o(s) superior(es) na hierarquia) | Confirmado |
+| 1.35.2.7 | Prazo | Atributo/conceito associado a Documento/Processo e a Despacho | 4 tipos: Prazo oficial (lei; quando existente, torna-se o prazo do documento e não pode ser alterado); Prazo do documento (quando não há oficial, aplicado a todos os envolvidos); Prazo de assinatura (respeita o prazo do documento ou oficial, se houver); Prazo individual (respeita o prazo do documento ou oficial, se houver) — o TR não declara relação direta entre assinatura e individual | Confirmado |
 | 1.35.3 | Encerramento de tramitação | Conceito/ação sobre Documento/Processo | 3 modalidades: individual (por servidor, mesa própria); por setor (em massa, mesas dos servidores do setor); total (documento inteiro, todos os setores/servidores) | Confirmado |
-| 1.35.4, 1.35.4.1 | Documento associado (gerado automaticamente) | Entidade | Documento de outro módulo, gerado e associado automaticamente ao processo/documento em questão, conforme parametrização prévia — mecanismo distinto do apensar via despacho (1.35.2.2.1.2.a) | identificação no documento/processo associado; inclusão na impressão | Confirmado |
+| 1.35.2.2.1.2.a | Documento apensado (via despacho) | Entidade | Documento da entidade apensado à tramitação por meio de um despacho | identificado no documento/processo que o associou; incluído na impressão | Confirmado |
+| 1.35.4, 1.35.4.1 | Documento associado (gerado automaticamente) | Entidade | Documento de outro módulo, gerado e associado automaticamente ao processo/documento em questão, conforme parametrização prévia; o TR descreve esse vínculo também com a palavra "apensado" (1.35.4.1) | documento associado deve estar identificado como apensado a outro documento/processo (1.35.4.1); na impressão do documento/processo que contém o documento associado, este também deve ser incluído (1.35.4.1) | Confirmado quanto ao mecanismo e existência; identidade conceitual com o "Documento apensado via despacho" (1.35.2.2.1.2.a) — mesmo objeto/mecanismo de dados ou só coincidência terminológica — **A confirmar** |
+| 1.33.6 | Ferramenta de rastreio (busca global) | Entidade/Função | Busca ampla por documentos em todo o escopo da organização, não restrita à mesa em visualização | abrangência: toda a organização; acesso limitado à permissão do usuário consultante | Confirmado |
 
 ## Relações/dependências identificadas
 
@@ -93,25 +96,33 @@ status: lido
 | Mesa de trabalho | pertence a | Setor (mesa do setor) | 1.33.1, 1.33.3 | Confirmado |
 | Mesa de trabalho | contém | Documento/Processo | 1.33.3 | Confirmado |
 | Documento/Processo | tem | Status (Em aberto \| Em elaboração \| Em tramitação \| Pausado \| Encerrado) | 1.33.3.6, 1.35.2.1 | Confirmado |
+| Mesa de trabalho | tem | Status (mesmo enum: Em aberto \| Em elaboração \| Em tramitação \| Pausado \| Encerrado) | 1.33.3.6 | Confirmado — TR não detalha regra de agregação entre o status da mesa e o dos documentos nela |
 | Documento/Processo | tem | Setor responsável | 1.33.5.1 | Confirmado |
-| Documento/Processo | tem | Prazo (hierarquia: oficial > do documento > de assinatura > individual) | 1.35.2.7 | Confirmado |
+| Documento/Processo | tem | Prazo oficial, do documento, de assinatura e/ou individual (ver Elemento Prazo — sem cadeia hierárquica estrita declarada entre os 4 tipos) | 1.35.2.7 | Confirmado |
 | Documento/Processo | registrado em | Linha do tempo da tramitação | 1.35.1 | Confirmado |
 | Documento/Processo | pode ter | Etiqueta (pessoal ou compartilhada) | 1.34, 1.34.1 | Confirmado |
 | Documento/Processo (processo administrativo) | pode receber | Despacho | 1.35.2.2.1 | Confirmado |
-| Despacho | pode apensar | Documento associado | 1.35.2.2.1.2.a | Confirmado |
-| Documento/Processo | pode gerar e associar automaticamente | Documento associado (de outro módulo) | 1.35.4 | Confirmado — mecanismo distinto do apensar via despacho (1.35.2.2.1.2.a) |
+| Despacho | tem | Destinatário(s), inclusive setores em cópia | 1.35.2.2.1.1 | Confirmado |
+| Despacho | pode indicar | Prazo dirigido aos destinatários (respeita prazo oficial/do documento pré-existente) | 1.35.2.2.1.4 | Confirmado |
+| Despacho | pode apensar | Documento apensado (via despacho) | 1.35.2.2.1.2.a | Confirmado |
+| Documento/Processo | pode gerar e associar automaticamente | Documento associado (de outro módulo) | 1.35.4 | Confirmado quanto ao mecanismo; identidade com o "Documento apensado via despacho" — A confirmar, ver dúvida abaixo |
 | Documento/Processo | pode ser encerrado | individualmente (servidor) / por setor (em massa) / totalmente (setor responsável) | 1.35.3 | Confirmado |
 | Etiqueta compartilhada | compartilhada com | Setor(es) | 1.34.1.b, 1.34.2 | Confirmado |
 | Etiqueta | pode ter | Subetiqueta | 1.34.2.2 | Confirmado |
+| Servidor | pertence a | Setor | 1.33.1, 1.35 | Confirmado |
 | Servidor | acessa | Mesa de trabalho (pessoal e dos setores vinculados) | 1.33.1, 1.33.3 | Confirmado |
+| Servidor | só acessa (sujeito a permissões) | Documentos/Processos das mesas dos setores a que pertence | 1.35 | Confirmado |
+| Ferramenta de rastreio (busca global) | abrange | Todo o escopo da organização (não só a mesa em visualização) | 1.33.6 | Confirmado — acesso limitado à permissão do usuário consultante |
 | Documento/Processo | tramita entre | Setor (conforme organograma do órgão) | 1.35 | Confirmado quanto ao fato; Organograma em si não analisado neste recorte |
 | Mesa de trabalho | reflete tramitação de | Etapa/Fluxo de trabalho (recorte 05, 1.30) | — | A confirmar — ver dúvida abaixo |
+| Despacho (1.35.2.2.1, este recorte) | mesmo conceito que | Despacho (recorte 05, 1.30.2) | 1.30.2, 1.35.2.2.1 | A confirmar — mesmo termo, atributos compatíveis, mas o TR não declara identidade formal; ver dúvida abaixo |
 
 ## Dúvidas/ambiguidades
 
 - **Mesa de trabalho (1.33, este recorte) × Etapa/Fluxo de trabalho (1.30, recorte 05):** o TR não declara explicitamente, neste recorte, que os documentos/processos exibidos na mesa de trabalho do servidor correspondem a etapas de um Fluxo de trabalho configurado (recorte 05). É plausível que sim (a mesa parece ser a visão consolidada do que está em tramitação), mas essa é uma suposição estrutural, não um fato declarado em nenhum dos dois recortes — não concluo a partir da plausibilidade. **Pergunta objetiva para Rafael:** os itens que aparecem na mesa de trabalho do servidor (1.33) são necessariamente etapas de algum Fluxo de trabalho (1.30), ou a mesa pode conter documentos/processos fora desse modelo?
 - **Escopo da restrição de etiquetas por setor (1.34.1.4):** o texto diz que a visualização de etiquetas aplicadas deve ser restrita conforme o setor do usuário. Não fica claro se essa regra se aplica também às etiquetas **pessoais** (1.34.1.a — já restritas por definição ao próprio servidor, não a um setor) ou só às **compartilhadas** (1.34.1.b). **Pergunta objetiva para Rafael:** a restrição de 1.34.1.4 vale só para etiquetas compartilhadas, ou também reinterpreta a visibilidade das etiquetas pessoais?
-- **Despacho (1.35.2.2.1) × Despacho (recorte 05, 1.30.2):** o TR usa o mesmo termo "despacho" nos dois recortes, com atributos compatíveis (formulário/anexos, assinatura, sigilo) — tratado aqui como o mesmo conceito de negócio, não como dedução por semelhança de termo isolado, já que os atributos descritos são coerentes entre si e não há definição concorrente no texto. Registrado como nota de cross-referência, sem alterar o recorte 05.
+- **Despacho (1.35.2.2.1) × Despacho (recorte 05, 1.30.2):** o TR usa o mesmo termo "despacho" nos dois recortes, com atributos compatíveis (formulário/anexos, assinatura, sigilo), mas **não declara formalmente que se trata da mesma entidade de negócio** — a coincidência terminológica/compatibilidade de atributos não é, por si, evidência de identidade (mesma régua aplicada às demais dúvidas deste recorte). Mantido como **A confirmar** nos Elementos e Relações, sem alterar o recorte 05. **Pergunta objetiva para Rafael:** o "despacho" de 1.30.2 (dentro de uma Etapa de Fluxo de trabalho) e o "despacho" de 1.35.2.2.1 (durante a tramitação geral de um processo administrativo) são a mesma funcionalidade, ou duas funcionalidades distintas que compartilham o nome?
+- **Documento apensado via despacho (1.35.2.2.1.2.a) × Documento associado gerado automaticamente (1.35.4/1.35.4.1):** ambos os mecanismos são descritos pelo TR usando a palavra "apensado", mas são acionados de formas diferentes (manual, durante um despacho específico vs. automático, por parametrização prévia ao gerar documento de outro módulo). O TR não declara se resultam no mesmo tipo de vínculo/objeto de dados ou se são mecanismos de associação de documentos totalmente independentes. Mantido como dois Elementos distintos, com identidade **A confirmar**. **Pergunta objetiva para Rafael:** esses dois mecanismos de "apensar"/associar documentos usam a mesma estrutura de dados (ex.: mesma lista de documentos apensados num processo), ou são funcionalidades separadas?
 
 ## Fontes/evidências
 
