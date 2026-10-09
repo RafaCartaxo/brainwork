@@ -103,7 +103,7 @@ flowchart TB
     ModeloSimples --> Documento
     DocumentoAuto --> Documento
     Central --> Atores
-    Atores -->|"solicita acesso a"| Servico
+    Atores -->|"solicita / acessa"| Servico
     Canal --> Central
     Assinatura --> Documento
     Assinatura --> Signatario
