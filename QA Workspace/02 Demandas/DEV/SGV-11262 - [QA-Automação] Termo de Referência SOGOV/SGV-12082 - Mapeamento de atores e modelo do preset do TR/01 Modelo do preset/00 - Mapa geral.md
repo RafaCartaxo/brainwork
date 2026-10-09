@@ -59,6 +59,7 @@ flowchart TB
         UsuarioExterno["Usuário externo"]
         Demanda["Demanda externa"]
         Central["Central de atendimento"]
+        Atores["Cidadãos, empresas e entes externos"]
     end
 
     subgraph C5["Divulgação, assinaturas, chaves"]
@@ -101,7 +102,8 @@ flowchart TB
     DocumentoAuto --> VinculoAlvo
     ModeloSimples --> Documento
     DocumentoAuto --> Documento
-    Central -->|"oferece acesso"| Servico
+    Central --> Atores
+    Atores -->|"solicita acesso a"| Servico
     Canal --> Central
     Assinatura --> Documento
     Assinatura --> Signatario
