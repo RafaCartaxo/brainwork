@@ -15,6 +15,24 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.30–1.31**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (18 linhas na Cobertura — 4 sob 1.30, 14 sob 1.31). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.30–1.30.1(intro) (p. 11); 1.30.1(configurações)–1.31.1.2 (p. 12); 1.31.1.3–1.31.3 (p. 13). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — exceto onde o próprio TR numera (ex.: 1.31.2.1.1–1.31.2.1.3.2, que são subitens numerados de verdade, cobertos como tal).
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    ModeloSimples["Modelo simples"] --> Vinculo["Vínculo obrigatório com Categoria, Serviço ou Assunto"]
+    DocumentoAuto["Documento automatizado"] --> Vinculo
+    ModeloSimples --> UsoSimples["Texto inserido durante a tramitação"]
+    DocumentoAuto --> Geracao["Gera documento independente com tramitação própria"]
+```
+
+### Fluxo de trabalho e despacho na etapa
+
+```mermaid
+flowchart TB
+    Fluxo["Fluxo de trabalho"] --> Etapa["Etapa"]
+    Etapa --> DespachoEtapa["Despacho na etapa (1.30.2)"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |

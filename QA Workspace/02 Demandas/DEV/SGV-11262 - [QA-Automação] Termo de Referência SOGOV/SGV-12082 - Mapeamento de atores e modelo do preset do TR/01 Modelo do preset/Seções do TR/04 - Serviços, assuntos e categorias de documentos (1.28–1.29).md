@@ -15,6 +15,24 @@ status: aprovado
 > [!info] Escopo deste recorte — relido e aprovado pelo Codex em 09/10/2026
 > Itens do TR: **1.28–1.29**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (29 linhas na Cobertura — 6 sob 1.28, 23 sob 1.29). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.28–1.28.1 (p. 7–8); 1.28.1.2–1.29.1 (p. 8–9); 1.29.2–1.29.8 (p. 9–10); 1.29.9–1.29.10.4 (p. 10–11). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    ServicoAssunto["Serviço / Assunto"] --> Configuracao["Cadastro e regras de atendimento/tramitação"]
+    Configuracao --> CategoriaDoc["Categoria de documento"]
+    CategoriaDoc --> Subtipo["Tipos específicos: Memorando, Ofício, Ouvidoria, e-SIC…"]
+    Configuracao --> Campos["Campos personalizados"]
+```
+
+### Zoneamento e categorias de Assuntos e Serviços
+
+```mermaid
+flowchart TB
+    Zoneamento["Processo urbanístico / Zoneamento"] -.->|"(b) categoria-base?"| CategoriaDoc["Categoria de documento"]
+    CategoriaAS["Categoria de Assuntos e Serviços"] -.->|"(n) relação inferida"| SubcategoriaAS["Subcategoria de Assuntos e Serviços"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |

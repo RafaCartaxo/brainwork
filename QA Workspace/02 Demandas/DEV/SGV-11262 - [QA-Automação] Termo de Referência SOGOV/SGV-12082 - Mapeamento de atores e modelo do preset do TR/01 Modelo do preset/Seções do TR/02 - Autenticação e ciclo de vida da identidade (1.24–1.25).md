@@ -19,7 +19,10 @@ status: aprovado
 
 ```mermaid
 flowchart TB
-    Servidor["Servidor"] --> Autenticacao["Ciclo de autenticação (1.25.3, p. 2):<br/>Ativo / Licença / Férias / Inativo — nega autenticação"]
+    Raiz["Autenticação e acesso (1.24–1.25)"] --> IdentidadeFuncional["Identidade funcional do servidor"]
+    IdentidadeFuncional --> Autenticacao["Ciclo de autenticação (1.25.3, p. 2):<br/>Ativo / Licença / Férias / Inativo — nega autenticação"]
+    Raiz --> ContaUsuario["Conta de usuário (Servidor, Cidadão PF, Empresa PJ)"]
+    ContaUsuario --> Bloqueio["Bloqueio após 5 tentativas malsucedidas (1.25.1, p. 2)"]
 ```
 
 ## Cobertura dos itens

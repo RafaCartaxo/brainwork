@@ -31,51 +31,23 @@ Os diagramas menores seguem a hierarquia de cima para baixo. A sequência entre 
 
 ### 3. Bloqueio por tentativas de acesso
 
-> Presença Online/Offline já está no diagrama 2 (nó "Presença na plataforma (Online / Offline)") — não duplicada aqui.
-
-```mermaid
-flowchart TB
-    Servidor["Servidor"] --> Bloqueio["Bloqueio após 5 tentativas malsucedidas (1.25.1, p. 2)"]
-```
+> Diagrama movido para [[Seções do TR/02 - Autenticação e ciclo de vida da identidade (1.24–1.25)#Modelo visual|Modelo visual]], no recorte 02 — o requisito de bloqueio (1.25.1) está representado lá.
 
 ### 4. Serviços, assuntos e categorias de documento
 
-```mermaid
-flowchart TB
-    ServicoAssunto["Serviço / Assunto"] --> Configuracao["Cadastro e regras de atendimento/tramitação"]
-    Configuracao --> CategoriaDoc["Categoria de documento"]
-    CategoriaDoc --> Subtipo["Tipos específicos: Memorando, Ofício, Ouvidoria, e-SIC…"]
-    Configuracao --> Campos["Campos personalizados"]
-```
+> Diagrama movido para [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)#Modelo visual|Modelo visual]], no recorte 04.
 
 ### 5. Zoneamento e categorias de Assuntos e Serviços
 
-```mermaid
-flowchart TB
-    Zoneamento["Processo urbanístico / Zoneamento"] -.->|"(b) categoria-base?"| CategoriaDoc["Categoria de documento"]
-    CategoriaAS["Categoria de Assuntos e Serviços"] -.->|"(n) relação inferida"| SubcategoriaAS["Subcategoria de Assuntos e Serviços"]
-```
+> Diagrama movido para [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)#Zoneamento e categorias de Assuntos e Serviços|Zoneamento e categorias de Assuntos e Serviços]], no recorte 04.
 
 ### 6. Modelos de documentos
 
-```mermaid
-flowchart TB
-    ModeloSimples["Modelo simples"] --> Vinculo["Vínculo obrigatório com Categoria, Serviço ou Assunto"]
-    DocumentoAuto["Documento automatizado"] --> Vinculo
-    ModeloSimples --> UsoSimples["Texto inserido durante a tramitação"]
-    DocumentoAuto --> Geracao["Gera documento independente com tramitação própria"]
-```
+> Diagrama movido para [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)#Modelo visual|Modelo visual]], no recorte 05.
 
 ### 7. Mesa, fluxo de trabalho e despachos
 
-```mermaid
-flowchart TB
-    Documento["Documento / Processo"] --> Mesa["Mesa de trabalho"]
-    Fluxo["Fluxo de trabalho"] --> Etapa["Etapa"]
-    Etapa --> DespachoEtapa["Despacho na etapa (1.30.2)"]
-    Documento --> DespachoTramitacao["Despacho na tramitação (1.35.2.2.1)"]
-    DespachoEtapa -.->|"(e) mesma funcionalidade?"| DespachoTramitacao
-    Mesa -.->|"(c) reflete etapas do fluxo?"| Etapa
+> Diagrama dividido: fluxo de trabalho e despacho na etapa (1.30.2) movidos para [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)#Fluxo de trabalho e despacho na etapa|Fluxo de trabalho e despacho na etapa]], no recorte 05; mesa de trabalho e despacho na tramitação (1.35.2.2.1) movidos para [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)#Modelo visual|Modelo visual]], no recorte 07. As relações (c) e (e) seguem só nas tabelas abaixo.
 ```
 
 ### 8. Status e documentos associados
