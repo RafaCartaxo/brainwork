@@ -55,19 +55,17 @@ status: aprovado
 | Servidor Público | autentica com | CPF + senha | 1.24.1 | Confirmado |
 | Cidadão (Pessoa Física) | autentica com | CPF + senha | 1.24.2 | Confirmado |
 | Empresas/outras entidades (Pessoa Jurídica) | autentica com | CNPJ + senha | 1.24.3 | Confirmado |
-| Usuário/identidade com status funcional | tem estado | {Ativo, Licença, Férias, Inativo} | 1.25.3 | Estados/consequências confirmados; aplicabilidade às categorias de usuário a confirmar (ver dúvida abaixo) |
+| Usuário/identidade com status funcional | tem estado | {Ativo, Licença, Férias, Inativo} | 1.25.3 | Estados/consequências confirmados; o TR não especifica as categorias de usuário (ver Respostas complementares ao TR) |
 | Estado funcional | determina | conjunto de permissões/acesso | 1.25.3.1–1.25.3.4 | Confirmado |
-| 5 tentativas malsucedidas | aciona | bloqueio da conta | 1.25.1 | Confirmado como regra; **relação com os 4 estados do ciclo de vida não é explícita no texto** — ver dúvida abaixo |
+| 5 tentativas malsucedidas | aciona | bloqueio da conta | 1.25.1 | Regra confirmada no TR; o texto não inclui Bloqueado entre os quatro estados funcionais de 1.25.3 |
 
-## Dúvidas/ambiguidades e contexto complementar
+## Respostas complementares ao TR
 
-O TR continua sendo a fonte para os requisitos contratuais. As respostas abaixo vêm de documentação funcional do SOGOV e ajudam a entender o contexto atual; não alteram o que está explícito ou ausente no TR.
+As respostas abaixo registram o contexto atual do SOGOV; não acrescentam requisitos ao TR.
 
-| Questão que o TR não resolve | Contexto documentado fora do TR | Fonte e limite da evidência |
-|---|---|---|
-| A quem se aplicam os estados funcionais de 1.25.3? | A documentação do Login descreve status do servidor: **Em Atividade**, Licença, Férias e Inativo. servidores em Licença ou Férias mantêm acesso total ao ambiente cidadão; Inativo bloqueia o workspace, mas o usuário pode acessar outros workspaces ou o ambiente cidadão. | [[QA Workspace/04 Conhecimento/Módulos/Login|Módulo Login]] (importado do Notion; documentação funcional, não validação feita nesta análise). Há uma diferença a preservar: o TR usa **Ativo** e diz que **Inativo** nega qualquer autenticação (1.25.3.4), enquanto a documentação do Login delimita o bloqueio ao workspace. O contexto não resolve o escopo contratual nem confirma o comportamento em execução. |
-| O bloqueio por tentativas é um quinto estado ou mecanismo separado? | A especificação de Gestão de Desbloqueio trata “Bloqueado” separadamente do status de origem e prevê restaurar o status anterior após o desbloqueio. | [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos|Gestão de Desbloqueio de Acessos]]. A própria nota informa que a funcionalidade está em especificação e ainda não foi testada; portanto, isso não confirma o comportamento em produção. |
-| Como o bloqueio é revertido? | A especificação prevê que, ao concluir o fluxo de redefinição de senha — manual ou sistêmico —, o usuário seja removido da lista de bloqueios e retorne ao status anterior. | [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos#Fluxo de desbloqueio e sincronização|Fluxo de desbloqueio e sincronização]]. Regra documentada, ainda não validada em execução. O TR não descreve esse procedimento. |
+- **Aplicação dos estados funcionais:** somente servidores, conforme a documentação do [[QA Workspace/04 Conhecimento/Módulos/Login|módulo Login]]. O TR descreve os quatro estados, mas não explicita essa delimitação por tipo de usuário.
+- **Bloqueado é distinto de Inativo:** Inativo é um dos estados do ciclo de vida funcional (1.25.3.4); Bloqueado decorre das cinco tentativas malsucedidas (1.25.1). A documentação de [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos|Gestão de Desbloqueio de Acessos]] também trata o bloqueio separadamente do status de origem.
+- **Reversão do bloqueio:** a especificação prevê que, concluído o fluxo de redefinição de senha, o usuário saia da lista de bloqueios e retorne ao status anterior. Essa funcionalidade está documentada, mas ainda não foi testada em execução, conforme a própria nota de Gestão de Desbloqueio.
 
 ## Fontes/evidências
 
