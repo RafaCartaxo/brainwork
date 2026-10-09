@@ -20,7 +20,7 @@ status: em levantamento
 ## Como ler a tabela
 
 - **Baseline reutilizável:** dado/estado que a população inicial do seed já carrega, pronto para qualquer cenário (não muda por teste).
-- **Preparação específica de cenário:** dado/estado que precisa ser criado/mutado só quando um cenário específico o exige (ex.: mudar o status de um agente isolado).
+- **Preparação específica de cenário:** dado/estado que só alguns cenários precisam — não faz parte da população padrão do baseline. Isso descreve a necessidade lógica do dado, não que o seed será executado ou mutado a cada teste: pode ser preparado uma única vez no ambiente persistente (ver "Restrição de ambiente" acima); a forma e o momento do provisionamento não são decididos nesta nota.
 - **Cobertura atual do seed:** o que o código do repositório confirma hoje — não o que seria desejável.
 - Estados de conhecimento: **Confirmado** (visto direto no TR, no código ou numa captura real de API/execução), **Inferido**, **A confirmar**.
 
@@ -32,7 +32,7 @@ status: em levantamento
 | 1.24.2 | Cidadão (Pessoa Física) — CPF + senha | Baseline | **Lacuna**: não existe cidadão PF próprio no baseline; os CTs A02-C02/C05/C09 reaproveitam o CPF do servidor como login de cidadão | `login.spec.ts` (comentário explícito: "o baseline não tem um cidadão Pessoa Física puro") | Confirmado (lacuna, não suposição) |
 | 1.24.3 | Empresa/entidade (Pessoa Jurídica) — CNPJ + senha | Baseline | `BASELINE.citizens` (citizen/engineer/architect/manager/alphanumeric) + pools `citizen`/`alphanumeric` (4 cada); senha via `PW_CITIZEN_PASSWORD` | `baseline.ts`; CT A02-C03 | Confirmado |
 | 1.25.1 | Bloqueio por 5 tentativas malsucedidas | Preparação específica de cenário (precisa de um agente isolado, não o pool padrão) | **Não portado para Playwright.** Existe só em Cypress, branch não mesclado (`createIsolatedTestAgent` + contagem de tentativas) | DISC-004 (arquivado), Entrega candidata 1 (CT-013/014/018/019); confirmado por `git grep` nesta sessão: mecanismo presente só em `tr-1.24-1.25-suites-3-4-5` | Confirmado (gap) |
-| 1.25.3.1–4 | 4 estados funcionais: Ativo/Licença/Férias/Inativo | Preparação específica de cenário (mutação sobre um agente isolado, não a população padrão) | **Não existe no Playwright `main`** (nenhum campo de status em `BASELINE.agents`). Existe em Cypress (branch não mesclado): mutation `changePublicAgentWorkStatus`, enum `WORK_STATUS` com 4 valores | Ver seção "Status funcional e presença" abaixo | Confirmado (gap) |
+| 1.25.3.1–4 | 4 estados funcionais: Ativo/Licença/Férias/Inativo | Preparação específica de cenário (estado necessário em cenários específicos; não integra a população padrão) | **Não existe no Playwright `main`** (nenhum campo de status em `BASELINE.agents`). Existe em Cypress (branch não mesclado): mutation `changePublicAgentWorkStatus`, enum `WORK_STATUS` com 4 valores | Ver seção "Status funcional e presença" abaixo | Confirmado (gap) |
 
 ## Estrutura organizacional e níveis (TR 1.26–1.27)
 
@@ -62,18 +62,19 @@ Nesta rodada, encontrei evidência de **produto** (não do TR) que fortalece ess
 
 **O que isso NÃO resolve:** o enum de 5 valores da listagem (1.27.10.1: Ativo/Inativo-offline/Suspenso/Licença/Férias) continua sem relação declarada com este `WORK_STATUS` de 4 valores — "Inativo" em 1.27.10.1 significa presença offline (eixo diferente), não o mesmo "Inativo"/`SUSPEND` do formulário de edição. Essa parte da dúvida do recorte 03 permanece aberta.
 
-Este mecanismo (`changePublicAgentWorkStatus`/`WORK_STATUS`) **não está portado para o Playwright `main`** — confirmado por busca direta no código (`git grep` não encontrou o nome em nenhum arquivo de `main`). Qualquer preset de "estado de servidor" para Playwright depende de portar essa mutation primeiro (mesmo achado já registrado em DISC-003/004, arquivado — confirmado de novo nesta sessão, não presumido).
+Este mecanismo (`changePublicAgentWorkStatus`/`WORK_STATUS`) **não foi encontrado na `main`** — confirmado por busca direta no código (`git grep` não encontrou o nome em nenhum arquivo de `main`) — e **está presente na branch Cypress não mesclada** (`tr-1.24-1.25-suites-3-4-5`). Não presumo aqui que portar essa mutation seja o único caminho ou um pré-requisito — registro só o estado atual confirmado nesta sessão (consistente com o que DISC-003/004, arquivado, já havia achado); a escolha de mecanismo fica para quem implementar.
 
 ## O que falta para este recorte virar preset executável (resumo)
 
 - **Cidadão Pessoa Física próprio** (1.24.2) — hoje reaproveita o CPF do servidor; se um cenário de sanidade precisar de um cidadão PF independente, falta criá-lo no baseline.
-- **Bloqueio por tentativas** (1.25.1) e **estados funcionais** (1.25.3.1–4, 1.27.10.1, 1.27.11.2) — mecanismos já confirmados e testados em Cypress, não portados para Playwright. Portar é pré-requisito técnico, não uma decisão de arquitetura nova.
+- **Bloqueio por tentativas** (1.25.1) e **estados funcionais** (1.25.3.1–4, 1.27.10.1, 1.27.11.2) — mecanismos já confirmados e testados em Cypress (branch não mesclada); não encontrados na `main` do Playwright. Não presumo aqui qual mecanismo resolveria isso — só registro que não existe hoje no Playwright.
 - **Identidade de nível "Somente leitura"** (nível 1) — os outros 4 níveis canônicos já têm identidade nomeada no baseline (via `accessLevel`); falta uma para o nível 1.
-- **Vínculo servidor↔múltiplos setores** — schema da API já suporta; nenhuma identidade do baseline atual exercita isso.
+- **Permissão de Assuntos e Serviços por nível** (visualizar/criar) — confirmada como contexto de produto por Rafael; ainda não verificada no código/seed.
+- **Vínculo servidor↔múltiplos setores** — já exercitado em cenário (teste E64, `reviewTwoSectors`), não no baseline estático.
 
 ## Fontes/evidências
 
 - Recortes do TR (fonte do modelo conceitual, não alterados nesta rodada): [[Seções do TR/02 - Autenticação e ciclo de vida da identidade (1.24–1.25)]], [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
-- Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/data/seed/baseline.ts`, `playwright/src/data/seed/pool.ts`, `playwright/src/data/seed/provision.ts`, `playwright/tests/api/auth/login.spec.ts`. Lido nesta sessão, só leitura — nenhum comando executado.
+- Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/data/seed/baseline.ts`, `playwright/src/data/seed/pool.ts`, `playwright/src/data/seed/provision.ts`, `playwright/tests/api/auth/login.spec.ts`, `playwright/tests/e2e/public-agents/review-attachment-button-by-sector.spec.ts`. Lido nesta sessão, só leitura — nenhum comando executado.
 - Código do repositório (branch `tr-1.24-1.25-suites-3-4-5`, commit `bdf5e9a`, **não mesclada**): `docs/business-rules/api/identity-lifecycle.md` — consultado só como evidência de produto já capturada (mutation/enum), não como decisão de arquitetura nem como fonte do TR.
-- Material arquivado (referência secundária, não fonte primária desta rodada): [[../../../Roadmap - Automação TR|Roadmap - Automação TR]], [[../../../Arquivo/Abordagem anterior/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]], [[../../../Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/DISC-003 - Dados, preparação e eixos|DISC-003]], [[../../../Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/DISC-004 - Alternativas e recomendação|DISC-004]].
+- Material arquivado (referência secundária, não fonte primária desta rodada): [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Roadmap - Automação TR]], [[../../Arquivo/Abordagem anterior/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]], [[../../Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/DISC-003 - Dados, preparação e eixos|DISC-003]], [[../../Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/DISC-004 - Alternativas e recomendação|DISC-004]].

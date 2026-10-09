@@ -52,7 +52,7 @@ pontos: ""
 | Revisão da análise | ✅ Cobertura/rastreabilidade revisadas; dúvidas de negócio preservadas |
 | Especificação do preset piloto (TR 1.24–1.27) | 🔵 Em levantamento — ver [[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto]] |
 
-**Próximo passo:** retomar o esclarecimento das dúvidas com Rafael, uma por vez. A primeira pendente é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto; depois, seguir a ordem registrada no mapa e nos recortes.
+**Próximo passo:** revisão do Codex sobre o piloto de especificação do preset ([[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto]]). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da revisão do piloto.
 
 Pacote para `SGV-12082`:
 
