@@ -41,7 +41,7 @@ status: planejado
 | 2 | Autenticação e ciclo de vida da identidade | 1.24–1.25 | p. 1–2 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/02 - Autenticação e ciclo de vida da identidade (1.24–1.25)]] |
 | 3 | Estrutura organizacional e cadastro de servidores | 1.26–1.27 | p. 2–7 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]] |
 | 4 | Serviços, assuntos e categorias de documentos | 1.28–1.29 | p. 7–11 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]] |
-| 5 | Fluxos de trabalho e modelos de documentos | 1.30–1.31 | p. 11–13 | 🔵 Lido, aguardando revisão do Codex | [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]] |
+| 5 | Fluxos de trabalho e modelos de documentos | 1.30–1.31 | p. 11–13 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]] |
 | 6 | Atores externos e atendimento ao cidadão | 1.32, 1.36–1.37 | p. 13, p. 16 | 🧱 Proposto, não lido | [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]] |
 | 7 | Mesa de trabalho, etiquetas e tramitação | 1.33–1.35 | p. 13–16 | 🧱 Proposto, não lido | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
 | 8 | Divulgação, exportação e assinaturas | 1.38–1.40 | p. 16–18 | 🧱 Proposto, não lido | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
