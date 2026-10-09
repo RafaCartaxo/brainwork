@@ -109,7 +109,7 @@ status: aprovado
 | 1.26.11 | Regra de tramitação por categoria de documento | Configuração | Por setor, configurável por categoria (Circulares, Ofícios, Processos administrativos): criar, receber/tramitar, interagir com cidadão, ver dados sigilosos, receber automaticamente | categoria de documento, setor | Confirmado |
 | 1.27 | Servidor | Ator/Entidade | Tipo de usuário cadastrado, vinculado a um ou mais setores | CPF (identificador, não editável), nome completo (obtido por consulta a API a partir do CPF, não editável), e-mail, matrícula, cargo de contrato (único, do servidor), assinatura textual, telefone, sexo, data de nascimento (3 últimos editáveis só pelo próprio) | Confirmado |
 | 1.27 | Vínculo Servidor–Setor | Relação com atributo | Servidor pode ter múltiplos setores; cada vínculo tem seu próprio nível e cargo | setor, nível, **cargo exercido no setor (distinto do cargo de contrato do servidor)** | Confirmado — 1.27.9.3.4 distingue explicitamente "cargo de contrato" (c) de "cargo exercido em cada setor ao qual foi vinculado" (d) |
-| 1.27.2.1–1.27.2.5 | Nível de acesso | Configuração (enum) | 5 valores: Administrador, Administrador setorial, Assistente administrativo, Auxiliar administrativo, Visualizador — nomes exatamente como no TR, sem comparação com nomenclatura de produto | nível | Confirmado |
+| 1.27.2.1–1.27.2.5 | Nível de acesso | Configuração (enum) | 5 valores: Administrador, Administrador setorial, Assistente administrativo, Auxiliar administrativo, Visualizador — nomes exatamente como no TR | nível | Confirmado — mapeamento confirmado pro modelo ativo/canônico na subseção abaixo |
 | 1.27.8 | Permissão extra | Configuração (enum, 24 valores) | Concedida individualmente, **em associação/complemento às permissões já existentes no nível do servidor** (independência do nível não é especificada pelo texto) — cobre setores/subsetores, servidores, pré-cadastros, assuntos/serviços, acesso a mesas de outros setores, fluxos de trabalho. Lista completa na subseção abaixo | lista de 24 flags (1.27.8.2) | Confirmado |
 | 1.27.1, 1.27.9.1–1.27.9.4.6 | Pré-cadastro | Entidade/estado | Registro pendente de homologação, por 2 fluxos distintos (interno e externo via link), com conjuntos de dados exigidos diferentes entre si; resultado aprovado ou recusado | CPF, e-mail + (interno: matrícula, setor, nível, permissões extras) + (externo: data de nascimento, sexo, telefone, cargo de contrato, cargo no setor do link) + **estado (aprovado/recusado)** + **justificativa (obrigatória em caso de recusa, enviada por e-mail ao solicitante — 1.27.9.4.5)** + **para cadastro via link do organograma: responsável pela aprovação e data/hora da aprovação (1.27.10.3.h)** | Confirmado — **assimetria de dados entre os dois fluxos é achado literal do texto, não inferência** |
 | 1.27.10.1 | Status exibido na listagem | Configuração (enum, 5 valores) | Ativo; Inativo ("offline" — sem sessão ativa no momento; exibe também a data/hora da última vez em que esteve ativo); Suspenso; Licença; Férias | status, **data/hora da última atividade (quando Inativo/offline)** | Confirmado no texto do TR; para os rótulos atuais, adota-se Ativo = Em atividade e Inativo = Suspenso, conforme decisão de Rafael em 08/10/2026 |
@@ -149,19 +149,40 @@ status: aprovado
 ### Hierarquia de níveis de acesso do produto (contexto — Conhecimento > Módulos, não requisito do TR)
 
 > [!info] Natureza desta subseção
-> O conteúdo abaixo vem da documentação de produto (`QA Workspace/04 Conhecimento/Módulos/`), não do TR. Os 5 níveis do TR (1.27.2.1–1.27.2.5: Administrador, Administrador setorial, Assistente administrativo, Auxiliar administrativo, Visualizador) **permanecem registrados exatamente como no texto**, sem alteração — ver linha "Nível de acesso" na tabela de Elementos acima. Esta subseção só expõe a hierarquia do produto lado a lado, para contexto.
+> O conteúdo abaixo vem da documentação de produto (`QA Workspace/04 Conhecimento/Módulos/`) e de confirmação direta do Rafael — não do texto do TR. A transcrição literal do TR (1.27.2.1–1.27.2.5 e as permissões de 1.27.3–1.27.7.4, na Cobertura e na tabela de Elementos) **permanece exatamente como no texto, sem reescrita**. O TR nunca usou os nomes canônicos abaixo; esta subseção só documenta a correspondência confirmada, para uso como modelo ativo/canônico do preset.
 
 **Hierarquia canônica do produto**, do maior para o menor acesso (fonte: [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]] § "Permissões e visibilidade" — legenda explicitamente marcada como canônica no vault, confirmada por Rafael em 2026-07-17 e 2026-07-20):
 
-**Adm › Adm Setorial › N1 (Especialista) › N2 (Usuário básico, exibido como "Básico" em algumas telas, ex. Organograma) › Somente Leitura.**
+**Administrador › Administrador Setorial › Especialista (N1) › Usuário básico (N2, exibido como "Básico" em algumas telas, ex. Organograma) › Somente leitura.**
 
-Os mesmos 5 rótulos (ou a forma crua N1/N2) aparecem de modo consistente em outros módulos, confirmando que é a nomenclatura vigente do produto, não uma leitura isolada:
-- [[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]] — permissões de edição de regras de tramitação por nível (Adm, Adm Setorial, N1).
+Os mesmos 5 níveis (ou a forma crua N1/N2) aparecem de modo consistente em outros módulos, confirmando que é a nomenclatura vigente do produto, não uma leitura isolada:
+- [[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]] — permissões de edição de regras de tramitação por nível (Administrador, Administrador Setorial, N1).
 - [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] — "Adm setorial: só setores da sua hierarquia (listagem/edição e criação limitadas a módulos/assuntos/serviços da hierarquia)"; permissões de encerrar etapa refináveis por nível (Administrador, Adm setorial, N1, N2).
 - [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]] e [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] — regras de permissão por nível (N1, Administrador, Adm setorial, N2).
 - [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] e [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]] — ações restritas a partir de N1.
 
-**O que isto NÃO estabelece:** nenhuma fonte consultada nesta rodada declara uma equivalência explícita entre os 5 nomes do TR (1.27.2) e os 5 rótulos do produto acima. Rafael confirmou a hierarquia do produto em si (08/10/2026), não a correspondência nome a nome com o TR. **A confirmar** — não presumi qual nome do TR corresponde a qual rótulo do produto.
+### Mapeamento confirmado — nomes do TR → modelo ativo/canônico
+
+Rafael confirmou (08/10/2026) a correspondência entre os nomes originais do TR, mantidos para rastreabilidade histórica (1.27.2.1–1.27.2.5), e os nomes canônicos do modelo ativo do produto:
+
+| Nome no TR (1.27.2 — histórico/rastreabilidade da fonte) | Nome canônico ativo (modelo do preset) |
+|---|---|
+| Administrador | Administrador |
+| Administrador setorial | Administrador Setorial |
+| Assistente administrativo | Especialista |
+| Auxiliar administrativo | Usuário básico |
+| Visualizador | Somente leitura |
+
+Os nomes do TR na coluna da esquerda **permanecem na Cobertura e nos Elementos exatamente como o texto os descreve** — esta tabela não os substitui nem reescreve o TR; documenta só a correspondência confirmada, a ser usada como nomenclatura do modelo canônico daqui em diante.
+
+### Permissões confirmadas — Assuntos e Serviços (contexto de produto, Rafael, 08/10/2026)
+
+Regras de produto confirmadas diretamente pelo Rafael, registradas à parte da transcrição literal do TR (1.27.4.4/1.27.5.4/1.27.6, na Cobertura):
+
+- **Visualizar:** servidores dos **cinco** níveis (Administrador, Administrador Setorial, Especialista, Usuário básico, Somente leitura) conseguem visualizar Assuntos e Serviços.
+- **Criar:** por padrão, **apenas Administrador e Administrador Setorial podem criar** Assuntos e Serviços. Os outros três níveis — Especialista, Usuário básico e Somente leitura — **não podem criar**.
+
+**Registra-se apenas visualizar e criar** — nenhuma inferência foi feita sobre editar, inativar ou qualquer outra permissão para nenhum dos cinco níveis nessa área.
 
 | Origem | Relação/dependência | Destino | Referência do TR | Certeza/evidência ou pendência |
 |---|---|---|---|---|
@@ -179,7 +200,6 @@ Os mesmos 5 rótulos (ou a forma crua N1/N2) aparecem de modo consistente em out
 ## Dúvidas/ambiguidades
 
 - **As enumerações de status do TR diferem.** (a) 1.25.3: Ativo, Licença, Férias, Inativo; (b) 1.27.10.1: Ativo, Inativo, Suspenso, Licença, Férias; (c) 1.27.11.2: Em atividade, Suspenso, Licença, Férias. Rafael esclareceu que, no SOGOV atual, o formulário exibe `Em atividade`, `Inativo`, `De licença` e `De férias`; Online/Offline é indicador de presença separado. Para manter um modelo coerente, adotamos `Ativo = Em atividade` e `Inativo = Suspenso` como correspondências de trabalho (decisão de Rafael em 08/10/2026). A imagem confirma os rótulos do formulário; a correspondência poderá ser revista se a prática observada mostrar diferença. A documentação de [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] cobre status do servidor; a seção de presença em [[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]] está marcada como desatualizada.
-- **Permissões do nível Auxiliar administrativo (1.27.6) não listam a área "Assuntos e serviços"**, presente nos níveis Administrador setorial (1.27.4.4) e Assistente administrativo (1.27.5.4). **A confirmar — permanece válida como pendência do TR**, mesmo após conferir a documentação de produto nesta rodada. Verificado: (i) a hierarquia canônica do produto (ver subseção acima) não resolve a questão, porque a equivalência entre os 5 nomes do TR e os 5 rótulos do produto **não foi estabelecida**; (ii) ainda que se tentasse aproximar os níveis pela posição na hierarquia, [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] só confirma que Adm Setorial tem permissão sobre "módulos/assuntos/serviços da hierarquia" (consistente com 1.27.4.4) — nenhuma fonte local detalha a permissão de Assuntos e serviços para os níveis abaixo de Adm Setorial; (iii) [[QA Workspace/04 Conhecimento/Módulos/Serviços e Assuntos|Serviços e Assuntos]] registra explicitamente que essas permissões estão centralizadas numa página do Notion não replicada no vault — não resolve a diferença. Nada no Conhecimento confirma nem descarta que a ausência no TR seja proposital.
 - **Bloqueio por tentativas é distinto do status funcional**, conforme registrado no [[02 - Autenticação e ciclo de vida da identidade (1.24–1.25)#Respostas complementares ao TR|recorte 2]]. A especificação de [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos|Gestão de Desbloqueio de Acessos]] prevê retorno ao status de origem após redefinição de senha, mas não foi validada em execução. O Rafael confirmou que não há desbloqueio automático por tempo (08/10/2026; ver recorte 2). As transições por datas de 1.27.11.2/.3 são outro mecanismo.
 
 ## Fontes/evidências
