@@ -4,7 +4,7 @@ task: SGV-12082
 pai: SGV-11262
 tipo: especificacao-preset
 itens_tr: "1.35.2.3"
-status: em levantamento
+status: aprovado
 ---
 # 09 - Especificação do preset piloto (item 1.35.2.3)
 
@@ -32,7 +32,7 @@ status: em levantamento
 | 1.35.2.3 | Categoria do documento retificável (TR diz "processo administrativo") | — | **Achado**: o mecanismo foi exercitado em dois contextos de categoria diferentes — A18-C02 usa `documentContext(seed)` sem override, cujo padrão é `seed.modules.PA.deploymentId` (Processo administrativo, batendo com o texto do TR); A25-C01 usa `seed.modules.DO.deploymentId` (Documento oficial) explicitamente. **Isso não contradiz o TR** (que descreve o caso de processo administrativo), mas sugere que, no código, a mutation não é exclusiva de PA — não concluo que o TR pretenda isso também para outras categorias, só registro o que o código exercita | `factories/documents.ts` (`documentContext`, default `seed.modules.PA.deploymentId`); `rectify-document.spec.ts` (override para `seed.modules.DO`) | Confirmado (mecanismo exercitado em PA e em DO); A confirmar (se o TR restringe isso só a PA) |
 | 1.35.2.3 | Justificativa legal | Ação de teste (só valor padrão exercitado) | **Separando existência de adequação**: `retifyDocument` tem parâmetro `justification` (string) e **o campo é enviado à mutation** — isso está confirmado. A18-C02 e A25-C01 **omitem esse argumento**, exercitando só o valor padrão genérico `'Retificando documento'`. Isso confirma que o campo existe e é transmitido — **não confirma** que esse valor atenda ao requisito de "justificativa legal" do TR (que sugere um conteúdo jurídico/motivado, não um texto genérico de teste). Fica em aberto: se o valor usado nos CTs seria aceito como justificativa legal adequada, se o campo é customizável/obrigatório na prática, e se há alguma validação de conteúdo | `documents.ts` (`retifyDocument`, parâmetro `justification`) | Confirmado (campo existe e é enviado); A confirmar (adequação legal do valor; customização, obrigatoriedade e validação) |
 | — | Anexos na retificação | — | `retifyDocument` tem parâmetro `attachments` (array), mas **nenhum CT encontrado o preenche** — ambos os testes citados usam o padrão `[]`. Não presumo que anexos funcionem ou sejam obrigatórios nesse fluxo, só registro que o campo existe e não foi exercitado com conteúdo | `documents.ts` (`retifyDocument`, parâmetro `attachments`) | Confirmado (campo existe); A confirmar (uso com conteúdo real) |
-| 1.35.2.3 | Histórico da retificação | Consulta (não prepara estado) | `getDocumentForAgent` retorna `isRectified: boolean` e um array `values[]` versionado, com `versionInfo.type`. Enum confirmado com 2 valores: `'initial'` (versão de criação, A18-C01) e `'retification'` (versão após retificar, A18-C02/A25-C01). Após retificar, `isRectified` vira `true` e uma nova entrada aparece em `values` — isso é o "histórico" exigido pelo TR, ao menos na parte de versionamento do conteúdo | `documents.ts` (`getDocumentForAgent`, campo `isRectified`); `history-document.spec.ts` (A18-C01/C02) | Confirmado |
+| 1.35.2.3 | Histórico da retificação | Consulta (não prepara estado) | `getDocumentForAgent` retorna `isRectified: boolean` e um array `values[]` versionado, com `versionInfo.type`. Enum confirmado com 2 valores: `'initial'` (versão de criação, A18-C01) e `'retification'` (versão após retificar, A18-C02/A25-C01); A25-C01 também confirma `isRectified: true`. **O que isso confirma**: existe versionamento do conteúdo, com a versão retificada identificada como tal. **O que isso não confirma**: a completude do histórico exigido pelo TR — por exemplo, se o registro inclui a justificativa legal usada, autoria/data da retificação, ou todos os eventos relevantes (isso são exemplos do que poderia compor "histórico", não uma lista exaustiva nem algo que os CTs verificam) | `documents.ts` (`getDocumentForAgent`, campo `isRectified`); `history-document.spec.ts` (A18-C01/C02) | Confirmado (versionamento do conteúdo identificado como retificação); A confirmar (completude do histórico exigido pelo TR) |
 
 ## Fronteiras com itens vizinhos (fora desta fatia)
 
@@ -42,7 +42,8 @@ status: em levantamento
 
 ## O que falta para este recorte virar preset executável (resumo)
 
-- **Conteúdo/obrigatoriedade da justificativa legal** — campo existe, mas nenhum CT testa um valor customizado nem regras de validação.
+- **Adequação da justificativa legal (1.35.2.3)** — o campo existe e é enviado, mas os CTs só exercitam um valor padrão genérico (`'Retificando documento'`); não confirmado se isso atenderia ao requisito de justificativa legal do TR, nem se o campo é customizável/obrigatório/validado na prática.
+- **Completude do histórico de retificação (1.35.2.3)** — confirmado o versionamento do conteúdo (versão identificada como retificação); não confirmado se o histórico completo exigido pelo TR inclui justificativa legal registrada, autoria/data, ou todos os eventos.
 - **Anexos na retificação** — campo existe, não exercitado com conteúdo em nenhum CT encontrado.
 - **Restrição por categoria de documento** — o TR descreve o caso de "processo administrativo"; o código exercita o mecanismo tanto em PA quanto em Documento oficial — não presumo que isso generalize a toda categoria, só registro a evidência encontrada.
 - **Nenhuma retificação integra o baseline persistente** — os dois CTs citados (A18-C02, A25-C01) criam seu próprio documento e retificam em tempo de execução.
