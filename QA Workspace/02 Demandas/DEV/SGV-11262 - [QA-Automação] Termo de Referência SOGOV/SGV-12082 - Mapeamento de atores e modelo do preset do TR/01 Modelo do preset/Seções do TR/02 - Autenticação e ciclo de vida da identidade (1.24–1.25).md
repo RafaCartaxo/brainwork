@@ -55,7 +55,7 @@ status: aprovado
 | Servidor Público | autentica com | CPF + senha | 1.24.1 | Confirmado |
 | Cidadão (Pessoa Física) | autentica com | CPF + senha | 1.24.2 | Confirmado |
 | Empresas/outras entidades (Pessoa Jurídica) | autentica com | CNPJ + senha | 1.24.3 | Confirmado |
-| Usuário/identidade com status funcional | tem estado | {Ativo, Licença, Férias, Inativo} | 1.25.3 | Estados/consequências confirmados; o TR não especifica as categorias de usuário (ver Respostas complementares ao TR) |
+| Usuário/identidade com status funcional | tem estado | {Ativo, Licença, Férias, Inativo} | 1.25.3 | Estados/consequências confirmados; para correspondência com os rótulos atuais do SOGOV, adota-se Ativo = Em atividade e Inativo = Suspenso, conforme decisão de Rafael em 08/10/2026; o TR não especifica as categorias de usuário (ver Respostas complementares ao TR) |
 | Estado funcional | determina | conjunto de permissões/acesso | 1.25.3.1–1.25.3.4 | Confirmado |
 | 5 tentativas malsucedidas | aciona | bloqueio da conta | 1.25.1 | Regra confirmada no TR; o texto não inclui Bloqueado entre os quatro estados funcionais de 1.25.3 |
 
