@@ -25,6 +25,7 @@ pontos: ""
 > **Revisão da análise:** [[04 - Revisão da análise]]
 > **Mapa geral:** [[../01 Modelo do preset/00 - Mapa geral]]
 > **Matriz de atores e relações:** [[../01 Modelo do preset/01 - Matriz de atores e relações]]
+> **Especificação do preset piloto:** [[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto (TR 1.24–1.27)]]
 > **Fontes:** [[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
 
 > [!settings]- Controle do card
@@ -49,6 +50,7 @@ pontos: ""
 | Recortes 5–11 | ✅ Revisados e aprovados |
 | Síntese visual (mapa geral) | ✅ Atualizada para leitura vertical e alinhada às notas |
 | Revisão da análise | ✅ Cobertura/rastreabilidade revisadas; dúvidas de negócio preservadas |
+| Especificação do preset piloto (TR 1.24–1.27) | 🔵 Em levantamento — ver [[../01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto]] |
 
 **Próximo passo:** retomar o esclarecimento das dúvidas com Rafael, uma por vez. A primeira pendente é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto; depois, seguir a ordem registrada no mapa e nos recortes.
 
@@ -64,6 +66,7 @@ SGV-12082 - Mapeamento de atores e modelo do preset do TR/
 ├── 01 Modelo do preset/
 │   ├── 00 - Mapa geral.md              (síntese Mermaid vertical, derivada dos recortes)
 │   ├── 01 - Matriz de atores e relações.md  (índice dos recortes temáticos, sem duplicar seu conteúdo)
+│   ├── 02 - Especificação do preset piloto (TR 1.24–1.27).md  (recortes 02/03 × seed de automação atual)
 │   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes)
 └── Fontes/
     └── Termo de Referência SOGOV.pdf             (cópia de trabalho; original preservado no Arquivo)

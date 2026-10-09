@@ -19,6 +19,7 @@ Construir um modelo de **atores, entidades, configurações, estados, relações
 
 - **Abordagem anterior:** arquivada para consulta em [[Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência de consulta, **não é fluxo ativo**.
 - **SGV-12082 (atual):** segmentação em 11 recortes temáticos **aprovada pelo Rafael** (08/10/2026). **Os 11 recortes (itens 1.1–1.43) foram revisados e aprovados pelo Codex**, e a revisão documental da análise foi concluída (ver [[SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/04 - Revisão da análise|04 - Revisão da análise]]). As dúvidas de negócio levantadas durante o mapeamento seguem registradas em aberto, sem travar essa conclusão.
+- **Piloto de especificação do preset (09/10/2026):** primeira ligação entre o modelo dos recortes 02/03 e o seed de automação atual, em [[SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto (TR 1.24–1.27)]] — especificação, não implementação.
 
 ## Entregas existentes
 
