@@ -15,7 +15,7 @@ status: planejado
 > **Revisão da análise:** [[../00 QA/04 - Revisão da análise]]
 
 > [!info] Esta nota é agora o índice/visão consolidada (08/10/2026)
-> O TR completo (1.1–1.43) foi dividido em **recortes temáticos**, cada um com nota própria na pasta `Seções do TR/` (ver tabela abaixo) — fonte dos achados detalhados (cobertura por item, elementos, relações, dúvidas, fontes). Esta nota **não duplica** esse conteúdo: lista os recortes, seus intervalos de itens/páginas, status e o link pra nota correspondente. A fonte de autoridade continua sendo exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — esta matriz e as notas temáticas são registro/rastreabilidade, nunca substituem o PDF. Segmentação aprovada pelo Rafael (08/10/2026); recortes 1–10 revisados e aprovados pelo Codex; recorte 11 ainda não lido.
+> O TR completo (1.1–1.43) foi dividido em **recortes temáticos**, cada um com nota própria na pasta `Seções do TR/` (ver tabela abaixo) — fonte dos achados detalhados (cobertura por item, elementos, relações, dúvidas, fontes). Esta nota **não duplica** esse conteúdo: lista os recortes, seus intervalos de itens/páginas, status e o link pra nota correspondente. A fonte de autoridade continua sendo exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — esta matriz e as notas temáticas são registro/rastreabilidade, nunca substituem o PDF. Segmentação aprovada pelo Rafael (08/10/2026); recortes 1–11 revisados e aprovados pelo Codex.
 
 ## Como preencher (vale para as notas de `Seções do TR/`)
 
@@ -47,4 +47,4 @@ status: planejado
 | 8 | Divulgação, exportação e assinaturas | 1.38–1.40 | p. 16–18 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
 | 9 | Chaves de acesso e criação delegada | 1.41 | p. 18–19 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
 | 10 | Personalização e identidade visual do órgão | 1.42 | p. 19 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/10 - Personalização e identidade visual do órgão (1.42)]] |
-| 11 | Estatísticas e indicadores | 1.43 | p. 19–20 | 🧱 Proposto, não lido | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
+| 11 | Estatísticas e indicadores | 1.43 | p. 19–20 | ✅ Revisado e aprovado pelo Codex | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
