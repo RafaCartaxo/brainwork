@@ -33,10 +33,40 @@ flowchart TB
 
 ### 2. Status funcional do servidor
 
+> Três conceitos do TR, mantidos separados — nenhuma equivalência entre eles é declarada pelo texto. Fontes diretas: [[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]] — 1.25.3.4 p. 2; 1.27.10.1 p. 6; 1.27.11.2 p. 7.
+
 ```mermaid
 flowchart TB
-    StatusTR["Listas do TR:<br/>1.25.3: Ativo / Licença / Férias / Inativo (nega autenticação)<br/>1.27.10.1: Inativo (offline) e Suspenso<br/>1.27.11.2: Em atividade / Suspenso / Licença / Férias"] --> Interpretacao["Interpretação de trabalho de Rafael:<br/>Ativo abrange Em atividade, Licença e Férias;<br/>Inativo = Suspenso.<br/>A redação de 1.27.10.1 diverge."]
+    classDef rafael fill:#dbe9ff,stroke:#2b6cb0,color:#1a365d,stroke-width:1px;
+
+    subgraph A["(a) Ciclo de vida / autenticação — 1.25.3 (p. 2)"]
+        A1["Ativo"]
+        A2["Licença"]
+        A3["Férias"]
+        A4["Inativo — nega qualquer autenticação (1.25.3.4)"]
+    end
+
+    subgraph B["(b) Status exibido na listagem — 1.27.10.1 (p. 6)"]
+        B1["Ativo"]
+        B2["Inativo — offline: sem sessão ativa agora, mostra última atividade (1.27.10.1.e)"]
+        B3["Suspenso — acesso suspenso"]
+        B4["Licença"]
+        B5["Férias"]
+    end
+
+    subgraph C["(c) Status de atividade editável — 1.27.11.2 (p. 7)"]
+        C1["Em atividade"]
+        C2["Suspenso"]
+        C3["Licença"]
+        C4["Férias"]
+    end
+
+    B -.->|"relação com (c) não especificada pelo TR"| C
+
+    Produto["Contexto de produto (Rafael, 08/10/2026):<br/>tela atual do servidor exibe Em atividade / Inativo / De licença / De férias —<br/>correspondência de trabalho com (a): Ativo=Em atividade/Licença/Férias; Inativo=acesso suspenso.<br/>Não se estende a (b) nem reescreve (c)."]:::rafael
 ```
+
+Dentro de (b), "Inativo" é presença offline — **não** é o mesmo "Suspenso" listado ali, nem o mesmo "Inativo" de (a) (que nega autenticação). A relação entre (b) e (c) — e se o "Suspenso" de ambos é o mesmo conceito — não está especificada pelo TR; ver dúvida em [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
 
 ### 3. Presença e bloqueio de acesso
 
@@ -162,7 +192,7 @@ As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam 
 | Órgão | possui | Personalização | Confirmado | [[Seções do TR/10 - Personalização e identidade visual do órgão (1.42)]] |
 | Estatísticas | exibem dados de | Servidores e Documentos/Processos | Confirmado | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
 | Acesso à personalização/estatísticas | é concedido a | Níveis de usuário | Parcialmente especificado; ver lacuna (j) | [[Seções do TR/10 - Personalização e identidade visual do órgão (1.42)]], [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
-| Status estatístico de servidor | agrupa | Ativo, Inativo, Licença, Férias | Possível sobreposição em aberto; ver lacuna (o) | [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]], [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
+| Status estatístico de servidor (1.43.5.b) | agrupa | ativos, inativos, em licença, em férias | Vocabulário próprio do item, sem remissão cruzada no TR a 1.25.3/1.27.10.1/1.27.11.2; exclusividade/sobreposição das categorias em aberto; ver lacuna (o) | [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]], [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
 
 ## Legenda
 
@@ -190,7 +220,7 @@ As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam 
 | (l) | Histórico de documentos da chave × registro de uso da chave — mesmo registro? | Sem evidência — aguarda Rafael | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
 | (m) | Fluxo de criação de documento quando há só permissão própria (sem chave) — não especificado pelo TR | Sem evidência — aguarda Rafael | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
 | (n) | Relação hierárquica entre Categoria e Subcategoria de Assuntos e Serviços é inferida pelo nome no TR (1.27.8.2.o); estrutura exata não descrita | Sem evidência — aguarda Rafael | [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]] |
-| (o) | Relatório de servidores (1.43.5.b): licença/férias são contadas também em “ativos” segundo a interpretação de trabalho confirmada por Rafael; o TR não define se as categorias estatísticas se sobrepõem | Sem decisão — aguarda Rafael | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
+| (o) | Relatório de servidores (1.43.5.b): "ativos, inativos, em licença, em férias" é vocabulário próprio deste item, sem remissão cruzada no TR aos enums de 1.25.3/1.27.10.1/1.27.11.2; o TR não define se as categorias são mutuamente exclusivas ou se licença/férias também contam dentro de "ativos" | Sem evidência — aguarda Rafael (não se presume correspondência com o mapeamento de status funcional/presença confirmado para os demais itens) | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
 | (p) | Resumo inicial “Concluído” (1.33.2.1) × enum formal “Encerrado” (1.33.3.6/1.35.2.1): equivalência ou agregação não especificada | Sem evidência — aguarda Rafael | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
 
 ## Rastreabilidade por grupo
@@ -211,4 +241,4 @@ As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam 
 - Este mapa é só uma síntese visual de alto nível; cobertura item a item, evidência (Confirmado/Inferido/A confirmar) e o texto completo de cada dúvida estão nas notas de recorte listadas acima — não duplicados aqui.
 - Em 09/10/2026, uma rodada read-only verificou as dúvidas abertas contra a documentação de Conhecimento > Módulos vigente; os recortes 06, 07, 08 e 10 agora trazem, cada um, uma subseção "Contexto de produto verificado em documentação" com o que foi esclarecido, parcialmente esclarecido, ou segue sem evidência — sem alterar o texto literal do TR nem a classificação de cobertura.
 - As lacunas (a), (c) e (d) têm contexto de produto que as esclarece para o produto atual e não exigem mais decisão de Rafael; (e), (f) e (j) seguem parcialmente esclarecidas — (f) converge no conceito/regra de visibilidade de documento associado, mas gatilhos diferentes e estrutura de dados persistida não documentada (detalhe técnico, não pendência de decisão de Rafael). As lacunas (b), (g), (h quanto a "contribuinte"), (i), (k), (l), (m), (n), (o) e (p) seguem sem decisão/evidência suficiente — a pergunta sobre a categoria-base do Zoneamento (b) continua sendo a primeira pendente na sequência de esclarecimentos.
-- **Conflito textual de status de servidor:** o TR 1.27.10.1 define “Inativo” como offline e lista “Suspenso” à parte, enquanto 1.25.3.4 usa “Inativo” para negar autenticação. O mapa mantém as duas redações e identifica a leitura de trabalho confirmada por Rafael; não as trata como equivalência literal do TR. Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
+- **Reuso do termo "Inativo" entre itens de status de servidor (revisado em 09/10/2026):** 1.27.10.1 (p. 6) define "Inativo" como presença offline e lista "Suspenso" separadamente no mesmo enum; 1.25.3.4 (p. 2) usa "Inativo" para negar autenticação; 1.27.11.2 (p. 7) não tem "Inativo" nenhum (usa "Suspenso"). Não há divergência de redação em 1.27.10.1 — é reuso do termo com sentidos diferentes. O diagrama 2 mantém os três conjuntos separados, sem desenhar equivalência não declarada pelo TR; a relação entre (b) e (c) fica marcada como lacuna. O contexto de produto confirmado por Rafael é mostrado à parte, restrito à tela atual × 1.25.3. Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
