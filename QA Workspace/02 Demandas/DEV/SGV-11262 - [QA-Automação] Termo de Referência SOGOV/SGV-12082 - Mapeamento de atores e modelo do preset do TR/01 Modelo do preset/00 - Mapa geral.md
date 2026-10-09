@@ -23,29 +23,11 @@ Os diagramas menores seguem a hierarquia de cima para baixo. A sequência entre 
 
 ### 1. Órgão e níveis de acesso
 
-```mermaid
-flowchart TB
-    Orgao["Órgão"] --> Setor["Setor / Subsetor"]
-    Setor --> Servidor["Servidor"]
-    Servidor --> NivelTR["Nível por setor (rótulos originais do TR)"]
-    NivelTR --> NivelRafael["Administrador · Administrador Setorial · Especialista · Usuário básico · Somente leitura"]
-```
+> Diagrama movido para [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)#Modelo visual|Modelo visual]], no recorte 03.
 
 ### 2. Estado de atividade e presença do servidor
 
-> Fontes diretas: [[../Fontes/Termo de Referência SOGOV.pdf#page=2|1.25.3.4, p. 2]]; [[../Fontes/Termo de Referência SOGOV.pdf#page=6|1.27.10.1, p. 6]]; [[../Fontes/Termo de Referência SOGOV.pdf#page=7|1.27.11.2, p. 7]]. Detalhe completo da dúvida: [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
-
-```mermaid
-flowchart TB
-    Servidor["Servidor"] --> StatusAtividade["Status de atividade (1.27.11.2, p. 7):<br/>Em atividade / Suspenso / Licença / Férias"]
-    Servidor --> Presenca["Presença na plataforma (Online / Offline)"]
-    Servidor --> Autenticacao["Ciclo de autenticação (1.25.3, p. 2):<br/>Ativo / Licença / Férias / Inativo — nega autenticação"]
-    Servidor --> Listagem["Listagem do TR (1.27.10.1, p. 6):<br/>Ativo, Inativo (offline), Suspenso, Licença, Férias"]
-    Listagem -.->|"composição não especificada no TR"| StatusAtividade
-    Listagem -.->|"composição não especificada no TR"| Presenca
-```
-
-No modelo atual, a presença Online/Offline é independente do status de atividade; o item 1.27.10.1 usa "Inativo (offline)" na listagem e não especifica a composição do campo com esses eixos.
+> Diagrama dividido: ciclo de autenticação (1.25.3) movido para [[Seções do TR/02 - Autenticação e ciclo de vida da identidade (1.24–1.25)#Modelo visual|Modelo visual]], no recorte 02; status de atividade, presença e listagem (1.27.10.1/1.27.11.2) movidos para [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)#Status de atividade e presença|Status de atividade e presença]], no recorte 03.
 
 ### 3. Bloqueio por tentativas de acesso
 
@@ -221,4 +203,4 @@ As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam 
 - Este mapa é só uma síntese visual de alto nível; cobertura item a item, evidência (Confirmado/Inferido/A confirmar) e o texto completo de cada dúvida estão nas notas de recorte listadas acima — não duplicados aqui.
 - Em 09/10/2026, uma rodada read-only verificou as dúvidas abertas contra a documentação de Conhecimento > Módulos vigente; os recortes 06, 07, 08 e 10 agora trazem, cada um, uma subseção "Contexto de produto verificado em documentação" com o que foi esclarecido, parcialmente esclarecido, ou segue sem evidência — sem alterar o texto literal do TR nem a classificação de cobertura.
 - As lacunas (a), (c) e (d) têm contexto de produto que as esclarece para o produto atual e não exigem mais decisão de Rafael; (e), (f) e (j) seguem parcialmente esclarecidas — (f) converge no conceito/regra de visibilidade de documento associado, mas gatilhos diferentes e estrutura de dados persistida não documentada (detalhe técnico, não pendência de decisão de Rafael). As lacunas (b), (g), (h quanto a "contribuinte"), (i), (k), (l), (m), (n), (o) e (p) seguem sem decisão/evidência suficiente — a pergunta sobre a categoria-base do Zoneamento (b) continua sendo a primeira pendente na sequência de esclarecimentos.
-- **Reuso do termo "Inativo" entre itens de status de servidor (revisado em 09/10/2026):** 1.27.10.1 (p. 6) define "Inativo" como presença offline e lista "Suspenso" separadamente no mesmo enum; 1.25.3.4 (p. 2) usa "Inativo" para negar autenticação; 1.27.11.2 (p. 7) não tem "Inativo" nenhum (usa "Suspenso"). Não há divergência de redação em 1.27.10.1 — é reuso do termo com sentidos diferentes. O diagrama 2 liga o Servidor a quatro ramos independentes — status de atividade (1.27.11.2), presença (contexto de produto), ciclo de autenticação (1.25.3) e a listagem do TR (1.27.10.1) — sem desenhar equivalência não declarada; a listagem se conecta aos dois primeiros ramos só por arestas tracejadas ("composição não especificada no TR"). Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
+- **Reuso do termo "Inativo" entre itens de status de servidor (revisado em 09/10/2026):** 1.27.10.1 (p. 6) define "Inativo" como presença offline e lista "Suspenso" separadamente no mesmo enum; 1.25.3.4 (p. 2) usa "Inativo" para negar autenticação; 1.27.11.2 (p. 7) não tem "Inativo" nenhum (usa "Suspenso"). Não há divergência de redação em 1.27.10.1 — é reuso do termo com sentidos diferentes. O diagrama 2 foi dividido entre os recortes 02 (ciclo de autenticação) e 03 (status de atividade, presença e listagem), sem desenhar equivalência não declarada; a lacuna de composição entre listagem e os demais eixos permanece no recorte 03. Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].

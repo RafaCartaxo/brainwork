@@ -15,6 +15,31 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.26–1.27**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (79 linhas na Cobertura — 18 sob 1.26, 61 sob 1.27). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.26–1.26.11.1 (p. 2); 1.26.11.2–1.27.6 (p. 3); 1.27.6.1–1.27.9.3(intro) (p. 4); 1.27.9.3(lista)–1.27.9.4.6 (p. 5); 1.27.10–1.27.11.1(início) (p. 6); 1.27.11.1(fim)–1.27.11.6.1 (p. 7). Listas com letras (a, b, c...) dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — não viram linhas separadas na Cobertura.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Orgao["Órgão"] --> Setor["Setor / Subsetor"]
+    Setor --> Servidor["Servidor"]
+    Servidor --> NivelTR["Nível por setor (rótulos originais do TR)"]
+    NivelTR --> NivelRafael["Administrador · Administrador Setorial · Especialista · Usuário básico · Somente leitura"]
+```
+
+### Status de atividade e presença
+
+> Fontes diretas: [[../../Fontes/Termo de Referência SOGOV.pdf#page=6|1.27.10.1, p. 6]]; [[../../Fontes/Termo de Referência SOGOV.pdf#page=7|1.27.11.2, p. 7]].
+
+```mermaid
+flowchart TB
+    Servidor["Servidor"] --> StatusAtividade["Status de atividade (1.27.11.2, p. 7):<br/>Em atividade / Suspenso / Licença / Férias"]
+    Servidor --> Presenca["Presença na plataforma (Online / Offline)"]
+    Servidor --> Listagem["Listagem do TR (1.27.10.1, p. 6):<br/>Ativo, Inativo (offline), Suspenso, Licença, Férias"]
+    Listagem -.->|"composição não especificada no TR"| StatusAtividade
+    Listagem -.->|"composição não especificada no TR"| Presenca
+```
+
+No modelo atual, a presença Online/Offline é independente do status de atividade; o item 1.27.10.1 usa "Inativo (offline)" na listagem e não especifica a composição do campo com esses eixos.
+
 ## Cobertura dos itens
 
 | Item do TR  | Situação      | Justificativa ou pendência                                                                                                                                                                                                                              |

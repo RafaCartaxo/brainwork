@@ -15,6 +15,13 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.24–1.25**, cobertos em nível de subitem (1.24.1–1.24.3; 1.25.1–1.25.3.4). Páginas do PDF: **1.24–1.24.2 na p. 1; 1.24.3 em diante na p. 2** de [[../../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]] (fonte de autoridade). Lido diretamente por render de página, não por extração textual. **O material arquivado da SGV-11971 não foi usado como evidência** — cobre os mesmos itens sob outra ótica (automação/CTs), mas não é fonte para este modelo conceitual.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Servidor["Servidor"] --> Autenticacao["Ciclo de autenticação (1.25.3, p. 2):<br/>Ativo / Licença / Férias / Inativo — nega autenticação"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |
