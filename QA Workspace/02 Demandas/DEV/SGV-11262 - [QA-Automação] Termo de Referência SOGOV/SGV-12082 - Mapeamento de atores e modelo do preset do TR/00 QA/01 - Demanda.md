@@ -21,7 +21,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** esclarecer com Rafael, uma por vez, as dúvidas que permaneceram abertas após a revisão integral dos 11 recortes. A primeira é se o Processo urbanístico de Zoneamento (1.29.10) é subcategoria de Processo administrativo ou categoria própria; depois, seguir a sequência registrada no mapa e nos recortes.
+> **Próximo passo:** esclarecer com Rafael, uma por vez, as dúvidas que permaneceram abertas após a revisão integral dos 11 recortes. A primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto; depois, seguir a sequência registrada no mapa e nos recortes.
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.

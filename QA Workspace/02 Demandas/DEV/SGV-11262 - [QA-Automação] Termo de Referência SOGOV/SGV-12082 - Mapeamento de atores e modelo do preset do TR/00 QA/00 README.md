@@ -50,7 +50,7 @@ pontos: ""
 | Síntese visual (mapa geral) | ✅ Atualizada para leitura vertical e alinhada às notas |
 | Revisão da análise | ✅ Cobertura/rastreabilidade revisadas; dúvidas de negócio preservadas |
 
-**Próximo passo:** retomar o esclarecimento das dúvidas com Rafael, uma por vez. A primeira pendente é o enquadramento do Processo urbanístico de Zoneamento (1.29.10) em relação às categorias-base (1.29.1); depois, seguir a ordem registrada no mapa e nos recortes.
+**Próximo passo:** retomar o esclarecimento das dúvidas com Rafael, uma por vez. A primeira pendente é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto; depois, seguir a ordem registrada no mapa e nos recortes.
 
 Pacote para `SGV-12082`:
 

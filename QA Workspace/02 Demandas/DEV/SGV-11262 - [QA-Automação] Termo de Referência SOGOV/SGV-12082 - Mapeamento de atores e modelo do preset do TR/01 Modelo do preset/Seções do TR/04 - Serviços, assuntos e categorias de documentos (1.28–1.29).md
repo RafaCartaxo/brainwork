@@ -108,7 +108,7 @@ flowchart TB
 | Ouvidoria | é subtipo de | Processo administrativo (base) | 1.29.1.c, 1.29.7 | Confirmado |
 | e-SIC | é subtipo de | Processo administrativo (base) | 1.29.1.c, 1.29.8 | Confirmado |
 | Ato oficial | é subtipo de | Documento oficial (base) | 1.29.1.a, 1.29.9 | Confirmado |
-| Categoria "Zoneamento" (1.29.10) | categoria-base não determinada pelo TR | Categoria de documento (base, 1.29.1) | 1.29.1, 1.29.10 | **A confirmar — ver dúvida abaixo** |
+| Categoria "Zoneamento" (1.29.10) | categoria-base não determinada pelo TR | Categoria de documento (base, 1.29.1) | 1.29.1, 1.29.10 | **TR:** categoria-base não especificada. **Produto:** característica urbanística ativada em módulo do tipo Processo administrativo (ver "Contexto de produto verificado em documentação" abaixo) |
 | Zona | associada a | Categoria de uso | 1.29.10.4.a, c | Confirmado — o TR não explicita multiplicidade (ex.: N:N) nos dois sentidos |
 | Upload de arquivo de zoneamento (.kmz) | sobrescreve | Zonas já existentes | 1.29.10.4.b | Confirmado |
 | Cidadão/Empresa (ator externo) | consulta | Zona publicada e suas categorias de uso | 1.29.10.4.g | Confirmado |
@@ -117,9 +117,16 @@ flowchart TB
 
 ## Dúvidas/ambiguidades
 
-- **Zoneamento (1.29.10) não é explicitamente enquadrado numa das 3 categorias-base de 1.29.1** (Documento oficial, Comunicação oficial, Processo administrativo). **Categoria-base: A confirmar — mantida, não resolvida.** Pista terminológica encontrada (não evidência de categoria-base): 1.29.10 fala em abrir "uma solicitação junto ao órgão" e 1.29.10.4.h em iniciar um "processo urbanístico" — palavras também usadas nas subcategorias já confirmadas como Processo administrativo (1.29.6, 1.29.7, 1.29.8). Isso é só uma **pista de vocabulário**, não uma declaração de categoria — nossa regra é não deduzir categoria-base por semelhança/analogia de termos, então não concluo a partir disso. Em `Conhecimento/Módulos`, [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] cita "processo urbanístico" como um tipo de documento/módulo real do produto, mas também **não declara** a categoria-base. **Pergunta objetiva para Rafael:** o "processo urbanístico" do zoneamento é tratado, no produto, como mais uma subcategoria de Processo administrativo (como Ouvidoria/e-SIC) ou como uma categoria à parte?
+- **Lacuna textual do TR:** o item 1.29.10 não identifica explicitamente a qual das 3 categorias-base de 1.29.1 (Documento oficial, Comunicação oficial, Processo administrativo) pertence. **Categoria-base no texto do TR: A confirmar.** O produto atual está esclarecido na seção seguinte, mas isso não altera a redação do TR.
+
+## Contexto de produto verificado em documentação (09/10/2026)
+
+> Esta seção registra contexto de produto (Conhecimento > Módulos) — não é requisito literal do TR. Responde à questão do comportamento do produto, mas não elimina a lacuna textual do TR acima: o texto de 1.29.10/1.29.1 continua sem declarar a categoria-base.
+
+- **Categoria-base do processo urbanístico de Zoneamento (1.29.10):** [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos|Processos Urbanísticos]], seção "Criando módulos de processos urbanísticos": "na criação de módulo, quando o tipo de documento é **processo administrativo**, aparece parâmetro extra pra marcar característica urbanística." **Esclarecido no produto** — não é categoria-base própria; é parâmetro de um módulo Processo administrativo. Rafael confirmou: "o processo urbanístico vai ser uma opção que é ativada no módulo processo administrativo."
 
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 7–11 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.
 - Conhecimento de produto (verificado em 08/10/2026, reexame da dúvida de Zoneamento): [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] — confirma "processo urbanístico" como tipo de documento/módulo real, sem declarar a categoria-base.
+- Conhecimento de produto (verificado em 09/10/2026): [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos|Processos Urbanísticos]] — só como evidência do produto atual (ver "Contexto de produto verificado em documentação" acima), não como requisito literal do TR.
