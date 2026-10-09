@@ -4,7 +4,7 @@ task: SGV-12082
 pai: SGV-11262
 tipo: especificacao-preset
 itens_tr: "1.35.2.5"
-status: em levantamento
+status: aprovado
 ---
 # 11 - Especificação do preset piloto (item 1.35.2.5)
 
@@ -37,7 +37,7 @@ status: em levantamento
 
 - **Solicitação de revisão** (1.35.2.4) já foi mapeada na fatia anterior ([[10 - Especificação do preset piloto (TR 1.35.2.4)|piloto 10]]) — mecanismo de evento `REVIEW`, não revisitado aqui.
 - **Retificação** (1.35.2.3) já foi mapeada ([[09 - Especificação do preset piloto (TR 1.35.2.3)|piloto 09]]) — mecanismo de mutation `retifyDocumentObject`, citado aqui só para a comparação de mutations distintas.
-- **`documentStatus` enum completo e a transição DRAFT→OPEN (emissão)** — vista de relance via `issue-draft-timeline-event.spec.ts` (evento `ISSUED`), mas não analisada a fundo aqui; fica como referência para uma fatia futura de prazos/encerramento/emissão, se fizer sentido.
+- **Transição DRAFT→OPEN (emissão)** — observada em `issue-draft-timeline-event.spec.ts` (evento `ISSUED`), mas não analisada a fundo aqui; fica como referência para uma fatia futura de prazos/encerramento/emissão, se fizer sentido.
 
 ## O que falta para este recorte virar preset executável (resumo)
 
