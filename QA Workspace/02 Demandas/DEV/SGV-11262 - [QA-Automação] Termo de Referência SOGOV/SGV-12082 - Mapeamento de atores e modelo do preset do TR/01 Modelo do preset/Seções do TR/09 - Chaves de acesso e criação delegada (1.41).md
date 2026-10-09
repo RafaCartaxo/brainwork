@@ -15,6 +15,17 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Item do TR: **1.41**, coberto recursivamente em todos os subitens numerados que o PDF apresenta (3 linhas na Cobertura: 1.41, 1.41.1, 1.41.2). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.41–1.41.1.c.i (p. 18, após 1.40, que pertence ao recorte 08 e já foi analisado); 1.41.1.d–1.41.2.f (p. 19, antes de 1.42, que pertence ao recorte 10 e não foi analisado aqui). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — exceto onde o próprio TR numera. Contexto de produto já confirmado por Rafael: o item 1.41.1.a usa literalmente o nome de nível "Visualizador", um dos 5 nomes originais do TR já mapeados no recorte 03 para o modelo canônico ativo (Visualizador → Somente leitura) — aplicado aqui por ser uso direto da própria terminologia do TR, não uma inferência nova. Os demais itens de contexto confirmado por Rafael (status Ativo/Inativo, presença online/offline, regra de criação de Assuntos e Serviços) não aparecem de forma literal neste recorte e não foram aplicados. Nesta rodada, a análise usou exclusivamente o texto do TR — Conhecimento > Módulos não foi consultado para este recorte.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Chave["Chave de acesso"] --> Historico["Histórico de documentos gerados"]
+    Historico -.->|"(l) mesmo registro?"| Registro["Registro de uso"]
+    Chave --> Filtros["Filtros: Ativas / Encerradas / Agendadas"]
+    Chave -.->|"(i) estados formais ou filtros?"| Filtros
+    Chave -.->|"(m) fluxo sem chave?"| FluxoProprio["Criação com permissão própria"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |

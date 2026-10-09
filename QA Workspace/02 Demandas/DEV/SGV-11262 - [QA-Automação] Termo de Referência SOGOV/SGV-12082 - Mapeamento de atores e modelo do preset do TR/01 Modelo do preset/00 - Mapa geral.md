@@ -48,51 +48,22 @@ Os diagramas menores seguem a hierarquia de cima para baixo. A sequência entre 
 ### 7. Mesa, fluxo de trabalho e despachos
 
 > Diagrama dividido: fluxo de trabalho e despacho na etapa (1.30.2) movidos para [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)#Fluxo de trabalho e despacho na etapa|Fluxo de trabalho e despacho na etapa]], no recorte 05; mesa de trabalho e despacho na tramitação (1.35.2.2.1) movidos para [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)#Modelo visual|Modelo visual]], no recorte 07. As relações (c) e (e) seguem só nas tabelas abaixo.
-```
 
 ### 8. Status e documentos associados
 
-```mermaid
-flowchart TB
-    Documento["Documento / Processo"] --> Etiqueta["Etiqueta"]
-    Etiqueta -.->|"(d) alcance da regra por setor?"| RegraEtiqueta["Regra de visibilidade"]
-    Documento --> Apensado["Documento apensado via despacho"]
-    Documento --> Associado["Documento associado automaticamente"]
-    Apensado -.->|"(f) mesmo mecanismo?"| Associado
-    StatusResumo["Resumo inicial: Concluído (1.33.2.1)"] -.->|"(p) equivalência ou agregado?"| StatusFormal["Enum formal: Encerrado (1.33.3.6 / 1.35.2.1)"]
-```
+> Diagrama movido para [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)#Status e documentos associados|Status e documentos associados]], no recorte 07.
 
 ### 9. Atores externos e atendimento
 
-```mermaid
-flowchart TB
-    Contato["Contato externo: cidadão / empresa"] -.->|"(a) mesma identidade?"| UsuarioExterno["Usuário externo"]
-    UsuarioExterno --> Demanda["Demanda externa"]
-    Central["Central de atendimento"] --> Atores["Cidadãos, empresas e entes externos"]
-    Atores --> Solicitacao["Solicitações e acesso a serviços"]
-```
+> Diagrama movido para [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)#Modelo visual|Modelo visual]], no recorte 06.
 
 ### 10. Divulgação, assinatura e exportação
 
-```mermaid
-flowchart TB
-    Divulgacao["Divulgação"] --> Mural["Mural interno"]
-    Divulgacao --> Canal["Canal Oficial"]
-    Canal -.->|"(g) mesmo elemento?"| Jornal["Jornal Oficial"]
-    Assinatura["Assinatura"] --> Signatario["Signatário interno / externo"]
-    Exportacao["Exportação / impressão"]
-```
+> Diagrama movido para [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)#Modelo visual|Modelo visual]], no recorte 08.
 
 ### 11. Chaves de acesso
 
-```mermaid
-flowchart TB
-    Chave["Chave de acesso"] --> Historico["Histórico de documentos gerados"]
-    Historico -.->|"(l) mesmo registro?"| Registro["Registro de uso"]
-    Chave --> Filtros["Filtros: Ativas / Encerradas / Agendadas"]
-    Chave -.->|"(i) estados formais ou filtros?"| Filtros
-    Chave -.->|"(m) fluxo sem chave?"| FluxoProprio["Criação com permissão própria"]
-```
+> Diagrama movido para [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)#Modelo visual|Modelo visual]], no recorte 09.
 
 ### 12. Personalização e estatísticas
 

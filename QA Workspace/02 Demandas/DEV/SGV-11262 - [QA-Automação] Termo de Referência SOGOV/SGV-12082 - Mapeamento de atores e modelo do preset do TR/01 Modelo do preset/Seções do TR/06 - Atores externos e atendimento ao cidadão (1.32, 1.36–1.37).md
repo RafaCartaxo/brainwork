@@ -15,6 +15,16 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.32, 1.32.1, 1.36–1.37** — **intervalo não contíguo no PDF**, agrupado por tema comum (atores externos — cidadãos, empresas e entes externos — e seu atendimento). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.32–1.32.1 (p. 13); 1.36–1.37 (p. 16). Nesta rodada, a análise usou exclusivamente o texto do TR — Conhecimento > Módulos não foi consultado para este recorte.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Contato["Contato externo: cidadão / empresa"] -.->|"(a) mesma identidade?"| UsuarioExterno["Usuário externo"]
+    UsuarioExterno --> Demanda["Demanda externa"]
+    Central["Central de atendimento"] --> Atores["Cidadãos, empresas e entes externos"]
+    Atores --> Solicitacao["Solicitações e acesso a serviços"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |

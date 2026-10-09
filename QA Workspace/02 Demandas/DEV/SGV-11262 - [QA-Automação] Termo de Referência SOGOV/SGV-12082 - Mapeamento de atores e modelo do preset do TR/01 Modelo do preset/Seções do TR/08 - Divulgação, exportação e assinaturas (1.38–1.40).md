@@ -15,6 +15,17 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Itens do TR: **1.38–1.40**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (22 linhas na Cobertura). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.38–1.38.2.a (p. 16); 1.38.2.b–1.39.6.1 (p. 17); 1.40–1.40.6 (p. 18, antes de 1.41, que pertence ao recorte 09 e não foi analisado aqui). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — exceto onde o próprio TR numera. Contexto de produto já confirmado por Rafael (níveis canônicos, visualizar/criar Assuntos e Serviços, status Ativo/Inativo, presença online/offline) **não aparece de forma literal neste recorte** — nenhum desses itens cita nível de acesso nomeado ou status funcional do servidor, então não foi aplicado por falta de pertinência textual. Nesta rodada, a análise usou exclusivamente o texto do TR — Conhecimento > Módulos não foi consultado para este recorte.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Divulgacao["Divulgação"] --> Mural["Mural interno"]
+    Divulgacao --> Canal["Canal Oficial"]
+    Canal -.->|"(g) mesmo elemento?"| Jornal["Jornal Oficial"]
+    Assinatura["Assinatura"] --> Signatario["Signatário interno / externo"]
+    Exportacao["Exportação / impressão"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |

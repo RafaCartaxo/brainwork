@@ -23,6 +23,18 @@ flowchart TB
     Documento --> DespachoTramitacao["Despacho na tramitação (1.35.2.2.1)"]
 ```
 
+### Status e documentos associados
+
+```mermaid
+flowchart TB
+    Documento["Documento / Processo"] --> Etiqueta["Etiqueta"]
+    Etiqueta -.->|"(d) alcance da regra por setor?"| RegraEtiqueta["Regra de visibilidade"]
+    Documento --> Apensado["Documento apensado via despacho"]
+    Documento --> Associado["Documento associado automaticamente"]
+    Apensado -.->|"(f) mesmo mecanismo?"| Associado
+    StatusResumo["Resumo inicial: Concluído (1.33.2.1)"] -.->|"(p) equivalência ou agregado?"| StatusFormal["Enum formal: Encerrado (1.33.3.6 / 1.35.2.1)"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |
