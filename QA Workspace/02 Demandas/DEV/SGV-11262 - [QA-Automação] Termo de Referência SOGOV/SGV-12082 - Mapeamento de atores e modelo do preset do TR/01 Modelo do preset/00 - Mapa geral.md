@@ -17,6 +17,110 @@ status: planejado
 > [!info] Síntese derivada das 11 notas de recorte aprovadas (revisão de cobertura em 09/10/2026)
 > Este mapa é um **resumo visual de alto nível**, derivado das 11 notas temáticas em `Seções do TR/` (ver [[01 - Matriz de atores e relações|Matriz de atores e relações]]), todas já revisadas e aprovadas pelo Codex. Ele **não substitui** essas notas nem o PDF ([[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]) — ambos continuam sendo a fonte da verdade; este diagrama é só uma visão consolidada, agrupada por tema (não por recorte), para orientar a evolução do modelo do preset. As relações mostradas já estão documentadas nas notas de origem; nenhuma lacuna foi resolvida ou inferida aqui.
 
+## Modelo integrado do TR
+
+> Síntese de todos os diagramas locais já revisados (recortes 02–11), num único Mermaid. Não introduz relação nem lacuna nova: toda aresta sólida já aparece em algum diagrama local ou na tabela "Relações entre grupos"; toda aresta tracejada já consta, com o mesmo código, na tabela "Lacunas registradas". Para manter a leitura vertical, só as lacunas que cruzam dois grupos temáticos (h, j, o) aparecem no grafo — as demais (a)–(g), (i), (k)–(n), (p) seguem apenas nas tabelas e nos recortes, sem que isso implique que estejam resolvidas.
+
+```mermaid
+flowchart TB
+    subgraph C1["Órgão, setores, servidores, níveis"]
+        Orgao["Órgão"]
+        Setor["Setor/Subsetor"]
+        Servidor["Servidor"]
+        Nivel["Nível de acesso"]
+        StatusAtividade["Status de atividade"]
+        Presenca["Presença online/offline"]
+        Autenticacao["Ciclo de autenticação"]
+        ContaUsuario["Conta de usuário<br/>(Servidor/Cidadão/Empresa)"]
+        Bloqueio["Bloqueio por tentativas"]
+    end
+
+    subgraph C2["Assuntos, serviços, categorias"]
+        Servico["Serviço"]
+        Assunto["Assunto"]
+        CategoriaDoc["Categoria de documento"]
+        Zoneamento["Zoneamento"]
+        CategoriaAS["Categoria de Assuntos e Serviços"]
+        VinculoAlvo["Categoria / Serviço / Assunto<br/>(um dos alvos)"]
+    end
+
+    subgraph C3["Modelos, fluxo, etapas, documentos/processos, mesa"]
+        ModeloSimples["Modelo simples"]
+        DocumentoAuto["Documento automatizado"]
+        Fluxo["Fluxo de trabalho"]
+        Etapa["Etapa"]
+        Documento["Documento/Processo"]
+        Mesa["Mesa de trabalho"]
+        Etiqueta["Etiqueta"]
+    end
+
+    subgraph C4["Cidadãos, empresas, usuários externos, central"]
+        Contato["Contato externo"]
+        UsuarioExterno["Usuário externo"]
+        Demanda["Demanda externa"]
+        Central["Central de atendimento"]
+    end
+
+    subgraph C5["Divulgação, assinaturas, chaves"]
+        Divulgacao["Divulgação"]
+        Canal["Canal Oficial"]
+        Assinatura["Assinatura"]
+        Signatario["Signatário (interno/externo)"]
+        SignatarioExterno["Signatário externo / contribuinte"]
+        Exportacao["Exportação"]
+        Chave["Chave de acesso"]
+    end
+
+    subgraph C6["Personalização, estatísticas"]
+        Personalizacao["Personalização"]
+        Estatisticas["Estatísticas"]
+        StatusEstatistico["Status estatístico de servidor"]
+        AcessoPersEstat["Acesso a personalização/estatísticas"]
+    end
+
+    Orgao --> Setor
+    Setor --> Servidor
+    Servidor --> Nivel
+    Servidor --> StatusAtividade
+    Servidor --> Presenca
+    Servidor --> Autenticacao
+    ContaUsuario --> Bloqueio
+
+    Servico --> CategoriaDoc
+    Assunto --> CategoriaDoc
+
+    Fluxo --> Etapa
+    Documento --> Mesa
+    Documento --> Etiqueta
+
+    UsuarioExterno --> Demanda
+
+    Divulgacao --> Canal
+
+    ModeloSimples --> VinculoAlvo
+    DocumentoAuto --> VinculoAlvo
+    ModeloSimples --> Documento
+    DocumentoAuto --> Documento
+    Central -->|"oferece acesso"| Servico
+    Canal --> Central
+    Assinatura --> Documento
+    Assinatura --> Signatario
+    Documento --> Divulgacao
+    Documento --> Exportacao
+    Chave -->|"concedente ou convenente"| Servidor
+    Orgao --> Personalizacao
+    Estatisticas --> Servidor
+    Estatisticas --> Documento
+    Estatisticas --> StatusEstatistico
+
+    SignatarioExterno -.->|"(h)"| Contato
+    SignatarioExterno -.->|"(h)"| UsuarioExterno
+    AcessoPersEstat -.->|"(j)"| Nivel
+    StatusEstatistico -.->|"(o)"| StatusAtividade
+```
+
+> Detalhe de cada entidade (atributos, subtipos, evidência item a item) está nos diagramas locais de cada recorte, listados na seção seguinte — este Mermaid só conecta os grupos.
+
 ## Diagramas — leitura vertical por tema
 
 Os diagramas menores seguem a hierarquia de cima para baixo. A sequência entre diagramas organiza a leitura, sem indicar dependência; relações entre temas ficam na tabela seguinte.
