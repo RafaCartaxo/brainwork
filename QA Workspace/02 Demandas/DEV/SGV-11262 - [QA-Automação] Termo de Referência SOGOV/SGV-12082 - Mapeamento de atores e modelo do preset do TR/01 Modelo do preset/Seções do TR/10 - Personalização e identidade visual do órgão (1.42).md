@@ -15,6 +15,16 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Item do TR: **1.42**, coberto recursivamente em todos os subitens numerados que o PDF apresenta (2 linhas na Cobertura: 1.42, 1.42.1). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Página do PDF: **p. 19**, entre 1.41.2.f (recorte 09, já analisado) e 1.43 (recorte 11, não analisado aqui). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — exceto onde o próprio TR numera. Contexto de produto já confirmado por Rafael (níveis canônicos, visualizar/criar Assuntos e Serviços, status Ativo/Inativo, presença online/offline) **não aparece de forma literal neste recorte** — o TR não nomeia nenhum nível de acesso neste item (diferente do recorte 09, que citou "Visualizador" explicitamente), então não foi aplicado por falta de pertinência textual. Nesta rodada, a análise usou exclusivamente o texto do TR — Conhecimento > Módulos não foi consultado para este recorte.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Orgao["Órgão"] --> Personalizacao["Personalização"]
+    Personalizacao --> IdentidadeVisual["Cores e imagens institucionais"]
+    Personalizacao --> DadosOrgao["Licenças, contrato e módulos contratados"]
+    DadosOrgao -.->|"(k) leitura ou edição?"| ModoAcesso["Modo de acesso não especificado"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |

@@ -67,15 +67,7 @@ Os diagramas menores seguem a hierarquia de cima para baixo. A sequência entre 
 
 ### 12. Personalização e estatísticas
 
-```mermaid
-flowchart TB
-    Orgao["Órgão"] --> Personalizacao["Personalização"]
-    Personalizacao --> IdentidadeVisual["Cores e imagens institucionais"]
-    Personalizacao --> DadosOrgao["Licenças, contrato e módulos contratados"]
-    DadosOrgao -.->|"(k) leitura ou edição?"| ModoAcesso["Modo de acesso não especificado"]
-    Estatisticas["Estatísticas"] --> Relatorios["Setores / Módulos / Servidores / Consumo"]
-    Relatorios --> StatusServidor["Status de servidor: Ativo, Inativo, Licença, Férias (1.43.5.b)"]
-```
+> Diagrama dividido: Órgão/Personalização (1.42) movido para [[Seções do TR/10 - Personalização e identidade visual do órgão (1.42)#Modelo visual|Modelo visual]], no recorte 10; Estatísticas (1.43) movido para [[Seções do TR/11 - Estatísticas e indicadores (1.43)#Modelo visual|Modelo visual]], no recorte 11. A relação acesso × níveis de usuário (lacuna j) segue só na tabela de lacunas abaixo.
 
 ## Relações entre grupos
 

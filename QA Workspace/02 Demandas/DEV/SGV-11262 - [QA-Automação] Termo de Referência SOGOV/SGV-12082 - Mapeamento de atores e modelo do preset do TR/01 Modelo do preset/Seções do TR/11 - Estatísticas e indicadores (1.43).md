@@ -15,6 +15,14 @@ status: aprovado
 > [!info] Escopo deste recorte — revisado e aprovado pelo Codex em 08/10/2026
 > Item do TR: **1.43**, coberto recursivamente em todos os subitens numerados que o PDF apresenta (8 linhas na Cobertura: 1.43, 1.43.1, 1.43.2, 1.43.3, 1.43.3.1, 1.43.4, 1.43.5, 1.43.6). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.43–1.43.3.1.c (p. 19, após 1.42, que pertence ao recorte 10 e já foi analisado); 1.43.3.1.d–1.43.6.d (p. 20, última página do TR). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR — exceto onde o próprio TR numera. No ponto em que o próprio item cita literalmente "nível de permissão" (1.43.5.c), o texto literal do TR é registrado normalmente na Cobertura/Elementos, e o **contexto de negócio já confirmado por Rafael** sobre os 5 níveis canônicos (recorte 03) é registrado ao lado, explicitamente rotulado como `Contexto confirmado por Rafael` — nunca reescrevendo ou substituindo o texto do TR. Para o status de servidor citado em 1.43.5.b ("ativos, inativos, em licença, em férias"), o mapeamento de status funcional/presença já confirmado por Rafael para outros itens (1.25.3, 1.27.10.1, 1.27.11.2 — ver recorte 03, revisado em 09/10/2026) **não é aplicado automaticamente aqui**: este item usa vocabulário próprio, em minúsculas e no plural, sem remissão cruzada no TR a esses outros itens — a exclusividade/sobreposição das categorias segue como dúvida (ver abaixo), sem presumir que "inativos" aqui signifique presença offline (sentido de 1.27.10.1) nem acesso suspenso (interpretação de trabalho confirmada por Rafael para outros itens). A pendência de "quem acessa a funcionalidade de estatísticas" (1.43, "administradores e usuários autorizados") permanece aberta, pois essa permissão específica ainda não foi confirmada por Rafael. Nesta rodada, a análise usou o texto do TR mais o contexto de negócio já confirmado apenas onde aplicável — Conhecimento > Módulos não foi consultado para este recorte.
 
+## Modelo visual
+
+```mermaid
+flowchart TB
+    Estatisticas["Estatísticas"] --> Relatorios["Setores / Módulos / Servidores / Consumo"]
+    Relatorios --> StatusServidor["Status de servidor (1.43.5.b):<br/>ativos, inativos, em licença, em férias<br/>— vocabulário próprio; correspondência não presumida"]
+```
+
 ## Cobertura dos itens
 
 | Item do TR | Situação | Justificativa ou pendência |
