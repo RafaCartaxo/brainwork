@@ -46,6 +46,12 @@ status: aprovado
 
 - **Ator com acesso à área de personalização (1.42):** o TR descreve a existência da área e as ações permitidas, mas **não especifica qual nível de usuário tem acesso a ela** — diferente do recorte 09 (1.41.1.a), que citou explicitamente o nível "Visualizador". Não apliquei aqui o contexto já confirmado por Rafael sobre criação de Assuntos e Serviços (Administrador/Administrador Setorial), pois é uma regra de outro domínio e não há menção literal de nível neste item — não extrapolo por analogia. Adicionalmente, para as informações cadastrais do órgão (1.42.1.a), o TR usa apenas o verbo "acesso", **sem qualificar se é somente visualização ou se também permite edição** — diferente de (b) e (c), que usam explicitamente "editar" e "upload e gerenciamento". **Pergunta objetiva para Rafael:** (1) qual(is) nível(is) de acesso (Administrador, Administrador Setorial, Especialista, Usuário básico, Somente leitura) tem acesso à área de personalização de cadastro/identidade visual do órgão? (2) o acesso às informações cadastrais (quantidade de licenças, período de contrato, módulos contratados) é somente leitura, ou também permite edição?
 
+## Contexto de produto verificado em documentação (09/10/2026)
+
+> Esta seção registra contexto de produto (Conhecimento > Módulos) — não é requisito literal do TR e não substitui nem resolve a dúvida acima, que permanece registrada tal como está.
+
+- **Nível de acesso à identidade visual do órgão (1.42.1.b/c):** [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] documenta, na seção "Configurações do órgão", uma permissão única "Visualizar e editar" que "libera no menu profile a opção de configurações do órgão (edição de cores e imagens)", e a tabela de permissões default associa essa funcionalidade ao nível **Administrador**. **Confirmado no produto** — mas só para cores/imagens (1.42.1.b/c). Não se estende a 1.42.1.a (quantidade de licenças, período de contrato, módulos contratados): ambiente e permissão dessa tela específica seguem sem evidência.
+
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 19. Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.

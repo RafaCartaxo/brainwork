@@ -57,6 +57,15 @@ status: aprovado
 - **Mecanismo dos "canais digitais do órgão" (1.36):** o TR não detalha quais são esses canais nem como a Central de atendimento se conecta tecnicamente a eles — registrado como A confirmar, sem impacto na classificação do item.
 - **Estado de andamento da Demanda (externa) (1.37):** o TR não nomeia estados explícitos (ex.: aberta/em andamento/concluída) para a demanda externa neste item. Pode haver relação com os estados de "mesa de trabalho" tratados em 1.33 (recorte 07, ainda não analisado) — não presumir equivalência sem análise desse recorte.
 
+## Contexto de produto verificado em documentação (09/10/2026)
+
+> Esta seção registra contexto de produto (Conhecimento > Módulos) — não é requisito literal do TR e não substitui nem resolve as dúvidas acima, que permanecem registradas tal como estão.
+
+- **Contato externo (1.32) × Usuário externo (1.37):** [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] documenta dois tipos de usuário (Pessoa Física/CPF, Pessoa Jurídica/CNPJ) que acessam "um ambiente próprio onde faz[em] solicitações e acompanha[m] o andamento delas" e podem "fazer solicitações na central de atendimento". Isso esclarece, **para o produto atual**, que 1.32 e 1.37 descrevem a mesma população/entidade ("Usuário Cidadão") — **confirmado no produto**. O TR, porém, não declara essa identidade explicitamente; a dúvida acima permanece registrada como tal.
+- **Estado de andamento da Demanda externa (1.37):** [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] documenta que uma solicitação externa pode ficar **Pausada** (o cidadão ainda interage) e, uma vez **Encerrada**, só volta a aceitar interação do cidadão depois que um servidor reabre a demanda. **Esclarecido no produto** — usa o mesmo modelo de status já mapeado no recorte 07.
+- **"Entes externos" (1.36):** [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] só documenta os dois tipos PF/PJ — **segue sem evidência** de um terceiro tipo "ente externo".
+- **Mecanismo dos "canais digitais do órgão" (1.36):** a existência da Central de Atendimento está documentada ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]]: "Fazer solicitações na central de atendimento"), mas o mecanismo técnico dos canais em si **segue sem evidência** específica.
+
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 13 (1.32, 1.32.1) e p. 16 (1.36–1.37). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi usado como evidência.

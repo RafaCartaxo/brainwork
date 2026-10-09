@@ -88,6 +88,14 @@ status: aprovado
 - **"Contribuinte" (1.40.3.a):** termo novo, não usado nos recortes anteriores (que usam cidadão/empresa/ente externo). O TR não define se "contribuinte" é um tipo adicional de ator externo ou um sinônimo contextual de cidadão/empresa. **Pergunta objetiva para Rafael:** "contribuinte", neste contexto, é um tipo de ator externo distinto, ou apenas outro nome para cidadão/empresa já cadastrado?
 - **Recorrência do termo "apensado"/"documentos apensados" (1.39.2, 1.39.3.a):** a exportação da árvore do processo cita "documentos apensados" como parte do conteúdo exportável — o mesmo termo usado no recorte 07 para os dois mecanismos de associação de documentos (despacho, 1.35.2.2.1.2.a; geração automática, 1.35.4) ainda não resolvidos como idênticos ou distintos. Esta ocorrência não resolve essa dúvida já aberta — apenas reforça a recorrência do termo no TR; **não tento resolvê-la aqui**.
 
+## Contexto de produto verificado em documentação (09/10/2026)
+
+> Esta seção registra contexto de produto (Conhecimento > Módulos) — não é requisito literal do TR e não substitui nem resolve as dúvidas acima, que permanecem registradas tal como estão.
+
+- **Signatário externo (1.40) × Contato externo / Usuário externo (recorte 06):** [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] documenta que, ao solicitar assinatura "de um cidadão PF ou PJ", o signatário é um "contato externo (PF ou PJ) cadastrado como cidadão na base do cliente". Isso **confirma, para o produto atual**, a relação entre signatário externo e Contato externo/Usuário Cidadão (ver recorte 06). **Confirmado no produto** quanto a esse vínculo.
+- **"Contribuinte" (1.40.3.a):** segue sem definição na documentação consultada — não há evidência de que seja sinônimo de cidadão/empresa ou um tipo à parte. **Segue sem evidência.**
+- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1):** nenhum módulo de Conhecimento documenta "Divulgação" ou "Jornal Oficial". **Segue sem evidência** — dúvida mantida em aberto.
+
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 16–18 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.
