@@ -3,10 +3,10 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "melhoria"
-status: backlog
+status: validacao
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Triagem"
+etapa_atual: "QA · Revisão da análise"
 modulo: ""
 responsavel: ""
 aguardando: ""
@@ -32,25 +32,25 @@ pontos: ""
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
 
-> [!info] Escopo desta pasta — recortes 1–3 aprovados, recorte 4 aprovado pelo Codex
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]; links de navegação foram ajustados quando necessário. Esta pasta é a nova frente — mapeamento de atores e modelo do preset do TR. O TR completo (1.1–1.43) foi segmentado em **11 recortes temáticos, aprovados pelo Rafael** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações#Recortes temáticos do TR|índice na matriz]]). Recortes 1–3 (itens 1.1–1.27) revisados e aprovados pelo Codex; recorte 4 (itens 1.28–1.29) revisado e aprovado pelo Codex; recortes 5–11 ainda não iniciados. **A análise não está completa.**
+> [!info] Escopo desta pasta — 11 recortes revisados; dúvidas de negócio seguem abertas
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. Esta frente mapeia atores, entidades, dados, estados e relações do TR completo. Os 11 recortes foram aprovados pelo Rafael e revisados item a item contra o PDF (1.1–1.43); a revisão documental está registrada em [[04 - Revisão da análise]]. Permanecem dúvidas explícitas a esclarecer com Rafael, sem equivalências presumidas (ver [[../01 Modelo do preset/00 - Mapa geral#Lacunas registradas (arestas tracejadas)|lacunas no mapa]]).
 
 ## Status do trabalho
 
 | Etapa | Estado |
 |---|---|
-| Demanda | 📝 Preparada, aguardando revisão |
-| Plano de análise | 📝 Preparado, aguardando revisão |
+| Demanda | ✅ Escopo aplicado à nova frente de mapeamento do TR completo |
+| Plano de análise | ✅ Método aplicado: recorte a recorte, fonte PDF, proveniência explícita |
 | Segmentação em recortes temáticos (`Seções do TR/`) | ✅ Aprovada pelo Rafael (11 recortes) |
 | Recorte 1 — Infraestrutura técnica e operacional (1.1–1.23) | ✅ Revisado e aprovado pelo Codex |
 | Recorte 2 — Autenticação e ciclo de vida da identidade (1.24–1.25) | ✅ Revisado e aprovado pelo Codex |
 | Recorte 3 — Estrutura organizacional e cadastro de servidores (1.26–1.27) | ✅ Revisado e aprovado pelo Codex |
 | Recorte 4 — Serviços, assuntos e categorias de documentos (1.28–1.29) | ✅ Revisado e aprovado pelo Codex |
-| Recortes 5–11 | ⏳ Não iniciados |
-| Síntese visual (mapa geral) | ⏳ Não iniciado |
-| Revisão da análise | ⏳ Não iniciado |
+| Recortes 5–11 | ✅ Revisados e aprovados |
+| Síntese visual (mapa geral) | ✅ Atualizada para leitura vertical e alinhada às notas |
+| Revisão da análise | ✅ Cobertura/rastreabilidade revisadas; dúvidas de negócio preservadas |
 
-**Próximo passo:** iniciar a leitura do recorte 5 (itens 1.30–1.31) e submetê-lo à revisão do Codex antes de avançar.
+**Próximo passo:** retomar o esclarecimento das dúvidas com Rafael, uma por vez. A primeira pendente é o enquadramento do Processo urbanístico de Zoneamento (1.29.10) em relação às categorias-base (1.29.1); depois, seguir a ordem registrada no mapa e nos recortes.
 
 Pacote para `SGV-12082`:
 
@@ -62,7 +62,7 @@ SGV-12082 - Mapeamento de atores e modelo do preset do TR/
 │   ├── 02 - Plano de análise.md
 │   └── 04 - Revisão da análise.md
 ├── 01 Modelo do preset/
-│   ├── 00 - Mapa geral.md              (esqueleto Mermaid, sem conteúdo de domínio)
+│   ├── 00 - Mapa geral.md              (síntese Mermaid vertical, derivada dos recortes)
 │   ├── 01 - Matriz de atores e relações.md  (índice dos recortes temáticos, sem duplicar seu conteúdo)
 │   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes)
 └── Fontes/

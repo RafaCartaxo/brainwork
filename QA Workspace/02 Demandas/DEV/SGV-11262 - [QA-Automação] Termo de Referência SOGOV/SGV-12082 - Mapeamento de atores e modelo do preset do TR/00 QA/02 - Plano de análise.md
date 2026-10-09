@@ -1,6 +1,6 @@
 ---
 demanda: "[[01 - Demanda]]"
-status: planejado
+status: concluido
 responsavel: ""
 pontos: ""
 ---
@@ -34,7 +34,7 @@ Percorrer o TR completo (itens 1.1–1.43) e produzir, de forma rastreável, o m
 
 ## Estratégia de análise
 
-1. Confirmar fonte e escopo — PDF do TR completo (itens 1.1–1.43) — e **confirmar a segmentação em recortes temáticos** (ver [[../01 Modelo do preset/01 - Matriz de atores e relações|índice de recortes na matriz]]) antes de começar a ler.
+1. Confirmar fonte e escopo — PDF do TR completo (itens 1.1–1.43) — e usar a segmentação em recortes temáticos aprovada por Rafael (ver [[../01 Modelo do preset/01 - Matriz de atores e relações|índice de recortes na matriz]]).
 2. Ler e registrar cobertura por nota temática — cada recorte em `01 Modelo do preset/Seções do TR/` recebe sua própria leitura, com cobertura/classificação dos itens, elementos e relações identificados, dúvidas e fontes.
 3. Consolidar atores/elementos/estados/relações **sem duplicação** — a matriz central só indexa os recortes (intervalo de itens/páginas, status, link); elementos e relações vivem exclusivamente na nota temática correspondente.
 4. Sintetizar o mapa geral (Mermaid) a partir do que já estiver **confirmado** nas notas temáticas — nunca antecipar conteúdo que elas ainda não tenham.
@@ -57,6 +57,8 @@ Um item por recorte temático — lista completa e os links das notas vivem no [
 | Item | Tipo | Fonte | Situação |
 |---|---|---|---|
 | Confirmar/ajustar a segmentação proposta (11 recortes) | Revisão de escopo | PDF do TR completo | ✅ Concluído — aprovado pelo Rafael (08/10/2026) |
+| Cruzar cobertura dos recortes com os itens numerados do PDF (1.1–1.43) | Cobertura e rastreabilidade | PDF + 11 notas temáticas | ✅ Concluído — 250 referências numeradas presentes nas tabelas; nenhuma omitida ou excedente |
+| Consolidar modelo visual e revisar ambiguidades | Síntese e revisão | 11 notas + matriz + mapa geral | ✅ Concluído como análise; pendências de negócio seguem explicitadas para Rafael |
 
 ---
 
@@ -65,3 +67,5 @@ Um item por recorte temático — lista completa e os links das notas vivem no [
 **Entrada:** PDF do TR completo (itens 1.1–1.43), em [[../Fontes/Termo de Referência SOGOV.pdf|Fontes/Termo de Referência SOGOV.pdf]]; segmentação em recortes temáticos (`01 Modelo do preset/Seções do TR/`).
 
 **Saída:** notas temáticas com cobertura/elementos/relações/dúvidas/fontes por recorte; matriz como índice consolidado, sem duplicar o conteúdo; mapa geral (Mermaid) como síntese; registro de cobertura, lacunas e ambiguidades para revisão.
+
+**Resultado desta análise:** cobertura do TR e consistência documental revisadas em 09/10/2026. A conclusão deste plano não encerra as dúvidas de negócio listadas nas notas; o próximo trabalho é esclarecê-las progressivamente, sem inferir respostas.

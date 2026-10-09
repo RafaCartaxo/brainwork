@@ -1,7 +1,12 @@
 ---
 demanda: "[[01 - Demanda]]"
-status: planejado
-responsavel: ""
+status: concluido
+responsavel: Codex
+item_001: "✅ Aprovado"
+item_002: "✅ Aprovado"
+item_003: "✅ Aprovado"
+item_004: "✅ Aprovado"
+item_005: "✅ Aprovado"
 ---
 
 # Revisão da análise — SGV-12082
@@ -22,8 +27,8 @@ responsavel: ""
 
 ## Contexto
 
-- **Escopo revisado:** <preencher>
-- **Fontes consultadas:** <preencher>
+- **Escopo revisado (09/10/2026):** 11 recortes do TR (itens 1.1–1.43), as 250 referências numeradas cobertas nas tabelas, a matriz e o mapa geral. Cruzamento estrutural encontrou todas as 250 referências no PDF e nas notas, sem item numerado omitido ou excedente. Conferidos também sentidos e relações de alto risco entre recortes, inclusive estados de servidor, documentos/modelos, divulgação, chaves e estatísticas.
+- **Fontes consultadas:** PDF `../Fontes/Termo de Referência SOGOV.pdf`; 11 notas em `../01 Modelo do preset/Seções do TR/`; matriz e mapa geral. A extração de texto do PDF foi usada para cruzar numeração e conteúdo, preservando as renderizações já registradas como evidência nos recortes.
 
 ---
 
@@ -31,11 +36,11 @@ responsavel: ""
 
 | Item | O que verifica | Resultado | Observação |
 |---|---|---|---|
-| Cobertura completa do TR | Todo item do TR (1.1–1.43) está mapeado, marcado não aplicável (com justificativa) ou pendente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_001]` | |
-| Rastreabilidade das linhas | Cada elemento/relação, registrado na nota temática do recorte, aponta a referência do item do TR correspondente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_002]` | |
-| Separação fato/inferência/pendência | Confirmado/Inferido/A confirmar aplicados corretamente, sem lacuna virar fato | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_003]` | |
-| Consistência do mapa com as notas temáticas | O mapa geral (Mermaid) não contém nada que as notas temáticas confirmadas não sustentem; a matriz segue só como índice, sem elementos/relações próprios | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_004]` | |
-| Decisão sobre lacunas/ambiguidades | Lacunas e ambiguidades encontradas estão registradas explicitamente, não resolvidas por suposição | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_005]` | |
+| Cobertura completa do TR | Todo item do TR (1.1–1.43) está mapeado, marcado não aplicável (com justificativa) ou pendente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_001]` | 250 referências numeradas cruzadas; nenhuma omitida/excedente nas tabelas de cobertura. |
+| Rastreabilidade das linhas | Cada elemento/relação, registrado na nota temática do recorte, aponta a referência do item do TR correspondente | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_002]` | Recortes mantêm referências junto a elementos e relações. |
+| Separação fato/inferência/pendência | Confirmado/Inferido/A confirmar aplicados corretamente, sem lacuna virar fato | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_003]` | Conflitos literais e interpretações de Rafael foram separados; ver status de servidor e dúvidas novas registradas nos recortes 03, 07 e 11. |
+| Consistência do mapa com as notas temáticas | O mapa geral (Mermaid) não contém nada que as notas temáticas confirmadas não sustentem; a matriz segue só como índice, sem elementos/relações próprios | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_004]` | Ajustado para explicitar verticalidade e para preservar discrepâncias sem criar equivalências. |
+| Decisão sobre lacunas/ambiguidades | Lacunas e ambiguidades encontradas estão registradas explicitamente, não resolvidas por suposição | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Reprovado),option(🚫 Bloqueado)):item_005]` | Ambiguidades remanescentes registradas; esta revisão não as resolve por inferência. |
 
 > Esta revisão é documental — sem CT, execução, Qase ou automação.
 
@@ -43,15 +48,15 @@ responsavel: ""
 
 ## Decisão
 
-**Resultado geral:** aguardando
+**Resultado geral:** revisão documental aprovada. A cobertura e a rastreabilidade estão consistentes; as ambiguidades listadas nos recortes permanecem abertas até confirmação de Rafael.
 
 ---
 
 ## Checklist de encerramento
 
-- [ ] Cobertura completa do TR confirmada (mapeado/não aplicável/pendente, sem item omitido).
-- [ ] Rastreabilidade das linhas das notas temáticas ao TR confirmada.
-- [ ] Separação entre fato, inferência e pendência confirmada.
-- [ ] Consistência entre o mapa geral (Mermaid) e as notas temáticas confirmada; a matriz segue só como índice, sem duplicar elementos/relações.
-- [ ] Lacunas/ambiguidades têm decisão registrada (resolvidas ou mantidas como pendência explícita).
-- [ ] Status e próximo passo da demanda foram atualizados.
+- [x] Cobertura completa do TR confirmada (mapeado/não aplicável/pendente, sem item omitido).
+- [x] Rastreabilidade das linhas das notas temáticas ao TR confirmada.
+- [x] Separação entre fato, inferência e pendência confirmada.
+- [x] Consistência entre o mapa geral (Mermaid) e as notas temáticas confirmada; a matriz segue só como índice, sem duplicar elementos/relações.
+- [x] Lacunas/ambiguidades têm decisão registrada (resolvidas ou mantidas como pendência explícita).
+- [x] Status e próximo passo da demanda foram atualizados.

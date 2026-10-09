@@ -17,166 +17,157 @@ status: planejado
 > [!info] Síntese derivada das 11 notas de recorte aprovadas (revisão de cobertura em 09/10/2026)
 > Este mapa é um **resumo visual de alto nível**, derivado das 11 notas temáticas em `Seções do TR/` (ver [[01 - Matriz de atores e relações|Matriz de atores e relações]]), todas já revisadas e aprovadas pelo Codex. Ele **não substitui** essas notas nem o PDF ([[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]) — ambos continuam sendo a fonte da verdade; este diagrama é só uma visão consolidada, agrupada por tema (não por recorte), para orientar a evolução do modelo do preset. As relações mostradas já estão documentadas nas notas de origem; nenhuma lacuna foi resolvida ou inferida aqui.
 
-## Diagrama — visão geral de atores, entidades e relações
+## Diagramas — leitura vertical por tema
+
+Os diagramas menores seguem a hierarquia de cima para baixo. A sequência entre diagramas organiza a leitura, sem indicar dependência; relações entre temas ficam na tabela seguinte.
+
+### 1. Órgão e níveis de acesso
 
 ```mermaid
 flowchart TB
-    classDef rafael fill:#dbe9ff,stroke:#2b6cb0,color:#1a365d,stroke-width:1px;
-
-    subgraph G1["Órgão, setores, servidores e níveis"]
-        Orgao["Órgão"]
-        Setor["Setor / Subsetor"]
-        Servidor["Servidor"]
-        NivelTR["Nível de acesso (TR)<br/>nomes originais — só rastreabilidade"]
-        NivelRafael["Níveis canônicos (Rafael):<br/>Administrador, Administrador Setorial,<br/>Especialista, Usuário básico, Somente leitura"]:::rafael
-        StatusFuncionalTR["TR 1.25.3:<br/>Ativo, Licença, Férias,<br/>Inativo (nega autenticação)"]
-        StatusListaTR["TR 1.27.10.1:<br/>Ativo, Inativo (offline), Suspenso,<br/>Licença, Férias"]
-        StatusEdicaoTR["TR 1.27.11.2:<br/>Em atividade, Suspenso,<br/>Licença, Férias"]
-        StatusFuncionalRafael["Interpretação de trabalho (Rafael):<br/>Ativo abrange Em atividade/Licença/Férias;<br/>Inativo = Suspenso. Presença é separada.<br/>TR 1.27.10.1 contradiz esse uso de Inativo."]:::rafael
-        PresencaOnlineOffline["Presença Online/Offline<br/>(eixo separado, Rafael)"]:::rafael
-        BloqueioTentativas["Bloqueio por tentativas (TR)<br/>5 tentativas malsucedidas bloqueiam a conta<br/>— separado do status funcional, não é Inativo"]
-    end
-
-    subgraph G2["Assuntos, serviços, documentos e modelos"]
-        AssuntoServico["Assunto / Serviço"]
-        CategoriaDoc["Categoria de documento (base)"]
-        SubtipoDoc["Subtipos de documento<br/>(Memorando, Ofício, Ouvidoria…)"]
-        CategoriaAS["Categoria (de Assuntos e Serviços)"]
-        SubcategoriaAS["Subcategoria (de Assuntos e Serviços)"]
-        Zoneamento["Zona / Categoria de uso"]
-        ModeloSimples["Modelo simples<br/>(inserido durante a tramitação)"]
-        DocAutomatizado["Documento automatizado<br/>(gera documento independente)"]
-        VinculoModelo["Vínculo obrigatório:<br/>Categoria/Serviço/Assunto"]
-        PermCriar["Regra confirmada (Rafael):<br/>visualizar = todos os 5 níveis;<br/>criar Assunto/Serviço = Administrador<br/>e Administrador Setorial"]:::rafael
-    end
-
-    subgraph G3["Documento/processo, mesa, status, prazos, etiquetas, tramitação"]
-        DocProcesso["Documento / Processo"]
-        Mesa["Mesa de trabalho"]
-        FluxoTrabalho["Fluxo de trabalho"]
-        Etapa["Etapa"]
-        DespachoA["Despacho de etapa (1.30.2)"]
-        DespachoB["Despacho de tramitação (1.35.2.2.1)"]
-        Etiqueta["Etiqueta"]
-        Prazo["Prazo"]
-        DocApensado["Doc. apensado (despacho)"]
-        DocAssociado["Doc. associado (automático)"]
-        RegraVisEtiqueta["Alcance da regra de visibilidade"]
-        StatusResumo["Resumo inicial: “Concluído”<br/>(1.33.2.1)"]
-        StatusFormal["Enum formal: “Encerrado”<br/>(1.33.3.6 / 1.35.2.1)"]
-    end
-
-    subgraph G4["Usuário externo e atendimento"]
-        ContatoExterno["Contato externo"]
-        UsuarioExterno["Usuário externo"]
-        CentralAtendimento["Central de atendimento<br/>(cidadãos, empresas, entes externos)"]
-    end
-
-    subgraph G5["Assinatura, publicação e exportação"]
-        Divulgacao["Divulgação (interna/externa)"]
-        MuralInterno["Mural interno"]
-        CanalOficial["Canal Oficial"]
-        JornalOficial["Jornal Oficial"]
-        Assinatura["Assinatura"]
-        SignatarioExterno["Signatário externo / contribuinte"]
-        Exportacao["Exportação"]
-    end
-
-    subgraph G6["Chave de acesso"]
-        ChaveAcesso["Chave de acesso"]
-        FiltrosChave["Filtros de listagem"]
-        HistoricoChave["Histórico de documentos da chave"]
-        RegistroUso["Registro de uso da chave"]
-        FluxoSoPermissao["Fluxo só permissão própria"]
-    end
-
-    subgraph G7["Personalização e estatísticas"]
-        Personalizacao["Personalização do órgão"]
-        AcessoPersonalizacao["Acesso à personalização"]
-        AcessoDadosCadastrais["Dados cadastrais: leitura/edição?"]
-        Estatisticas["Estatísticas"]
-        AcessoEstatisticas["Acesso às estatísticas"]
-        StatusEstatistica["Status servidor no relatório:<br/>ativos, inativos, licença, férias<br/>(1.43.5.b)"]
-    end
-
-    %% Direção de layout somente: organiza os grupos na ordem temática, sem representar dependência entre eles.
-    Orgao ~~~ AssuntoServico ~~~ Mesa ~~~ ContatoExterno ~~~ Divulgacao ~~~ ChaveAcesso ~~~ Personalizacao
-
-    %% Relações centrais confirmadas (TR literal e/ou contexto confirmado por Rafael)
-    Orgao --> Setor
-    Servidor -->|"vínculo: nível + cargo por setor"| Setor
-    Servidor --> NivelTR
-    NivelTR --> NivelRafael
-    Servidor --> StatusFuncionalTR
-    StatusFuncionalTR --> StatusFuncionalRafael
-    StatusListaTR -.->|"rótulo Inativo conflita: aqui significa offline"| StatusFuncionalRafael
-    StatusEdicaoTR --> StatusFuncionalRafael
-    Servidor --> PresencaOnlineOffline
-
-    AssuntoServico --> CategoriaDoc
-    SubtipoDoc --> CategoriaDoc
-    ModeloSimples --> VinculoModelo
-    DocAutomatizado --> VinculoModelo
-    VinculoModelo -->|"vínculo a um (não aos três): Categoria, Serviço ou Assunto"| AssuntoServico
-    VinculoModelo -->|"vínculo a um (não aos três): Categoria, Serviço ou Assunto"| CategoriaDoc
-    ModeloSimples -->|"exibido durante a tramitação de"| DocProcesso
-    DocAutomatizado -->|"gera (tramitação própria)"| DocProcesso
-    NivelRafael --> PermCriar
-    PermCriar -->|"criar (só 2 dos 5 níveis)"| AssuntoServico
-
-    Mesa --> DocProcesso
-    FluxoTrabalho --> Etapa
-    Etapa --> DespachoA
-    DocProcesso --> DespachoB
-    DocProcesso --> Etiqueta
-    DocProcesso --> Prazo
-    StatusResumo -.->|"(p) mesmo estado ou agregado?"| StatusFormal
-    DespachoB --> DocApensado
-    DocProcesso --> DocAssociado
-
-    DocProcesso --> Divulgacao
-    Divulgacao --> MuralInterno
-    Divulgacao --> CanalOficial
-    CanalOficial --> CentralAtendimento
-    Assinatura --> DocProcesso
-    Assinatura --> SignatarioExterno
-    DocProcesso --> Exportacao
-
-    ChaveAcesso -->|"criada/concedida por (concedente)"| Servidor
-    ChaveAcesso -->|"vinculada a (convenente)"| Servidor
-    ChaveAcesso --> HistoricoChave
-
-    Orgao --> Personalizacao
-    Personalizacao --> AcessoPersonalizacao
-    Estatisticas --> Servidor
-    DocProcesso --> Estatisticas
-    Estatisticas --> AcessoEstatisticas
-    Estatisticas --> StatusEstatistica
-    StatusFuncionalRafael -.->|"(o) categorias sobrepostas?"| StatusEstatistica
-
-    %% Lacunas — "A confirmar" (preservadas das notas de origem; nenhuma resolvida por analogia)
-    ContatoExterno -.->|"(a) mesma identidade?"| UsuarioExterno
-    Zoneamento -.->|"(b) categoria-base?"| CategoriaDoc
-    Mesa -.->|"(c) reflete etapas?"| FluxoTrabalho
-    RegraVisEtiqueta -.->|"(d) alcance?"| Etiqueta
-    DespachoA -.->|"(e) mesmo conceito?"| DespachoB
-    DocApensado -.->|"(f) mesmo mecanismo?"| DocAssociado
-    CanalOficial -.->|"(g) mesmo elemento?"| JornalOficial
-    SignatarioExterno -.->|"(h) mesmos atores?"| ContatoExterno
-    SignatarioExterno -.->|"(h) mesmos atores?"| UsuarioExterno
-    ChaveAcesso -.->|"(i) estado formal?"| FiltrosChave
-    AcessoPersonalizacao -.->|"(j) quais níveis?"| NivelRafael
-    AcessoEstatisticas -.->|"(j) quais níveis?"| NivelRafael
-    Personalizacao -.->|"(k) leitura/edição?"| AcessoDadosCadastrais
-    HistoricoChave -.->|"(l) mesmo registro?"| RegistroUso
-    ChaveAcesso -.->|"(m) fluxo não definido"| FluxoSoPermissao
-    CategoriaAS -.->|"(n) organiza? inferido"| SubcategoriaAS
+    Orgao["Órgão"] --> Setor["Setor / Subsetor"]
+    Setor --> Servidor["Servidor"]
+    Servidor --> NivelTR["Nível por setor (rótulos originais do TR)"]
+    NivelTR --> NivelRafael["Administrador · Administrador Setorial · Especialista · Usuário básico · Somente leitura"]
 ```
+
+### 2. Status funcional do servidor
+
+```mermaid
+flowchart TB
+    StatusTR["Listas do TR:<br/>1.25.3: Ativo / Licença / Férias / Inativo (nega autenticação)<br/>1.27.10.1: Inativo (offline) e Suspenso<br/>1.27.11.2: Em atividade / Suspenso / Licença / Férias"] --> Interpretacao["Interpretação de trabalho de Rafael:<br/>Ativo abrange Em atividade, Licença e Férias;<br/>Inativo = Suspenso.<br/>A redação de 1.27.10.1 diverge."]
+```
+
+### 3. Presença e bloqueio de acesso
+
+```mermaid
+flowchart TB
+    Servidor["Servidor"] --> Presenca["Presença Online / Offline"]
+    Servidor --> Bloqueio["Bloqueio após 5 tentativas malsucedidas"]
+```
+
+### 4. Serviços, assuntos e categorias de documento
+
+```mermaid
+flowchart TB
+    ServicoAssunto["Serviço / Assunto"] --> Configuracao["Cadastro e regras de atendimento/tramitação"]
+    Configuracao --> CategoriaDoc["Categoria de documento"]
+    CategoriaDoc --> Subtipo["Tipos específicos: Memorando, Ofício, Ouvidoria, e-SIC…"]
+    Configuracao --> Campos["Campos personalizados"]
+```
+
+### 5. Zoneamento e categorias de Assuntos e Serviços
+
+```mermaid
+flowchart TB
+    Zoneamento["Processo urbanístico / Zoneamento"] -.->|"(b) categoria-base?"| CategoriaDoc["Categoria de documento"]
+    CategoriaAS["Categoria de Assuntos e Serviços"] -.->|"(n) relação inferida"| SubcategoriaAS["Subcategoria de Assuntos e Serviços"]
+```
+
+### 6. Modelos de documentos
+
+```mermaid
+flowchart TB
+    ModeloSimples["Modelo simples"] --> Vinculo["Vínculo obrigatório com Categoria, Serviço ou Assunto"]
+    DocumentoAuto["Documento automatizado"] --> Vinculo
+    ModeloSimples --> UsoSimples["Texto inserido durante a tramitação"]
+    DocumentoAuto --> Geracao["Gera documento independente com tramitação própria"]
+```
+
+### 7. Mesa, fluxo de trabalho e despachos
+
+```mermaid
+flowchart TB
+    Documento["Documento / Processo"] --> Mesa["Mesa de trabalho"]
+    Fluxo["Fluxo de trabalho"] --> Etapa["Etapa"]
+    Etapa --> DespachoEtapa["Despacho na etapa (1.30.2)"]
+    Documento --> DespachoTramitacao["Despacho na tramitação (1.35.2.2.1)"]
+    DespachoEtapa -.->|"(e) mesma funcionalidade?"| DespachoTramitacao
+    Mesa -.->|"(c) reflete etapas do fluxo?"| Etapa
+```
+
+### 8. Status e documentos associados
+
+```mermaid
+flowchart TB
+    Documento["Documento / Processo"] --> Etiqueta["Etiqueta"]
+    Etiqueta -.->|"(d) alcance da regra por setor?"| RegraEtiqueta["Regra de visibilidade"]
+    Documento --> Apensado["Documento apensado via despacho"]
+    Documento --> Associado["Documento associado automaticamente"]
+    Apensado -.->|"(f) mesmo mecanismo?"| Associado
+    StatusResumo["Resumo inicial: Concluído (1.33.2.1)"] -.->|"(p) equivalência ou agregado?"| StatusFormal["Enum formal: Encerrado (1.33.3.6 / 1.35.2.1)"]
+```
+
+### 9. Atores externos e atendimento
+
+```mermaid
+flowchart TB
+    Contato["Contato externo: cidadão / empresa"] -.->|"(a) mesma identidade?"| UsuarioExterno["Usuário externo"]
+    UsuarioExterno --> Demanda["Demanda externa"]
+    Central["Central de atendimento"] --> Atores["Cidadãos, empresas e entes externos"]
+    Atores --> Solicitacao["Solicitações e acesso a serviços"]
+```
+
+### 10. Divulgação, assinatura e exportação
+
+```mermaid
+flowchart TB
+    Divulgacao["Divulgação"] --> Mural["Mural interno"]
+    Divulgacao --> Canal["Canal Oficial"]
+    Canal -.->|"(g) mesmo elemento?"| Jornal["Jornal Oficial"]
+    Assinatura["Assinatura"] --> Signatario["Signatário interno / externo"]
+    Exportacao["Exportação / impressão"]
+```
+
+### 11. Chaves de acesso
+
+```mermaid
+flowchart TB
+    Chave["Chave de acesso"] --> Historico["Histórico de documentos gerados"]
+    Historico -.->|"(l) mesmo registro?"| Registro["Registro de uso"]
+    Chave --> Filtros["Filtros: Ativas / Encerradas / Agendadas"]
+    Chave -.->|"(i) estados formais ou filtros?"| Filtros
+    Chave -.->|"(m) fluxo sem chave?"| FluxoProprio["Criação com permissão própria"]
+```
+
+### 12. Personalização e estatísticas
+
+```mermaid
+flowchart TB
+    Orgao["Órgão"] --> Personalizacao["Personalização"]
+    Personalizacao --> IdentidadeVisual["Cores e imagens institucionais"]
+    Personalizacao --> DadosOrgao["Licenças, contrato e módulos contratados"]
+    DadosOrgao -.->|"(k) leitura ou edição?"| ModoAcesso["Modo de acesso não especificado"]
+    Estatisticas["Estatísticas"] --> Relatorios["Setores / Módulos / Servidores / Consumo"]
+    Relatorios --> StatusServidor["Status de servidor: Ativo, Inativo, Licença, Férias (1.43.5.b)"]
+```
+
+## Relações entre grupos
+
+As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam fora da área gráfica para manter a leitura vertical. Continuam sustentadas pelos recortes do TR; dúvidas permanecem identificadas como tal.
+
+| Origem | Relação | Destino | Evidência/estado | Recorte |
+|---|---|---|---|---|
+| Serviço / Assunto | vinculado a | Categoria de documento | Confirmado | [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]] |
+| Modelo simples / Documento automatizado | vinculado a | Categoria, Serviço ou Assunto | Confirmado | [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]] |
+| Modelo simples | é inserido durante a tramitação de | Documento/Processo | Confirmado | [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]] |
+| Documento automatizado | gera documento independente com tramitação própria | Documento/Processo | Confirmado | [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]] |
+| Central de atendimento | oferece acesso aos | Serviços do órgão | Propósito confirmado; vínculo exato com a entidade Serviço não detalhado pelo TR | [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]] |
+| Canal Oficial | está disponível na | Central de atendimento | Confirmado pelo texto do TR | [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]], [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
+| Signatário externo / contribuinte | pode corresponder a | Contato externo / Usuário externo | A confirmar para “contribuinte” | [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]], [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
+| Assinatura | é aplicada a | Documento/Processo | Confirmado | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
+| Documento/Processo | pode ser divulgado em | Mural interno / Canal Oficial | Confirmado | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
+| Documento/Processo | pode ser exportado como | PDF / árvore do processo | Confirmado | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
+| Chave de acesso | é criada/concedida por (concedente) e vinculada a (convenente) | Servidor | Confirmado | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
+| Órgão | possui | Personalização | Confirmado | [[Seções do TR/10 - Personalização e identidade visual do órgão (1.42)]] |
+| Estatísticas | exibem dados de | Servidores e Documentos/Processos | Confirmado | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
+| Acesso à personalização/estatísticas | é concedido a | Níveis de usuário | Parcialmente especificado; ver lacuna (j) | [[Seções do TR/10 - Personalização e identidade visual do órgão (1.42)]], [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
+| Status estatístico de servidor | agrupa | Ativo, Inativo, Licença, Férias | Possível sobreposição em aberto; ver lacuna (o) | [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]], [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
 
 ## Legenda
 
 - **Linha sólida (→):** relação confirmada — requisito explícito do TR, ou contexto de negócio **já confirmado diretamente por Rafael** (quando liga a um nó azul).
-- **Linha tracejada (-.→), com código (a)–(n):** o **texto literal do TR não declara** essa relação — é uma lacuna do próprio TR, por isso a aresta permanece tracejada independentemente do que a documentação de produto diga. Algumas dessas lacunas já têm **contexto de produto documentado** (Conhecimento > Módulos) que esclarece a questão para o produto atual, sem alterar o que o TR declara ou deixa de declarar — ver a coluna "Estado no produto" na tabela abaixo e a subseção "Contexto de produto verificado em documentação" no recorte-fonte, quando existir.
+- **Linha tracejada (-.→), com código (a)–(p):** o **texto literal do TR não declara** essa relação — é uma lacuna do próprio TR, por isso a aresta permanece tracejada independentemente do que a documentação de produto diga. Algumas dessas lacunas já têm **contexto de produto documentado** (Conhecimento > Módulos) que esclarece a questão para o produto atual, sem alterar o que o TR declara ou deixa de declarar — ver a coluna "Estado no produto" na tabela abaixo e a subseção "Contexto de produto verificado em documentação" no recorte-fonte, quando existir.
 - **Nó azul (classe "Rafael"):** contexto de negócio confirmado diretamente por Rafael (ex.: mapeamento de níveis canônicos, status do servidor, regra de criação de Assuntos e Serviços) — **não é texto literal do TR**. Nó branco/padrão = conceito descrito no próprio texto do TR.
 
 ### Lacunas registradas (arestas tracejadas)

@@ -21,7 +21,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** revisão do Codex sobre o recorte 1 (itens 1.1–1.23, já lido e classificado contra o PDF) — os recortes 2–11 só começam depois dessa revisão.
+> **Próximo passo:** esclarecer com Rafael, uma por vez, as dúvidas que permaneceram abertas após a revisão integral dos 11 recortes. A primeira é se o Processo urbanístico de Zoneamento (1.29.10) é subcategoria de Processo administrativo ou categoria própria; depois, seguir a sequência registrada no mapa e nos recortes.
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
@@ -81,17 +81,17 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 
 ## Checklist de fechamento da análise
 
-- [ ] Todo item do TR (1.1–1.43) está mapeado, não aplicável (com justificativa) ou pendente.
-- [ ] Cada elemento/relação, registrado na nota temática correspondente, aponta a referência do item do TR.
-- [ ] Notas temáticas e mapa geral (Mermaid) estão consistentes entre si.
-- [ ] Lacunas e ambiguidades encontradas estão registradas para revisão.
-- [ ] A [[04 - Revisão da análise|revisão da análise]] foi concluída.
+- [x] Todo item do TR (1.1–1.43) está mapeado, não aplicável (com justificativa) ou pendente.
+- [x] Cada elemento/relação, registrado na nota temática correspondente, aponta a referência do item do TR.
+- [x] Notas temáticas e mapa geral (Mermaid) estão consistentes entre si.
+- [x] Lacunas e ambiguidades encontradas estão registradas para revisão.
+- [x] A [[04 - Revisão da análise|revisão da análise]] foi concluída.
 
 ---
 
 ## Pendências de decisão
 
-Não há bloqueio atual nesta demanda. Duas decisões são **deliberadamente adiadas**, não pendências que travam o início do trabalho:
+Não há bloqueio atual nesta demanda. O mapeamento do TR foi revisado; as dúvidas de negócio seguem como pendências explícitas, sem travar a conclusão da revisão documental:
 
-- A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026) — não é mais uma proposta em aberto. O conteúdo de cada recorte continua não analisado, exceto o que já estiver registrado, recorte a recorte, nas próprias notas (`Seções do TR/`); a fonte de autoridade permanece exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
+- A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026). Os 11 recortes foram revisados contra o PDF; a cobertura e a rastreabilidade estão registradas em [[04 - Revisão da análise]]. A fonte de autoridade permanece exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
 - Se haverá entregas futuras separadas (casos de teste, preset executável) será decidido depois do mapeamento completo, com os achados em mãos — não nesta demanda.
