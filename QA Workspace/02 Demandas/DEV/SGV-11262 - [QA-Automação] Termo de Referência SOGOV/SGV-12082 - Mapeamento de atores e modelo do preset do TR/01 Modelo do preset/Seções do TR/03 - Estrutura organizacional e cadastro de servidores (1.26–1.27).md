@@ -146,7 +146,22 @@ status: aprovado
 
 > 24/24 permissões extras de 1.27.8.2, sem omissão. Agrupamento por domínio é só organizacional — o TR não nomeia esses grupos.
 
-## Relações/dependências identificadas
+### Hierarquia de níveis de acesso do produto (contexto — Conhecimento > Módulos, não requisito do TR)
+
+> [!info] Natureza desta subseção
+> O conteúdo abaixo vem da documentação de produto (`QA Workspace/04 Conhecimento/Módulos/`), não do TR. Os 5 níveis do TR (1.27.2.1–1.27.2.5: Administrador, Administrador setorial, Assistente administrativo, Auxiliar administrativo, Visualizador) **permanecem registrados exatamente como no texto**, sem alteração — ver linha "Nível de acesso" na tabela de Elementos acima. Esta subseção só expõe a hierarquia do produto lado a lado, para contexto.
+
+**Hierarquia canônica do produto**, do maior para o menor acesso (fonte: [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]] § "Permissões e visibilidade" — legenda explicitamente marcada como canônica no vault, confirmada por Rafael em 2026-07-17 e 2026-07-20):
+
+**Adm › Adm Setorial › N1 (Especialista) › N2 (Usuário básico, exibido como "Básico" em algumas telas, ex. Organograma) › Somente Leitura.**
+
+Os mesmos 5 rótulos (ou a forma crua N1/N2) aparecem de modo consistente em outros módulos, confirmando que é a nomenclatura vigente do produto, não uma leitura isolada:
+- [[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]] — permissões de edição de regras de tramitação por nível (Adm, Adm Setorial, N1).
+- [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] — "Adm setorial: só setores da sua hierarquia (listagem/edição e criação limitadas a módulos/assuntos/serviços da hierarquia)"; permissões de encerrar etapa refináveis por nível (Administrador, Adm setorial, N1, N2).
+- [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]] e [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] — regras de permissão por nível (N1, Administrador, Adm setorial, N2).
+- [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] e [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]] — ações restritas a partir de N1.
+
+**O que isto NÃO estabelece:** nenhuma fonte consultada nesta rodada declara uma equivalência explícita entre os 5 nomes do TR (1.27.2) e os 5 rótulos do produto acima. Rafael confirmou a hierarquia do produto em si (08/10/2026), não a correspondência nome a nome com o TR. **A confirmar** — não presumi qual nome do TR corresponde a qual rótulo do produto.
 
 | Origem | Relação/dependência | Destino | Referência do TR | Certeza/evidência ou pendência |
 |---|---|---|---|---|
@@ -164,9 +179,10 @@ status: aprovado
 ## Dúvidas/ambiguidades
 
 - **As enumerações de status do TR diferem.** (a) 1.25.3: Ativo, Licença, Férias, Inativo; (b) 1.27.10.1: Ativo, Inativo, Suspenso, Licença, Férias; (c) 1.27.11.2: Em atividade, Suspenso, Licença, Férias. Rafael esclareceu que, no SOGOV atual, o formulário exibe `Em atividade`, `Inativo`, `De licença` e `De férias`; Online/Offline é indicador de presença separado. Para manter um modelo coerente, adotamos `Ativo = Em atividade` e `Inativo = Suspenso` como correspondências de trabalho (decisão de Rafael em 08/10/2026). A imagem confirma os rótulos do formulário; a correspondência poderá ser revista se a prática observada mostrar diferença. A documentação de [[QA Workspace/04 Conhecimento/Módulos/Login|Login]] cobre status do servidor; a seção de presença em [[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]] está marcada como desatualizada.
-- **Permissões do nível Auxiliar administrativo (1.27.6) não listam a área "Assuntos e serviços"**, presente nos níveis Administrador setorial (1.27.4.4) e Assistente administrativo (1.27.5.4). **A confirmar.** A nota de [[QA Workspace/04 Conhecimento/Módulos/Serviços e Assuntos|Serviços e Assuntos]] diz que as permissões estão centralizadas em outra página do Notion, não reproduzida ali; ela não resolve essa diferença.
+- **Permissões do nível Auxiliar administrativo (1.27.6) não listam a área "Assuntos e serviços"**, presente nos níveis Administrador setorial (1.27.4.4) e Assistente administrativo (1.27.5.4). **A confirmar — permanece válida como pendência do TR**, mesmo após conferir a documentação de produto nesta rodada. Verificado: (i) a hierarquia canônica do produto (ver subseção acima) não resolve a questão, porque a equivalência entre os 5 nomes do TR e os 5 rótulos do produto **não foi estabelecida**; (ii) ainda que se tentasse aproximar os níveis pela posição na hierarquia, [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]] só confirma que Adm Setorial tem permissão sobre "módulos/assuntos/serviços da hierarquia" (consistente com 1.27.4.4) — nenhuma fonte local detalha a permissão de Assuntos e serviços para os níveis abaixo de Adm Setorial; (iii) [[QA Workspace/04 Conhecimento/Módulos/Serviços e Assuntos|Serviços e Assuntos]] registra explicitamente que essas permissões estão centralizadas numa página do Notion não replicada no vault — não resolve a diferença. Nada no Conhecimento confirma nem descarta que a ausência no TR seja proposital.
 - **Bloqueio por tentativas é distinto do status funcional**, conforme registrado no [[02 - Autenticação e ciclo de vida da identidade (1.24–1.25)#Respostas complementares ao TR|recorte 2]]. A especificação de [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos|Gestão de Desbloqueio de Acessos]] prevê retorno ao status de origem após redefinição de senha, mas não foi validada em execução. O Rafael confirmou que não há desbloqueio automático por tempo (08/10/2026; ver recorte 2). As transições por datas de 1.27.11.2/.3 são outro mecanismo.
 
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 2–7 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.
+- Conhecimento de produto (contexto, não requisito do TR — verificado em 08/10/2026 para a hierarquia de níveis de acesso): [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]] (legenda canônica dos 5 níveis), [[QA Workspace/04 Conhecimento/Módulos/Organograma|Organograma]], [[QA Workspace/04 Conhecimento/Módulos/Fluxo de trabalho (Workflow)|Fluxo de trabalho (Workflow)]], [[QA Workspace/04 Conhecimento/Módulos/Despachos|Despachos]], [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]], [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]], [[QA Workspace/04 Conhecimento/Módulos/Gerar Documento|Gerar Documento]], [[QA Workspace/04 Conhecimento/Módulos/Serviços e Assuntos|Serviços e Assuntos]] (confirma que permissões granulares por nível não estão replicadas no vault).
