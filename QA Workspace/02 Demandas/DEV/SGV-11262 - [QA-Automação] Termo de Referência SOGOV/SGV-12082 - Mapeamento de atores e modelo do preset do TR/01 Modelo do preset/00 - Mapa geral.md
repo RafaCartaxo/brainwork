@@ -119,6 +119,13 @@ flowchart TB
     SignatarioExterno -.->|"(h)"| UsuarioExterno
     AcessoPersEstat -.->|"(j)"| Nivel
     StatusEstatistico -.->|"(o)"| StatusAtividade
+
+    style C1 fill:none,stroke:#999999,stroke-width:1px
+    style C2 fill:none,stroke:#999999,stroke-width:1px
+    style C3 fill:none,stroke:#999999,stroke-width:1px
+    style C4 fill:none,stroke:#999999,stroke-width:1px
+    style C5 fill:none,stroke:#999999,stroke-width:1px
+    style C6 fill:none,stroke:#999999,stroke-width:1px
 ```
 
 > Detalhe de cada entidade (atributos, subtipos, evidência item a item) está nos diagramas locais de cada recorte, listados na seção seguinte — este Mermaid só conecta os grupos.
