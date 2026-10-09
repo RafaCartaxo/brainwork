@@ -62,9 +62,9 @@ pontos: ""
 | Especificação do preset piloto (TR 1.35.2.5) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/11 - Especificação do preset piloto (TR 1.35.2.5)|11 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.35.2.6–1.35.2.7) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)|12 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.35.3) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/13 - Especificação do preset piloto (TR 1.35.3)|13 - Especificação do preset piloto]] |
-| Especificação do preset piloto (TR 1.35.4) | 🔵 Em levantamento — ver [[../01 Modelo do preset/14 - Especificação do preset piloto (TR 1.35.4)|14 - Especificação do preset piloto]] |
+| Especificação do preset piloto (TR 1.35.4) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/14 - Especificação do preset piloto (TR 1.35.4)|14 - Especificação do preset piloto]] |
 
-**Próximo passo:** revisão do Codex sobre a especificação do preset para o item 1.35.4 ([[../01 Modelo do preset/14 - Especificação do preset piloto (TR 1.35.4)|14 - Especificação do preset piloto]]). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
+**Próximo passo:** definir com o Codex a próxima fatia da especificação do preset piloto (recorte 07 ainda tem 1.35.5 — histórico geral sem fatia dedicada; recortes 08–11 do mapeamento ainda não têm nenhuma fatia). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
 
 Pacote para `SGV-12082`:
 
