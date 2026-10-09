@@ -55,9 +55,9 @@ pontos: ""
 | Especificação do preset piloto (TR 1.30–1.31) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/04 - Especificação do preset piloto (TR 1.30–1.31)|04 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.32, 1.36–1.37) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.33) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/06 - Especificação do preset piloto (TR 1.33)|06 - Especificação do preset piloto]] |
-| Especificação do preset piloto (TR 1.34) | 🔵 Em levantamento — ver [[../01 Modelo do preset/07 - Especificação do preset piloto (TR 1.34)|07 - Especificação do preset piloto]] |
+| Especificação do preset piloto (TR 1.34) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/07 - Especificação do preset piloto (TR 1.34)|07 - Especificação do preset piloto]] |
 
-**Próximo passo:** revisão do Codex sobre a especificação do preset para o item 1.34 ([[../01 Modelo do preset/07 - Especificação do preset piloto (TR 1.34)|07 - Especificação do preset piloto]]). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
+**Próximo passo:** definição do Codex sobre a próxima fatia da especificação do preset (após 1.24–1.27, 1.28–1.29, 1.30–1.31, 1.32/1.36–1.37, 1.33 e 1.34, todas revisadas e aprovadas). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
 
 Pacote para `SGV-12082`:
 
