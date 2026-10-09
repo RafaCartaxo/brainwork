@@ -65,7 +65,7 @@ As respostas abaixo registram o contexto atual do SOGOV; não acrescentam requis
 
 - **Aplicação dos estados funcionais:** somente servidores, conforme a documentação do [[QA Workspace/04 Conhecimento/Módulos/Login|módulo Login]]. O TR descreve os quatro estados, mas não explicita essa delimitação por tipo de usuário.
 - **Bloqueado é distinto de Inativo:** Inativo é um dos estados do ciclo de vida funcional (1.25.3.4); Bloqueado decorre das cinco tentativas malsucedidas (1.25.1). A documentação de [[QA Workspace/04 Conhecimento/Módulos/Gestão de Desbloqueio de Acessos|Gestão de Desbloqueio de Acessos]] também trata o bloqueio separadamente do status de origem.
-- **Reversão do bloqueio:** a especificação prevê que, concluído o fluxo de redefinição de senha, o usuário saia da lista de bloqueios e retorne ao status anterior. Essa funcionalidade está documentada, mas ainda não foi testada em execução, conforme a própria nota de Gestão de Desbloqueio.
+- **Reversão do bloqueio:** a especificação prevê que, concluído o fluxo de redefinição de senha, o usuário saia da lista de bloqueios e retorne ao status anterior. A implementação ainda não foi testada em execução. O desbloqueio automático por tempo foi descartado pelo Rafael (08/10/2026).
 
 ## Fontes/evidências
 

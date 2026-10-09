@@ -99,7 +99,7 @@ status: lido
 
 ## Dúvidas/ambiguidades
 
-- **Zoneamento (1.29.10) não é explicitamente enquadrado numa das 3 categorias-base de 1.29.1** (Documento oficial, Comunicação oficial, Processo administrativo). O texto não afirma a qual pertence, nem que seja uma 4ª categoria-base. **A confirmar.**
+- **Zoneamento (1.29.10) não é explicitamente enquadrado numa das 3 categorias-base de 1.29.1** (Documento oficial, Comunicação oficial, Processo administrativo). O texto não afirma a qual pertence, nem que seja uma 4ª categoria-base. **A confirmar.** A consulta a `Conhecimento/Módulos` não encontrou documentação de módulo que esclareça esse enquadramento; a dúvida permanece aberta.
 
 ## Fontes/evidências
 
