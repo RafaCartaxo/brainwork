@@ -69,4 +69,4 @@ status: aprovado
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 13 (1.32, 1.32.1) e p. 16 (1.36–1.37). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi usado como evidência.
-- Conhecimento > Módulos: não consultado nesta rodada (análise restrita ao texto do TR).
+- Conhecimento > Módulos: consultados em 09/10/2026 — [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] e [[QA Workspace/04 Conhecimento/Módulos/Mesa de trabalho|Mesa de trabalho]] — só como evidência do produto atual (ver "Contexto de produto verificado em documentação" acima), não como requisito literal do TR.

@@ -14,13 +14,13 @@ status: planejado
 > **Matriz de atores e relações:** [[01 - Matriz de atores e relações]]
 > **Revisão da análise:** [[../00 QA/04 - Revisão da análise]]
 
-> [!info] Síntese derivada das 11 notas de recorte aprovadas (atualizado em 08/10/2026)
+> [!info] Síntese derivada das 11 notas de recorte aprovadas (revisão de cobertura em 09/10/2026)
 > Este mapa é um **resumo visual de alto nível**, derivado das 11 notas temáticas em `Seções do TR/` (ver [[01 - Matriz de atores e relações|Matriz de atores e relações]]), todas já revisadas e aprovadas pelo Codex. Ele **não substitui** essas notas nem o PDF ([[../Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]) — ambos continuam sendo a fonte da verdade; este diagrama é só uma visão consolidada, agrupada por tema (não por recorte), para orientar a evolução do modelo do preset. As relações mostradas já estão documentadas nas notas de origem; nenhuma lacuna foi resolvida ou inferida aqui.
 
 ## Diagrama — visão geral de atores, entidades e relações
 
 ```mermaid
-flowchart TD
+flowchart TB
     classDef rafael fill:#dbe9ff,stroke:#2b6cb0,color:#1a365d,stroke-width:1px;
 
     subgraph G1["Órgão, setores, servidores e níveis"]
@@ -29,8 +29,10 @@ flowchart TD
         Servidor["Servidor"]
         NivelTR["Nível de acesso (TR)<br/>nomes originais — só rastreabilidade"]
         NivelRafael["Níveis canônicos (Rafael):<br/>Administrador, Administrador Setorial,<br/>Especialista, Usuário básico, Somente leitura"]:::rafael
-        StatusFuncionalTR["Status funcional (TR)<br/>Ativo, Licença, Férias, Inativo…"]
-        StatusFuncionalRafael["Mapeamento confirmado (Rafael):<br/>Ativo = Em atividade, Licença, Férias;<br/>Inativo = Suspenso — revisável"]:::rafael
+        StatusFuncionalTR["TR 1.25.3:<br/>Ativo, Licença, Férias,<br/>Inativo (nega autenticação)"]
+        StatusListaTR["TR 1.27.10.1:<br/>Ativo, Inativo (offline), Suspenso,<br/>Licença, Férias"]
+        StatusEdicaoTR["TR 1.27.11.2:<br/>Em atividade, Suspenso,<br/>Licença, Férias"]
+        StatusFuncionalRafael["Interpretação de trabalho (Rafael):<br/>Ativo abrange Em atividade/Licença/Férias;<br/>Inativo = Suspenso. Presença é separada.<br/>TR 1.27.10.1 contradiz esse uso de Inativo."]:::rafael
         PresencaOnlineOffline["Presença Online/Offline<br/>(eixo separado, Rafael)"]:::rafael
         BloqueioTentativas["Bloqueio por tentativas (TR)<br/>5 tentativas malsucedidas bloqueiam a conta<br/>— separado do status funcional, não é Inativo"]
     end
@@ -60,6 +62,8 @@ flowchart TD
         DocApensado["Doc. apensado (despacho)"]
         DocAssociado["Doc. associado (automático)"]
         RegraVisEtiqueta["Alcance da regra de visibilidade"]
+        StatusResumo["Resumo inicial: “Concluído”<br/>(1.33.2.1)"]
+        StatusFormal["Enum formal: “Encerrado”<br/>(1.33.3.6 / 1.35.2.1)"]
     end
 
     subgraph G4["Usuário externo e atendimento"]
@@ -92,7 +96,11 @@ flowchart TD
         AcessoDadosCadastrais["Dados cadastrais: leitura/edição?"]
         Estatisticas["Estatísticas"]
         AcessoEstatisticas["Acesso às estatísticas"]
+        StatusEstatistica["Status servidor no relatório:<br/>ativos, inativos, licença, férias<br/>(1.43.5.b)"]
     end
+
+    %% Direção de layout somente: organiza os grupos na ordem temática, sem representar dependência entre eles.
+    Orgao ~~~ AssuntoServico ~~~ Mesa ~~~ ContatoExterno ~~~ Divulgacao ~~~ ChaveAcesso ~~~ Personalizacao
 
     %% Relações centrais confirmadas (TR literal e/ou contexto confirmado por Rafael)
     Orgao --> Setor
@@ -101,6 +109,8 @@ flowchart TD
     NivelTR --> NivelRafael
     Servidor --> StatusFuncionalTR
     StatusFuncionalTR --> StatusFuncionalRafael
+    StatusListaTR -.->|"rótulo Inativo conflita: aqui significa offline"| StatusFuncionalRafael
+    StatusEdicaoTR --> StatusFuncionalRafael
     Servidor --> PresencaOnlineOffline
 
     AssuntoServico --> CategoriaDoc
@@ -120,6 +130,7 @@ flowchart TD
     DocProcesso --> DespachoB
     DocProcesso --> Etiqueta
     DocProcesso --> Prazo
+    StatusResumo -.->|"(p) mesmo estado ou agregado?"| StatusFormal
     DespachoB --> DocApensado
     DocProcesso --> DocAssociado
 
@@ -140,6 +151,8 @@ flowchart TD
     Estatisticas --> Servidor
     DocProcesso --> Estatisticas
     Estatisticas --> AcessoEstatisticas
+    Estatisticas --> StatusEstatistica
+    StatusFuncionalRafael -.->|"(o) categorias sobrepostas?"| StatusEstatistica
 
     %% Lacunas — "A confirmar" (preservadas das notas de origem; nenhuma resolvida por analogia)
     ContatoExterno -.->|"(a) mesma identidade?"| UsuarioExterno
@@ -177,7 +190,7 @@ flowchart TD
 | (c) | Mesa de trabalho × Etapa/Fluxo de trabalho — reflete etapas de um fluxo configurado? | Esclarecido no produto — mesa pode conter documentos fora do modelo de Fluxo de trabalho | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
 | (d) | Alcance da regra de visibilidade de etiquetas por setor — também vale para etiquetas pessoais? | Esclarecido no produto — restrição por setor só vale para compartilhadas | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
 | (e) | Despacho (1.30.2, Etapa) × Despacho (1.35.2.2.1, tramitação) — mesmo conceito de negócio? | Parcialmente esclarecido — mesma família/modelo funcional; identidade estrutural não confirmada | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
-| (f) | Documento apensado via despacho × documento associado automaticamente — mesmo mecanismo/objeto? | Esclarecido no produto — convergem no mesmo conceito/regra de visibilidade de documento associado | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
+| (f) | Documento apensado via despacho × documento associado automaticamente — mesmo mecanismo/objeto? | Parcialmente esclarecido — convergem no mesmo conceito/regra de visibilidade de documento associado, mas os gatilhos diferem (manual via despacho; automático via Gerar Documento) e a estrutura de dados persistida não está documentada | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
 | (g) | Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1) — mesmo elemento? | Sem evidência — aguarda Rafael | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
 | (h) | Signatário externo / "contribuinte" (1.40) × Contato externo (1.32) e Usuário externo (1.37) do recorte 06 — mesma população, sem afirmar identidade | Confirmado no produto quanto a Contato/Usuário externo; "contribuinte" segue sem evidência | [[Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)]] |
 | (i) | Filtros de listagem da chave (Ativas/Encerradas/Agendadas) — estados formais da entidade, ou só opções de filtro? | Sem evidência — aguarda Rafael | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
@@ -186,6 +199,8 @@ flowchart TD
 | (l) | Histórico de documentos da chave × registro de uso da chave — mesmo registro? | Sem evidência — aguarda Rafael | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
 | (m) | Fluxo de criação de documento quando há só permissão própria (sem chave) — não especificado pelo TR | Sem evidência — aguarda Rafael | [[Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] |
 | (n) | Relação hierárquica entre Categoria e Subcategoria de Assuntos e Serviços é inferida pelo nome no TR (1.27.8.2.o); estrutura exata não descrita | Sem evidência — aguarda Rafael | [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]] |
+| (o) | Relatório de servidores (1.43.5.b): licença/férias são contadas também em “ativos” segundo a interpretação de trabalho confirmada por Rafael; o TR não define se as categorias estatísticas se sobrepõem | Sem decisão — aguarda Rafael | [[Seções do TR/11 - Estatísticas e indicadores (1.43)]] |
+| (p) | Resumo inicial “Concluído” (1.33.2.1) × enum formal “Encerrado” (1.33.3.6/1.35.2.1): equivalência ou agregação não especificada | Sem evidência — aguarda Rafael | [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] |
 
 ## Rastreabilidade por grupo
 
@@ -204,4 +219,5 @@ flowchart TD
 
 - Este mapa é só uma síntese visual de alto nível; cobertura item a item, evidência (Confirmado/Inferido/A confirmar) e o texto completo de cada dúvida estão nas notas de recorte listadas acima — não duplicados aqui.
 - Em 09/10/2026, uma rodada read-only verificou as dúvidas abertas contra a documentação de Conhecimento > Módulos vigente; os recortes 06, 07, 08 e 10 agora trazem, cada um, uma subseção "Contexto de produto verificado em documentação" com o que foi esclarecido, parcialmente esclarecido, ou segue sem evidência — sem alterar o texto literal do TR nem a classificação de cobertura.
-- As lacunas (a), (c), (d) e (f) têm contexto de produto que as esclarece para o produto atual e não exigem mais decisão de Rafael; (e) e (j) seguem parcialmente esclarecidas; (b), (g), (h quanto a "contribuinte"), (i), (k), (l), (m) e (n) seguem sem evidência documental e aguardam Rafael — a pergunta sobre a categoria-base do Zoneamento (b) é a primeira ainda pendente.
+- As lacunas (a), (c) e (d) têm contexto de produto que as esclarece para o produto atual e não exigem mais decisão de Rafael; (e), (f) e (j) seguem parcialmente esclarecidas — (f) converge no conceito/regra de visibilidade de documento associado, mas gatilhos diferentes e estrutura de dados persistida não documentada (detalhe técnico, não pendência de decisão de Rafael). As lacunas (b), (g), (h quanto a "contribuinte"), (i), (k), (l), (m), (n), (o) e (p) seguem sem decisão/evidência suficiente — a pergunta sobre a categoria-base do Zoneamento (b) continua sendo a primeira pendente na sequência de esclarecimentos.
+- **Conflito textual de status de servidor:** o TR 1.27.10.1 define “Inativo” como offline e lista “Suspenso” à parte, enquanto 1.25.3.4 usa “Inativo” para negar autenticação. O mapa mantém as duas redações e identifica a leitura de trabalho confirmada por Rafael; não as trata como equivalência literal do TR. Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].

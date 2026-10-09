@@ -99,4 +99,4 @@ status: aprovado
 ## Fontes/evidências
 
 - PDF: `Fontes/Termo de Referência SOGOV.pdf`, p. 16–18 (ver mapa de páginas no Escopo acima). Lido por render de página, conferido diretamente nesta sessão em 08/10/2026. Material arquivado **não** foi consultado como evidência.
-- Conhecimento > Módulos: não consultado nesta rodada (análise restrita ao texto do TR).
+- Conhecimento > Módulos: consultado em 09/10/2026 — [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] — só como evidência do produto atual (ver "Contexto de produto verificado em documentação" acima), não como requisito literal do TR. Não foram encontrados módulos de "Divulgação" ou "Jornal Oficial" em Conhecimento > Módulos.

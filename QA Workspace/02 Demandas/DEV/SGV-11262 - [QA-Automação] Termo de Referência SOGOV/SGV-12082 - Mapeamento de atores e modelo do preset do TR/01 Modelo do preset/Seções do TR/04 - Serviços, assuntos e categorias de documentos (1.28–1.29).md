@@ -5,14 +5,14 @@ pai: SGV-11262
 tipo: secao-tr
 itens_tr: "1.28–1.29"
 paginas_pdf: "p. 7–11"
-status: lido
+status: aprovado
 ---
 # 04 - Serviços, assuntos e categorias de documentos (itens 1.28–1.29)
 
 > [!info]- Navegação
 > **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Plano de análise:** [[../../00 QA/02 - Plano de análise]] · **Mapa geral:** [[../00 - Mapa geral]]
 
-> [!info] Escopo deste recorte — lido e revisado pelo Codex em 08/10/2026
+> [!info] Escopo deste recorte — relido e aprovado pelo Codex em 09/10/2026
 > Itens do TR: **1.28–1.29**, cobertos recursivamente em todos os subitens numerados que o PDF apresenta (29 linhas na Cobertura — 6 sob 1.28, 23 sob 1.29). Lido diretamente por render de página, não por extração textual. **Material arquivado não foi usado como evidência.** Mapa de páginas: 1.28–1.28.1 (p. 7–8); 1.28.1.2–1.29.1 (p. 8–9); 1.29.2–1.29.8 (p. 9–10); 1.29.9–1.29.10.4 (p. 10–11). Listas com letras dentro de um item numerado são conteúdo desse item, não subitens próprios do TR.
 
 ## Cobertura dos itens

@@ -62,6 +62,7 @@ status: aprovado
 ## Dúvidas/ambiguidades
 
 - **"Administradores e usuários autorizados" (1.43, texto introdutório):** termo genérico usado pelo TR para quem acessa a funcionalidade de estatísticas — não nomeia níveis específicos. Não presumo que "administradores" aqui corresponda exatamente ao nível canônico "Administrador" (e/ou "Administrador Setorial"); pode ser um termo informal mais amplo. **Pergunta objetiva para Rafael:** o acesso às estatísticas é restrito a Administrador/Administrador Setorial, ou abrange outros níveis também ("usuários autorizados")?
+- **Categorias de status nas estatísticas de servidores (1.43.5.b):** o TR lista “ativos, inativos, em licença, em férias” como categorias. A interpretação de trabalho confirmada por Rafael diz que “Ativo” engloba Em atividade, licença e férias, enquanto “Inativo” corresponde a Suspenso. Se licença/férias também forem contadas dentro de “Ativos”, as categorias do relatório se sobrepõem; o TR não define se os grupos estatísticos devem ser exclusivos ou agregados. **Pergunta objetiva para Rafael:** no relatório 1.43.5.b, licença e férias entram também na contagem de “ativos”, ou “ativos” ali significa somente “Em atividade” para manter as categorias separadas?
 
 ## Fontes/evidências
 
