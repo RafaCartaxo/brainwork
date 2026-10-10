@@ -9,7 +9,7 @@ status: aprovado
 # 03 - Especificação do preset piloto (itens 1.28–1.29)
 
 > [!info]- Navegação
-> **Matriz/índice:** [[01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Mapa geral:** [[00 - Mapa geral]] · **Recorte-fonte:** [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)|04 - Serviços, assuntos e categorias de documentos]] · **Piloto anterior:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto (TR 1.24–1.27)]]
+> **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Mapa geral:** [[../00 - Mapa geral]] · **Recorte-fonte:** [[../Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)|04 - Serviços, assuntos e categorias de documentos]] · **Piloto anterior:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02 - Especificação do preset piloto (TR 1.24–1.27)]]
 
 > [!info] Escopo desta fatia (09/10/2026)
 > Segunda fatia da especificação do preset: liga o recorte 04 (módulos, assuntos, serviços e categorias de documento) ao que o seed Playwright atual já prepara. **Não é implementação de seed, não decompõe CTs, não propõe arquitetura nem formato novo de preset.** O recorte 04, a matriz e o mapa geral **não foram alterados**. Repositório consultado: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4` (branch principal). Leitura somente de código; nenhum teste foi executado nesta rodada.
@@ -49,6 +49,6 @@ status: aprovado
 
 ## Fontes/evidências
 
-- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]].
+- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[../Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]].
 - Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/data/seed/baseline.ts`, `playwright/src/data/seed/provision.ts`, `playwright/src/data/factories/seed.ts`, `playwright/src/api/services/module.ts`. Lido nesta sessão, só leitura — nenhum comando executado.
 - Documentação de produto já citada no recorte 04 (não repetida aqui como requisito do TR): [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos|Processos Urbanísticos]].

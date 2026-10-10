@@ -9,7 +9,7 @@ status: aprovado
 # 06 - Especificação do preset piloto (item 1.33)
 
 > [!info]- Navegação
-> **Matriz/índice:** [[01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Mapa geral:** [[00 - Mapa geral]] · **Recorte-fonte:** [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)|07 - Mesa de trabalho, etiquetas e tramitação]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03]], [[04 - Especificação do preset piloto (TR 1.30–1.31)|04]], [[05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05]]
+> **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Mapa geral:** [[../00 - Mapa geral]] · **Recorte-fonte:** [[../Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)|07 - Mesa de trabalho, etiquetas e tramitação]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03]], [[04 - Especificação do preset piloto (TR 1.30–1.31)|04]], [[05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05]]
 
 > [!info] Escopo desta fatia (09/10/2026)
 > Quinta fatia da especificação do preset: liga **só o item 1.33 (Mesa de trabalho)** do recorte 07 ao que o seed Playwright atual já prepara. O recorte-fonte 07 reúne 1.33–1.35 (Mesa, Etiquetas, Tramitação); por decisão do Codex, etiquetas (1.34) e tramitação/despacho (1.35) ficam para fatias futuras separadas, para não ampliar demais esta entrega. **Não é implementação de seed, não decompõe CTs, não propõe arquitetura nem formato novo de preset.** O recorte 07, a matriz e o mapa geral **não foram alterados**. Repositório consultado: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4` (branch principal). Leitura somente de código; nenhum teste foi executado nesta rodada.
@@ -51,5 +51,5 @@ status: aprovado
 
 ## Fontes/evidências
 
-- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] — só a parte referente a 1.33 foi usada nesta fatia.
+- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[../Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] — só a parte referente a 1.33 foi usada nesta fatia.
 - Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/data/seed/provision.ts` (`initializeWorkboardPreferences`), `playwright/src/api/services/documents.ts` (`changeWorkboardViewMode`, `getWorkboardDocuments`, `reopenDocumentInSector`, `trackDocumentObjects`), `playwright/src/api/services/organizational.ts` (`changeLastSectorAccessed`), `playwright/src/api/services/users.ts` (campo `othersWorkboard`), `playwright/src/data/seed/baseline.ts`, `playwright/tests/api/workboard/panel.spec.ts`. Lido nesta sessão, só leitura — nenhum comando executado.

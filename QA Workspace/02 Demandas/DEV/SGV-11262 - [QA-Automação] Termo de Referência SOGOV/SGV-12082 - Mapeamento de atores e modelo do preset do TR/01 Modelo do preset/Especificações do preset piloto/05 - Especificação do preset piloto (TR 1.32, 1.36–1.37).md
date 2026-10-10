@@ -9,7 +9,7 @@ status: aprovado
 # 05 - Especificação do preset piloto (itens 1.32, 1.36–1.37)
 
 > [!info]- Navegação
-> **Matriz/índice:** [[01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Mapa geral:** [[00 - Mapa geral]] · **Recorte-fonte:** [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)|06 - Atores externos e atendimento ao cidadão]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03]], [[04 - Especificação do preset piloto (TR 1.30–1.31)|04]]
+> **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Mapa geral:** [[../00 - Mapa geral]] · **Recorte-fonte:** [[../Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)|06 - Atores externos e atendimento ao cidadão]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03]], [[04 - Especificação do preset piloto (TR 1.30–1.31)|04]]
 
 > [!info] Escopo desta fatia (09/10/2026)
 > Quarta fatia da especificação do preset: liga o recorte 06 (Contato externo, Usuário externo, Central de atendimento, Demanda externa) ao que o seed Playwright atual já prepara. **Não é implementação de seed, não decompõe CTs, não propõe arquitetura nem formato novo de preset.** O recorte 06, a matriz e o mapa geral **não foram alterados**. Repositório consultado: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4` (branch principal). Leitura somente de código; nenhum teste foi executado nesta rodada.
@@ -60,5 +60,5 @@ status: aprovado
 
 ## Fontes/evidências
 
-- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]].
+- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[../Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)]].
 - Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/data/seed/baseline.ts`, `playwright/src/data/factories/seed.ts`, `playwright/src/auth/auth-client.ts`, `playwright/src/api/services/users.ts` (`getCitizenOrCreate`, `confirmUser`), `playwright/src/data/factories/documents.ts` (`makeExternalDocument`), `playwright/src/api/services/documents.ts` (`generateExternalDocument`), `playwright/src/data/seed/provision.ts`, `playwright/tests/api/auth/login.spec.ts`, `playwright/tests/api/citizen/list.spec.ts`, `playwright/tests/api/matters-services/citizen-open-external-selection.spec.ts`, `playwright/tests/e2e/processing/cancel-citizen-request.spec.ts`. Lido nesta sessão, só leitura — nenhum comando executado.

@@ -9,7 +9,7 @@ status: aprovado
 # 07 - Especificação do preset piloto (item 1.34)
 
 > [!info]- Navegação
-> **Matriz/índice:** [[01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Mapa geral:** [[00 - Mapa geral]] · **Recorte-fonte:** [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)|07 - Mesa de trabalho, etiquetas e tramitação]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03]], [[04 - Especificação do preset piloto (TR 1.30–1.31)|04]], [[05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05]], [[06 - Especificação do preset piloto (TR 1.33)|06]]
+> **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Mapa geral:** [[../00 - Mapa geral]] · **Recorte-fonte:** [[../Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)|07 - Mesa de trabalho, etiquetas e tramitação]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03]], [[04 - Especificação do preset piloto (TR 1.30–1.31)|04]], [[05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|05]], [[06 - Especificação do preset piloto (TR 1.33)|06]]
 
 > [!info] Escopo desta fatia (09/10/2026)
 > Sexta fatia da especificação do preset: liga **só o item 1.34 (Etiquetas)** do recorte 07 ao que o seed Playwright atual já prepara. Tramitação/despacho (1.35), também do mesmo recorte, fica para fatia futura separada. **Não é implementação de seed, não decompõe CTs, não propõe arquitetura nem formato novo de preset.** O recorte 07, a matriz e o mapa geral **não foram alterados**. Repositório consultado: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4` (branch principal). Leitura somente de código; nenhum teste foi executado nesta rodada.
@@ -55,5 +55,5 @@ status: aprovado
 
 ## Fontes/evidências
 
-- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] — só a parte referente a 1.34 foi usada nesta fatia.
+- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[../Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35)]] — só a parte referente a 1.34 foi usada nesta fatia.
 - Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/api/services/tags.ts`, `playwright/src/data/factories/tags.ts`, `playwright/src/api/services/documents.ts` (`updateDocumentLabel`), `playwright/src/data/seed/provision.ts` (confirmado: nenhuma referência a funções de etiqueta), `playwright/tests/api/processing/label-management.spec.ts`, `playwright/tests/api/processing/label-document.spec.ts`. Lido nesta sessão, só leitura — nenhum comando executado.

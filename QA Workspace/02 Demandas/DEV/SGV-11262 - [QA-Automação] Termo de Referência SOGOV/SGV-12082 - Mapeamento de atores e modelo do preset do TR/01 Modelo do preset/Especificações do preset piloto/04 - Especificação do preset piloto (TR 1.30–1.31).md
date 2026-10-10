@@ -9,7 +9,7 @@ status: aprovado
 # 04 - Especificação do preset piloto (itens 1.30–1.31)
 
 > [!info]- Navegação
-> **Matriz/índice:** [[01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Mapa geral:** [[00 - Mapa geral]] · **Recorte-fonte:** [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)|05 - Fluxos de trabalho e modelos de documentos]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02 (TR 1.24–1.27)]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03 (TR 1.28–1.29)]]
+> **Matriz/índice:** [[../01 - Matriz de atores e relações|Matriz de atores e relações]] · **Demanda:** [[../../00 QA/01 - Demanda]] · **Mapa geral:** [[../00 - Mapa geral]] · **Recorte-fonte:** [[../Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)|05 - Fluxos de trabalho e modelos de documentos]] · **Fatias anteriores:** [[02 - Especificação do preset piloto (TR 1.24–1.27)|02 (TR 1.24–1.27)]], [[03 - Especificação do preset piloto (TR 1.28–1.29)|03 (TR 1.28–1.29)]]
 
 > [!info] Escopo desta fatia (09/10/2026)
 > Terceira fatia da especificação do preset: liga o recorte 05 (Fluxo de trabalho, Etapa, Despacho, Modelo simples, Documento automatizado) ao que o seed Playwright atual já prepara. **Não é implementação de seed, não decompõe CTs, não propõe arquitetura nem formato novo de preset.** O recorte 05, a matriz e o mapa geral **não foram alterados**. Repositório consultado: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4` (branch principal). Leitura somente de código; nenhum teste foi executado nesta rodada.
@@ -58,6 +58,6 @@ status: aprovado
 
 ## Fontes/evidências
 
-- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]].
+- Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[../Seções do TR/05 - Fluxos de trabalho e modelos de documentos (1.30–1.31)]].
 - Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/data/seed/baseline.ts`, `playwright/src/data/seed/provision.ts`, `playwright/src/data/factories/seed.ts`, `playwright/src/api/services/models.ts`, `playwright/tests/api/models/simple-model.spec.ts` e `automated-model.spec.ts` (confirmação de que são chamados em tempo de execução, não por `provision.ts`). Lido nesta sessão, só leitura — nenhum comando executado.
 - Documentação técnica do repositório: `docs/business-rules/api/simple-document-model.md` (valores confirmados por captura real de `inheritanceType`/`sharedType`); `docs/commands/api/label-management.e2e.md` (significado de `sharedType: NO_SHARE`).
