@@ -21,7 +21,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** esclarecer com Rafael, uma por vez, as dúvidas que permaneceram abertas após a revisão integral dos 11 recortes. A primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto; depois, seguir a sequência registrada no mapa e nos recortes.
+> O escopo desta demanda (modelo conceitual do TR completo, abaixo) está **concluído** — ver checklist de fechamento no fim deste documento. As dúvidas de negócio levantadas durante o mapeamento seguem registradas, numa **trilha paralela que não bloqueia** essa conclusão; a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) são o mesmo elemento no produto. O trabalho ativo da iniciativa agora é a Fase 2 (especificação do preset candidato) — fora do escopo original desta demanda; sua sequência e gates vivem no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]], não aqui.
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
@@ -94,4 +94,4 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 Não há bloqueio atual nesta demanda. O mapeamento do TR foi revisado; as dúvidas de negócio seguem como pendências explícitas, sem travar a conclusão da revisão documental:
 
 - A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026). Os 11 recortes foram revisados contra o PDF; a cobertura e a rastreabilidade estão registradas em [[04 - Revisão da análise]]. A fonte de autoridade permanece exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
-- Se haverá entregas futuras separadas (casos de teste, preset executável) será decidido depois do mapeamento completo, com os achados em mãos — não nesta demanda.
+- A decisão sobre entregas futuras, tomada com os achados deste mapeamento em mãos, já abriu a Fase 2 (especificação do preset candidato) — fora do escopo desta demanda; acompanhada pelo [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]], não reaberta aqui. Casos de teste e implementação de preset seguem sem decisão própria.

@@ -6,7 +6,7 @@ tipo: "melhoria"
 status: validacao
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Revisão da análise"
+etapa_atual: "QA · Especificação do preset (Fase 2)"
 modulo: ""
 responsavel: ""
 aguardando: ""
@@ -31,10 +31,10 @@ pontos: ""
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
-> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(Concluído)):etapa_atual]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(QA · Especificação do preset (Fase 2)),option(Concluído)):etapa_atual]`
 
-> [!info] Escopo desta pasta — 11 recortes revisados; dúvidas de negócio seguem abertas
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. Esta frente mapeia atores, entidades, dados, estados e relações do TR completo. Os 11 recortes foram aprovados pelo Rafael e revisados item a item contra o PDF (1.1–1.43); a revisão documental está registrada em [[04 - Revisão da análise]]. Permanecem dúvidas explícitas a esclarecer com Rafael, sem equivalências presumidas (ver [[../01 Modelo do preset/00 - Mapa geral#Lacunas registradas (arestas tracejadas)|lacunas no mapa]]).
+> [!info] Escopo desta pasta — Fase 1 concluída (11 recortes); Fase 2 em andamento (16 fatias); consolidação é o próximo passo
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. **Fase 1:** esta frente mapeou atores, entidades, dados, estados e relações do TR completo — os 11 recortes foram aprovados pelo Rafael e revisados item a item contra o PDF (1.1–1.43); a revisão documental está registrada em [[04 - Revisão da análise]]. **Fase 2 (em andamento):** especificação do preset candidato por cruzamento de cada item do TR com o que o seed/testes Playwright reais confirmam — ver "Status do trabalho" abaixo e o [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]] para a sequência completa e os gates. Permanecem dúvidas de negócio explícitas a esclarecer com Rafael, numa trilha paralela que não bloqueia a Fase 2 (ver [[../01 Modelo do preset/00 - Mapa geral#Lacunas registradas (arestas tracejadas)|lacunas no mapa]]).
 
 ## Status do trabalho
 
@@ -66,8 +66,9 @@ pontos: ""
 | Especificação do preset piloto (TR 1.35.5) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/15 - Especificação do preset piloto (TR 1.35.5)|15 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.40.2–1.40.2.1) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/16 - Especificação do preset piloto (TR 1.40.2–1.40.2.1)|16 - Especificação do preset piloto]] |
 | Especificação do preset piloto (TR 1.40.3) | ✅ Revisado e aprovado pelo Codex — ver [[../01 Modelo do preset/17 - Especificação do preset piloto (TR 1.40.3)|17 - Especificação do preset piloto]] |
+| Consolidação da especificação do preset (Fase 2, passo 7 do Roadmap) | ⏳ Próximo passo único — nenhuma fatia nova (18+) abre antes desta consolidação ser revisada |
 
-**Próximo passo:** definir com o Codex a fatia seguinte do recorte 08 (candidatas: 1.40.4/1.40.4.1 — gerenciamento de solicitações; 1.40.5 — recusa; 1.40.6 — assinatura em massa; ou os demais itens de 1.38–1.39 ainda não cobertos por fatia). Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — sem travar nem depender da especificação do preset.
+**Próximo passo:** consolidar as 16 fatias aprovadas (02–17) numa visão-resumo rastreável, sem duplicar as notas-fonte (detalhe das colunas/classes no passo 7 da "Sequência macro" do [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]]). **Nenhuma fatia nova (18+) abre antes dessa consolidação ser revisada.** Em paralelo, seguem abertas as dúvidas de negócio do mapeamento — a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) continuam como elementos distintos ou são o mesmo no produto — trilha não bloqueante, exceto quando uma linha da especificação depender diretamente dela.
 
 Pacote para `SGV-12082`:
 
@@ -79,14 +80,12 @@ SGV-12082 - Mapeamento de atores e modelo do preset do TR/
 │   ├── 02 - Plano de análise.md
 │   └── 04 - Revisão da análise.md
 ├── 01 Modelo do preset/
-│   ├── 00 - Mapa geral.md              (síntese Mermaid vertical, derivada dos recortes)
-│   ├── 01 - Matriz de atores e relações.md  (índice dos recortes temáticos, sem duplicar seu conteúdo)
-│   ├── 02 - Especificação do preset piloto (TR 1.24–1.27).md  (recortes 02/03 × seed de automação atual)
-│   ├── 03 - Especificação do preset piloto (TR 1.28–1.29).md  (recorte 04 × seed de automação atual)
-│   ├── 04 - Especificação do preset piloto (TR 1.30–1.31).md  (recorte 05 × seed de automação atual)
-│   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes)
+│   ├── 00 - Mapa geral.md              (síntese Mermaid vertical, derivada dos recortes — Fase 1)
+│   ├── 01 - Matriz de atores e relações.md  (índice dos recortes temáticos, sem duplicar seu conteúdo — Fase 1)
+│   ├── 02–17 - Especificação do preset piloto (*.md)  (16 fatias aprovadas da Fase 2 — TR × seed/testes reais; lista completa e atualizada na tabela "Status do trabalho" acima, não repetida aqui para não ficar obsoleta a cada fatia nova)
+│   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes — Fase 1)
 └── Fontes/
     └── Termo de Referência SOGOV.pdf             (cópia de trabalho; original preservado no Arquivo)
 ```
 
-Esta pasta não tem `03 - Casos de teste`, `05 - Preparação Qase` nem `01 Automação/` — casos de teste são trabalho separado, a ser decidido depois do mapeamento, e automação não está sendo implementada nesta frente.
+Esta pasta não tem `03 - Casos de teste`, `05 - Preparação Qase` nem `01 Automação/` — esta frente não produz casos de teste nem preparação de Qase; uma eventual frente para isso seria definida à parte, sem fase atribuída por enquanto. Automação/implementação de preset também não acontece aqui (nem na Fase 1, nem na Fase 2) — a Fase 3 do Roadmap trata só da decisão/desenho do preset persistente, não de CTs/Qase.

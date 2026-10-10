@@ -68,4 +68,4 @@ Um item por recorte temático — lista completa e os links das notas vivem no [
 
 **Saída:** notas temáticas com cobertura/elementos/relações/dúvidas/fontes por recorte; matriz como índice consolidado, sem duplicar o conteúdo; mapa geral (Mermaid) como síntese; registro de cobertura, lacunas e ambiguidades para revisão.
 
-**Resultado desta análise:** cobertura do TR e consistência documental revisadas em 09/10/2026. A conclusão deste plano não encerra as dúvidas de negócio listadas nas notas; o próximo trabalho é esclarecê-las progressivamente, sem inferir respostas.
+**Resultado desta análise:** cobertura do TR e consistência documental revisadas em 09/10/2026. A conclusão deste plano não encerra as dúvidas de negócio listadas nas notas; elas seguem numa trilha paralela, a esclarecer progressivamente, sem inferir respostas. O trabalho subsequente (Fase 2 — especificação do preset candidato) está fora do escopo deste plano e é sequenciado/gated no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]], sem reabrir os critérios ou resultados registrados aqui.

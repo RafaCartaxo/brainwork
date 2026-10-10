@@ -3,7 +3,7 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "modelo"
-status: planejado
+status: concluido
 ---
 # Mapa geral — Modelo do preset (SGV-12082)
 

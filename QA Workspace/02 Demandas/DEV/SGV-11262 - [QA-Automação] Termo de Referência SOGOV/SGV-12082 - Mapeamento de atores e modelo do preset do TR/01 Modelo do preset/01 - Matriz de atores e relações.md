@@ -3,7 +3,7 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "matriz"
-status: planejado
+status: concluido
 ---
 # Matriz de atores e relações — SGV-12082
 

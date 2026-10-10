@@ -13,9 +13,9 @@ A SGV-11262 é a demanda pai da iniciativa de QA sobre o Termo de Referência do
 
 ## Trabalho ativo
 
-[[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] — modelo conceitual de atores, entidades, configurações, estados, relações e dependências a partir do **TR completo** (itens 1.1–1.43). Não inclui casos de teste, Qase nem automação nesta demanda.
+[[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] — modelo conceitual de atores, entidades, configurações, estados, relações e dependências a partir do **TR completo** (itens 1.1–1.43), seguido da especificação de um preset candidato por cruzamento com seed/testes reais. Não inclui casos de teste, Qase nem implementação de preset.
 
-**Estado factual:** segmentação em 11 recortes temáticos aprovada pelo Rafael (08/10/2026). Os 11 recortes (itens 1.1–1.43) foram revisados e aprovados pelo Codex; a revisão documental da análise foi concluída. As dúvidas de negócio levantadas durante o mapeamento seguem registradas em aberto, sem travar essa conclusão.
+**Estado factual:** Fase 1 (modelo conceitual, 11 recortes) concluída — aprovada pelo Rafael (08/10/2026) e revisada pelo Codex. Fase 2 (especificação do preset candidato) em andamento — 16 fatias aprovadas (notas 02–17); próximo passo é consolidá-las, sem abrir fatia nova antes disso. As dúvidas de negócio levantadas durante o mapeamento seguem registradas em aberto, numa trilha paralela que não bloqueia a consolidação nem o avanço geral — exceto quando uma linha específica da especificação depender diretamente de uma delas, caso em que só essa linha fica pendente, sem travar o restante. Sequência completa e gates: [[../Roadmap - Modelo de atores e preset do TR|Roadmap]].
 
 ## Material arquivado para consulta
 
