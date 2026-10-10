@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]"
 status: planejado
 responsavel: ""
 pontos: ""
@@ -8,11 +8,11 @@ pontos: ""
 # Plano de teste — SGV-9982
 
 > [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/02 - Plano de teste]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]  
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/05 - Preparação Qase]]
 
 > [!settings]- Controle do plano de teste  
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
@@ -48,18 +48,18 @@ Camada não aplicável nesta rodada: acessibilidade e mobile dedicados (ficam pa
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-002\|CT-002]] | Regressão | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-004\|CT-004]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-005\|CT-005]] | Funcional | UI/E2E | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-006\|CT-006]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-008\|CT-008]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-009\|CT-009]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | Regressão | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | Regressão | API | Manual | [[04 - Validação dev\|Registrar resultado]] |
-| [[03 - Casos de teste#^ct-012\|CT-012]] | Funcional | UI | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-001\|CT-001]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-002\|CT-002]] | Regressão | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-003\|CT-003]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-004\|CT-004]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-005\|CT-005]] | Funcional | UI/E2E | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-006\|CT-006]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-007\|CT-007]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-008\|CT-008]] | Funcional | UI/API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-009\|CT-009]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-010\|CT-010]] | Regressão | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-011\|CT-011]] | Regressão | API | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-012\|CT-012]] | Funcional | UI | Manual | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev\|Registrar resultado]] |
 
 ---
 

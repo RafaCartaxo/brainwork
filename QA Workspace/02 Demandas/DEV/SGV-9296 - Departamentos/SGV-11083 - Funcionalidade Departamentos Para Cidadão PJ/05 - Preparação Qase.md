@@ -1,25 +1,27 @@
 ---
-tags: [qa, qase]
+tags:
+  - qa
+  - qase
 tipo: referencia
 status: rascunho
-tipo_card: "funcionalidade"
+tipo_card: funcionalidade
 projeto: ""
 modulo: servicos-pj
 qase_projeto: SGV
 qase_suite_id: ""
-demanda: "[[01 - Demanda]]"
-casos_origem: "[[03 - Casos de teste]]"
-validacao_origem: "[[04 - Validação dev]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda]]"
+casos_origem: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/03 - Casos de teste]]"
+validacao_origem: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/04 - Validação dev]]"
 ---
 # Preparação Qase — SGV-11083
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **README do card:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/02 - Plano de teste]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/04 - Validação dev]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (só depois de aprovados na validação) para os campos da API.
@@ -31,7 +33,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `<a confirmar>`
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-033 — todos aplicáveis, nenhum "Não se aplica")
+- **Origem:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/03 - Casos de teste]] (CT-001 a CT-033 — todos aplicáveis, nenhum "Não se aplica")
 - **Script/payload:** processo real descrito em [[../../../Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] — pasta `Sistema/Scripts/qase-sync/<contexto>/` no vault (`sync.js` + `corrections.json` + `README.md`), copiada da versão mais recente já usada. Não vive no repo de automação.
 
 ## Mapeamento dos campos

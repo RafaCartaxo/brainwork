@@ -1,0 +1,49 @@
+---
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../00 QA/03 - Casos de teste]]"
+framework: playwright
+ambiente: dev
+status: planejado
+ct_resultados:
+  ct_001: "✅ Aprovado"
+  ct_002: "✅ Aprovado"
+  ct_003: "✅ Aprovado"
+  ct_004: "✅ Aprovado"
+---
+
+# Validação automação — SGV-12082
+
+> [!info]- Navegação QA
+> **README:** [[../00 QA/00 README|Abrir README do card]]
+> **Demanda:** [[../00 QA/01 - Demanda]]
+> **Casos de análise:** [[../00 QA/03 - Casos de teste]]
+> **Matriz:** [[../00 QA/Matriz - Análise do preset provável]]
+> **Automação:** [[00 - Automação]]
+> **Plano:** [[01 - Plano de automação]]
+
+> [!settings]- Controle da validação
+> **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
+> **Framework:** `INPUT[inlineSelect(option(playwright),option(cypress_legado),option(outro)):framework]`
+> **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
+
+Este placar acompanha as verificações de análise da automação. “Sem teste” aqui quer dizer que não há execução automatizada para esses critérios documentais; os 38 CTs funcionais mantêm seus resultados próprios na SGV-11971.
+
+## Resumo da execução
+
+**4 de 4 verificações concluídas (07/10/2026).** DISC-001 (mapa do projeto reconciliado contra o commit `16c41e4`); DISC-002 (38/38 CTs rastreados — 13 Playwright, 22 Cypress num branch não mesclado, 3 sem código); DISC-003 (mesmo nome fixo de instância nos dois frameworks, identidade real do alvo não verificada; mutation de estado só no Cypress); DISC-004 (recomendação: portar os mecanismos de estado do Cypress pro Playwright na instância atual, em **6 entregas sequenciadas pequenas** (3 CTs sem código ficam fora da conta, à parte) — ver Matriz/Plano. Nada implementado, nenhuma pasta criada). **Pausado para revisão final do Rafael antes de encerrar a SGV-12082 ou abrir qualquer entrega.**
+
+## Resultado por CT
+
+| CT | Teste no repo | Resultado atual | Última execução (data/build) | Observação |
+|---|---|---|---|---|
+| [[../00 QA/03 - Casos de teste#^ct-001\|DISC-001]] | não se aplica — revisão técnica | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | 07/10/2026 (commit `16c41e4`) | Mapa reconciliado contra o código, 0 divergências — ver [[01 - Plano de automação#DISC-001 — Auditoria do projeto, reconciliada com o código (07/10/2026)\|DISC-001 no Plano]] |
+| [[../00 QA/03 - Casos de teste#^ct-002\|DISC-002]] | não se aplica — revisão de cobertura | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_002]` | 07/10/2026 (ver evidência por grupo abaixo) | **38/38 CTs rastreados** na Matriz — isto é **rastreabilidade de documentação/código, não execução aprovada agora**: CT-001–012 (commit `16c41e4`), CT-038 (worktree não commitado), CT-013–015/018–036 (código real no commit `bdf5e9a`, branch `tr-1.24-1.25-suites-3-4-5`, não mesclado — histórico "verde" alegado no código, não revalidado), CT-016/017/037 (sem código em nenhum framework, confirmado) |
+| [[../00 QA/03 - Casos de teste#^ct-003\|DISC-003]] | não se aplica — inspeção de preparação | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_003]` | 07/10/2026 (config/código, sem execução) | Mapa de reutilização + eixos separados na [[01 - Plano de automação#DISC-003 — síntese (07/10/2026)\|Matriz/Plano]] — instância sempre fixa por nome em ambos frameworks, sem clienteId paramétrico; mutation de estado só existe no Cypress |
+| [[../00 QA/03 - Casos de teste#^ct-004\|DISC-004]] | não se aplica — revisão da recomendação | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_004]` | 07/10/2026 (documental, sem execução) | Recomendação: portar mecanismos de estado do Cypress pro Playwright na instância atual, em 6 entregas sequenciadas (3 CTs sem código ficam de fora, à parte) — ver [[01 - Plano de automação#DISC-004 — Síntese e recomendação (07/10/2026)\|DISC-004 no Plano]]. Nada implementado |
+
+## Encerramento
+
+- [ ] Os quatro critérios de análise têm resultado e evidência.
+- [ ] Os 38 CTs funcionais estão rastreados na matriz; dúvidas permanecem explícitas.
+- [ ] A revisão não confunde configuração com portabilidade demonstrada.
+- [ ] Status e próxima ação estão atualizados.

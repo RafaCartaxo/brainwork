@@ -375,17 +375,19 @@ def resolve_pendencias_obsoletas(texto):
 
 
 def sincroniza_demandas_ativas(texto):
-    """Invariante da fila viva: TODO card em aberto (02 Demandas fora de
-    Concluídas) tem um item ativo em 'A fazer hoje' — vale pra qualquer
-    estágio (a refinar, refinada, cadastrada, em validação, reaberta).
-    Se a pendência está em 'Pendente para amanhã', move pra cima;
-    se não existe, cria o próximo passo padrão.
+    """Aninha defeito sob a linha da task pai quando a pai já tem item na
+    fila (PADROES_QA → 'Defeito × Bug') — defeito e pai são um trabalho só.
 
-    **Defeito não ganha linha de topo** (PADROES_QA → 'Defeito × Bug'): ele
-    entra aninhado sob a linha da task pai, porque defeito e pai são um
-    trabalho só. A 3234 sozinha ocupava 6 linhas da fila (1 pai + 5 defeitos)
-    pra uma única validação. Por isso os pais são processados **primeiro** —
-    a linha do pai precisa existir antes de pendurar filho nela.
+    Retirado em 06/10/2026 (decisão do Rafael): a injeção automática de
+    'SGV-XXXX - Acompanhar (<título>)' pra TODO card aberto com dono, todo
+    dia, acumulou 131 itens até 24/09 sem necessidade — era puro volume,
+    sem julgamento nenhum por trás. A visibilidade passiva de card aberto
+    agora mora na Dashboard ('Seus cards abertos'), não na fila do dia;
+    'A fazer hoje' volta a ser só o que tem ação pendente de verdade,
+    escrito manualmente (ou por sessão de IA) em vez de gerado por varredura.
+    Esta função cuida só do aninhamento de defeito, que continua útil
+    quando a pai já está na fila por outro motivo (ex.: Rafael está
+    validando ela agora).
     """
     cards = []
     for pasta in ("DEV", "HML", "Hotfix", "POCs"):
@@ -443,30 +445,8 @@ def sincroniza_demandas_ativas(texto):
                     pos = (prox + 1) if prox != -1 else len(texto)
                 texto = texto[:pos] + linha_filho + texto[pos:]
                 acoes.append(f"{rid} → fila viva: aninhado sob {rid_pai}")
-                continue
-            # pai sem linha na fila (já concluída?) — não some em silêncio
-            avisos.append(f"⚠️ {rid} é defeito da {rid_pai}, mas a pai não tem item na fila "
-                          f"— defeito aberto com pai fora da esteira, conferir")
-            continue
-
-        # --- card normal: item de topo, como sempre ---
-        movida = None
-        for m in re.finditer(r"^- \[ \] (.+)$", texto, re.M):
-            if "## Pendente para amanhã" not in texto[:m.start()]:
-                continue
-            if rid in norm_id(m.group(1)):
-                movida = m.group(1)
-                texto = texto[:m.start()] + texto[m.end() + 1:]
-                break
-        if movida is None:
-            if rid.startswith("MEL"):
-                movida = f"{rid} - Cadastrar melhoria no Notion"
-            else:
-                movida = f"{rid} - Acompanhar ({titulo})"
-        texto = re.sub(r"(> \[!todo\][^\n]*\n)", rf"\g<1>> - [ ] {movida}\n", texto, count=1)
-        if re.search(r"## Pendente para amanhã\n(?!- )", texto):
-            texto = texto.replace("## Pendente para amanhã\n", "## Pendente para amanhã\n- [ ] \n", 1)
-        acoes.append(f"{rid} → fila viva: {movida[:55]}")
+            # pai sem linha na fila: normal desde 06/10/2026 (card sem ação
+            # pendente não gera linha nenhuma) — nada a fazer, sem aviso.
     return texto
 
 

@@ -21,11 +21,11 @@ pontos_alocados: ""
 **Ticket de origem:** SGV-11177 (Notion "[Parte 4] Departamentos: Tramitação e assinaturas", ID 9) · **Protótipo:** Figma referenciado no requisito de origem (6 pontos específicos ainda a confirmar — ver Pendências de decisão)
 
 > [!info]- Navegação QA/DEV  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/02 - Plano de teste]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev]]  
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle da demanda  

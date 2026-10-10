@@ -14,9 +14,9 @@ tags:
 
 | O que fazer | Como | O que cobre |
 |---|---|---|
-| Parte mecânica (rápido, offline) | Clicar **🔄 Atualizar** na [[../../QA Workspace/Dashboard/Dashboard\|Dashboard]] | Carry-over, conclusão de pendências anotadas, reconciliação de Atividades, fila viva |
-| Tudo (classificação de registros crus + mecânica) | Pedir numa sessão: "organiza a daily" | Tudo acima + classificar Anotações e Bugs encontrados sem card |
-| Automático | Agendado às 7h (via cron, opcional) | Tudo, com palpite automático ⚠️ **previsto, sem cron ativo** — hoje só 🔄 e sessão de IA |
+| Parte mecânica (rápido, offline) | Clicar **🔄 Atualizar** na [[../../QA Workspace/Dashboard/Dashboard\|Dashboard]] | Carry-over, conclusão de pendências anotadas, reconciliação de Atividades. **Não** injeta mais "Acompanhar" pra todo card aberto (retirado 06/10/2026 — ver [[../Agentes/README\|Agentes/README]]); visibilidade passiva vive na Dashboard → "Seus cards abertos" |
+| Tudo (classificação de registros crus + mecânica + Status — reunião) | Skill do Claude Code `organiza-daily` (`~/.claude/skills/organiza-daily/`) — pedir numa sessão: "organiza a daily" | Tudo acima + classificar Anotações e Bugs encontrados sem card + regenerar Status — reunião (skill `status-reuniao`) |
+| Automático | Agendado às 7h (via cron, opcional) | Existe skill pronto pro modo agendado (`qa-inbox-auto-organizacao`, global em `~/.claude/scheduled-tasks/`), mas **sem cron registrado** — hoje só 🔄 e sessão de IA rodam de fato |
 
 ### O que acontece
 

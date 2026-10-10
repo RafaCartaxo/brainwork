@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda]]"
 execucao: ""
 ambiente: dev
 versao: ""
@@ -8,34 +8,34 @@ responsavel: Rafael
 resultado: aprovado_com_ressalvas
 pontos: 0
 ct_resultados:
-  ct_001: "✅ Aprovado"
-  ct_002: "✅ Aprovado"
-  ct_002a: "⚪ Não executado"
-  ct_002b: "⚪ Não executado"
-  ct_002c: "✅ Aprovado"
-  ct_003: "✅ Aprovado"
-  ct_004: "✅ Aprovado"
-  ct_005: "✅ Aprovado"
-  ct_006: "⚪ Não executado"
-  ct_007: "✅ Aprovado"
-  ct_008: "✅ Aprovado"
-  ct_008a: "✅ Aprovado"
-  ct_009: "✅ Aprovado"
-  ct_010: "⚪ Não executado"
-  ct_011: "✅ Aprovado"
-  ct_012: "⚪ Não executado"
-  ct_012a: "❌ Falhou"
-  ct_012b: "✅ Aprovado"
-  ct_013: "✅ Aprovado"
-  ct_014: "⚪ Não executado"
-  ct_015: "✅ Aprovado"
-  ct_016: "✅ Aprovado"
-  ct_017: "✅ Aprovado"
-  ct_018: "✅ Aprovado"
-  ct_019: "✅ Aprovado"
-  ct_020: "✅ Aprovado"
-  ct_021: "✅ Aprovado"
-  ct_022: "⚪ Não executado"
+  ct_001: ✅ Aprovado
+  ct_002: ✅ Aprovado
+  ct_002a: ⚪ Não executado
+  ct_002b: ⚪ Não executado
+  ct_002c: ✅ Aprovado
+  ct_003: ✅ Aprovado
+  ct_004: ✅ Aprovado
+  ct_005: ✅ Aprovado
+  ct_006: ⚪ Não executado
+  ct_007: ✅ Aprovado
+  ct_008: ✅ Aprovado
+  ct_008a: ✅ Aprovado
+  ct_009: ✅ Aprovado
+  ct_010: ⚪ Não executado
+  ct_011: ✅ Aprovado
+  ct_012: ⚪ Não executado
+  ct_012a: ❌ Falhou
+  ct_012b: ✅ Aprovado
+  ct_013: ✅ Aprovado
+  ct_014: ⚪ Não executado
+  ct_015: ✅ Aprovado
+  ct_016: ✅ Aprovado
+  ct_017: ✅ Aprovado
+  ct_018: ✅ Aprovado
+  ct_019: ✅ Aprovado
+  ct_020: ✅ Aprovado
+  ct_021: ✅ Aprovado
+  ct_022: ⚪ Não executado
 data_inicio: ""
 data_fim: ""
 ---
@@ -43,12 +43,12 @@ data_fim: ""
 # Validação — SGV-11184
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **README do card:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/02 - Plano de teste]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/04 - Validação dev]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle da validação
@@ -101,34 +101,34 @@ dv.list([
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` |  |  |  | `= choice(this.ct_resultados.ct_001 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-002\|CT-002]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002]` |  |  |  | `= choice(this.ct_resultados.ct_002 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-002a\|CT-002a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002a]` |  |  |  | `= choice(this.ct_resultados.ct_002a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-002b\|CT-002b]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002b]` |  |  |  | `= choice(this.ct_resultados.ct_002b = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-002c\|CT-002c]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002c]` | ![[11312 - área de clique não respeitada.mp4]]<br>![[11312 - OK.mp4]] | Reprovado em 03/09, aprovado no reteste | [[Defeitos/SGV-11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma\|SGV-11312]] (resolvido) | `= choice(this.ct_resultados.ct_002c = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_003 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-004\|CT-004]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_004]` |  |  |  | `= choice(this.ct_resultados.ct_004 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-005\|CT-005]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_005]` |  |  |  | `= choice(this.ct_resultados.ct_005 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-006\|CT-006]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_006]` |  |  |  | `= choice(this.ct_resultados.ct_006 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-007\|CT-007]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_007]` |  |  |  | `= choice(this.ct_resultados.ct_007 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-008\|CT-008]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_008]` |  |  |  | `= choice(this.ct_resultados.ct_008 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-008a\|CT-008a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_008a]` | ![[11312 - OK.mp4]] | Reprovado em 03/09, aprovado no reteste | [[Defeitos/SGV-11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma\|SGV-11312]] (resolvido) | `= choice(this.ct_resultados.ct_008a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-009\|CT-009]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_009]` |  |  |  | `= choice(this.ct_resultados.ct_009 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-010\|CT-010]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_010]` |  |  |  | `= choice(this.ct_resultados.ct_010 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-011\|CT-011]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_011]` |  |  |  | `= choice(this.ct_resultados.ct_011 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-012\|CT-012]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012]` |  |  |  | `= choice(this.ct_resultados.ct_012 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-012a\|CT-012a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012a]` | ![[11338 - incorreto 1.png]]<br>![[11338 - incorreto 2.png]] | Defeito ainda aberto | [[Defeitos/SGV-11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo\|SGV-11338]] (aberto) | `= choice(this.ct_resultados.ct_012a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-012b\|CT-012b]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012b]` | ![[11319 - Departamento não é persistido ao retificar despacho.mp4]]<br>![[11319 - OK.mp4]] | Formalizado a partir de defeito já corrigido | [[Defeitos/SGV-11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho\|SGV-11319]] (resolvido) | `= choice(this.ct_resultados.ct_012b = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-013\|CT-013]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_013]` |  |  |  | `= choice(this.ct_resultados.ct_013 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-014\|CT-014]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_014]` |  |  |  | `= choice(this.ct_resultados.ct_014 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-015\|CT-015]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_015]` |  |  |  | `= choice(this.ct_resultados.ct_015 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-016\|CT-016]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_016]` |  |  |  | `= choice(this.ct_resultados.ct_016 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-017\|CT-017]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_017]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_017 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-018\|CT-018]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_018]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_018 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-019\|CT-019]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_019]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_019 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-020\|CT-020]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_020]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_020 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-021\|CT-021]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_021]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_021 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
-| [[03 - Casos de teste#^ct-022\|CT-022]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_022]` |  |  |  | `= choice(this.ct_resultados.ct_022 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` |  |  |  | `= choice(this.ct_resultados.ct_001 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002\|CT-002]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002]` |  |  |  | `= choice(this.ct_resultados.ct_002 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002a\|CT-002a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002a]` |  |  |  | `= choice(this.ct_resultados.ct_002a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002b\|CT-002b]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002b]` |  |  |  | `= choice(this.ct_resultados.ct_002b = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002c\|CT-002c]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002c]` | ![[11312 - área de clique não respeitada.mp4]]<br>![[11312 - OK.mp4]] | Reprovado em 03/09, aprovado no reteste | [[Defeitos/SGV-11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma\|SGV-11312]] (resolvido) | `= choice(this.ct_resultados.ct_002c = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_003 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-004\|CT-004]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_004]` |  |  |  | `= choice(this.ct_resultados.ct_004 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-005\|CT-005]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_005]` |  |  |  | `= choice(this.ct_resultados.ct_005 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-006\|CT-006]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_006]` |  |  |  | `= choice(this.ct_resultados.ct_006 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-007\|CT-007]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_007]` |  |  |  | `= choice(this.ct_resultados.ct_007 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-008\|CT-008]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_008]` |  |  |  | `= choice(this.ct_resultados.ct_008 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-008a\|CT-008a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_008a]` | ![[11312 - OK.mp4]] | Reprovado em 03/09, aprovado no reteste | [[Defeitos/SGV-11312 - Defeito Area De Clique Do Accordion De Departamento Nao Segue O Figma\|SGV-11312]] (resolvido) | `= choice(this.ct_resultados.ct_008a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-009\|CT-009]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_009]` |  |  |  | `= choice(this.ct_resultados.ct_009 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-010\|CT-010]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_010]` |  |  |  | `= choice(this.ct_resultados.ct_010 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-011\|CT-011]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_011]` |  |  |  | `= choice(this.ct_resultados.ct_011 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-012\|CT-012]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012]` |  |  |  | `= choice(this.ct_resultados.ct_012 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-012a\|CT-012a]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012a]` | ![[11338 - incorreto 1.png]]<br>![[11338 - incorreto 2.png]] | Defeito ainda aberto | [[Defeitos/SGV-11338 - Defeito Truncamento De Destinatario Com Nome Extenso Nao Segue O Prototipo\|SGV-11338]] (aberto) | `= choice(this.ct_resultados.ct_012a = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-012b\|CT-012b]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_012b]` | ![[11319 - Departamento não é persistido ao retificar despacho.mp4]]<br>![[11319 - OK.mp4]] | Formalizado a partir de defeito já corrigido | [[Defeitos/SGV-11319 - Defeito Departamento Nao E Persistido Ao Retificar Despacho\|SGV-11319]] (resolvido) | `= choice(this.ct_resultados.ct_012b = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-013\|CT-013]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_013]` |  |  |  | `= choice(this.ct_resultados.ct_013 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-014\|CT-014]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_014]` |  |  |  | `= choice(this.ct_resultados.ct_014 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-015\|CT-015]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_015]` |  |  |  | `= choice(this.ct_resultados.ct_015 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-016\|CT-016]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_016]` |  |  |  | `= choice(this.ct_resultados.ct_016 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-017\|CT-017]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_017]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_017 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-018\|CT-018]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_018]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_018 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-019\|CT-019]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_019]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_019 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-020\|CT-020]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_020]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_020 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-021\|CT-021]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_021]` |  | Aprovado via aprovação geral da task em DEV — execução individual não registrada neste vault (possivelmente testado por outro QA). |  | `= choice(this.ct_resultados.ct_021 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-022\|CT-022]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_022]` |  |  |  | `= choice(this.ct_resultados.ct_022 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 

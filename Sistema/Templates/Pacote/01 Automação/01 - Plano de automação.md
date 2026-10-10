@@ -1,69 +1,50 @@
 ---
-tags: [qa, automacao]
-criado: ""
-revisado: ""
-status: planejando
+demanda: "[[../00 QA/01 - Demanda]]"
+casos_origem: "[[../00 QA/03 - Casos de teste]]"
+repo: "sogov-automation-test"
+status: planejado
 ---
 
-# Plano de Automação — <ID>
+# Plano de automação — <ID>
 
 > [!info]- Navegação QA
 > **README do card:** [[../00 QA/00 README|Abrir README do card]]
 > **Demanda/Bug:** [[../00 QA/01 - Demanda]]
-> **Plano de teste:** [[../00 QA/02 - Plano de teste]]
 > **Casos de teste:** [[../00 QA/03 - Casos de teste]]
-> **Validação:** [[../00 QA/04 - Validação dev]]
-> **Preparação Qase:** [[../00 QA/05 - Preparação Qase]]
-> **Automação:** [[00 - Automação]]
+> **Automação:** [[Sistema/Templates/Pacote/01 Automação/00 - Automação]]
+> **Validação automação:** [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]]
 
-> [!info] Sobre esta nota
-> Plano técnico de arquitetura pra automatizar os CTs de [[../00 QA/03 - Casos de teste|03 - Casos de teste]] no repositório `<repo>`. Escrito antes de tocar no repo — mexer no repo é passo separado, autorizado depois. Não duplica placar por CT (fica em [[02 - Validação automação]]) nem estado/progresso de sessão (fica em [[03 - Handoff de execução]]) nem revisão cenário a cenário (fica em [[04 - Documentação de entrega]]) — só arquitetura e decisões de como construir.
+> [!settings]- Controle do plano
+> **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
----
+> Este plano registra o escopo, a estratégia e as dependências antes da implementação. Mantenha as decisões curtas e ligadas aos CTs; o andamento geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]] e os resultados executados ficam em [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]].
 
-## Resumo
+## Objetivo e escopo
 
-<objetivo da automação, framework escolhido, nº de CTs alvo>
+- **Objetivo:** <comportamento que a automação vai cobrir>
+- **CTs incluídos:** <suítes/CTs vinculados à nota de casos de teste>
+- **Fora do escopo:** <exclusões importantes ou “nenhum”>
 
----
+## Estratégia por suíte
 
-## Pontos-chave
+| Suíte / CTs | Camada | Dados e estado inicial | Reuso / mudança necessária | Dependência ou gate |
+|---|---|---|---|---|
+| <suíte e links aos CTs> | <API / E2E> | <ator, preset, preparação e limpeza> | <código existente a reutilizar ou mudança necessária> | <captura, acesso, fix no ambiente ou nenhuma> |
 
-### 1. Organização de pastas/arquivos no repo
+> Uma linha por suíte ou grupo de CTs com a mesma estratégia. Não replique aqui os passos e asserts dos casos de teste.
 
-<convenção de nome de spec/arquivo — 1 por suíte/domínio ou por CT>
+## Pronto para codar quando
 
-### 2. Estratégia de reaproveitamento
+- [ ] CTs e comportamento esperado estão definidos em `../00 QA/03 - Casos de teste`.
+- [ ] Validação manual e disponibilidade do comportamento no ambiente-alvo foram confirmadas, conforme aplicável.
+- [ ] Dados, estado inicial e forma de isolamento/preparação estão definidos.
+- [ ] Dependências que impedem a implementação foram resolvidas ou os CTs afetados foram explicitamente retirados do escopo desta rodada.
 
-<commands/factories/fixtures já existentes a reaproveitar; o que precisa ser criado>
+## Pronto para validar quando
 
-### 3. Camada API vs E2E — regra geral
-
-<quando um CT é melhor coberto via API e quando precisa de E2E de verdade>
-
-### 4. Caminho de investigação técnica
-
-<o que precisa ser descoberto antes de codar — captura de API, shape de payload, mutation/enum reais>
-
-### 5. Faseamento
-
-<fases do trabalho — ex.: Fase 0 investigação, Fase 1 infraestrutura, Fase 2 codar, Fase 3 validar>
+- [ ] Implementação concluída e CTs mapeados aos testes no repo.
+- [ ] Ambiente e instruções de execução confirmados.
 
 ---
 
-## Dúvidas em aberto
-
-- <pergunta pra confirmar antes de assumir>
-
----
-
-## Aplicação no QA / Sogov
-
-<como este plano vira trabalho real — ordem de execução, gates antes de autorizar>
-
----
-
-## Referências
-
-- [[../00 QA/03 - Casos de teste|03 - Casos de teste]] — fonte única dos CTs
-- Repo: `<nome do repo>`
+**Execução direta:** se não houver escolha técnica ou preparação especial, preencher a tabela com a camada escolhida, reuso disponível e “nenhuma” dependência. O plano continua sendo criado; não precisa crescer para justificar sua existência.

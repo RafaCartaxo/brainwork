@@ -1,7 +1,7 @@
 ---
-demanda: "[[01 - Demanda]]"
-plano: "[[02 - Plano de teste]]"
-validacao: "[[04 - Validação dev]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]"
+plano: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/02 - Plano de teste]]"
+validacao: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]"
 status: planejado
 pontos: ""
 ---
@@ -9,11 +9,11 @@ pontos: ""
 # Casos de teste — SGV-9982
 
 > [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/02 - Plano de teste]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]  
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/05 - Preparação Qase]]
 
 > [!settings]- Controle dos casos de teste  
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
@@ -26,17 +26,17 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c2\|C2]] | [[03 - Casos de teste#^ct-001\|CT-001]] |
-| [[01 - Demanda#^c3\|C3]] | [[03 - Casos de teste#^ct-002\|CT-002]] |
-| [[01 - Demanda#^c4\|C4]] | [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c5\|C5]] | [[03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c6\|C6]] | [[03 - Casos de teste#^ct-006\|CT-006]] |
-| [[01 - Demanda#^c7\|C7]] | [[03 - Casos de teste#^ct-007\|CT-007]] |
-| [[01 - Demanda#^c8\|C8]] | [[03 - Casos de teste#^ct-008\|CT-008]] |
-| [[01 - Demanda#^c9\|C9]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
-| RNF03 (isolamento por usuário) | [[03 - Casos de teste#^ct-010\|CT-010]] |
-| RNF04 (persistência entre sessões) | [[03 - Casos de teste#^ct-011\|CT-011]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c1\|C1]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-003\|CT-003]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-004\|CT-004]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-005\|CT-005]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c2\|C2]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-001\|CT-001]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-002\|CT-002]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-003\|CT-003]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-004\|CT-004]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-005\|CT-005]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-006\|CT-006]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-007\|CT-007]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-008\|CT-008]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-012\|CT-012]] |
+| RNF03 (isolamento por usuário) | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-010\|CT-010]] |
+| RNF04 (persistência entre sessões) | [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste#^ct-011\|CT-011]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -68,7 +68,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhum dado é alterado; o dialog permanece aberto aguardando a decisão do usuário.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2|C2]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c2|C2]]
 >
 > ---
 >
@@ -107,7 +107,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** tramitação encerrada conforme o tipo escolhido; usuário na mesa de trabalho.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c3|C3]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c3|C3]]
 >
 > ---
 >
@@ -146,7 +146,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** tramitação do documento encerrada para todos os setores envolvidos; usuário permanece na tela do documento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]], [[01 - Demanda#^c4|C4]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c1|C1]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -185,7 +185,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** participação do setor e dos colaboradores encerrada; usuário permanece na tela do documento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]], [[01 - Demanda#^c4|C4]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c1|C1]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -224,7 +224,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** participação do próprio usuário encerrada; usuário permanece na tela do documento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]], [[01 - Demanda#^c4|C4]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c1|C1]], [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -262,7 +262,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** a preferência do usuário permanece "permanecer" independentemente do tipo de encerramento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c6|C6]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c6|C6]]
 >
 > ---
 >
@@ -300,7 +300,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração ocorre até que o usuário confirme ou cancele.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c7|C7]]
 >
 > ---
 >
@@ -338,7 +338,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** na próxima abertura de qualquer um dos três dialogs, o checkbox aparece desmarcado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -376,7 +376,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** próxima abertura do dialog reflete a preferência anterior à tentativa, não a alteração descartada.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c5|C5]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c5|C5]]
 >
 > ---
 >
@@ -494,7 +494,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de estado — validação apenas visual/textual, sem confirmar nem cancelar o encerramento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda#^c9|C9]]
 >
 > ---
 >

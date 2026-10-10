@@ -14,16 +14,18 @@ Diferente de [[../Skills/README|Skills]] (que são instruções de referência p
 | Agente | Gatilho | O que faz |
 |---|---|---|
 | [[AGENTE_PROCESSAR_EXPORT]] | "processa o material novo" / "processa o export SGV-XXXX" | Pipeline completo: classifica .md bruto do Notion (task? triagem? doc?) → limpa → roteia pro destino (mesa/card/conhecimento/triagem) |
-| [[AGENTE_FILA]] | **Sessão de IA**: "organiza a fila" / "processa o dia" (o 🔄 só prepara idade e concluídos) | Reorganiza "A fazer hoje": agrupa por natureza (🎯🔎📤👁️📋), sinaliza idade (🕐) e bloqueio (⏳), move concluídos, alerta zumbis +7d |
-| [[AGENTE_ORGANIZADOR]] | **Script** no 🔄 (só a parte mecânica) · **Sessão de IA** em "organiza a daily" / "processa o dia" (classificação completa). Modo 7h: ⚠️ previsto, **sem cron ativo** | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards, mantém a fila viva |
+| [[AGENTE_FILA]] | **Sessão de IA** (skill `organiza-daily`): "organiza a fila" / "processa o dia" (o 🔄 só prepara idade e concluídos) | Reorganiza "A fazer hoje": agrupa por natureza (🎯🔎📤👁️📋), sinaliza idade (🕐) e bloqueio (⏳), move concluídos, alerta zumbis +7d |
+| [[AGENTE_ORGANIZADOR]] | **Script** no 🔄 (só a parte mecânica) · **Sessão de IA** via skill `organiza-daily` (`~/.claude/skills/organiza-daily/`) em "organiza a daily" / "processa o dia" (classificação completa). Modo 7h: ⚠️ previsto, **sem cron ativo** (existe um skill agendado pronto, `qa-inbox-auto-organizacao`, mas não está registrado em nenhum cron) | Classifica registros crus, completa ciclos de pendências, reconcilia Atividades com cards. **Não mantém mais a fila viva automaticamente** (retirado 06/10/2026 — ver abaixo) |
 | [[AGENTE_MIGRACAO_CARDS]] | Conclusão de pendência / "move o card" (IA) / verificação diária | Move cards entre pastas da esteira atualizando wikilinks, frontmatter e Histórico atomicamente |
-| [[AGENTE_STATUS_REUNIAO]] | Organização da daily (disparado pelo AGENTE_ORGANIZADOR) / "status da reunião" (IA) / `/status-reuniao` | Lê Atividades + fila da daily e gera o bloco Status — reunião (Fiz/Foco/Travas) |
+| [[AGENTE_STATUS_REUNIAO]] | Skill `status-reuniao` (`~/.claude/skills/status-reuniao/`) — chamado pelo `organiza-daily` ou direto: "status da reunião" / `/status-reuniao` | Lê Atividades + fila da daily e gera o bloco Status — reunião (Fiz/Foco/Travas) |
 | [[AGENTE_VALIDACAO_DOC]] | **Sessão de IA**: "organiza a daily" / "processa o dia" (o 🔄 não faz gate de doc) | Rede de segurança do gate de doc: sinaliza cards aprovados sem cruzamento contra a doc do módulo (levanta pendência ⏳) |
 
 ## Gatilhos compartilhados
 
-> [!important] Fila automática (🔄/`qa-atualiza.py`) aposentada em 24/09/2026
-> Decisão do Rafael, registrada nas dailies de 24-25/09: o botão 🔄/script **parou de ser a fonte viva da fila** de pendências. O script não foi apagado nem alterado — só deixou de ser tratado como fonte de verdade, e **não rastreia pacotes** (`02 Demandas/<ambiente>/<SGV> - <título>/`, o padrão desde 24/09). Tracking de pendência agora é **manual**: "Pendente para amanhã" nas dailies + `00 README` do pacote. Isso afeta [[AGENTE_FILA]], [[AGENTE_ORGANIZADOR]], [[AGENTE_STATUS_REUNIAO]] e [[AGENTE_VALIDACAO_DOC]] — a descrição operacional de cada um abaixo continua valendo pro que o agente faz quando chamado, mas nenhum deles roda mais a partir do 🔄 como fonte viva de pendência.
+> [!important] Decisão final sobre a fila automática (06/10/2026)
+> Em 24/09/2026 Rafael zerou a fila automática (131 itens acumulados) e pausou o ponto pra decidir depois. Em 06/10/2026 o diagnóstico fechou: a reconciliação de Atividades (o que foi feito vira estado do card) sempre funcionou bem — o problema era só a injeção incondicional de `SGV-XXXX - Acompanhar (<título>)` pra **todo** card aberto com dono, todo dia, sem distinguir se havia ação nova. Essa injeção foi **removida do `qa-atualiza.py`** (`sincroniza_demandas_ativas`, ramo "card normal"). O que continua igual: aninhamento de defeito sob a pai, idade (`🕐`/`⚠️`/`🚨`), coleta de `[x]`, reconciliação de Atividades, `resolve_pendencias_obsoletas`. O que mudou: visibilidade passiva de card aberto sem ação pendente agora é a seção **"Seus cards abertos"** da [[../../QA Workspace/Dashboard/Dashboard|Dashboard]], não mais uma linha na fila do dia — "A fazer hoje" volta a ser só o que tem ação pendente de verdade, escrito manualmente ou por sessão de IA (nunca por varredura). Isso afeta [[AGENTE_FILA]], [[AGENTE_ORGANIZADOR]], [[AGENTE_STATUS_REUNIAO]] e [[AGENTE_VALIDACAO_DOC]] — a descrição operacional de cada um abaixo continua valendo pro que o agente faz quando chamado.
+>
+> **Status — reunião** também ganhou gatilho real nesta correção: os skills `status-reuniao` e `organiza-daily` do Claude Code (`~/.claude/skills/`) implementam [[AGENTE_STATUS_REUNIAO]] e [[AGENTE_ORGANIZADOR]] de verdade — antes, o "comando `/status-reuniao`" era só uma promessa em markdown que nenhuma ferramenta executava.
 
 > [!warning] O botão 🔄 **não dispara agente nenhum** — corrigido em 30/07
 > Esta tabela dizia que o 🔄 disparava cinco agentes. **É impossível**: o botão executa `.obsidian/scripts/qa-atualiza.py`, que é Python e não invoca IA.
@@ -32,8 +34,8 @@ Diferente de [[../Skills/README|Skills]] (que são instruções de referência p
 
 | Pedido | O que o **script** faz | O que só a **IA** faz |
 |---|---|---|
-| **🔄 Atualizar** (ou rodar o `.py`) | Cria a daily, carry-over, envelhece a fila, recolhe `[x]`, reconcilia cards, roteia evidência, mantém a fila viva, grava o log | — |
-| **"processa o dia"** / **"organiza a daily"** | O mesmo do 🔄 (é o passo 1) | Agrupar a fila ([[AGENTE_FILA]]) · regenerar o Status ([[AGENTE_STATUS_REUNIAO]]) · classificar registro cru ([[AGENTE_ORGANIZADOR]]) · gate de doc ([[AGENTE_VALIDACAO_DOC]]) · agir nos avisos do log |
+| **🔄 Atualizar** (ou rodar o `.py`) | Cria a daily, carry-over, envelhece a fila, recolhe `[x]`, reconcilia cards, roteia evidência, aninha defeito sob pai existente, grava o log | — |
+| **"processa o dia"** / **"organiza a daily"** (skill `organiza-daily`) | O mesmo do 🔄 (é o passo 1) | Agrupar a fila ([[AGENTE_FILA]]) · regenerar o Status ([[AGENTE_STATUS_REUNIAO]], skill `status-reuniao`) · classificar registro cru ([[AGENTE_ORGANIZADOR]]) · gate de doc ([[AGENTE_VALIDACAO_DOC]]) · agir nos avisos do log |
 | **"processa o material novo"** | — | [[AGENTE_PROCESSAR_EXPORT]] |
 | **"move o card"** | Move sozinho quando a daily declara o desfecho | [[AGENTE_MIGRACAO_CARDS]] nos casos que exigem julgamento |
 

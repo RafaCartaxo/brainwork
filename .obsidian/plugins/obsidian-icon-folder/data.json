@@ -229,17 +229,29 @@
     "iconName": "LiBot",
     "iconColor": "#7c3aed"
   },
-  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida": {
-    "iconName": "LiKeyRound",
-    "iconColor": "#4338ca"
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo": {
+    "iconName": "LiArchive",
+    "iconColor": "#78350f"
   },
-  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA": {
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior": {
+    "iconName": "LiArchive",
+    "iconColor": "#64748b"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA": {
     "iconName": "LiClipboardList",
     "iconColor": "#2563eb"
   },
-  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação": {
-    "iconName": "LiBot",
-    "iconColor": "#7c3aed"
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset": {
+    "iconName": "LiNetwork",
+    "iconColor": "#4338ca"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/Fontes": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#ca8a04"
   },
   "Sistema/Templates/Pacote/00 QA": {
     "iconName": "LiClipboardList",
@@ -304,5 +316,53 @@
   "QA Workspace/01 Daily/2026-10": {
     "iconName": "LiCalendar",
     "iconColor": "#d97706"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados": {
+    "iconName": "LiStars",
+    "iconColor": "#eab308"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/Conhecimento": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#e11d48"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs": {
+    "iconName": "LiBug",
+    "iconColor": "#c82626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-007": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-010": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-011": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10736 - Normalização das informações/Bugs/10736-CT-002": {
+    "iconName": "LiBug",
+    "iconColor": "#dc2626"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/HML/SGV-9657 - API esic - Melhorias nos dados disponibilizados/SGV-10735 - Criação da feature de integrações/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/Especificações do preset piloto": {
+    "iconName": "LiLibrary",
+    "iconColor": "#4338ca"
   }
 }

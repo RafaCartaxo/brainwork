@@ -5,21 +5,22 @@ tags:
 ---
 # Agente: Status — Reunião
 
-> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+> [!success] Gatilho real implementado em 06/10/2026
+> Até aqui, a única forma de rodar este agente era uma sessão de IA ler esta spec e seguir de memória — o comando `/status-reuniao` citado abaixo era uma promessa em markdown, não algo invocável de fato (a versão anterior desta doc ainda citava um comando "do opencode", outra ferramenta — nunca existiu neste ambiente). Agora existe skill real do Claude Code: [[../../.claude/skills/status-reuniao/SKILL.md|status-reuniao]] (`~/.claude/skills/status-reuniao/`), que implementa esta spec. Invocar dizendo "status da reunião", "gera meu status" ou "/status-reuniao" numa sessão de Claude Code aberta neste vault.
 
 Ler a daily de hoje e gerar o bloco **Status — reunião** (Fiz / Foco de hoje / Travas) automaticamente — lista rastreável do que foi feito, não roteiro de fala.
 
 ## Por que existe
 
-O bloco Status — reunião é "regenerado, não acumulado" — ele deve refletir o estado atual, não acumular itens dia após dia. Hoje é feito manualmente ou sob demanda ("gera meu status da reunião"). Automatizar elimina esse passo e garante que o bloco sempre reflita o que está registrado na daily.
+O bloco Status — reunião é "regenerado, não acumulado" — ele deve refletir o estado atual, não acumular itens dia após dia. Automatizar elimina o passo manual e garante que o bloco sempre reflita o que está registrado na daily.
 
 ## Gatilhos
 
 | Gatilho | Executor | O que acontece |
 |---|---|---|
 | **🔄 Atualizar** (Dashboard) | Script (`qa-atualiza.py`) | **Nada além do esqueleto.** Ao criar a daily do dia, o script escreve o callout vazio com `Fiz`/`Foco de hoje`/`Travas`. Ele **não gera conteúdo** — não lê Atividades nem deriva nada |
-| **Sessão de IA** | Este agente | Gera e **regenera por inteiro** o bloco, derivando de Atividades + fila. "organiza a daily", "gera meu status da reunião" ou "processa o dia" |
-| **Comando** `/status-reuniao` | Este agente | Mesmo trabalho, invocado direto |
+| **Sessão de IA** | Skill `status-reuniao` (Claude Code) | Gera e **regenera por inteiro** o bloco, derivando de Atividades + fila. "organiza a daily"/"processa o dia" chama o skill `organiza-daily`, que termina chamando este |
+| **Comando** `/status-reuniao` | Skill `status-reuniao` (Claude Code) | Mesmo trabalho, invocado direto |
 > [!warning] O botão 🔄 **não** dispara este agente — e confundir isso já custou caro
 > O 🔄 executa `.obsidian/scripts/qa-atualiza.py`, que é **Python**: ele não invoca agente de IA. Só prepara a parte mecânica.
 >

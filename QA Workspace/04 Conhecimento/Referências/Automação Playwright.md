@@ -133,20 +133,130 @@ Regras que o lint cobra:
 
 Proibido pelo ESLint: `waitForTimeout`, `elementHandle`, asserção que não seja web-first, `expect` sem `await`.
 
+## Fluxo do QA com o repositório
+
+Do card validado até o teste entregue. Os dois primeiros losangos são **gates**: não se passa deles sem resposta.
+
+```mermaid
+flowchart TD
+    A[Card validado + CTs executados] --> B{Fix está no ambiente do .env?}
+    B -- Não --> Z[Parar: registrar pendência na daily]
+    B -- Sim --> C[Ler CTs e doc do módulo]
+    C --> D{O comportamento é verificável por API?}
+    D -- Sim --> E[tests/api/dominio]
+    D -- Só existe na tela --> F[tests/e2e/dominio]
+    E --> G{Altera cadastro compartilhado?}
+    F --> G
+    G -- Sim --> H[Ator exclusivo: baseline.ts + ownership.ts + tag shared-state]
+    G -- Não --> I[Usa o ator padrão do pool]
+    H --> J[Rodar seed para provisionar]
+    J --> K[Reservar ID livre: A-NN ou E-NN]
+    I --> K
+    K --> L[Escrever spec: fixtures, massa por API, comentário de origem]
+    L --> M[Rodar só o caso: run.mjs --grep ID]
+    M --> N{Verde?}
+    N -- Não --> O{É bug meu, achado real ou instabilidade?}
+    O -- Bug meu --> L
+    O -- Achado real --> P[Registrar defeito, não mexer na asserção]
+    O -- Instabilidade --> M
+    N -- Sim --> Q[npm run verify]
+    Q --> R[Revisão antes do commit]
+    R --> S[Commit + MR]
+```
+
+`Card validado → Gates → Camada → Ator → ID → Spec → Verde → Verify → Revisão`
+
+A triagem de falha em três categorias (bug meu × achado real × instabilidade) vem da [[SKILL_AUTOMACAO_TERMO_REFERENCIA]] e continua valendo igual — é independente de framework.
+
+### A ordem do que chamar
+
+| # | Comando | Quando |
+|---|---|---|
+| 1 | `npm run test:infra` | Depois de mexer em config, seed ou ownership. Local, não toca no ambiente |
+| 2 | `node scripts/run.mjs --project=api --grep "A55"` | Enquanto escreve — só o seu caso |
+| 3 | `npm run test:api` / `test:e2e` | Domínio inteiro, antes de considerar pronto |
+| 4 | `npm run verify` | Antes do commit: typecheck + lint + knip + independência + infra + audit |
+| 5 | `npm run report` | Ver o que falhou, com trace |
+
+> [!tip] O seed roda sozinho
+> `api`, `e2e-chromium` e `version` declaram `dependencies: ['seed']` — o Playwright executa o seed **automaticamente** antes deles. `npm run test:seed` avulso só é necessário em dois casos: no **UI mode** (`test:ui` não executa dependências) e para provisionar um ator novo que você acabou de declarar no `baseline.ts`.
+>
+> `infrastructure` **não** depende do seed: roda isolado, sem tocar no ambiente.
+
+```mermaid
+flowchart LR
+    S[seed] --> A[api]
+    S --> E[e2e-chromium]
+    S --> V[version]
+    I[infrastructure] -.->|sem dependência| X[não toca no ambiente]
+```
+
 ## Como rodar
 
-Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` direto.
+Sempre via `scripts/run.mjs` (gera o `PW_RUN_ID`), **nunca** `playwright test` direto. Os scripts `npm run test:*` já chamam o launcher.
+
+```mermaid
+flowchart TD
+    A[Quero rodar a automação] --> B{Primeira vez nesta máquina?}
+    B -- Sim --> C[npm install + playwright install chromium]
+    C --> D[Montar o .env]
+    D --> E[npm run test:infra]
+    E --> F{50 de 50 verde?}
+    F -- Não --> G[Config ou .env errado: conferir variáveis]
+    G --> D
+    F -- Sim --> H
+    B -- Não --> H{O que você quer fazer?}
+    H -- Conferir que está tudo de pé --> I[npm run test:smoke]
+    H -- Estou escrevendo um caso --> J[run.mjs --project e --grep do ID]
+    H -- Fechar um domínio --> K[npm run test:api ou test:e2e]
+    H -- Vou commitar --> L[npm run verify]
+    I --> M{Verde?}
+    J --> M
+    K --> M
+    L --> M
+    M -- Sim --> N[Seguir em frente]
+    M -- Não --> O[npm run report: abrir o trace]
+    O --> P{Natureza da falha}
+    P -- Bug no meu teste --> Q[Corrigir o spec]
+    P -- Achado real de produto --> R[Registrar defeito, não mexer na asserção]
+    P -- Instabilidade ou PDF saturado --> S[Repetir em lote menor]
+    Q --> M
+    S --> M
+```
+
+O seed **não aparece no diagrama de propósito**: ele roda sozinho antes de `api`, `e2e-chromium` e `version`. Você nunca precisa chamá-lo — exceto no UI mode ou ao provisionar ator novo.
+
+### No dia a dia
 
 ```bash
-cd playwright
-npm install && npx playwright install chromium   # install, NÃO ci — ver aviso abaixo
-# montar o .env (ver tabela de variáveis logo abaixo)
-npm run test:infra      # valida config e guard-rails, sem tocar no ambiente
-npm run test:seed       # obrigatório antes da primeira rodada — bate no homolog
-npm run test:api
-npm run test:e2e
-npm run verify          # typecheck + lint + knip + independência + infra + audit
-node scripts/run.mjs --project=api --grep "A12"   # um caso só
+cd ~/Documentos/Sogov/sogov-automation-playwright/playwright
+
+npm run test:smoke    # 10 casos críticos — melhor primeiro comando, valida tudo em poucos minutos
+npm run test:api      # 202 testes
+npm run test:e2e      # 147 testes, bem mais lento
+npm run report        # abre o relatório da última rodada, com trace das falhas
+```
+
+Um caso ou um domínio específico:
+
+```bash
+node scripts/run.mjs --project=api --grep "A55"
+node scripts/run.mjs --project=e2e-chromium --grep @signatures
+```
+
+> [!danger] Não rode `npm run test`
+> A suíte inteira de uma vez satura o gerador de PDF do backend e produz falhas que **não são bugs reais** (`system.messages.pdf-generator-attachment-error`). Vá por domínio, em lotes de 15–20 min. Os specs de `signatures` são anormalmente lentos — trate à parte, com tempo reservado.
+>
+> Duas execuções simultâneas no mesmo ambiente também não são suportadas.
+
+### Setup da máquina (uma vez só)
+
+```bash
+cd ~/Documentos/Sogov/sogov-automation-playwright/playwright
+npm install                        # install, NÃO ci — ver aviso abaixo
+npx playwright install chromium
+# montar o .env (tabela de variáveis logo abaixo)
+npm run test:infra                 # confirma que a config está de pé, sem tocar no ambiente
 ```
 
 > [!warning] `npm ci` não funciona — o pacote não tem lockfile versionado
@@ -183,7 +293,7 @@ O `.env` está coberto por `.gitignore` (`.env*`), então não corre o risco dos
 > [!warning] Três lacunas abertas em 01/10/2026
 > 1. **O CI continua 100% Cypress** — `.gitlab-ci.yml` usa `image: cypress/included:16.0.0`. Nenhum pipeline roda Playwright. **Enquanto isso durar, a suíte Playwright não protege merge nenhum** — é a inconsistência mais séria, e não se resolve do lado do vault.
 > 2. **As skills e agentes `.claude/` do repo ensinam Cypress** linha a linha (`cy.loginAgent`, `cy.apiRequest`, `cy.goToFresh`). Quem pedir "cria um teste" hoje é empurrado para o framework que está sendo descartado. Proposta de correção: [[2026-10-01-skills-automacao-playwright]].
-> 3. ~~**O TR 1.24-1.25 não existe no lado Playwright** — zero ocorrências de `CT-0` em `playwright/`. Há `tests/api/auth/{login,credentials}.spec.ts`, mas sem relação com a numeração CT-001…CT-038.~~ **Corrigido em 02/10/2026** — essa conclusão estava errada: só buscou pelo rótulo literal `CT-0`, sem comparar o conteúdo. `tests/api/auth/login.spec.ts` e `credentials.spec.ts` **são** o porte de CT-001 a CT-012 (Suítes 1 e 2) — títulos idênticos aos do `03 - Casos de teste`, só com rótulo de teste diferente (`A02-C01`...`A02-C09`, `A01-C01`...`A01-C03`). Confirmado verde num run real de 01/10/2026 (`playwright/test-results/results.xml`, 398 testes). Restam as Suítes 3, 4 e 5 (26 CTs) a portar. Ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/01 Automação/01 - Plano de automação|Plano de Automação]].
+> 3. ~~**O TR 1.24-1.25 não existe no lado Playwright** — zero ocorrências de `CT-0` em `playwright/`. Há `tests/api/auth/{login,credentials}.spec.ts`, mas sem relação com a numeração CT-001…CT-038.~~ **Corrigido em 02/10/2026** — essa conclusão estava errada: só buscou pelo rótulo literal `CT-0`, sem comparar o conteúdo. `tests/api/auth/login.spec.ts` e `credentials.spec.ts` **são** o porte de CT-001 a CT-012 (Suítes 1 e 2) — títulos idênticos aos do `03 - Casos de teste`, só com rótulo de teste diferente (`A02-C01`...`A02-C09`, `A01-C01`...`A01-C03`). Confirmado verde num run real de 01/10/2026 (`playwright/test-results/results.xml`, 398 testes). Restam as Suítes 3, 4 e 5 (26 CTs) a portar. Ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/01 - Plano de automação|Plano de Automação]].
 
 ## Antes de escrever o primeiro spec
 

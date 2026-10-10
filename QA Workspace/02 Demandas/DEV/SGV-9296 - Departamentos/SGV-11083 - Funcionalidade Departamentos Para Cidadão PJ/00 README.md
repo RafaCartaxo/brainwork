@@ -18,11 +18,11 @@ pontos: ""
 # SGV-11083 — Departamentos para cidadão Pessoa Jurídica
 
 > [!info]- Navegação QA/DEV
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/02 - Plano de teste]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/04 - Validação dev]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle do card

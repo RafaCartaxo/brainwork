@@ -1,23 +1,25 @@
 ---
-tags: [qa, qase]
+tags:
+  - qa
+  - qase
 tipo: referencia
 status: enviado
 tipo_card: melhoria
 projeto: ""
-modulo: "Tramitação — Encerramento de documento"
+modulo: Tramitação — Encerramento de documento
 qase_projeto: SGV
 qase_suite_id: 358
-casos_origem: "[[03 - Casos de teste]]"
-validacao_origem: "[[04 - Validação dev]]"
+casos_origem: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]"
+validacao_origem: "[[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]"
 ---
 # Preparação Qase — SGV-9982
 
 > [!info]- Navegação QA
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/02 - Plano de teste]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/04 - Validação dev]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/05 - Preparação Qase]]
 
 Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT novo: apenas traduz os casos já existentes em `03 - Casos de teste` (todos aprovados na validação, incluindo CT-009 e CT-012, corrigidos após defeito) para os campos da API.
 
@@ -28,7 +30,7 @@ Esta nota transforma os CTs refinados do vault em casos da Qase. Não cria CT no
 
 - **Projeto Qase:** `SGV`
 - **Suite Qase:** `358` — [9982 - Permitir escolher permanecer no documento ou voltar à mesa ao encerrar](https://app.qase.io/project/SGV?suite=358), filha de `125` (Melhorias/Funcionalidades)
-- **Origem:** [[03 - Casos de teste]] (CT-001 a CT-012 — todos aplicáveis, nenhum "Não se aplica")
+- **Origem:** [[QA Workspace/02 Demandas/DEV/SGV-9982 - Permanecer no documento após encerrar/03 - Casos de teste]] (CT-001 a CT-012 — todos aplicáveis, nenhum "Não se aplica")
 - **Script/payload:** `Sistema/Scripts/qase-sync/9982-tramitacao/` no vault (`sync.js` + `corrections.json` + `README.md`)
 
 ## Mapeamento dos campos

@@ -5,7 +5,8 @@ tags:
 ---
 # Agente: Auto-organização da Daily
 
-> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+> [!warning] Invariante da fila viva (injeção automática de "Acompanhar") retirada em 06/10/2026 — ver [[README|Agentes/README]]
+> O resto desta spec (classificação de registros crus, continuação de pendências concluídas, reconciliação de Atividades) continua valendo e tem gatilho real: skill `organiza-daily` do Claude Code.
 
 Classificar e rotear os registros crus da daily (anotações e bugs ainda não estruturados) pras referências corretas do vault, nos dois modos possíveis: pedido manual numa sessão, ou tarefa agendada rodando sozinha. Design completo em [[../Specs/2026-07-14-inbox-auto-organizacao-design.md|Spec]].
 
@@ -86,33 +87,28 @@ Rafael pode trabalhar direto pelas **Atividades**: escrever a frase padrão à m
 
 **O fim implica os passos anteriores**: registrar direto o estágio final (card ainda em DEV, atividade diz "aprovada em homologação") não trava nada — o card avança até o estado declarado e o Histórico registra `(etapas anteriores concluídas implicitamente)`. Idempotente: estado já refletido não é reaplicado.
 
-## Invariante da fila viva
+## Invariante da fila viva (histórico — retirada em 06/10/2026)
 
-**Todo card em aberto (`02 Demandas/` fora de `Concluídas/`) e COM DONO tem um item ativo em "A fazer hoje"** — em qualquer estágio: a refinar, refinada, cadastrada no Notion, em validação, reaberta, aguardando dev. Vale pra bug, melhoria, funcionalidade, POC — tudo.
+> [!warning] Esta seção descreve um comportamento que não roda mais
+> Até 05/10/2026, `sincroniza_demandas_ativas()` injetava `SGV-XXXX - Acompanhar (<título>)` em "A fazer hoje" pra **todo** card aberto com dono, todo dia — sem distinguir se havia algo novo pra decidir. Chegou a 131 itens até 24/09, decisão do Rafael zerou a fila, e em 06/10/2026 o ramo que criava essa linha de topo foi removido do script (o aninhamento de defeito sob a pai continua existindo, só não roda mais sozinho quando a pai não tem linha). Visibilidade passiva de card aberto com dono, sem ação pendente, agora é a seção **"Seus cards abertos"** da [[../../QA Workspace/Dashboard/Dashboard|Dashboard]] — mesmo padrão da seção "Sem dono" abaixo.
 
-> [!important] Exceção: card **sem dono** fica fora da fila
-> Card com `responsavel` **vazio** está disponível pra qualquer QA pegar e **não gera item** ([[../Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]). A fila é a lista do que é **seu**; encher ela com trabalho de ninguém é o mesmo ruído que os defeitos aninhados resolveram.
+**Todo card em aberto (`02 Demandas/` fora de `Concluídas/`) e COM DONO tinha um item ativo em "A fazer hoje"** — em qualquer estágio: a refinar, refinada, cadastrada no Notion, em validação, reaberta, aguardando dev. Valia pra bug, melhoria, funcionalidade, POC — tudo. **Hoje**: pendência nasce em "A fazer hoje" quando alguém (Rafael ou sessão de IA) escreve ela — não por varredura automática.
+
+> [!important] Exceção (segue valendo): card **sem dono** fica fora da fila
+> Card com `responsavel` **vazio** está disponível pra qualquer QA pegar e **não gera item** ([[../Contexto/PADROES_QA#Organização de Bugs|PADROES_QA]]). A fila é a lista do que é **seu**.
 >
-> **Sai da fila, mas não some**: aparece na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]] → "Sem dono — disponível pra pegar". Nunca é aviso recorrente no `[!organizacao]` — aviso diário sobre algo que ninguém pediu pra fazer vira exatamente o incômodo que a exceção existe pra evitar.
+> Aparece na [[../../QA Workspace/Dashboard/Dashboard|Dashboard]] → "Sem dono — disponível pra pegar".
 >
 > Precedente: SGV-10363 (18/08), aprovada em DEV com a homologação aberta pro time.
 
-Na prática:
-- Pendência que nasce durante o dia entra em **A fazer hoje**
-- O botão 🔄 Atualizar **garante o invariante sozinho**: varre os cards abertos e, pra cada um sem item ativo na fila, move a pendência correspondente do "Pendente para amanhã" pra cima — ou cria o próximo passo padrão conforme o tipo de card:
-  - Card com `task` preenchido → `SGV-XXXX - Acompanhar (<título>)`
-  - Card sem `task`, tag `bug` → `Cadastrar bug <título> no Notion`
-  - Card sem `task`, template Demanda com campo `mel` preenchido (não vazio) → `Cadastrar melhoria MEL-NNNN no Notion`
-  - Card sem `task`, outros casos → `SGV-XXXX - Acompanhar (<título>)` (fallback seguro)
-- A demanda só sai da fila quando o card sai da esteira (Concluídas ou 99 Arquivo)
+> [!note] Achado ao corrigir isto (06/10/2026): duas peças abaixo nunca foram implementadas
+> "Mesas de refinamento" e "Cards com deploy pendente" descreviam geração automática de pendência que **nunca existiu em `qa-atualiza.py`** — conferido no código: não há leitura de `05 Refinar/` nem do campo `deploy` fora de `reconcilia_atividades` (que só *impede* fechamento automático quando `deploy: pendente_*`, não cria pendência nova). Gap pré-existente, independente da decisão de 24/09 — fica registrado aqui como pendência separada, fora do escopo de hoje.
 
-**Mesas de refinamento (`05 Refinar/`)**: seguem a mesma lógica. Toda mesa com `status: em_refinamento` sem pendência ativa na fila ganha `SGV-XXXX - Refinar (material em 05 Refinar/)` automaticamente. Mesa parada há +3 dias sem atualização → sinaliza `⏳` na pendência.
+~~**Mesas de refinamento (`05 Refinar/`)**: seguem a mesma lógica. Toda mesa com `status: em_refinamento` sem pendência ativa na fila ganha `SGV-XXXX - Refinar (material em 05 Refinar/)` automaticamente. Mesa parada há +3 dias sem atualização → sinaliza `⏳` na pendência.~~
 
-**Cards com deploy pendente**: o invariante gera pendências específicas em vez de "Validar" ou "Acompanhar" quando o frontmatter tem o campo `deploy`:
-- `deploy: pendente_hml` → `⏳ SGV-XXXX - Aguardando deploy HML (aprovado em DEV, fix não subiu)`
-- `deploy: pendente_release` → `⏳ SGV-XXXX - Aguardando release (aprovado em HML, aguardando janela)`
-
-Quando o flag é removido do frontmatter (deploy confirmado), o organizador detecta a ausência do campo e substitui a pendência pelo próximo passo normal: "Validar em HML" ou "Acompanhar" (se já em Concluídas).
+~~**Cards com deploy pendente**: o invariante gera pendências específicas em vez de "Validar" ou "Acompanhar" quando o frontmatter tem o campo `deploy`:~~
+~~- `deploy: pendente_hml` → `⏳ SGV-XXXX - Aguardando deploy HML (aprovado em DEV, fix não subiu)`~~
+~~- `deploy: pendente_release` → `⏳ SGV-XXXX - Aguardando release (aprovado em HML, aguardando janela)`~~
 
 ## Invariante da Triagem confiável
 
@@ -134,7 +130,7 @@ Criar o card/checkbox no vault não fecha o ciclo — Bug e Melhoria ainda preci
 
 ## Status — reunião (sempre ao final)
 
-Após processar a daily **numa sessão de IA**, o organizador dispara o [[AGENTE_STATUS_REUNIAO]] pra regenerar o bloco **Status — reunião** no topo da daily. O Status reflete o estado pós-organização: Atividades do dia viram Fiz, a fila reorganizada vira Foco, novas pendências com `⏳` e `⚠️ gate de doc` viram Travas. No modo 🔄 (script determinístico), esta etapa é delegada ao comando `/status-reuniao` do opencode — o script Python sozinho não gera o bloco.
+Após processar a daily **numa sessão de IA**, o organizador dispara o [[AGENTE_STATUS_REUNIAO]] pra regenerar o bloco **Status — reunião** no topo da daily. O Status reflete o estado pós-organização: Atividades do dia viram Fiz, a fila reorganizada vira Foco, novas pendências com `⏳` e `⚠️ gate de doc` viram Travas. Na prática, isso é o skill `organiza-daily` do Claude Code chamando o skill `status-reuniao` como último passo (ambos em `~/.claude/skills/`). No modo 🔄 (script determinístico), esta etapa não acontece — o script Python sozinho não gera o bloco.
 
 ## Copy padronizada (obrigatória pro organizador)
 

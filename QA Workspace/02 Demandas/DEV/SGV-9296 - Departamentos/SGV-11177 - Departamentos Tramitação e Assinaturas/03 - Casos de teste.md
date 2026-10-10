@@ -1,7 +1,7 @@
 ---
-demanda: "[[01 - Demanda]]"
-plano: "[[02 - Plano de teste]]"
-validacao: "[[04 - Validação dev]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda]]"
+plano: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/02 - Plano de teste]]"
+validacao: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev]]"
 status: planejado
 pontos: ""
 ---
@@ -9,11 +9,11 @@ pontos: ""
 # Casos de teste — SGV-11177
 
 > [!info]- Navegação QA  
-> **Demanda:** [[01 - Demanda]]  
-> **Plano de teste:** [[02 - Plano de teste]]  
-> **Casos de teste:** [[03 - Casos de teste]]  
-> **Validação:** [[04 - Validação dev]]  
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda]]  
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/02 - Plano de teste]]  
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste]]  
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/04 - Validação dev]]  
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle dos casos de teste  
@@ -27,42 +27,42 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]] |
-| [[01 - Demanda#^c2\|C2]] | [[03 - Casos de teste#^ct-002\|CT-002]] |
-| [[01 - Demanda#^c3\|C3]] | [[03 - Casos de teste#^ct-003\|CT-003]] |
-| [[01 - Demanda#^c4\|C4]] | [[03 - Casos de teste#^ct-004\|CT-004]] |
-| [[01 - Demanda#^c5\|C5]] | [[03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c6\|C6]] | [[03 - Casos de teste#^ct-006\|CT-006]] |
-| [[01 - Demanda#^c7\|C7]] | [[03 - Casos de teste#^ct-007\|CT-007]] |
-| [[01 - Demanda#^c8\|C8]] | [[03 - Casos de teste#^ct-008\|CT-008]] |
-| [[01 - Demanda#^c9\|C9]] | [[03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c10\|C10]] | [[03 - Casos de teste#^ct-010\|CT-010]] |
-| [[01 - Demanda#^c11\|C11]] | [[03 - Casos de teste#^ct-011\|CT-011]] |
-| [[01 - Demanda#^c12\|C12]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
-| [[01 - Demanda#^c13\|C13]] | [[03 - Casos de teste#^ct-013\|CT-013]] |
-| [[01 - Demanda#^c14\|C14]] | [[03 - Casos de teste#^ct-014\|CT-014]] |
-| [[01 - Demanda#^c15\|C15]] | [[03 - Casos de teste#^ct-015\|CT-015]] |
-| [[01 - Demanda#^c16\|C16]] | [[03 - Casos de teste#^ct-016\|CT-016]] |
-| [[01 - Demanda#^c17\|C17]] | [[03 - Casos de teste#^ct-017\|CT-017]] |
-| [[01 - Demanda#^c18\|C18]] | [[03 - Casos de teste#^ct-018\|CT-018]] |
-| [[01 - Demanda#^c19\|C19]] | [[03 - Casos de teste#^ct-019\|CT-019]] |
-| [[01 - Demanda#^c20\|C20]] | [[03 - Casos de teste#^ct-020\|CT-020]] |
-| [[01 - Demanda#^c21\|C21]] | [[03 - Casos de teste#^ct-021\|CT-021]] |
-| [[01 - Demanda#^c22\|C22]] | [[03 - Casos de teste#^ct-022\|CT-022]] |
-| [[01 - Demanda#^c23\|C23]] | [[03 - Casos de teste#^ct-023\|CT-023]] |
-| [[01 - Demanda#^c24\|C24]] | [[03 - Casos de teste#^ct-024\|CT-024]] |
-| [[01 - Demanda#^c25\|C25]] | [[03 - Casos de teste#^ct-025\|CT-025]] |
-| [[01 - Demanda#^c26\|C26]] | [[03 - Casos de teste#^ct-026\|CT-026]] |
-| [[01 - Demanda#^c27\|C27]] | [[03 - Casos de teste#^ct-027\|CT-027]] |
-| [[01 - Demanda#^c28\|C28]] | [[03 - Casos de teste#^ct-028\|CT-028]] |
-| [[01 - Demanda#^c29\|C29]] | [[03 - Casos de teste#^ct-029\|CT-029]] |
-| [[01 - Demanda#^c30\|C30]] | [[03 - Casos de teste#^ct-030\|CT-030]] |
-| [[01 - Demanda#^c31\|C31]] | [[03 - Casos de teste#^ct-031\|CT-031]] |
-| [[01 - Demanda#^c32\|C32]] | [[03 - Casos de teste#^ct-032\|CT-032]] |
-| [[01 - Demanda#^c33\|C33]] | [[03 - Casos de teste#^ct-033\|CT-033]] |
-| [[01 - Demanda#^c34\|C34]] | [[03 - Casos de teste#^ct-034\|CT-034]] |
-| [[01 - Demanda#^c35\|C35]] | [[03 - Casos de teste#^ct-035\|CT-035]] |
-| [[01 - Demanda#^c36\|C36]] | [[03 - Casos de teste#^ct-036\|CT-036]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c1\|C1]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-001\|CT-001]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c2\|C2]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-002\|CT-002]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-003\|CT-003]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-004\|CT-004]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-005\|CT-005]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-006\|CT-006]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-007\|CT-007]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-008\|CT-008]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-010\|CT-010]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-011\|CT-011]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c12\|C12]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-012\|CT-012]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c13\|C13]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-013\|CT-013]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c14\|C14]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-014\|CT-014]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c15\|C15]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-015\|CT-015]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c16\|C16]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-016\|CT-016]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c17\|C17]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-017\|CT-017]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c18\|C18]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-018\|CT-018]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c19\|C19]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-019\|CT-019]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c20\|C20]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-020\|CT-020]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c21\|C21]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-021\|CT-021]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c22\|C22]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-022\|CT-022]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c23\|C23]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-023\|CT-023]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c24\|C24]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-024\|CT-024]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c25\|C25]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-025\|CT-025]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c26\|C26]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-026\|CT-026]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c27\|C27]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-027\|CT-027]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c28\|C28]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-028\|CT-028]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c29\|C29]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-029\|CT-029]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c30\|C30]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-030\|CT-030]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c31\|C31]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-031\|CT-031]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c32\|C32]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-032\|CT-032]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c33\|C33]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-033\|CT-033]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c34\|C34]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-034\|CT-034]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c35\|C35]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-035\|CT-035]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c36\|C36]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/03 - Casos de teste#^ct-036\|CT-036]] |
 
 Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao criar ou alterar CTs.
 
@@ -93,7 +93,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de estado — apenas exibição do resultado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c1|C1]]
 >
 > ---
 >
@@ -131,7 +131,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2|C2]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c2|C2]]
 >
 > ---
 >
@@ -169,7 +169,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** tramitação com o membro adicionado, pronta para ser efetivada.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c3|C3]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c3|C3]]
 >
 > ---
 >
@@ -207,7 +207,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** tramitação efetivada; notificações registradas para o membro.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c4|C4]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -245,7 +245,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** notificação registrada também para o e-mail do departamento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c5|C5]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c5|C5]]
 >
 > ---
 >
@@ -283,7 +283,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c6|C6]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c6|C6]]
 >
 > ---
 >
@@ -321,7 +321,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c7|C7]]
 >
 > ---
 >
@@ -359,7 +359,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -397,7 +397,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** PDF gerado disponível para conferência.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c9|C9]]
 >
 > ---
 >
@@ -435,7 +435,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** PDF gerado disponível para conferência.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c10|C10]]
 >
 > ---
 >
@@ -473,7 +473,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** solicitação com o departamento como signatário, pronta para ser enviada.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c11|C11]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c11|C11]]
 >
 > ---
 >
@@ -511,7 +511,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** documento assinado pelo membro que acessou primeiro; solicitação encerrada para os demais.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c12|C12]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c12|C12]]
 >
 > ---
 >
@@ -549,7 +549,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** solicitação configurada sem token para o departamento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c13|C13]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c13|C13]]
 >
 > ---
 >
@@ -587,7 +587,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c14|C14]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c14|C14]]
 >
 > ---
 >
@@ -625,7 +625,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c15|C15]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c15|C15]]
 >
 > ---
 >
@@ -663,7 +663,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** notificação registrada para o e-mail do departamento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c16|C16]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c16|C16]]
 >
 > ---
 >
@@ -701,7 +701,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** solicitação com o membro como signatário, pronta para ser enviada.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c17|C17]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c17|C17]]
 >
 > ---
 >
@@ -739,7 +739,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** solicitação configurada com token para o membro, se o solicitante optar por isso.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c18|C18]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c18|C18]]
 >
 > ---
 >
@@ -777,7 +777,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c19|C19]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c19|C19]]
 >
 > ---
 >
@@ -815,7 +815,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c20|C20]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c20|C20]]
 >
 > ---
 >
@@ -853,7 +853,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** notificações registradas para o membro.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c21|C21]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c21|C21]]
 >
 > ---
 >
@@ -891,7 +891,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** notificação registrada também para o e-mail do departamento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c22|C22]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c22|C22]]
 >
 > ---
 >
@@ -929,7 +929,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma alteração de estado — apenas verificação.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c23|C23]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c23|C23]]
 >
 > ---
 >
@@ -967,7 +967,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** documento assinado; nenhum vínculo novo criado (já existia).
 >
-> **Critérios cobertos:** [[01 - Demanda#^c24|C24]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c24|C24]]
 >
 > ---
 >
@@ -1005,7 +1005,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** pessoa passa a constar como participante do departamento; documento assinado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c25|C25]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c25|C25]]
 >
 > ---
 >
@@ -1043,7 +1043,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhum cadastro criado ainda — dados apenas coletados.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c26|C26]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c26|C26]]
 >
 > ---
 >
@@ -1081,7 +1081,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhum cadastro criado ainda — consentimentos coletados.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c27|C27]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c27|C27]]
 >
 > ---
 >
@@ -1119,7 +1119,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** pessoa vinculada ao departamento, pronta para assinar.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c28|C28]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c28|C28]]
 >
 > ---
 >
@@ -1157,7 +1157,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** documento assinado; pessoa já constando como participante do departamento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c29|C29]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c29|C29]]
 >
 > ---
 >
@@ -1195,7 +1195,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** convite de finalização de cadastro registrado/enviado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c30|C30]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c30|C30]]
 >
 > ---
 >
@@ -1233,7 +1233,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhum vínculo, cadastro ou assinatura criado a partir da tentativa malsucedida.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c31|C31]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c31|C31]]
 >
 > ---
 >
@@ -1271,7 +1271,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** documento assinado; selo já aplicado não muda mais nessa via (conferência é só de leitura).
 >
-> **Critérios cobertos:** [[01 - Demanda#^c32|C32]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c32|C32]]
 >
 > ---
 >
@@ -1309,7 +1309,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma, é só uma verificação de consistência entre os dois caminhos.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c33|C33]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c33|C33]]
 >
 > ---
 >
@@ -1347,7 +1347,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c34|C34]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c34|C34]]
 >
 > ---
 >
@@ -1385,7 +1385,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** os dois departamentos ficam como signatários pendentes, cada um com sua própria solicitação.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c35|C35]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c35|C35]]
 >
 > ---
 >
@@ -1423,7 +1423,7 @@ Use esta matriz para verificar a cobertura sem abrir a demanda. Atualize-a ao cr
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c36|C36]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11177 - Departamentos Tramitação e Assinaturas/01 - Demanda#^c36|C36]]
 >
 > ---
 >

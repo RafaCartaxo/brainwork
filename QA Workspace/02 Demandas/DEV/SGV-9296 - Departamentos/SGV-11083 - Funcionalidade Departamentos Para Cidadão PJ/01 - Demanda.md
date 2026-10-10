@@ -9,12 +9,12 @@ pontos_alocados: ""
 **Ticket de origem:** SGV-11083 no Notion ("[Parte 1] Departamentos: Criação, edição, exclusão, suspensão e gerenciamento de membros")
 
 > [!info]- Navegação QA/DEV
-> **README do card:** [[00 README|Abrir README do card]]
-> **Demanda:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **README do card:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/00 README|Abrir README do card]]
+> **Demanda:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/02 - Plano de teste]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/04 - Validação dev]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11083 - Funcionalidade Departamentos Para Cidadão PJ/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle da demanda

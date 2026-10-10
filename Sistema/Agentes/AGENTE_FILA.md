@@ -5,7 +5,8 @@ tags:
 ---
 # Agente: Organizador da Fila
 
-> [!warning] Fila automática (🔄) aposentada em 24/09/2026 — ver [[README|Agentes/README]]
+> [!warning] Injeção automática de "Acompanhar" retirada em 06/10/2026 — ver [[README|Agentes/README]]
+> O que este agente faz (agrupar por natureza, sinalizar idade/bloqueio, mover concluídos) continua valendo pro que já está na fila — só não existe mais a varredura que criava item pra todo card aberto automaticamente. Visibilidade passiva de card aberto sem ação pendente agora é a seção "Seus cards abertos" da [[../../QA Workspace/Dashboard/Dashboard|Dashboard]].
 
 Reorganiza a seção "A fazer hoje" da daily: agrupa por natureza, sinaliza idade e bloqueios, remove ruído.
 

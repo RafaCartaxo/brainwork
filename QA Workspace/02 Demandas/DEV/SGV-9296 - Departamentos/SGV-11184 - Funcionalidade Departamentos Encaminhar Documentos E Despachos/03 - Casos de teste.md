@@ -1,7 +1,7 @@
 ---
-demanda: "[[01 - Demanda]]"
-plano: "[[02 - Plano de teste]]"
-validacao: "[[04 - Validação dev]]"
+demanda: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda]]"
+plano: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/02 - Plano de teste]]"
+validacao: "[[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/04 - Validação dev]]"
 status: execucao
 pontos: ""
 ---
@@ -9,12 +9,12 @@ pontos: ""
 # Casos de teste — SGV-11184
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **README do card:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda]]
+> **Plano de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/02 - Plano de teste]]
+> **Casos de teste:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste]]
+> **Validação:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/04 - Validação dev]]
+> **Preparação Qase:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/05 - Preparação Qase]]
 > **Automação:** [[06 - Automação]]
 
 > [!settings]- Controle dos casos de teste
@@ -28,34 +28,34 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]] |
-| [[01 - Demanda#^c2\|C2]] | [[03 - Casos de teste#^ct-002\|CT-002]] |
-| [[01 - Demanda#^c2a\|C2a]] | [[03 - Casos de teste#^ct-002a\|CT-002a]] |
-| [[01 - Demanda#^c2b\|C2b]] | [[03 - Casos de teste#^ct-002b\|CT-002b]] |
-| [[01 - Demanda#^c2c\|C2c]] | [[03 - Casos de teste#^ct-002c\|CT-002c]] |
-| [[01 - Demanda#^c3\|C3]] | [[03 - Casos de teste#^ct-003\|CT-003]] |
-| [[01 - Demanda#^c4\|C4]] | [[03 - Casos de teste#^ct-004\|CT-004]] |
-| [[01 - Demanda#^c5\|C5]] | [[03 - Casos de teste#^ct-005\|CT-005]] |
-| [[01 - Demanda#^c6\|C6]] | [[03 - Casos de teste#^ct-006\|CT-006]] |
-| [[01 - Demanda#^c7\|C7]] | [[03 - Casos de teste#^ct-007\|CT-007]] |
-| [[01 - Demanda#^c8\|C8]] | [[03 - Casos de teste#^ct-008\|CT-008]] |
-| [[01 - Demanda#^c8a\|C8a]] | [[03 - Casos de teste#^ct-008a\|CT-008a]] |
-| [[01 - Demanda#^c9\|C9]] | [[03 - Casos de teste#^ct-009\|CT-009]] |
-| [[01 - Demanda#^c10\|C10]] | [[03 - Casos de teste#^ct-010\|CT-010]] |
-| [[01 - Demanda#^c11\|C11]] | [[03 - Casos de teste#^ct-011\|CT-011]] |
-| [[01 - Demanda#^c12\|C12]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
-| [[01 - Demanda#^c12a\|C12a]] | [[03 - Casos de teste#^ct-012a\|CT-012a]] |
-| [[01 - Demanda#^c12b\|C12b]] | [[03 - Casos de teste#^ct-012b\|CT-012b]] |
-| [[01 - Demanda#^c13\|C13]] | [[03 - Casos de teste#^ct-013\|CT-013]] |
-| [[01 - Demanda#^c14\|C14]] | [[03 - Casos de teste#^ct-014\|CT-014]] |
-| [[01 - Demanda#^c15\|C15]] | [[03 - Casos de teste#^ct-015\|CT-015]] |
-| [[01 - Demanda#^c16\|C16]] | [[03 - Casos de teste#^ct-016\|CT-016]] |
-| [[01 - Demanda#^c17\|C17]] | [[03 - Casos de teste#^ct-017\|CT-017]] |
-| [[01 - Demanda#^c18\|C18]] | [[03 - Casos de teste#^ct-018\|CT-018]] |
-| [[01 - Demanda#^c19\|C19]] | [[03 - Casos de teste#^ct-019\|CT-019]] |
-| [[01 - Demanda#^c20\|C20]] | [[03 - Casos de teste#^ct-020\|CT-020]] |
-| [[01 - Demanda#^c21\|C21]] | [[03 - Casos de teste#^ct-021\|CT-021]] |
-| [[01 - Demanda#^c22\|C22]] | [[03 - Casos de teste#^ct-022\|CT-022]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c1\|C1]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-001\|CT-001]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2\|C2]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002\|CT-002]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2a\|C2a]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002a\|CT-002a]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2b\|C2b]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002b\|CT-002b]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2c\|C2c]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-002c\|CT-002c]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c3\|C3]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-003\|CT-003]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c4\|C4]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-004\|CT-004]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c5\|C5]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-005\|CT-005]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c6\|C6]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-006\|CT-006]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c7\|C7]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-007\|CT-007]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c8\|C8]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-008\|CT-008]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c8a\|C8a]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-008a\|CT-008a]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c9\|C9]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-009\|CT-009]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c10\|C10]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-010\|CT-010]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c11\|C11]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-011\|CT-011]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c12\|C12]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-012\|CT-012]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c12a\|C12a]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-012a\|CT-012a]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c12b\|C12b]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-012b\|CT-012b]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c13\|C13]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-013\|CT-013]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c14\|C14]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-014\|CT-014]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c15\|C15]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-015\|CT-015]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c16\|C16]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-016\|CT-016]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c17\|C17]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-017\|CT-017]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c18\|C18]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-018\|CT-018]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c19\|C19]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-019\|CT-019]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c20\|C20]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-020\|CT-020]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c21\|C21]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-021\|CT-021]] |
+| [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c22\|C22]] | [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/03 - Casos de teste#^ct-022\|CT-022]] |
 
 ---
 
@@ -86,7 +86,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c1|C1]]
 >
 > ---
 >
@@ -125,7 +125,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2|C2]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2|C2]]
 >
 > ---
 >
@@ -167,7 +167,7 @@ pontos: ""
 > > [!info] Não se aplica — nível "participantes" não implementado nesta entrega
 > > Confirmado por Rafael (03/09/2026): a entrega cobre só o departamento em si; exibir participantes lotados depende de um nível ("Cidadão > PJ > Departamento > participantes") que não existe nesta entrega.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2a|C2a]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2a|C2a]]
 >
 > ---
 >
@@ -209,7 +209,7 @@ pontos: ""
 > > [!info] Não se aplica — mesmo motivo do CT-002a
 > > Sem exibição de participantes nesta entrega, não há CPF de participante a anonimizar.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2b|C2b]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2b|C2b]]
 >
 > ---
 >
@@ -251,7 +251,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c2c|C2c]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c2c|C2c]]
 >
 > ---
 >
@@ -290,7 +290,7 @@ pontos: ""
 >
 > **Pós-condição:** vínculo documento↔campo↔departamento persistido no banco, revalidado pela API.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c3|C3]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c3|C3]]
 >
 > ---
 >
@@ -329,7 +329,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c4|C4]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -368,7 +368,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c5|C5]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c5|C5]]
 >
 > ---
 >
@@ -407,7 +407,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c6|C6]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c6|C6]]
 >
 > ---
 >
@@ -448,7 +448,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c7|C7]]
 >
 > ---
 >
@@ -490,7 +490,7 @@ pontos: ""
 > > [!info] CT reescrito (03/09/2026)
 > > Redação original também cobria "já expandido com participantes lotados... CPF anonimizado" — removido por não se aplicar a esta entrega (nível "participantes" não implementado, mesma decisão do CT-002a/CT-002b). O que sobrou (nome + razão social) foi retestado do zero.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -532,7 +532,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c8a|C8a]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c8a|C8a]]
 >
 > ---
 >
@@ -571,7 +571,7 @@ pontos: ""
 >
 > **Pós-condição:** departamento persistido como destinatário do despacho no banco.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c9|C9]]
 >
 > ---
 >
@@ -610,7 +610,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c10|C10]]
 >
 > ---
 >
@@ -649,7 +649,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c11|C11]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c11|C11]]
 >
 > ---
 >
@@ -688,7 +688,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c12|C12]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c12|C12]]
 >
 > ---
 >
@@ -727,7 +727,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c12a|C12a]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c12a|C12a]]
 >
 > ---
 >
@@ -766,7 +766,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c12b|C12b]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c12b|C12b]]
 >
 > ---
 >
@@ -807,7 +807,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c13|C13]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c13|C13]]
 >
 > ---
 >
@@ -849,7 +849,7 @@ pontos: ""
 > > [!info] Cenário de dois membros com o mesmo e-mail removido (03/09/2026)
 > > Confirmado pelo Rafael: cidadão tem e-mail único no sistema ([[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] — "e-mail institucional... único no sistema"), então dois membros nunca compartilham endereço. O único cenário real de sobreposição é **departamento × membro** (o departamento tem seu próprio campo de e-mail, sem essa mesma trava de unicidade contra os cidadãos).
 >
-> **Critérios cobertos:** [[01 - Demanda#^c14|C14]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c14|C14]]
 >
 > ---
 >
@@ -888,7 +888,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhum e-mail/notificação duplicado persistido pra mesma combinação evento+canal+destinatário.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c15|C15]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c15|C15]]
 >
 > ---
 >
@@ -927,7 +927,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c16|C16]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c16|C16]]
 >
 > ---
 >
@@ -968,7 +968,7 @@ pontos: ""
 >
 > **Pós-condição:** `publicIdentifier` gravado no registro do departamento.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c17|C17]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c17|C17]]
 >
 > ---
 >
@@ -1010,7 +1010,7 @@ pontos: ""
 > > [!info] "ou seus membros" removido do Dado (03/09/2026)
 > > A redação original citava "departamento ou seus membros" recebendo a notificação com URL externa — mas isso não está no requisito (RF04). O e-mail com URL externa vai só pro endereço do **departamento**; a notificação **interna** por membro elegível (CT-014 da SGV-11083) é um canal separado, sem essa URL de rastreamento externo associada.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c18|C18]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c18|C18]]
 >
 > ---
 >
@@ -1049,7 +1049,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhum registro de interação até todas as validações passarem.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c19|C19]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c19|C19]]
 >
 > ---
 >
@@ -1088,7 +1088,7 @@ pontos: ""
 >
 > **Pós-condição:** registro `DocumentInteraction` persistido no banco.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c20|C20]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c20|C20]]
 >
 > ---
 >
@@ -1127,7 +1127,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c21|C21]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c21|C21]]
 >
 > ---
 >
@@ -1166,7 +1166,7 @@ pontos: ""
 >
 > **Pós-condição:** nenhuma.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c22|C22]]
+> **Critérios cobertos:** [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/SGV-11184 - Funcionalidade Departamentos Encaminhar Documentos E Despachos/01 - Demanda#^c22|C22]]
 >
 > ---
 >

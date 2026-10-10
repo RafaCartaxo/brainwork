@@ -1,5 +1,5 @@
 ---
-demanda: "[[01 - Demanda]]"
+demanda: "[[Sistema/Templates/Pacote/00 QA/Melhoria/01 - Demanda]]"
 execucao: ""
 ambiente: dev
 versao: ""
@@ -8,7 +8,7 @@ responsavel: ""
 resultado: aguardando
 pontos: 0
 ct_resultados:
-  ct_001: "⏳ Aguardando"
+  ct_001: ⏳ Aguardando
 data_inicio: ""
 data_fim: ""
 ---
@@ -16,12 +16,12 @@ data_fim: ""
 # Validação — <ID>
 
 > [!info]- Navegação QA
-> **README do card:** [[00 README|Abrir README do card]]
-> **Demanda/Bug:** [[01 - Demanda]]
-> **Plano de teste:** [[02 - Plano de teste]]
-> **Casos de teste:** [[03 - Casos de teste]]
-> **Validação:** [[04 - Validação dev]]
-> **Preparação Qase:** [[05 - Preparação Qase]]
+> **README do card:** [[Sistema/Templates/Pacote/00 QA/00 README|Abrir README do card]]
+> **Demanda/Bug:** [[Sistema/Templates/Pacote/00 QA/Melhoria/01 - Demanda]]
+> **Plano de teste:** [[Sistema/Templates/Pacote/00 QA/02 - Plano de teste]]
+> **Casos de teste:** [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste]]
+> **Validação:** [[Sistema/Templates/Pacote/00 QA/04 - Validação dev]]
+> **Preparação Qase:** [[Sistema/Templates/Pacote/00 QA/05 - Preparação Qase]]
 > **Automação:** [[../01 Automação/00 - Automação|Automação]] *(opcional — só quando houver cobertura automatizada)*
 
 > [!settings]- Controle da validação
@@ -74,7 +74,7 @@ dv.list([
 
 | CT | Resultado | Evidência | Observação | Defeito/Bug | Pontos entregues |
 |---|---|---|---|---|---:|
-| [[03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` |  |  |  | `= choice(this.ct_resultados.ct_001 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
+| [[Sistema/Templates/Pacote/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` |  |  |  | `= choice(this.ct_resultados.ct_001 = "✅ Aprovado", round(number(this.pontos) / length(this.ct_resultados), 2), 0)` |
 
 > **Regra de esforço:** aprovado e falhou = 100% da parcela; em andamento = 25%; bloqueado = 50%; aguardando e não executado = 0%.
 

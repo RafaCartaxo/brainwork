@@ -6,76 +6,32 @@ tipo: indice
 ---
 # Índice: [QA-Automação] Termo de Referência SOGOV (SGV-11262)
 
-Guarda-chuva do trabalho de QA sobre o **Termo de Referência do SOGOV**: verificar, ciclo a ciclo, se a plataforma atende ao que o Termo exige, com cobertura automatizada e evidência reproduzível. Sem card nem CTs próprios — a validação acontece pelos ciclos.
+A SGV-11262 é a demanda pai da iniciativa de QA sobre o Termo de Referência do SOGOV; esta pasta funciona como **contêiner/índice** — os artefatos específicos (demanda, plano, CTs, validação) ficam nos pacotes filhos.
 
-> [!info] Guarda-chuva aberta — 1 ciclo em andamento
-> **Reorganizada em 02/10/2026.** Antes, a SGV-11262 era uma pasta só, que misturava o processo de verificação de TR (reaproveitável) com o conteúdo do único Termo já trabalhado (1.24-1.25). O ciclo 1.24-1.25 virou pacote próprio com SGV próprio — **SGV-11971** — e esta pasta passou a ser só a guarda-chuva. Um Termo novo entra como pacote irmão da 11971, sem duplicar estrutura.
->
-> **Estrutura:** cada ciclo vive fisicamente dentro desta pasta (`SGV-<n> - <título>/`), junto com este `Conhecimento/`. Cada ciclo mantém seu próprio status no frontmatter (`ambiente:`/`status:`) e **não muda de pasta ao fechar** — mesma exceção consciente que a epic [[QA Workspace/02 Demandas/DEV/SGV-9296 - Departamentos/Conhecimento/0 - SGV-9296 - Índice|SGV-9296]] adota. A Dashboard ("Sem dono") lê o campo `ambiente:` do frontmatter antes do nome da pasta, então o aninhamento não esconde os cards.
+> [!info] Papéis distintos — Roadmap × Índice
+> **Roadmap** ([[../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]): direção, sequência macro e dependências da frente ativa. **Índice (este arquivo):** só localizar documentos e pacotes — não repete a sequência nem o plano do Roadmap.
 
-## Ciclos
+## Trabalho ativo
 
-| Ciclo | SGV | O que cobre | Status |
-|---|---|---|---|
-| 1.24-1.25 | [[../SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/00 QA/01 - Demanda\|SGV-11971]] | Autenticação e ciclo de vida do usuário — tipos de acesso, validação de credenciais, bloqueio por tentativas e os estados Ativo/Licença/Férias/Inativo/Suspenso (itens 1.24 e 1.25, mais os correlatos 1.13 e 1.27.x) | 🔄 Em andamento — 25/38 CTs confirmados (01/10/2026); 4 achados reais de produto, 6 falhas sem causa raiz, 3 CTs sem código. Suíte em Cypress, **a portar pra Playwright** |
+[[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] — modelo conceitual de atores, entidades, configurações, estados, relações e dependências a partir do **TR completo** (itens 1.1–1.43), seguido da especificação de um preset candidato por cruzamento com seed/testes reais. Não inclui casos de teste, Qase nem implementação de preset.
 
-## Como um ciclo é organizado
+**Estado factual:** Fase 1 (modelo conceitual, 11 recortes) concluída — aprovada pelo Rafael (08/10/2026) e revisada pelo Codex. Fase 2 (especificação do preset candidato) em andamento — 16 fatias aprovadas (notas 02–17); próximo passo é consolidá-las, sem abrir fatia nova antes disso. As dúvidas de negócio levantadas durante o mapeamento seguem registradas em aberto, numa trilha paralela que não bloqueia a consolidação nem o avanço geral — exceto quando uma linha específica da especificação depender diretamente de uma delas, caso em que só essa linha fica pendente, sem travar o restante. Sequência completa e gates: [[../Roadmap - Modelo de atores e preset do TR|Roadmap]].
 
-Cada ciclo é um pacote no padrão do vault (`Sistema/Templates/Pacote/`), com uma adição: a pasta `01 Automação/`, que os pacotes de funcionalidade comum não têm.
+## Material arquivado para consulta
+
+Arquivado para consulta em `Arquivo/Abordagem anterior/` — conteúdo preservado, referência histórica, não fluxo ativo; links de navegação foram ajustados quando necessário por causa da mudança de pasta.
+
+- [[../Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/00 README|SGV-12082 — Análise do TR e preset de dados]] 🗄️ histórico/arquivado — **mesmo número de ticket (SGV-12082) da frente atual, título e pasta diferentes**; investigou automação e cobertura de CTs a partir do TR completo (DISC-001–004 + recomendação).
+- [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA/00 README|SGV-11971 — TR 1.24-1.25 Autenticação e Ciclo de Vida]] 🗄️ histórico/arquivado — ciclo de automação dos itens 1.24–1.25, incluindo a [[../Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA/00 README|Entrega 01 — Baseline na instância 225]].
+- [[../Arquivo/Abordagem anterior/Roadmap - Automação TR|Roadmap — Automação TR (anterior)]] e [[../Arquivo/Abordagem anterior/Mapa do seed Playwright atual - SGV-11971|Mapa do seed Playwright atual]] 🗄️ histórico/arquivado.
+
+## Estrutura atual
 
 ```text
-SGV-<n> - TR <ciclo> <assunto>/
-├── 00 QA/
-│   ├── 00 README.md            ← estado do trabalho e próximo passo
-│   ├── 01 - Demanda.md         ← itens do Termo viram critérios de aceite (C1..Cn)
-│   ├── 02 - Plano de teste.md
-│   ├── 03 - Casos de teste.md  ← fonte única dos CTs deste Termo
-│   ├── 04 - Validação dev.md   ← conformidade por CT
-│   └── 05 - Preparação Qase.md
-└── 01 Automação/                ← plano, handoff de execução e documentação de entrega
+SGV-11262 - [QA-Automação] Termo de Referência SOGOV/
+├── Conhecimento/                                              ← este índice
+├── Roadmap - Modelo de atores e preset do TR.md                ← direção/sequência da frente ativa
+├── Arquivo/
+│   └── Abordagem anterior/                                     ← material histórico arquivado para consulta
+└── SGV-12082 - Mapeamento de atores e modelo do preset do TR/   ← frente ativa
 ```
-
-As pastas são numeradas (`00 QA/`, `01 Automação/`) só pra ordem de leitura/execução no explorador de arquivos — QA vem antes porque é o que se faz primeiro; automação é consequência, quando houver.
-
-**O que é específico do Termo** (itens citados, CTs, placar, ids da Qase) vive no pacote do ciclo. **O que vale pra qualquer Termo** (o processo) vive fora, nas skills — não é duplicado aqui.
-
-## Regras de uso (valem pra qualquer ciclo)
-
-1. **A fonte única é sempre o `00 QA/03 - Casos de teste.md` do ciclo.** Nunca editar um CT só na Qase ou só num script — o vault é quem manda.
-2. **Toda correção de conteúdo segue a ordem:** atualizar o `03` primeiro, depois refletir na Qase (registrado no `05`).
-3. **O `05` e a pasta `01 Automação/` não são passos 2 e 3 de uma sequência** — são dois consumidores independentes do `03`, em paralelo. Sincronizar com a Qase não depende da automação terminar, e vice-versa.
-4. **Cada item do Termo vira um critério** no `01 - Demanda.md`, com o texto literal da regra e âncora `^cN`, para que todo CT seja rastreável até a redação original.
-
-## Achados técnicos da Qase (valem pra qualquer sincronização futura)
-
-Levantados na rodada de 31/08/2026 do ciclo 1.24-1.25:
-
-- Import via CSV **não faz merge** — duplica casos existentes em vez de atualizar. Usar sempre a API REST.
-- A API faz update parcial de verdade — **campo não enviado não é tocado**.
-- `severity` / `type` / `automation` / `status` são **números** na API real, mesmo que o export mostre texto. Sempre confirmar contra um `GET` real (`--inspect`) antes de escrever.
-- Exclusão via `DELETE` é definitiva, sem lixeira documentada — tratar como irreversível.
-- A Qase tem shared steps nativos (`GET /v1/shared_step/{code}`) — conferir se já existem antes de escrever conteúdo novo.
-
-Processo passo a passo e o script: [[Sistema/Skills/SKILL_SYNC_QASE|SKILL_SYNC_QASE]] e `Sistema/Scripts/qase-sync/`. Pra um ciclo novo, copiar o `sync.js` da versão mais recente (`9296-departamentos/`), **não** da `11971-tr-1-24-1-25/`, que é mais simples e está congelada.
-
-## Processo de automação
-
-Não é duplicado aqui — está em [[Sistema/Skills/SKILL_AUTOMACAO_TERMO_REFERENCIA|SKILL_AUTOMACAO_TERMO_REFERENCIA]], que é a destilação do que foi aprendido no ciclo 1.24-1.25 (criar o card cedo, triagem de cada falha, nunca dar suíte por boa sem validação manual prévia, docs só por acréscimo).
-
-> [!warning] A skill ainda descreve Cypress
-> O repo `sogov-automation-test` migrou pra Playwright em setembro/2026 e **Playwright é o padrão** — teste novo só se escreve nele. A `SKILL_AUTOMACAO_TERMO_REFERENCIA` e os documentos de `01 Automação/` do ciclo 1.24-1.25 ainda estão escritos em Cypress. Estado atual e convenção nova em [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]].
-
-## Padrão reaproveitável
-
-O template [[Sistema/Templates/Verificação de Conformidade (Termo de Referência)|Verificação de Conformidade (Termo de Referência)]] descreve as 4 fases do trabalho de QA sobre um Termo — Análise → Casos de teste → Sincronização Qase → Automação. Essas fases **não** são subdivisões do requisito: elas mapeiam nos arquivos do pacote (`01` ← Análise, `03` ← Casos de teste, `05` ← Sincronização, `01 Automação/` ← Automação). A subdivisão do requisito é outra coisa — são as suites temáticas dentro do `03`.
-
-## Histórico
-
-- 2026-08-31 - Ciclo 1.24-1.25: casos de teste consolidados numa fonte única no vault, a partir de 3 versões divergentes
-- 2026-08-31 - Ciclo 1.24-1.25: 39 casos sincronizados com a Qase (25 atualizados, 2 excluídos, 1 criado)
-- 2026-08-31 - Ciclo 1.24-1.25: automação iniciada; captura de API da troca de status localizada, desbloqueando a Suíte 4 inteira
-- 2026-09-01 - CT-015 contestado — validação manual do Rafael diverge do achado da automação; investigação de timing inconclusiva por instabilidade do ambiente
-- 2026-09-02 - Card SGV-11262 criado (retroativo) e reestruturado como task pai do TR inteiro, com o template de Verificação de Conformidade; skill de automação de TR registrada
-- 2026-09-25 - Scripts `qase-sync` movidos do repo `sogov-automation-test` pra `Sistema/Scripts/qase-sync/` no vault
-- 2026-10-01 - Descoberto que o repo migrou pra Playwright (merge `1d78bf9`) sem registro no vault — nota [[QA Workspace/04 Conhecimento/Referências/Automação Playwright|Automação Playwright]] criada. Suítes 3/4/5 (13 CTs) commitadas localmente (`bdf5e9a`); não sobem em Cypress, serão portadas
-- 2026-10-02 - SGV-11262 vira guarda-chuva de automação de Termo de Referência; o ciclo 1.24-1.25 ganha SGV próprio (SGV-11971) e vira pacote no padrão da epic SGV-9296

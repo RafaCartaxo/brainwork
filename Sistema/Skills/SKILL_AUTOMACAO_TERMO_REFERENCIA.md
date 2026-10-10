@@ -51,7 +51,7 @@ Escrever os testes seguindo o guia do repo (`.claude/agents/criar-teste-{e2e,api
 Toda falha ao rodar contra HML é **uma de três coisas** — não presumir qual sem investigar:
 
 1. **Bug no teste** — corrigir (ex.: assert no campo errado, dado de teste mal montado).
-2. **Achado real de produto** — o teste está certo, o sistema diverge do que o Termo pede. **Nunca forçar o assert a passar** só pra ficar verde. Documentar (handoff + comentário no código) e reportar pro responsável do produto/backend.
+2. **Achado real de produto** — o teste está certo, o sistema diverge do que o Termo pede. **Nunca forçar o assert a passar** só pra ficar verde. Atualizar o resultado e a observação do CT em [[../Templates/Pacote/01 Automação/02 - Validação automação]] e reportar pro responsável do produto/backend. Manter comentário no teste quando ele precisar explicar por que o comportamento esperado diverge do produto.
 3. **Instabilidade do ambiente** — ver seção 6.
 
 Se um achado real for **contestado por observação manual** (aconteceu no TR 1.24-1.25: o teste automatizado mostrou um bypass de bloqueio de conta, mas o responsável testou manualmente e viu o bloqueio funcionar) — não confiar cegamente em nenhum dos dois lados. Reabrir com um **experimento controlado** (ex.: variar o tempo entre passos, comparar dado bruto da API antes de mudar qualquer asserção).
@@ -62,11 +62,17 @@ HML deste projeto apresenta com alguma frequência: `503`, `ETIMEDOUT`, timeout 
 
 1. **Checar com `curl` direto** se é queda geral do ambiente ou só a chamada específica falhando (`curl -s -o /dev/null -w "status=%{http_code}\n" <endpoint>`).
 2. **Verificar processos órfãos do Cypress/Chrome acumulados** — `ps aux | grep -i cypress`. Um `kill` anterior que só matou o processo pai pode deixar filhos Chrome rodando por horas, consumindo memória e causando timeout em runs seguintes. Limpar (`pkill -9 -f "run-<PID>"` ou padrão equivalente) antes de rodar de novo.
-3. **Critério de parada**: 2 falhas seguidas pela mesma causa de instabilidade → parar de insistir, registrar no handoff como pendência, não consumir mais tentativas no mesmo dia.
+3. **Critério de parada**: 2 falhas seguidas pela mesma causa de instabilidade → parar de insistir, marcar os CTs afetados como bloqueados em [[../Templates/Pacote/01 Automação/02 - Validação automação]] e registrar em [[../Templates/Pacote/01 Automação/00 - Automação]] a causa e próxima ação. Não consumir mais tentativas no mesmo dia.
 
 ## 7. Documentação viva
 
-Manter uma nota de handoff (ou equivalente) **atualizada a cada rodada** — status por suíte, achados, correções feitas, pendências. É o que permite retomar sem perder contexto depois de uma reorganização de vault, troca de sessão, ou intervalo de dias. Não deixar o estado "só na cabeça" da sessão atual.
+Manter os três registros do pacote de automação coerentes, sem criar um diário por rodada:
+
+- [[../Templates/Pacote/01 Automação/00 - Automação|00 - Automação]]: status geral, próxima ação, bloqueios gerais e link de entrega.
+- [[../Templates/Pacote/01 Automação/01 - Plano de automação|01 - Plano de automação]]: escopo e decisões de construção antes de codar; revisar somente quando o plano mudar.
+- [[../Templates/Pacote/01 Automação/02 - Validação automação|02 - Validação automação]]: resultado mais recente por CT; sobrescrever o estado anterior a cada execução.
+
+Achado técnico duradouro vai para a documentação técnica correspondente no repositório; bug de produto segue o fluxo de bug; andamento e próxima ação ficam no registro de trabalho do dia. Criar um handoff separado somente quando uma continuidade complexa não puder ser entendida com esses registros e os links para as fontes.
 
 ## 8. Antes de subir (commit/MR)
 
