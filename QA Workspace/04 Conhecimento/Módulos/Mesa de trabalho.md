@@ -6,17 +6,18 @@ tags:
   - sogov
   - mesa-de-trabalho
 tipo: modulo
-revisado: 2026-07-17
+revisado: 2026-10-13
 task: SGV-9044
 fonte: https://app.notion.com/p/alfa-group/Mesa-de-trabalho-826bd0f556a841b694116d26a19a5bab
 fonte_criado: 2024-07-08 (Rafael)
-fonte_ultima_edicao: 2026-07-15 (Fernando Junior)
+fonte_ultima_edicao: 2026-10-06 (Fernando Junior)
 ---
 
 # Mesa de trabalho
 
 > [!info] Origem
 > Importado do Notion (link em `fonte`) em 2026-07-17 — a página do Notion continua sendo a fonte de verdade externa; esta cópia é o acervo local pesquisável. Ao detectar divergência com o sistema em teste, atualizar aqui e registrar em [[#Comportamentos observados em teste (QA)]].
+> **Atualizado em 2026-10-13** com reexport mais recente do Notion: cinco atualizações novas desde a revisão de 17/07 (busca no conteúdo, adequação mobile, persistência de filtro Pausado/Encerrado, busca em outras mesas, encerramento em massa) e um complemento na seção de filtros (combinação de filtros, 19/08/2026).
 
 > [!info] Sumário
 > - [[#Definição geral]]
@@ -208,7 +209,10 @@ Nesse filtro será possível escolher:
 > [!note] Observações
 > - O filtro considerará somente o conteúdo do campo e não o título.
 > - Quanto mais campos/dados forem considerados na busca, maior será a quantidade de documentos retornados.
-> - Deve ser considerado somente o conteúdo da abertura do documento; despachos, comentários, eventos e documentos relacionados **não** serão considerados na busca.
+> - **Atenção, possível regra superada em 29/07/2026**: esta seção diz que só o conteúdo da abertura entra na busca (despachos, comentários, eventos e documentos relacionados ficavam de fora). A atualização "Busca por documento no conteúdo" (mais abaixo) passou a incluir despachos na busca da mesa — não ficou claro no export se é a mesma busca (campo de busca simples da mesa) ou um mecanismo distinto deste filtro avançado por campo de formulário. Ver Dúvidas em aberto.
+
+> [!tip] Combinação de filtros (19/08/2026)
+> Combinar filtros sempre torna a busca mais específica. Ex.: filtrar por Processos Administrativos + Documentos Automatizados retorna documentos automatizados referentes unicamente àquele módulo.
 
 ## Demais regras
 
@@ -331,6 +335,56 @@ Um documento possui tags para sinalizar o vencimento do prazo. Foram feitos os s
 > [!quote] Comentário
 > **Vinícius** (Jul 6): @Ivo Costa Doc da melhoria de mesa
 
+### Busca por documento no conteúdo (29/07/2026)
+> A busca no campo de busca da mesa passa a considerar também o conteúdo dos despachos, além da abertura do documento. As demais regras do campo de busca não mudam.
+
+- **Visão geral**: a busca localiza documentos pelo texto registrado neles, pesquisando tanto no conteúdo da abertura quanto no conteúdo dos despachos — um ponto único de pesquisa. Não amplia o que o usuário pode ver; só facilita achar o que ele já teria direito de acessar.
+- **Regra de tramitação**: documento só aparece no resultado se o setor da mesa selecionada **participa ou participou** da tramitação dele (atual, pra documentos em andamento; em algum momento antes do encerramento, pra documentos já encerrados). Setor sem relação de tramitação (nem atual, nem passada) nunca aparece, mesmo com o termo presente no conteúdo.
+- **Regra de sigilo**: a correspondência só é válida se ocorrer numa parte que o setor da mesa pode efetivamente visualizar. Termo encontrado só em conteúdo sigiloso que o setor não pode ver → documento não aparece (é como se o termo não existisse). Termo em conteúdo sigiloso que o setor **pode** ver → aparece normalmente, sem ocultação.
+- **Combinação**: as três condições (termo existe na abertura/despacho; setor participa/participou da tramitação; a ocorrência está em conteúdo visível ao setor) são cumulativas — falhar uma já exclui o documento. Se o termo aparece tanto em parte acessível quanto em parte sigilosa inacessível, o documento ainda aparece (basta uma correspondência válida).
+
+### Adequação para mobile (30/07/2026)
+> Só ajustes de layout, reposicionamento de componentes e adequação ao responsivo — **sem** mudança de regra de negócio.
+
+- Estrutura do card mantida (título do módulo, número, prazo, responsável, última atividade, novas atualizações, favoritar, menu de ações, "Exibir detalhes").
+- **Alternação de mesas**: duas visões (Meus documentos / Documentos do setor), alternadas por componente fixo no rodapé — mesmo comportamento de cada uma já existente no desktop.
+- **Filtros**: abre um **Bottom Sheet único** reunindo filtros comuns + avançados (antes separados); ocupa 50% da tela; mesmas regras de persistência do desktop. Ordenação passa a morar dentro do bottom sheet, com "Atualizados mais recentes" como default. Badge no ícone de filtro conta **por tipo de filtro aplicado**, não por item (ex.: 12 documentos marcados no mesmo select contam 1). Botão "Filtrar" só habilita após selecionar algum parâmetro; rodapé fixo com Cancelar/Filtrar.
+- **Cards e colunas**: dimensões reduzidas (resolução base 415px) — card 286×324px; coluna com altura dinâmica.
+- **Select de setor**: expande em tela cheia; nome do setor trunca se exceder a largura, mas a **sigla nunca trunca**.
+
+### Atualização — Persistência de filtro "Pausado"/"Encerrado" (SGV-11685, 18/09/2026)
+> Origem: Solicitação CX SGV-11685 — [MELHORIA-CX] Permitir gravação da configuração do usuário quanto à exibição ou não dos itens "Pausado" e "Encerrado" na mesa de trabalho. Sem impacto visual — nenhum componente, layout ou copy muda.
+
+- O estado do filtro **"Exibir documentos pausados e encerrados"** passa a ser **gravado na conta do usuário** e restaurado automaticamente a cada acesso (antes se perdia no logout). **Só este filtro** é persistido — os demais seguem voláteis, reiniciando a cada sessão.
+- Usuário sem preferência gravada entra com o filtro **desligado** (colunas ocultas por padrão).
+- "Limpar Filtros" zera os demais filtros da sessão mas **não sobrescreve** a preferência gravada deste — retorna ao estado gravado, não ao padrão.
+- Falha ao carregar a preferência → aplica o padrão (oculto), sem bloquear o carregamento da listagem.
+- Gravação é **silenciosa** — sem toast, modal ou confirmação.
+
+### Busca por documentos em outras mesas (06/10/2026)
+> Problema: a busca da mesa retornava só documentos da mesa selecionada — um servidor em mais de um setor não achava, pela busca simples, um documento que estava numa de suas outras mesas.
+
+- O dropdown de busca passa a exibir também os documentos encontrados **nas outras mesas do servidor** (mesa individual + mesas dos setores vinculados a ele — nunca a mesa atual), agrupados em **"Em outras mesas"**.
+- Resultados de outras mesas só aparecem a partir de **3 caracteres** digitados, e só no **dropdown** — painel e lista continuam mostrando só resultados da mesa atual. Ordenados pela última atividade, mais recente primeiro.
+- **Informações exibidas**: Módulo e Numeração sempre; Assunto/Serviço só quando existir; Setor responsável sempre (com sigla).
+- **Abrir um resultado**: abre o documento em **nova aba** e atualiza o "Atuando por" pro setor responsável pelo documento (mesmas regras/loading do Rastrear documento).
+- **Documentos sigilosos**: aparecem com a tag **"Sem acesso"**, não são clicáveis (não abrem nem mudam o "Atuando por"), mas entram na ordenação e no total do grupo.
+- **Paginação**: carrega 10 por vez; até 5 resultados mostra tudo, do 6º em diante tem rolagem; "Carregar mais resultados" aparece enquanto houver mais, some quando não houver.
+- Sem resultados em nenhuma mesa → dropdown mostra só o aviso "Nesta mesa"; falha ao carregar mais → botão vira "Tentar novamente", mantendo o que já carregou.
+
+### Encerramento em massa (12/10/2026)
+> Hoje o encerramento só pode ser feito documento a documento. A entrega permite encerrar vários de uma vez, direto na Mesa: ação → seleção → confirmação.
+
+- **Três tipos de encerramento** (menu "Ações em massa" na barra de filtros):
+	- **Encerrar tramitação** — encerra pra todos os envolvidos; só o setor responsável pode retomar.
+	- **Encerrar no setor** — encerra a participação do setor do servidor (incluindo colaboradores do setor envolvidos).
+	- **Encerrar para mim** — encerra só a participação do servidor; ações dele ficam indisponíveis até reabrir.
+- **Modo de seleção**: cada documento é avaliado pelas mesmas regras de permissão/impedimento que o tipo escolhido já tem na toolbar individual — "o encerramento em massa não pode permitir nada que o individual não permitiria". Um documento pode estar disponível pra um tipo e indisponível pra outro. Seleção é mantida ao pesquisar/ordenar/filtrar, inclusive pra documentos que saem de vista por causa de um filtro.
+- **Bloqueado durante seleção**: trocar de setor, trocar Painel/Lista, selecionar outra mesa, sair da página. **Permitido**: pesquisa, ordenação, filtros.
+- **Regra de reabertura** (Encerrar no setor / Encerrar para mim): escolhe entre reabrir só com movimentação destinada ao setor/servidor, ou com qualquer movimentação — vale pro lote inteiro. **Encerrar tramitação não tem essa opção** — só o setor responsável retoma.
+- **Documentos com pendência** podem ser selecionados (pendência não bloqueia); se algum selecionado tiver pendência, a confirmação do dialog muda pra "Ignorar pendências e encerrar".
+- Confirmado: flash message de sucesso com tipo + quantidade; documentos saem da visualização padrão (continuam acessíveis pelo filtro avançado).
+
 ---
 
 ## Comportamentos observados em teste (QA)
@@ -338,9 +392,14 @@ Um documento possui tags para sinalizar o vencimento do prazo. Foram feitos os s
 - 
 
 ## Dúvidas em aberto
-- [ ] 
+- [ ] **"Busca por documento no conteúdo" (29/07) × filtro "Incluir conteúdo do documento na busca"** (seção Regras de filtros): não ficou claro no export se são o mesmo mecanismo de busca (o campo de busca simples da mesa passou a cobrir despachos também) ou dois filtros distintos — o de 29/07 fala em "campo de busca" genérico, o mais antigo é específico de um checkbox aninhado a módulo no filtro avançado. Confirmar no sistema qual campo de busca passou a considerar despachos.
+- [ ] Export traz um heading solto **"Atualizações 29/10"** (sem ano, sem conteúdo embaixo) logo antes da seção "Atualização na mesa de trabalho @April 6, 2026" — não deu pra saber se é uma data de uma atualização que ficou sem título, ou artefato de export. Mantido fora do texto por não ter conteúdo associado.
+- [ ] Sub-item do Notion **"Refinamento do documento com status de 'Em elaboração'"** (ligado a esta página) não veio no export — conteúdo não importado ainda.
+- [ ] Backlog ainda lista como pendente **"[Melhoria] Exibir autor da última atividade na Mesa de Trabalho (lista e kanban)"**, mas a atualização "Atualização na mesa de trabalho" (06/04/2026, Componente Card) já parece cobrir exatamente isso (avatar, nome, sigla, data/hora de quem fez a última ação). Confirmar se o item do backlog está desatualizado ou se falta algo específico (ex.: só um dos dois modos).
+- [ ] Backlog mostra só 5 itens + "6 more…" no export — os demais não foram vistos.
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
 - SGV-9044 (task de origem desta doc)
 - SGV-9953 — busca por setores que não participo travava o seletor de setores (relaciona com [[#Switch de setores]])
+- SGV-11685 — origem da persistência do filtro "Pausado"/"Encerrado" (18/09/2026, ver seção própria)

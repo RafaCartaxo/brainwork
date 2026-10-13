@@ -6,15 +6,16 @@ tags:
   - sogov
   - assinatura
 tipo: modulo
-revisado: 2026-08-10
+revisado: 2026-10-13
 fonte: https://app.notion.com/p/alfa-group/Assinaturas-3a34ab9f797643bbb1792b9a3d90cb8e
 fonte_criado: 2024-07-08 (Rafael)
-fonte_ultima_edicao: 2026-06-30 (Vinícius)
+fonte_ultima_edicao: 2026-09-15 (Ivo Costa)
 ---
 # Assinaturas
 
 > [!info] Origem
 > Importado do Notion (link em `fonte`) em 2026-07-17 — a página do Notion continua sendo a fonte de verdade externa; esta cópia é o acervo local pesquisável. O export veio com ruído (imagens, âncoras) que foi limpo preservando todas as regras. Ao detectar divergência com o sistema em teste, atualizar aqui e registrar em [[#Comportamentos observados em teste (QA)]].
+> **Atualizado em 2026-10-13** com um reexport mais recente do Notion: três atualizações novas (zoom, evento de solicitação por signatário, recusa em sequencial) e correção da regra de cancelamento em assinatura sequencial, que havia mudado no Notion desde a última importação (10/08/2026).
 
 ## Definição geral
 
@@ -74,7 +75,7 @@ O solicitante informa:
 
 Além das informações da solicitação normal, define-se a **sequência**. A notificação do primeiro da lista é enviada e, só após ele assinar, a do próximo é disparada.
 
-**Regra crítica**: se um dos signatários da lista sequencial **recusar**, todas as demais assinaturas devem ser **canceladas — inclusive as já efetuadas**.
+**Regra (atualizada em 15/09/2026)**: se um signatário da lista sequencial **recusar**, só as assinaturas dos signatários **posteriores** a ele na sequência são canceladas. Assinaturas já realizadas pelos signatários **anteriores** são mantidas — não são mais canceladas, nem na regra nem na interface (antes a documentação e a tag diziam "cancelado" pros anteriores também, mas o sistema nunca revertia essas assinaturas de fato; ver seção de atualização mais abaixo).
 
 ### Quem pode solicitar assinaturas?
 
@@ -181,7 +182,7 @@ Pós-assinatura: notificações aos envolvidos + evento na thread do evento de s
 Mesmo fluxo da não sequencial, com as diferenças:
 
 - Notificações enviadas **só na vez de cada um** (primeiro da lista assina → segundo é notificado, e assim por diante);
-- **Recusa de qualquer signatário cancela todas as assinaturas da sequência, inclusive as já efetuadas.**
+- **Recusa de um signatário cancela as assinaturas dos signatários posteriores a ele na sequência** — as já realizadas pelos anteriores são mantidas (atualizado em 15/09/2026, ver seção própria abaixo).
 
 ## Assinaturas em massa
 
@@ -327,6 +328,42 @@ Os fluxos (SOGOV, ICP e recusa) **não mudam** — muda só a apresentação dos
 - Mesmo padrão nas variações: "Confirmar posicionamento" (Voltar / Confirmar posicionamento) e "Assinar" sem solicitação prévia (Voltar / Assinar).
 - **Input de senha** na versão `large`, com área de toque ampliada.
 
+### Atualização — Melhoria do visualizador/zoom (SGV-10677, 19/08/2026)
+> Origem: SGV-9980 — [MELHORIA-CX] Melhoria do Visualizador/Zoom. Feedback: chegar a 400% exigia ~30 cliques (zoom de 10 em 10% nas lupas +/−); pedido pra digitar o valor ou crescimento geométrico. Melhoria compartilhada com o leitor de PDF externo usado em processos urbanísticos — ver [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos#Atualização — Melhoria do visualizador/zoom (SGV-10677, 19/08/2026)|Processos Urbanísticos]] pras regras do Leitor 2.
+
+- **Solução**: o indicador de zoom do **Visualizador de PDF interno (SOGOV)** — usado em documentos normais, no posicionamento de assinaturas e em visualização geral de PDF — vira campo de input editável (inteiros de 1 a 400); as lupas +/− continuam funcionando, o input é caminho adicional.
+- **Estados**: Default (valor atual, ex. 100%) → Focus (em edição) → Filled (valor digitado, ex. 400%) → Applied (valor validado e aplicado).
+- **Regras de validação**:
+	- Digitar `0` → ajusta automaticamente pro piso mínimo de 0,67%.
+	- Digitar acima de 400% (ex. 1000%) → ajusta automaticamente pro teto de 400%.
+	- Validação/ajuste disparado na confirmação (Enter) ou perda de foco (blur).
+	- Campo vazio ou não numérico, ao confirmar → restaura o último valor válido aplicado.
+
+### Atualização — Evento de solicitação passa a mostrar local por signatário (SGV-9876, 08/09/2026)
+> Problema: numa solicitação com vários signatários, o evento mostrava a lista de signatários separada da lista de locais (agregada na frase do cabeçalho) — sem nada ligando uma pessoa a um local. Lendo "solicitou assinaturas neste documento e nos seguintes despachos" + três nomes, dava a entender que os três assinariam **tudo**, quando na real cada um podia ter sido escolhido pra locais diferentes.
+
+- **Regra nova**: o local de assinatura passa a ser exibido **por signatário** — cada linha carrega seu próprio conjunto de locais.
+- **Quando se aplica**: só em eventos com **2 ou mais signatários** (com 1 só, a frase do cabeçalho já é inequívoca e continua como está).
+- **Como aparece**: ao final da linha do signatário, junto da tag de status, um dropdown mostra o contador (`1 local` / `$num locais`); abrir é opcional, lista os títulos dos locais daquele signatário (`Documento`, `Despacho $num`, ou o nome do arquivo pra anexos).
+- **Tag de status**: muda de posição — sai de colada ao nome e vai pro final do container, numa coluna alinhada entre as linhas (antes variava de posição conforme o tamanho do nome).
+- **Truncamento de título de local**: popover com largura máxima de 240px (ajustada ao título mais longo da lista); título que excede trunca no meio preservando os 12 últimos caracteres + reticências; `Documento` e `Despacho $num` nunca truncam; nome completo sempre no `title` (hover) e lido por inteiro por leitor de tela.
+- **O que não muda**: frase do cabeçalho, regras de assinatura ICP/SOGOV por tipo de signatário, e a ordem sequencial (`1º`, `2º`, `3º` continuam nas linhas; um signatário com 3 locais assina os 3 na sua vez).
+
+### Atualização — Recusa em sequencial não cancela assinaturas já feitas (15/09/2026)
+> Antes, a regra (e a tag na UI) diziam que a recusa de qualquer signatário sequencial cancelava **todas** as assinaturas da sequência, inclusive as já feitas pelos anteriores. Na prática, o sistema **nunca conseguia reverter** uma assinatura já realizada — a tag mostrava "cancelado" pros signatários anteriores, mas a assinatura deles continuava válida no documento. Era uma divergência entre o que a interface comunicava e o que de fato acontecia.
+
+- **Regra corrigida**: assinaturas **já realizadas** pelos signatários anteriores ao que recusou são **mantidas** — não cancelam mais, nem na regra nem na tag (que passa a mostrar "Assinado", não "Cancelado").
+- **O que continua igual**: signatários **posteriores** ao que recusou (que ainda não chegaram a assinar) têm a assinatura cancelada normalmente, já que o fluxo sequencial não pode prosseguir a partir do ponto de recusa.
+- **Exemplo** (documento com 5 assinantes sequenciais, 3º recusa):
+
+| Ordem | Ação | Estado resultante | Tag exibida |
+|---|---|---|---|
+| 1º | Assinou | Assinatura mantida | Assinado |
+| 2º | Assinou | Assinatura mantida | Assinado |
+| 3º | Recusou | Recusa registrada | Recusado |
+| 4º | Não chegou a assinar | Assinatura cancelada | Cancelado |
+| 5º | Não chegou a assinar | Assinatura cancelada | Cancelado |
+
 ---
 
 ## Comportamentos observados em teste (QA)
@@ -336,14 +373,17 @@ Os fluxos (SOGOV, ICP e recusa) **não mudam** — muda só a apresentação dos
 
 ## Dúvidas em aberto
 - [ ] **Anexo com imagem grande × rodapé de autenticidade**: a doc especifica as margens fixas do QR Code e do texto de verificação, mas **não define o comportamento quando o conteúdo do anexo extrapola a página** — se o rodapé é preservado, reposicionado ou sobreposto. Lacuna detectada em 10/08/2026 (DEV) no gate de doc da SGV-10267. Buscar a regra de layout no Notion/Figma (fluxo 8)
-- [ ] As três atualizações de 2026 (Página Extra, Reposicionamento de selos, PJ sem responsável legal) vieram só como título no export — buscar o conteúdo no Notion e completar aqui
 - [ ] Regras do documento Pausado × assinatura dependem do doc "Pausar documento" do Notion — importar também?
+- [ ] Duas páginas-filhas do Notion ligadas a esta, ainda não importadas: **"Assinatura por token"** e **"Verificação de autenticidade" (atualizada 13/01/2026)** — relevantes pro backlog de "[UX/UI] Análise e protótipo de assinatura por token de e-mail" e "*[Funcionalidade] Assinatura por token" citados no Notion.
+- [ ] O backlog do Notion mostra só 5 itens + "10 more…" (lista truncada na própria página) — entre os visíveis, um novo **[BUG] Setor sem permissão consegue solicitar assinatura de cidadão indevidamente**, sem SGV e sem detalhe no export; os outros 10 itens não foram vistos.
 - [ ] Assinatura em instância **Em Implantação** × numeração e limpeza da implantação: a doc não cobre a regra de que a implantação apaga documentos "Sem numeração", nem como a numeração é atribuída no contexto Em Implantação (gap detectado em 2026-07-22, HML — ver [[QA Workspace/02 Demandas/Concluídas/6906/QA/6906 - Bug Documentos Teste Implantacao Recebem Numeracao Ao Assinar|SGV-6906]]). Importar doc que descreva o comportamento da implantação (fluxo 8)
 - [ ] **Posicionamento da numeração de páginas × rodapé de autenticidade**: a doc afirma que "se o usuário paginar, a numeração inclui as páginas de assinatura", mas **não define onde a numeração é desenhada** nem como resolver colisão com o QR Code e o texto de autenticidade, que têm posição fixa no rodapé. O gap virou bug em 29/07: [[QA Workspace/02 Demandas/Concluídas/10457/QA/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] (download personalizado com páginas enumeradas sobrepõe a numeração ao link). Buscar a regra de layout da paginação no Notion/Figma (fluxo 8)
 - [ ] **Encerramento de documento × cancelamento de assinaturas pendentes**: a doc não descreve se/como encerrar um documento cancela solicitações de assinatura pendentes de despachos vinculados. Comportamento corrigido e validado em 2026-07-23 (HML — ver [[QA Workspace/02 Demandas/Concluídas/9750/QA/9750 - Bug Assinatura Pendente Documento Encerrado|SGV-9750]]): encerrar **para todos** cancela todas as pendências (documento + despachos); encerrar **para mim**/**para meu setor** não cancela; retificação com troca de anexo já cancelava. Importar a regra pra doc (fluxo 8)
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
+- **SGV-10677** — melhoria do visualizador/zoom (19/08/2026, compartilhada com [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos|Processos Urbanísticos]]).
+- **SGV-9876** — evento de solicitação de assinatura passa a mostrar locais por signatário (08/09/2026).
 - Bug em refinamento: assinaturas em anexos de documentos retificados não são canceladas corretamente (export em `~/Downloads`, candidato ao fluxo 6 — 05 Refinar)
 - [[QA Workspace/02 Demandas/Concluídas/9405/QA/9405 - Bug Desalinhamento Link QR Code Página Assinatura Separada|SGV-9405]] — link e QR Code **na vertical** desalinhados na página de assinatura separada (aprovada em DEV olhando só esse elemento; ao validar em HML, conferir o rodapé inteiro)
 - [[QA Workspace/02 Demandas/Concluídas/10457/QA/10457 - Bug Espacamento Do Link Inferior E Paginacao Sobreposta Em Documento Assinado|SGV-10457]] — link da **parte inferior** com espaçamento errado + numeração sobreposta no download personalizado com páginas enumeradas. Elemento distinto da 9405; juntos levantam se o ajuste do rodapé foi **pontual** onde a doc o trata como regra transversal. **Atualização 10/08/2026**: com a **SGV-10267** (link oculto em anexo com imagem grande) são **três bugs no mesmo rodapé**, em três gatilhos diferentes — deixa de ser coincidência e passa a indicar que o ajuste tratou casos pontuais em vez da regra transversal. Levar pro dev/produto
