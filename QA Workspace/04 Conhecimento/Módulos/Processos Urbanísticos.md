@@ -155,3 +155,4 @@ fonte_ultima_edicao: 2026-08-19 (Vinícius Sogo)
 <!-- Docs do repo (caminho), links externos, leis -->
 - Notion (fonte): ver `fonte` no frontmatter.
 - Leitor externo de PDF usado na revisão de anexos: [PSPDFKit](https://pspdfkit.com/)
+- [[QA Workspace/04 Conhecimento/Módulos/Construtor de Módulos|Construtor de Módulos]] — onde o parâmetro de característica urbanística (campos de zona/categoria de uso) é ativado por módulo.

@@ -122,3 +122,4 @@ fonte_ultima_edicao: 2026-05-12 (Fernando Junior)
 <!-- Docs do repo (caminho), links externos, leis -->
 - Notion (fonte): ver `fonte` no frontmatter.
 - Figma (Handoff Virtus 8, e-mail 03/07/2024): https://www.figma.com/design/d6dxKe1coa1U7lelm0mbJf/Handoff-Virtus-8
+- [[QA Workspace/04 Conhecimento/Módulos/Construtor de Módulos|Construtor de Módulos]] — onde o parâmetro "Permite publicação em canal de comunicação oficial" é configurado por módulo.

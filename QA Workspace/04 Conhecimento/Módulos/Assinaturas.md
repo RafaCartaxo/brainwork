@@ -270,7 +270,7 @@ Removido background da página PAdES e bordas dos selos; hash abaixo da identifi
 
 **Configuração e herança** — dois níveis:
 
-1. **Módulo filho** — precisa do **CX ativar o parâmetro técnico** ("ativação mestre"). Sem isso, as opções nem aparecem na edição do módulo. Ativo, todos os assuntos/serviços do módulo **herdam por padrão**.
+1. **Módulo filho** — precisa do **CX ativar o parâmetro técnico** ("ativação mestre"). Sem isso, as opções nem aparecem na edição do módulo. Ativo, todos os assuntos/serviços do módulo **herdam por padrão**. Ver [[QA Workspace/04 Conhecimento/Módulos/Construtor de Módulos#Página extra de assinaturas — ativação mestre (28/04/2026)|Construtor de Módulos]] pra onde esse parâmetro vive.
 2. **Assunto/serviço** — a seção passou a se chamar **Numeração e Assinaturas**. Se o módulo pai está ligado, o checkbox aparece **marcado por padrão mas pode ser desmarcado**. Copy: *"Documentos possuem página de assinaturas separada — Define que os documentos, despachos e anexos vinculados a este módulo gerem sempre uma página própria para assinaturas."*
 
 **Regras de download e impressão** — a página extra **não é apenas visual: torna-se parte integrante do arquivo PDF**.
