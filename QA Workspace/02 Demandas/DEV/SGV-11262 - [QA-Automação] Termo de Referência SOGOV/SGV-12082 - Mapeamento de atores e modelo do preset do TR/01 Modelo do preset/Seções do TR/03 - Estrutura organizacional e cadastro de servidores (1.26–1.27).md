@@ -31,14 +31,11 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    Servidor["Servidor"] --> StatusFuncional["Status funcional no cadastro:<br/>Em atividade / Suspenso<br/>(rótulo atual: Inativo) / Licença / Férias"]
-    Servidor --> Presenca["Presença na plataforma:<br/>Online / Offline"]
-    TR["TR 1.27.10.1 — lista de status:<br/>Ativo, Inativo (offline), Suspenso, Licença, Férias"]
-    TR -->|"Ativo / Inativo (offline) representam presença"| Presenca
-    TR -->|"Suspenso / Licença / Férias representam status funcional"| StatusFuncional
+    Servidor["Servidor"] --> Funcional["Status funcional<br/>Em atividade · Suspenso (rótulo: Inativo) · Licença · Férias"]
+    Servidor --> Presenca["Presença na plataforma<br/>Online · Offline"]
 ```
 
-O SOGOV apresenta dois eixos independentes. No cadastro, o campo de status funcional oferece Em atividade, Inativo, De licença e De férias; para o modelo de negócio, **Inativo corresponde a Suspenso**. Na listagem de servidores, a coluna Status mostra Online ou Offline, que representa presença na plataforma e não altera o status funcional. A enumeração do TR em 1.27.10.1 reúne termos dos dois eixos; este mapa os separa conforme o comportamento atual do produto, confirmado por Rafael e pelas telas compartilhadas em 13/10/2026.
+São dois eixos independentes: **Inativo no cadastro corresponde a Suspenso**; Online/Offline indica presença. A lista do TR 1.27.10.1 reúne termos dos dois eixos; aqui ela está organizada conforme o SOGOV atual.
 
 ## Cobertura dos itens
 
