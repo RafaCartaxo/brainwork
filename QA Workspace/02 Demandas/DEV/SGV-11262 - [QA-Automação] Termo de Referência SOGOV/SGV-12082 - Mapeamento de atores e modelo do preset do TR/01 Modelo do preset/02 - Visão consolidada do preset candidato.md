@@ -9,13 +9,13 @@ status: aprovado
 
 > [!info]- Navegação
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]] · **Roadmap:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]] (passo 7 da "Sequência macro") · **README do card:** [[../00 QA/00 README|README]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Matriz de atores e relações:** [[01 - Matriz de atores e relações]] · **Mapa geral:** [[00 - Mapa geral]]
-> As 16 fatias-fonte não são listadas aqui — cada seção temática abaixo já linka para a sua fatia-fonte correspondente, no cabeçalho da seção e em cada linha das tabelas.
+> As fatias-fonte não são listadas em duplicidade — cada seção temática abaixo linka para a nota correspondente.
 
 > [!important] Revisado e aprovado pelo Codex em 13/10/2026 (passo 7 do Roadmap concluído)
-> Esta nota foi **revisada e aprovada**. O passo 8 do Roadmap (priorizar os itens do TR ainda sem fatia própria ou declará-los não aplicáveis/fora do preset) **já é permitido**. **Gate:** nenhuma fatia nova (18+) deve ser aberta antes da triagem do passo 8 ser concluída.
+> Esta nota foi **revisada e aprovada**. O passo 8 do Roadmap (priorizar os itens do TR ainda sem fatia própria ou declará-los não aplicáveis/fora do preset) **já é permitido**. **Gate:** nenhuma fatia nova (19+) deve ser aberta antes da triagem do passo 8 ser concluída.
 
 > [!info] Escopo e limites desta consolidação
-> Esta nota **resume as 16 fatias aprovadas** (notas 02–17 da pasta `01 Modelo do preset/Especificações do preset piloto/`), normalizando vocabulário e organizando por tema — **não duplica** o texto analítico delas (cada linha/grupo linka de volta à fatia-fonte, onde está a evidência completa) e **não introduz nenhuma inferência nova**. **Não especifica o TR inteiro** (só os itens que já têm fatia própria — ver "Limite de cobertura" abaixo) **nem declara o preset pronto/decidido**. Não implementa seed, não propõe arquitetura, não decide o que entra no preset nem declara item não aplicável — isso é o passo 8 do Roadmap, separado e posterior a esta consolidação. Repositório de referência de todas as 16 fatias: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4`.
+> Esta nota **resume as 17 fatias aprovadas** (notas 02–18 da pasta `01 Modelo do preset/Especificações do preset piloto/`), normalizando vocabulário e organizando por tema — **não duplica** a evidência detalhada das notas-fonte nem introduz inferências novas. **Não especifica o TR inteiro** (só os itens que já têm fatia própria — ver "Limite de cobertura" abaixo) **nem declara o preset pronto/decidido**. O passo 8 continua responsável por decidir o destino dos itens ainda sem fatia própria. Repositório de referência das fatias: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4`.
 
 > [!important] Restrição de ambiente confirmada por Rafael (09/10/2026)
 > Cada QA terá ambiente próprio; o seed tem alto custo, é formado uma vez e permanece persistente; a implementação será feita por outro QA. Esta nota descreve **necessidades de dados por cenário** — não presume nova execução do seed nem escolhe mecanismo técnico.
@@ -30,7 +30,7 @@ status: aprovado
 
 ## Limite de cobertura
 
-**Itens do TR efetivamente cobertos pelas 16 fatias** (por `itens_tr` de cada nota-fonte):
+**Itens do TR efetivamente cobertos pelas 17 fatias** (por `itens_tr` de cada nota-fonte):
 
 | Fatia | itens_tr | Recorte-fonte (Fase 1) |
 |---|---|---|
@@ -50,13 +50,15 @@ status: aprovado
 | [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|15]] | 1.35.5 | Recorte 07 |
 | [[Especificações do preset piloto/16 - Especificação do preset piloto (TR 1.40.2–1.40.2.1)\|16]] | 1.40.2–1.40.2.1 | Recorte 08 |
 | [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|17]] | 1.40.3 | Recorte 08 |
+| [[Especificações do preset piloto/18 - Especificação do preset piloto (TR 1.41)\|18]] | 1.41 | Recorte 09 |
 
-**Precisão sobre o recorte 07 (1.33–1.35):** foi **mapeado conceitualmente por inteiro na Fase 1** (Matriz: ✅ revisado e aprovado; recorte-fonte: 50/50 itens "Mapeado") — isso vale para **todos** os itens citados a seguir, inclusive os sem fatia própria. Na Fase 2, porém, **só 10 das 16 fatias** pertencem a ele (06–15), e mesmo essas **não cobrem o recorte por inteiro**: os itens `1.35` (introdutório), **`1.35.1`** (linha do tempo geral da tramitação — **sem fatia própria de especificação do preset na Fase 2; já mapeado conceitualmente na Fase 1; citado como fronteira na fatia 15**), `1.35.2` (introdutório), `1.35.2.1` (enum de status — mapeado conceitualmente na Fase 1; na Fase 2, só tocado de forma incidental na fatia 06, por compartilhar o enum com 1.33.3.6; não é escopo próprio dela) e `1.35.2.2` (introdutório) **não têm fatia própria de especificação do preset**. Isso não os torna fora do preset nem "não analisados" — ficam pendentes para o passo 8 decidir se viram fatia futura ou são declarados não aplicáveis/fora do preset, com justificativa.
+**Precisão sobre o recorte 07 (1.33–1.35):** foi **mapeado conceitualmente por inteiro na Fase 1** (Matriz: ✅ revisado e aprovado; recorte-fonte: 50/50 itens "Mapeado") — isso vale para **todos** os itens citados a seguir, inclusive os sem fatia própria. Na Fase 2, porém, **só 10 das 17 fatias** pertencem a ele (06–15), e mesmo essas **não cobrem o recorte por inteiro**: os itens `1.35` (introdutório), **`1.35.1`** (linha do tempo geral da tramitação — **sem fatia própria de especificação do preset na Fase 2; já mapeado conceitualmente na Fase 1; citado como fronteira na fatia 15**), `1.35.2` (introdutório), `1.35.2.1` (enum de status — mapeado conceitualmente na Fase 1; na Fase 2, só tocado de forma incidental na fatia 06, por compartilhar o enum com 1.33.3.6; não é escopo próprio dela) e `1.35.2.2` (introdutório) **não têm fatia própria de especificação do preset**. Isso não os torna fora do preset nem "não analisados" — ficam pendentes para o passo 8 decidir se viram fatia futura ou são declarados não aplicáveis/fora do preset, com justificativa.
 
 **Demais recortes:**
 - **Recorte 01** (infraestrutura técnica, 1.1–1.23) — sem fatia; decisão já registrada no Mapa geral ("sem elementos de negócio no diagrama"), não uma omissão.
 - **Recorte 08** (1.38–1.40) — só `1.40.2–1.40.2.1` e `1.40.3` têm fatia (16, 17); `1.38`, `1.39`, `1.40.1`, `1.40.4–1.40.6` ficam pendentes.
-- **Recortes 09, 10, 11** (1.41 chaves de acesso; 1.42 personalização; 1.43 estatísticas) — sem nenhuma fatia ainda.
+- **Recorte 09** (1.41 chaves de acesso) — coberto pela fatia 18.
+- **Recortes 10 e 11** (1.42 personalização; 1.43 estatísticas) — sem fatia própria; aguardam decisão do passo 8.
 
 **Esta nota não declara nenhum desses itens como não aplicável nem decide o que entra no preset candidato** — isso é o passo 8 do Roadmap, posterior e separado desta consolidação.
 
@@ -65,7 +67,7 @@ status: aprovado
 - **Despacho de etapa (1.30.2) × Despacho na tramitação (1.35.2.2.1)** — mesma dúvida dos recortes 05/07; as fatias 04 e 08 confirmam que não encontraram teste que ligue os dois, sem resolver a identidade.
 - **Documento apensado via despacho (1.35.2.2.1.2.a) × Documento associado automaticamente (1.35.4)** — mesma dúvida do recorte 07; as fatias 08 e 14 preservam a dúvida sem resolvê-la.
 - **"Contribuinte" (1.32/1.40.3.a) como ator distinto** — dúvida dos recortes 06/08; a fatia 17 confirma que não encontrou evidência de código, sem resolver.
-- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1)** — dúvida de negócio do Mapa geral; **esclarecida no contexto do produto atual em 13/10/2026** (Canal Oficial é o canal de divulgação externa citado em 1.38.1.b; Jornal Oficial é a área pública de acesso citada em 1.38.3.1; fazem parte do mesmo fluxo de divulgação externa, segundo [[QA Workspace/04 Conhecimento/Módulos/Divulgar Documento|Divulgar Documento]] — documentação de produto, não teste de código nem afirmação literal do TR). Nenhuma das 16 fatias toca nela diretamente (1.38 não tem fatia própria ainda — fica para o passo 8 decidir).
+- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1)** — dúvida de negócio do Mapa geral; **esclarecida no contexto do produto atual em 13/10/2026** (Canal Oficial é o canal de divulgação externa citado em 1.38.1.b; Jornal Oficial é a área pública de acesso citada em 1.38.3.1; fazem parte do mesmo fluxo de divulgação externa, segundo [[QA Workspace/04 Conhecimento/Módulos/Divulgar Documento|Divulgar Documento]] — documentação de produto, não teste de código nem afirmação literal do TR). Nenhuma das fatias atuais a cobre diretamente (1.38 não tem fatia própria ainda — fica para o passo 8 decidir).
 
 ---
 
@@ -284,6 +286,20 @@ status: aprovado
 
 ---
 
+## 9. Chaves de acesso e criação delegada (recorte 09 · [[Especificações do preset piloto/18 - Especificação do preset piloto (TR 1.41)|fatia 18]])
+
+| Ref. TR | Ator/entidade/dado/estado/relação | Classe | Evidência resumida | Certeza | Lacuna/decisão |
+|---|---|---|---|---|---|
+| 1.41 | Módulo dedicado de chave (`accessKey`) | Baseline persistente reutilizável | Provisionamento cria/reconcilia o módulo; não prepara chaves individuais | Confirmado | — |
+| 1.41.1, 1.41.1.b.i–iii, 1.41.1.c | Chave concedente→convenente, período/limite de uso, módulo autorizado e setor distinto | Ação de teste/temporária | A49-C01 e E57-C01 criam chaves em cenário; não são parte do baseline | Confirmado | Chave criada não tem encerramento ao fim do próprio teste comprovado |
+| 1.41.1.a | Nível impedido de criar chave | — | Nenhuma cobertura positiva/negativa encontrada | A confirmar | Restrição por nível sem teste |
+| 1.41.1.c.i, 1.41.2.f | Encerramento automático/manual | Ação de teste parcial | Limpeza de chaves residuais do mesmo par ocorre no início de execução posterior; não há asserção de sucesso nem teste do limite automático | Parcial / A confirmar | Encerramento automático e ciclo de vida da chave criada continuam sem cobertura |
+| 1.41.1.d–e | Listas/filtros e histórico/contadores | Consulta + dependência observada | Listas de criadas/recebidas e estado ativo são lidos; filtros de status não são usados; contadores existem no shape mas não são lidos | Parcial / A confirmar | Estados/filtros encerrada/agendada e contadores sem teste |
+| 1.41.2.a–c | Criar documento usando chave ou permissão própria | Ação de teste/temporária | Ramo `ACCESS_KEY` exercitado; outros ramos citados no código não exercitados | Parcial | Ramos `SECTOR`, `MODAL_WITH_ME`, `MODAL_KEYS` sem cobertura |
+| 1.41.2.d–e | Notificação ao concedente e rastreabilidade do uso | Ação de teste + consulta | Evento de despacho ligado à chave confirmado por API; tag visual confirmada em E57-C01 | Parcial | Notificação sem evidência; registro de uso confirmado |
+
+Esta síntese preserva as incertezas e a distinção entre módulo persistente e chaves criadas durante os testes; a evidência completa está na fatia 18.
+
 ## Fontes
 
-Todas as linhas acima vêm exclusivamente das 16 fatias aprovadas (notas 02–17 em `01 Modelo do preset/Especificações do preset piloto/`), cada uma linkada por linha/grupo. Nenhuma evidência de código/teste foi relida ou reverificada nesta rodada — esta nota só reorganiza e normaliza vocabulário do que as fatias já registraram. Commit de referência citado por todas as fatias-fonte: `16c41e4` (repositório `sogov-automation-playwright`).
+Todas as linhas acima vêm exclusivamente das 17 fatias aprovadas (notas 02–18 em `01 Modelo do preset/Especificações do preset piloto/`), cada uma linkada por seção. Nenhuma evidência de código/teste foi relida nesta atualização da consolidação; ela incorpora os achados já revisados e registrados na fatia 18. Commit de referência citado pelas fatias-fonte: `16c41e4` (repositório `sogov-automation-playwright`).

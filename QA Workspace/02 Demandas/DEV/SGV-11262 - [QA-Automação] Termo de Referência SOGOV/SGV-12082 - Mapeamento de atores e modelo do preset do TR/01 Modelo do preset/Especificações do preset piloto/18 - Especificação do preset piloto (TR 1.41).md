@@ -4,7 +4,7 @@ task: SGV-12082
 pai: SGV-11262
 tipo: especificacao-preset
 itens_tr: "1.41"
-status: em levantamento
+status: aprovado
 ---
 # 18 - Especificação do preset piloto (item 1.41)
 
