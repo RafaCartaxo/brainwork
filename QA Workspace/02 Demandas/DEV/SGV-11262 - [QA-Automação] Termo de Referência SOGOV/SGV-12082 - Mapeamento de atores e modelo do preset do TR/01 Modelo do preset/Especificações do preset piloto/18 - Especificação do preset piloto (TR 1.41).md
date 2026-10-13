@@ -50,21 +50,34 @@ status: aprovado
 - **Servidor, Setor, Módulo:** dependências de baseline já mapeadas nas fatias 02–04 — não reabertas nem reclassificadas nesta fatia.
 - **Timeline geral de eventos do documento (1.35.1):** `getDocumentEventsWithAccessKey` é uma variante de `getDocumentEvents` (já citada como fronteira na fatia 15 e na triagem do recorte 07) — reaproveitada aqui só para o campo `accessKeyId`, sem reanalisar o mecanismo geral da linha do tempo.
 
+## Contexto de produto documentado — não equivale a cobertura de teste
+
+> Fonte: [[QA Workspace/04 Conhecimento/Módulos/Chaves de Acesso|Chaves de Acesso]], importada do Notion em 13/10/2026. Ainda não validada por execução do produto nesta rodada. Estes pontos complementam a regra de negócio; não alteram o que os testes/código Playwright confirmam.
+
+- **Permissão por nível:** a documentação diz que Administrador, Administrador setorial, N1 e N2 podem criar chaves; N3 só pode receber. Isso responde a regra no produto, mas o vínculo de N1/N2/N3 com os cinco níveis canônicos e com “Visualizador” no TR não está confirmado. Nenhum teste da fatia verifica a negação por nível.
+- **Status e filtros:** confirma abas Criadas/Recebidas, estados Ativa/Encerrada/Agendada e filtro por status nas duas abas. Os testes da fatia não selecionam filtros nem exercitam os três estados.
+- **Encerramento e notificações:** descreve encerramento manual ou por esgotamento de usos, além de gatilhos por mudança de setor/regra/perfil do concedente; também documenta notificação ao dono quando um documento é criado via chave. Esses comportamentos não foram confirmados por asserção nos testes Playwright consultados.
+- **Histórico e contadores:** a página descreve total de documentos gerados e histórico detalhado. A fatia confirma que os campos existem no shape, mas não os encontra lidos/assertados pelos testes.
+- **Envolvimento e despachos:** descreve acesso completo/parcial conforme vínculo com o setor e despacho em nome do concedente. São regras de produto úteis para orientar cenários futuros, mas não foram investigadas como requisito de preset nesta fatia.
+
+**Leitura para o preset:** a documentação esclarece o comportamento esperado do produto; ainda é preciso decidir no passo 8 quais estados precisam estar persistidos para a sanidade. Ausência de teste continua sendo lacuna de automação, não prova de ausência no produto.
+
 ## O que falta para este recorte virar preset executável (resumo)
 
 > As referências numeradas desta seção e da tabela levam diretamente à página correspondente do PDF do TR.
 
-- **Nível que não pode criar chave ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.a]])** — sem cobertura, positiva ou negativa.
-- **Encerramento automático ao atingir o limite ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.c.i]] / [[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.f]])** — nenhum teste esgota `totalUsage` para observar o encerramento automático.
-- **Filtro por status ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.1.d]])** — não exercitado em nenhum nível: os testes só observam o estado `ACTIVE`/"Ativa" da chave recém-criada, sem selecionar/passar nenhum filtro. Estados "Encerradas" e "Agendadas" também não aparecem em nenhum teste.
-- **Histórico/contadores de documentos gerados ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.1.e]])** — campos existem no shape, nunca lidos por teste.
-- **Notificação ao concedente ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.d]])** — sem qualquer evidência de código no domínio de assinatura/documento/chave.
+- **Permissão por nível ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.a]])** — regra documentada para N3, mas sem teste negativo; equivalência com “Visualizador”/níveis canônicos ainda não confirmada.
+- **Encerramento automático ao atingir o limite ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.c.i]] / [[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.f]])** — regra descrita na documentação de produto; nenhum teste esgota `totalUsage` nem confirma status/datas após o encerramento.
+- **Filtro por status ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.1.d]])** — produto documenta filtros e estados Ativa/Encerrada/Agendada; Playwright só observa `ACTIVE`/"Ativa" na chave recém-criada, sem selecionar filtros.
+- **Histórico/contadores de documentos gerados ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.1.e]])** — produto documenta totais e histórico; campos do código existem no shape, mas nunca são lidos/assertados pelos testes consultados.
+- **Notificação ao concedente ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.d]])** — produto documenta notificação na criação de documento via chave; a entrega da notificação não foi confirmada em código/teste nesta fatia.
 - **Ramos `SECTOR`, `MODAL_WITH_ME`, `MODAL_KEYS` de `typeAccess` ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.a–c]])** — nomeados em comentário do próprio código, nunca exercitados por teste.
 - **Encerramento da própria chave ao final do teste que a criou ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.f]])** — não exercitado nem assertado em nenhum dos 4 testes lidos; a limpeza encontrada (`closeOpenAccessKeysForRecipient`) atua sobre chaves residuais de uma execução **anterior** do mesmo par, não sobre a chave recém-criada.
 - **Nenhuma chave de acesso específica integra o baseline persistente** — só o módulo dedicado (`accessKey`) é criado uma vez pelo provisionamento. Toda chave (concedente, convenente, limite, módulo autorizado) é criada como ação de cenário a cada execução; a limpeza de chaves residuais do mesmo par ocorre no início de uma execução futura, não ao fim da execução atual.
 
 ## Fontes/evidências
 
+- Documentação de produto importada: [[QA Workspace/04 Conhecimento/Módulos/Chaves de Acesso|Chaves de Acesso]] — consultada como contexto de produto, não como evidência de execução Playwright.
 - Recorte do TR (fonte do modelo conceitual, não alterado nesta rodada): [[../Seções do TR/09 - Chaves de acesso e criação delegada (1.41)]] — item 1.41 completo.
 - Triagem READ-ONLY anterior (passo 8, recortes 09–11) — ponto de partida para abrir esta fatia, reconferida diretamente no código nesta rodada, não apenas herdada.
 - Código do repositório Playwright (`main`, commit `16c41e4`): `playwright/src/api/services/access-keys.ts` (`createAccessKey`, `closeAccessKey`, `closeOpenAccessKeysForRecipient`, `getAccessKey`, `getAccessKeysByPublicAgent`, `getAccessKeysByAuthorizedPublicAgent`, `getModulesUserCanCreate`, `createDispatchByAccessKey`, `getDocumentEventsWithAccessKey`), `playwright/src/data/factories/access-keys.ts` (`makeAccessKey`, `accessKeyDate`, `makeAccessKeyDispatch`), `playwright/src/data/seed/provision.ts` (módulo `accessKey`, linhas 103-104), `playwright/src/ui/access-keys.ts` (helpers de tela), `playwright/tests/api/public-agents/access-key-document-creation.spec.ts` (A49-C01/C02/C03, função `grantKey`), `playwright/tests/e2e/public-agents/access-key-document-creation.spec.ts` (E57-C01). Lido nesta sessão, só leitura — nenhum comando executado, nenhum teste rodado.
