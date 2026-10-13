@@ -12,10 +12,10 @@ status: aprovado
 > As fatias-fonte não são listadas em duplicidade — cada seção temática abaixo linka para a nota correspondente.
 
 > [!important] Revisado e aprovado pelo Codex em 13/10/2026 (passo 7 do Roadmap concluído)
-> Esta nota foi **revisada e aprovada**. O passo 8 do Roadmap (priorizar os itens do TR ainda sem fatia própria ou declará-los não aplicáveis/fora do preset) **já é permitido**. **Gate:** nenhuma fatia nova (19+) deve ser aberta antes da triagem do passo 8 ser concluída.
+> Esta nota foi **revisada e aprovada como consolidação das evidências atuais**. Ela não é o modelo-alvo do preset. A triagem do passo 8 seleciona o caminho inicial e preserva lacunas/extensões; não exige declarar todos os demais itens fora do preset antes de começar o modelo-alvo. Não abrir fatias 19+ apenas para repetir o inventário do seed atual.
 
 > [!info] Escopo e limites desta consolidação
-> Esta nota **resume as 17 fatias aprovadas** (notas 02–18 da pasta `01 Modelo do preset/Especificações do preset piloto/`), normalizando vocabulário e organizando por tema — **não duplica** a evidência detalhada das notas-fonte nem introduz inferências novas. **Não especifica o TR inteiro** (só os itens que já têm fatia própria — ver "Limite de cobertura" abaixo) **nem declara o preset pronto/decidido**. O passo 8 continua responsável por decidir o destino dos itens ainda sem fatia própria. Repositório de referência das fatias: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4`.
+> Esta nota **resume as 17 fatias aprovadas** (notas 02–18 da pasta `01 Modelo do preset/Especificações do preset piloto/`), normalizando vocabulário e organizando por tema — **não duplica** a evidência detalhada das notas-fonte nem introduz inferências novas. Ela registra o que foi observado no seed/testes atuais; **não especifica o modelo-alvo do TR inteiro nem declara o preset pronto/decidido**. Os itens sem fatia continuam rastreados na triagem, sem serem descartados por essa ausência. Repositório de referência das fatias: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4`.
 
 > [!important] Restrição de ambiente confirmada por Rafael (09/10/2026)
 > Cada QA terá ambiente próprio; o seed tem alto custo, é formado uma vez e permanece persistente; a implementação será feita por outro QA. Esta nota descreve **necessidades de dados por cenário** — não presume nova execução do seed nem escolhe mecanismo técnico.
@@ -52,22 +52,22 @@ status: aprovado
 | [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|17]] | 1.40.3 | Recorte 08 |
 | [[Especificações do preset piloto/18 - Especificação do preset piloto (TR 1.41)\|18]] | 1.41 | Recorte 09 |
 
-**Precisão sobre o recorte 07 (1.33–1.35):** foi **mapeado conceitualmente por inteiro na Fase 1** (Matriz: ✅ revisado e aprovado; recorte-fonte: 50/50 itens "Mapeado") — isso vale para **todos** os itens citados a seguir, inclusive os sem fatia própria. Na Fase 2, porém, **só 10 das 17 fatias** pertencem a ele (06–15), e mesmo essas **não cobrem o recorte por inteiro**: os itens `1.35` (introdutório), **`1.35.1`** (linha do tempo geral da tramitação — **sem fatia própria de especificação do preset na Fase 2; já mapeado conceitualmente na Fase 1; citado como fronteira na fatia 15**), `1.35.2` (introdutório), `1.35.2.1` (enum de status — mapeado conceitualmente na Fase 1; na Fase 2, só tocado de forma incidental na fatia 06, por compartilhar o enum com 1.33.3.6; não é escopo próprio dela) e `1.35.2.2` (introdutório) **não têm fatia própria de especificação do preset**. Isso não os torna fora do preset nem "não analisados" — ficam pendentes para o passo 8 decidir se viram fatia futura ou são declarados não aplicáveis/fora do preset, com justificativa.
+**Precisão sobre o recorte 07 (1.33–1.35):** foi **mapeado conceitualmente por inteiro na Fase 1** (Matriz: ✅ revisado e aprovado; recorte-fonte: 50/50 itens "Mapeado") — isso vale para **todos** os itens citados a seguir, inclusive os sem fatia própria. Na Fase 2, porém, **só 10 das 17 fatias** pertencem a ele (06–15), e mesmo essas **não cobrem o recorte por inteiro**: os itens `1.35` (introdutório), **`1.35.1`** (linha do tempo geral da tramitação — sem fatia própria de evidência na Fase 2; já mapeado conceitualmente na Fase 1; citado como fronteira na fatia 15), `1.35.2` (introdutório), `1.35.2.1` (enum de status — mapeado conceitualmente na Fase 1; tocado incidentalmente na fatia 06) e `1.35.2.2` (introdutório) **não têm fatia própria**. Isso não os torna fora do preset nem "não analisados"; continuam necessidades possíveis do modelo-alvo, conforme TR/produto, e não precisam de uma nova fatia para começar a modelagem.
 
 **Demais recortes:**
 - **Recorte 01** (infraestrutura técnica, 1.1–1.23) — sem fatia; decisão já registrada no Mapa geral ("sem elementos de negócio no diagrama"), não uma omissão.
 - **Recorte 08** (1.38–1.40) — só `1.40.2–1.40.2.1` e `1.40.3` têm fatia (16, 17); `1.38`, `1.39`, `1.40.1`, `1.40.4–1.40.6` ficam pendentes.
 - **Recorte 09** (1.41 chaves de acesso) — coberto pela fatia 18.
-- **Recortes 10 e 11** (1.42 personalização; 1.43 estatísticas) — sem fatia própria; aguardam decisão do passo 8.
+- **Recortes 10 e 11** (1.42 personalização; 1.43 estatísticas) — sem fatia própria de evidência técnica; continuam no escopo do modelo-alvo derivado do TR/produto.
 
-**Esta nota não declara nenhum desses itens como não aplicável nem decide o que entra no preset candidato** — isso é o passo 8 do Roadmap, posterior e separado desta consolidação.
+**Esta nota não declara nenhum desses itens como não aplicável nem decide o modelo-alvo.** A triagem indica o caminho inicial; os requisitos e suas incertezas continuam rastreáveis para evolução posterior.
 
 ## Dúvidas de negócio relevantes às linhas abaixo (abertas, não resolvidas aqui)
 
 - **Despacho de etapa (1.30.2) × Despacho na tramitação (1.35.2.2.1)** — mesma dúvida dos recortes 05/07; as fatias 04 e 08 confirmam que não encontraram teste que ligue os dois, sem resolver a identidade.
 - **Documento apensado via despacho (1.35.2.2.1.2.a) × Documento associado automaticamente (1.35.4)** — mesma dúvida do recorte 07; as fatias 08 e 14 preservam a dúvida sem resolvê-la.
 - **"Contribuinte" (1.32/1.40.3.a) como ator distinto** — dúvida dos recortes 06/08; a fatia 17 confirma que não encontrou evidência de código, sem resolver.
-- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1)** — dúvida de negócio do Mapa geral; **esclarecida no contexto do produto atual em 13/10/2026** (Canal Oficial é o canal de divulgação externa citado em 1.38.1.b; Jornal Oficial é a área pública de acesso citada em 1.38.3.1; fazem parte do mesmo fluxo de divulgação externa, segundo [[QA Workspace/04 Conhecimento/Módulos/Divulgar Documento|Divulgar Documento]] — documentação de produto, não teste de código nem afirmação literal do TR). Nenhuma das fatias atuais a cobre diretamente (1.38 não tem fatia própria ainda — fica para o passo 8 decidir).
+- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1)** — dúvida do Mapa geral esclarecida no contexto do produto atual em 13/10/2026 (Canal Oficial é o canal de divulgação externa; Jornal Oficial é a área pública de acesso; fazem parte do mesmo fluxo, segundo [[QA Workspace/04 Conhecimento/Módulos/Divulgar Documento|Divulgar Documento]] — documentação de produto, não teste de código nem afirmação literal do TR). A relação entra no modelo-alvo; a cobertura automatizada do acesso público permanece em aberto.
 
 ---
 
