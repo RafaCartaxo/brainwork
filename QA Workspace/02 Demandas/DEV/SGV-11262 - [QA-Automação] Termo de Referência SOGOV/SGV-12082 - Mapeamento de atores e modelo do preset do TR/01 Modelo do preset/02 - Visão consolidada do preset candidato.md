@@ -65,7 +65,7 @@ status: aprovado
 - **Despacho de etapa (1.30.2) × Despacho na tramitação (1.35.2.2.1)** — mesma dúvida dos recortes 05/07; as fatias 04 e 08 confirmam que não encontraram teste que ligue os dois, sem resolver a identidade.
 - **Documento apensado via despacho (1.35.2.2.1.2.a) × Documento associado automaticamente (1.35.4)** — mesma dúvida do recorte 07; as fatias 08 e 14 preservam a dúvida sem resolvê-la.
 - **"Contribuinte" (1.32/1.40.3.a) como ator distinto** — dúvida dos recortes 06/08; a fatia 17 confirma que não encontrou evidência de código, sem resolver.
-- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1)** — dúvida de negócio do Mapa geral, trilha paralela (Roadmap); nenhuma das 16 fatias toca nela diretamente (1.38 não tem fatia própria ainda).
+- **Canal Oficial (1.38.1.b) × Jornal Oficial (1.38.3.1)** — dúvida de negócio do Mapa geral; **esclarecida no contexto do produto atual em 13/10/2026** (Canal Oficial é o canal de divulgação externa citado em 1.38.1.b; Jornal Oficial é a área pública de acesso citada em 1.38.3.1; fazem parte do mesmo fluxo de divulgação externa, segundo [[QA Workspace/04 Conhecimento/Módulos/Divulgar Documento|Divulgar Documento]] — documentação de produto, não teste de código nem afirmação literal do TR). Nenhuma das 16 fatias toca nela diretamente (1.38 não tem fatia própria ainda — fica para o passo 8 decidir).
 
 ---
 
