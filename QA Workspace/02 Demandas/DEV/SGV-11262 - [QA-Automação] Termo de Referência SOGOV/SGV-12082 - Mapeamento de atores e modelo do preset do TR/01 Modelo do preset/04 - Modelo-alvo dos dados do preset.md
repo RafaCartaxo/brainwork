@@ -3,15 +3,15 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "modelo-alvo"
-status: "em elaboração"
+status: aprovado
 ---
 # 04 - Modelo-alvo dos dados do preset
 
 > [!info]- Navegação
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]] · **Roadmap:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]] (passo 9) · **README do card:** [[../00 QA/00 README|README]] · **Mapa geral:** [[00 - Mapa geral]] · **Matriz:** [[01 - Matriz de atores e relações]] · **Visão consolidada (evidência atual):** [[02 - Visão consolidada do preset candidato]] · **Triagem/caminho-base:** [[03 - Triagem dos itens sem fatia (passo 8)]]
 
-> [!important] Primeiro rascunho — deriva necessidades do TR/produto; não atribui canal de fornecimento
-> Esta nota modela, por entidade, os atributos, estados e relações necessários aos cenários de sanidade do TR completo (1.1–1.43), com origem rastreável no TR e na documentação de produto. Ela **não** decide ainda se cada dado vem do `.env` individual de cada QA, do seed persistente ou de um estado criado durante o cenário — esse mapeamento campo a campo é uma etapa posterior (passo 10 do Roadmap). O seed/testes atuais (fatias 02–18, consolidadas em [[02 - Visão consolidada do preset candidato|02]]) são evidência de referência sobre a automação de hoje, não limite deste modelo. Esta nota não cria CTs nem implementa seed. É um primeiro rascunho — após esta versão, pausa para revisão do Rafael/Codex.
+> [!important] Modelo revisado e aprovado pelo Rafael/Codex (13/10/2026) — deriva necessidades do TR/produto; não atribui canal de fornecimento
+> Esta nota modela, por entidade, os atributos, estados e relações necessários aos cenários de sanidade do TR completo (1.1–1.43), com origem rastreável no TR e na documentação de produto. Ela **não** decide se cada dado vem do `.env` individual de cada QA, do seed persistente ou de um estado criado durante o cenário — esse mapeamento campo a campo é o passo 10 do Roadmap, registrado em [[05 - Matriz de fornecimento dos dados]]. O seed/testes atuais (fatias 02–18, consolidadas em [[02 - Visão consolidada do preset candidato|02]]) são evidência de referência sobre a automação de hoje, não limite deste modelo. Esta nota não cria CTs nem implementa seed.
 
 ## 1. Como ler este modelo
 
@@ -189,7 +189,7 @@ flowchart TB
 
 ## 9. Relações entre grupos
 
-Não duplicadas aqui — todas já registradas em [[00 - Mapa geral#Relações entre grupos|Mapa geral § Relações entre grupos]] e no Mermaid integrado da mesma nota. Este modelo-alvo usa as mesmas entidades e relações; nenhuma relação nova foi introduzida nas seções 2–7 acima.
+Não duplicadas aqui — todas já registradas em [[00 - Mapa geral#Relações entre grupos|Mapa geral § Relações entre grupos]] e no Mermaid integrado da mesma nota. Este modelo-alvo usa as mesmas entidades e relações; nenhuma relação nova foi introduzida nas seções 3–8 acima.
 
 ## 10. Incertezas herdadas (não bloqueiam este modelo)
 
@@ -197,11 +197,11 @@ Resumo, sem duplicar o texto completo — ver fonte de cada uma:
 
 - Lacunas (a)–(p) do Mapa geral: a maioria já tem contexto de produto que esclarece para o produto atual ([[00 - Mapa geral#Lacunas registradas (arestas tracejadas)|detalhe completo]]); (h quanto a "contribuinte"), (i), (k), (l), (m), (n) e (p) seguem sem decisão/evidência suficiente.
 - `type:'SOGOV'` × taxonomia de assinatura do produto (1.40.1); ator/permissão de 1.42.1.a; níveis exatos autorizados pra estatísticas (1.43) — ver seção 7 da [[03 - Triagem dos itens sem fatia (passo 8)]].
-- Nenhuma dessas questões exige decisão agora — ficam marcadas, por entidade, nas tabelas das seções 2–7, pra aprofundamento quando a respectiva extensão for avaliada.
+- Nenhuma dessas questões exige decisão agora — ficam marcadas, por entidade, nas tabelas das seções 3–8, pra aprofundamento quando a respectiva extensão for avaliada.
 
 ## 11. Fornecimento de dados — a decidir depois
 
-Esta nota define **o que** cada entidade precisa (atributos, estados, relações). Ainda não decide **como** esse dado chega ao ambiente de teste: tanto o `.env` individual de cada QA quanto o seed persistente podem fornecer dados, e a natureza do dado não determina sozinha o canal. O mapeamento campo a campo entre `.env`, seed persistente e estado criado durante o cenário fica para uma etapa posterior (passo 10 do Roadmap), depois da revisão deste primeiro rascunho. O seed/código atual (fatias 02–18) serve de consulta e possível reaproveitamento, não de limite para as necessidades registradas acima.
+Esta nota define **o que** cada entidade precisa (atributos, estados, relações). Ainda não decide **como** esse dado chega ao ambiente de teste: tanto o `.env` individual de cada QA quanto o seed persistente podem fornecer dados, e a natureza do dado não determina sozinha o canal. O mapeamento campo a campo entre `.env`, seed persistente e estado criado durante o cenário é feito em [[05 - Matriz de fornecimento dos dados]] (passo 10 do Roadmap), começando pela fatia C1–C2. O seed/código atual (fatias 02–18) serve de consulta e possível reaproveitamento, não de limite para as necessidades registradas acima.
 
 ## Fontes
 
