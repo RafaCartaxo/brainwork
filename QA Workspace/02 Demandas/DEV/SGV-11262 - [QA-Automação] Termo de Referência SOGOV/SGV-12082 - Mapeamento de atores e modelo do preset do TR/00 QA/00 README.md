@@ -74,9 +74,9 @@ pontos: ""
 | Especificação do preset piloto (TR 1.41) | ✅ Revisada e aprovada pelo Codex — ver [[../01 Modelo do preset/Especificações do preset piloto/18 - Especificação do preset piloto (TR 1.41)|18 - Especificação do preset piloto]] |
 | Triagem do caminho inicial do modelo-alvo (passo 8 do Roadmap) | ✅ Caminho-base aprovado para iniciar; extensões e dúvidas permanecem rastreadas em [[../01 Modelo do preset/03 - Triagem dos itens sem fatia (passo 8)|03 - Triagem dos itens sem fatia]] |
 | Modelo-alvo dos dados do preset (Fase 3) | ✅ Revisado e aprovado pelo Rafael/Codex — ver [[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] |
-| Matriz de fornecimento dos dados (Fase 4, passo 10) | 🔵 Em andamento — fatia C1–C2 em [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]; C3–C6 pendentes |
+| Matriz de fornecimento dos dados (Fase 4, passo 10) | 🔵 Em andamento — fatias C1–C3 em [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]; C4–C6 pendentes |
 
-**Próximo passo:** completar `01 Modelo do preset/05 - Matriz de fornecimento dos dados.md` pras fatias C3–C6, depois de revisão da fatia C1–C2 inicial. Pra cada dado/estado já definido no modelo-alvo (04), registrar o canal candidato (`.env` individual, seed persistente, cenário de teste, ou combinação), como hipótese — não decisão. As 17 fatias aprovadas e a [[../01 Modelo do preset/02 - Visão consolidada do preset candidato|visão consolidada]] são evidência técnica de referência. Não abrir fatias 19+ para repetir essa evidência.
+**Próximo passo:** completar `01 Modelo do preset/05 - Matriz de fornecimento dos dados.md` pras fatias C4–C6, depois de revisão da fatia C1–C3. Pra cada dado/estado já definido no modelo-alvo (04), registrar o canal candidato (`.env` individual, seed persistente, cenário de teste, ou combinação), como hipótese — não decisão. As 17 fatias aprovadas e a [[../01 Modelo do preset/02 - Visão consolidada do preset candidato|visão consolidada]] são evidência técnica de referência. Não abrir fatias 19+ para repetir essa evidência.
 
 Pacote para `SGV-12082`:
 
@@ -93,7 +93,7 @@ SGV-12082 - Mapeamento de atores e modelo do preset do TR/
 │   ├── 02 - Visão consolidada do preset candidato.md  (evidências consolidadas das 17 fatias; não é o modelo-alvo)
 │   ├── 03 - Triagem dos itens sem fatia (passo 8).md  (caminho-base aprovado; extensões e dúvidas permanecem abertas)
 │   ├── 04 - Modelo-alvo dos dados do preset.md  (revisado e aprovado — Fase 3 concluída)
-│   ├── 05 - Matriz de fornecimento dos dados.md  (artefato do passo 10; fatia C1–C2 inicial, C3–C6 pendentes)
+│   ├── 05 - Matriz de fornecimento dos dados.md  (artefato do passo 10; fatias C1–C3 em andamento, C4–C6 pendentes)
 │   ├── Especificações do preset piloto/  (17 fatias aprovadas — evidência TR × seed/testes atuais)
 │   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes — Fase 1)
 └── Fontes/
