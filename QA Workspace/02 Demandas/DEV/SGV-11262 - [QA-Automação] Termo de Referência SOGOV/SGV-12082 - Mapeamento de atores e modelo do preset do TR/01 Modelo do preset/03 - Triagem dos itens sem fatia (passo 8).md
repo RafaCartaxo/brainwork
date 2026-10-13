@@ -3,15 +3,15 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "triagem-preset"
-status: em levantamento
+status: aprovado
 ---
 # 03 - Triagem dos itens sem fatia (passo 8)
 
 > [!info]- Navegação
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]] · **Roadmap:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]] (passo 8) · **README do card:** [[../00 QA/00 README|README]] · **Visão consolidada:** [[02 - Visão consolidada do preset candidato]] · **Matriz:** [[01 - Matriz de atores e relações]] · **Mapa geral:** [[00 - Mapa geral]]
 
-> [!important] Proposta de caminho-base — aguardando revisão do Rafael/Codex, sem decisão do passo 8 nem encerramento tomados
-> Esta nota propõe, por item, um **caminho-base** (o mínimo sustentado pra iniciar o modelo do preset), **extensões posteriores** (não bloqueiam o início) e **questões em aberto**. **Não é decisão aprovada nem fechamento do passo 8.** Nenhum item foi declarado não aplicável/fora do preset, nenhuma fatia nova (19+) foi aberta.
+> [!important] Caminho-base aprovado para iniciar o modelo-alvo
+> A triagem foi aprovada como **ordem de partida**, não como encerramento de requisitos. O modelo começa pelo caminho-base indicado por item; extensões e questões em aberto permanecem rastreadas para aprofundamento. Esta aprovação não transforma evidências técnicas em requisitos confirmados, não declara itens fora do preset e não exige abrir fatias 19+.
 
 ## 1. Propósito e limites
 
@@ -88,9 +88,9 @@ Sem resposta ainda em nenhuma fonte — mas **não bloqueiam** registrar o camin
 - **1.43** — "administradores e usuários autorizados" (texto do TR) corresponde a quais níveis canônicos exatos? Não nomeado pelo TR nem por produto.
 - **Referência cruzada, não reaberta:** N1 = Especialista e N2 = Usuário básico já confirmados (legenda em [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]]); só a correspondência de N3 com "Somente Leitura"/"Visualizador" segue em aberto — pendência registrada na fatia 18.
 
-## 8. Decisão de partida para revisão do Rafael/Codex
+## 8. Decisão de partida
 
-Esta triagem não precisa resolver todas as questões nem declarar requisitos fora do preset para permitir o próximo trabalho. A revisão deve confirmar ou ajustar o núcleo inicial do modelo-alvo e manter as extensões/lacunas registradas para aprofundamento progressivo. O modelo deriva necessidades do TR e do produto; somente depois atribuirá cada dado ao `.env` individual, ao seed persistente ou ao estado criado durante o cenário. A nota continua proposta até a validação desse caminho; não fecha o passo 8 nem aprova automaticamente cada classificação das tabelas.
+O Rafael autorizou seguir pelo caminho-base proposto. O passo 8 fica concluído como **seleção do ponto de partida**, não como decisão item a item de excluir ou encerrar requisitos. O modelo-alvo deriva necessidades do TR e da documentação de produto; somente depois atribui cada dado ao `.env` individual, ao seed persistente ou ao estado criado durante o cenário. As classificações técnicas e dúvidas das tabelas continuam com o grau de evidência registrado em cada linha; esta aprovação não as converte em fatos confirmados.
 
 ## Fontes
 
