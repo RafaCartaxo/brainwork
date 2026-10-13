@@ -82,7 +82,7 @@ status: em levantamento
 | 1.27 | Servidor ↔ Setor (N:N) | Baseline persistente reutilizável (1 setor) + Ação de teste/temporária (2º setor) | `BASELINE.agents` (1 setor) + CT E64 (`editPublicAgent`, 2º setor) — [[Especificações do preset piloto/02 - Especificação do preset piloto (TR 1.24–1.27)\|fatia 02]] | Confirmado | — |
 | 1.27.2.1–5 | 5 níveis canônicos de acesso | Baseline persistente reutilizável | `accessLevel` 2–5 (`seqBasic`/`seqSpecialist`/`seqSectorAdmin`/`seqAdmin`) — [[Especificações do preset piloto/02 - Especificação do preset piloto (TR 1.24–1.27)\|fatia 02]] | Confirmado (4 de 5 níveis) | Nível 1 ("Somente leitura") sem identidade própria |
 | 1.27.4.4/5.4/6 | Permissão de visualizar/criar Assuntos e Serviços, por nível | A confirmar (confirmação verbal de produto por Rafael, não é dado de seed/código) | contexto de produto, recorte 03 — [[Especificações do preset piloto/02 - Especificação do preset piloto (TR 1.24–1.27)\|fatia 02]] | Confirmado (produto); A confirmar (código) | Regra ainda não verificada no código/seed |
-| 1.27.3–7.4 | Escopo de permissão por nível (4 áreas) | A confirmar (não investigado nesta fatia) | — | A confirmar | Fora do escopo da fatia 02 |
+| 1.27.3–7.4 | Escopo de permissão por nível (4 áreas) | A confirmar (não investigado nesta fatia) | [[Especificações do preset piloto/02 - Especificação do preset piloto (TR 1.24–1.27)\|fatia 02]] (fora do escopo, sem investigação) | A confirmar | Fora do escopo da fatia 02 |
 | 1.27.10.1/11.2 | Status de atividade (listagem) e presença online/offline | A confirmar (mecanismo não existe no Playwright `main`) | mesmo gap de `WORK_STATUS` acima — [[Especificações do preset piloto/02 - Especificação do preset piloto (TR 1.24–1.27)\|fatia 02]] | Confirmado (gap) | Não portado |
 
 ## 2. Serviços, assuntos e categorias de documento (recorte 04 · [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)|fatia 03]])
@@ -93,9 +93,9 @@ status: em levantamento
 | 1.28 / 1.27.8.2.o | Categoria/Subcategoria de A&S (lacuna (n) do mapa) | Baseline persistente reutilizável (campo existe, nunca exercitado) | `categoryId: null` sempre — [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] | Confirmado (campo não usado) | Lacuna (n) não resolvida por isso |
 | 1.28.1.2.1 | Tipos de campo personalizado | Ação de teste/temporária (parcial) | `file`, `bigText`, `informativeText-*` — [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] | Confirmado (parcial) | Demais tipos do enum não verificados |
 | 1.29.1 | Categoria-base de documento (3 valores) | Baseline persistente reutilizável | `makeModule`/DO/CO/PA, `documentType` — [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] | Confirmado (uso no seed) | Limite do schema — A confirmar |
-| 1.29.2–1.29.9 | 8 categorias específicas de documento | A confirmar (não encontrado) | — | A confirmar | Não localizado no código lido |
-| 1.29.10 | Zoneamento/Processo urbanístico | Baseline persistente reutilizável (módulo `PU` específico) | `makeModule(PU, isUrbanisticProcess:true)` — [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] | Confirmado (config. do seed) | Não é categoria-base própria no seed; limite do schema — A confirmar |
-| 1.29.10.4 | Zona, Categoria de uso | A confirmar (não localizado) | — | A confirmar | — |
+| 1.29.2–1.29.9 | 8 categorias específicas de documento | A confirmar (não encontrado) | [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] (não localizado) | A confirmar | Não localizado no código lido |
+| 1.29.10 | Zoneamento/Processo urbanístico | Baseline persistente reutilizável (módulo `PU`, apenas para cenários que o requerem — não é baseline padrão de todo órgão) | `makeModule(PU, isUrbanisticProcess:true)` — [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] | Confirmado (config. do seed) | Não é categoria-base própria no seed; limite do schema — A confirmar |
+| 1.29.10.4 | Zona, Categoria de uso | A confirmar (não localizado) | [[Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29)\|fatia 03]] (não localizado) | A confirmar | — |
 
 ## 3. Fluxo de trabalho, Etapa, Despacho de etapa e Modelos de documento (recorte 05 · [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)|fatia 04]])
 
@@ -105,14 +105,14 @@ status: em levantamento
 | 1.30/1.30.1 | 3 configurações de Fluxo no baseline | Baseline persistente reutilizável | `workflow`/`workflowAttachment`/`workflowFiveSteps` — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado | — |
 | 1.30.1 | Etapa — nome/setor responsável/regras de tramitação | Baseline persistente reutilizável | `makeWorkflowInput`, objeto `base` dos steps — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado | — |
 | 1.30.2 | Despacho na etapa (customizado, assinatura opcional) | Baseline persistente reutilizável (workflow `workflow`) + Ação de teste/temporária (variante com anexo) | `dispatches`/`dispatchLocations` do step — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado | Identidade com despacho de tramitação (1.35.2.2.1) — ver dúvida acima |
-| 1.30.3 | Regras de transição de etapa | A confirmar (não verificado) | — | A confirmar | Comportamento de tela/fluxo, não investigado |
+| 1.30.3 | Regras de transição de etapa | A confirmar (não verificado) | [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] (não verificado) | A confirmar | Comportamento de tela/fluxo, não investigado |
 | 1.31.1.1 | Modelo simples | Ação de teste/temporária | `makeDocumentModel`, `simple-model.spec.ts` — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado (valores vistos) | Demais valores de `inheritanceType`/`sharedType`; não integra baseline |
-| 1.31.1.2 | Histórico de alterações do modelo | A confirmar (não verificado) | — | A confirmar | — |
+| 1.31.1.2 | Histórico de alterações do modelo | A confirmar (não verificado) | [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] (não verificado) | A confirmar | — |
 | 1.31.2 | Documento automatizado — cadastro do modelo | Ação de teste/temporária | `makeAutomatedDocumentModel` — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado | Não integra baseline |
 | 1.31.2.1.3 | Estilização de cabeçalho/rodapé | Ação de teste/temporária | `headerImage*`/`footer*` — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado | — |
 | 1.31.2.1.3.1 | Conteúdo/herança de dados (@mentions) | Ação de teste/temporária | `getAllAutomatedDocumentMentionFields` — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado | — |
 | 1.31.2.1.3.2 | Validade pré-definida | Ação de teste/temporária | `hasValidity: false` por padrão — [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] | Confirmado (campos existem, desativados) | Validade não ativa na config. padrão |
-| 1.31.3 | Edição/exclusão de modelos com histórico | A confirmar (não verificado) | — | A confirmar | — |
+| 1.31.3 | Edição/exclusão de modelos com histórico | A confirmar (não verificado) | [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]] (não verificado) | A confirmar | — |
 
 ## 4. Atores externos e atendimento ao cidadão (recorte 06 · [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)|fatia 05]])
 
@@ -124,12 +124,12 @@ status: em levantamento
 | 1.32 | Cadastro único/auto-registro PF | A confirmar (não encontrado) | só fábrica PJ existe — [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] | A confirmar | — |
 | 1.32.1 | Confirmação de cadastro por e-mail | Baseline persistente reutilizável (condicional — só quando o cidadão ainda não existe) | `getCitizenOrCreate`, `provision.ts` L.480 — [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] | Confirmado (fluxo completo, condicionado) | Não exercitado de novo em instância já provisionada |
 | 1.36 | Abertura externa habilitada/desabilitada | Baseline persistente reutilizável | `isOpenExternal`, `services.openExternalDisabled`; A47 — [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] | Confirmado | — |
-| 1.36 | "Canais digitais do órgão" | A confirmar (não localizado) | — | A confirmar (sem mudança) | — |
+| 1.36 | "Canais digitais do órgão" | A confirmar (não localizado) | [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] (não localizado) | A confirmar (sem mudança) | — |
 | 1.36 | "Entes externos" (terceiro tipo de ator) | A confirmar (sem nova evidência de existência) | `BASELINE.citizens`/pools só têm 2 tipos — [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] | A confirmar | — |
 | 1.37 | Demanda externa (solicitação aberta por cidadão) | Ação de teste/temporária | `makeExternalDocument`/`generateExternalDocument` — [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] | Confirmado (mecanismo) | Equivalência com entidade "Demanda" própria — Inferido |
 | 1.37 | Interação do cidadão limitada à abertura | Baseline persistente reutilizável | `services.citizenOpeningOnly` — [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] | Confirmado | — |
-| 1.37 | Usuário externo acompanha/assina/imprime | A confirmar (fora do escopo desta fatia) | coberto em outras fatias (04, 16/17) | A confirmar | — |
-| 1.37 | Estado da Demanda (Pausada/Encerrada) | A confirmar (sem verificação nova) | ver recorte 06 | Sem mudança | — |
+| 1.37 | Usuário externo acompanha/assina/imprime | A confirmar (fora do escopo desta fatia) | [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] (fronteira) — coberto em [[Especificações do preset piloto/04 - Especificação do preset piloto (TR 1.30–1.31)\|fatia 04]], [[Especificações do preset piloto/16 - Especificação do preset piloto (TR 1.40.2–1.40.2.1)\|fatia 16]]/[[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | A confirmar | — |
+| 1.37 | Estado da Demanda (Pausada/Encerrada) | A confirmar (sem verificação nova) | [[Especificações do preset piloto/05 - Especificação do preset piloto (TR 1.32, 1.36–1.37)\|fatia 05]] (ver recorte 06) | Sem mudança | — |
 
 ## 5. Mesa de trabalho (recorte 07, item 1.33 · [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)|fatia 06]])
 
@@ -138,13 +138,14 @@ status: em levantamento
 | 1.33.3.1/3.2 | Visualização Kanban/Lista | Baseline persistente reutilizável (restrito ao pool de agentes) | `changeWorkboardViewMode`, laço `b.pools.agent` em `provision.ts` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (restrito ao pool) | Não vale para agentes nomeados fora do pool |
 | 1.33.3.6/1.35.2.1 | Status de Documento e da Mesa (5 valores) | Consulta | `getWorkboardDocuments` (`includeDocumentContents`) — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (status do Documento) | Status da Mesa como entidade própria — A confirmar |
 | 1.33.3.7 | Reabertura de documentos encerrados | Ação de teste/temporária | `reopenDocumentInSector` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (mecanismo existe) | — |
-| 1.33.1 | Alternar entre setores / mesas alheias | Baseline persistente reutilizável (restrito ao pool) + Baseline persistente reutilizável (`agentThird.othersWorkboard`) | `changeLastSectorAccessed` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado | — |
+| 1.33.1 | Alternar entre setores (setor ativo da sessão, reaplicado ao pool de agentes via provisionamento) | Baseline persistente reutilizável (restrito ao pool de agentes) | `changeLastSectorAccessed`, laço `b.pools.agent` em `provision.ts` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (restrito ao pool; não cobre os agentes nomeados fora do pool) | — |
+| 1.33.1 | Mesas alheias (acesso à mesa de outro setor, `othersWorkboard`) | Baseline persistente reutilizável (em identidade nomeada específica, `agentThird`) | `agentThird.othersWorkboard` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (dado de configuração presente nessa identidade) | Dado persistente em identidade específica, usado por cenários de acesso a outras mesas — distinto do setor ativo aplicado ao pool (linha acima) |
 | 1.33.3/3.3/3.4 | Alertas de prazo/status/novas demandas | Consulta | `getWorkboardDocuments` (toggles) — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (filtros existem) | Equivalência com "alerta" — Inferido |
 | 1.33.3.5 | Filtro de prazos vencidos/próximos | Consulta | `getWorkboardDocuments` (`deadline`) — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado | — |
 | 1.33.4 | Filtros/busca/ordenação (11 critérios) | Consulta (parcial) | `getWorkboardDocuments` (`term`, `orderBy`, etc.) — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado (parte) | Restante dos critérios — A confirmar |
 | 1.33.5.1–3 | Campos por documento na mesa | A confirmar (shape não confirmado) | `WorkboardItem` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | A confirmar | — |
 | 1.33.6 | Ferramenta de rastreio global | Consulta | `trackDocumentObjects` — [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] | Confirmado | — |
-| 1.33.2/2.1 | Resumo da tela de boas-vindas | A confirmar (não encontrado) | — | A confirmar | Possível reaproveitamento de `getWorkboardDocuments`, não confirmado |
+| 1.33.2/2.1 | Resumo da tela de boas-vindas | A confirmar (não encontrado) | [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]] (não encontrado) | A confirmar | Possível reaproveitamento de `getWorkboardDocuments`, não confirmado |
 
 ## 6. Etiquetas (recorte 07, item 1.34 · [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)|fatia 07]])
 
@@ -153,13 +154,13 @@ status: em levantamento
 | 1.34/1.34.2 | Etiqueta — criação (nome/cor) | Ação de teste/temporária | `createTag`/`makeTagInput`; A40-C01 — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado | Não integra baseline |
 | 1.34.1.a | Etiqueta pessoal | Ação de teste/temporária | `sharedType:'NO_SHARE'` — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado (não compartilhada) | Visibilidade restrita à mesa pessoal — A confirmar |
 | 1.34.1.b/2.1 | Etiqueta compartilhada entre setores | Ação de teste/temporária | `sharedType:'MY_SECTORS'`; A40-C05 — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado (dado) | Comportamento de tela — A confirmar |
-| 1.34.1.2 | Etiqueta padrão "Urgente" | Dependência observada | `LABEL_ID=1` assumido pelo CT, não criado por `provision.ts` — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado (dependência existe) | Ambiente-alvo precisa tê-la pré-existente |
+| 1.34.1.2 | Etiqueta padrão "Urgente" | Dependência observada | `LABEL_ID=1` assumido pelo CT, não criado por `provision.ts` — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado (dependência existe no teste); Inferido (correspondência com o item do TR 1.34.1.2, por nome/comportamento bater) | Ambiente-alvo precisa tê-la pré-existente |
 | 1.34.2.2 | Subetiqueta | Ação de teste/temporária | `makeSubTagInput` — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado (estrutura pai/filho) | Herança de compartilhamento — A confirmar |
 | 1.34.2.3 | Edição de etiqueta/subetiqueta | Ação de teste/temporária | `updateTag`; A40-C03/C04 — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado | — |
 | — | Histórico de etiqueta/subetiqueta | Ação de teste/temporária (gera) + Consulta (lê) | `getTagHistory`; A40-C08/09/10 — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado | — |
-| 1.34.2.4 | Alteração reflete em documentos já etiquetados | A confirmar (não verificado) | — | A confirmar | — |
-| 1.34.2.5 | Etiqueta excluída permanece em documentos antigos | A confirmar (não verificado) | — | A confirmar | — |
-| 1.34.1.3 | Etiqueta como filtro na mesa | A confirmar (sem verificação nova) | `filter.tags` — ver seção 5 | A confirmar | — |
+| 1.34.2.4 | Alteração reflete em documentos já etiquetados | A confirmar (não verificado) | [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] (não verificado) | A confirmar | — |
+| 1.34.2.5 | Etiqueta excluída permanece em documentos antigos | A confirmar (não verificado) | [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] (não verificado) | A confirmar | — |
+| 1.34.1.3 | Etiqueta como filtro na mesa | A confirmar (sem verificação nova) | `filter.tags` — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] (ver seção 5 / [[Especificações do preset piloto/06 - Especificação do preset piloto (TR 1.33)\|fatia 06]]) | A confirmar | — |
 | — | Associação etiqueta ↔ documento | Ação de teste/temporária | `updateDocumentLabel`; A19-C01/C02 — [[Especificações do preset piloto/07 - Especificação do preset piloto (TR 1.34)\|fatia 07]] | Confirmado | Depende da etiqueta "Urgente" (linha acima) |
 
 ## 7. Tramitação de processo administrativo (recorte 07, item 1.35 · fatias 08–15)
@@ -192,17 +193,17 @@ status: em levantamento
 | 1.35.2.4 | Solicitar revisão (configurada na criação) | Ação de teste/temporária | `makeDocument({withReviews})`; A27-C01 — [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] | Confirmado (na criação) | Solicitação posterior à criação — A confirmar |
 | 1.35.2.4 | Revisor(es) designado(s) | Ação de teste/temporária | `reviewers[]` — [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] | Confirmado (um revisor) | Múltiplos revisores — A confirmar |
 | 1.35.2.4 | Aprovação da revisão | Ação de teste/temporária | `approveReview`; A27-C01 — [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] | Confirmado (status → REVIEWED) | Mesmo evento ou novo — A confirmar |
-| — | Rejeição da revisão | A confirmar (não encontrado) | — | A confirmar | Não presume ausência no produto |
-| — | Status inicial do revisor | A confirmar (não verificado) | — | A confirmar | — |
+| — | Rejeição da revisão | A confirmar (não encontrado) | [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] (não encontrado) | A confirmar | Não presume ausência no produto |
+| — | Status inicial do revisor | A confirmar (não verificado) | [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] (não verificado) | A confirmar | — |
 | — | Justificativa do revisor | Dependência observada | shape `justification` — [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] | A confirmar | — |
-| 1.35.2.4 | Restrição a documentos em pré-elaboração | A confirmar (não verificado) | — | A confirmar | — |
+| 1.35.2.4 | Restrição a documentos em pré-elaboração | A confirmar (não verificado) | [[Especificações do preset piloto/10 - Especificação do preset piloto (TR 1.35.2.4)\|fatia 10]] (não verificado) | A confirmar | — |
 
 ### 7.4 Edição do documento de abertura ([[Especificações do preset piloto/11 - Especificação do preset piloto (TR 1.35.2.5)|fatia 11]])
 
 | Ref. TR | Ator/entidade/dado/estado/relação | Classe | Evidência/link | Certeza | Lacuna/decisão |
 |---|---|---|---|---|---|
 | 1.35.2.5 | Editar documento de abertura | Ação de teste/temporária | `editDocument`; A17-C01 — [[Especificações do preset piloto/11 - Especificação do preset piloto (TR 1.35.2.5)\|fatia 11]] | Confirmado | — |
-| 1.35.2.5 | Estado "pré-elaboração" (DRAFT) | A confirmar (único CT usa `mode:'SEND'`, não `DRAFT`) | — | A confirmar | Não exercitado em documento DRAFT |
+| 1.35.2.5 | Estado "pré-elaboração" (DRAFT) | A confirmar (único CT usa `mode:'SEND'`, não `DRAFT`) | [[Especificações do preset piloto/11 - Especificação do preset piloto (TR 1.35.2.5)\|fatia 11]] | A confirmar | Não exercitado em documento DRAFT |
 | 1.35.2.5 | Edição ≠ retificação (mutations distintas) | Ação de teste/temporária | `editDocumentObject`/`retifyDocumentObject` — [[Especificações do preset piloto/11 - Especificação do preset piloto (TR 1.35.2.5)\|fatia 11]] | Confirmado (mutations distintas) | Se edição gera `versionInfo.type:'edit'` — A confirmar |
 | 1.35.2.5 | Histórico de cada edição (valor `'edit'`) | Dependência observada | comentário em `edit-document.spec.ts`, sem asserção — [[Especificações do preset piloto/11 - Especificação do preset piloto (TR 1.35.2.5)\|fatia 11]] | A confirmar | Existência em execução e grafia do valor |
 
@@ -212,9 +213,9 @@ status: em levantamento
 |---|---|---|---|---|---|
 | 1.35.2.7.a | Serviço com prazo oficial configurado | Baseline persistente reutilizável (desigual entre os 2 serviços) | `officialPA` (só flag) / `officialPADeadline` (flag+dias+tipo) — [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] | Confirmado (ambos, níveis diferentes) | Ausência garantida de dias em `officialPA` — A confirmar |
 | 1.35.2.7.a | Prazo oficial "torna-se" o prazo do documento | Ação de teste/temporária | `type:'DOCUMENT'` automático via cidadão — [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] | Confirmado (via cidadão) | Via servidor — A confirmar |
-| 1.35.2.7.a | Imutabilidade do prazo oficial | A confirmar (não encontrado) | — | A confirmar | — |
+| 1.35.2.7.a | Imutabilidade do prazo oficial | A confirmar (não encontrado) | [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] (não encontrado) | A confirmar | — |
 | 1.35.2.7.b | Prazo do documento (manual) | Ação de teste/temporária (UI) | `addDeadlineByUI('document')`; E28-C02 — [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] | Confirmado (cenário exato) | Equivalência com "sem prazo oficial" do TR — A confirmar |
-| 1.35.2.7.b | "Aplicado a todos os envolvidos" | A confirmar (não verificado) | — | A confirmar | — |
+| 1.35.2.7.b | "Aplicado a todos os envolvidos" | A confirmar (não verificado) | [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] (não verificado) | A confirmar | — |
 | 1.35.2.7.d | Prazo individual | Ação de teste/temporária (UI+API) | `addDeadlineByUI('individual')`, `updateDocumentDeadlines`; E28-C03/A41-C01 — [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] | Confirmado | — |
 | 1.35.2.7.c | Prazo de assinatura | Dependência observada | comentário cita chave `signature` — [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] | A confirmar | — |
 | — | Chave `review` (não mapeada a tipo do TR) | Dependência observada | comentário — [[Especificações do preset piloto/12 - Especificação do preset piloto (TR 1.35.2.6–1.35.2.7)\|fatia 12]] | A confirmar | — |
@@ -247,11 +248,11 @@ status: em levantamento
 |---|---|---|---|---|---|
 | 1.35.5 | Geração das versões do histórico (criação/retificação) | Ação de teste/temporária | criação gera versão `'initial'` (A18-C01); retificação gera versão `'retification'` (A18-C02/A25-C01) — [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] | Confirmado | — |
 | 1.35.5 | Leitura do array de versões (`values[]`) — mesmo mecanismo para criação e retificação | Consulta (não prepara estado, só lê as versões já geradas) | `getDocumentForAgent(...).values` — [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] | Confirmado | — |
-| 1.35.5 | Histórico cobre também edições | A confirmar (mesma lacuna da fatia 11) | — | A confirmar | — |
-| — | Histórico acumulado (3+ versões) | A confirmar (não testado) | — | A confirmar | — |
-| — | Metadados por versão (autor/data) | A confirmar (não confirmado) | — | A confirmar | — |
+| 1.35.5 | Histórico cobre também edições | A confirmar (mesma lacuna da fatia 11) | [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] (ver também [[Especificações do preset piloto/11 - Especificação do preset piloto (TR 1.35.2.5)\|fatia 11]]) | A confirmar | — |
+| — | Histórico acumulado (3+ versões) | A confirmar (não testado) | [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] (não testado) | A confirmar | — |
+| — | Metadados por versão (autor/data) | A confirmar (não confirmado) | [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] (não confirmado) | A confirmar | — |
 | 1.35.5 | Botão "histórico" na tela do documento | Comportamento de tela quando aplicável | E18-C04, presença na toolbar — [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] | Confirmado (presença) | Conteúdo da tela — A confirmar |
-| — | Visibilidade condicional do botão | A confirmar (não conclusivo) | — | A confirmar | — |
+| — | Visibilidade condicional do botão | A confirmar (não conclusivo) | [[Especificações do preset piloto/15 - Especificação do preset piloto (TR 1.35.5)\|fatia 15]] (não conclusivo) | A confirmar | — |
 
 ## 8. Assinaturas — tipos e solicitação (recorte 08, itens 1.40.2–1.40.3 · fatias 16–17)
 
@@ -273,11 +274,11 @@ status: em levantamento
 | 1.40.3 | Quem solicita: servidor | Ação de teste/temporária | sempre `agent.api` — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado (o que é exercitado) | Restrição ativa contra cidadão solicitar — A confirmar |
 | 1.40.3.a | Signatário interno (servidor) | Ação de teste/temporária | `organizationalComponentId:sector.id`; A30-C01–C08 — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado | — |
 | 1.40.3.a | Signatário externo (cidadão) | Ação de teste/temporária | `organizationalComponentId:null`; A30-C12–C17 — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado | — |
-| 1.40.3.a | "Contribuinte" como ator distinto | A confirmar (não encontrado) | — | A confirmar | Dúvida do recorte 08 preservada (ver topo) |
+| 1.40.3.a | "Contribuinte" como ator distinto | A confirmar (não encontrado) | [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] (não encontrado) | A confirmar | Dúvida do recorte 08 preservada (ver topo) |
 | — | Cidadão assinando anexo via sessão do servidor | Ação de teste/temporária (achado lateral) | A30-C14–C17 — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado (padrão repetido) | Se é exigência real de backend — A confirmar |
 | 1.40.3.b | Sequencial — execução na ordem escolhida | Ação de teste/temporária + Baseline persistente reutilizável (identidades `seqBasic`–`seqAdmin`, `engineer`/`architect`/`manager`) | E40-C01, E34-S08 — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado (execução na ordem) | Se o sistema grava/aplica a ordem — A confirmar |
-| 1.40.3.b | Bloqueio até a vez (enforcement) | A confirmar (não exercitado nem assertado) | — | A confirmar | — |
-| 1.40.3.c | Permissões/regras de tramitação na seleção | A confirmar (não encontrado) | — | A confirmar | — |
+| 1.40.3.b | Bloqueio até a vez (enforcement) | A confirmar (não exercitado nem assertado) | [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] (não exercitado nem assertado) | A confirmar | — |
+| 1.40.3.c | Permissões/regras de tramitação na seleção | A confirmar (não encontrado) | [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] (não encontrado) | A confirmar | — |
 | 1.40.3.d | Locais de assinatura (solicitar/executar) | Ação de teste/temporária | 4 tipos de local; A30-C01–C07/C12–C17 — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado | — |
 | 1.40.3.d | Status `SIGNED` por local (multi-local) | Ação de teste/temporária (parcial) | só o 1º local lido em multi-local — [[Especificações do preset piloto/17 - Especificação do preset piloto (TR 1.40.3)\|fatia 17]] | Confirmado (local único) | Locais adicionais — A confirmar |
 
