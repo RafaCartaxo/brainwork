@@ -27,6 +27,112 @@ Cada grupo abaixo corresponde a um dos 6 agrupamentos temáticos já usados em [
 
 > Nas tabelas, links usam Markdown relativo (não wikilink) por renderização mais estável dentro de células; fora delas seguem como wikilinks.
 
+## 2. Síntese visual (Mermaid)
+
+> Resumo visual de alto nível, organizado pelos mesmos 6 grupos (C1–C6) das tabelas abaixo — não substitui nem duplica atributos, estados ou ações detalhadas; essas vivem só nas tabelas das seções 3–8. Este diagrama também não decide fornecimento (`.env`/seed/cenário) — ver seção 11.
+
+```mermaid
+flowchart TB
+    subgraph C1["Órgão, setores, servidores e níveis"]
+        Orgao["Órgão/Instância"]
+        Setor["Setor/Subsetor"]
+        Servidor["Servidor"]
+        Nivel["Nível de acesso"]
+        Conta["Conta de usuário"]
+    end
+
+    subgraph C2["Assuntos, serviços, categorias"]
+        Modulo["Módulo"]
+        AssuntoServico["Assunto/Serviço"]
+        CategoriaModulo["Categoria-base do Módulo<br/>(DO/CO/PA)"]
+        CategoriaAS["Categoria/Subcategoria de A&S<br/>(campo existe, não exercitado)"]
+        ProcessoUrb["Processo Urbanístico"]
+    end
+
+    subgraph C3["Fluxo, modelos, documento, mesa, etiqueta"]
+        Fluxo["Fluxo de trabalho/Etapa<br/>(opcional/contratado — Workflow)"]
+        ModeloDoc["Modelo simples/Documento automatizado"]
+        Documento["Documento/Processo<br/>(status: 5 valores do TR)"]
+        Mesa["Mesa de trabalho<br/>(estado próprio, distinto do Documento)"]
+        Etiqueta["Etiqueta"]
+    end
+
+    subgraph C4["Cidadão, usuário externo, central"]
+        UsuarioExterno["Contato/Usuário externo"]
+        Demanda["Demanda externa"]
+        Central["Central de atendimento"]
+        Jornal["Jornal Oficial<br/>(área pública de acesso)"]
+    end
+
+    subgraph C5["Divulgação, exportação, assinaturas, chaves"]
+        Divulgacao["Parâmetro de divulgação"]
+        MuralInterno["Mural interno"]
+        CanalExterno["Canal externo (Canal Oficial)"]
+        Exportacao["Exportação"]
+        Assinatura["Assinatura"]
+        Signatario["Signatário"]
+        Chave["Chave de acesso"]
+    end
+
+    subgraph C6["Personalização, ambientes, estatísticas"]
+        Personalizacao["Personalização"]
+        AmbienteCliente["Ambiente Cliente<br/>(capacidades padrão/adicionais contratadas)"]
+        Estatisticas["Estatísticas/Relatórios"]
+    end
+
+    Orgao --> Setor
+    Setor <-->|"N:N"| Servidor
+    Servidor --> Nivel
+    Servidor --> Conta
+    Orgao --> Personalizacao
+    Orgao -->|"funcionalidades padrão/adicionais contratadas"| AmbienteCliente
+
+    Modulo --> AssuntoServico
+    Modulo --> CategoriaModulo
+    AssuntoServico -.->|"campo existe, nunca exercitado — lacuna (n)"| CategoriaAS
+    Setor -->|"regras de tramitação"| AssuntoServico
+    Modulo -->|"módulo tipo PA, opcional/contratado"| ProcessoUrb
+    AmbienteCliente -->|"funcionalidade padrão (Módulos Disponibilizados)"| Modulo
+    AmbienteCliente -->|"funcionalidade adicional/contratada"| ProcessoUrb
+    AmbienteCliente -->|"funcionalidade adicional/contratada (Workflow)"| Fluxo
+
+    Fluxo -->|"documento tramita conforme etapa"| Documento
+    ModeloDoc --> Documento
+    ModeloDoc --> AssuntoServico
+    Documento --> Mesa
+    Documento --> Etiqueta
+
+    UsuarioExterno --> Demanda
+    UsuarioExterno --> Conta
+    UsuarioExterno -.->|"correspondência em aberto"| Signatario
+    Demanda -.->|"inferência aberta, fatia 05"| Documento
+    Central -->|"oferece acesso a"| AssuntoServico
+
+    Modulo -->|"parâmetro de divulgação"| Divulgacao
+    Divulgacao -->|"documento elegível (ação de divulgar)"| Documento
+    Divulgacao --> MuralInterno
+    Divulgacao --> CanalExterno
+    CanalExterno --> Jornal
+    Jornal --> Central
+    Documento --> Exportacao
+    Assinatura --> Documento
+    Assinatura --> Signatario
+    Chave -->|"concedente/convenente"| Servidor
+
+    AmbienteCliente -->|"funcionalidade padrão"| Estatisticas
+    Estatisticas --> Servidor
+    Estatisticas --> Documento
+
+    style C1 fill:none,stroke:#999999,stroke-width:1px
+    style C2 fill:none,stroke:#999999,stroke-width:1px
+    style C3 fill:none,stroke:#999999,stroke-width:1px
+    style C4 fill:none,stroke:#999999,stroke-width:1px
+    style C5 fill:none,stroke:#999999,stroke-width:1px
+    style C6 fill:none,stroke:#999999,stroke-width:1px
+```
+
+**Legenda:** linha sólida (`-->`/`<-->`) = relação sustentada no modelo/fontes já registradas nas tabelas; linha tracejada (`-.->`) = relação inferida/em aberto, ainda sem confirmação — três no diagrama: Demanda→Documento/Processo (identidade da entidade como Documento comum de origem externa é inferência da fatia 05; o mecanismo de abertura Usuário externo→Demanda **é** confirmado, não entra na mesma ressalva); Usuário externo→Signatário (correspondência "contribuinte"/signatário externo segue em aberto, lacuna (h)); e Assunto/Serviço→Categoria/Subcategoria de A&S (o campo `categoryId` existe mas nunca foi exercitado — a estrutura dessa categorização é uma lacuna técnica, lacuna (n) do Mapa geral, não uma relação comprovada). Rótulo "opcional/contratado" ou "adicional/contratado" = funcionalidade documentada, mas não universal — Processo Urbanístico (módulo PA) e Fluxo de trabalho/Workflow são adicionais contratados conforme a tabela de Ambiente Cliente; não decide corpus nem cenário padrão. "Módulo" concentra as configurações do módulo (categoria-base, Assunto/Serviço, parâmetro de divulgação); "Jornal Oficial" representa a área pública dentro da Central, resultado do canal externo — não um elemento independente do parâmetro de divulgação (ver seção 7). "Ambiente Cliente" representa as capacidades padrão/adicionais contratadas, não uma segunda instância distinta de Órgão/Instância (que identifica a organização). O status do Documento (5 valores do TR) e o estado da Mesa seguem como dimensões distintas, nunca fundidas num único nó. A instância/capacidades do Cliente (Órgão/Instância, Ambiente Cliente) é um conceito de produto, distinto do ambiente de implantação individual de cada QA — este último, e o mapeamento de fornecimento (`.env`/seed/cenário), ficam pra etapa posterior (seção 11) e não aparecem como nó deste diagrama.
+
 ## 3. Órgão, setores, servidores e níveis de acesso (grupo C1)
 
 | Entidade | Atributos/estados necessários | Relações | Finalidade pra sanidade | Fontes | Incertezas |
