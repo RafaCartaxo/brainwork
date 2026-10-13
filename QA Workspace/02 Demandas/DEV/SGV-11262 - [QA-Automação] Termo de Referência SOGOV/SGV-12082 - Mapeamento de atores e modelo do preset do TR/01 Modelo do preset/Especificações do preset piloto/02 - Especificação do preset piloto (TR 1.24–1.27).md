@@ -32,7 +32,7 @@ status: aprovado
 | 1.24.2 | Cidadão (Pessoa Física) — CPF + senha | Baseline | **Lacuna**: não existe cidadão PF próprio no baseline; os CTs A02-C02/C05/C09 reaproveitam o CPF do servidor como login de cidadão | `login.spec.ts` (comentário explícito: "o baseline não tem um cidadão Pessoa Física puro") | Confirmado (lacuna, não suposição) |
 | 1.24.3 | Empresa/entidade (Pessoa Jurídica) — CNPJ + senha | Baseline | `BASELINE.citizens` (citizen/engineer/architect/manager/alphanumeric) + pools `citizen`/`alphanumeric` (4 cada); senha via `PW_CITIZEN_PASSWORD` | `baseline.ts`; CT A02-C03 | Confirmado |
 | 1.25.1 | Bloqueio por 5 tentativas malsucedidas | Preparação específica de cenário (precisa de um agente isolado, não o pool padrão) | **Não portado para Playwright.** Existe só em Cypress, branch não mesclado (`createIsolatedTestAgent` + contagem de tentativas) | DISC-004 (arquivado), Entrega candidata 1 (CT-013/014/018/019); confirmado por `git grep` nesta sessão: mecanismo presente só em `tr-1.24-1.25-suites-3-4-5` | Confirmado (gap) |
-| 1.25.3.1–4 | 4 estados funcionais: Ativo/Licença/Férias/Inativo | Preparação específica de cenário (estado necessário em cenários específicos; não integra a população padrão) | **Não existe no Playwright `main`** (nenhum campo de status em `BASELINE.agents`). Existe em Cypress (branch não mesclado): mutation `changePublicAgentWorkStatus`, enum `WORK_STATUS` com 4 valores | Ver seção "Status funcional e presença" abaixo | Confirmado (gap) |
+| 1.25.3.1–4 | 4 estados funcionais: Ativo/Licença/Férias/Inativo | Preparação específica de cenário (estado necessário em cenários específicos; não integra a população padrão) | **Não existe no Playwright `main`** (nenhum campo de status em `BASELINE.agents`). Existe em Cypress (branch não mesclado): mutation `changePublicAgentWorkStatus`, enum `WORK_STATUS` com 4 valores | Ver seção "Status funcional e presença — modelo do produto" abaixo | Confirmado (gap) |
 
 ## Estrutura organizacional e níveis (TR 1.26–1.27)
 
@@ -43,26 +43,24 @@ status: aprovado
 | 1.27.2.1–5 / níveis canônicos | 5 níveis: Administrador, Administrador Setorial, Especialista, Usuário básico, Somente leitura (nomes canônicos confirmados por Rafael — ver recorte 03, "Mapeamento confirmado") | Baseline | Campo numérico `accessLevel` (2–5) em `BASELINE.agents`, propagado para `organizationHierarchyId` na API. Identidades nomeadas confirmam a escala: `seqBasic` (2), `seqSpecialist` (3), `seqSectorAdmin` (4), `seqAdmin` (5). **Nível 1 ("Somente leitura") não tem identidade própria no baseline atual** | `baseline.ts` L.126-129; `provision.ts` L.435-448 | Confirmado (4 dos 5 níveis têm identidade; nível 1 é lacuna) |
 | 1.27.4.4 / 1.27.5.4 / 1.27.6 | Permissão de visualizar/criar Assuntos e Serviços, por nível | — | **Contexto de produto confirmado por Rafael** (recorte 03, "Permissões confirmadas — Assuntos e Serviços", 08/10/2026): os 5 níveis visualizam; só Administrador e Administrador Setorial criam. **Essa regra ainda não foi verificada no código/seed nesta rodada** — não procurei a mutation/endpoint correspondente no repositório | [[../Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)#Permissões confirmadas — Assuntos e Serviços (contexto de produto, Rafael, 08/10/2026)|recorte 03]] | Confirmado (produto); A confirmar (código) |
 | 1.27.3–1.27.7.4 | Escopo de permissão por nível (4 áreas: organograma/servidores/contatos externos/assuntos-serviços) | — | Não verificado nesta rodada — fora do escopo deste piloto (autenticação + organização/níveis); checagem de regras de permissão por área fica para quando um cenário de sanidade precisar dela | — | A confirmar |
-| 1.27.10.1 / 1.27.11.2 | Status de atividade (listagem × editável) e presença online/offline | Preparação específica de cenário | Ver seção "Status funcional e presença" abaixo | — | Confirmado (gap) |
+| 1.27.10.1 / 1.27.11.2 | Status funcional do cadastro e presença Online/Offline na listagem | Preparação específica de cenário | Ver seção "Status funcional e presença — modelo do produto" abaixo | — | Confirmado (gap) |
 
-## Status funcional e presença — evidência nova (09/10/2026)
+## Status funcional e presença — modelo do produto (atualizado em 13/10/2026)
 
-O recorte 03 já registrava, como dúvida do TR, que a relação entre o enum de listagem (1.27.10.1, 5 valores) e o enum editável (1.27.11.2, 4 valores) **não é especificada pelo texto**, e tratava "Inativo = Suspenso" como convenção de trabalho confirmada por Rafael para a tela atual — não como equivalência literal do TR.
+O SOGOV separa o status funcional do servidor da presença na plataforma. As telas compartilhadas por Rafael mostram Online/Offline na coluna Status da listagem; no cadastro, o campo funcional oferece Em atividade, Inativo, De licença e De férias. Para o modelo de negócio usado nesta análise, **Inativo corresponde a Suspenso**. Portanto, presença Online/Offline não é o mesmo que status funcional.
 
-Nesta rodada, encontrei evidência de **produto** (não do TR) que fortalece essa convenção, numa branch não mesclada do repositório Playwright/Cypress (`tr-1.24-1.25-suites-3-4-5`, arquivo `docs/business-rules/api/identity-lifecycle.md`): uma mutation GraphQL real (`changePublicAgentWorkStatus`) foi capturada por request/response (DevTools/HAR) em 31/08/2026. O enum do backend (`WORK_STATUS`) tem exatamente 4 valores:
+A captura de API descrita em `docs/business-rules/api/identity-lifecycle.md` (branch Cypress não mesclada, 31/08/2026) confirma a mutation `changePublicAgentWorkStatus` e os valores do enum `WORK_STATUS`:
 
-| Rótulo na tela | Valor do enum (backend, capturado) |
+| Rótulo no cadastro | Valor capturado do enum |
 |---|---|
 | Em atividade | `IN_ACTIVITY` |
 | De licença | `LICENSE` |
 | De férias | `VACATION` |
-| **Inativo** | **`SUSPEND`** |
+| Inativo (Suspenso) | `SUSPEND` |
 
-**Não existe um valor `INACTIVE` separado** — o rótulo "Inativo" da tela e o conceito de "Suspenso" mapeiam para o mesmo valor de enum `SUSPEND`. Isso é evidência de produto (captura real de API), **não é texto do TR** e não reescreve a dúvida registrada no recorte 03 — mas é uma camada de evidência mais forte do que a confirmação verbal já registrada, porque vem de uma captura de comportamento real do backend, não de leitura de tela.
+A captura não apresenta um valor `INACTIVE` separado. Isso corrobora o mapeamento de negócio confirmado por Rafael; não é texto do TR. A lista literal de 1.27.10.1 é mantida no recorte 03 e organizada entre presença e status funcional conforme o modelo atual do produto.
 
-**O que isso NÃO resolve:** o enum de 5 valores da listagem (1.27.10.1: Ativo/Inativo-offline/Suspenso/Licença/Férias) continua sem relação declarada com este `WORK_STATUS` de 4 valores — "Inativo" em 1.27.10.1 significa presença offline (eixo diferente), não o mesmo "Inativo"/`SUSPEND` do formulário de edição. Essa parte da dúvida do recorte 03 permanece aberta.
-
-Este mecanismo (`changePublicAgentWorkStatus`/`WORK_STATUS`) **não foi encontrado na `main`** — confirmado por busca direta no código (`git grep` não encontrou o nome em nenhum arquivo de `main`) — e **está presente na branch Cypress não mesclada** (`tr-1.24-1.25-suites-3-4-5`). Não presumo aqui que portar essa mutation seja o único caminho ou um pré-requisito — registro só o estado atual confirmado nesta sessão (consistente com o que DISC-003/004, arquivado, já havia achado); a escolha de mecanismo fica para quem implementar.
+**Limite da evidência:** a mutation e o enum foram encontrados na branch Cypress não mesclada, não na `main` do Playwright. Portanto, isso descreve o modelo funcional do produto, mas não confirma que a automação atual consiga preparar esse estado nem que a estatística de servidores esteja implementada/testada. Não se define aqui como portar ou implementar o mecanismo.
 
 ## O que falta para este recorte virar preset executável (resumo)
 
