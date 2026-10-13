@@ -15,10 +15,10 @@ status: aprovado
 
 ## 1. Propósito e limites
 
-Propor um caminho de partida para os requisitos do TR ainda sem fatia própria, usando o TR e a documentação do produto para identificar dados, atores, relações, configurações e estados necessários aos cenários de sanidade. **As extensões indicam ordem de aprofundamento, não exclusão do modelo-alvo. O seed atual e os testes são evidências sobre a automação de hoje, não limites do preset desejado.** Esta nota não implementa seed nem cria CTs; ausência de código/teste não significa ausência no produto. Não repete as fatias 02–18 nem os recortes `Seções do TR` — só cita e linka.
+Registrar o caminho de partida aprovado para os requisitos do TR ainda sem fatia própria, usando o TR e a documentação do produto para identificar dados, atores, relações, configurações e estados necessários aos cenários de sanidade. **As extensões indicam ordem de aprofundamento, não exclusão do modelo-alvo. O seed atual e os testes são evidências sobre a automação de hoje, não limites do preset desejado.** Esta nota não implementa seed nem cria CTs; ausência de código/teste não significa ausência no produto. Não repete as fatias 02–18 nem os recortes `Seções do TR` — só cita e linka.
 
 Cada linha classifica dois eixos, separadamente:
-- **Caminho-base (proposta):** Base inicial / Extensão posterior / Questão em aberto — por sub-parte do item, quando se aplica.
+- **Caminho-base (ordem aprovada):** Base inicial / Extensão posterior / Questão em aberto — por sub-parte do item, quando se aplica. A aprovação define sequência de trabalho, não confirma evidências nem encerra dúvidas específicas.
 - **Natureza do dado/estado:** configuração persistente do ambiente/módulo · dado de exemplo persistente · estado produzido em teste · ação/consulta de teste — um item pode ter mais de uma natureza.
 
 **Origem de fornecimento ainda não definida:** tanto o `.env` individual de cada QA quanto o seed persistente podem fornecer dados. A natureza do dado necessária ao cenário não determina, por si só, qual canal a fornecerá. O mapeamento por campo entre `.env`, seed e estado criado durante o teste será feito no desenho do modelo do preset. O código/seed atual serve para consulta e reaproveitamento possível, não para limitar o modelo-alvo.
@@ -29,7 +29,7 @@ Cada linha classifica dois eixos, separadamente:
 
 ## 2. Recorte 07 — Mesa de trabalho, etiquetas e tramitação
 
-| Ref./necessidade | Caminho-base (proposta) | Natureza do dado/estado | Evidência (resumo) |
+| Ref./necessidade | Caminho de trabalho (partida aprovada) | Natureza do dado/estado | Evidência (resumo) |
 |---|---|---|---|
 | **1.35** — acesso às mesas conforme vínculo do servidor com setores | **Base inicial:** modelar Servidor↔Setor e as regras de tramitação por módulo e Assunto/Serviço. **Extensão:** cenário de permissão negativa/positiva conforme recorte do TR | Dados necessários: setores, servidores e relações de tramitação; a distribuição entre `.env` e seed fica para o desenho do modelo | TR: [recorte 07](<Seções do TR/07 - Mesa de trabalho, etiquetas e tramitação (1.33–1.35).md>). [Regras de Tramitação](<../../../../../04 Conhecimento/Fluxos/Regras de Tramitação.md>) descreve módulo→A/S→setores: criação, recebimento/tramitação, setor dono, interação com cidadão e visualização de dados sigilosos; A/S restringe regras herdadas do módulo. Fonte reconstruída de diagrama, ainda não validada em teste. [Mesa de trabalho](<../../../../../04 Conhecimento/Módulos/Mesa de trabalho.md>) (acesso e switch de setores). Teste de negação não localizado |
 | **1.35.1** — linha do tempo: (a) executor, (b) setor, (c) data/hora, (d) visualizações | **Base inicial:** consulta já funciona (`type` confirmado). **Extensão:** assegurar (b)/(c)/(d) por asserção direta | **Ação/consulta de teste** — consulta sobre eventos **já produzidos por outras ações** (despacho/assinatura/associação); não é timeline persistente própria desta linha, nem dado de exemplo dedicado | `getDocumentEvents`/`DocumentEvent` (`documents.ts:134-171`); A52-C01 confirma só `event.type`. `createdAt`/setor/visualizações: **A confirmar/não localizado** — ver nota |
@@ -41,7 +41,7 @@ Cada linha classifica dois eixos, separadamente:
 
 ## 3. Recorte 08 — Divulgação, exportação e assinaturas
 
-| Ref./necessidade | Caminho-base (proposta) | Natureza do dado/estado | Evidência (resumo) |
+| Ref./necessidade | Caminho de trabalho (partida aprovada) | Natureza do dado/estado | Evidência (resumo) |
 |---|---|---|---|
 | **1.38** — canal (mural/externo), divulgar, acesso do cidadão | **Base inicial:** parâmetro do módulo habilitando divulgação + configuração do canal externo/Jornal Oficial e ato de divulgar (A23-C02). **Extensão:** mural interno (bug conhecido) e verificação automatizada do acesso público pelo cidadão | Parâmetro = **configuração persistente do módulo** enviada na criação (`provision.ts:69-72`), não reconciliada em reuso; mural e canal externo são **canais independentes** sob essa funcionalidade. Ato de divulgar no canal externo = **ação de teste confirmada**; acesso público sem login = **documentado no produto**, mas sem evidência de teste automatizado localizada. Mural interno = ação de teste com bug de produto confirmado | [Divulgar Documento](<../../../../../04 Conhecimento/Módulos/Divulgar Documento.md>) (um parâmetro, dois canais independentes; canal externo/Jornal Oficial público sem login). [Construtor de Módulos](<../../../../../04 Conhecimento/Módulos/Construtor de Módulos.md>) (configuração do parâmetro). `publish-document.spec.ts` A23-C01 (`test.fail()`/`pdf-generator-attachment-error`), A23-C02 (divulgação externa) |
 | **1.39** — exportação de documento existente × árvore composta completa | **Base inicial:** exportar um documento existente simples (reaproveitado de outra fatia). **Extensão, sem inferir cobertura conjunta:** árvore composta (anexos+despachos+associação+assinaturas combinados) — nunca testada combinada | **Ação de teste** — exportação é sempre ação sobre entidade já existente; nenhum dado persistente novo para a base | `print.spec.ts` A22-C01–C04; `complete-document-attachment.spec.ts` E26-C01/C02; `authenticable-signature.spec.ts` E33-C01; zero menção a PAdES/ICP; zero setup em `provision.ts`/`baseline.ts` |
@@ -54,7 +54,7 @@ Cada linha classifica dois eixos, separadamente:
 
 ## 4. Recorte 10 — Personalização e identidade visual do órgão
 
-| Ref./necessidade | Caminho-base (proposta) | Natureza do dado/estado | Evidência (resumo) |
+| Ref./necessidade | Caminho de trabalho (partida aprovada) | Natureza do dado/estado | Evidência (resumo) |
 |---|---|---|---|
 | **1.42** — dados cadastrais + identidade visual | **Base do modelo-alvo:** representar a instância do Cliente e os atributos cadastrais/visuais pedidos pelo TR. **Questão em aberto:** origem de cada campo e ator/permissão para licenças, contrato e módulos. Processo Urbanístico é adicional/contratado, não padrão universal | O payload de criação do seed é **evidência do setup atual**, não decisão sobre a origem nem o canal do dado no preset-alvo. A edição de cores/imagens é requisito do TR; permissão Administrador consta na documentação, ainda sem teste. | [Ambientes SoGov](<../../../../../04 Conhecimento/Módulos/Ambientes SoGov.md>) (instância própria do cliente; licenças/contrato no cadastro administrativo). [Fluxo de trabalho](<../../../../../04 Conhecimento/Módulos/Fluxo de trabalho (Workflow).md>) — não responde ator/permissão para 1.42.1.a no ambiente Cliente. [Processos Urbanísticos](<../../../../../04 Conhecimento/Módulos/Processos Urbanísticos.md>) (funcionalidade adicional) |
 
@@ -67,7 +67,7 @@ Cada linha classifica dois eixos, separadamente:
 
 ## 5. Recorte 11 — Estatísticas e indicadores
 
-| Ref./necessidade | Caminho-base (proposta) | Natureza do dado/estado | Evidência (resumo) |
+| Ref./necessidade | Caminho de trabalho (partida aprovada) | Natureza do dado/estado | Evidência (resumo) |
 |---|---|---|---|
 | **1.43** — relatórios de setores/módulos/servidores/consumo | **Base do modelo-alvo:** incluir as dimensões de relatório explicitamente pedidas pelo TR e a necessidade de dados que as alimentem. **A aprofundar:** catálogo de relatórios, regras de cálculo e papéis autorizados; não bloqueiam representar essa necessidade inicial | [Ambientes SoGov](<../../../../../04 Conhecimento/Módulos/Ambientes SoGov.md>) confirma Relatórios/Estatísticas como função padrão do Cliente. Corpus, papéis e cobertura técnica seguem sem confirmação; fonte de dados fica para mapeamento posterior entre `.env`, seed e cenário | TR: [recorte 11](<Seções do TR/11 - Estatísticas e indicadores (1.43).md>). [Ambientes SoGov](<../../../../../04 Conhecimento/Módulos/Ambientes SoGov.md>). Código/teste ainda não localizados nesta análise. [Organograma](<../../../../../04 Conhecimento/Módulos/Organograma.md>) tem contador tangencial, não equivalente |
 
@@ -81,7 +81,7 @@ Cada linha classifica dois eixos, separadamente:
 
 ## 7. Questões em aberto para extensões/decisões futuras
 
-Sem resposta ainda em nenhuma fonte — mas **não bloqueiam** registrar o caminho-base proposto nas seções 2–5; ficam para quando as respectivas extensões forem avaliadas.
+Sem resposta ainda em nenhuma fonte — mas **não bloqueiam** seguir pelo caminho-base aprovado nas seções 2–5; ficam para quando as respectivas extensões forem avaliadas.
 
 - **1.40.1** — `type:'SOGOV'` (código) corresponde a qual categoria exata da documentação ("Eletrônica simples" ou "Digital SoGov")?
 - **1.42.1.a** — qual nível de acesso vê/edita licenças, contrato e módulos contratados? Não respondido por nenhuma fonte.
@@ -90,7 +90,7 @@ Sem resposta ainda em nenhuma fonte — mas **não bloqueiam** registrar o camin
 
 ## 8. Decisão de partida
 
-O Rafael autorizou seguir pelo caminho-base proposto. O passo 8 fica concluído como **seleção do ponto de partida**, não como decisão item a item de excluir ou encerrar requisitos. O modelo-alvo deriva necessidades do TR e da documentação de produto; somente depois atribui cada dado ao `.env` individual, ao seed persistente ou ao estado criado durante o cenário. As classificações técnicas e dúvidas das tabelas continuam com o grau de evidência registrado em cada linha; esta aprovação não as converte em fatos confirmados.
+O Rafael autorizou seguir pelo caminho-base registrado. O passo 8 fica concluído como **seleção do ponto de partida**, não como decisão item a item de excluir ou encerrar requisitos. O modelo-alvo deriva necessidades do TR e da documentação de produto; somente depois atribui cada dado ao `.env` individual, ao seed persistente ou ao estado criado durante o cenário. As classificações técnicas e dúvidas das tabelas continuam com o grau de evidência registrado em cada linha; esta aprovação não as converte em fatos confirmados.
 
 ## Fontes
 
