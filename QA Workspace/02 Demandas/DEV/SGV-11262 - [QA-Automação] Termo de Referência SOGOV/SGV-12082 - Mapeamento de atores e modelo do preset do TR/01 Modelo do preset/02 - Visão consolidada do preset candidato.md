@@ -3,7 +3,7 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "consolidacao-preset"
-status: em levantamento
+status: aprovado
 ---
 # 02 - Visão consolidada do preset candidato
 
@@ -11,8 +11,8 @@ status: em levantamento
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]] · **Roadmap:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]] (passo 7 da "Sequência macro") · **README do card:** [[../00 QA/00 README|README]] · **Demanda:** [[../00 QA/01 - Demanda]] · **Matriz de atores e relações:** [[01 - Matriz de atores e relações]] · **Mapa geral:** [[00 - Mapa geral]]
 > As 16 fatias-fonte não são listadas aqui — cada seção temática abaixo já linka para a sua fatia-fonte correspondente, no cabeçalho da seção e em cada linha das tabelas.
 
-> [!important] Rascunho — aguardando revisão do Codex (passo 7 do Roadmap)
-> Esta nota é um **rascunho**, ainda **não aprovado**. Nenhuma fatia 18+ deve ser aberta, nenhum item deve ser declarado não aplicável/fora do preset, e README/Roadmap só serão atualizados depois que o conteúdo aqui for revisado e aprovado. Até lá, o status desta nota permanece `em levantamento`.
+> [!important] Revisado e aprovado pelo Codex em 13/10/2026 (passo 7 do Roadmap concluído)
+> Esta nota foi **revisada e aprovada**. O passo 8 do Roadmap (priorizar os itens do TR ainda sem fatia própria ou declará-los não aplicáveis/fora do preset) **já é permitido**. **Gate:** nenhuma fatia nova (18+) deve ser aberta antes da triagem do passo 8 ser concluída.
 
 > [!info] Escopo e limites desta consolidação
 > Esta nota **resume as 16 fatias aprovadas** (notas 02–17 da pasta `01 Modelo do preset/Especificações do preset piloto/`), normalizando vocabulário e organizando por tema — **não duplica** o texto analítico delas (cada linha/grupo linka de volta à fatia-fonte, onde está a evidência completa) e **não introduz nenhuma inferência nova**. **Não especifica o TR inteiro** (só os itens que já têm fatia própria — ver "Limite de cobertura" abaixo) **nem declara o preset pronto/decidido**. Não implementa seed, não propõe arquitetura, não decide o que entra no preset nem declara item não aplicável — isso é o passo 8 do Roadmap, separado e posterior a esta consolidação. Repositório de referência de todas as 16 fatias: `/home/sogov-rafael-cartaxo/Documentos/Sogov/sogov-automation-playwright`, commit `16c41e4`.
