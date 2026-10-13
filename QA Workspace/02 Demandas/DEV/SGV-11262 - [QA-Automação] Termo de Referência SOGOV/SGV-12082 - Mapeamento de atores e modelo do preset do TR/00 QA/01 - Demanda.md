@@ -21,7 +21,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> A **Fase 1 — modelo conceitual do TR completo — está concluída** e seu checklist permanece fechado. A SGV-12082 continua com uma etapa diretamente ligada ao título e ao objetivo desta demanda: derivar do TR e da documentação de produto o **modelo-alvo dos dados necessários aos cenários de sanidade**. As 17 fatias e a consolidação são evidência sobre a automação atual, não limite do modelo. O trabalho não inclui CTs, implementação nem decisão de arquitetura; sequência e gates estão no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]].
+> A **Fase 1 — modelo conceitual do TR completo — está concluída**, o **caminho-base (passo 8) foi aprovado**, o **modelo-alvo dos dados do preset ([[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04]]) está aprovado**, e a **matriz de fornecimento dos dados ([[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05]], C1–C6) está aprovada**. As 17 fatias e a consolidação são evidência sobre a automação atual, não limite do modelo. A arquitetura/preparação técnica do preset continua **futura e fora do escopo atual**; sequência e gates estão no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]].
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
@@ -40,7 +40,8 @@ Produzir um modelo rastreável do TR completo que identifique atores, entidades,
 
 - Notas temáticas (por recorte do TR, ver `01 Modelo do preset/Seções do TR/`) cobrindo o TR completo, com cada item mapeado, marcado como não aplicável (sem elemento relevante para este modelo, com justificativa) ou registrado como pendente; a matriz central indexa os recortes, sem duplicar elementos/relações.
 - Mapa geral (Mermaid) como síntese visual consistente das notas temáticas — nunca uma fonte própria de fato.
-- Modelo-alvo do preset, derivado do TR e da documentação de produto, que relaciona os dados, atores, estados, configurações e dependências necessários aos cenários de sanidade. A origem de fornecimento é mapeada após a necessidade.
+- Modelo-alvo do preset, derivado do TR e da documentação de produto, que relaciona os dados, atores, estados, configurações e dependências necessários aos cenários de sanidade ([[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04]], aprovado).
+- Matriz de fornecimento dos dados ([[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05]], aprovada, C1–C6): pra cada dado já definido no modelo-alvo, um **canal candidato** (`.env` individual, seed persistente, cenário de teste, ou combinação) — hipótese, não decisão final de arquitetura.
 - Lacunas e ambiguidades encontradas registradas para revisão, não resolvidas por suposição.
 
 ---
@@ -97,9 +98,14 @@ Produzir um modelo rastreável do TR completo que identifique atores, entidades,
 
 ## Pendências de decisão
 
-O mapeamento conceitual da Fase 1 está concluído. A etapa ativa desta mesma demanda é produzir o modelo-alvo, sem reabrir os recortes aprovados e sem exigir resposta a todas as dúvidas de negócio:
+O mapeamento conceitual da Fase 1 está concluído; o modelo-alvo (04) e a matriz de fornecimento (05) também estão concluídos e aprovados. Nenhuma decisão de arquitetura foi tomada, e dúvidas específicas continuam abertas sem bloquear o que já foi aprovado:
 
 - A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026). Os 11 recortes foram revisados contra o PDF; a cobertura e a rastreabilidade estão registradas em [[04 - Revisão da análise]]. A fonte de autoridade permanece exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
 - As 17 fatias e a consolidação registram evidências do seed/testes atuais; não definem os requisitos do modelo-alvo.
-- O caminho inicial permanece em revisão. Lacunas de ator, regra, corpus ou implementação serão aprofundadas progressivamente quando afetarem um elemento do modelo.
-- CTs, Qase e implementação do preset continuam fora desta demanda. A preparação técnica é decidida depois de revisar o modelo-alvo.
+- O caminho-base (passo 8) foi **aprovado** pelo Rafael/Codex para orientar o modelo-alvo. Dúvidas específicas de ator, regra, corpus ou implementação continuam abertas e rastreáveis por item — não bloqueiam o modelo aprovado, e são aprofundadas quando afetarem um elemento específico.
+- CTs, Qase e implementação do preset continuam fora desta demanda. A preparação técnica é decidida depois de revisar o modelo-alvo e a matriz de fornecimento.
+
+### Checklist de fechamento desta capacidade
+
+- [x] C6 — Modelo-alvo aprovado, com rastreabilidade ao TR/produto: [[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
+- [x] C7 — Canal de fornecimento mapeado como hipótese candidata, não decisão de arquitetura: [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]] (C1–C6)
