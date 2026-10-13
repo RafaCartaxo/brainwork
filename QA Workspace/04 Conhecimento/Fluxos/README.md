@@ -9,7 +9,7 @@ Fluxos de negócio ponta a ponta que cruzam múltiplos módulos do sistema — d
 
 | Fluxo | Módulos envolvidos |
 |---|---|
-| (escrever aqui conforme documentar) | |
+| [[Regras de Tramitação]] | Construtor de Módulos (configuração por módulo e por serviço/assunto) |
 
 Template: [[../../Sistema/Templates/Conhecimento.md|Conhecimento.md]] (`tipo: fluxo` no frontmatter).
 

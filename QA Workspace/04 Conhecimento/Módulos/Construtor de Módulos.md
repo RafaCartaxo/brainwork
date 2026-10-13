@@ -261,3 +261,4 @@ fonte_ultima_edicao: 2026-10-02 (Vinícius Sogo)
 - [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos|Processos Urbanísticos]] — detalha os campos de zona/categoria de uso citados na seção "Processos urbanísticos".
 - [[QA Workspace/04 Conhecimento/Módulos/Assinaturas|Assinaturas]] — detalhe completo da "Página extra de assinaturas", cuja ativação mestre é configurada aqui.
 - [[QA Workspace/04 Conhecimento/Módulos/Ambientes SoGov|Ambientes SoGov]] — onde o Ambiente Técnico SOGO (que hospeda este construtor) está descrito.
+- [[QA Workspace/04 Conhecimento/Fluxos/Regras de Tramitação|Regras de Tramitação]] — diagrama (Mermaid) completo das regras de tramitação citadas na seção "Vincular cliente".
