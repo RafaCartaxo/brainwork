@@ -77,7 +77,7 @@ Reunir, item a item, os requisitos do TR que a [[02 - Visão consolidada do pres
 - **1.40.1** — `type:'SOGOV'` (código) corresponde a qual categoria exata da documentação ("Eletrônica simples" ou "Digital SoGov")? Sem essa resposta, a linha de autenticação não avança.
 - **1.42.1.a** — qual nível de acesso vê/edita licenças, contrato e módulos contratados? Não respondido por nenhuma fonte.
 - **1.43** — "administradores e usuários autorizados" (texto do TR) corresponde a quais níveis canônicos exatos? Não nomeado pelo TR nem por produto.
-- **Referência cruzada, não reaberta:** a correspondência N1/N2/N3 (`Chaves de Acesso.md`) com os 5 níveis canônicos já é pendência registrada na fatia 18.
+- **Referência cruzada, não reaberta:** N1 = Especialista e N2 = Usuário básico já confirmados (legenda em [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]]); só a correspondência de N3 com "Somente Leitura"/"Visualizador" segue em aberto — pendência registrada na fatia 18.
 
 ## 8. Próximo passo após revisão do Codex
 

@@ -54,7 +54,7 @@ status: aprovado
 
 > Fonte: [[QA Workspace/04 Conhecimento/Módulos/Chaves de Acesso|Chaves de Acesso]], importada do Notion em 13/10/2026. Ainda não validada por execução do produto nesta rodada. Estes pontos complementam a regra de negócio; não alteram o que os testes/código Playwright confirmam.
 
-- **Permissão por nível:** a documentação diz que Administrador, Administrador setorial, N1 e N2 podem criar chaves; N3 só pode receber. Isso responde a regra no produto, mas o vínculo de N1/N2/N3 com os cinco níveis canônicos e com “Visualizador” no TR não está confirmado. Nenhum teste da fatia verifica a negação por nível.
+- **Permissão por nível:** a documentação diz que Administrador, Administrador setorial, N1 e N2 podem criar chaves; N3 só pode receber. A legenda canônica em [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]] ("Permissões e visibilidade") confirma **N1 = Especialista e N2 = Usuário básico** (renomeação, mesma regra, confirmado com Rafael) — **N3 não consta nessa legenda**: sua equivalência a "Somente Leitura", e a correspondência do "Visualizador" do TR com N3 ou qualquer nível canônico, seguem **A confirmar**. Isso é documentação de produto, não validação por teste — nenhum teste da fatia verifica a negação por nível.
 - **Status e filtros:** confirma abas Criadas/Recebidas, estados Ativa/Encerrada/Agendada e filtro por status nas duas abas. Os testes da fatia não selecionam filtros nem exercitam os três estados.
 - **Encerramento e notificações:** descreve encerramento manual ou por esgotamento de usos, além de gatilhos por mudança de setor/regra/perfil do concedente; também documenta notificação ao dono quando um documento é criado via chave. Esses comportamentos não foram confirmados por asserção nos testes Playwright consultados.
 - **Histórico e contadores:** a página descreve total de documentos gerados e histórico detalhado. A fatia confirma que os campos existem no shape, mas não os encontra lidos/assertados pelos testes.
@@ -66,7 +66,7 @@ status: aprovado
 
 > As referências numeradas desta seção e da tabela levam diretamente à página correspondente do PDF do TR.
 
-- **Permissão por nível ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.a]])** — regra documentada para N3, mas sem teste negativo; equivalência com “Visualizador”/níveis canônicos ainda não confirmada.
+- **Permissão por nível ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.a]])** — regra documentada para N3, mas sem teste negativo; N1/N2 já correspondem a Especialista/Usuário básico (legenda em [[QA Workspace/04 Conhecimento/Módulos/Associar e Desassociar|Associar e Desassociar]]); equivalência de N3 com "Somente Leitura"/"Visualizador" do TR ainda não confirmada.
 - **Encerramento automático ao atingir o limite ([[../../Fontes/Termo de Referência SOGOV.pdf#page=18|1.41.1.c.i]] / [[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.2.f]])** — regra descrita na documentação de produto; nenhum teste esgota `totalUsage` nem confirma status/datas após o encerramento.
 - **Filtro por status ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.1.d]])** — produto documenta filtros e estados Ativa/Encerrada/Agendada; Playwright só observa `ACTIVE`/"Ativa" na chave recém-criada, sem selecionar filtros.
 - **Histórico/contadores de documentos gerados ([[../../Fontes/Termo de Referência SOGOV.pdf#page=19|1.41.1.e]])** — produto documenta totais e histórico; campos do código existem no shape, mas nunca são lidos/assertados pelos testes consultados.
