@@ -3,15 +3,15 @@ tags: [qa]
 task: "SGV-12082"
 pai: "SGV-11262"
 tipo: "matriz-fornecimento"
-status: "em levantamento"
+status: aprovado
 ---
 # 05 - Matriz de fornecimento dos dados
 
 > [!info]- Navegação
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]] · **Roadmap:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]] (passo 10) · **README do card:** [[../00 QA/00 README|README]] · **Modelo-alvo (passo 9, aprovado):** [[04 - Modelo-alvo dos dados do preset]] · **Triagem/caminho-base:** [[03 - Triagem dos itens sem fatia (passo 8)]]
 
-> [!important] Matriz C1–C6 completa — hipóteses de canal, aguardando aprovação final
-> Esta nota atribui, campo a campo, um **canal candidato** de fornecimento a cada dado/estado já definido em [[04 - Modelo-alvo dos dados do preset|04]]: `.env` individual de cada QA, seed persistente, preparação no cenário de teste, ou combinação — nunca redecide a natureza do dado/configuração em si (essa já está registrada em 04). Cobre agora as 6 fatias: C1–C2 (dependências de base), C3 (fluxo, modelos, documento/processo, mesa, etiqueta), C4 (atores externos, demanda externa, central), C5 (divulgação, exportação, assinaturas, chave de acesso) e C6 (personalização, ambiente Cliente, estatísticas). Toda atribuição de canal aqui é **hipótese candidata**, sujeita a revisão do Rafael/Codex — não uma decisão de arquitetura. Status segue `em levantamento` até a auditoria final aprovar o conjunto. Esta nota não implementa seed, não cria CTs e não lê/copia valores de credencial ou segredo.
+> [!important] Matriz C1–C6 aprovada pelo Codex — hipóteses de canal, não decisões de arquitetura
+> Esta nota atribui, campo a campo, um **canal candidato** de fornecimento a cada dado/estado já definido em [[04 - Modelo-alvo dos dados do preset|04]]: `.env` individual de cada QA, seed persistente, preparação no cenário de teste, ou combinação — nunca redecide a natureza do dado/configuração em si (essa já está registrada em 04). Cobre as 6 fatias: C1–C2 (dependências de base), C3 (fluxo, modelos, documento/processo, mesa, etiqueta), C4 (atores externos, demanda externa, central), C5 (divulgação, exportação, assinaturas, chave de acesso) e C6 (personalização, ambiente Cliente, estatísticas). A aprovação é da **matriz como artefato** (estrutura, rastreabilidade, categorias de canal) — cada atribuição individual segue registrada como **hipótese candidata**, não decisão de arquitetura. Esta nota não implementa seed, não cria CTs e não lê/copia valores de credencial ou segredo.
 
 ## 1. Premissa e como ler
 
@@ -88,9 +88,9 @@ status: "em levantamento"
 | **Ambiente Cliente (instância)** (1.42) | Cliente/instância — funcionalidades padrão/adicionais contratadas (descrição de produto); dados cadastrais (licenças/contrato/módulos) já cobertos na fatia C1, não duplicados aqui | Ainda indefinido — a lista de funcionalidades é descrição de produto, não um campo isolado a provisionar; módulos contratados em si já têm canal candidato na fatia C1 | Persistente por instância (contrato); escopo/código ainda não confirmados por teste automatizado | [04 §8](<04 - Modelo-alvo dos dados do preset.md#8. Personalização, ambientes e estatísticas (grupo C6)>); [Ambientes SoGov](<../../../../../04 Conhecimento/Módulos/Ambientes SoGov.md>); TR: [recorte 10](<Seções do TR/10 - Personalização e identidade visual do órgão (1.42).md>), PDF [1.42](<../Fontes/Termo de Referência SOGOV.pdf#page=19>) | Escopo/código ainda não confirmados por teste automatizado (herdada) |
 | **Estatísticas/Relatórios** (1.43) | Consulta/agregação sobre dados já provisionados (Servidor — fatia C1; Documento — fatia C3) — **não é massa nova a presumir** | Não aplicável como dado novo — as dimensões (setores/módulos/servidores/consumo) agregam entidades já cobertas; se existir configuração própria de relatório (ex. filtro salvo), canal fica ainda indefinido, sem evidência localizada | Depende das entidades agregadas (já persistentes); cálculo/implementação da própria estatística sem evidência no código consultado — **ausência de teste não prova ausência no produto** | [04 §8](<04 - Modelo-alvo dos dados do preset.md#8. Personalização, ambientes e estatísticas (grupo C6)>); TR: [recorte 11](<Seções do TR/11 - Estatísticas e indicadores (1.43).md>), PDF [1.43 (p. 19)](<../Fontes/Termo de Referência SOGOV.pdf#page=19>) e [(p. 20)](<../Fontes/Termo de Referência SOGOV.pdf#page=20>) — fonte não detalha página por subitem; [Ambientes SoGov](<../../../../../04 Conhecimento/Módulos/Ambientes SoGov.md>) (Relatórios/Estatísticas como funcionalidade padrão do ambiente Cliente) | Catálogo de relatórios, regras de cálculo e papéis autorizados ("administradores e usuários autorizados") seguem sem nome canônico em nenhuma fonte — nenhum ator/permissão ou regra de cálculo é afirmado além disso |
 
-## 7. Matriz C1–C6 — escopo completo, aguardando aprovação final
+## 7. Matriz C1–C6 — aprovada pelo Codex
 
-Esta nota cobre agora todas as 6 fatias (C1–C2 a C6) derivadas do modelo-alvo aprovado em [[04 - Modelo-alvo dos dados do preset|04]]. Toda atribuição de canal segue como **hipótese candidata**. O passo 10 do Roadmap só é marcado concluído/aprovado depois da auditoria final do Codex sobre esta rodada; o passo 11 (decisão de preparação técnica/arquitetura) não é iniciado nesta nota.
+Esta nota cobre as 6 fatias (C1–C2 a C6) derivadas do modelo-alvo aprovado em [[04 - Modelo-alvo dos dados do preset|04]] e foi **aprovada pelo Codex** como artefato do passo 10 do Roadmap. Toda atribuição de canal individual continua registrada como **hipótese candidata**, não decisão — a aprovação valida a estrutura e a rastreabilidade da matriz, não escolhe arquitetura. O passo 11 (decisão de preparação técnica/arquitetura por ambiente/instância) é o próximo passo, ainda futuro, sem implementação nem arquitetura iniciada nesta nota.
 
 ## Fontes
 

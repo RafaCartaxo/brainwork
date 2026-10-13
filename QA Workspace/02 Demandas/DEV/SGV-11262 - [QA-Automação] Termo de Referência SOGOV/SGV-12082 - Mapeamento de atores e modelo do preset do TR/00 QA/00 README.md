@@ -6,7 +6,7 @@ tipo: "melhoria"
 status: validacao
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Mapeamento de fornecimento (Fase 4)"
+etapa_atual: "QA · Preparação técnica (Fase 5, futura)"
 modulo: ""
 responsavel: ""
 aguardando: ""
@@ -35,10 +35,10 @@ pontos: ""
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
-> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem do caminho inicial),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(QA · Especificação do preset (Fase 2)),option(QA · Modelo-alvo do preset (Fase 3)),option(QA · Mapeamento de fornecimento (Fase 4)),option(Concluído)):etapa_atual]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem do caminho inicial),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(QA · Especificação do preset (Fase 2)),option(QA · Modelo-alvo do preset (Fase 3)),option(QA · Mapeamento de fornecimento (Fase 4)),option(QA · Preparação técnica (Fase 5, futura)),option(Concluído)):etapa_atual]`
 
 > [!info] Escopo desta pasta — Fase 1 e evidências atuais concluídas; caminho-base aprovado; modelo-alvo dos dados do preset aprovado; mapeamento de fornecimento em andamento
-> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. **Fase 1:** esta frente mapeou atores, entidades, dados, estados e relações do TR completo — os 11 recortes foram aprovados pelo Rafael e revisados item a item contra o PDF (1.1–1.43); a revisão documental está registrada em [[04 - Revisão da análise]]. **Evidência atual:** as 17 fatias e a consolidação registram o que seed/testes Playwright demonstram hoje; isso informa possíveis reaproveitamentos, mas não limita o modelo-alvo. **Modelo-alvo:** [[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] foi revisado e aprovado pelo Rafael/Codex (13/10/2026) — entidades, atributos, estados e relações necessários aos cenários de sanidade, com síntese visual Mermaid por grupo. **Etapa ativa:** mapear o fornecimento (`.env` individual, seed persistente ou cenário de teste) campo a campo, registrado em [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]], agora com escopo completo C1–C6, aguardando aprovação final do Codex. Dúvidas seguem explícitas e podem ser aprofundadas sem bloquear o restante (ver [[../01 Modelo do preset/00 - Mapa geral#Lacunas registradas (arestas tracejadas)|lacunas no mapa]]).
+> Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. **Fase 1:** esta frente mapeou atores, entidades, dados, estados e relações do TR completo — os 11 recortes foram aprovados pelo Rafael e revisados item a item contra o PDF (1.1–1.43); a revisão documental está registrada em [[04 - Revisão da análise]]. **Evidência atual:** as 17 fatias e a consolidação registram o que seed/testes Playwright demonstram hoje; isso informa possíveis reaproveitamentos, mas não limita o modelo-alvo. **Modelo-alvo:** [[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] foi revisado e aprovado pelo Rafael/Codex (13/10/2026) — entidades, atributos, estados e relações necessários aos cenários de sanidade, com síntese visual Mermaid por grupo. **Mapeamento de fornecimento:** [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]] foi revisada e aprovada pelo Rafael/Codex (13/10/2026) — canal candidato (`.env` individual, seed persistente ou cenário de teste) campo a campo, cobrindo C1–C6. **Próxima etapa, ainda futura:** decidir a preparação técnica/arquitetura por ambiente ou instância a partir dessas hipóteses — nenhuma arquitetura ou implementação foi iniciada. Dúvidas seguem explícitas e podem ser aprofundadas sem bloquear o restante (ver [[../01 Modelo do preset/00 - Mapa geral#Lacunas registradas (arestas tracejadas)|lacunas no mapa]]).
 
 ## Status do trabalho
 
@@ -74,9 +74,9 @@ pontos: ""
 | Especificação do preset piloto (TR 1.41) | ✅ Revisada e aprovada pelo Codex — ver [[../01 Modelo do preset/Especificações do preset piloto/18 - Especificação do preset piloto (TR 1.41)|18 - Especificação do preset piloto]] |
 | Triagem do caminho inicial do modelo-alvo (passo 8 do Roadmap) | ✅ Caminho-base aprovado para iniciar; extensões e dúvidas permanecem rastreadas em [[../01 Modelo do preset/03 - Triagem dos itens sem fatia (passo 8)|03 - Triagem dos itens sem fatia]] |
 | Modelo-alvo dos dados do preset (Fase 3) | ✅ Revisado e aprovado pelo Rafael/Codex — ver [[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] |
-| Matriz de fornecimento dos dados (Fase 4, passo 10) | 🔵 Escopo completo (C1–C6) em [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]; aguardando aprovação final do Codex |
+| Matriz de fornecimento dos dados (Fase 4, passo 10) | ✅ Revisada e aprovada pelo Rafael/Codex — ver [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]] (C1–C6) |
 
-**Próximo passo:** aguardar a auditoria final do Codex sobre a matriz C1–C6 completa antes de marcar o passo 10 como aprovado. Pra cada dado/estado já definido no modelo-alvo (04), registrar o canal candidato (`.env` individual, seed persistente, cenário de teste, ou combinação), como hipótese — não decisão. As 17 fatias aprovadas e a [[../01 Modelo do preset/02 - Visão consolidada do preset candidato|visão consolidada]] são evidência técnica de referência. Não abrir fatias 19+ para repetir essa evidência.
+**Próximo passo:** passo 11 — decidir a preparação técnica/arquitetura por ambiente/instância a partir das hipóteses de canal da matriz 05. Ainda futuro, não iniciado: nenhuma arquitetura ou implementação começou. As 17 fatias aprovadas e a [[../01 Modelo do preset/02 - Visão consolidada do preset candidato|visão consolidada]] continuam evidência técnica de referência. Não abrir fatias 19+ para repetir essa evidência.
 
 Pacote para `SGV-12082`:
 
@@ -93,11 +93,11 @@ SGV-12082 - Mapeamento de atores e modelo do preset do TR/
 │   ├── 02 - Visão consolidada do preset candidato.md  (evidências consolidadas das 17 fatias; não é o modelo-alvo)
 │   ├── 03 - Triagem dos itens sem fatia (passo 8).md  (caminho-base aprovado; extensões e dúvidas permanecem abertas)
 │   ├── 04 - Modelo-alvo dos dados do preset.md  (revisado e aprovado — Fase 3 concluída)
-│   ├── 05 - Matriz de fornecimento dos dados.md  (artefato do passo 10; escopo C1–C6 completo, aguardando aprovação final)
+│   ├── 05 - Matriz de fornecimento dos dados.md  (artefato do passo 10, revisado e aprovado — escopo C1–C6 completo)
 │   ├── Especificações do preset piloto/  (17 fatias aprovadas — evidência TR × seed/testes atuais)
 │   └── Seções do TR/                  (uma nota por recorte — cobertura, elementos, relações, dúvidas, fontes — Fase 1)
 └── Fontes/
     └── Termo de Referência SOGOV.pdf             (cópia de trabalho; original preservado no Arquivo)
 ```
 
-Esta pasta não tem `03 - Casos de teste`, `05 - Preparação Qase` nem `01 Automação/` — esta frente não produz casos de teste nem preparação de Qase. O entregável atual é a matriz de fornecimento dos dados (passo 10), não CTs nem implementação. A preparação técnica do preset por ambiente/instância (passo 11) será decidida depois da matriz de fornecimento completa.
+Esta pasta não tem `03 - Casos de teste`, `05 - Preparação Qase` nem `01 Automação/` — esta frente não produz casos de teste nem preparação de Qase. O modelo-alvo (04) e a matriz de fornecimento (05, passo 10) estão aprovados; o próximo entregável é a decisão de preparação técnica do preset por ambiente/instância (passo 11), ainda futura e sem arquitetura/implementação iniciada.
