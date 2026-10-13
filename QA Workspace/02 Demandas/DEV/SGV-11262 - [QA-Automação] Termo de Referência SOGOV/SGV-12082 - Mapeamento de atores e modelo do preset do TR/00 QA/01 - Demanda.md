@@ -21,7 +21,7 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> O escopo desta demanda (modelo conceitual do TR completo, abaixo) está **concluído** — ver checklist de fechamento no fim deste documento. As dúvidas de negócio levantadas durante o mapeamento seguem registradas, numa **trilha paralela que não bloqueia** essa conclusão; a primeira é se Canal Oficial (1.38.1.b) e Jornal Oficial (1.38.3.1) são o mesmo elemento no produto. O trabalho ativo da iniciativa agora é a Fase 2 (especificação do preset candidato) — fora do escopo original desta demanda; sua sequência e gates vivem no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]], não aqui.
+> A **Fase 1 — modelo conceitual do TR completo — está concluída** e seu checklist permanece fechado. A SGV-12082 continua com uma etapa diretamente ligada ao título e ao objetivo desta demanda: derivar do TR e da documentação de produto o **modelo-alvo dos dados necessários aos cenários de sanidade**. As 17 fatias e a consolidação são evidência sobre a automação atual, não limite do modelo. O trabalho não inclui CTs, implementação nem decisão de arquitetura; sequência e gates estão no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]].
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
@@ -30,16 +30,17 @@ pontos_alocados: ""
 
 ## Problema / contexto
 
-O Termo de Referência do SOGOV (itens 1.1–1.43) ainda não tem um modelo conceitual explícito de atores, entidades, configurações, estados, relações e dependências, rastreável item a item. A abordagem anterior (preservada em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]) inclui o ciclo de automação dos itens 1.24–1.25 (SGV-11971) **e** uma investigação mais ampla, que já havia classificado o TR completo (1.1–1.43) sob a ótica de automação e cobertura de CTs (SGV-12082 anterior, DISC-001–004). Esta nova frente não é a primeira a olhar o TR inteiro — ela se diferencia por produzir um **modelo conceitual** próprio do TR inteiro (atores, entidades, configurações, estados, relações e dependências), antes de qualquer decisão sobre casos de teste ou preset executável.
+O Termo de Referência do SOGOV (itens 1.1–1.43) precisava de um modelo conceitual explícito de atores, entidades, configurações, estados, relações e dependências, rastreável item a item. A abordagem anterior (preservada em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]) inclui o ciclo de automação dos itens 1.24–1.25 (SGV-11971) **e** uma investigação mais ampla do TR sob a ótica de CTs (SGV-12082 anterior, DISC-001–004). Esta frente já concluiu o modelo conceitual e agora deriva dele, com apoio da documentação de produto, o **modelo-alvo dos dados necessários aos cenários de sanidade** — sem decidir casos de teste nem preset executável.
 
 ## Objetivo
 
-Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte, identificar atores/entidades, dados/atributos, configurações, estados e relações/dependências, registrados na nota temática do recorte correspondente (`01 Modelo do preset/Seções do TR/`) com a referência do item do TR e o estado de conhecimento (Confirmado/Inferido/A confirmar) — a matriz apenas indexa os recortes, sem duplicá-los — e sintetizados visualmente no mapa geral, derivado das notas temáticas confirmadas.
+Produzir um modelo rastreável do TR completo que identifique atores, entidades, dados/atributos, configurações, estados e relações/dependências e, a partir dele e da documentação de produto, derive os dados necessários aos cenários de sanidade. Cada elemento mantém referência de origem e estado de conhecimento (Confirmado/Inferido/A confirmar). A matriz indexa os recortes; notas temáticas e mapa geral sustentam a rastreabilidade. Primeiro se define a necessidade lógica; depois se mapeia o fornecimento pelo `.env` individual, pelo seed persistente ou durante o cenário.
 
 ### Entrega desta capacidade
 
 - Notas temáticas (por recorte do TR, ver `01 Modelo do preset/Seções do TR/`) cobrindo o TR completo, com cada item mapeado, marcado como não aplicável (sem elemento relevante para este modelo, com justificativa) ou registrado como pendente; a matriz central indexa os recortes, sem duplicar elementos/relações.
 - Mapa geral (Mermaid) como síntese visual consistente das notas temáticas — nunca uma fonte própria de fato.
+- Modelo-alvo do preset, derivado do TR e da documentação de produto, que relaciona os dados, atores, estados, configurações e dependências necessários aos cenários de sanidade. A origem de fornecimento é mapeada após a necessidade.
 - Lacunas e ambiguidades encontradas registradas para revisão, não resolvidas por suposição.
 
 ---
@@ -48,7 +49,7 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 
 - O TR completo (itens 1.1–1.43) é a fonte de escopo desta análise. Contexto externo pode esclarecer, mas não vira requisito sem identificação da fonte e validação.
 - Os 11 recortes temáticos usados para percorrer o TR (nomes, quantidade e fronteiras) foram **aprovados pelo Rafael em 08/10/2026** — a segmentação não é mais definida durante a leitura. O que resta é analisar o conteúdo de cada recorte contra o PDF, um de cada vez, com pausa para revisão entre eles.
-- Esta análise produz o modelo conceitual; não implementa seed/preset, automação, testes funcionais nem sincronização com a Qase. Isso é trabalho separado, a decidir depois, com os achados em mãos.
+- Esta demanda produz o modelo conceitual e o modelo-alvo dos dados necessários; não implementa seed/preset, automação, testes funcionais nem sincronização com a Qase.
 
 ---
 
@@ -57,6 +58,8 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 - Percorrer o TR completo (1.1–1.43), de forma progressiva, pelos recortes temáticos (`01 Modelo do preset/Seções do TR/`).
 - Registrar, na nota temática de cada recorte, todo ator/entidade/configuração/estado identificado, com papel/descrição, dados/atributos relevantes, relações/dependências, referência ao item do TR e estado de conhecimento.
 - Sintetizar o mapa geral (Mermaid) a partir do que estiver confirmado nas notas temáticas.
+- Derivar o modelo-alvo dos dados de preset necessários a partir do TR e da documentação de produto, sem limitar o alvo ao seed/testes atuais.
+- Após definir a necessidade de cada dado, registrar sua origem de fornecimento entre `.env` individual, seed persistente e estado criado durante o cenário, quando sustentado.
 - Revisar cobertura (todo item do TR mapeado, não aplicável ou pendente) e consistência entre as notas temáticas e o mapa.
 
 ---
@@ -65,7 +68,8 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 
 - Casos de teste (CTs) e qualquer sincronização com a Qase.
 - Automação, execução ou alteração de seed/preset.
-- Decidir ou implementar o preset de dados — isso é direção futura, condicionada ao resultado deste mapeamento.
+- Implementar seed/preset, automatizar sua execução ou definir arquitetura de persistência e reconciliação.
+- Criar ou sincronizar CTs/Qase; esses casos são trabalho separado, derivado do modelo.
 
 ---
 
@@ -76,6 +80,8 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 - C3. Os elementos e as relações/dependências entre eles estão representados nas notas temáticas correspondentes; a matriz central indexa os recortes (intervalo de itens/páginas, status, link), sem duplicá-los. ^c3
 - C4. O mapa geral (Mermaid) é uma síntese consistente do que está registrado nas notas temáticas, sem conteúdo que elas não sustentem. ^c4
 - C5. Lacunas e ambiguidades encontradas durante o mapeamento estão registradas explicitamente para revisão, não resolvidas por suposição. ^c5
+- C6. O modelo-alvo identifica dados e estados necessários aos cenários de sanidade com rastreabilidade ao TR/produto; o que não está confirmado permanece aberto. ^c6
+- C7. O canal de fornecimento não é presumido pela natureza do dado: `.env`, seed e cenário são avaliados depois de definir a necessidade. ^c7
 
 ---
 
@@ -91,7 +97,9 @@ Produzir um modelo conceitual rastreável do TR completo: para cada item/recorte
 
 ## Pendências de decisão
 
-Não há bloqueio atual nesta demanda. O mapeamento do TR foi revisado; as dúvidas de negócio seguem como pendências explícitas, sem travar a conclusão da revisão documental:
+O mapeamento conceitual da Fase 1 está concluído. A etapa ativa desta mesma demanda é produzir o modelo-alvo, sem reabrir os recortes aprovados e sem exigir resposta a todas as dúvidas de negócio:
 
 - A segmentação do TR em 11 recortes temáticos foi **aprovada pelo Rafael** (08/10/2026). Os 11 recortes foram revisados contra o PDF; a cobertura e a rastreabilidade estão registradas em [[04 - Revisão da análise]]. A fonte de autoridade permanece exclusivamente o PDF (`Fontes/Termo de Referência SOGOV.pdf`) — nunca as notas temáticas, a matriz ou material arquivado.
-- A decisão sobre entregas futuras, tomada com os achados deste mapeamento em mãos, já abriu a Fase 2 (especificação do preset candidato) — fora do escopo desta demanda; acompanhada pelo [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]], não reaberta aqui. Casos de teste e implementação de preset seguem sem decisão própria.
+- As 17 fatias e a consolidação registram evidências do seed/testes atuais; não definem os requisitos do modelo-alvo.
+- O caminho inicial permanece em revisão. Lacunas de ator, regra, corpus ou implementação serão aprofundadas progressivamente quando afetarem um elemento do modelo.
+- CTs, Qase e implementação do preset continuam fora desta demanda. A preparação técnica é decidida depois de revisar o modelo-alvo.

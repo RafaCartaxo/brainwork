@@ -6,7 +6,7 @@ tipo: "melhoria"
 status: validacao
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Especificação do preset (Fase 2)"
+etapa_atual: "QA · Triagem do caminho inicial"
 modulo: ""
 responsavel: ""
 aguardando: ""
@@ -33,7 +33,7 @@ pontos: ""
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
-> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(QA · Especificação do preset (Fase 2)),option(Concluído)):etapa_atual]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de análise),option(QA · Mapeamento no TR),option(QA · Síntese visual),option(QA · Revisão da análise),option(QA · Especificação do preset (Fase 2)),option(QA · Modelo-alvo do preset (Fase 3)),option(Concluído)):etapa_atual]`
 
 > [!info] Escopo desta pasta — Fase 1 concluída (11 recortes); evidências da automação atual consolidadas (17 fatias); próximo passo é validar o caminho inicial e construir o modelo-alvo dos dados do preset
 > Estrutura reorganizada em 08/10/2026 (autorização do Rafael). A abordagem anterior (investigação SGV-12082 original, ciclo SGV-11971, Roadmap e Mapa do seed) está arquivada para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]]. **Fase 1:** esta frente mapeou atores, entidades, dados, estados e relações do TR completo — os 11 recortes foram aprovados pelo Rafael e revisados item a item contra o PDF (1.1–1.43); a revisão documental está registrada em [[04 - Revisão da análise]]. **Evidência atual:** as 17 fatias e a consolidação registram o que seed/testes Playwright demonstram hoje; isso informa possíveis reaproveitamentos, mas não limita o modelo-alvo. **Próxima etapa:** derivar do TR e da documentação de produto os dados, atores, estados, configurações e relações necessários aos cenários de sanidade. Depois será mapeado campo a campo o fornecimento pelo `.env` individual, seed persistente ou cenário de teste. Dúvidas de negócio seguem explícitas e podem gerar ramificações posteriores (ver [[../01 Modelo do preset/00 - Mapa geral#Lacunas registradas (arestas tracejadas)|lacunas no mapa]]).
