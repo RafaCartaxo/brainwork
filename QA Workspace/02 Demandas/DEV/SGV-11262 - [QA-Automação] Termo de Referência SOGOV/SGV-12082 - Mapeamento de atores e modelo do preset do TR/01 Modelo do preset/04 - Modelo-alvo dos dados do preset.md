@@ -38,7 +38,7 @@ Cada grupo abaixo corresponde a um dos 6 agrupamentos temáticos já usados em [
 | # | Diagrama | Grupos cobertos | Conteúdo principal |
 |---|---|---|---|
 | 1 | Órgão, setores, servidores e níveis | C1 | Órgão/Instância, Setor, Servidor, Nível de acesso, Conta, Personalização |
-| 2 | Módulo e Assunto/Serviço | C2 (núcleo) | Módulo, Assunto/Serviço, categoria-base, Categoria/Subcategoria A&S, Ambiente Cliente |
+| 2 | Módulo e Assunto/Serviço | C2 (núcleo) | Módulo com categoria-base, Assunto/Serviço, Categoria/Subcategoria A&S, Ambiente Cliente |
 | 3 | Processo Urbanístico e zoneamento | C2 (Zona) | Processo Urbanístico, Zona, Categoria de uso (Módulo aparece como referência) |
 | 4 | Atores externos e entrada | C4 | Cidadão/Empresa, Contato/Usuário externo, Entes externos, Demanda, Central, Jornal Oficial |
 | 5 | Documento, fluxo e mesa | C3 (núcleo) | Fluxo/Etapa, Modelo simples/Documento automatizado, Documento/Processo, Mesa, Etiqueta |
@@ -49,6 +49,7 @@ Cada grupo abaixo corresponde a um dos 6 agrupamentos temáticos já usados em [
 ```mermaid
 flowchart TB
     subgraph C1["Órgão, setores, servidores, níveis"]
+        direction TB
         Orgao["Órgão/Instância"]
         Setor["Setor/Subsetor"]
         Servidor["Servidor"]
@@ -71,17 +72,15 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph C2["Módulo, Assunto/Serviço, categorias"]
+    subgraph C2["Módulo e Assunto/Serviço"]
+        direction TB
         Modulo["Módulo"]
-        AssuntoServico["Assunto/Serviço"]
-        CategoriaModulo["Categoria-base do Módulo<br/>(DO/CO/PA)"]
+        AssuntoServico["Assunto/Serviço<br/>(herda categoria-base do Módulo: DO/CO/PA)"]
         CategoriaAS["Categoria/Subcategoria A&S<br/>(não exercitada)"]
         AmbienteCliente["Ambiente Cliente<br/>(capacidades contratadas)"]
     end
 
     Modulo --> AssuntoServico
-    Modulo --> CategoriaModulo
-    AssuntoServico -->|"herda via Módulo"| CategoriaModulo
     AssuntoServico -.->|"D2"| CategoriaAS
     AmbienteCliente -->|"Módulos Disponibilizados"| Modulo
 
@@ -97,6 +96,7 @@ flowchart TB
     Modulo["Módulo<br/>(ver Diagrama 2)"]
     ProcessoUrb["Processo Urbanístico<br/>(config. módulo PA)"]
     subgraph Zoneamento["Zona e Categoria de uso (1.29.10.4)"]
+        direction TB
         Zona["Zona"]
         CategoriaUso["Categoria de uso"]
     end
@@ -115,6 +115,7 @@ flowchart TB
 ```mermaid
 flowchart TB
     subgraph C4["Cidadão, usuário externo, central"]
+        direction TB
         CidadaoEmpresa["Cidadão/Empresa<br/>(ator do TR, 1.32)"]
         UsuarioExterno["Contato/Usuário externo<br/>(identidade técnica)"]
         EntesExternos["Entes externos<br/>(TR 1.36, sem confirmação)"]
@@ -137,6 +138,7 @@ flowchart TB
 ```mermaid
 flowchart TB
     subgraph C3["Fluxo, modelos, documento, mesa, etiqueta"]
+        direction TB
         Fluxo["Fluxo de trabalho/Etapa<br/>(opcional/contratado)"]
         ModeloDoc["Modelo simples/<br/>Documento automatizado"]
         Documento["Documento/Processo<br/>(status: 5 valores do TR)"]
@@ -159,6 +161,7 @@ flowchart TB
 ```mermaid
 flowchart TB
     subgraph C5["Divulgação, exportação, assinaturas, chaves"]
+        direction TB
         Divulgacao["Parâmetro de divulgação"]
         MuralInterno["Mural interno"]
         CanalExterno["Canal externo (Canal Oficial)"]
