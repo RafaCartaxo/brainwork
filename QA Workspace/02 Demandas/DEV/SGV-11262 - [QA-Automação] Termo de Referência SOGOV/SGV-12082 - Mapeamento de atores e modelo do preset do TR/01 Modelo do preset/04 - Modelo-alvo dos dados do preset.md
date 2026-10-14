@@ -38,8 +38,8 @@ Cada grupo abaixo corresponde a um dos 6 agrupamentos temáticos já usados em [
 | # | Diagrama | Grupos cobertos | Conteúdo principal |
 |---|---|---|---|
 | 1 | Órgão, setores, servidores e níveis | C1 | Órgão/Instância, Setor, Servidor, Nível de acesso, Conta, Personalização |
-| 2 | Módulo e configuração | C2 (núcleo) | Módulo, Assunto/Serviço, categoria-base, Categoria/Subcategoria A&S, Processo Urbanístico, Ambiente Cliente |
-| 3 | Zoneamento | C2 (Zona) | Zona, Categoria de uso (Módulo aparece como referência) |
+| 2 | Módulo e Assunto/Serviço | C2 (núcleo) | Módulo, Assunto/Serviço, categoria-base, Categoria/Subcategoria A&S, Ambiente Cliente |
+| 3 | Processo Urbanístico e zoneamento | C2 (Zona) | Processo Urbanístico, Zona, Categoria de uso (Módulo aparece como referência) |
 | 4 | Atores externos e entrada | C4 | Cidadão/Empresa, Contato/Usuário externo, Entes externos, Demanda, Central, Jornal Oficial |
 | 5 | Documento, fluxo e mesa | C3 (núcleo) | Fluxo/Etapa, Modelo simples/Documento automatizado, Documento/Processo, Mesa, Etiqueta |
 | 6 | Divulgação, assinatura, chave e indicadores | C5 + Estatísticas | Parâmetro de divulgação, canais, Exportação, Assinatura, Signatário, Chave de acesso, Estatísticas |
@@ -67,7 +67,7 @@ flowchart TB
     style C1 fill:none,stroke:#999999,stroke-width:1px
 ```
 
-### 2.3 Diagrama 2 — Módulo e configuração
+### 2.3 Diagrama 2 — Módulo e Assunto/Serviço
 
 ```mermaid
 flowchart TB
@@ -76,7 +76,6 @@ flowchart TB
         AssuntoServico["Assunto/Serviço"]
         CategoriaModulo["Categoria-base do Módulo<br/>(DO/CO/PA)"]
         CategoriaAS["Categoria/Subcategoria A&S<br/>(não exercitada)"]
-        ProcessoUrb["Processo Urbanístico<br/>(config. módulo PA)"]
         AmbienteCliente["Ambiente Cliente<br/>(capacidades contratadas)"]
     end
 
@@ -84,32 +83,32 @@ flowchart TB
     Modulo --> CategoriaModulo
     AssuntoServico -->|"herda via Módulo"| CategoriaModulo
     AssuntoServico -.->|"D2"| CategoriaAS
-    Modulo -->|"opcional/contratado"| ProcessoUrb
     AmbienteCliente -->|"Módulos Disponibilizados"| Modulo
-    AmbienteCliente -->|"adicional/contratado"| ProcessoUrb
 
     style C2 fill:none,stroke:#999999,stroke-width:1px
 ```
 
-> Órgão/Instância (Diagrama 1) → Ambiente Cliente, e Setor (Diagrama 1) → Assunto/Serviço, são relações cruzadas — ver tabela §2.9. Zona/Categoria de uso saíram daqui pro Diagrama 3, pra caber na largura do painel.
+> Órgão/Instância (Diagrama 1) → Ambiente Cliente, e Setor (Diagrama 1) → Assunto/Serviço, são relações cruzadas — ver tabela §2.9. Processo Urbanístico, Zona e Categoria de uso saíram daqui pro Diagrama 3, pra caber na largura do painel.
 
-### 2.4 Diagrama 3 — Zoneamento
+### 2.4 Diagrama 3 — Processo Urbanístico e zoneamento
 
 ```mermaid
 flowchart TB
     Modulo["Módulo<br/>(ver Diagrama 2)"]
+    ProcessoUrb["Processo Urbanístico<br/>(config. módulo PA)"]
     subgraph Zoneamento["Zona e Categoria de uso (1.29.10.4)"]
         Zona["Zona"]
         CategoriaUso["Categoria de uso"]
     end
 
+    Modulo -->|"opcional/contratado"| ProcessoUrb
     Modulo -.->|"D1"| Zona
     Zona -->|"assoc., sem cardinalidade"| CategoriaUso
 
     style Zoneamento fill:none,stroke:#999999,stroke-width:1px
 ```
 
-> `Módulo` aqui é o **mesmo nó de referência** do Diagrama 2 — a aresta `D1` (Módulo↔Zona) é relação entre diagramas, registrada também na tabela §2.9.
+> `Módulo` aqui é o **mesmo nó de referência** do Diagrama 2 — a aresta `D1` (Módulo↔Zona) é relação entre diagramas, registrada também na tabela §2.9. A relação contratual Ambiente Cliente→Processo Urbanístico ("adicional/contratado") não é redesenhada aqui pra não precisar de um segundo nó de referência — fica só na tabela §2.9.
 
 ### 2.5 Diagrama 4 — Atores externos e entrada
 
@@ -205,6 +204,7 @@ flowchart TB
 | Órgão/Instância (1) → Ambiente Cliente (2) | Funcionalidades padrão/adicionais contratadas — sólida | §8 |
 | Setor/Subsetor (1) → Assunto/Serviço (2) | Regras de tramitação — sólida | §4/§3 |
 | Módulo (2) → Zona (3) | **D1** — tracejada, vínculo módulo PA↔zoneamento não confirmado (desenhada com nó de referência, §2.4) | 1.29.10.4, §4 |
+| Ambiente Cliente (2) → Processo Urbanístico (3) | Funcionalidade adicional/contratada — sólida; relação preservada na tabela, sem duplicar o nó no diagrama | §8 |
 | Zona (3) → Documento/Processo (5) | Cidadão/empresa consulta e inicia processo a partir da Zona — sólida | 1.29.10.4, §4 |
 | Ambiente Cliente (2) → Fluxo de trabalho/Etapa (5) | Funcionalidade adicional/contratada (Workflow) — sólida | §8 |
 | Módulo (2) → Parâmetro de divulgação (6) | Parâmetro de divulgação — sólida | §4/§7 |
