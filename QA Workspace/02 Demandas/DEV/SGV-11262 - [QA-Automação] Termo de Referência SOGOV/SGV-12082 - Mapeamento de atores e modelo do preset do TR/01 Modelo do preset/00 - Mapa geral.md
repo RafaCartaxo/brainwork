@@ -41,6 +41,8 @@ flowchart TB
         Servico["Serviço"]
         Assunto["Assunto"]
         CategoriaDoc["Categoria de documento"]
+        Modulo["Módulo<br/>(citado em 1.29, sem atributos próprios detalhados pelo TR)"]
+        RegrasTramitacao["Regras de tramitação<br/>pré-estabelecidas (1.29)"]
         Zoneamento["Zoneamento<br/>(Zona, Categoria de uso, Processo urbanístico — 1.29.10.4;<br/>distinto da configuração de módulo PA)"]
         CategoriaAS["Categoria de Assuntos e Serviços"]
         VinculoAlvo["Categoria / Serviço / Assunto<br/>(um dos alvos)"]
@@ -91,6 +93,8 @@ flowchart TB
 
     Servico --> CategoriaDoc
     Assunto --> CategoriaDoc
+    CategoriaDoc -->|"1.29"| RegrasTramitacao
+    Modulo -->|"1.29"| RegrasTramitacao
 
     Fluxo --> Etapa
     Documento --> Mesa
@@ -255,4 +259,5 @@ As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam 
 - As lacunas (a), (b), (c), (d) e (g) têm contexto de produto que as esclarece para o produto atual e não exigem mais decisão de Rafael; (e), (f) e (j) seguem parcialmente esclarecidas — (f) converge no conceito/regra de visibilidade de documento associado, mas gatilhos diferentes e estrutura de dados persistida não documentada (detalhe técnico, não pendência de decisão de Rafael). As lacunas (h quanto a "contribuinte"), (i), (k), (l), (m), (n) e (p) seguem sem decisão/evidência suficiente. A antiga lacuna (o) de mapeamento de status foi esclarecida por Rafael; a implementação estatística continua sem evidência.
 - **Status funcional e presença do servidor (atualizado em 13/10/2026):** o produto separa o status funcional (Em atividade, Suspenso — rótulo de cadastro Inativo —, Licença, Férias) da presença (Online/Offline, mostrada na coluna Status da listagem). O TR 1.27.10.1 é mantido como texto de referência e organizado nesses dois eixos no recorte 03. Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
 - **Vínculo Servidor↔Setor como N:N (atualizado em 14/10/2026):** a aresta `Setor↔Servidor` passou a indicar N:N explicitamente, conforme [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]] (1.27, 1.26.5, Confirmado: "1.26.5 permite vários usuários por setor e 1.27 permite um servidor vinculado a múltiplos setores") — não é relação nova, só a multiplicidade já confirmada ficou explícita no rótulo.
+- **Módulo incluído no mapa (atualizado em 14/10/2026):** o nó "Módulo" entra só com a semântica sustentada pelo texto literal do TR — item 1.29 ("categorias de documentos... com regras de tramitação pré-estabelecidas **por categoria e módulo**", [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]], linha de Cobertura do item 1.29). Por isso Categoria de documento e Módulo alimentam, os dois, o nó intermediário "Regras de tramitação pré-estabelecidas" — não existe, no texto do TR, uma relação direta Módulo→Serviço/Assunto; essa relação (produto, não TR) vive só no modelo-alvo [[04 - Modelo-alvo dos dados do preset|04]], não é copiada pra cá.
 - **Zoneamento × configuração de módulo PA (atualizado em 14/10/2026):** o nó "Zoneamento" representa as entidades confirmadas pelo TR em 1.29.10.4 (Zona, Categoria de uso, Processo urbanístico iniciado a partir de uma Zona, Anexo de processo urbanístico) — distintas da característica "processo urbanístico" ativada como parâmetro num módulo do tipo Processo Administrativo (produto/Rafael, [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]], seção "Zoneamento e categorias de Assuntos e Serviços"). As duas coisas compartilham o nome, mas não são a mesma relação; nenhuma aresta "Zoneamento → Serviço/Assunto" é desenhada, porque o TR não declara essa dependência direta.
