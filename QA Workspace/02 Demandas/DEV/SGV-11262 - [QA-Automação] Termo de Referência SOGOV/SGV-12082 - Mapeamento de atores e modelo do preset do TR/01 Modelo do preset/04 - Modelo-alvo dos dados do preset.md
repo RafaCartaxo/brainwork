@@ -29,13 +29,24 @@ Cada grupo abaixo corresponde a um dos 6 agrupamentos temáticos já usados em [
 
 ## 2. Síntese visual (Mermaid)
 
-> Resumo visual de alto nível, organizado pelos mesmos 6 grupos (C1–C6) das tabelas abaixo — não substitui nem duplica atributos, estados ou ações detalhadas; essas vivem só nas tabelas das seções 3–8. Este diagrama também não decide fornecimento (`.env`/seed/cenário) — ver seção 11.
+> Quatro diagramas verticais por assunto (em vez de um único grafo largo), mais uma tabela de orientação. Atributos/estados/ações detalhados vivem só nas tabelas §3–8 — os diagramas mostram só entidades e relações. Fornecimento (`.env`/seed/cenário) não é decidido aqui — ver seção 11.
 
-> **Vínculo com [[00 - Mapa geral|Mapa geral]]:** aquele mapa é a síntese conceitual da Fase 1, baseada só no texto do TR, e preserva lacunas literais mesmo com contexto de produto disponível. Este diagrama é o **modelo-alvo**, derivado do TR **e** da documentação de produto — por isso refina, agrupa ou renomeia alguns nós do Mapa geral (ex.: Módulo, Ambiente Cliente, Jornal Oficial). Os dois não precisam ser idênticos; cada agrupamento/refinamento está identificado na legenda abaixo.
+> **Vínculo com [[00 - Mapa geral|Mapa geral]]:** aquele mapa é a síntese conceitual da Fase 1 (só TR), preservando lacunas literais mesmo com produto esclarecendo. Este é o **modelo-alvo** (TR + produto) — por isso refina/agrupa/renomeia alguns nós do Mapa geral (Módulo, Ambiente Cliente, Jornal Oficial etc.). Os dois não precisam ser idênticos.
+
+### 2.1 Visão de orientação (sem relações)
+
+| # | Diagrama | Grupos cobertos | Conteúdo principal |
+|---|---|---|---|
+| 1 | Base organizacional e configuração | C1, C2, C6 | Órgão, Setor, Servidor, Módulo, Assunto/Serviço, categorias, Zona, Personalização, Ambiente Cliente |
+| 2 | Atores externos e entrada | C4 | Cidadão/Empresa, Contato/Usuário externo, Entes externos, Demanda, Central, Jornal Oficial |
+| 3 | Documento, fluxo e mesa | C3 (núcleo) | Fluxo/Etapa, Modelo simples/Documento automatizado, Documento/Processo, Mesa, Etiqueta |
+| 4 | Divulgação, assinatura, chave e indicadores | C5 + Estatísticas | Parâmetro de divulgação, canais, Exportação, Assinatura, Signatário, Chave de acesso, Estatísticas |
+
+### 2.2 Diagrama 1 — Base organizacional e configuração
 
 ```mermaid
 flowchart TB
-    subgraph C1["Órgão, setores, servidores e níveis"]
+    subgraph C1["Órgão, setores, servidores, níveis"]
         Orgao["Órgão/Instância"]
         Setor["Setor/Subsetor"]
         Servidor["Servidor"]
@@ -43,33 +54,93 @@ flowchart TB
         Conta["Conta de usuário"]
     end
 
-    subgraph C2["Assuntos, serviços, categorias"]
+    subgraph C2["Módulo, Assunto/Serviço, categorias"]
         Modulo["Módulo"]
         AssuntoServico["Assunto/Serviço"]
         CategoriaModulo["Categoria-base do Módulo<br/>(DO/CO/PA)"]
-        CategoriaAS["Categoria/Subcategoria de A&S<br/>(campo existe, não exercitado)"]
-        ProcessoUrb["Processo Urbanístico<br/>(configuração do módulo PA)"]
-        Zona["Zona<br/>(1.29.10.4)"]
-        CategoriaUso["Categoria de uso<br/>(1.29.10.4)"]
+        CategoriaAS["Categoria/Subcategoria A&S<br/>(não exercitada)"]
+        ProcessoUrb["Processo Urbanístico<br/>(config. módulo PA)"]
+        Zona["Zona"]
+        CategoriaUso["Categoria de uso"]
     end
 
+    subgraph C6["Personalização e ambiente"]
+        Personalizacao["Personalização"]
+        AmbienteCliente["Ambiente Cliente<br/>(capacidades contratadas)"]
+    end
+
+    Orgao --> Setor
+    Setor <-->|"N:N"| Servidor
+    Servidor --> Nivel
+    Servidor --> Conta
+    Orgao --> Personalizacao
+    Orgao -->|"funcionalidades"| AmbienteCliente
+
+    Modulo --> AssuntoServico
+    Modulo --> CategoriaModulo
+    AssuntoServico -->|"herda via Módulo"| CategoriaModulo
+    AssuntoServico -.->|"D2"| CategoriaAS
+    Setor -->|"tramitação"| AssuntoServico
+    Modulo -->|"opcional/contratado"| ProcessoUrb
+    Modulo -.->|"D1"| Zona
+    Zona -->|"assoc., sem cardinalidade"| CategoriaUso
+    AmbienteCliente -->|"Módulos Disponibilizados"| Modulo
+    AmbienteCliente -->|"adicional/contratado"| ProcessoUrb
+    Personalizacao -.->|"D7"| Nivel
+
+    style C1 fill:none,stroke:#999999,stroke-width:1px
+    style C2 fill:none,stroke:#999999,stroke-width:1px
+    style C6 fill:none,stroke:#999999,stroke-width:1px
+```
+
+### 2.3 Diagrama 2 — Atores externos e entrada
+
+```mermaid
+flowchart TB
+    subgraph C4["Cidadão, usuário externo, central"]
+        CidadaoEmpresa["Cidadão/Empresa<br/>(ator do TR, 1.32)"]
+        UsuarioExterno["Contato/Usuário externo<br/>(identidade técnica)"]
+        EntesExternos["Entes externos<br/>(TR 1.36, sem confirmação)"]
+        Demanda["Demanda externa"]
+        Central["Central de atendimento"]
+        Jornal["Jornal Oficial<br/>(área pública)"]
+    end
+
+    CidadaoEmpresa -->|"mesma população no produto; TR não declara"| UsuarioExterno
+    EntesExternos -.->|"D6"| UsuarioExterno
+    UsuarioExterno --> Demanda
+    UsuarioExterno -.->|"D5"| Central
+    Jornal --> Central
+
+    style C4 fill:none,stroke:#999999,stroke-width:1px
+```
+
+### 2.4 Diagrama 3 — Documento, fluxo e mesa
+
+```mermaid
+flowchart TB
     subgraph C3["Fluxo, modelos, documento, mesa, etiqueta"]
-        Fluxo["Fluxo de trabalho/Etapa<br/>(opcional/contratado — Workflow)"]
-        ModeloDoc["Modelo simples/Documento automatizado"]
+        Fluxo["Fluxo de trabalho/Etapa<br/>(opcional/contratado)"]
+        ModeloDoc["Modelo simples/<br/>Documento automatizado"]
         Documento["Documento/Processo<br/>(status: 5 valores do TR)"]
-        Mesa["Mesa de trabalho<br/>(estado próprio, distinto do Documento)"]
+        Mesa["Mesa de trabalho<br/>(estado próprio)"]
         Etiqueta["Etiqueta"]
     end
 
-    subgraph C4["Cidadão, usuário externo, central"]
-        CidadaoEmpresa["Cidadão/Empresa<br/>(ator citado no TR, 1.32)"]
-        UsuarioExterno["Contato/Usuário externo<br/>(entidade/identidade técnica do produto)"]
-        EntesExternos["Entes externos<br/>(citado no TR 1.36; identidade própria sem confirmação)"]
-        Demanda["Demanda externa"]
-        Central["Central de atendimento"]
-        Jornal["Jornal Oficial<br/>(área pública de acesso)"]
-    end
+    Fluxo --> Documento
+    ModeloDoc --> Documento
+    Documento --> Mesa
+    Documento --> Etiqueta
 
+    style C3 fill:none,stroke:#999999,stroke-width:1px
+```
+
+> Documento/Processo também aparece no Diagrama 4 (divulgação, exportação, assinatura, estatísticas) como nó de referência — relações cruzadas na tabela §2.7.
+
+### 2.5 Diagrama 4 — Divulgação, exportação, assinatura, chave e indicadores
+
+```mermaid
+flowchart TB
     subgraph C5["Divulgação, exportação, assinaturas, chaves"]
         Divulgacao["Parâmetro de divulgação"]
         MuralInterno["Mural interno"]
@@ -80,73 +151,78 @@ flowchart TB
         Chave["Chave de acesso"]
     end
 
-    subgraph C6["Personalização, ambientes, estatísticas"]
-        Personalizacao["Personalização"]
-        AmbienteCliente["Ambiente Cliente<br/>(capacidades padrão/adicionais contratadas)"]
-        Estatisticas["Estatísticas/Relatórios"]
-    end
+    Estatisticas["Estatísticas/Relatórios"]
+    Documento["Documento/Processo<br/>(ver Diagrama 3)"]
 
-    Orgao --> Setor
-    Setor <-->|"N:N"| Servidor
-    Servidor --> Nivel
-    Servidor --> Conta
-    Orgao --> Personalizacao
-    Orgao -->|"funcionalidades padrão/adicionais contratadas"| AmbienteCliente
-
-    Modulo --> AssuntoServico
-    Modulo --> CategoriaModulo
-    AssuntoServico -->|"categoria-base herdada via Módulo"| CategoriaModulo
-    AssuntoServico -.->|"campo existe, nunca exercitado — lacuna (n)"| CategoriaAS
-    Setor -->|"regras de tramitação"| AssuntoServico
-    Modulo -->|"módulo tipo PA, opcional/contratado"| ProcessoUrb
-    Modulo -.->|"vínculo módulo PA↔zoneamento ainda não confirmado por fonte"| Zona
-    Zona -->|"associada a (multiplicidade não especificada pelo TR)"| CategoriaUso
-    Zona -->|"cidadão/empresa consulta e inicia processo a partir da Zona"| Documento
-    AmbienteCliente -->|"funcionalidade padrão (Módulos Disponibilizados)"| Modulo
-    AmbienteCliente -->|"funcionalidade adicional/contratada"| ProcessoUrb
-    AmbienteCliente -->|"funcionalidade adicional/contratada (Workflow)"| Fluxo
-
-    Fluxo -->|"documento tramita conforme etapa"| Documento
-    ModeloDoc --> Documento
-    ModeloDoc --> AssuntoServico
-    Documento --> Mesa
-    Documento --> Etiqueta
-
-    UsuarioExterno --> Demanda
-    UsuarioExterno --> Conta
-    UsuarioExterno -.->|"correspondência em aberto"| Signatario
-    UsuarioExterno -.->|"acessa (vínculo exato com Serviço não detalhado pelo TR)"| Central
-    EntesExternos -.->|"mesma população de Usuário externo? sem nova evidência"| UsuarioExterno
-    CidadaoEmpresa -->|"mesma população no produto atual; equivalência não declarada pelo TR (lacuna literal (a))"| UsuarioExterno
-    Demanda -.->|"inferência aberta, fatia 05"| Documento
-    Central -->|"oferece acesso a"| AssuntoServico
-
-    Modulo -->|"parâmetro de divulgação"| Divulgacao
-    Documento -->|"ato de divulgar (ação de cenário)"| Divulgacao
     Divulgacao --> MuralInterno
     Divulgacao --> CanalExterno
-    CanalExterno --> Jornal
-    Jornal --> Central
+    Assinatura --> Signatario
+    Documento -->|"ação de cenário"| Divulgacao
     Documento --> Exportacao
     Assinatura --> Documento
-    Assinatura --> Signatario
-    Chave -->|"concedente/convenente"| Servidor
-
-    AmbienteCliente -->|"funcionalidade padrão"| Estatisticas
-    Estatisticas --> Servidor
     Estatisticas --> Documento
-    Personalizacao -.->|"lacuna (j): nível exato não definido"| Nivel
-    Estatisticas -.->|"lacuna (j): nível exato não definido"| Nivel
 
-    style C1 fill:none,stroke:#999999,stroke-width:1px
-    style C2 fill:none,stroke:#999999,stroke-width:1px
-    style C3 fill:none,stroke:#999999,stroke-width:1px
-    style C4 fill:none,stroke:#999999,stroke-width:1px
     style C5 fill:none,stroke:#999999,stroke-width:1px
-    style C6 fill:none,stroke:#999999,stroke-width:1px
 ```
 
-**Legenda:** linha sólida (`-->`/`<-->`) = relação sustentada no modelo/fontes já registradas nas tabelas; linha tracejada (`-.->`) = relação inferida/em aberto, ainda sem confirmação — oito no diagrama: Módulo→Zona (o TR confirma a existência de Zona/Categoria de uso e, à parte, que "processo urbanístico" é uma flag ativada num módulo PA — mas nenhuma fonte, TR/produto/código, declara que os registros de Zona ficam armazenados dentro desse módulo; vínculo de contenção ainda a confirmar); Demanda→Documento/Processo (identidade da entidade como Documento comum de origem externa é inferência da fatia 05; o mecanismo de abertura Usuário externo→Demanda **é** confirmado, não entra na mesma ressalva); Usuário externo→Signatário (correspondência "contribuinte"/signatário externo segue em aberto, lacuna (h)); Usuário externo→Central (o vínculo exato com a entidade Serviço não é detalhado pelo TR — mesma ressalva do Mapa geral); Entes externos→Contato/Usuário externo (ator citado no TR 1.36 sem identidade própria confirmada — o nó "Entes externos" do Mapa geral está desenhado aqui, não só mencionado, e a dúvida se é a mesma população de Contato/Usuário externo segue em aberto); Assunto/Serviço→Categoria/Subcategoria de A&S (o campo `categoryId` existe mas nunca foi exercitado — lacuna técnica (n) do Mapa geral, não uma relação comprovada); e Personalização→Nível / Estatísticas→Nível (lacuna (j): nível/permissão exata de acesso não definida em nenhuma fonte — não decide quem acessa). Cidadão/Empresa→Contato/Usuário externo é sólida: o produto atual confirma que são a mesma população (Usuário Cidadão, [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)|recorte 06]]) — só o texto literal do TR não declara essa equivalência (lacuna (a)); o Mapa geral, que é só TR, preserva essa aresta como tracejada, e os dois diagramas não precisam coincidir aqui (ver nota de vínculo acima). Rótulo "opcional/contratado" ou "adicional/contratado" = funcionalidade documentada, mas não universal — Processo Urbanístico (módulo PA) e Fluxo de trabalho/Workflow são adicionais contratados conforme a tabela de Ambiente Cliente; não decide corpus nem cenário padrão. "Módulo" concentra as configurações do módulo (categoria-base, Assunto/Serviço, parâmetro de divulgação); a categoria-base de Assunto/Serviço é herdada via o Módulo ao qual pertence, não um campo próprio do Serviço (ver §4). "Processo Urbanístico" (configuração de ativação no módulo PA) e "Zona, Categoria de uso" (dados de zoneamento, 1.29.10.4) são conceitos relacionados, mas distintos — compartilham contexto no TR, não a mesma relação; nenhuma seta liga Processo Urbanístico a Assunto/Serviço, porque o TR não declara essa dependência. O processo urbanístico iniciado a partir de uma Zona é representado como ação do cidadão/empresa sobre a entidade Documento/Processo já existente (Zona→Documento) — só Zona liga à origem do processo, nunca Categoria de uso, que só se associa a Zona, não origina nada. "Jornal Oficial" representa a área pública dentro da Central, resultado do canal externo — não um elemento independente do parâmetro de divulgação (ver seção 7); o ato de divulgar um Documento é uma ação de cenário sobre o parâmetro já existente (Documento→Divulgação), distinto do parâmetro em si (Módulo→Divulgação). "Ambiente Cliente" representa as capacidades padrão/adicionais contratadas, não uma segunda instância distinta de Órgão/Instância (que identifica a organização). O status do Documento (5 valores do TR) e o estado da Mesa seguem como dimensões distintas, nunca fundidas num único nó. A classificação de servidores em Ativos/Inativos usada por Estatísticas é contexto de negócio **já confirmado por Rafael** — o que segue sem evidência é só o cálculo/implementação da própria estatística, não o agrupamento em si. A instância/capacidades do Cliente (Órgão/Instância, Ambiente Cliente) é um conceito de produto, distinto do ambiente de implantação individual de cada QA — este último, e a atribuição de canal (`.env`/seed/cenário), estão mapeados e aprovados na seção 11 (como hipóteses candidatas, não decisão de arquitetura) e não aparecem como nó deste diagrama.
+> `Documento/Processo` aqui é o **mesmo nó de referência** do Diagrama 3 — não é entidade duplicada, só reaparece pra não deixar as setas de divulgação/exportação/assinatura soltas.
+
+### 2.6 Como ler
+
+| Elemento | Significado |
+|---|---|
+| Linha sólida (`-->`/`<-->`) | Relação sustentada no modelo (TR e/ou produto) — detalhe nas tabelas §3–8 |
+| Linha tracejada (`-.->`) | Relação inferida/em aberto — ver "Relações em aberto" abaixo |
+| ID (`D1`–`D8`) | Identificador curto da relação em aberto, só pra manter o rótulo enxuto no diagrama |
+| "opcional/contratado" | Funcionalidade documentada, não universal — ver Ambiente Cliente, §8 |
+
+### 2.7 Relações entre os 4 diagramas
+
+| Relação (origem → destino) | Significado/estado | Ref. |
+|---|---|---|
+| Zona (1) → Documento/Processo (3) | Cidadão/empresa consulta e inicia processo a partir da Zona — sólida | 1.29.10.4, §4 |
+| Ambiente Cliente (1) → Fluxo de trabalho/Etapa (3) | Funcionalidade adicional/contratada (Workflow) — sólida | §8 |
+| Módulo (1) → Parâmetro de divulgação (4) | Parâmetro de divulgação — sólida | §4/§7 |
+| Ambiente Cliente (1) → Estatísticas/Relatórios (4) | Funcionalidade padrão — sólida | §8 |
+| Modelo simples/Documento automatizado (3) → Assunto/Serviço (1) | Vinculado a — sólida | §5 |
+| Contato/Usuário externo (2) → Conta de usuário (1) | Pertence a — sólida | §3/§6 |
+| Central de atendimento (2) → Assunto/Serviço (1) | Oferece acesso a — sólida | §6 |
+| Chave de acesso (4) → Servidor (1) | Concedente/convenente — sólida | §7 |
+| Estatísticas/Relatórios (4) → Servidor (1) | Exibe dados de — sólida | §8 |
+| Canal externo (4) → Jornal Oficial (2) | Resulta na área pública — sólida | §7 |
+| Documento/Processo (3) → Parâmetro de divulgação (4) | Ato de divulgar, ação de cenário — sólida | §7 |
+| Documento/Processo (3) → Exportação (4) | É exportado como — sólida | §7 |
+| Assinatura (4) → Documento/Processo (3) | É aplicada a — sólida | §7 |
+| Estatísticas/Relatórios (4) → Nível de acesso (1) | **D8** — tracejada, lacuna (j) | §8/§3 |
+| Contato/Usuário externo (2) → Signatário (4) | **D4** — tracejada, lacuna (h) | §7 |
+| Demanda externa (2) → Documento/Processo (3) | **D3** — tracejada, inferência da fatia 05 | §6 |
+
+### 2.8 Relações em aberto (tracejadas)
+
+| ID | Relação | Diagrama | Motivo |
+|---|---|---|---|
+| D1 | Módulo → Zona | 1 | vínculo módulo PA↔zoneamento não confirmado por nenhuma fonte (TR, produto ou código) |
+| D2 | Assunto/Serviço → Categoria/Subcategoria A&S | 1 | `categoryId` existe, nunca exercitado — lacuna (n) do Mapa geral |
+| D3 | Demanda externa → Documento/Processo | 2→3 | identidade como Documento comum é inferência da fatia 05 |
+| D4 | Contato/Usuário externo → Signatário | 2→4 | correspondência "contribuinte"/signatário externo em aberto — lacuna (h) |
+| D5 | Contato/Usuário externo → Central de atendimento | 2 | vínculo exato com Serviço não detalhado pelo TR |
+| D6 | Entes externos → Contato/Usuário externo | 2 | identidade própria não confirmada; "Entes externos" citado no TR 1.36 |
+| D7 | Personalização → Nível de acesso | 1 | lacuna (j): nível exato de acesso a Personalização não definido |
+| D8 | Estatísticas/Relatórios → Nível de acesso | 4→1 | lacuna (j): idem, pra Estatísticas |
+
+### 2.9 Notas de leitura (refinamentos já auditados)
+
+- Categoria-base de Assunto/Serviço é **herdada via o Módulo** ao qual pertence, não campo próprio do Serviço (§4).
+- Processo Urbanístico (config. do módulo PA) e Zona/Categoria de uso (dados, 1.29.10.4) são conceitos distintos que só compartilham contexto no TR — nenhuma seta liga Processo Urbanístico a Assunto/Serviço (§4).
+- Só **Zona** origina o processo urbanístico (ação do cidadão/empresa sobre Documento); Categoria de uso só se associa a Zona, nunca origina nada (§4).
+- Cidadão/Empresa→Contato/Usuário externo é **sólida**: o produto confirma a mesma população (Usuário Cidadão, [[Seções do TR/06 - Atores externos e atendimento ao cidadão (1.32, 1.36–1.37)|recorte 06]]); só o texto literal do TR não declara a equivalência (lacuna (a)) — por isso o Mapa geral (só TR) preserva essa mesma aresta como tracejada.
+- Divulgação: Módulo carrega o parâmetro (persistente); o ato de divulgar um Documento é **ação de cenário** sobre esse parâmetro — não confundir configuração com ação (§7).
+- Jornal Oficial é a área pública do canal externo, dentro da Central — não um elemento independente do parâmetro de divulgação (§7).
+- Classificação de servidores em Ativos/Inativos (Estatísticas) é contexto de negócio **já confirmado por Rafael** — só cálculo/implementação da estatística em si segue sem evidência (§8).
+- Ambiente Cliente = capacidades padrão/adicionais contratadas, não uma segunda instância distinta de Órgão/Instância (§8).
+- Processo urbanístico (instância) e Anexo (1.29.10.4) são ação/estado sobre Documento/Processo já modelado, não entidades novas (§4, nota).
+- Status do Documento (5 valores do TR) e estado da Mesa seguem como dimensões distintas, nunca fundidas num único nó (§5).
+- Ambiente de implantação de cada QA e a atribuição de canal (`.env`/seed/cenário) estão mapeados e aprovados na seção 11 (hipóteses candidatas, não decisão de arquitetura) — não aparecem como nó em nenhum destes diagramas.
 
 ## 3. Órgão, setores, servidores e níveis de acesso (grupo C1)
 
