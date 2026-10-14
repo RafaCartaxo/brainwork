@@ -19,11 +19,9 @@ revisado: 2026-10-14
 Objetivo: Criar uma nova instância no SOGOV, configurando seus dados gerais, módulo base, integrações, personalização e identidade visual.
 
 ### 0. Acesso administrativo
-- Acessar o ambiente de login do Colaborador SOGOV.
-- Realizar login como colaborador.
+Pré-requisito aos passos 1–3 abaixo (login e acesso à aba Clientes): antes disso é preciso selecionar o escopo de acesso e entrar na área administrativa.
 - Selecionar as bolsas (escopo) de acesso e confirmar.
 - Acessar a área administrativa (/admin).
-- Acessar a aba Clientes.
 
 ### 1. Dados Gerais
 1. Acessar o ambiente de login do Colaborador SOGOV.
