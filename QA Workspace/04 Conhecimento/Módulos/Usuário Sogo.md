@@ -75,7 +75,7 @@ fonte_ultima_edicao: 2026-04-10 (Ivo Costa)
 - [ ] A regra geral "níveis com acesso ao ambiente do cliente não poderão ter acesso para interagir nos documentos" não especifica o que conta como "interagir" (despachos? respostas?), nem se as permissões de histórico/download liberadas em 10/04/2026 contam como "interação" ou ficam de fora por serem só consulta. Confirmar o limite exato.
 - [ ] Backlog do Notion cita 2 itens sem SGV: "[Melhoria] Usuário sogo pode imprimir e visualizar histórico dos documentos" e "[Melhoria] Permitir que usuários sogo também tenham acesso ao menu rastrear documento" — parecem ser a **origem** das duas atualizações de 10/04/2026 já documentadas acima. Confirmar se são o mesmo item (backlog desatualizado, deveria estar fechado) ou se falta algo além do que já foi entregue.
 - [ ] Notion mostra "1 backlink" no topo da página, não identificado no export — alguma outra página do Notion referencia esta.
-- [ ] Os exports de **Usuário Cidadão** e **Usuário Servidor**, baixados junto deste, vieram **vazios** (só título, sem corpo) — não processados. Ver nota na daily de hoje.
+- [x] ~~Os exports de **Usuário Cidadão** e **Usuário Servidor**, baixados junto deste, vieram **vazios**~~ — reexportados e processados em 2026-10-14. Ver [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] e [[QA Workspace/04 Conhecimento/Módulos/Usuário Servidor|Usuário Servidor]].
 
 ## Cards relacionados
 <!-- SGVs validados que tocam este módulo -->
@@ -85,4 +85,4 @@ fonte_ultima_edicao: 2026-04-10 (Ivo Costa)
 <!-- Docs do repo (caminho), links externos, leis -->
 - Notion (fonte): ver `fonte` no frontmatter.
 - [[QA Workspace/04 Conhecimento/Módulos/Ambientes SoGov|Ambientes SoGov]] — contexto do Ambiente SOGO onde esse tipo de usuário atua.
-- [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] — os outros dois tipos de usuário do sistema são Cidadão (doc já existente no vault) e Servidor (ainda sem doc própria).
+- [[QA Workspace/04 Conhecimento/Módulos/Usuário Cidadão|Usuário Cidadão]] e [[QA Workspace/04 Conhecimento/Módulos/Usuário Servidor|Usuário Servidor]] — os outros dois tipos de usuário do sistema.
