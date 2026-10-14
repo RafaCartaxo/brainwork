@@ -21,6 +21,8 @@ status: concluido
 
 > Síntese de todos os diagramas locais já revisados (recortes 02–11), num único Mermaid. Não introduz relação nem lacuna nova: toda aresta sólida já aparece em algum diagrama local ou na tabela "Relações entre grupos"; toda aresta tracejada já consta, com o mesmo código, na tabela "Lacunas registradas". Para manter a leitura vertical, só as lacunas que cruzam dois grupos temáticos (h, j, o) aparecem no grafo — as demais (a)–(g), (i), (k)–(n), (p) seguem apenas nas tabelas e nos recortes, sem que isso implique que estejam resolvidas.
 
+> **Vínculo com [[04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]:** este mapa é a síntese conceitual da Fase 1, baseada só no texto do TR — preserva lacunas literais mesmo quando o produto já esclarece a questão. O 04 é o modelo-alvo, derivado do TR **e** da documentação de produto, e pode refinar, agrupar ou renomear nós deste mapa conforme essa evidência adicional. Os dois diagramas não precisam ser idênticos; diferenças intencionais (refinamento, agrupamento, canal de fornecimento) estão documentadas na legenda de cada um.
+
 ```mermaid
 flowchart TB
     subgraph C1["Órgão, setores, servidores, níveis"]
@@ -39,7 +41,7 @@ flowchart TB
         Servico["Serviço"]
         Assunto["Assunto"]
         CategoriaDoc["Categoria de documento"]
-        Zoneamento["Zoneamento"]
+        Zoneamento["Zoneamento<br/>(Zona, Categoria de uso, Processo urbanístico — 1.29.10.4;<br/>distinto da configuração de módulo PA)"]
         CategoriaAS["Categoria de Assuntos e Serviços"]
         VinculoAlvo["Categoria / Serviço / Assunto<br/>(um dos alvos)"]
     end
@@ -64,7 +66,7 @@ flowchart TB
 
     subgraph C5["Divulgação, assinaturas, chaves"]
         Divulgacao["Divulgação"]
-        Canal["Canal Oficial"]
+        Canal["Canal Oficial<br/>(mecanismo; área pública de acesso é distinta — ver lacuna g)"]
         Assinatura["Assinatura"]
         Signatario["Signatário (interno/externo)"]
         SignatarioExterno["Signatário externo / contribuinte"]
@@ -80,7 +82,7 @@ flowchart TB
     end
 
     Orgao --> Setor
-    Setor --> Servidor
+    Setor <-->|"N:N"| Servidor
     Servidor --> Nivel
     Servidor --> StatusAtividade
     Servidor --> Presenca
@@ -252,3 +254,5 @@ As relações abaixo cruzam os grupos temáticos do diagrama e, por isso, ficam 
 - Em 09/10/2026, uma rodada read-only verificou as dúvidas abertas contra a documentação de Conhecimento > Módulos vigente; os recortes 06, 07, 08 e 10 agora trazem, cada um, uma subseção "Contexto de produto verificado em documentação" com o que foi esclarecido, parcialmente esclarecido, ou segue sem evidência — sem alterar o texto literal do TR nem a classificação de cobertura.
 - As lacunas (a), (b), (c), (d) e (g) têm contexto de produto que as esclarece para o produto atual e não exigem mais decisão de Rafael; (e), (f) e (j) seguem parcialmente esclarecidas — (f) converge no conceito/regra de visibilidade de documento associado, mas gatilhos diferentes e estrutura de dados persistida não documentada (detalhe técnico, não pendência de decisão de Rafael). As lacunas (h quanto a "contribuinte"), (i), (k), (l), (m), (n) e (p) seguem sem decisão/evidência suficiente. A antiga lacuna (o) de mapeamento de status foi esclarecida por Rafael; a implementação estatística continua sem evidência.
 - **Status funcional e presença do servidor (atualizado em 13/10/2026):** o produto separa o status funcional (Em atividade, Suspenso — rótulo de cadastro Inativo —, Licença, Férias) da presença (Online/Offline, mostrada na coluna Status da listagem). O TR 1.27.10.1 é mantido como texto de referência e organizado nesses dois eixos no recorte 03. Ver [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]].
+- **Vínculo Servidor↔Setor como N:N (atualizado em 14/10/2026):** a aresta `Setor↔Servidor` passou a indicar N:N explicitamente, conforme [[Seções do TR/03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)]] (1.27, 1.26.5, Confirmado: "1.26.5 permite vários usuários por setor e 1.27 permite um servidor vinculado a múltiplos setores") — não é relação nova, só a multiplicidade já confirmada ficou explícita no rótulo.
+- **Zoneamento × configuração de módulo PA (atualizado em 14/10/2026):** o nó "Zoneamento" representa as entidades confirmadas pelo TR em 1.29.10.4 (Zona, Categoria de uso, Processo urbanístico iniciado a partir de uma Zona, Anexo de processo urbanístico) — distintas da característica "processo urbanístico" ativada como parâmetro num módulo do tipo Processo Administrativo (produto/Rafael, [[Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29)]], seção "Zoneamento e categorias de Assuntos e Serviços"). As duas coisas compartilham o nome, mas não são a mesma relação; nenhuma aresta "Zoneamento → Serviço/Assunto" é desenhada, porque o TR não declara essa dependência direta.

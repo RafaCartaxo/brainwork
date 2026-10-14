@@ -31,6 +31,8 @@ Cada grupo abaixo corresponde a um dos 6 agrupamentos temáticos já usados em [
 
 > Resumo visual de alto nível, organizado pelos mesmos 6 grupos (C1–C6) das tabelas abaixo — não substitui nem duplica atributos, estados ou ações detalhadas; essas vivem só nas tabelas das seções 3–8. Este diagrama também não decide fornecimento (`.env`/seed/cenário) — ver seção 11.
 
+> **Vínculo com [[00 - Mapa geral|Mapa geral]]:** aquele mapa é a síntese conceitual da Fase 1, baseada só no texto do TR, e preserva lacunas literais mesmo com contexto de produto disponível. Este diagrama é o **modelo-alvo**, derivado do TR **e** da documentação de produto — por isso refina, agrupa ou renomeia alguns nós do Mapa geral (ex.: Módulo, Ambiente Cliente, Jornal Oficial). Os dois não precisam ser idênticos; cada agrupamento/refinamento está identificado na legenda abaixo.
+
 ```mermaid
 flowchart TB
     subgraph C1["Órgão, setores, servidores e níveis"]
@@ -46,7 +48,8 @@ flowchart TB
         AssuntoServico["Assunto/Serviço"]
         CategoriaModulo["Categoria-base do Módulo<br/>(DO/CO/PA)"]
         CategoriaAS["Categoria/Subcategoria de A&S<br/>(campo existe, não exercitado)"]
-        ProcessoUrb["Processo Urbanístico"]
+        ProcessoUrb["Processo Urbanístico<br/>(configuração do módulo PA)"]
+        DadosZoneamento["Zona, Categoria de uso<br/>(1.29.10.4)"]
     end
 
     subgraph C3["Fluxo, modelos, documento, mesa, etiqueta"]
@@ -89,9 +92,12 @@ flowchart TB
 
     Modulo --> AssuntoServico
     Modulo --> CategoriaModulo
+    AssuntoServico -->|"categoria-base herdada via Módulo"| CategoriaModulo
     AssuntoServico -.->|"campo existe, nunca exercitado — lacuna (n)"| CategoriaAS
     Setor -->|"regras de tramitação"| AssuntoServico
     Modulo -->|"módulo tipo PA, opcional/contratado"| ProcessoUrb
+    Modulo -.->|"vínculo módulo PA↔dados de zoneamento ainda não confirmado por fonte"| DadosZoneamento
+    DadosZoneamento -->|"cidadão/empresa inicia processo a partir da Zona"| Documento
     AmbienteCliente -->|"funcionalidade padrão (Módulos Disponibilizados)"| Modulo
     AmbienteCliente -->|"funcionalidade adicional/contratada"| ProcessoUrb
     AmbienteCliente -->|"funcionalidade adicional/contratada (Workflow)"| Fluxo
@@ -105,11 +111,12 @@ flowchart TB
     UsuarioExterno --> Demanda
     UsuarioExterno --> Conta
     UsuarioExterno -.->|"correspondência em aberto"| Signatario
+    UsuarioExterno -.->|"acessa (vínculo exato com Serviço não detalhado pelo TR)"| Central
     Demanda -.->|"inferência aberta, fatia 05"| Documento
     Central -->|"oferece acesso a"| AssuntoServico
 
     Modulo -->|"parâmetro de divulgação"| Divulgacao
-    Divulgacao -->|"documento elegível (ação de divulgar)"| Documento
+    Documento -->|"ato de divulgar (ação de cenário)"| Divulgacao
     Divulgacao --> MuralInterno
     Divulgacao --> CanalExterno
     CanalExterno --> Jornal
@@ -122,6 +129,8 @@ flowchart TB
     AmbienteCliente -->|"funcionalidade padrão"| Estatisticas
     Estatisticas --> Servidor
     Estatisticas --> Documento
+    Personalizacao -.->|"lacuna (j): nível exato não definido"| Nivel
+    Estatisticas -.->|"lacuna (j): nível exato não definido"| Nivel
 
     style C1 fill:none,stroke:#999999,stroke-width:1px
     style C2 fill:none,stroke:#999999,stroke-width:1px
@@ -131,7 +140,7 @@ flowchart TB
     style C6 fill:none,stroke:#999999,stroke-width:1px
 ```
 
-**Legenda:** linha sólida (`-->`/`<-->`) = relação sustentada no modelo/fontes já registradas nas tabelas; linha tracejada (`-.->`) = relação inferida/em aberto, ainda sem confirmação — três no diagrama: Demanda→Documento/Processo (identidade da entidade como Documento comum de origem externa é inferência da fatia 05; o mecanismo de abertura Usuário externo→Demanda **é** confirmado, não entra na mesma ressalva); Usuário externo→Signatário (correspondência "contribuinte"/signatário externo segue em aberto, lacuna (h)); e Assunto/Serviço→Categoria/Subcategoria de A&S (o campo `categoryId` existe mas nunca foi exercitado — a estrutura dessa categorização é uma lacuna técnica, lacuna (n) do Mapa geral, não uma relação comprovada). Rótulo "opcional/contratado" ou "adicional/contratado" = funcionalidade documentada, mas não universal — Processo Urbanístico (módulo PA) e Fluxo de trabalho/Workflow são adicionais contratados conforme a tabela de Ambiente Cliente; não decide corpus nem cenário padrão. "Módulo" concentra as configurações do módulo (categoria-base, Assunto/Serviço, parâmetro de divulgação); "Jornal Oficial" representa a área pública dentro da Central, resultado do canal externo — não um elemento independente do parâmetro de divulgação (ver seção 7). "Ambiente Cliente" representa as capacidades padrão/adicionais contratadas, não uma segunda instância distinta de Órgão/Instância (que identifica a organização). O status do Documento (5 valores do TR) e o estado da Mesa seguem como dimensões distintas, nunca fundidas num único nó. A instância/capacidades do Cliente (Órgão/Instância, Ambiente Cliente) é um conceito de produto, distinto do ambiente de implantação individual de cada QA — este último, e a atribuição de canal (`.env`/seed/cenário), estão mapeados e aprovados na seção 11 (como hipóteses candidatas, não decisão de arquitetura) e não aparecem como nó deste diagrama.
+**Legenda:** linha sólida (`-->`/`<-->`) = relação sustentada no modelo/fontes já registradas nas tabelas; linha tracejada (`-.->`) = relação inferida/em aberto, ainda sem confirmação — sete no diagrama: Módulo→Zona/Categoria de uso (o TR confirma a existência dessas entidades e, à parte, que "processo urbanístico" é uma flag ativada num módulo PA — mas nenhuma fonte, TR/produto/código, declara que os registros de Zona/Categoria de uso ficam armazenados dentro desse módulo; vínculo de contenção ainda a confirmar); Demanda→Documento/Processo (identidade da entidade como Documento comum de origem externa é inferência da fatia 05; o mecanismo de abertura Usuário externo→Demanda **é** confirmado, não entra na mesma ressalva); Usuário externo→Signatário (correspondência "contribuinte"/signatário externo segue em aberto, lacuna (h)); Usuário externo→Central (o vínculo exato com a entidade Serviço não é detalhado pelo TR — mesma ressalva do Mapa geral; o nó "Entes externos" do Mapa geral não tem identidade própria confirmada, preservado aqui como incerteza, não apagado); Assunto/Serviço→Categoria/Subcategoria de A&S (o campo `categoryId` existe mas nunca foi exercitado — lacuna técnica (n) do Mapa geral, não uma relação comprovada); e Personalização→Nível / Estatísticas→Nível (lacuna (j): nível/permissão exata de acesso não definida em nenhuma fonte — não decide quem acessa). Rótulo "opcional/contratado" ou "adicional/contratado" = funcionalidade documentada, mas não universal — Processo Urbanístico (módulo PA) e Fluxo de trabalho/Workflow são adicionais contratados conforme a tabela de Ambiente Cliente; não decide corpus nem cenário padrão. "Módulo" concentra as configurações do módulo (categoria-base, Assunto/Serviço, parâmetro de divulgação); a categoria-base de Assunto/Serviço é herdada via o Módulo ao qual pertence, não um campo próprio do Serviço (ver §4). "Processo Urbanístico" (configuração de ativação no módulo PA) e "Zona, Categoria de uso" (dados de zoneamento, 1.29.10.4) são conceitos relacionados, mas distintos — compartilham contexto no TR, não a mesma relação; nenhuma seta liga Processo Urbanístico a Assunto/Serviço, porque o TR não declara essa dependência. O processo urbanístico iniciado a partir de uma Zona é representado como ação sobre a entidade Documento/Processo já existente (DadosZoneamento→Documento), não como entidade nova, pra não duplicar Documento. "Jornal Oficial" representa a área pública dentro da Central, resultado do canal externo — não um elemento independente do parâmetro de divulgação (ver seção 7); o ato de divulgar um Documento é uma ação de cenário sobre o parâmetro já existente (Documento→Divulgação), distinto do parâmetro em si (Módulo→Divulgação). "Ambiente Cliente" representa as capacidades padrão/adicionais contratadas, não uma segunda instância distinta de Órgão/Instância (que identifica a organização). O status do Documento (5 valores do TR) e o estado da Mesa seguem como dimensões distintas, nunca fundidas num único nó. A classificação de servidores em Ativos/Inativos usada por Estatísticas é contexto de negócio **já confirmado por Rafael** — o que segue sem evidência é só o cálculo/implementação da própria estatística, não o agrupamento em si. A instância/capacidades do Cliente (Órgão/Instância, Ambiente Cliente) é um conceito de produto, distinto do ambiente de implantação individual de cada QA — este último, e a atribuição de canal (`.env`/seed/cenário), estão mapeados e aprovados na seção 11 (como hipóteses candidatas, não decisão de arquitetura) e não aparecem como nó deste diagrama.
 
 ## 3. Órgão, setores, servidores e níveis de acesso (grupo C1)
 
@@ -150,6 +159,10 @@ flowchart TB
 | **Serviço/Assunto** | Nome, categoria vinculada, campos personalizados (tipos: `file`, `bigText`, `informativeText-*`, entre outros do enum), abertura externa habilitada/desabilitada, interação do cidadão limitada à abertura | Vinculado a Categoria de documento; setor dono via Regras de Tramitação | Cenários de criação/tramitação por módulo específico | [fatia 03](<Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29).md>) (`BASELINE.services`); recorte 04 | Demais tipos de campo personalizado além dos já confirmados |
 | **Categoria de documento (DO/CO/PA)** | 3 categorias-base confirmadas no seed; o TR também exige 8 categorias específicas (1.29.2–9) como necessidade do modelo-alvo — a ausência de localização no código é lacuna de representação técnica, não ausência do requisito | Serviço/Assunto vinculado a Categoria | Tipificação do Documento/Processo | [fatia 03](<Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29).md>) (`makeModule`, `documentType`) | Correspondência técnica das 8 categorias específicas exigidas pelo TR, e estrutura Categoria/Subcategoria de A&S (lacuna (n) do Mapa geral), seguem sem confirmação no código |
 | **Processo Urbanístico** | Parametrização/característica de um módulo do tipo PA (`isUrbanisticProcess`), não categoria-base própria; é funcionalidade **adicional/contratada**, não padrão universal do ambiente Cliente | Módulo PA pode ativar Processo Urbanístico | Cenários do módulo PA quando o contrato inclui essa funcionalidade | [fatia 03](<Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29).md>) (`makeModule(PU, isUrbanisticProcess:true)`); [Processos Urbanísticos](<../../../../../04 Conhecimento/Módulos/Processos Urbanísticos.md>); [Ambientes SoGov](<../../../../../04 Conhecimento/Módulos/Ambientes SoGov.md>) | Zona/Categoria de uso (1.29.10.4) não localizadas |
+| **Zona** (1.29.10.4) | Nome, descrição, bairros/localidades, categorias de uso associadas, arquivo georreferenciado, estado de publicação (publicado/não publicado), histórico completo de criação/edição/associações/dissociações — necessidade declarada pelo TR, **distinta** da configuração de ativação do módulo PA (linha Processo Urbanístico acima) | Associada a Categoria de uso (o TR não explicita multiplicidade N:N); upload de arquivo (.kmz) sobrescreve Zonas já existentes. **Vínculo com o módulo PA que ativa "processo urbanístico" (onde esses registros ficam armazenados) não é declarado por nenhuma fonte — TR, produto ou código** | Cenário de consulta pública de uma Zona publicada, e de abertura de Processo urbanístico a partir dela — essa abertura é **ação de cenário sobre a entidade Documento/Processo já modelada (§5)**, não uma entidade persistente própria | TR: [recorte 04 §Zoneamento](<Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29).md#Zoneamento e categorias de Assuntos e Serviços>) (1.29.10.4, confirmado); [fatia 03](<Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29).md>) (dado não localizado no código consultado) | Nenhuma evidência de código/teste localizada — **não presumir ausência no produto**; vínculo de armazenamento com o módulo PA é hipótese não confirmada (ver diagrama, aresta tracejada); categoria-base do módulo que os contém segue não determinada pelo texto do TR (lacuna (b) do Mapa geral) |
+| **Categoria de uso** (1.29.10.4) | Nome, descrição, parâmetros (unidade de medida + valor), histórico completo de criação/edição — necessidade declarada pelo TR | Associada a Zona (o TR não explicita multiplicidade N:N) | Base pra consulta/gestão dos usos permitidos numa Zona | TR: [recorte 04 §Zoneamento](<Seções do TR/04 - Serviços, assuntos e categorias de documentos (1.28–1.29).md#Zoneamento e categorias de Assuntos e Serviços>) (1.29.10.4, confirmado); [fatia 03](<Especificações do preset piloto/03 - Especificação do preset piloto (TR 1.28–1.29).md>) (dado não localizado no código consultado) | Nenhuma evidência de código/teste localizada — **não presumir ausência no produto** |
+
+> **Nota — Processo urbanístico (instância) e Anexo, 1.29.10.4:** o TR confirma que um Cidadão/Empresa "inicia, a partir de uma Zona, [um] Processo urbanístico" e que um Anexo desse processo é "revisado/aprovado/reprovado" por Servidor com permissão. Isso é tratado aqui como **ação de cenário sobre a entidade Documento/Processo já modelada em §5** (módulo PA, categoria-base administrativo) — não uma entidade persistente nova, pra não duplicar Documento. O estado de revisão do Anexo (revisado/aprovado/reprovado) é específico desse fluxo e não tem localização em código confirmada nesta análise.
 
 ## 5. Fluxo de trabalho, modelos, mesa e tramitação (grupo C3)
 
