@@ -12,5 +12,9 @@ Roteiros de sanidade (smoke tests) do Sogov, importados do Notion e mantidos com
 - [[Roteiro de Sanidade 02 - Atendimento ao Cidadão]] — serviço "Retirada de Entulho" + 4 fluxos ponta a ponta (AGS-12).
 - [[Roteiro de Sanidade 03 - Processos Urbanísticos]] — módulo Licenciamento Urbanístico + "Alvará de Construção" (AGS-13).
 
+## Mapeamentos complementares
+Documentos locais (não importados do Notion), derivados de execução manual narrada, detalhando um trecho de um roteiro acima pra virar caso de teste e automação.
+- [[Mapeamento - Criação de Instância (Cliente)]] — detalha o passo 2 de [[Roteiro de Sanidade 01 - Implantação]]; base da automação em `sogov-automation-playwright`.
+
 > [!note] Formato atual e backlog
 > Importados em 2026-07-21 como docs limpos (um por roteiro), `tipo: roteiro-sanidade` no frontmatter, passo a passo fiel + resultados esperados + seção **Automação/Referências**. O **template + skill de Sanidade** (padronização e roteamento automático pensados pra automação) continuam no backlog do vault ([[../00 Inbox/README|00 Inbox]]); até existirem, o auto-organizador não roteia nada pra cá sozinho ([[../../Sistema/Skills/SKILL_INBOX|SKILL_INBOX]]) — a entrada é manual via agente de export.

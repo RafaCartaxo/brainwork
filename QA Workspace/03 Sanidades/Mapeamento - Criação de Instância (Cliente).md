@@ -1,20 +1,19 @@
 ---
-title: Clientes (Instâncias)
+title: Mapeamento — Criação de Instância (Cliente)
 tags:
   - qa
-  - conhecimento
+  - sanidade
   - sogov
   - instancia
-tipo: modulo
+tipo: mapeamento-sanidade
 revisado: 2026-10-14
 ---
-# Clientes (Instâncias)
+# Mapeamento — Criação de Instância (Cliente)
+
+> [!info] Origem
+> Mapeamento local (não importado do Notion), feito a partir de execução manual narrada da criação de cliente/instância em homolog.sogov.com.br. Complementa o passo 2 de [[Roteiro de Sanidade 01 - Implantação]], que resume esse trecho numa única tabela — aqui está o detalhe de campos, regras e telas, incluindo o que o roteiro oficial explicitamente manda pular (módulo base, integrações, tema). Base pra derivar casos de teste (CT `create.instance`) e para a automação Playwright em `sogov-automation-playwright/playwright/src/ui/internal/instance.ts`.
 
 ## Visão geral
-
-**SOGOV — Roteiro de Sanidade**
-
-**Etapa 1 — Criação de Instância (Cliente)**
 
 Objetivo: Criar uma nova instância no SOGOV, configurando seus dados gerais, módulo base, integrações, personalização e identidade visual.
 
@@ -81,11 +80,20 @@ Regra para automação: Validar o estado inicial das três integrações, sem ne
 39. Clicar no botão Cadastrar.
 40. Validar a conclusão do cadastro da instância.
 
+### 7. Edição — Módulos associados (instância já existente)
+Explorado separadamente, editando um cliente já cadastrado (não faz parte do cadastro inicial):
+41. Acessar a listagem de Clientes, abrir o menu "⋮" de uma instância e selecionar **Editar**.
+42. Selecionar um tipo de módulo (lista extensa, sem necessidade de rolar — a busca é por item específico).
+43. Selecionar um item/tag específico dentro do tipo de módulo aberto.
+44. Remover um item/tag associado pelo ícone correspondente (um clique; duplo clique não tem efeito diferente).
+
+Explorado em mais de um tipo de módulo, incluindo o equivalente a Processos Urbanísticos.
+
 ### Regras e observações para automação
 
 | Campo | Regra |
 |---|---|
-| CNPJ | Utilizar CNPJ válido |
+| CNPJ | Utilizar CNPJ válido (aceita o novo formato alfanumérico da Receita Federal) |
 | Razão Social | Preenchimento automático |
 | Nome de Exibição | Preenchimento livre |
 | Telefone | Opcional |
@@ -96,7 +104,7 @@ Regra para automação: Validar o estado inicial das três integrações, sem ne
 | Licenças | 50 |
 | Início do Contrato | Data atual |
 | Fim do Contrato | Data atual + 3 meses |
-| Módulo Base | Selecionar módulo existente |
+| Módulo Base | Cadastrados à vontade; os registrados ficam disponíveis pra associar a clientes |
 | Mais Transparência | Desativada por padrão |
 | Tensai | Desativada por padrão |
 | Cesta de Preços | Desativada por padrão |
@@ -107,13 +115,21 @@ Regra para automação: Validar o estado inicial das três integrações, sem ne
 
 | Seção | Passos | Descrição |
 |---|---|---|
+| Acesso administrativo | 0 | Login e seleção de bolsa/escopo |
 | Dados Gerais | 1–17 | Identificação, endereço, domínio e contrato |
 | Módulo Base | 18–21 | Seleção do módulo |
 | Integrações | 22–27 | Validação das integrações desativadas |
 | Personalização e Tema | 28–31 | Configuração visual |
 | Marca | 32–37 | Upload dos elementos visuais |
 | Finalização | 38–40 | Cadastro da instância |
+| Edição — Módulos associados | 41–44 | Associar/remover módulos numa instância já existente |
+
+## Automação
+- UI (Playwright): `sogov-automation-playwright/playwright/src/ui/internal/instance.ts` — uma função por ação, mesmo padrão de `labels.ts`/`profile.ts`.
+- API (Cypress): `createInstance` / `getInstanceOrCreate` / `makeInstance` em `sogov-automation-test/cypress/support/commands/api/instance.api.commands.js` — hoje só usado como setup, sem spec dedicado (ver [[Roteiro de Sanidade 01 - Implantação#Automação]]).
+- Ainda sem camada pública `src/ui/instance.ts` (com `test.step`) nem CT formal — próximos passos.
 
 ## Dúvidas em aberto
 
 ## Cards relacionados
+- [[Roteiro de Sanidade 01 - Implantação]]
