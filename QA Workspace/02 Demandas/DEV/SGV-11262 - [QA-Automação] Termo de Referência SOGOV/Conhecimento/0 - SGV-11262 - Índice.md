@@ -13,9 +13,13 @@ A SGV-11262 é a demanda pai da iniciativa de QA sobre o Termo de Referência do
 
 ## Trabalho ativo
 
-[[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] — modelo conceitual de atores, entidades, configurações, estados, relações e dependências a partir do **TR completo** (itens 1.1–1.43), seguido da especificação de um preset candidato por cruzamento com seed/testes reais. Não inclui casos de teste, Qase nem implementação de preset.
+[[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]] — proposta rastreável de um primeiro lote de 20 cenários candidatos de sanidade, usando o TR e os artefatos aprovados da SGV-12082 (04/05) como referência. Pendente de aprovação do Rafael; não é seleção oficial, CT, automação nem execução.
 
-**Estado factual:** Fase 1 (modelo conceitual, 11 recortes) concluída — aprovada pelo Rafael (08/10/2026) e revisada pelo Codex. Fase 2 (especificação do preset candidato) em andamento — 17 fatias aprovadas (notas 02–18) e consolidadas; passo 8 segue aberto para decidir o destino dos requisitos sem fatia própria nos recortes 08, 10 e 11. Nenhuma fatia 19+ deve abrir antes dessas decisões. As dúvidas de negócio permanecem em trilha paralela, exceto quando uma linha depender diretamente delas. Sequência completa e gates: [[../Roadmap - Modelo de atores e preset do TR|Roadmap]].
+## Trabalho concluído nesta frente
+
+[[../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]] — modelo conceitual de atores, entidades, configurações, estados, relações e dependências a partir do **TR completo** (itens 1.1–1.43), seguido da especificação de um preset candidato por cruzamento com seed/testes reais e do modelo-alvo/matriz de fornecimento dos dados. Não inclui casos de teste, Qase nem implementação de preset.
+
+**Estado factual (corrigido em 15/10/2026 — divergência anterior identificada em auditoria):** Fase 1 (modelo conceitual, 11 recortes) concluída — aprovada pelo Rafael (08/10/2026) e revisada pelo Codex. Fase 2 (especificação do preset candidato) **concluída** — 17 fatias aprovadas (notas 02–18) e consolidadas. Passo 8 (caminho-base) **concluído e aprovado**. Modelo-alvo (04) e matriz de fornecimento (05, C1–C6) **concluídos e aprovados pelo Rafael/Codex em 13/10/2026**. Com isso, **a SGV-12082 foi encerrada neste escopo em 15/10/2026** (decisão do Rafael) — passos 1–10 da Sequência macro do Roadmap. O **passo 11** (preparação técnica/arquitetura do preset) permanece futuro, numa trilha separada que não bloqueia este encerramento nem a SGV-12200. Sequência completa e gates: [[../Roadmap - Modelo de atores e preset do TR|Roadmap]].
 
 ## Material arquivado para consulta
 
@@ -33,5 +37,6 @@ SGV-11262 - [QA-Automação] Termo de Referência SOGOV/
 ├── Roadmap - Modelo de atores e preset do TR.md                ← direção/sequência da frente ativa
 ├── Arquivo/
 │   └── Abordagem anterior/                                     ← material histórico arquivado para consulta
-└── SGV-12082 - Mapeamento de atores e modelo do preset do TR/   ← frente ativa
+├── SGV-12082 - Mapeamento de atores e modelo do preset do TR/   ← encerrada neste escopo (15/10/2026)
+└── SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/  ← frente ativa
 ```

@@ -20,8 +20,8 @@ pontos_alocados: ""
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
-> [!info] Status atual
-> A **Fase 1 — modelo conceitual do TR completo — está concluída**, o **caminho-base (passo 8) foi aprovado**, o **modelo-alvo dos dados do preset ([[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04]]) está aprovado**, e a **matriz de fornecimento dos dados ([[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05]], C1–C6) está aprovada**. As 17 fatias e a consolidação são evidência sobre a automação atual, não limite do modelo. A arquitetura/preparação técnica do preset continua **futura e fora do escopo atual**; sequência e gates estão no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]].
+> [!info] Status atual — demanda encerrada neste escopo (15/10/2026, decisão do Rafael)
+> A **Fase 1 — modelo conceitual do TR completo — está concluída**, o **caminho-base (passo 8) foi aprovado**, o **modelo-alvo dos dados do preset ([[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04]]) está aprovado**, e a **matriz de fornecimento dos dados ([[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05]], C1–C6) está aprovada**. As 17 fatias e a consolidação são evidência sobre a automação atual, não limite do modelo. Com isso, os passos 1–10 da Sequência macro do Roadmap estão concluídos e **esta demanda está encerrada no escopo atingido** — sem reabrir TR, recortes, 04 ou 05. A arquitetura/preparação técnica do preset (**passo 11**) continua **futura, fora do escopo atual e numa trilha separada que não bloqueia este encerramento**; sequência e gates estão no [[../../Roadmap - Modelo de atores e preset do TR|Roadmap]]. O levantamento da Onda 1 de cenários de sanidade da SGV-12200 já foi iniciado como pacote irmão, usando 04/05 como referência.
 
 > [!note] Abordagem anterior preservada
 > A investigação original da SGV-12082 (matriz do preset, DISC-001–004), o ciclo SGV-11971 e o Roadmap anterior estão arquivados para consulta em [[../../Arquivo/Abordagem anterior/Roadmap - Automação TR|Arquivo/Abordagem anterior]] — referência histórica, não fonte de critério desta nova frente.
@@ -109,3 +109,13 @@ O mapeamento conceitual da Fase 1 está concluído; o modelo-alvo (04) e a matri
 
 - [x] C6 — Modelo-alvo aprovado, com rastreabilidade ao TR/produto: [[../01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
 - [x] C7 — Canal de fornecimento mapeado como hipótese candidata, não decisão de arquitetura: [[../01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]] (C1–C6)
+
+---
+
+## Encerramento (15/10/2026)
+
+Rafael autorizou encerrar esta demanda no escopo concluído: Fases 1–4 e passos 1–10 da Sequência macro do Roadmap (segmentação, leitura por recorte, consolidação, mapa geral, revisão da análise, evidências da automação atual, caminho-base, modelo-alvo 04 e matriz de fornecimento 05). Nenhum conteúdo aprovado do TR, dos recortes, do 04 ou do 05 foi reaberto para este encerramento.
+
+O **passo 11** (preparação técnica/arquitetura do preset por ambiente/instância) permanece **futuro, fora do escopo desta demanda e numa trilha própria** — este encerramento não o transforma em bloqueio e não cria nenhuma nova task técnica para tratá-lo.
+
+O levantamento da Onda 1 de cenários de sanidade da SGV-12200 foi iniciado como pacote irmão sob esta mesma SGV-11262, usando os artefatos 04/05 já aprovados como referência, sem depender da conclusão do passo 11 nem de reabrir esta demanda.
