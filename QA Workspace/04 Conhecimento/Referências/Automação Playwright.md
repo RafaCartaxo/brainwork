@@ -4,7 +4,7 @@ tags:
   - conhecimento
   - automacao
 tipo: referencia
-revisado: 2026-10-01
+revisado: 2026-10-15
 ---
 # Automação Playwright
 
@@ -13,19 +13,24 @@ revisado: 2026-10-01
 
 ## O estado em uma frase
 
-**Playwright é o padrão. Cypress é legado em fim de vida.**
+**Playwright é o padrão e, desde 15/10/2026, o único. O Cypress foi removido do `main`.**
 
 > [!success] Decisão do Rafael, 01/10/2026
 > A migração está sendo finalizada. O Cypress **vai ser descartado — mas não agora**. **Teste novo só se escreve em Playwright.**
 >
 > A suíte Cypress continua existindo e rodando até o descarte: serve para ler o que já existe e como referência de regra de negócio. Não é lugar de escrever caso novo.
 
-| | Cypress (raiz) | Playwright (`playwright/`) |
-|---|---|---|
-| Specs | ~127 testes legados | **131 arquivos / 398 testes** |
-| Entrada | `cypress.config.js` | `playwright/playwright.config.ts` |
-| Roda no CI | ✅ sim (`.gitlab-ci.yml`) | ❌ **não** |
-| Estado | **legado**, a descartar (sem data) | **padrão** — todo caso novo vem pra cá |
+> [!success] Atualização 15/10/2026 — o descarte aconteceu
+> O commit `0d6ba89` ("Remoção do código cypress"), consolidado no merge `b1a9759`, tirou o Cypress do `main`: `cypress/` ficou com **0 arquivos** (eram 233), e o `package.json` e o `.gitlab-ci.yml` da raiz foram apagados junto. O texto acima é o registro da decisão de 01/10; o estado atual é este. Para consultar regra de negócio do código Cypress antigo, só pelo histórico do git ou por branch arquivada.
+
+Estado até 14/10/2026 (registro histórico) e a partir de 15/10/2026:
+
+| | Cypress (raiz) — até 14/10 | Cypress — a partir de 15/10 | Playwright (`playwright/`) |
+|---|---|---|---|
+| Specs | ~127 testes legados | **removido** (`cypress/` com 0 arquivos) | **131 arquivos / 398 testes** (medido em 01/10) |
+| Entrada | `cypress.config.js` | — | `playwright/playwright.config.ts` |
+| Roda no CI | ✅ sim (`.gitlab-ci.yml`) | — | ❌ **não** (e hoje não há CI nenhum) |
+| Estado | legado, a descartar | **descartado** | **padrão** — todo caso novo vem pra cá |
 
 ## Como a migração entrou
 
@@ -274,7 +279,7 @@ npm run test:infra                 # confirma que a config está de pé, sem toc
 
 ### Variáveis do `.env`
 
-Derivam do `cypress.env.json` do lado Cypress. Todas obrigatórias para `seed`, `api` e `e2e` — o `config/env.ts` lança erro se faltar uma.
+Originalmente derivavam do `cypress.env.json` do lado Cypress — esse arquivo não existe mais no repo desde a remoção de 15/10, e não há outra fonte documentada para os valores. Todas obrigatórias para `seed`, `api` e `e2e` — o `config/env.ts` lança erro se faltar uma.
 
 | Variável | Vem de |
 |---|---|
@@ -286,14 +291,19 @@ Derivam do `cypress.env.json` do lado Cypress. Todas obrigatórias para `seed`, 
 | `PW_GMAIL_USER` / `PW_GMAIL_APP_PASSWORD` | `GMAIL_*` |
 | `PW_SEED_NAMESPACE` | qualquer string — **é obrigatória mas não é usada em lugar nenhum do código** (vestígio de design) |
 
-O `.env` está coberto por `.gitignore` (`.env*`), então não corre o risco dos `cypress.env.*` do lado Cypress.
+O `.env` está coberto por `.gitignore` (`.env*`).
 
 ## O que a migração NÃO cobriu
 
 > [!warning] Três lacunas abertas em 01/10/2026
 > 1. **O CI continua 100% Cypress** — `.gitlab-ci.yml` usa `image: cypress/included:16.0.0`. Nenhum pipeline roda Playwright. **Enquanto isso durar, a suíte Playwright não protege merge nenhum** — é a inconsistência mais séria, e não se resolve do lado do vault.
+>    **Atualização 15/10/2026 — agora é pior:** o `.gitlab-ci.yml` foi apagado junto com o Cypress (`0d6ba89`). Não existe **nenhum** pipeline no `main` — nem Cypress, nem Playwright. Nada roda automaticamente em merge.
 > 2. **As skills e agentes `.claude/` do repo ensinam Cypress** linha a linha (`cy.loginAgent`, `cy.apiRequest`, `cy.goToFresh`). Quem pedir "cria um teste" hoje é empurrado para o framework que está sendo descartado. Proposta de correção: [[2026-10-01-skills-automacao-playwright]].
+>    **Atualização 15/10/2026:** a proposta **não foi implementada** (o arquivo segue com `status: proposta`; fica em `Sistema/Specs/`). O problema no repo foi resolvido por outro caminho: o `0d6ba89` **apagou** os 4 arquivos (`.claude/skills/criar-teste-{api,e2e}/SKILL.md` e `.claude/agents/criar-teste-{api,e2e}.md`) em vez de reescrevê-los. Hoje o `main` não tem skill nem agente de criação de teste; só sobrou `.claudeignore`. (O worktree `sogov-automation-playwright`, parado num commit anterior, ainda mostra as cópias antigas, que ensinam Cypress.) As 4 skills do **vault** (`SKILL_*`) que a proposta cobre seguem descrevendo Cypress.
 > 3. ~~**O TR 1.24-1.25 não existe no lado Playwright** — zero ocorrências de `CT-0` em `playwright/`. Há `tests/api/auth/{login,credentials}.spec.ts`, mas sem relação com a numeração CT-001…CT-038.~~ **Corrigido em 02/10/2026** — essa conclusão estava errada: só buscou pelo rótulo literal `CT-0`, sem comparar o conteúdo. `tests/api/auth/login.spec.ts` e `credentials.spec.ts` **são** o porte de CT-001 a CT-012 (Suítes 1 e 2) — títulos idênticos aos do `03 - Casos de teste`, só com rótulo de teste diferente (`A02-C01`...`A02-C09`, `A01-C01`...`A01-C03`). Confirmado verde num run real de 01/10/2026 (`playwright/test-results/results.xml`, 398 testes). Restam as Suítes 3, 4 e 5 (26 CTs) a portar. Ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/01 - Plano de automação|Plano de Automação]].
+
+> [!bug] Achado 15/10/2026 — README da raiz quebrado no `main`
+> O `README.md` da raiz do `sogov-automation-test` foi commitado no `main` (merge `b1a9759`, "Merge branch 'atualizando-README' into 'main'") **com marcadores de conflito de merge** (`<<<<<<<` / `>>>>>>>`) e com conteúdo que ainda descreve a estrutura Cypress, que não existe mais em disco. Quem abrir o README do repo recebe instrução de uma estrutura inexistente. O guia confiável hoje é `playwright/README.md` e esta nota. Correção do README no repo fica para outro momento.
 
 ## Antes de escrever o primeiro spec
 

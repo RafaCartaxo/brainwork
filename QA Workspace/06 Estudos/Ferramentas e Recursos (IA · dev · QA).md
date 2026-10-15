@@ -22,7 +22,7 @@ revisado: 2026-07-22
 ### Automação & extração
 - **[Browser MCP](https://browsermcp.io/)** ([repo](https://github.com/browsermcp/mcp)) — 🔎 avaliar
   MCP server + extensão Chrome que deixa a IA (Claude/Cursor/VS Code) automatizar o **seu navegador já logado**, localmente (rápido, privado, dribla detecção de bot por usar seu perfil real). Adaptado do Playwright MCP.
-  **Útil pra nós:** dirigir o Sogov já logado pra reproduzir bug, preencher formulário e extrair dado sem subir browser novo; apoio a E2E dirigido por IA, complementa o repo Cypress.
+  **Útil pra nós:** dirigir o Sogov já logado pra reproduzir bug, preencher formulário e extrair dado sem subir browser novo; apoio a E2E dirigido por IA, complementa o repo de automação (Playwright).
 - **[PageMarkdown](https://pagemarkdown.com/)** — 🔎 avaliar
   Extensão de navegador que converte página web em Markdown limpo (+ PDF/DOCX/EPUB/HTML…), por elemento (CSS selector), página ou site inteiro em ZIP. Refinamento opcional via IA.
   **Útil pra nós:** puxar documentação (Notion, manuais, docs externas) pra Markdown e jogar direto no vault — alimenta `04 Conhecimento/Referências` e esta pasta sem copiar/colar na mão.
@@ -58,7 +58,7 @@ revisado: 2026-07-22
 
 ## Aplicação no QA / Sogov
 - **Vault (este):** PageMarkdown alimenta `04 Conhecimento/Referências`; Engram sistematiza o estudo daqui.
-- **Repo de automação (Cypress, `~/Documentos/Sogov/sogov-automation-test`):** Browser MCP como apoio exploratório/E2E dirigido por IA.
+- **Repo de automação (Playwright, `~/Documentos/Sogov/sogov-automation-test`):** Browser MCP como apoio exploratório/E2E dirigido por IA.
 - **Claude Code / agentes:** to-spec/to-tickets, handoff, brainstorming no fluxo de refinamento→implementação; OpenChamber como GUI alternativa.
 
 ## Referências

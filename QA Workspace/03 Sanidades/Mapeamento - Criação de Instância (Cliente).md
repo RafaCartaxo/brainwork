@@ -126,7 +126,7 @@ Explorado em mais de um tipo de módulo, incluindo o equivalente a Processos Urb
 
 ## Automação
 - UI (Playwright): `sogov-automation-playwright/playwright/src/ui/internal/instance.ts` — uma função por ação, mesmo padrão de `labels.ts`/`profile.ts`.
-- API (Cypress): `createInstance` / `getInstanceOrCreate` / `makeInstance` em `sogov-automation-test/cypress/support/commands/api/instance.api.commands.js` — hoje só usado como setup, sem spec dedicado (ver [[Roteiro de Sanidade 01 - Implantação#Automação]]).
+- API (Playwright): `createInstance` / `getInstanceOrCreate` em `sogov-automation-playwright/playwright/src/api/services/instance.ts` e factory `makeInstance` em `playwright/src/data/factories/seed.ts` (porte da versão Cypress, removida em 15/10/2026) — hoje só usado como setup do seed (`src/data/seed/provision.ts`), sem spec dedicado (ver [[Roteiro de Sanidade 01 - Implantação#Automação]]).
 - Ainda sem camada pública `src/ui/instance.ts` (com `test.step`) nem CT formal — próximos passos.
 
 ## Dúvidas em aberto

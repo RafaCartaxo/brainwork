@@ -181,8 +181,8 @@ Para cada servidor, gerar **2 documentos por módulo**. Para documentos e comuni
 **Ativar o cliente.**
 
 ## Automação
-- Repo: `sogov-automation-test` (nota do projeto de automação / GitLab).
-- O **passo 2** (dados gerais do cliente) já tem infra no repo: comando `createInstance` + `getInstanceOrCreate` e factory `makeInstance` (`cypress/support/commands/api/instance.api.commands.js`), hoje usados só como setup em `support/e2e.js`, **sem spec dedicado**. Este roteiro é a fonte manual pra derivar o CT `create.instance` (happy path + negativos).
+- Repo: `sogov-automation-test` (nota do projeto de automação / GitLab). Desde 15/10/2026 só Playwright (`playwright/`); o Cypress foi removido do `main`.
+- O **passo 2** (dados gerais do cliente) já tem infra no repo, em Playwright: `createInstance` + `getInstanceOrCreate` (`playwright/src/api/services/instance.ts`) e factory `makeInstance` (`playwright/src/data/factories/seed.ts`), hoje usados só como setup do seed (`src/data/seed/provision.ts`), **sem spec dedicado**. (A versão Cypress original, `instance.api.commands.js`, foi removida em 15/10/2026.) Este roteiro é a fonte manual pra derivar o CT `create.instance` (happy path + negativos).
 - Mapeamento detalhado do passo 2 (campos, regras, telas de módulo/integrações/tema/marca) em [[Mapeamento - Criação de Instância (Cliente)]], com a camada Playwright correspondente em `sogov-automation-playwright/playwright/src/ui/internal/instance.ts`.
 - Passos 4–13 têm comandos análogos no repo (`getSectorOrCreate`, `getModuleOrCreate`, assuntos/serviços) — candidatos a virar specs de sanidade automatizados.
 
