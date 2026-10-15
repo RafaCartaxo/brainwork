@@ -59,7 +59,7 @@ revisado: 2026-08-18
 - [ ] Se worth avaliar o teto de 5.000 resultados/mês da API contra o volume real de execuções do `sogov-automation-test` antes de depender disso pra automação contínua.
 
 ## Aplicação no QA/Sogov
-- **Automação**: o repo `sogov-automation-test` (hoje Playwright; o Cypress e o `cypress-qase-reporter` saíram em 15/10/2026) poderia publicar resultados num Test Run da Qase via reporter oficial de Playwright, taggeando specs com o ID do caso — **não configurado**: o `playwright.config.ts` hoje só usa reporters próprios (`src/support/reporters/summary-reporter.ts` e afins), sem Qase — sem precisar de plano pago, porque isso usa API/Reporter Apps (incluso no Free), não a categoria "Integrações".
+- **Automação**: o repo `sogov-automation-test` (hoje Playwright; o Cypress e o `cypress-qase-reporter` saíram em 15/10/2026) poderia publicar resultados num Test Run da Qase via reporter oficial de Playwright, taggeando specs com o ID do caso. Hoje isso **não está configurado** — o `playwright.config.ts` só usa reporters próprios (`src/support/reporters/summary-reporter.ts` e afins). Se configurado, não exigiria plano pago: usa API/Reporter Apps (incluso no Free), não a categoria "Integrações".
 - **Caso concreto em andamento**: os 39 casos de teste do Termo de Referência "1.24-1.25: Autenticação e ciclo de vida do usuário" (hoje só títulos na Qase) estão sendo reorganizados no formato nativo dela (step/data/expected result + shared steps) — ver arquivo de organização ao lado da planilha original em `~/Downloads/Termo de refência/`.
 - **Limite prático do Free** (2 projetos) vira relevante se o Sogov tiver mais de 2 frentes de produto testadas simultaneamente — decisão de consolidar num projeto só ou orçar upgrade.
 
