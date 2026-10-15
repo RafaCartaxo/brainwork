@@ -250,23 +250,44 @@ Esta onda cobre pelo menos um caminho crítico de cada grupo C1–C6, mas **não
 
 Nenhum desses itens foi descartado — ficam registrados aqui como candidatos explícitos para a Onda 2 (ou além), quando Rafael priorizar.
 
-## 5. Proposta de organização para o Notion
+## 5. Proposta de conteúdo para o Notion
 
 > Proposta apenas — nenhuma página foi criada, publicada ou transferida. Não há conector de escrita para o Notion disponível nesta sessão; mesmo que houvesse, a criação/transferência depende de decisão do Rafael e da conversa com Alice (ver §6).
 
-**Conteúdo proposto para a página (quando reservada):**
+> **Diretriz do Rafael (15/10/2026):** o TR é a referência normativa do que o produto deve atender. A documentação publicada precisa trazer **conteúdo funcional real, rastreável e organizado** — sem metadados do vault ou do processo de QA (nomes de arquivo internos, commits, "aprovado por Rafael/Codex", datas de revisão). Esta seção foi reescrita para refletir essa diretriz; nada foi criado, publicado ou transferido.
 
-1. **Página-índice/entrada:** uma página central para o TR do SOGOV, linkando as partes abaixo — não um documento único gigante.
-2. **Fonte normativa:** referência ao PDF do Termo de Referência como única fonte normativa (o PDF em si, ou um link estável para onde a equipe já o acessa) — nunca substituí-lo por uma paráfrase.
-3. **Os 11 recortes temáticos:** um resumo por recorte (cobertura de itens, elementos/atores identificados, principais relações), com link de volta ao PDF por página/seção — não o texto integral de cada nota do vault.
-4. **Mapa geral e Matriz de atores/relações:** a síntese visual (Mermaid) e a matriz-índice, como visão consolidada de atores/entidades/relações do TR completo.
-5. **Modelo-alvo (04) e matriz de fornecimento (05):** como apoio à seleção e preparação dos cenários de sanidade — não o detalhe de implementação técnica (isso é o passo 11, ainda futuro).
+### 5.1 Fonte normativa
+
+O PDF original do Termo de Referência continua sendo a **única fonte normativa**. A página no Notion referencia esse PDF diretamente (ex.: link estável para onde a equipe já o acessa) — nunca o substitui nem o parafraseia como se a paráfrase fosse o requisito.
+
+### 5.2 Transcrição integral do TR como índice navegável
+
+A peça central da página é uma **transcrição fiel e completa** do texto do TR (itens 1.1–1.43), estruturada pelos **IDs e páginas originais do próprio PDF** — não pela segmentação em 11 recortes usada internamente pelo QA. Cada item (ex.: 1.1, 1.24.1, 1.29.10.4) vira uma âncora navegável da transcrição, com a página correspondente do PDF registrada junto. É essa transcrição que a equipe lê como referência funcional; a segmentação em recortes continua existindo só como ferramenta de trabalho da análise, dentro do vault.
+
+### 5.3 Como o conteúdo derivado se conecta à transcrição
+
+Cada achado funcional (atores, entidades, relações, dados/estados) referencia o **item/âncora da transcrição** correspondente e, quando útil, aponta também **diretamente à página do PDF original**. A direção da referência é sempre transcrição/PDF → achado — nunca o inverso: a transcrição e o conteúdo publicado não citam o vault, suas notas ou sua estrutura de pastas.
+
+### 5.4 Conteúdo funcional derivado — sem metadados de processo
+
+Para cada área do TR, a página apresenta:
+
+- **Atores/entidades envolvidos.**
+- **Relações entre eles.**
+- **Comportamento esperado do produto**, redigido como requisito funcional — não como "o que um modelo interno de QA registrou".
+- **Dados/estados necessários** para esse comportamento.
+
+Este conteúdo **não expõe**: o vault ou sua estrutura de pastas; nomes de arquivo internos (ex. "Mapa geral", "Modelo-alvo dos dados do preset"); commits, datas de revisão de QA, ou frases como "aprovado por Rafael/Codex". A redação deve ler como documentação funcional de produto, não como relatório de auditoria de QA.
+
+### 5.5 Status de atendimento do produto — só com evidência funcional suficiente
+
+A página só pode declarar que o produto **"atende"** a um item do TR quando houver evidência funcional suficiente (ex.: teste automatizado reproduzível, observação direta confirmada do produto). **Análise conceitual não equivale a atendimento** — um item estar identificado/modelado (entidade ou relação reconhecida) não é prova de que o produto o implementa. Nesses casos, o status publicado deve ser **"não verificado"** ou **"parcial"**, sempre citando a fonte que sustenta essa classificação — sem citar o vault como fonte na página; internamente, essa fonte pode ser uma fatia aprovada, um recorte do TR ou uma lacuna já registrada.
 
 **Explicitamente fora desta proposta de conteúdo:**
 
-- **As 17 fatias de evidência técnica não devem ser despejadas integralmente.** Elas são evidência interna de QA sobre a automação atual (`Especificações do preset piloto/`) — úteis para a equipe de QA, mas não é documentação funcional compartilhável no mesmo nível do TR/mapas. Usar **links/referências seletivas** só quando uma decisão específica de cenário precisar justificar por que um dado/caminho foi escolhido.
-- **Anotações pessoais de QA, dúvidas em aberto e material arquivado** (`Arquivo/Abordagem anterior/`) não entram na página — ficam só no vault.
-- **A preparação técnica do preset (passo 11) e os CTs formais não foram feitos** e não devem ser descritos como prontos na página — só o modelo-alvo e a matriz de fornecimento (hipóteses candidatas, não arquitetura decidida).
+- As 17 fatias de evidência técnica (artefato interno de QA sobre a automação atual, `Especificações do preset piloto/`) não entram na página, integral ou resumida — elas sustentam, só internamente, a classificação de status descrita em §5.5, sem aparecer citadas na página publicada.
+- Anotações pessoais de QA, dúvidas em aberto e material arquivado (`Arquivo/Abordagem anterior/`) não entram na página.
+- A preparação técnica do preset (passo 11) e os CTs formais não foram feitos e não devem ser descritos como prontos ou em andamento na página.
 
 ## 6. Pendências e próximos passos
 
