@@ -21,6 +21,7 @@ pontos: ""
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]]
 > **Roadmap da iniciativa:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]
 > **Proposta da Onda 1:** [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]
+> **Conteúdo pronto para publicação no Notion:** [[Conteúdo para Notion/00 - Guia interno de publicação|Guia interno de publicação]] (guia) · [[Conteúdo para Notion/01 - Termo de Referência SOGOV (transcrição integral 1.1-1.43)|Transcrição integral]] · [[Conteúdo para Notion/02 - Modelo-alvo dos dados (Notion)|Modelo-alvo (Notion)]] · [[Conteúdo para Notion/03 - Matriz de fornecimento dos dados (Notion)|Matriz de fornecimento (Notion)]]
 > **Frente de origem (encerrada, usada como referência):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]]
 > **Modelo-alvo dos dados do preset (04):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
 > **Matriz de fornecimento dos dados (05):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
@@ -54,7 +55,12 @@ pontos: ""
 SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/
 └── 00 QA/
     ├── 00 README.md
-    └── 01 - Proposta da Onda 1 (cenários candidatos e organização no Notion).md
+    ├── 01 - Proposta da Onda 1 (cenários candidatos e organização no Notion).md
+    └── Conteúdo para Notion/
+        ├── 00 - Guia interno de publicação.md          (interno; não publicável)
+        ├── 01 - Termo de Referência SOGOV (transcrição integral 1.1-1.43).md  (publicável)
+        ├── 02 - Modelo-alvo dos dados (Notion).md       (publicável)
+        └── 03 - Matriz de fornecimento dos dados (Notion).md  (publicável)
 ```
 
-Esta pasta não duplica o PDF do TR, os 11 recortes nem as 17 fatias da SGV-12082 — toda referência é por link relativo. Não tem `Fontes/` própria nem pasta de automação.
+Esta pasta não duplica o PDF do TR, os 11 recortes nem as 17 fatias da SGV-12082 — toda referência é por link relativo. Não tem `Fontes/` própria nem pasta de automação. A pasta `Conteúdo para Notion/` reúne os três arquivos prontos para publicação (transcrição, modelo-alvo e matriz de fornecimento) mais o guia interno que documenta o método e a auditoria — nada foi criado/publicado no Notion ainda; a única dependência externa é Alice reservar/criar a página-pai.
