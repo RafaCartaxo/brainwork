@@ -9,7 +9,8 @@ status: rascunho
 
 > [!info]- Navegação
 > **README do card:** [[00 README|Abrir README do card]]
-> **Modelo-alvo dos dados do preset (04):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
+> **Referência canônica do TR (independente da Onda 1):** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice da sanidade automatizada do TR]]
+> **Modelo-alvo dos dados do preset (04, origem SGV-12082):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
 > **Matriz de fornecimento dos dados (05):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
 > **Mapa geral:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/00 - Mapa geral|00 - Mapa geral]]
 > **Matriz de atores e relações:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/01 - Matriz de atores e relações|01 - Matriz de atores e relações]]

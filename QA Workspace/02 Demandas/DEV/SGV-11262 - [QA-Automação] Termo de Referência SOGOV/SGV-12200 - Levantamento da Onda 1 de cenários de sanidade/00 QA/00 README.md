@@ -21,7 +21,8 @@ pontos: ""
 > **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]]
 > **Roadmap da iniciativa:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]
 > **Proposta da Onda 1:** [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]
-> **Conteúdo pronto para publicação no Notion:** [[Conteúdo para Notion/00 - Guia interno de publicação|Guia interno de publicação]] (guia) · [[Conteúdo para Notion/01 - Termo de Referência SOGOV (transcrição integral 1.1-1.43)|Transcrição integral]] · [[Conteúdo para Notion/02 - Modelo-alvo dos dados (Notion)|Modelo-alvo (Notion)]] · [[Conteúdo para Notion/03 - Matriz de fornecimento dos dados (Notion)|Matriz de fornecimento (Notion)]]
+> **Guia de organização e publicação no Notion:** [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]
+> **Referência canônica do TR (agora em Conhecimento, não específica da Onda 1):** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice da sanidade automatizada do TR]]
 > **Frente de origem (encerrada, usada como referência):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]]
 > **Modelo-alvo dos dados do preset (04):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
 > **Matriz de fornecimento dos dados (05):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
@@ -37,9 +38,9 @@ pontos: ""
 
 ## Escopo desta pasta
 
-- Propor a Onda 1 (20 cenários candidatos), rastreável ao TR e aos artefatos 04/05 da SGV-12082 — ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]].
-- Propor a organização do conteúdo da SGV-11262/SGV-12082 útil para uma futura página no Notion (TR normativo, 11 recortes, mapa geral, matriz de atores, 04 e 05) — sem despejar as 17 fatias de evidência técnica.
-- Registrar a conversa com Alice (reservar página no Notion) como pendência operacional explícita.
+- Propor a Onda 1 (20 cenários candidatos), rastreável ao TR e aos artefatos canônicos de referência — ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]].
+- Documentar o método e a organização da publicação no Notion — ver [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]. Os três documentos canônicos publicáveis (transcrição, modelo-alvo, matriz de fornecimento) vivem em `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/`, não nesta pasta — essa referência não é específica da Onda 1.
+- Registrar a conversa com Alice (reservar/organizar a página-pai no Notion) como pendência operacional explícita.
 
 ## Fora de escopo nesta pasta
 
@@ -56,11 +57,7 @@ SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/
 └── 00 QA/
     ├── 00 README.md
     ├── 01 - Proposta da Onda 1 (cenários candidatos e organização no Notion).md
-    └── Conteúdo para Notion/
-        ├── 00 - Guia interno de publicação.md          (interno; não publicável)
-        ├── 01 - Termo de Referência SOGOV (transcrição integral 1.1-1.43).md  (publicável)
-        ├── 02 - Modelo-alvo dos dados (Notion).md       (publicável)
-        └── 03 - Matriz de fornecimento dos dados (Notion).md  (publicável)
+    └── 02 - Guia de organização e publicação no Notion.md   (interno; método e auditoria)
 ```
 
-Esta pasta não duplica o PDF do TR, os 11 recortes nem as 17 fatias da SGV-12082 — toda referência é por link relativo. Não tem `Fontes/` própria nem pasta de automação. A pasta `Conteúdo para Notion/` reúne os três arquivos prontos para publicação (transcrição, modelo-alvo e matriz de fornecimento) mais o guia interno que documenta o método e a auditoria — nada foi criado/publicado no Notion ainda; a única dependência externa é Alice reservar/criar a página-pai.
+Os três documentos canônicos (transcrição, modelo-alvo, matriz de fornecimento) **não vivem mais nesta pasta** — foram organizados em `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/` (ver [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]]), porque essa referência serve a qualquer onda de cenários, não só à Onda 1. Esta pasta não duplica o PDF do TR, os 11 recortes nem as 17 fatias da SGV-12082 — toda referência é por link relativo. Não tem `Fontes/` própria nem pasta de automação. Nada foi criado/publicado no Notion ainda; a pendência operacional é organizar o hub existente (ver guia acima).

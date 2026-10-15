@@ -11,9 +11,13 @@ A SGV-11262 é a demanda pai da iniciativa de QA sobre o Termo de Referência do
 > [!info] Papéis distintos — Roadmap × Índice
 > **Roadmap** ([[../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]): direção, sequência macro e dependências da frente ativa. **Índice (este arquivo):** só localizar documentos e pacotes — não repete a sequência nem o plano do Roadmap.
 
+## Referência permanente (independente de qualquer demanda)
+
+[[Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|Sanidade automatizada do SOGOV — Termo de Referência]] — a transcrição integral do TR, o modelo-alvo de atores/dados/estados e a matriz de fornecimento dos dados, organizados como referência permanente (não subordinada a nenhuma onda de cenários específica). Inclui o link para o hub no Notion (em organização). Produzida a partir dos artefatos aprovados da SGV-12082 (ver abaixo).
+
 ## Trabalho ativo
 
-[[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]] — proposta rastreável de um primeiro lote de 20 cenários candidatos de sanidade, usando o TR e os artefatos aprovados da SGV-12082 (04/05) como referência. Pendente de aprovação do Rafael; não é seleção oficial, CT, automação nem execução.
+[[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]] — proposta rastreável de um primeiro lote de 20 cenários candidatos de sanidade, usando a referência permanente acima como base. Pendente de aprovação do Rafael; não é seleção oficial, CT, automação nem execução.
 
 ## Trabalho concluído nesta frente
 
@@ -34,6 +38,7 @@ Arquivado para consulta em `Arquivo/Abordagem anterior/` — conteúdo preservad
 ```text
 SGV-11262 - [QA-Automação] Termo de Referência SOGOV/
 ├── Conhecimento/                                              ← este índice
+│   └── Sanidade automatizada do SOGOV - Termo de Referência/   ← referência permanente (TR, modelo-alvo, matriz)
 ├── Roadmap - Modelo de atores e preset do TR.md                ← direção/sequência da frente ativa
 ├── Arquivo/
 │   └── Abordagem anterior/                                     ← material histórico arquivado para consulta
