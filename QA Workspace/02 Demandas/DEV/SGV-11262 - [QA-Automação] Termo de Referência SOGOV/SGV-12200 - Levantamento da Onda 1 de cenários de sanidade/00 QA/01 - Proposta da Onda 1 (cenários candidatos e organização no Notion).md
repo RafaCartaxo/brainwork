@@ -253,7 +253,7 @@ Nenhum desses itens foi descartado — ficam registrados aqui como candidatos ex
 
 ## 5. Proposta de conteúdo para o Notion
 
-> Proposta apenas — nenhuma página foi criada, publicada ou transferida. Não há conector de escrita para o Notion disponível nesta sessão; mesmo que houvesse, a criação/transferência depende de decisão do Rafael e da conversa com Alice (ver §6).
+> Proposta apenas — nenhum conteúdo foi publicado ou transferido. A página-pai do Notion já existe (criada por Rafael); a pendência operacional não é mais criá-la, e sim renomeá-la/organizá-la e publicar/conferir os conteúdos quando houver acesso autorizado — não há conector de escrita para o Notion disponível nesta sessão (ver §6).
 
 > **Diretriz do Rafael (15/10/2026):** o TR é a referência normativa do que o produto deve atender. A documentação publicada precisa trazer **conteúdo funcional real, rastreável e organizado** — sem metadados do vault ou do processo de QA (nomes de arquivo internos, commits, "aprovado por Rafael/Codex", datas de revisão). Esta seção foi reescrita para refletir essa diretriz; nada foi criado, publicado ou transferido.
 
@@ -293,6 +293,6 @@ A página só pode declarar que o produto **"atende"** a um item do TR quando ho
 ## 6. Pendências e próximos passos
 
 - **Aprovação da Onda 1:** esta lista de 20 cenários é uma proposta — segue pendente de aprovação específica do Rafael antes de qualquer CT, automação ou execução.
-- **Conversa com Alice (ação pendente, não realizada):** reservar uma página no Notion para a documentação listada em §5. Esta nota não contatou Alice, não criou página e não transferiu/publicou conteúdo — apenas identifica a dependência e o conteúdo candidato a levar a essa conversa. Responsável, prazo e processo de manutenção da página seguem indefinidos (lacuna já registrada no diagnóstico).
+- **Organização do hub existente (ação pendente, não realizada):** a página-pai no Notion já existe (título atual: "Automatizados"; título planejado: "Sanidade automatizada do SOGOV — Termo de Referência", ainda não aplicado). A pendência não é mais Alice reservar/criar a página — é renomear/organizar esse hub e publicar/conferir os conteúdos listados em §5 quando houver acesso autorizado ao Notion. Esta nota não renomeou a página, não criou subpáginas e não transferiu/publicou conteúdo — apenas identifica o conteúdo candidato a publicar. Responsável, prazo e processo de manutenção da página seguem indefinidos (lacuna já registrada no diagnóstico).
 - **Ondas futuras:** após avaliação da Onda 1, propor a Onda 2 cobrindo os itens listados em §4, mantendo o mesmo método e os mesmos campos por cenário.
 - **Passo 11 da SGV-12082:** permanece trilha futura e separada — nenhum cenário desta onda exigiu, até aqui, uma decisão de arquitetura ainda não tomada para ser avaliado.

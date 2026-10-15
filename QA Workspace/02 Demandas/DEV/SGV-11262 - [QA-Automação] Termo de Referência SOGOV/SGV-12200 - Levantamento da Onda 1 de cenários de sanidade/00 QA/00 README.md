@@ -40,14 +40,14 @@ pontos: ""
 
 - Propor a Onda 1 (20 cenários candidatos), rastreável ao TR e aos artefatos canônicos de referência — ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]].
 - Documentar o método e a organização da publicação no Notion — ver [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]. Os três documentos canônicos publicáveis (transcrição, modelo-alvo, matriz de fornecimento) vivem em `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/`, não nesta pasta — essa referência não é específica da Onda 1.
-- Registrar a conversa com Alice (reservar/organizar a página-pai no Notion) como pendência operacional explícita.
+- Registrar a organização do hub no Notion (a página-pai já existe, criada por Rafael; falta renomeá-la/organizá-la e publicar/conferir os conteúdos quando houver acesso autorizado) como pendência operacional explícita.
 
 ## Fora de escopo nesta pasta
 
 - Selecionar os 20 cenários como decisão final — a Onda 1 é proposta, pendente de aprovação do Rafael.
 - Redigir CTs formais, implementar automação, executar ou validar qualquer cenário.
 - Decidir a preparação técnica/arquitetura do preset (passo 11 da SGV-12082) — trilha futura e separada, não tratada aqui.
-- Contatar Alice, criar página no Notion ou transferir/publicar qualquer conteúdo — não há conector de escrita disponível nesta sessão, e a ação depende de decisão humana.
+- Renomear/organizar a página existente no Notion ou transferir/publicar qualquer conteúdo — não há conector de escrita disponível nesta sessão, e a ação depende de acesso autorizado.
 - Reabrir ou alterar conteúdo já aprovado da SGV-12082 (TR, recortes, mapa, matriz de atores, 04, 05) — tudo usado só por referência/link.
 
 ## Pacote para `SGV-12200`

@@ -8,14 +8,14 @@ status: pronto-para-publicacao
 # Guia de organização e publicação no Notion
 
 > [!info]- Navegação
-> **README do card (SGV-12200):** [[../00 README|Abrir README do card]]
-> **Proposta da Onda 1 (inalterada por este trabalho):** [[../01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]
-> **Índice da sanidade automatizada do TR (ponto de entrada dos documentos canônicos):** [[../../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]]
-> **Transcrição canônica:** [[../../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/01 - Termo de Referência SOGOV - Transcrição integral|01 - Termo de Referência SOGOV - Transcrição integral]]
-> **Modelo-alvo canônico:** [[../../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 - Modelo-alvo de atores, dados e estados]]
-> **Matriz de fornecimento canônica:** [[../../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/03 - Matriz de fornecimento dos dados|03 - Matriz de fornecimento dos dados]]
-> **Fonte normativa (PDF canônico, permanece na SGV-12082, encerrada, não duplicado):** [[../../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
-> **Artefatos de origem auditados (SGV-12082, encerrada, não editados):** [[../../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] · [[../../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
+> **README do card (SGV-12200):** [[00 README|Abrir README do card]]
+> **Proposta da Onda 1 (inalterada por este trabalho):** [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]
+> **Índice da sanidade automatizada do TR (ponto de entrada dos documentos canônicos):** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]]
+> **Transcrição canônica:** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/01 - Termo de Referência SOGOV - Transcrição integral|01 - Termo de Referência SOGOV - Transcrição integral]]
+> **Modelo-alvo canônico:** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 - Modelo-alvo de atores, dados e estados]]
+> **Matriz de fornecimento canônica:** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/03 - Matriz de fornecimento dos dados|03 - Matriz de fornecimento dos dados]]
+> **Fonte normativa (PDF canônico, permanece na SGV-12082, encerrada, não duplicado):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
+> **Artefatos de origem auditados (SGV-12082, encerrada, não editados):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] · [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
 
 > [!important] Conteúdo pronto para publicação — nada foi criado, publicado ou transferido no Notion ainda
 > Este guia é **interno** (QA/vault) e documenta como os três documentos canônicos (agora em `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/`) foram produzidos, revisados e auditados, e como devem alimentar o hub no Notion. Ele próprio **não é publicável** — pode citar o vault, datas, decisões e metodologia à vontade. Os três documentos canônicos (transcrição, modelo-alvo e matriz de fornecimento) é que são publicáveis — nenhum deles contém o que está neste guia.
@@ -33,17 +33,17 @@ status: pronto-para-publicacao
 | Recortes temáticos, mapa geral, matriz de atores (vault) | Leitura/análise interna de QA | `SGV-12082/01 Modelo do preset/` | Não publicados; usados só como checagem secundária de cobertura — nunca substituto da fonte. |
 | Artefatos de origem 04/05 (SGV-12082, encerrada) | Fonte de auditoria dos documentos canônicos | `SGV-12082/01 Modelo do preset/` | Não editados por este trabalho. |
 
-Esta mudança de local (de `SGV-12200/00 QA/Conteúdo para Notion/` para `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/`) reflete que a referência permanente do TR não é específica da Onda 1 — ela serve a qualquer onda futura de cenários. Ver [[../../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]] para a cadeia completa TR → Modelo-alvo → Matriz → ondas de cenários.
+Esta mudança de local (de `SGV-12200/00 QA/Conteúdo para Notion/` para `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/`) reflete que a referência permanente do TR não é específica da Onda 1 — ela serve a qualquer onda futura de cenários. Ver [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]] para a cadeia completa TR → Modelo-alvo → Matriz → ondas de cenários.
 
 ## 2. Estrutura recomendada no Notion
 
 O hub já existe (criado por Rafael) e está pendente de organização. Estrutura-alvo:
 
-1. **Página-pai/hub**, renomeada de "Automatizados" para refletir o escopo real (sanidade automatizada do TR).
+1. **Página-pai/hub** — título atual: "Automatizados"; título planejado: "Sanidade automatizada do SOGOV — Termo de Referência" (ainda não aplicado nesta nota; renomeação é trabalho futuro, pendente de acesso autorizado).
 2. **Subpágina — Termo de Referência**, a partir da transcrição integral canônica, preservando os headings por ID.
 3. **Subpágina — Modelo-alvo de atores, dados e estados**, a partir do documento canônico 02.
 4. **Subpágina — Matriz de fornecimento dos dados**, a partir do documento canônico 03.
-5. **Subpágina/seção futura — Cenários de sanidade**, sem cenários pré-aprovados nela — a Onda 1 continua proposta pendente de aprovação no vault (ver [[../01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]).
+5. **Subpágina/seção futura — Cenários de sanidade**, sem cenários pré-aprovados nela — a Onda 1 continua proposta pendente de aprovação no vault (ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]).
 6. **Tabela/database pequena** para rastrear demandas/frentes relacionadas (ex.: linha para a SGV-12200, com estado real "proposta pendente de aprovação").
 7. Links de Notion propriamente ditos (URLs de página/bloco) ficam em branco nos documentos do vault até existirem de fato — nenhuma URL ou âncora de Notion foi inventada.
 
