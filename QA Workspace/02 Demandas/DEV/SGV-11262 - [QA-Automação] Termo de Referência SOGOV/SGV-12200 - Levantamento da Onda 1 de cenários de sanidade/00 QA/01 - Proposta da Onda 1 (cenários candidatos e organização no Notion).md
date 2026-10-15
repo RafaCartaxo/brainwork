@@ -266,7 +266,7 @@ A peça central da página é uma **transcrição fiel e completa** do texto do 
 
 ### 5.3 Como o conteúdo derivado se conecta à transcrição
 
-Cada achado funcional (atores, entidades, relações, dados/estados) referencia o **item/âncora da transcrição** correspondente e, quando útil, aponta também **diretamente à página do PDF original**. A direção da referência é sempre transcrição/PDF → achado — nunca o inverso: a transcrição e o conteúdo publicado não citam o vault, suas notas ou sua estrutura de pastas.
+Cada achado funcional (atores, entidades, relações, dados/estados) aponta diretamente para o **item/âncora da transcrição** correspondente e, quando útil, também para a **página do PDF original** — a citação parte do achado em direção à sua fonte. Quando fizer sentido para a navegação, o próprio item transcrito pode remeter de volta ao conteúdo derivado relacionado a ele. Já a **autoridade normativa** flui sempre do TR para o comportamento esperado do produto: é o texto transcrito que define o requisito, e o conteúdo derivado apenas o descreve — nunca o contrário. Nem a transcrição nem o conteúdo publicado citam o vault, suas notas ou sua estrutura de pastas.
 
 ### 5.4 Conteúdo funcional derivado — sem metadados de processo
 
