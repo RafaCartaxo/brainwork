@@ -13,7 +13,7 @@ status: rascunho
 > **Matriz de fornecimento dos dados (05):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
 > **Mapa geral:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/00 - Mapa geral|00 - Mapa geral]]
 > **Matriz de atores e relações:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/01 - Matriz de atores e relações|01 - Matriz de atores e relações]]
-> **Recortes do TR:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/Seções do TR|Seções do TR]]
+> **Recortes do TR:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/01 - Matriz de atores e relações|Seções do TR (índice: Matriz de atores e relações)]]
 > **Fonte normativa:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
 
 > [!important] Proposta rastreável, pendente de aprovação do Rafael — não é seleção oficial, CT, automação ou execução
@@ -21,7 +21,7 @@ status: rascunho
 
 ## 1. Método e critérios da Onda 1
 
-- **Fonte de cada cenário:** item(ns) exato(s) do TR (via [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/Seções do TR|Seções do TR]]), cruzado com a entidade/relação correspondente já registrada no modelo-alvo ([[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04]]) e, quando aplicável, o canal candidato da matriz ([[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05]]). Nenhuma relação ou dado foi inventado para esta proposta — tudo cita a nota-fonte.
+- **Fonte de cada cenário:** item(ns) exato(s) do TR (via [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/01 - Matriz de atores e relações|Seções do TR (índice: Matriz de atores e relações)]]), cruzado com a entidade/relação correspondente já registrada no modelo-alvo ([[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04]]) e, quando aplicável, o canal candidato da matriz ([[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05]]). Nenhuma relação ou dado foi inventado para esta proposta — tudo cita a nota-fonte.
 - **Critério de seleção:** valor de sanidade (caminho crítico, usado por muitos outros cenários, ou que expõe uma lacuna de automação já conhecida) **e** rastreabilidade direta ao TR — nunca a existência prévia de um CT/automação isoladamente. Quando um cenário já tem CT(s) reaproveitável(is) nas fatias aprovadas, isso é registrado como evidência adicional, não como critério de entrada.
 - **Cobertura representativa, não total:** os 20 cenários cobrem pelo menos um caminho crítico de cada grupo C1–C6 do modelo-alvo, priorizando onde há (a) maior dependência de outros cenários, ou (b) lacuna de automação já documentada em 04/05 que vale expor cedo. Isso **não** significa cobertura do TR inteiro — grandes áreas ficam fora desta onda (ver §4).
 - **Formato:** cada cenário é um bloco, não uma tabela larga — segue a mesma lição de legibilidade já aplicada aos diagramas da nota 04 (tabelas/diagramas muito largos cortam conteúdo na leitura).
@@ -50,7 +50,7 @@ status: rascunho
 | ONDA1-17 | Assinatura sequencial com signatários internos/externos | C5 | 1.40.3 |
 | ONDA1-18 | Criação delegada de documento via Chave de acesso | C5 | 1.41.1, 1.41.2 |
 | ONDA1-19 | Edição de identidade visual do órgão | C6 | 1.42.1.b, 1.42.1.c |
-| ONDA1-20 | Estatísticas de Servidores por status e nível | C6 | 1.43.5 |
+| ONDA1-20 | Indicadores de Servidores agrupados por status e nível | C6 | 1.43.5 |
 
 ## 3. Os 20 cenários candidatos
 
@@ -204,8 +204,8 @@ status: rascunho
 - **Ator/fluxo:** Servidor solicita assinatura sequencial a signatários internos e/ou externos; cada um assina na ordem definida.
 - **Dados/estados/dependências (04/05):** Assinatura, Solicitação de assinatura/Signatário ([[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 §7]]).
 - **Evidência/fonte:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/Seções do TR/08 - Divulgação, exportação e assinaturas (1.38–1.40)|recorte 08]] (1.40.3); fatia 17 (CTs A30-C01–C08, `makeSignRequest`/`executeSignatures`).
-- **Razão para entrar na Onda 1:** fluxo de maior complexidade de regras do grupo C5 (ordem, bloqueio até a vez, recusa em cascata), com CTs já existentes que podem ser reaproveitados como evidência adicional — não como critério de seleção.
-- **Dúvidas/limites:** "contribuinte" como ator distinto do Signatário externo não tem evidência de código (04 §7); a regra de recusa em cascata (atualizada 15/09/2026 — só cancela signatários posteriores) precisa de validação específica.
+- **Razão para entrar na Onda 1:** fluxo de maior complexidade de regras do grupo C5 (ordem sequencial, bloqueio até a vez), com CTs já existentes que podem ser reaproveitados como evidência adicional — não como critério de seleção.
+- **Dúvidas/limites:** "contribuinte" como ator distinto do Signatário externo não tem evidência de código (04 §7). **Fora deste cenário:** recusa de assinatura (simples ou em cascata) é o item TR 1.40.5, distinto de 1.40.3 — não misturada aqui; fica candidata a cenário próprio em onda futura.
 
 #### ONDA1-18 — Criação delegada de documento via Chave de acesso
 - **Objetivo de sanidade:** confirmar que um servidor convenente usa uma Chave de acesso concedida por outro servidor para criar um documento dentro do limite de uso definido, e que o concedente é notificado.
@@ -225,14 +225,14 @@ status: rascunho
 - **Razão para entrar na Onda 1:** funcionalidade de personalização citada explicitamente pelo TR, exigindo nível específico — bom caso representativo de permissão positiva/negativa.
 - **Dúvidas/limites:** o modo de acesso às informações cadastrais do órgão (1.42.1.a — visualização apenas ou também edição) segue A confirmar (recorte 10); o ator exato autorizado à área de personalização como um todo não é especificado pelo TR.
 
-#### ONDA1-20 — Consulta de Estatísticas de Servidores por status e nível de permissão
-- **Objetivo de sanidade:** confirmar que o painel de Estatísticas exibe servidores agrupados por status (Ativos/Inativos) e por nível de permissão.
-- **Referência exata do TR:** 1.43.5 (dados detalhados de servidores: total ativos/inativos, por status, por nível de permissão).
-- **Ator/fluxo:** Administrador/usuário autorizado consulta Estatísticas de Servidores, filtrando por status e nível.
+#### ONDA1-20 — Consulta de indicadores de Servidores agrupados por status e por nível de permissão
+- **Objetivo de sanidade:** confirmar que o painel de Estatísticas exibe, para os servidores cadastrados, os indicadores de total ativos/inativos e os agrupamentos por status e por nível de permissão descritos pelo TR.
+- **Referência exata do TR:** 1.43.5 (dados detalhados de servidores: total ativos/inativos; servidores por status; servidores por nível de permissão).
+- **Ator/fluxo:** Administrador/usuário autorizado consulta o painel de Estatísticas de Servidores e visualiza os indicadores já agrupados por status e por nível de permissão — exibição/consulta; o TR 1.43.5 não confirma a existência de um filtro interativo de tela neste subitem, por isso nenhum filtro é incluído no cenário.
 - **Dados/estados/dependências (04/05):** Estatísticas/Relatórios ([[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 §8]]).
 - **Evidência/fonte:** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/Seções do TR/11 - Estatísticas e indicadores (1.43)|recorte 11]] (1.43.5); classificação Ativos/Inativos confirmada por Rafael (04 §8, recorte 03).
 - **Razão para entrar na Onda 1:** fecha a cobertura representativa com o grupo C6, caminho crítico de relatórios gerenciais citado explicitamente pelo TR.
-- **Dúvidas/limites:** cálculo/implementação do indicador não verificado; correspondência entre "administradores e usuários autorizados" (termo do TR) e os 5 níveis canônicos segue A confirmar (recorte 11).
+- **Dúvidas/limites:** cálculo/implementação do indicador não verificado; correspondência entre "administradores e usuários autorizados" (termo do TR) e os 5 níveis canônicos segue A confirmar (recorte 11); se existir filtro interativo de tela para status/nível, isso não está confirmado por nenhuma fonte revisada neste subitem — não presumir sem evidência adicional.
 
 ## 4. Cobertura e exclusões desta onda
 
