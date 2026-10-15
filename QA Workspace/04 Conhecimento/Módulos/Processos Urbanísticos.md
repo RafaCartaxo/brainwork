@@ -156,3 +156,4 @@ fonte_ultima_edicao: 2026-08-19 (Vinícius Sogo)
 - Notion (fonte): ver `fonte` no frontmatter.
 - Leitor externo de PDF usado na revisão de anexos: [PSPDFKit](https://pspdfkit.com/)
 - [[QA Workspace/04 Conhecimento/Módulos/Construtor de Módulos|Construtor de Módulos]] — onde o parâmetro de característica urbanística (campos de zona/categoria de uso) é ativado por módulo.
+- [[QA Workspace/04 Conhecimento/Referências/Zoneamento Urbano - Conceitos de Planejamento|Zoneamento Urbano - Conceitos de Planejamento]] — ponte conceitual (o que é zona/uso/índice urbanístico no mundo real) que esta doc de produto não define.

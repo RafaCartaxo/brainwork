@@ -17,7 +17,7 @@ status: rascunho
 > **Artefatos de origem auditados (SGV-12082, encerrada, não editados):** [[../../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] · [[../../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
 
 > [!important] Rascunho de preparação — nada foi criado, publicado ou transferido no Notion
-> Este README é **interno** (QA/vault) e documenta como a transcrição ao lado foi produzida e como ela deve, no futuro, alimentar uma página no Notion. Ele próprio **não é publicável** — pode citar o vault, datas, decisões e metodologia à vontade. Quem é publicável é só o arquivo `01 - Termo de Referência SOGOV (transcrição integral 1.1-1.43).md`, que não contém nada disto.
+> Este README é **interno** (QA/vault) e documenta como os três arquivos ao lado foram produzidos e como devem, no futuro, alimentar páginas no Notion. Ele próprio **não é publicável** — pode citar o vault, datas, decisões e metodologia à vontade. Quem é publicável são os três arquivos `01 - Termo de Referência SOGOV (transcrição integral 1.1-1.43).md`, `02 - Modelo-alvo dos dados (Notion).md` e `03 - Matriz de fornecimento dos dados (Notion).md` — nenhum deles contém o que está neste README.
 
 ## 1. Mapa de importação
 
