@@ -7,8 +7,8 @@ tipo: indice
 > [!info]- Navegação
 > **Índice geral da SGV-11262:** [Índice da SGV-11262](<../../../02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Conhecimento/0 - SGV-11262 - Índice.md>)
 > **Roadmap da iniciativa:** [Roadmap — Modelo de atores e preset do TR](<../../../02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Roadmap - Modelo de atores e preset do TR.md>)
-> **Hub no Notion:** [Sanidade automatizada do SOGOV — Termo de Referência](https://app.notion.com/p/3fa72f8c899080a1a1d6f421cc6d4426) — organizado em 15/10/2026: 3 subpáginas de conteúdo (Transcrição, Modelo-alvo, Matriz), 1 subpágina placeholder (Cenários de sanidade, sem cenários publicados) e uma database "Demandas relacionadas" com a SGV-12200
-> **Demanda ativa que consome esta referência (Onda 1):** [SGV-12200 — Levantamento da Onda 1 de cenários de sanidade](<../../../02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README.md>)
+> **Hub no Notion:** [Sanidade automatizada do SOGOV — Termo de Referência](https://app.notion.com/p/3fa72f8c899080a1a1d6f421cc6d4426) — publicado em 15/10/2026 com 4 subpáginas (Transcrição, Modelo-alvo, Matriz, e Cenários de sanidade como placeholder sem cenários publicados). Reorganizado em 16/10/2026: hub movido para dentro da página "Sogov" (subpáginas inalteradas); a database "Demandas relacionadas" — histórico: nasceu como filha direta do hub em 15/10/2026 — foi movida para "Sogov > Backlog", com a linha da SGV-12200
+> **Demanda ativa que consome esta referência (Onda 1, independente desde 16/10/2026):** [[../../../02 Demandas/DEV/SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]]
 > **Frente de origem (encerrada, produziu os três documentos abaixo):** [SGV-12082 — Mapeamento de atores e modelo do preset do TR](<../../../02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README.md>)
 
 ## Objetivo desta pasta
@@ -23,7 +23,7 @@ Reunir, num só lugar e independente de qual demanda está consumindo-a no momen
 | 2 | [Modelo-alvo de atores, dados e estados](<02 - Modelo-alvo de atores, dados e estados.md>) | Análise derivada do TR e do produto: entidades, atributos, relações e status Confirmado/Inferido/A confirmar. Não decide canal de fornecimento. |
 | 3 | [Matriz de fornecimento dos dados](<03 - Matriz de fornecimento dos dados.md>) | Análise derivada do Modelo-alvo: canal candidato de fornecimento (`.env`, seed persistente ou cenário) para cada dado/estado. Hipóteses candidatas, não decisões de arquitetura. |
 
-Os três documentos são publicáveis como estão (sem frontmatter, sem metadados de processo) e usam citação portátil ao TR no formato `TR §ID — PDF p. N — transcrição §ID` — ver [Guia de organização e publicação no Notion](<../../../02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/02 - Guia de organização e publicação no Notion.md>) para o método completo e a auditoria de fidelidade.
+Os três documentos são publicáveis como estão (sem frontmatter, sem metadados de processo) e usam citação portátil ao TR no formato `TR §ID — PDF p. N — transcrição §ID` — ver [[../../../02 Demandas/DEV/SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/02 - Guia de organização e publicação no Notion|Guia de organização e publicação no Notion]] para o método completo e a auditoria de fidelidade.
 
 ## Cadeia de referência
 
@@ -47,4 +47,4 @@ Os três documentos foram produzidos a partir dos artefatos aprovados da **SGV-1
 
 ## Notion
 
-O hub no Notion (link acima) já está organizado: subpáginas para os três documentos canônicos, uma subpágina placeholder para "Cenários de sanidade" (sem cenários publicados — a Onda 1 segue proposta pendente de aprovação) e uma database "Demandas relacionadas" com uma linha para a SGV-12200 (URL da task em branco, nenhuma task Notion dedicada foi localizada). Auditoria de fidelidade de conteúdo (headings, tabelas, diagramas Mermaid) feita em 15/10/2026 — ver o guia de publicação linkado acima para o método.
+O hub no Notion (link acima) está organizado com subpáginas para os três documentos canônicos e uma subpágina placeholder para "Cenários de sanidade" (sem cenários publicados — a Onda 1 segue proposta pendente de aprovação). A database "Demandas relacionadas" — histórico: filha direta do hub em 15/10/2026 — vive hoje em "Sogov > Backlog" desde a reorganização de 16/10/2026, com uma linha para a SGV-12200 (URL da task em branco, nenhuma task Notion dedicada foi localizada). Auditoria de fidelidade de conteúdo (headings, tabelas, diagramas Mermaid) feita em 15/10/2026 — ver o guia de publicação linkado acima para o método.
