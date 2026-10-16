@@ -424,5 +424,13 @@
   "QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência": {
     "iconName": "LiScrollText",
     "iconColor": "#0d9488"
+  },
+  "QA Workspace/04 Conhecimento/Referências/Automação Playwright": {
+    "iconName": "LiBot",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/04 Conhecimento/Referências/Automação Playwright/Execuções": {
+    "iconName": "LiPlay",
+    "iconColor": "#7c3aed"
   }
 }
