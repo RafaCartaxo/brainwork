@@ -120,5 +120,5 @@ Cada critério é um item do Termo de Referência, com o texto literal da regra.
 
 - Os 4 achados reais (CT-015, CT-029/030, CT-033) ainda **não** viraram defeitos com SGV próprio — decisão adiada em 02/10/2026, ver `00 README`.
 - `priority` dos casos na Qase segue pendente de preenchimento manual (decisão consciente de 31/08, não esquecimento).
-- A suíte está em Cypress e o alvo passou a ser Playwright ([[../../../../../../04 Conhecimento/Referências/Automação Playwright|Automação Playwright]]) — o código precisa ser portado antes de subir.
+- A suíte está em Cypress e o alvo passou a ser Playwright ([[../../../../../../04 Conhecimento/Referências/Automação Playwright/00 - Índice da automação Playwright|Automação Playwright]]) — o código precisa ser portado antes de subir.
 

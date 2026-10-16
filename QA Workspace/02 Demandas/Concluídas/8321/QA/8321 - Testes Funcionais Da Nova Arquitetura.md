@@ -756,7 +756,7 @@ anterior/errada)
 >
 > O `scripts/qase-sync-1.24-1.25/` do devnet era mais velho que a cópia canônica do vault em [[Sistema/Scripts/qase-sync|Sistema/Scripts/qase-sync]] — nada se perdeu.
 >
-> Para retomar esta frente hoje: o repo migrou para Playwright (ver [[Automação Playwright]]), então a suíte Cypress descrita abaixo não é mais o caminho padrão.
+> Para retomar esta frente hoje: o repo migrou para Playwright (ver [[00 - Índice da automação Playwright|Automação Playwright]]), então a suíte Cypress descrita abaixo não é mais o caminho padrão.
 
 *Resumo pra quem for continuar rodando a suíte automatizada contra o novo ambiente — **registro de 04/09/2026**, ver aviso acima.*
 

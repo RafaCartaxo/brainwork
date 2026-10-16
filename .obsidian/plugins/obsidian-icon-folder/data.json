@@ -368,5 +368,61 @@
   "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/Especificações do preset piloto": {
     "iconName": "LiLibrary",
     "iconColor": "#4338ca"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo": {
+    "iconName": "LiArchive",
+    "iconColor": "#92400e"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação": {
+    "iconName": "LiBot",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225": {
+    "iconName": "LiPackageCheck",
+    "iconColor": "#0e7490"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Entrega 01 - Baseline de autenticação na instância 225/01 Automação": {
+    "iconName": "LiBot",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados": {
+    "iconName": "LiPackage",
+    "iconColor": "#0891b2"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/00 QA/Fontes": {
+    "iconName": "LiBookOpen",
+    "iconColor": "#ca8a04"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-12082 - Análise do TR e preset de dados/01 Automação": {
+    "iconName": "LiBot",
+    "iconColor": "#7c3aed"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-12200 - Levantamento da Onda 1 de cenários de sanidade": {
+    "iconName": "LiPackage",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA": {
+    "iconName": "LiClipboardList",
+    "iconColor": "#2563eb"
+  },
+  "QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência": {
+    "iconName": "LiScrollText",
+    "iconColor": "#0d9488"
   }
 }

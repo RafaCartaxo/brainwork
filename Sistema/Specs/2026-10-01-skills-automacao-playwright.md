@@ -14,7 +14,7 @@ status: proposta (decisão de fundo respondida)
 
 ## O problema
 
-O repo migrou para Playwright em setembro ([[Automação Playwright]]). As 4 skills de automação do vault descrevem Cypress — não só no nome da ferramenta, mas na **mecânica**: `cy.session`, `cy.request`, `cypress.env.json`, caminhos `cypress/testes/...`, `Cypress.Commands.add`.
+O repo migrou para Playwright em setembro ([[00 - Índice da automação Playwright|Automação Playwright]]). As 4 skills de automação do vault descrevem Cypress — não só no nome da ferramenta, mas na **mecânica**: `cy.session`, `cy.request`, `cypress.env.json`, caminhos `cypress/testes/...`, `Cypress.Commands.add`.
 
 Uma sessão que siga essas skills hoje escreve teste no framework que não recebe mais casos novos.
 
@@ -95,7 +95,7 @@ Caminhos e gotchas são todos de Cypress. O que **sobrevive intacto** é o conhe
 ## Ordem sugerida
 
 1. ~~Responder a pergunta de fundo~~ — **respondida em 01/10: Playwright é o padrão.**
-2. **Aviso no topo das 4 skills** apontando para [[Automação Playwright]]. Custo baixo, e impede que uma sessão escreva Cypress por engano enquanto as reescritas não saem. É o item mais urgente.
+2. **Aviso no topo das 4 skills** apontando para [[00 - Índice da automação Playwright|Automação Playwright]]. Custo baixo, e impede que uma sessão escreva Cypress por engano enquanto as reescritas não saem. É o item mais urgente.
 3. `SKILL_REVISAO_CODIGO_AUTOMACAO` primeiro entre as reescritas — é a de maior gravidade e a que mais encolhe ao delegar para o ESLint.
 4. `SKILL_REVISAO_AUTOMACAO_E2E` depois, preservando o conhecimento de tela (toast, gotchas MUI, rota por persona — tudo isso sobrevive).
 5. As duas 🟡🟢 por último — mudança pequena.
@@ -106,6 +106,6 @@ As skills e agentes **do repositório** (`.claude/skills/criar-teste-{api,e2e}/`
 
 ## Referências
 
-- [[Automação Playwright]] — arquitetura e convenção nova
+- [[00 - Índice da automação Playwright|Automação Playwright]] — arquitetura e convenção nova
 - [[REGRAS_IA]] — a regra que torna isto proposta e não edição
 - `playwright/README.md` · `playwright/planning/01-ARQUITETURA.md` · `playwright/eslint.config.mjs`

@@ -9,7 +9,7 @@ data: 2026-10-06
 # Execução completa Playwright — 06/10/2026
 
 > [!warning] Modo de execução não recomendado
-> Este run rodou a suíte **inteira** de uma vez (`399` casos, `tests/` todo). A própria [[Automação Playwright]] avisa: *"Não rode `npm run test` — a suíte inteira de uma vez satura o gerador de PDF do backend e produz falhas que não são bugs reais. Vá por domínio, em lotes de 15–20 min."* Os números abaixo são reais (run de verdade contra HML), mas **boa parte das 26 falhas é candidata a ruído de saturação**, não regressão confirmada — ver análise por domínio mais abaixo antes de abrir defeito em cima de qualquer uma.
+> Este run rodou a suíte **inteira** de uma vez (`399` casos, `tests/` todo). A própria [[00 - Índice da automação Playwright|Automação Playwright]] avisa: *"Não rode `npm run test` — a suíte inteira de uma vez satura o gerador de PDF do backend e produz falhas que não são bugs reais. Vá por domínio, em lotes de 15–20 min."* Os números abaixo são reais (run de verdade contra HML), mas **boa parte das 26 falhas é candidata a ruído de saturação**, não regressão confirmada — ver análise por domínio mais abaixo antes de abrir defeito em cima de qualquer uma.
 
 ## Run
 
@@ -83,5 +83,5 @@ Rodar `contact-groups`, `models`, `public-agents` e `workboard` isolados (não s
 
 ## Referências
 
-- [[Automação Playwright]] — arquitetura, convenção de execução, o aviso sobre não rodar a suíte inteira
+- [[00 - Índice da automação Playwright|Automação Playwright]] — arquitetura, convenção de execução, o aviso sobre não rodar a suíte inteira
 - [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/02 - Validação automação|02 - Validação automação (SGV-11971)]]
