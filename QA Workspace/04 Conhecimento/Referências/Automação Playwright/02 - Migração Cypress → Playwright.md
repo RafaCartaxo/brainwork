@@ -73,6 +73,34 @@ O `playwright/README.md` (seções 3 e 4) cobre fixtures, atores, paralelismo e 
 > 3. ~~**O TR 1.24-1.25 não existe no lado Playwright** — zero ocorrências de `CT-0` em `playwright/`.~~ **Corrigido em 02/10/2026** — essa conclusão estava errada: só buscou pelo rótulo literal `CT-0`, sem comparar o conteúdo. `tests/api/auth/login.spec.ts` e `credentials.spec.ts` **são** o porte de CT-001 a CT-012 (Suítes 1 e 2) — títulos idênticos aos do `03 - Casos de teste`, só com rótulo diferente (`A02-C01`...`A02-C09`, `A01-C01`...`A01-C03`). Confirmado verde num run real de 01/10/2026 (`playwright/test-results/results.xml`, 398 testes). Restam as Suítes 3, 4 e 5 (26 CTs) a portar. Ver [[QA Workspace/02 Demandas/DEV/SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Arquivo/Abordagem anterior/SGV-11971 - TR 1.24-1.25 Autenticação e Ciclo de Vida/Arquivo/01 Automação/01 - Plano de automação|Plano de Automação]].
 
 
+## Apêndice — código órfão preservado (removido do disco em 17/10/2026)
+
+`playwright/tests/api/auth/audit-sessions.spec.ts` (CT-038, Qase SGV suite 4) existia solto, não rastreado, no repo desde antes deste trabalho. Typecheck e lint passavam limpo, mas colide de ID: `A55-C01` já existe **duas vezes** em `origin/main` (`tests/api/signatures/citizen-legal-representative.spec.ts` e `tests/api/workboard/workflow-steps-panel.spec.ts`). Removido do disco pra não acumular resíduo. Se for retomado, renumerar pra `A67-C01` (próximo ID livre de API em `main`) antes de commitar.
+
+```ts
+import { test, expect } from '../../../src/fixtures/index.js';
+import { getPublicAgents } from '../../../src/api/services/users.js';
+
+// origem: cypress/testes/api/entities/auth/audit-sessions.api.cy.js
+// CT-037 (log de auditoria de tentativas de login) NÃO está neste arquivo —
+// não existe endpoint de auditoria confirmado ainda. Ver Qase SGV, suite 4,
+// case 37 (automation: is-not-automated).
+
+test.describe('Auth - Sessões simultâneas', { tag: ['@api', '@auth'] }, () => {
+  test('A67-C01 [SUCESSO] Sistema permite múltiplas sessões simultâneas do mesmo usuário em dispositivos diferentes', async ({ actors }) => {
+    // Duas sessões independentes do MESMO agente (dois "dispositivos") —
+    // actors.agentApi() loga de novo a cada chamada, sem cache de sessão.
+    const first = await actors.agentApi();
+    const second = await actors.agentApi();
+
+    // getPublicAgents lança se o token não for mais válido — a chamada
+    // resolver sem erro já prova que a sessão segue ativa.
+    await expect(getPublicAgents(first.api, '')).resolves.toBeDefined();
+    await expect(getPublicAgents(second.api, '')).resolves.toBeDefined();
+  });
+});
+```
+
 ## Apêndice — de onde vinham as variáveis do `.env`
 
 As variáveis `PW_*` derivavam do `cypress.env.json` do lado Cypress — arquivo que **não existe mais** no repo desde 15/10/2026. O `playwright/README.md` lista as variáveis, mas não de onde vinham os valores; este mapeamento só existe aqui. Não há outra fonte documentada para os valores atuais.
