@@ -1,7 +1,6 @@
 ---
 tags: [qa]
 task: "SGV-12200"
-pai: "SGV-11262"
 tipo: "levantamento-cenarios"
 status: rascunho
 ambiente: dev
@@ -17,15 +16,18 @@ pontos: ""
 ---
 # SGV-12200 — Levantamento da Onda 1 de cenários de sanidade
 
+> [!important] Demanda independente desde 16/10/2026
+> A SGV-12200 era pacote filho da SGV-11262; por decisão do Rafael, passou a ser **demanda irmã independente** — a SGV-11262 deixou de ser pai ativo. A SGV-11262 e a SGV-12082 (sua frente de origem, já encerrada) seguem citadas abaixo como **origem/contexto histórico e dependência de referência** (o levantamento usa os artefatos 04/05 aprovados por ela), não como hierarquia ativa.
+
 > [!info]- Navegação QA
-> **Índice da iniciativa:** [[../../Conhecimento/0 - SGV-11262 - Índice|Índice da SGV-11262]]
-> **Roadmap da iniciativa:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]
+> **Índice da SGV-11262 (origem desta frente, contexto histórico):** [Índice da SGV-11262](<../../SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Conhecimento/0 - SGV-11262 - Índice.md>)
+> **Roadmap da SGV-11262 (contexto histórico):** [Roadmap — Modelo de atores e preset do TR](<../../SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Roadmap - Modelo de atores e preset do TR.md>)
 > **Proposta da Onda 1:** [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]
 > **Guia de organização e publicação no Notion:** [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]
 > **Referência canônica do TR (em 04 Conhecimento, não específica da Onda 1 nem da SGV-11262):** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice da sanidade automatizada do TR]]
-> **Frente de origem (encerrada, usada como referência):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]]
-> **Modelo-alvo dos dados do preset (04):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
-> **Matriz de fornecimento dos dados (05):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
+> **Frente de origem (encerrada, usada como referência de dependência):** [SGV-12082 — Mapeamento de atores e modelo do preset do TR](<../../SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README.md>)
+> **Modelo-alvo dos dados do preset (04):** [[04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
+> **Matriz de fornecimento dos dados (05):** [[05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
 > **Fonte original da SGV-12200 (export Notion):** `Downloads/SGV-12200 - [Automação][Sanidade] -  3 | Notion.md` (fora do vault; cópia de referência, não duplicada aqui)
 
 > [!settings]- Controle do card

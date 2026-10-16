@@ -1,7 +1,6 @@
 ---
 tags: [qa]
 task: "SGV-12200"
-pai: "SGV-11262"
 tipo: "guia-publicacao"
 status: pronto-para-publicacao
 ---
@@ -14,8 +13,8 @@ status: pronto-para-publicacao
 > **Transcrição canônica:** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/01 - Termo de Referência SOGOV - Transcrição integral|01 - Termo de Referência SOGOV - Transcrição integral]]
 > **Modelo-alvo canônico:** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 - Modelo-alvo de atores, dados e estados]]
 > **Matriz de fornecimento canônica:** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/03 - Matriz de fornecimento dos dados|03 - Matriz de fornecimento dos dados]]
-> **Fonte normativa (PDF canônico, permanece na SGV-12082, encerrada, não duplicado):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/Fontes/Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
-> **Artefatos de origem auditados (SGV-12082, encerrada, não editados):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] · [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
+> **Fonte normativa (PDF canônico, permanece na SGV-12082 dentro da SGV-11262, encerrada, não duplicado):** [[Termo de Referência SOGOV.pdf]]
+> **Artefatos de origem auditados (SGV-12082, encerrada, não editados):** [[04 - Modelo-alvo dos dados do preset]] · [[05 - Matriz de fornecimento dos dados]]
 
 > [!important] Publicado no Notion em 15/10/2026
 > Este guia é **interno** (QA/vault) e documenta como os três documentos canônicos (agora em `04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/`) foram produzidos, revisados, auditados e publicados no hub do Notion. Ele próprio **não é publicável** — pode citar o vault, datas, decisões e metodologia à vontade. Os três documentos canônicos (transcrição, modelo-alvo e matriz de fornecimento) é que são publicáveis — nenhum deles contém o que está neste guia.
