@@ -13,7 +13,7 @@ A SGV-11262 é a demanda pai da iniciativa de QA sobre o Termo de Referência do
 
 ## Referência permanente (independente de qualquer demanda)
 
-[[Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|Sanidade automatizada do SOGOV — Termo de Referência]] — a transcrição integral do TR, o modelo-alvo de atores/dados/estados e a matriz de fornecimento dos dados, organizados como referência permanente (não subordinada a nenhuma onda de cenários específica). Inclui o link para o hub no Notion (em organização). Produzida a partir dos artefatos aprovados da SGV-12082 (ver abaixo).
+[[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|Sanidade automatizada do SOGOV — Termo de Referência]] — a transcrição integral do TR, o modelo-alvo de atores/dados/estados e a matriz de fornecimento dos dados, organizados como referência permanente (não subordinada a nenhuma onda de cenários específica, nem a esta demanda). Promovida de `SGV-11262/Conhecimento/` para `04 Conhecimento/Referências/` em 16/10/2026, para sobreviver ao encerramento desta demanda. Inclui o link para o hub no Notion (publicado e auditado em 15/10/2026). Produzida a partir dos artefatos aprovados da SGV-12082 (ver abaixo).
 
 ## Trabalho ativo
 
@@ -38,10 +38,12 @@ Arquivado para consulta em `Arquivo/Abordagem anterior/` — conteúdo preservad
 ```text
 SGV-11262 - [QA-Automação] Termo de Referência SOGOV/
 ├── Conhecimento/                                              ← este índice
-│   └── Sanidade automatizada do SOGOV - Termo de Referência/   ← referência permanente (TR, modelo-alvo, matriz)
 ├── Roadmap - Modelo de atores e preset do TR.md                ← direção/sequência da frente ativa
 ├── Arquivo/
 │   └── Abordagem anterior/                                     ← material histórico arquivado para consulta
 ├── SGV-12082 - Mapeamento de atores e modelo do preset do TR/   ← encerrada neste escopo (15/10/2026)
 └── SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/  ← frente ativa
+
+QA Workspace/04 Conhecimento/Referências/
+└── Sanidade automatizada do SOGOV - Termo de Referência/        ← referência permanente (TR, modelo-alvo, matriz) — promovida de SGV-11262/Conhecimento/ em 16/10/2026
 ```

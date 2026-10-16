@@ -22,7 +22,7 @@ pontos: ""
 > **Roadmap da iniciativa:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]
 > **Proposta da Onda 1:** [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]]
 > **Guia de organização e publicação no Notion:** [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]
-> **Referência canônica do TR (agora em Conhecimento, não específica da Onda 1):** [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice da sanidade automatizada do TR]]
+> **Referência canônica do TR (em 04 Conhecimento, não específica da Onda 1 nem da SGV-11262):** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice da sanidade automatizada do TR]]
 > **Frente de origem (encerrada, usada como referência):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]]
 > **Modelo-alvo dos dados do preset (04):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
 > **Matriz de fornecimento dos dados (05):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/01 Modelo do preset/05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
@@ -39,8 +39,8 @@ pontos: ""
 ## Escopo desta pasta
 
 - Propor a Onda 1 (20 cenários candidatos), rastreável ao TR e aos artefatos canônicos de referência — ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]].
-- Documentar o método e a organização da publicação no Notion — ver [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]. Os três documentos canônicos publicáveis (transcrição, modelo-alvo, matriz de fornecimento) vivem em `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/`, não nesta pasta — essa referência não é específica da Onda 1.
-- Hub no Notion organizado em 15/10/2026 (subpáginas + database "Demandas relacionadas" com a SGV-12200) — ver [[02 - Guia de organização e publicação no Notion|02 - Guia]] §2.
+- Documentar o método e a organização da publicação no Notion — ver [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]. Os três documentos canônicos publicáveis (transcrição, modelo-alvo, matriz de fornecimento) vivem em `04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/`, não nesta pasta — essa referência não é específica da Onda 1 nem da SGV-11262.
+- Hub no Notion publicado em 15/10/2026 (subpáginas) e reorganizado em 16/10/2026: hub movido para dentro de "Sogov" (as 4 subpáginas seguem sob o hub, inalteradas); database "Demandas relacionadas" (com a linha da SGV-12200) movida para "Sogov > Backlog" — ver [[02 - Guia de organização e publicação no Notion|02 - Guia]] §2.
 
 ## Fora de escopo nesta pasta
 
@@ -60,4 +60,4 @@ SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/
     └── 02 - Guia de organização e publicação no Notion.md   (interno; método e auditoria)
 ```
 
-Os três documentos canônicos (transcrição, modelo-alvo, matriz de fornecimento) **não vivem mais nesta pasta** — foram organizados em `Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/` (ver [[../../Conhecimento/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]]), porque essa referência serve a qualquer onda de cenários, não só à Onda 1. Esta pasta não duplica o PDF do TR, os 11 recortes nem as 17 fatias da SGV-12082 — toda referência é por link relativo. Não tem `Fontes/` própria nem pasta de automação. Hub no Notion organizado em 15/10/2026 (ver guia acima, §2).
+Os três documentos canônicos (transcrição, modelo-alvo, matriz de fornecimento) **não vivem mais nesta pasta** — foram organizados em `04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/` (ver [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice]]), porque essa referência serve a qualquer onda de cenários, não só à Onda 1 nem à SGV-11262 (promovida de `SGV-11262/Conhecimento/` em 16/10/2026). Esta pasta não duplica o PDF do TR, os 11 recortes nem as 17 fatias da SGV-12082 — toda referência é por link. Não tem `Fontes/` própria nem pasta de automação. Hub no Notion publicado em 15/10/2026 e reorganizado em 16/10/2026 (ver guia acima, §2).

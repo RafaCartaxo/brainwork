@@ -17,6 +17,9 @@ Base de conhecimento sobre o Sogov — comportamentos do sistema, regras de neg�
 
 A raiz não recebe nenhum arquivo — só este `README.md` e as três subpastas acima. Se não é conhecimento de módulo, fluxo cruzado ou referência externa, não pertence a `04 Conhecimento/`.
 
+> [!note] `Referências/Sanidade automatizada do SOGOV - Termo de Referência/` (promovido em 16/10/2026)
+> 4 arquivos — transcrição integral do Termo de Referência (itens 1.1–1.43), modelo-alvo de atores/dados/estados, matriz de canais candidatos de fornecimento de dados, e um índice local. Produzidos originalmente na SGV-11262, movidos pra cá por não serem específicos de uma task — servem a qualquer onda de cenários de sanidade, inclusive depois do encerramento da SGV-11262. Publicados também como hub no Notion (Sogov > Sanidade automatizada do SOGOV - Termo de Referência).
+
 > [!important] `Tasks/<SGV>/` foi extinto em 24/09/2026
 > Material de análise **específico de uma task** (refinamento arquivado, plano de automação, resumo) não vive mais aqui — mora em `Conhecimento/` dentro do próprio card: `02 Demandas/<ambiente>/<SGV>/Conhecimento/` se a demanda ainda estiver ativa, `Concluídas/<SGV>/Conhecimento/` se concluída. Motivo: o material de apoio ficava fisicamente longe do card que ele apoiava, forçando dois pontos de manutenção quando o card mudava de pasta. Ver [[../../Sistema/Skills/SKILL_REFINAMENTO|SKILL_REFINAMENTO]] pra convenção de nome/ordem de arquivo dentro de `Conhecimento/`.
 
