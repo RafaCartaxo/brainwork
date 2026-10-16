@@ -68,7 +68,7 @@ status: rascunho
 - **Referência exata do TR:** 1.25.1.
 - **Ator/fluxo:** qualquer ator autenticável (Servidor, Cidadão, Empresa) tentando login com credenciais inválidas repetidamente.
 - **Dados/estados/dependências (02/03):** Conta de usuário ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §3]]).
-- **Evidência/fonte:** [[02 - Autenticação e ciclo de vida da identidade (1.24–1.25)|recorte 02]] (1.25.1); 02 §3 e 03 §2 registram que o mecanismo "só existe em branch Cypress não mesclada".
+- **Evidência/fonte:** [[02 - Autenticação e ciclo de vida da identidade (1.24–1.25)|recorte 02]] (1.25.1); 02 §3/03 §2 classificam o canal como A confirmar (gap de automação) — a fatia 02 (evidência técnica) localiza esse gap especificamente na branch Cypress não mesclada, fora do Playwright `main`.
 - **Razão para entrar na Onda 1:** requisito de segurança explícito do TR, com lacuna de automação já conhecida — vale expor cedo, não por já ter CT pronto (não tem, no `main` Playwright).
 - **Dúvidas/limites:** mecanismo não confirmado no baseline Playwright `main` — gap de automação, não indício de ausência no produto (herdado de 02/03).
 
@@ -77,9 +77,9 @@ status: rascunho
 - **Referência exata do TR:** 1.25.3–1.25.3.4 (estados Ativo, Licença, Férias, Inativo).
 - **Ator/fluxo:** Servidor cujo estado funcional muda; sistema aplica/restringe permissões conforme o novo estado.
 - **Dados/estados/dependências (02/03):** Servidor (b) — status funcional ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §3]]); canal "ainda indefinido" em 03 §2.
-- **Evidência/fonte:** [[02 - Autenticação e ciclo de vida da identidade (1.24–1.25)|recorte 02]] (1.25.3–1.25.3.4); 02/03 (mecanismo só em branch Cypress não mesclada).
+- **Evidência/fonte:** [[02 - Autenticação e ciclo de vida da identidade (1.24–1.25)|recorte 02]] (1.25.3–1.25.3.4); 02/03 classificam o canal como A confirmar (gap de automação) — a fatia 02 (evidência técnica) localiza esse gap especificamente na branch Cypress não mesclada, fora do Playwright `main`.
 - **Razão para entrar na Onda 1:** requisito central de controle de acesso dinâmico, caminho crítico de segurança, com lacuna de automação já documentada.
-- **Dúvidas/limites:** o TR usa o rótulo "Inativo"; o contexto de produto confirmado por Rafael mapeia esse estado para "Suspenso" no cadastro atual — nomenclatura dupla já registrada em 02/03, não resolvida por este cenário.
+- **Dúvidas/limites:** o TR usa o rótulo "Inativo"; o contexto de produto confirmado por Rafael mapeia esse estado para "Suspenso" no cadastro atual — nomenclatura dupla observada comparando TR §1.25.3.4 (Inativo) com TR §1.27.11.2 (Suspenso, citado em 02 §3); a conexão entre os dois rótulos vem do Mapa geral/histórico SGV-12082, não está escrita literalmente em 02/03, e segue não resolvida por este cenário.
 
 #### ONDA1-04 — Vínculo N:N Servidor↔Setor com regras de tramitação herdadas
 - **Objetivo de sanidade:** confirmar que um Servidor pode estar vinculado a mais de um Setor e que cada Setor aplica suas próprias regras de tramitação.
@@ -87,7 +87,7 @@ status: rascunho
 - **Ator/fluxo:** Servidor vinculado a um ou mais Setores/Subsetores; tramitação segue a regra do setor responsável.
 - **Dados/estados/dependências (02/03):** Setor/Subsetor e Servidor, relação N:N ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §3]]; também [[00 - Mapa geral|00 - Mapa geral]]); Setor/Subsetor como seed persistente ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/03 - Matriz de fornecimento dos dados|03 §2]]).
 - **Evidência/fonte:** [[03 - Estrutura organizacional e cadastro de servidores (1.26–1.27)|recorte 03]] (1.26.5, 1.26.11); fatia 02 (`BASELINE.sectors`/`subsectors`).
-- **Razão para entrar na Onda 1:** base organizacional de quase toda tramitação; a relação N:N já é um ponto confirmado e auditado do modelo (ver histórico de correção Servidor↔Setor em 00/02).
+- **Razão para entrar na Onda 1:** base organizacional de quase toda tramitação; a relação N:N é tratada como ponto estável do modelo (02 §3).
 - **Dúvidas/limites:** "Regras de Tramitação" é fonte reconstruída de diagrama de produto, ainda não validada em teste (herdada de 02).
 
 #### ONDA1-05 — Assunto/Serviço com categoria-base herdada do Módulo
@@ -103,7 +103,7 @@ status: rascunho
 - **Objetivo de sanidade:** confirmar que regras de tramitação pré-estabelecidas variam conforme a categoria de documento e o módulo envolvidos.
 - **Referência exata do TR:** 1.29 (texto introdutório — "regras de tramitação pré-estabelecidas por categoria e módulo").
 - **Ator/fluxo:** sistema aplica regra de tramitação conforme a combinação categoria×módulo de um documento criado.
-- **Dados/estados/dependências (02/03):** Categoria de documento, Módulo, Regras de tramitação (nós `CategoriaDoc`/`Modulo`/`RegrasTramitacao` em [[00 - Mapa geral|00 - Mapa geral §C2]]).
+- **Dados/estados/dependências (02/03):** Categoria de documento, Módulo, Regras de tramitação ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §4]]; nós `CategoriaDoc`/`Modulo`/`RegrasTramitacao` também em [[00 - Mapa geral|00 - Mapa geral §C2]]).
 - **Evidência/fonte:** [[04 - Serviços, assuntos e categorias de documentos (1.28–1.29)|recorte 04]] (texto literal do item 1.29).
 - **Razão para entrar na Onda 1:** relação explicitamente citada no texto literal do TR, cruzando duas entidades centrais (categoria e módulo).
 - **Dúvidas/limites:** nenhuma evidência de código localizada especificamente para essa regra combinada (herdada do Mapa geral — nó adicionado por citação literal do TR, sem evidência de código própria).
@@ -112,7 +112,7 @@ status: rascunho
 - **Objetivo de sanidade:** confirmar que um ator externo (Cidadão/Empresa) consegue consultar uma Zona publicada e suas Categorias de uso associadas.
 - **Referência exata do TR:** 1.29.10.2 (ferramenta acessível a cidadãos/empresas), 1.29.10.4 (entidades Zona e Categoria de uso, estado de publicação).
 - **Ator/fluxo:** Cidadão/Empresa consulta Zona publicada e vê Categorias de uso associadas.
-- **Dados/estados/dependências (02/03):** Zona, Categoria de uso ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §4, Diagrama 3]]); 03 marca ambos como "nenhuma evidência de código/teste localizada".
+- **Dados/estados/dependências (02/03):** Zona, Categoria de uso ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §4, Diagrama 3]]); 03 marca ambos como "nenhuma evidência técnica localizada".
 - **Evidência/fonte:** [[04 - Serviços, assuntos e categorias de documentos (1.28–1.29)|recorte 04 §Zoneamento]] (1.29.10.2, 1.29.10.4).
 - **Razão para entrar na Onda 1:** funcionalidade pública explícita do TR, sem nenhuma automação/evidência hoje — alto valor de sanidade justamente por expor essa lacuna cedo.
 - **Dúvidas/limites:** nenhuma evidência de código/teste localizada para Zona/Categoria de uso; vínculo entre módulo PA e Zona permanece não confirmado por nenhuma fonte (aresta `D1`, tracejada, em 02).
@@ -205,7 +205,7 @@ status: rascunho
 - **Dados/estados/dependências (02/03):** Assinatura, Solicitação de assinatura/Signatário ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §7]]).
 - **Evidência/fonte:** [[08 - Divulgação, exportação e assinaturas (1.38–1.40)|recorte 08]] (1.40.3); fatia 17 (CTs A30-C01–C08, `makeSignRequest`/`executeSignatures`).
 - **Razão para entrar na Onda 1:** fluxo de maior complexidade de regras do grupo C5 (ordem sequencial, bloqueio até a vez), com CTs já existentes que podem ser reaproveitados como evidência adicional — não como critério de seleção.
-- **Dúvidas/limites:** "contribuinte" como ator distinto do Signatário externo não tem evidência de código (02 §7). **Fora deste cenário:** recusa de assinatura (simples ou em cascata) é o item TR 1.40.5, distinto de 1.40.3 — não misturada aqui; fica candidata a cenário próprio em onda futura.
+- **Dúvidas/limites:** "contribuinte" como ator distinto do Signatário externo não tem evidência de código (02 §7). A cobertura técnica atual não comprova o enforcement do bloqueio até a vez de cada signatário — a fatia 17 (CTs A30-C01–C08) testa a criação/execução da solicitação sequencial, mas não testa uma tentativa de assinatura fora da vez; isso permanece alvo a verificar por este cenário, não uma lacuna que o descarte da Onda 1. **Fora deste cenário:** recusa de assinatura (simples ou em cascata) é o item TR 1.40.5, distinto de 1.40.3 — não misturada aqui; fica candidata a cenário próprio em onda futura.
 
 #### ONDA1-18 — Criação delegada de documento via Chave de acesso
 - **Objetivo de sanidade:** confirmar que um servidor convenente usa uma Chave de acesso concedida por outro servidor para criar um documento dentro do limite de uso definido, e que o concedente é notificado.
@@ -214,10 +214,10 @@ status: rascunho
 - **Dados/estados/dependências (02/03):** Chave de acesso, Servidor (concedente/convenente) ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §7]]).
 - **Evidência/fonte:** [[09 - Chaves de acesso e criação delegada (1.41)|recorte 09]] (1.41.1–1.41.2); fatia 18 (aprovada — não reaberta aqui).
 - **Razão para entrar na Onda 1:** mecanismo de delegação com regras de segurança explícitas (limite de uso, encerramento automático, rastreabilidade) — caminho crítico do grupo C5.
-- **Dúvidas/limites:** o fluxo para quando o servidor tem só permissão própria (sem chave) para o tipo de documento não é especificado pelo TR neste item (1.41.2.c, recorte 09) — A confirmar.
+- **Dúvidas/limites:** o fluxo para quando o servidor tem só permissão própria (sem chave) para o tipo de documento não é especificado pelo TR neste item (1.41.2.c, recorte 09) — A confirmar. A notificação ao concedente (TR 1.41.2) não teve evidência de código/teste localizada na fatia 18 — lacuna a verificar antes de considerar esse requisito coberto, sem presumir ausência no produto.
 
 #### ONDA1-19 — Edição de identidade visual do órgão exigindo nível Administrador
-- **Objetivo de sanidade:** confirmar que a edição de cores temáticas e imagens institucionais do órgão exige nível de acesso Administrador.
+- **Objetivo de sanidade:** confirmar que a edição de cores temáticas e imagens institucionais do órgão exige nível de acesso Administrador (exigência documentada no produto/contexto, não afirmada pelo texto literal dos itens do TR citados abaixo).
 - **Referência exata do TR:** 1.42.1.b (edição de cores temáticas), 1.42.1.c (upload/gerenciamento de imagens institucionais).
 - **Ator/fluxo:** Servidor com nível Administrador edita cores/imagens da Personalização do Órgão.
 - **Dados/estados/dependências (02/03):** Personalização/identidade visual ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §8]]).
@@ -230,7 +230,7 @@ status: rascunho
 - **Referência exata do TR:** 1.43.5 (dados detalhados de servidores: total ativos/inativos; servidores por status; servidores por nível de permissão).
 - **Ator/fluxo:** Administrador/usuário autorizado consulta o painel de Estatísticas de Servidores e visualiza os indicadores já agrupados por status e por nível de permissão — exibição/consulta; o TR 1.43.5 não confirma a existência de um filtro interativo de tela neste subitem, por isso nenhum filtro é incluído no cenário.
 - **Dados/estados/dependências (02/03):** Estatísticas/Relatórios ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §8]]).
-- **Evidência/fonte:** [[11 - Estatísticas e indicadores (1.43)|recorte 11]] (1.43.5); classificação Ativos/Inativos confirmada por Rafael (02 §8, recorte 03).
+- **Evidência/fonte:** [[11 - Estatísticas e indicadores (1.43)|recorte 11]] (1.43.5); classificação Ativos/Inativos confirmada por Rafael (02 §8, recorte 11).
 - **Razão para entrar na Onda 1:** fecha a cobertura representativa com o grupo C6, caminho crítico de relatórios gerenciais citado explicitamente pelo TR.
 - **Dúvidas/limites:** cálculo/implementação do indicador não verificado; correspondência entre "administradores e usuários autorizados" (termo do TR) e os 5 níveis canônicos segue A confirmar (recorte 11); se existir filtro interativo de tela para status/nível, isso não está confirmado por nenhuma fonte revisada neste subitem — não presumir sem evidência adicional.
 
