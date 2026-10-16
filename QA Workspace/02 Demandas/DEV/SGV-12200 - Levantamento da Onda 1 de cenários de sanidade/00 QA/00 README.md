@@ -17,7 +17,7 @@ pontos: ""
 # SGV-12200 — Levantamento da Onda 1 de cenários de sanidade
 
 > [!important] Demanda independente desde 16/10/2026
-> A SGV-12200 era pacote filho da SGV-11262; por decisão do Rafael, passou a ser **demanda irmã independente** — a SGV-11262 deixou de ser pai ativo. A SGV-11262 e a SGV-12082 (sua frente de origem, já encerrada) seguem citadas abaixo como **origem/contexto histórico e dependência de referência** (o levantamento usa os artefatos 04/05 aprovados por ela), não como hierarquia ativa.
+> A SGV-12200 era pacote filho da SGV-11262; por decisão do Rafael, passou a ser **demanda irmã independente** — a SGV-11262 deixou de ser pai ativo. A SGV-11262 e a SGV-12082 (sua frente de origem, já encerrada) seguem citadas abaixo como **origem/contexto histórico e dependência de referência** — os artefatos 04/05 aprovados por ela deram origem ao Modelo-alvo e à Matriz canônicos, que são a consulta corrente do levantamento — não como hierarquia ativa.
 
 > [!info]- Navegação QA
 > **Índice da SGV-11262 (origem desta frente, contexto histórico):** [Índice da SGV-11262](<../../SGV-11262 - [QA-Automação] Termo de Referência SOGOV/Conhecimento/0 - SGV-11262 - Índice.md>)
@@ -26,8 +26,8 @@ pontos: ""
 > **Guia de organização e publicação no Notion:** [[02 - Guia de organização e publicação no Notion|02 - Guia de organização e publicação no Notion]]
 > **Referência canônica do TR (em 04 Conhecimento, não específica da Onda 1 nem da SGV-11262):** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/00 - Índice da sanidade automatizada do TR|00 - Índice da sanidade automatizada do TR]]
 > **Frente de origem (encerrada, usada como referência de dependência):** [SGV-12082 — Mapeamento de atores e modelo do preset do TR](<../../SGV-11262 - [QA-Automação] Termo de Referência SOGOV/SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README.md>)
-> **Modelo-alvo dos dados do preset (04):** [[04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]]
-> **Matriz de fornecimento dos dados (05):** [[05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]]
+> **Modelo-alvo de atores, dados e estados (referência canônica, 04 Conhecimento):** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 - Modelo-alvo de atores, dados e estados]]
+> **Matriz de fornecimento dos dados (referência canônica, 04 Conhecimento):** [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/03 - Matriz de fornecimento dos dados|03 - Matriz de fornecimento dos dados]]
 > **Fonte original da SGV-12200 (export Notion):** `Downloads/SGV-12200 - [Automação][Sanidade] -  3 | Notion.md` (fora do vault; cópia de referência, não duplicada aqui)
 
 > [!settings]- Controle do card
@@ -36,7 +36,7 @@ pontos: ""
 > **Etapa atual:** `INPUT[inlineSelect(option(QA · Proposta da Onda 1 (pendente de aprovação do Rafael)),option(QA · Onda 1 aprovada),option(QA · Preparação de CTs (futura)),option(Concluído)):etapa_atual]`
 
 > [!important] Rascunho pendente de aprovação do Rafael — não é seleção oficial, CT, automação ou execução
-> O export disponível da SGV-12200 (ver fonte acima) não lista os 20 testes nem seus critérios de seleção — só registra o objetivo ("levantar tudo que será necessário para criar os 20 testes iniciais específicos de sanidade") e a ação de falar com Alice sobre uma página no Notion. Diante dessa lacuna, Rafael decidiu (15/10/2026) que a frente **propõe** — em vez de esperar — uma primeira **Onda de 20 cenários candidatos de sanidade**, construída a partir do Termo de Referência e dos artefatos já aprovados da SGV-12082 (04/05), com ondas adicionais de 20 previstas para rodadas futuras. Esta é uma **proposta rastreável para validação**, não uma lista aprovada: cada linha cita sua referência exata do TR e sua razão de entrada na onda 1; nenhuma foi escolhida só por já existir um CT/automação correspondente.
+> O export disponível da SGV-12200 (ver fonte acima) não lista os 20 testes nem seus critérios de seleção — só registra o objetivo ("levantar tudo que será necessário para criar os 20 testes iniciais específicos de sanidade") e a ação de falar com Alice sobre uma página no Notion. Diante dessa lacuna, Rafael decidiu (15/10/2026) que a frente **propõe** — em vez de esperar — uma primeira **Onda de 20 cenários candidatos de sanidade**, construída a partir do Termo de Referência e da referência canônica derivada dele (Modelo-alvo e Matriz, com origem nos artefatos já aprovados da SGV-12082 — 04/05), com ondas adicionais de 20 previstas para rodadas futuras. Esta é uma **proposta rastreável para validação**, não uma lista aprovada: cada linha cita sua referência exata do TR e sua razão de entrada na onda 1; nenhuma foi escolhida só por já existir um CT/automação correspondente.
 
 ## Escopo desta pasta
 
