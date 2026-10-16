@@ -7,7 +7,7 @@ tipo: indice
 > [!info]- Navegação
 > **Índice geral da SGV-11262:** [[../0 - SGV-11262 - Índice|Índice da SGV-11262]]
 > **Roadmap da iniciativa:** [[../../Roadmap - Modelo de atores e preset do TR|Roadmap — Modelo de atores e preset do TR]]
-> **Hub no Notion (em organização):** [Sanidade automatizada do SOGOV — Termo de Referência](https://app.notion.com/p/alfa-group/Automatizados-3fa2aec67d3080599604ec92397376e2) — título ainda não atualizado no Notion no momento desta nota
+> **Hub no Notion:** [Sanidade automatizada do SOGOV — Termo de Referência](https://app.notion.com/p/3fa72f8c899080a1a1d6f421cc6d4426) — organizado em 15/10/2026: 3 subpáginas de conteúdo (Transcrição, Modelo-alvo, Matriz), 1 subpágina placeholder (Cenários de sanidade, sem cenários publicados) e uma database "Demandas relacionadas" com a SGV-12200
 > **Demanda ativa que consome esta referência (Onda 1):** [[../../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]]
 > **Frente de origem (encerrada, produziu os três documentos abaixo):** [[../../SGV-12082 - Mapeamento de atores e modelo do preset do TR/00 QA/00 README|SGV-12082 — Mapeamento de atores e modelo do preset do TR]]
 
@@ -47,4 +47,4 @@ Os três documentos foram produzidos a partir dos artefatos aprovados da **SGV-1
 
 ## Notion
 
-Existe um hub no Notion (link acima) criado por Rafael, hoje com título genérico. A organização desse hub (renomeação, subpáginas de conteúdo espelhando os três documentos acima, e uma tabela de demandas relacionadas) é trabalho em andamento — ver o guia de publicação linkado acima para o estado exato e as pendências.
+O hub no Notion (link acima) já está organizado: subpáginas para os três documentos canônicos, uma subpágina placeholder para "Cenários de sanidade" (sem cenários publicados — a Onda 1 segue proposta pendente de aprovação) e uma database "Demandas relacionadas" com uma linha para a SGV-12200 (URL da task em branco, nenhuma task Notion dedicada foi localizada). Auditoria de fidelidade de conteúdo (headings, tabelas, diagramas Mermaid) feita em 15/10/2026 — ver o guia de publicação linkado acima para o método.
