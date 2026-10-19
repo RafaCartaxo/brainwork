@@ -96,7 +96,7 @@ Atualize esta matriz a cada lote de CTs redigido.
 > **Quando** ele informa a senha incorreta 5 vezes seguidas para essa conta
 > **Então** a conta é bloqueada
 >
-> **Resultado esperado:** na 5ª tentativa malsucedida, a conta passa a bloqueada; uma nova tentativa com a senha correta não consegue autenticar enquanto o bloqueio estiver ativo.
+> **Resultado esperado:** na 5ª tentativa malsucedida, a conta passa a bloqueada.
 >
 > **Pós-condição:** conta em estado bloqueado.
 >
@@ -136,7 +136,7 @@ Atualize esta matriz a cada lote de CTs redigido.
 > **Quando** o status funcional do Servidor é alterado para "Licença", depois para "Férias", e depois para o estado que o TR chama de "Inativo"
 > **Então** o sistema restringe as permissões do Servidor conforme o nível descrito pelo TR em cada estado
 >
-> **Resultado esperado:** em "Licença" e "Férias", o Servidor mantém um subconjunto mínimo de funcionalidades não transacionais (não é bloqueio total); no estado que o TR chama de "Inativo", o acesso é negado por completo.
+> **Resultado esperado:** em "Licença" (1.25.3.2), o acesso é restringido a um subconjunto mínimo de funcionalidades não transacionais, com direitos de modificação e aprovação suspensos; em "Férias" (1.25.3.3), a mesma política de quarentena se aplica, com permissões de escrita e execução de fluxos de trabalho suspensas; no estado que o TR chama de "Inativo" (1.25.3.4), a plataforma aplica negação explícita a qualquer tentativa de autenticação.
 >
 > **Pós-condição:** permissões do Servidor refletem o status funcional vigente.
 >
@@ -227,7 +227,7 @@ Atualize esta matriz a cada lote de CTs redigido.
 > **Quando** o Servidor com permissão cria um novo Assunto/Serviço vinculado a esse Módulo
 > **Então** o Assunto/Serviço criado é registrado com a mesma categoria-base do Módulo
 >
-> **Resultado esperado:** o Assunto/Serviço exibe a categoria-base herdada do Módulo, sem exigir que o Servidor a escolha manualmente.
+> **Resultado esperado:** o Assunto/Serviço criado é registrado com a mesma categoria-base do Módulo ao qual está vinculado.
 >
 > **Pós-condição:** Assunto/Serviço persistido com a categoria-base correta.
 >
