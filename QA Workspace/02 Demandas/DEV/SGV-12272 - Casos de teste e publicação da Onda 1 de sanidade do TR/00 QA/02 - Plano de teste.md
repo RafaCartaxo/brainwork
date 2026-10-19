@@ -61,8 +61,13 @@ Camadas de API/E2E ficam para quando a automação for planejada (fora de escopo
 | [[03 - Casos de teste#^ct-013\|CT-013]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-014\|CT-014]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 | [[03 - Casos de teste#^ct-015\|CT-015]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-016\|CT-016]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-017\|CT-017]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-018\|CT-018]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-019\|CT-019]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-020\|CT-020]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 
-> Lotes 1, 2 e 3 (CT-001 a CT-015) listados acima. Replique uma linha por CT a cada novo lote — CT-016 a CT-020 seguem pendentes.
+> Matriz completa: os 20 CTs (CT-001 a CT-020) estão listados acima, cada um rastreável ao seu cenário de origem em `03 - Casos de teste.md`.
 
 ---
 
