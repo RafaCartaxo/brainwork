@@ -2,7 +2,7 @@
 tags: [qa]
 task: "SGV-12200"
 tipo: "proposta-cenarios"
-status: rascunho
+status: aprovado
 ---
 # 01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)
 
@@ -16,8 +16,8 @@ status: rascunho
 > **Recortes do TR:** [[01 - Matriz de atores e relações|Seções do TR (índice: Matriz de atores e relações)]]
 > **Fonte normativa:** [[Termo de Referência SOGOV.pdf|Termo de Referência SOGOV.pdf]]
 
-> [!important] Proposta rastreável, pendente de aprovação do Rafael — não é seleção oficial, CT, automação ou execução
-> Esta nota propõe a **Onda 1** de 20 cenários candidatos de sanidade, decidida por Rafael em 15/10/2026 como resposta à ausência de uma lista oficial na fonte disponível da SGV-12200. Cada cenário cita sua referência exata do TR, sua ligação com o modelo-alvo canônico (02) e a matriz de fornecimento canônica (03), e é justificado por valor de sanidade e rastreabilidade — nunca por já existir um CT ou automação correspondente. Nenhum passo de execução, asserção de CT ou código é redigido aqui. Ondas adicionais de 20 cenários são esperadas em rodadas futuras, cobrindo o que esta onda não cobre (ver §4).
+> [!important] Onda 1 aprovada pelo Rafael (19/10/2026) — seleção dos 20 cenários, ainda não CTs formais nem publicados
+> Esta nota propôs a **Onda 1** de 20 cenários candidatos de sanidade, decidida por Rafael em 15/10/2026 como resposta à ausência de uma lista oficial na fonte disponível da SGV-12200. Cada cenário cita sua referência exata do TR, sua ligação com o modelo-alvo canônico (02) e a matriz de fornecimento canônica (03), e é justificado por valor de sanidade e rastreabilidade — nunca por já existir um CT ou automação correspondente. Em 19/10/2026, Rafael revisou os 20 cenários e aprovou a proposta ("não identifiquei nenhum ponto que impeça, já que ainda não são os casos de testes em si"). A aprovação é da **seleção e do escopo** dos 20 cenários — nenhum passo de execução, asserção de CT ou código foi redigido aqui, e nada foi publicado no Notion. Ondas adicionais de 20 cenários são esperadas em rodadas futuras, cobrindo o que esta onda não cobre (ver §4).
 
 ## 1. Método e critérios da Onda 1
 
@@ -291,7 +291,7 @@ A página só pode declarar que o produto **"atende"** a um item do TR quando ho
 
 ## 6. Pendências e próximos passos
 
-- **Aprovação da Onda 1:** esta lista de 20 cenários é uma proposta — segue pendente de aprovação específica do Rafael antes de qualquer CT, automação ou execução.
+- **Aprovação da Onda 1:** concluída em 19/10/2026 — Rafael aprovou a seleção e o escopo dos 20 cenários. A redação de CTs formais, automação e execução ficam para uma etapa ou demanda separada, ainda não aberta.
 - **Independência da SGV-11262 (16/10/2026):** a SGV-12200 deixou de ser pacote filho e passou a ser demanda irmã independente, por decisão do Rafael. A SGV-11262 e a SGV-12082 seguem citadas neste documento como origem/contexto histórico e dependência de referência — os originais que deram origem ao Modelo-alvo e à Matriz canônicos são [[04 - Modelo-alvo dos dados do preset|04 - Modelo-alvo dos dados do preset]] e [[05 - Matriz de fornecimento dos dados|05 - Matriz de fornecimento dos dados]] (SGV-12082, histórico) — não hierarquia ativa, nem fonte de consulta corrente; a consulta corrente é a referência canônica (02/03) em `04 Conhecimento`.
 - **Organização do hub no Notion:** publicado em 15/10/2026 — página-pai renomeada/organizada, título "Sanidade automatizada do SOGOV - Termo de Referência" aplicado, com 4 subpáginas (Transcrição integral, Modelo-alvo de atores/dados/estados, Matriz de fornecimento dos dados, e uma subpágina placeholder "Cenários de sanidade" sem nenhum dos 20 cenários desta proposta publicado) e, naquele momento, a database "Demandas relacionadas" como filha direta do hub. **Reorganizado em 16/10/2026:** o hub foi movido para dentro de uma nova página "Sogov" (preservando ID e as 4 subpáginas, inalteradas); a database "Demandas relacionadas" foi movida para dentro de "Sogov > Backlog" (preservando schema e a linha da SGV-12200, URL da task em branco — nenhuma task Notion dedicada foi localizada, nenhuma URL foi inventada). Hierarquia atual: Sogov > Sanidade automatizada do SOGOV - Termo de Referência (hub, com as 4 subpáginas) e Sogov > Backlog > Demandas relacionadas (database). Responsável, prazo e processo de manutenção contínua seguem indefinidos (lacuna já registrada no diagnóstico).
 - **Ondas futuras:** após avaliação da Onda 1, propor a Onda 2 cobrindo os itens listados em §4, mantendo o mesmo método e os mesmos campos por cenário.

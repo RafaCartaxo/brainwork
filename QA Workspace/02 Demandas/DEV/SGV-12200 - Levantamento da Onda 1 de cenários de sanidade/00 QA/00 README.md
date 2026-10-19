@@ -2,16 +2,16 @@
 tags: [qa]
 task: "SGV-12200"
 tipo: "levantamento-cenarios"
-status: rascunho
+status: concluido
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Proposta da Onda 1 (pendente de aprovação do Rafael)"
+etapa_atual: "QA · Onda 1 aprovada"
 modulo: ""
 responsavel: ""
-aguardando: "Rafael"
+aguardando: ""
 cadastrado_por: ""
 data_inicio: "15/10/2026"
-data_fim: ""
+data_fim: "19/10/2026"
 pontos: ""
 ---
 # SGV-12200 — Levantamento da Onda 1 de cenários de sanidade
@@ -33,10 +33,10 @@ pontos: ""
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(rascunho),option(analise),option(execucao),option(validacao),option(concluido)):status]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
-> **Etapa atual:** `INPUT[inlineSelect(option(QA · Proposta da Onda 1 (pendente de aprovação do Rafael)),option(QA · Onda 1 aprovada),option(QA · Preparação de CTs (futura)),option(Concluído)):etapa_atual]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Onda 1 aprovada),option(QA · Preparação de CTs (futura)),option(Concluído)):etapa_atual]`
 
-> [!important] Rascunho pendente de aprovação do Rafael — não é seleção oficial, CT, automação ou execução
-> O export disponível da SGV-12200 (ver fonte acima) não lista os 20 testes nem seus critérios de seleção — só registra o objetivo ("levantar tudo que será necessário para criar os 20 testes iniciais específicos de sanidade") e a ação de falar com Alice sobre uma página no Notion. Diante dessa lacuna, Rafael decidiu (15/10/2026) que a frente **propõe** — em vez de esperar — uma primeira **Onda de 20 cenários candidatos de sanidade**, construída a partir do Termo de Referência e da referência canônica derivada dele (Modelo-alvo e Matriz, com origem nos artefatos já aprovados da SGV-12082 — 04/05), com ondas adicionais de 20 previstas para rodadas futuras. Esta é uma **proposta rastreável para validação**, não uma lista aprovada: cada linha cita sua referência exata do TR e sua razão de entrada na onda 1; nenhuma foi escolhida só por já existir um CT/automação correspondente.
+> [!important] Onda 1 aprovada pelo Rafael (19/10/2026) — os 20 são cenários aprovados, ainda não CTs formais
+> O export disponível da SGV-12200 (ver fonte acima) não listava os 20 testes nem seus critérios de seleção — só registrava o objetivo ("levantar tudo que será necessário para criar os 20 testes iniciais específicos de sanidade") e a ação de falar com Alice sobre uma página no Notion. Diante dessa lacuna, Rafael decidiu (15/10/2026) propor uma primeira **Onda de 20 cenários candidatos de sanidade**, construída a partir do Termo de Referência e da referência canônica derivada dele (Modelo-alvo e Matriz, com origem nos artefatos já aprovados da SGV-12082 — 04/05), com ondas adicionais de 20 previstas para rodadas futuras. Em 19/10/2026, Rafael revisou os 20 cenários e aprovou a proposta ("não identifiquei nenhum ponto que impeça, já que ainda não são os casos de testes em si"), fechando o levantamento do ponto 3 da SGV-12200. A aprovação é da **seleção e do escopo** dos 20 cenários — nenhuma asserção, passo de execução ou automação foi redigida aqui. **Próximo passo:** abrir/definir uma etapa ou demanda separada para a redação formal dos CTs e a publicação dos cenários aprovados no Notion.
 
 ## Escopo desta pasta
 
@@ -46,10 +46,9 @@ pontos: ""
 
 ## Fora de escopo nesta pasta
 
-- Selecionar os 20 cenários como decisão final — a Onda 1 é proposta, pendente de aprovação do Rafael.
-- Redigir CTs formais, implementar automação, executar ou validar qualquer cenário.
+- Redigir CTs formais, implementar automação, executar ou validar qualquer cenário — trabalho de uma etapa/demanda separada, ainda não aberta.
 - Decidir a preparação técnica/arquitetura do preset (passo 11 da SGV-12082) — trilha futura e separada, não tratada aqui.
-- Publicar os 20 cenários candidatos no Notion — a subpágina "Cenários de sanidade" do hub é um placeholder até a Onda 1 ser aprovada.
+- Publicar os 20 cenários aprovados no Notion — a subpágina "Cenários de sanidade" do hub segue placeholder; publicação é passo futuro, não feito aqui.
 - Reabrir ou alterar conteúdo já aprovado da SGV-12082 (TR, recortes, mapa, matriz de atores, 04, 05) — tudo usado só por referência/link.
 
 ## Pacote para `SGV-12200`
