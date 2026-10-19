@@ -14,7 +14,7 @@ pontos_alocados: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Origem (SGV-12200):** [[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|Proposta da Onda 1 (20 cenários aprovados)]]
+> **Origem (SGV-12200):** [[../../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|Proposta da Onda 1 (20 cenários aprovados)]]
 
 > [!settings]- Controle da demanda
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`

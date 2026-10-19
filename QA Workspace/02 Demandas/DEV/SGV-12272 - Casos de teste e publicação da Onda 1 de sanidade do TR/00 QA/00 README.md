@@ -18,7 +18,7 @@ pontos: ""
 # SGV-12272 — Casos de teste e publicação da Onda 1 de sanidade do TR
 
 > [!important] Origem: Onda 1 aprovada na SGV-12200 (19/10/2026)
-> Esta demanda nasce da aprovação da Onda 1 de 20 cenários candidatos de sanidade, selecionados e aprovados por Rafael na [[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]] (ver a [[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|Proposta da Onda 1]] e a página Notion da task). **A seleção dos 20 cenários não é reaberta aqui** — esta demanda transforma essa seleção já aprovada em artefatos formais.
+> Esta demanda nasce da aprovação da Onda 1 de 20 cenários candidatos de sanidade, selecionados e aprovados por Rafael na [[../../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]] (ver a [[../../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|Proposta da Onda 1]] e a página Notion da task). **A seleção dos 20 cenários não é reaberta aqui** — esta demanda transforma essa seleção já aprovada em artefatos formais.
 
 > [!info]- Navegação QA/DEV
 > **Demanda:** [[01 - Demanda]]
@@ -26,7 +26,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
-> **Origem (SGV-12200):** [[../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]]
+> **Origem (SGV-12200):** [[../../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]]
 
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
