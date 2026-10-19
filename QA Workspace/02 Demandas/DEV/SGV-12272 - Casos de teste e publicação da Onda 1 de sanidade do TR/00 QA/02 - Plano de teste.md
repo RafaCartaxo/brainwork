@@ -46,9 +46,13 @@ Camadas de API/E2E ficam para quando a automação for planejada (fora de escopo
 
 | CT | Tipo | Camada | Automação | Validação |
 |---|---|---|---|---|
-| *(a preencher ao redigir os 20 CTs em [[03 - Casos de teste]])* | | | | |
+| [[03 - Casos de teste#^ct-001\|CT-001]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-002\|CT-002]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-003\|CT-003]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-004\|CT-004]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
+| [[03 - Casos de teste#^ct-005\|CT-005]] | Funcional | UI/API | Manual | [[04 - Validação dev\|Registrar resultado]] |
 
-> Replique uma linha por CT quando os 20 forem redigidos — nenhum CT foi criado ainda nesta preparação.
+> Lote 1 (CT-001 a CT-005) listado acima. Replique uma linha por CT a cada novo lote — CT-006 a CT-020 seguem pendentes.
 
 ---
 
