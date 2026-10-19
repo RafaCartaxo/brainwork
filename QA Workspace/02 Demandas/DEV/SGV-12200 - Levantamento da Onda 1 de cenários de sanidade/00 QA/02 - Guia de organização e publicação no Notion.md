@@ -2,7 +2,7 @@
 tags: [qa]
 task: "SGV-12200"
 tipo: "guia-publicacao"
-status: pronto-para-publicacao
+status: concluido
 ---
 # Guia de organização e publicação no Notion
 
@@ -49,7 +49,7 @@ Sogov
     ├── Termo de Referência SOGOV — Transcrição integral — conteúdo integral da transcrição canônica, 45 headings (1.1–1.43, com 1.27.10/1.27.11 próprios)
     ├── Modelo-alvo de atores, dados e estados — conteúdo integral do documento canônico 02: 10 tabelas, 6 diagramas Mermaid, seções 1–11
     ├── Matriz de fornecimento dos dados — conteúdo integral do documento canônico 03: 5 tabelas (fatias C1–C2 a C6), seções 1–7
-    └── Cenários de sanidade — placeholder: nenhum cenário publicado; a Onda 1 continua proposta pendente de aprovação no vault (ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]])
+    └── Cenários de sanidade — placeholder: nenhum cenário publicado ainda; a Onda 1 já está aprovada no vault (ver [[01 - Proposta da Onda 1 (cenários candidatos e organização no Notion)|01 - Proposta da Onda 1]])
 ```
 
 O hub e as 4 subpáginas preservaram seus IDs originais na reorganização (`notion-move-pages`, não recriação). A database também preservou ID, schema e a linha da SGV-12200 ao ser movida para dentro de Backlog. No corpo do hub, a referência à database foi trocada de embed estrutural (`<database>`, que ficou órfão quando ela mudou de pai) para `<mention-page>`, que sobrevive a reorganizações futuras de pai sem quebrar.
