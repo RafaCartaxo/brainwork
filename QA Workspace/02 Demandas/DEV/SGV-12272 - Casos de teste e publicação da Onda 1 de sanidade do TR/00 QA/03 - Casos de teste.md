@@ -2,7 +2,7 @@
 demanda: "[[01 - Demanda]]"
 plano: "[[02 - Plano de teste]]"
 validacao: "[[04 - Validação dev]]"
-status: planejado
+status: execucao
 pontos: ""
 ---
 
@@ -19,7 +19,7 @@ pontos: ""
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Os critérios ficam em `01 - Demanda`; esta nota concentra os 20 cenários executáveis, um por cenário aprovado na Proposta da Onda 1 (SGV-12200). **Lotes 1, 2 e 3 (CT-001 a CT-015) redigidos; CT-016 a CT-020 seguem pendentes.**
+> Os critérios ficam em `01 - Demanda`; esta nota concentra os 20 cenários executáveis, um por cenário aprovado na Proposta da Onda 1 (SGV-12200). **Os 20 CTs (CT-001 a CT-020) estão redigidos, aguardando validação em `04 - Validação dev.md`.**
 
 ---
 
@@ -27,9 +27,9 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]], [[03 - Casos de teste#^ct-002\|CT-002]], [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]], [[03 - Casos de teste#^ct-006\|CT-006]], [[03 - Casos de teste#^ct-007\|CT-007]], [[03 - Casos de teste#^ct-008\|CT-008]], [[03 - Casos de teste#^ct-009\|CT-009]], [[03 - Casos de teste#^ct-010\|CT-010]], [[03 - Casos de teste#^ct-011\|CT-011]], [[03 - Casos de teste#^ct-012\|CT-012]], [[03 - Casos de teste#^ct-013\|CT-013]], [[03 - Casos de teste#^ct-014\|CT-014]], [[03 - Casos de teste#^ct-015\|CT-015]] *(CT-016 a CT-020 pendentes — próximos lotes)* |
+| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]], [[03 - Casos de teste#^ct-002\|CT-002]], [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]], [[03 - Casos de teste#^ct-006\|CT-006]], [[03 - Casos de teste#^ct-007\|CT-007]], [[03 - Casos de teste#^ct-008\|CT-008]], [[03 - Casos de teste#^ct-009\|CT-009]], [[03 - Casos de teste#^ct-010\|CT-010]], [[03 - Casos de teste#^ct-011\|CT-011]], [[03 - Casos de teste#^ct-012\|CT-012]], [[03 - Casos de teste#^ct-013\|CT-013]], [[03 - Casos de teste#^ct-014\|CT-014]], [[03 - Casos de teste#^ct-015\|CT-015]], [[03 - Casos de teste#^ct-016\|CT-016]], [[03 - Casos de teste#^ct-017\|CT-017]], [[03 - Casos de teste#^ct-018\|CT-018]], [[03 - Casos de teste#^ct-019\|CT-019]], [[03 - Casos de teste#^ct-020\|CT-020]] |
 
-Atualize esta matriz a cada lote de CTs redigido.
+Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validação (`04 - Validação dev.md`).
 
 ---
 
@@ -679,3 +679,232 @@ Atualize esta matriz a cada lote de CTs redigido.
 > **Execução:** planejado
 
 ^ct-015
+
+> [!example]- CT-016 · Divulgação de Documento: mural interno vs. canal externo/Jornal Oficial (ONDA1-16)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-16 da Proposta da Onda 1 (SGV-12200). **TR:** 1.38.1.a (divulgação interna: "documentos e/ou comunicações oficiais sejam divulgados no mural interno, visível a todos os servidores cadastrados"); 1.38.1.b.i (divulgação externa em canal oficial, "acessível por qualquer pessoa com acesso à internet, sem a necessidade de login"); 1.38.3.1 ("cidadãos possam acessar os documentos divulgados no jornal oficial por meio de uma interface pública, com funcionalidades de busca e filtros").
+>
+> **Descrição:** confirma que um Documento divulgado aparece no mural interno do Servidor e, quando configurado para canal externo, fica acessível publicamente no Jornal Oficial, localizável por busca/filtros.
+>
+> **Pré-condições:**
+> - Existe um Documento configurado para divulgação (mural interno e/ou canal externo).
+>
+> **Dado** que um Documento é divulgado no mural interno
+> **Quando** um Servidor acessa seu mural
+> **Então** ele visualiza o Documento divulgado
+>
+> **Dado** que um Documento é divulgado no canal externo/Jornal Oficial
+> **Quando** um Cidadão acessa a interface pública do Jornal Oficial
+> **Então** ele consegue localizar o Documento, inclusive usando busca/filtros
+>
+> **Resultado esperado:** Documento visível no mural interno do Servidor destinatário; Documento acessível publicamente no Jornal Oficial, sem necessidade de login, e localizável via busca/filtros.
+>
+> **Pós-condição:** nenhuma alteração de estado — é um acesso/consulta.
+>
+> > [!info] Limite conhecido
+> > O acesso público sem login (1.38.1.b.i) é exigência literal do TR, mas não há evidência de teste automatizado localizada para esse acesso específico (02 §7) — registrar na execução o que foi observado, sem presumir ausência no produto.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-016
+
+> [!example]- CT-017 · Solicitação de assinatura sequencial com signatários internos/externos (ONDA1-17)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-17 da Proposta da Onda 1 (SGV-12200). **TR:** 1.40.3.b (assinaturas sequenciais: "a ordem de assinaturas do documento, pelos signatários, deve ser seguida conforme foi definido na configuração. De modo que, enquanto o signatário da vez não assinar, os demais devem ficar impossibilitados de assinar"); 1.40.3.c (seleção de signatários internos — servidores — e externos — pessoas físicas ou jurídicas).
+>
+> **Descrição:** confirma que uma solicitação de assinatura sequencial, com signatários internos e externos, respeita a ordem definida: um signatário fora da sua vez não consegue assinar antes do signatário da vez.
+>
+> **Pré-condições:**
+> - Existe uma solicitação de assinatura sequencial criada, com pelo menos um signatário interno (Servidor) e um externo, em ordem definida.
+>
+> **Dado** que uma solicitação de assinatura sequencial foi criada com signatários internos e externos em ordem definida
+> **Quando** um signatário fora da sua vez tenta assinar
+> **Então** o sistema impede essa assinatura
+>
+> **Quando** o signatário da vez assina
+> **Então** a assinatura é registrada e a vez passa ao próximo signatário da ordem definida
+>
+> **Resultado esperado:** tentativa de assinatura fora da vez bloqueada; assinatura do signatário da vez aceita, liberando a vez do próximo signatário.
+>
+> **Pós-condição:** Documento permanece com assinaturas pendentes dos signatários restantes, respeitando a ordem definida.
+>
+> > [!info] Limite conhecido
+> > A cobertura técnica localizada (fatia 17, CTs A30-C01–C08) testa a criação/execução da solicitação sequencial, mas não uma tentativa de assinatura fora da vez — esse bloqueio é o alvo declarado deste CT, a verificar na execução. "Contribuinte" como ator distinto do signatário externo não tem evidência de código localizada (02 §7) — não presumir distinção sem confirmação. **Fora deste CT:** recusa de assinatura (TR 1.40.5) é item distinto de 1.40.3, não tratado aqui.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-017
+
+> [!example]- CT-018 · Criação delegada de documento via Chave de acesso (ONDA1-18)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-18 da Proposta da Onda 1 (SGV-12200). **TR:** 1.41.1.b.ii (ao criar a chave, definir "um limite de uso para a chave... um período de uso e/ou uma quantidade de documentos possíveis de ser gerado com a chave"); 1.41.2.a (servidor pode usar permissões próprias ou "uma chave de acesso concedida por outro servidor" ao criar documento); 1.41.2.d ("sempre que um documento for gerado utilizando uma chave de acesso, o servidor que criou a chave receberá uma notificação, podendo visualizar e acompanhar o documento gerado").
+>
+> **Descrição:** confirma que um Servidor convenente usa uma Chave de acesso concedida por um Servidor concedente para criar um Documento dentro do limite de uso definido, e que o concedente é notificado.
+>
+> **Pré-condições:**
+> - Existe uma Chave de acesso concedida por um Servidor concedente a um Servidor convenente, com limite de uso definido.
+>
+> **Dado** que o Servidor convenente possui uma Chave de acesso concedida dentro do limite de uso
+> **Quando** ele cria um Documento usando essa chave
+> **Então** o Documento é criado vinculado à chave, dentro do limite definido
+> **E** o Servidor concedente recebe uma notificação do uso
+>
+> **Resultado esperado:** Documento criado via Chave de acesso, respeitando o limite de uso definido; notificação enviada ao Servidor concedente.
+>
+> **Pós-condição:** uso da chave registrado para rastreabilidade (1.41.2.e); ao atingir o limite estabelecido, a chave é encerrada automaticamente (1.41.1.c.i).
+>
+> > [!warning] Limite conhecido
+> > A notificação ao concedente (1.41.2.d) não teve evidência de teste automatizado localizada na fatia 18 — registrar na execução o que foi observado, sem presumir ausência no produto. O fluxo para quando o servidor tem só permissão própria (sem chave) para o tipo de documento (1.41.2.c, recorte 09) segue A confirmar e não é tratado por este CT.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-018
+
+> [!example]- CT-019 · Edição de identidade visual do órgão exigindo nível Administrador (ONDA1-19)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-19 da Proposta da Onda 1 (SGV-12200). **TR:** 1.42.1.b ("possibilidade de editar as cores temáticas da interface do menu principal do sistema"); 1.42.1.c ("upload e gerenciamento das imagens institucionais do órgão que serão exibidas em todo o sistema").
+>
+> **Descrição:** confirma que um Servidor com nível Administrador consegue editar as cores temáticas do menu principal e fazer upload/gerenciamento de imagens institucionais do órgão.
+>
+> **Pré-condições:**
+> - Existe um Servidor com nível de acesso Administrador.
+>
+> **Dado** que um Servidor com nível Administrador acessa a Personalização do Órgão
+> **Quando** ele edita as cores temáticas do menu principal
+> **Então** as cores são atualizadas na interface
+>
+> **Quando** ele faz upload de uma imagem institucional
+> **Então** a imagem passa a ser gerenciada e exibida no sistema
+>
+> **Resultado esperado:** cores temáticas do menu principal editadas; imagem institucional enviada, gerenciada e exibida no sistema.
+>
+> **Pós-condição:** alterações de personalização persistem até nova edição.
+>
+> > [!warning] Origem de produto, não do TR
+> > A exigência de nível Administrador para esta funcionalidade é documentada no produto/contexto, não afirmada pelo texto literal do TR — 1.42.1.b/c não especifica o ator autorizado. Não apresentar essa exigência como requisito do TR.
+>
+> > [!info] Limite conhecido
+> > O caso negativo (nível não-Administrador não consegue editar) não é incluído neste CT por falta de sustentação direta na Proposta/02/03 — registrar como limite, sem presumir o comportamento. Acesso às informações cadastrais do órgão (1.42.1.a) não faz parte deste cenário.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-019
+
+> [!example]- CT-020 · Consulta de indicadores de Servidores agrupados por status e por nível de permissão (ONDA1-20)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-20 da Proposta da Onda 1 (SGV-12200). **TR:** 1.43.5.a ("total de servidores: ativos e inativos"), 1.43.5.b ("servidores por status: quantidade de servidores categorizados por status"), 1.43.5.c ("servidores por nível de permissão: exibição por níveis").
+>
+> **Descrição:** confirma que o painel de Estatísticas exibe, para os servidores cadastrados, o total de ativos/inativos e os agrupamentos por status e por nível de permissão.
+>
+> **Pré-condições:**
+> - Existem servidores cadastrados com diferentes status e níveis de permissão.
+>
+> **Dado** que existem servidores cadastrados com diferentes status e níveis de permissão
+> **Quando** um Administrador/usuário autorizado consulta o painel de Estatísticas de Servidores
+> **Então** ele visualiza o total de servidores ativos/inativos, agrupados por status e por nível de permissão
+>
+> **Resultado esperado:** indicadores exibidos: total de ativos/inativos, servidores por status, servidores por nível de permissão.
+>
+> **Pós-condição:** nenhuma alteração de estado — é consulta/exibição.
+>
+> > [!info] Limite conhecido
+> > Este CT verifica a exibição dos indicadores, sem incluir filtro interativo de tela — o TR (1.43.5) não confirma a existência desse filtro neste subitem, e nenhuma fonte revisada confirma um, por isso nenhum filtro é incluído no cenário. Cálculo/implementação do indicador não verificado. A correspondência entre "administradores e usuários autorizados" (termo do TR) e os 5 níveis canônicos segue A confirmar (recorte 11).
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-020
