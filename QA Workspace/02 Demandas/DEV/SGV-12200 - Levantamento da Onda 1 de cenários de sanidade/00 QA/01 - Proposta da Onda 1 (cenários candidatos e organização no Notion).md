@@ -36,7 +36,7 @@ status: rascunho
 | ONDA1-03 | Mudança de estado da identidade funcional | C1 | 1.25.3–1.25.3.4 |
 | ONDA1-04 | Servidor em dois Setores: um pode criar documentos, o outro não | C1 | 1.26.5, 1.26.11, 1.26.11.1 |
 | ONDA1-05 | Assunto/Serviço com categoria-base herdada do Módulo | C2 | 1.28.1, 1.29.1 |
-| ONDA1-06 | Regras de tramitação por categoria e módulo | C2 | 1.29 |
+| ONDA1-06 | Setor removido de um Assunto/Serviço deixa de receber documentos ali | C2 | 1.29 |
 | ONDA1-07 | Consulta pública de Zona e Categoria de uso | C2 | 1.29.10.2, 1.29.10.4 |
 | ONDA1-08 | Abertura de Processo urbanístico a partir de Zona | C2 | 1.29.10.4.g–j |
 | ONDA1-09 | Documento a partir de Modelo simples com herança | C3 | 1.31.1, 1.31.1.1 |
@@ -99,14 +99,14 @@ status: rascunho
 - **Razão para entrar na Onda 1:** núcleo do grupo C2, caminho crítico para qualquer cenário de documento/processo.
 - **Dúvidas/limites:** demais tipos de campo personalizado além dos já confirmados seguem sem evidência (02 §4).
 
-#### ONDA1-06 — Regras de tramitação pré-estabelecidas por categoria de documento e módulo
-- **Objetivo de sanidade:** confirmar que regras de tramitação pré-estabelecidas variam conforme a categoria de documento e o módulo envolvidos.
-- **Referência exata do TR:** 1.29 (texto introdutório — "regras de tramitação pré-estabelecidas por categoria e módulo").
-- **Ator/fluxo:** sistema aplica regra de tramitação conforme a combinação categoria×módulo de um documento criado.
-- **Dados/estados/dependências (02/03):** Categoria de documento, Módulo, Regras de tramitação ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §4]]; nós `CategoriaDoc`/`Modulo`/`RegrasTramitacao` também em [[00 - Mapa geral|00 - Mapa geral §C2]]).
-- **Evidência/fonte:** [[04 - Serviços, assuntos e categorias de documentos (1.28–1.29)|recorte 04]] (texto literal do item 1.29).
-- **Razão para entrar na Onda 1:** relação explicitamente citada no texto literal do TR, cruzando duas entidades centrais (categoria e módulo).
-- **Dúvidas/limites:** nenhuma evidência de código localizada especificamente para essa regra combinada (herdada do Mapa geral — nó adicionado por citação literal do TR, sem evidência de código própria).
+#### ONDA1-06 — Setor removido de um Assunto/Serviço deixa de receber documentos ali
+- **Objetivo de sanidade:** confirmar que um Setor que recebe e tramita documentos do Módulo, mas é removido dessa lista só num Assunto/Serviço específico, deixa de receber documentos desse Assunto/Serviço — sem deixar de receber dos outros do mesmo Módulo.
+- **Referência exata do TR:** O TR 1.29 diz que as categorias respeitam as regras de tramitação definidas por módulo e seguem os mesmos padrões de regras usados em Assuntos e Serviços. A herança e a remoção de Setor vêm da documentação de produto.
+- **Ator/fluxo:** um Módulo tem três Setores que recebem e tramitam seus documentos. Num Assunto/Serviço desse Módulo, um desses Setores (que não é criador) é removido da lista. Ao criar um documento nesse Assunto/Serviço, o Setor removido não deveria aparecer recebendo — mas continua recebendo normalmente em outro Assunto/Serviço do mesmo Módulo, onde não foi removido.
+- **Dados/estados/dependências (02/03):** Setor/Subsetor, Módulo e Assunto/Serviço ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/02 - Modelo-alvo de atores, dados e estados|02 §4]]); Setor/Subsetor como seed persistente ([[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/03 - Matriz de fornecimento dos dados|03 §2]]).
+- **Evidência/fonte:** descrito de forma consistente em [[QA Workspace/04 Conhecimento/Módulos/Tramitação|Tramitação]] e [[QA Workspace/04 Conhecimento/Fluxos/Regras de Tramitação|Regras de Tramitação]] (remover um Setor não-criador o exclui da tramitação daquele Assunto/Serviço), o [[QA Workspace/03 Sanidades/Roteiro de Sanidade 01 - Implantação|Roteiro de Sanidade 01]] (passo 13) mostra um ajuste real de setores num Assunto/Serviço, mas só **adicionando** um setor (RH) — não remove setor nem confirma que um setor removido deixa de receber, então não exercita este cenário exato. [[04 - Serviços, assuntos e categorias de documentos (1.28–1.29)|recorte 04]] confirma 1.29 como item do TR mapeado. Nenhuma das fontes é evidência de teste automatizado — é comportamento documentado, ainda sem validação por execução.
+- **Razão para entrar na Onda 1:** testa uma regra diferente da regra de criação do ONDA1-04 — aqui é sobre quem recebe e tramita, não sobre quem pode criar.
+- **Dúvidas/limites:** fora deste cenário, a regra de criação (ONDA1-04), o setor destinatário, interação com o cidadão e sigilo.
 
 #### ONDA1-07 — Consulta pública de Zona publicada e Categoria de uso associada
 - **Objetivo de sanidade:** confirmar que um ator externo (Cidadão/Empresa) consegue consultar uma Zona publicada e suas Categorias de uso associadas.
