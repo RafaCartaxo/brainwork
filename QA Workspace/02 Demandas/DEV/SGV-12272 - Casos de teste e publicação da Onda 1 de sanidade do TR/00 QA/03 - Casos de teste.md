@@ -19,7 +19,7 @@ pontos: ""
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Os critérios ficam em `01 - Demanda`; esta nota concentra os 20 cenários executáveis, um por cenário aprovado na Proposta da Onda 1 (SGV-12200). **Lotes 1 e 2 (CT-001 a CT-010) redigidos; CT-011 a CT-020 seguem pendentes.**
+> Os critérios ficam em `01 - Demanda`; esta nota concentra os 20 cenários executáveis, um por cenário aprovado na Proposta da Onda 1 (SGV-12200). **Lotes 1, 2 e 3 (CT-001 a CT-015) redigidos; CT-016 a CT-020 seguem pendentes.**
 
 ---
 
@@ -27,7 +27,7 @@ pontos: ""
 
 | Critério | CTs |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]], [[03 - Casos de teste#^ct-002\|CT-002]], [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]], [[03 - Casos de teste#^ct-006\|CT-006]], [[03 - Casos de teste#^ct-007\|CT-007]], [[03 - Casos de teste#^ct-008\|CT-008]], [[03 - Casos de teste#^ct-009\|CT-009]], [[03 - Casos de teste#^ct-010\|CT-010]] *(CT-011 a CT-020 pendentes — próximos lotes)* |
+| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]], [[03 - Casos de teste#^ct-002\|CT-002]], [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]], [[03 - Casos de teste#^ct-006\|CT-006]], [[03 - Casos de teste#^ct-007\|CT-007]], [[03 - Casos de teste#^ct-008\|CT-008]], [[03 - Casos de teste#^ct-009\|CT-009]], [[03 - Casos de teste#^ct-010\|CT-010]], [[03 - Casos de teste#^ct-011\|CT-011]], [[03 - Casos de teste#^ct-012\|CT-012]], [[03 - Casos de teste#^ct-013\|CT-013]], [[03 - Casos de teste#^ct-014\|CT-014]], [[03 - Casos de teste#^ct-015\|CT-015]] *(CT-016 a CT-020 pendentes — próximos lotes)* |
 
 Atualize esta matriz a cada lote de CTs redigido.
 
@@ -460,3 +460,222 @@ Atualize esta matriz a cada lote de CTs redigido.
 > **Execução:** planejado
 
 ^ct-010
+
+> [!example]- CT-011 · Mesa de trabalho: resumo de demandas e alternância entre setores (ONDA1-11)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-11 da Proposta da Onda 1 (SGV-12200). **TR:** 1.33.1 ("deverá permitir que os usuários alternem entre diferentes setores de forma ágil, visualizando e gerenciando documentos e processos pertencentes a cada setor"), 1.33.2/1.33.2.1 ("resumo de todas as demandas" na primeira tela, com as quantidades em: a) Em aberto, b) Em tramitação, c) Concluído, d) Assinaturas pendentes, e) Demandas prestes a vencer e/ou já vencidas).
+>
+> **Descrição:** confirma que, ao acessar a Mesa de trabalho, o Servidor vê o resumo de demandas descrito pelo TR e consegue alternar entre os setores aos quais está vinculado.
+>
+> **Pré-condições:**
+> - O Servidor está vinculado a mais de um Setor.
+> - Existem documentos do Servidor/Setor nas situações "Em aberto", "Em tramitação", "Concluído" e com assinatura pendente ou prazo vencendo/vencido.
+>
+> **Dado** que o Servidor acessa a Mesa de trabalho pela primeira tela
+> **Quando** a tela é exibida
+> **Então** o resumo mostra as quantidades de documentos em aberto, em tramitação, concluídos, com assinatura pendente e prestes a vencer/vencidos
+> **Quando** o Servidor alterna para outro Setor ao qual está vinculado
+> **Então** a Mesa passa a exibir os documentos e processos desse outro Setor
+>
+> **Resultado esperado:** resumo exibido conforme as 5 categorias do TR; alternância de setor reflete corretamente os documentos do setor selecionado.
+>
+> **Pós-condição:** setor ativo do Servidor alterado para o setor selecionado.
+>
+> > [!info] Limite conhecido
+> > O estado da Mesa como entidade própria não tem prova técnica de enum confirmada no código (02 §5) — este CT verifica o comportamento observável na tela, não a modelagem interna.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-011
+
+> [!example]- CT-012 · Etiqueta pessoal não aparece para outros, etiqueta compartilhada aparece (ONDA1-12)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-12 da Proposta da Onda 1 (SGV-12200). **TR:** 1.34.1.a ("Etiquetas pessoais: criadas exclusivamente para o uso individual do servidor... visíveis apenas na mesa pessoal dele"), 1.34.1.b ("Etiquetas compartilhadas: criadas e compartilhadas entre setores ou hierarquias de setores, permitindo que mais servidores acessem essas etiquetas").
+>
+> **Descrição:** confirma que uma Etiqueta pessoal fica visível só para quem a criou, e uma Etiqueta compartilhada fica visível para os Setores com quem foi compartilhada.
+>
+> **Pré-condições:**
+> - O Servidor A cria uma Etiqueta pessoal e aplica a um Documento.
+> - O Servidor A cria uma Etiqueta compartilhada (com o Setor do Servidor B) e aplica a outro Documento.
+> - Nenhuma das duas etiquetas usadas no teste é a etiqueta padrão "Urgente" do sistema — são criadas especificamente para este CT.
+>
+> **Dado** que o Servidor A criou e aplicou uma Etiqueta pessoal a um Documento
+> **Quando** o Servidor B (outro Setor) acessa esse Documento na mesa
+> **Então** o Servidor B não vê a Etiqueta pessoal
+> **Quando** o Servidor A cria e aplica uma Etiqueta compartilhada com o Setor do Servidor B a outro Documento
+> **Então** o Servidor B consegue ver essa Etiqueta compartilhada
+>
+> **Resultado esperado:** Etiqueta pessoal visível só na mesa de quem criou; Etiqueta compartilhada visível para os Setores com quem foi compartilhada.
+>
+> **Pós-condição:** duas Etiquetas criadas e aplicadas, cada uma com a visibilidade testada.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-012
+
+> [!example]- CT-013 · Cadastro de Contato externo (PF/PJ) com e-mail de confirmação (ONDA1-13)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-13 da Proposta da Onda 1 (SGV-12200). **TR:** 1.32 ("área para cadastro e gerenciamento de contatos externos, sejam cidadãos (pessoa física) ou empresas (pessoas jurídicas)... cadastro único na plataforma"), 1.32.1 ("ao serem cadastrados... os respectivos novos contatos devem receber um email para confirmação do cadastro").
+>
+> **Descrição:** confirma que um novo Contato externo (Cidadão PF ou Empresa PJ) recebe e-mail de confirmação ao se cadastrar.
+>
+> **Pré-condições:**
+> - O CPF/CNPJ usado no cadastro ainda não tem Contato externo associado (garante cadastro único).
+>
+> **Dado** que o Cidadão/Empresa preenche o cadastro de Contato externo com CPF ou CNPJ
+> **Quando** o cadastro é concluído
+> **Então** o sistema envia um e-mail de confirmação do cadastro para o Contato
+>
+> **Resultado esperado:** cadastro criado; e-mail de confirmação recebido.
+>
+> **Pós-condição:** Contato externo registrado como novo cadastro.
+>
+> > [!info] Limite conhecido
+> > O auto-registro de Pessoa Física (fluxo específico de PF se auto-cadastrando) não foi localizado no código consultado (02 §6) — executar este CT pelo fluxo de cadastro efetivamente disponível na tela, registrando qual foi usado.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-013
+
+> [!example]- CT-014 · Central de atendimento: acesso a Serviço via canais digitais do órgão (ONDA1-14)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-14 da Proposta da Onda 1 (SGV-12200). **TR:** 1.36 ("deve ser disponibilizado uma central de atendimento para que os cidadãos, empresas e entes externos possam ter acesso, através dos canais digitais do órgão, para realizar as suas solicitações e ter acesso aos serviços oferecidos pela entidade").
+>
+> **Descrição:** confirma que Cidadãos, Empresas e Entes externos acessam, pela Central de atendimento, um Serviço oferecido pelo órgão.
+>
+> **Pré-condições:**
+> - Existe um Serviço disponibilizado pelo órgão, acessível pela Central de atendimento.
+>
+> **Dado** que existe um Serviço disponibilizado pela Central de atendimento
+> **Quando** um Cidadão/Empresa/Ente externo acessa a Central
+> **Então** ele consegue ver e acessar esse Serviço
+>
+> **Resultado esperado:** Serviço visível e acessível na Central de atendimento.
+>
+> **Pós-condição:** nenhuma alteração de estado — é um acesso/consulta.
+>
+> > [!info] Limite conhecido
+> > O TR (1.36) não detalha o mecanismo exato dos "canais digitais do órgão" — este CT verifica o(s) canal(is) efetivamente disponível(is) no ambiente de teste, sem presumir qual(is) o TR pretendia.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-014
+
+> [!example]- CT-015 · Ambiente virtual do Usuário externo: abertura e acompanhamento de Demanda (ONDA1-15)
+>
+> ```meta-bind-button
+> style: primary
+> label: ↩ Validação
+> action:
+>   type: open
+>   link: "[[04 - Validação dev#Resultado dos casos de teste]]"
+> ```
+>
+> ## Cenário
+>
+> **Origem:** ONDA1-15 da Proposta da Onda 1 (SGV-12200). **TR:** 1.37 ("cada usuário externo deverá ter acesso a um ambiente virtual próprio, onde poderá receber notificações e acompanhar o andamento das demandas que abriu ou solicitou... assim como, abrir novas demandas").
+>
+> **Descrição:** confirma que um Usuário externo abre uma Demanda e consegue acompanhá-la (notificações, andamento) no seu ambiente virtual próprio.
+>
+> **Pré-condições:**
+> - O Usuário externo está cadastrado e tem acesso ao seu ambiente virtual.
+>
+> **Dado** que o Usuário externo está no seu ambiente virtual
+> **Quando** ele abre uma nova Demanda
+> **Então** a Demanda aparece no seu ambiente, e ele recebe notificações e consegue acompanhar o andamento dela
+>
+> **Resultado esperado:** Demanda aberta; notificações recebidas; andamento visível para o Usuário externo no seu ambiente.
+>
+> **Pós-condição:** Demanda registrada, associada ao Usuário externo que a abriu.
+>
+> > [!info] Limite conhecido
+> > Se "Demanda" é uma entidade própria ou um Documento/Processo comum de origem externa segue em aberto (inferência da fatia 05, não confirmada — 02 §6) — não presumir qual é; registrar na execução o que foi observado.
+>
+> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+>
+> ---
+>
+> **Informações do CT**
+>
+> **Tipo:** funcional
+> **Camada:** UI/API
+> **Automação:** manual
+> **Execução:** planejado
+
+^ct-015
