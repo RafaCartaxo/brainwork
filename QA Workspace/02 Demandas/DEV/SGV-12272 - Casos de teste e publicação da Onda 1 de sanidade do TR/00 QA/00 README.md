@@ -3,10 +3,10 @@ tags: [qa]
 task: "SGV-12272"
 pai: ""
 tipo: "casos-de-teste"
-status: backlog
+status: execucao
 ambiente: dev
 prioridade: media
-etapa_atual: "QA · Triagem"
+etapa_atual: "QA · Validação"
 modulo: ""
 responsavel: ""
 aguardando: ""
@@ -37,14 +37,14 @@ pontos: ""
 
 | Etapa | Estado |
 |---|---|
-| Demanda | ⏳ |
-| Plano de teste | ⏳ |
-| Casos de teste | ⏳ |
+| Demanda | ✅ |
+| Plano de teste | ✅ |
+| Casos de teste | ✅ |
 | Validação | ⏳ |
 | Preparação Qase | ⏳ |
 | Publicação no Notion | ⏳ |
 
-**Próximo passo:** redigir os 20 CTs em `03 - Casos de teste.md`, a partir dos 20 cenários aprovados na Proposta da Onda 1 (SGV-12200). Nenhum CT foi redigido e nenhum conteúdo foi publicado no Notion ainda.
+**Próximo passo:** execução real dos 20 CTs em ambiente DEV pelo Rafael, com evidência gravada e gate de doc (ver `04 - Validação dev.md`, seção "Pré-requisitos de execução"). Depois da validação: sincronizar os CTs aprovados na Qase e publicar o catálogo funcional no Notion — nenhum dos dois foi iniciado ainda.
 
 > [!tip]- Esforço e capacidade
 > ```dataviewjs
