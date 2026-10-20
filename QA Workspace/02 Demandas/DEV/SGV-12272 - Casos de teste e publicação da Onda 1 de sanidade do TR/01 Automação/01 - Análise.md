@@ -159,6 +159,9 @@ Quem decide: **Rafael** (salvo indicação).
 - [ ] **(e) Convenção do baseline:** confirmar com quem o mantém um incremento de `SEED_SCHEMA_VERSION` por entrega.
 - [ ] **(f) Achados do código do produto:** confirmar no homolog `userType: 'publicAgent'`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS`.
 
+> [!todo] Capturas na validação manual
+> O que precisa ser recolhido durante a validação manual (requisições e telas sem código hoje: CT-002, 003, 007, 008, 014, 016, 017, 018, 019) está listado em [[QA Workspace/02 Demandas/DEV/SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR/00 QA/04 - Validação dev#Capturas para a automação|04 - Validação dev → Capturas para a automação]], junto da execução de cada CT.
+
 ## Gate: pronto para planejar
 
 - [ ] Validação manual dos CTs da onda concluída e comportamento disponível no ambiente-alvo.

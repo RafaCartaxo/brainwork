@@ -178,6 +178,33 @@ Por CT: ator/conta necessária, massa de dados de que depende (extraída das Pr�
 > [!warning] Pré-requisitos ainda não confirmados como existentes
 > CT-004, CT-006, CT-007, CT-008, CT-009, CT-010, CT-017 e CT-018 dependem de configuração/massa de dados específica que não tem confirmação de já existir no ambiente (ver coluna acima). Rafael precisa confirmar ou montar essa massa antes de gravar esses CTs — nenhuma arquitetura de seed/dados de teste foi decidida nesta demanda (fora de escopo, `01 - Demanda.md`).
 
+### Capturas para a automação
+
+Aproveitar a execução manual para recolher o que a automação da Onda 1 ainda não tem no código (levantamento em [[QA Workspace/02 Demandas/DEV/SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR/01 Automação/01 - Análise|01 Automação/01 - Análise]]). CTs fora da tabela já têm código reaproveitável: só executar e gravar a evidência normal.
+
+**Como capturar:**
+- **Requisições:** DevTools → aba Network → marcar *Preserve log* → filtro `graphql` → executar o CT → exportar como HAR com o nome `12272-CT-0xx.har`.
+- **Tela sem mapeamento:** `npx playwright codegen https://homolog.sogov.com.br` (ou a URL do ambiente em uso) e salvar o script gerado como `12272-CT-0xx.spec.ts`.
+- **Comportamento a observar:** print ou o próprio vídeo da evidência, anotando na coluna Observação do resultado.
+
+> [!danger] HAR leva o token da sessão
+> Salvar em `~/Downloads/capturas-onda1/`, **fora do vault** (o vault sobe pro GitHub pelo backup automático). Nada de HAR ou script com credencial dentro do vault; o token é removido antes de qualquer trecho virar referência aqui.
+
+| CT | O que capturar | Tipo | Por quê | Capturado? |
+|---|---|---|---|---|
+| [[03 - Casos de teste#^ct-002\|CT-002]] | Desbloqueio pelo link do e-mail de reativação **e** desbloqueio interno feito por servidor | HAR | Confirma o tipo de usuário do desbloqueio (`publicAgent`) e o fluxo do link | ☐ |
+| [[03 - Casos de teste#^ct-003\|CT-003]] | Mudança de status do servidor-alvo (Ativo → Licença → Férias → Inativo) | HAR | A chamada só é conhecida pelo código do produto, que pode estar desatualizado | ☐ |
+| [[03 - Casos de teste#^ct-007\|CT-007]] | Criar Categoria de uso, criar e publicar a Zona, consulta pública da Zona | HAR + codegen | Não existe nada no código de testes para Zona/Categoria de uso | ☐ |
+| [[03 - Casos de teste#^ct-008\|CT-008]] | Abrir Processo urbanístico a partir da Zona e revisar o Anexo | HAR + codegen | Não existe nada no código de testes para Processo urbanístico | ☐ |
+| [[03 - Casos de teste#^ct-014\|CT-014]] | Canais digitais da Central de atendimento | codegen | Sem funções de tela para essa área | ☐ |
+| [[03 - Casos de teste#^ct-016\|CT-016]] | Acesso ao Jornal Oficial público, sem login | codegen | Sem funções de tela para o lado público | ☐ |
+| [[03 - Casos de teste#^ct-017\|CT-017]] | O que aparece ao tentar assinar fora da vez | Observar | Comportamento não confirmado no próprio CT | ☐ |
+| [[03 - Casos de teste#^ct-018\|CT-018]] | Notificação recebida pelo concedente | Observar | Comportamento e canal não confirmados no próprio CT | ☐ |
+| [[03 - Casos de teste#^ct-019\|CT-019]] | Salvar cores/imagens como Administrador **e** a tentativa de um servidor de outro nível | HAR + codegen | Não existe função de edição da instância no código de testes; a Onda 1 cria uma instância própria para este CT | ☐ |
+
+> [!warning] CT-002 e o SGV-12316
+> Em homologação, depois do bloqueio a senha correta **ainda autentica** — bug [[QA Workspace/02 Demandas/HML/SGV-12316 - Bug Login com senha correta aceito com a conta bloqueada/00 QA/01 - Bug|SGV-12316]]. Se reproduzir também em DEV, registrar o CT-002 como `❌ Falhou` com o SGV-12316 na coluna Defeito/Bug, sem abrir bug novo. A captura do desbloqueio continua valendo.
+
 ### Ordem sugerida de execução
 
 Agrupando por conta/dados compartilhados, pra gravar menos vídeos:

@@ -59,6 +59,14 @@ O cenário corrigido no SGV-5273 continua valendo: com 4 tentativas incorretas (
 
 ---
 
+## Requisito do Termo de Referência
+
+Descumpre o **TR §1.25.1 — PDF p. 2 — transcrição §1.25**: "Após cinco tentativas de login malsucedidas, a conta do usuário deverá ser bloqueada". Uma conta bloqueada que continua autenticando com a senha correta não está bloqueada.
+
+Texto integral: [[QA Workspace/04 Conhecimento/Referências/Sanidade automatizada do SOGOV - Termo de Referência/01 - Termo de Referência SOGOV - Transcrição integral#1.25 (p. 2)|transcrição do TR, §1.25]]. Coberto pelo CT-002 da Onda 1 de sanidade ([[QA Workspace/02 Demandas/DEV/SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR/00 QA/03 - Casos de teste#^ct-002|SGV-12272]]).
+
+---
+
 ## Ambiente
 
 - Ambiente: Homologação
