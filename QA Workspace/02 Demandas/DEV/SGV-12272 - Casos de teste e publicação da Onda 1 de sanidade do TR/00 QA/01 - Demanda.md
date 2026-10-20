@@ -10,6 +10,7 @@ pontos_alocados: ""
 
 > [!info]- Navegação QA/DEV
 > **README do card:** [[00 README|Abrir README do card]]
+> **Demanda:** [[01 - Demanda]]
 > **Plano de teste:** [[02 - Plano de teste]]
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
@@ -21,13 +22,13 @@ pontos_alocados: ""
 > **Origem:** `INPUT[inlineSelect(option(repo),option(observado),option(conversa),option(validação)):origem]`
 
 > [!info] Status atual
-> **Próximo passo:** redigir os 20 CTs em `03 - Casos de teste.md` — nada foi redigido nem publicado ainda.
+> **Próximo passo:** execução real dos 20 CTs em ambiente DEV pelo Rafael, com evidência e gate de doc (`04 - Validação dev.md`) — depois, sincronizar os CTs aprovados na Qase e publicar o catálogo funcional no Notion; nenhum dos dois foi iniciado ainda.
 
 ---
 
 ## Problema / contexto
 
-A Onda 1 de 20 cenários candidatos de sanidade foi levantada e aprovada na SGV-12200 (19/10/2026) — mas a aprovação é só da seleção e do escopo: nenhum CT formal foi redigido, nenhum caso foi sincronizado na Qase, e o catálogo funcional correspondente ainda não existe no Notion (a subpágina "Cenários de sanidade" do hub segue placeholder).
+A Onda 1 de 20 cenários candidatos de sanidade foi levantada e aprovada na SGV-12200 (19/10/2026), e os 20 CTs formais já foram redigidos (`03 - Casos de teste.md`) — mas a validação dev ainda não foi executada, nenhum caso foi sincronizado na Qase, e o catálogo funcional correspondente ainda não existe no Notion (a subpágina "Cenários de sanidade" do hub segue placeholder).
 
 ## Objetivo
 
