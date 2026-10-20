@@ -6,6 +6,8 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiNotepadText",
+      "LiBox",
       "LiBug",
       "LiStar",
       "LiConstruction",
@@ -13,9 +15,7 @@
       "LiBackpack",
       "LiAlbum",
       "LiCalendarDays",
-      "LiLayers",
-      "LiCode2",
-      "LiRocket"
+      "LiLayers"
     ],
     "recentlyUsedIconsSize": 10,
     "rules": [],
@@ -432,5 +432,9 @@
   "QA Workspace/04 Conhecimento/Referências/Automação Playwright/Execuções": {
     "iconName": "LiPlay",
     "iconColor": "#7c3aed"
+  },
+  "QA Workspace/02 Demandas/DEV/SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR": {
+    "iconName": "LiBox",
+    "iconColor": "#2563eb"
   }
 }
