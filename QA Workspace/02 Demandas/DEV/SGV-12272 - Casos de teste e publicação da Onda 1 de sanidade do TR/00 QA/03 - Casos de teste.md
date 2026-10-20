@@ -25,11 +25,30 @@ pontos: ""
 
 ## Matriz de cobertura
 
-| Critério | CTs |
+| Critério | CT |
 |---|---|
-| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]], [[03 - Casos de teste#^ct-002\|CT-002]], [[03 - Casos de teste#^ct-003\|CT-003]], [[03 - Casos de teste#^ct-004\|CT-004]], [[03 - Casos de teste#^ct-005\|CT-005]], [[03 - Casos de teste#^ct-006\|CT-006]], [[03 - Casos de teste#^ct-007\|CT-007]], [[03 - Casos de teste#^ct-008\|CT-008]], [[03 - Casos de teste#^ct-009\|CT-009]], [[03 - Casos de teste#^ct-010\|CT-010]], [[03 - Casos de teste#^ct-011\|CT-011]], [[03 - Casos de teste#^ct-012\|CT-012]], [[03 - Casos de teste#^ct-013\|CT-013]], [[03 - Casos de teste#^ct-014\|CT-014]], [[03 - Casos de teste#^ct-015\|CT-015]], [[03 - Casos de teste#^ct-016\|CT-016]], [[03 - Casos de teste#^ct-017\|CT-017]], [[03 - Casos de teste#^ct-018\|CT-018]], [[03 - Casos de teste#^ct-019\|CT-019]], [[03 - Casos de teste#^ct-020\|CT-020]] |
+| [[01 - Demanda#^c1\|C1]] | [[03 - Casos de teste#^ct-001\|CT-001]] |
+| [[01 - Demanda#^c2\|C2]] | [[03 - Casos de teste#^ct-002\|CT-002]] |
+| [[01 - Demanda#^c3\|C3]] | [[03 - Casos de teste#^ct-003\|CT-003]] |
+| [[01 - Demanda#^c4\|C4]] | [[03 - Casos de teste#^ct-004\|CT-004]] |
+| [[01 - Demanda#^c5\|C5]] | [[03 - Casos de teste#^ct-005\|CT-005]] |
+| [[01 - Demanda#^c6\|C6]] | [[03 - Casos de teste#^ct-006\|CT-006]] |
+| [[01 - Demanda#^c7\|C7]] | [[03 - Casos de teste#^ct-007\|CT-007]] |
+| [[01 - Demanda#^c8\|C8]] | [[03 - Casos de teste#^ct-008\|CT-008]] |
+| [[01 - Demanda#^c9\|C9]] | [[03 - Casos de teste#^ct-009\|CT-009]] |
+| [[01 - Demanda#^c10\|C10]] | [[03 - Casos de teste#^ct-010\|CT-010]] |
+| [[01 - Demanda#^c11\|C11]] | [[03 - Casos de teste#^ct-011\|CT-011]] |
+| [[01 - Demanda#^c12\|C12]] | [[03 - Casos de teste#^ct-012\|CT-012]] |
+| [[01 - Demanda#^c13\|C13]] | [[03 - Casos de teste#^ct-013\|CT-013]] |
+| [[01 - Demanda#^c14\|C14]] | [[03 - Casos de teste#^ct-014\|CT-014]] |
+| [[01 - Demanda#^c15\|C15]] | [[03 - Casos de teste#^ct-015\|CT-015]] |
+| [[01 - Demanda#^c16\|C16]] | [[03 - Casos de teste#^ct-016\|CT-016]] |
+| [[01 - Demanda#^c17\|C17]] | [[03 - Casos de teste#^ct-017\|CT-017]] |
+| [[01 - Demanda#^c18\|C18]] | [[03 - Casos de teste#^ct-018\|CT-018]] |
+| [[01 - Demanda#^c19\|C19]] | [[03 - Casos de teste#^ct-019\|CT-019]] |
+| [[01 - Demanda#^c20\|C20]] | [[03 - Casos de teste#^ct-020\|CT-020]] |
 
-Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validação (`04 - Validação dev.md`).
+Matriz completa: 20 critérios (C1–C20), um por CT, cobertura 1:1. Critérios de processo (C21–C24) ficam em `01 - Demanda.md`. Próxima atualização ocorre na validação (`04 - Validação dev.md`).
 
 ---
 
@@ -100,7 +119,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** conta em estado bloqueado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c2|C2]]
 >
 > ---
 >
@@ -143,7 +162,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!warning] Nomenclatura dupla não resolvida (herdada da Proposta, ONDA1-03)
 > > O TR usa o rótulo "Inativo" (§1.25.3.4); o cadastro atual do produto usa o rótulo "Suspenso" (§1.27.11.2) para o status editável correspondente. A Proposta registra essa nomenclatura dupla sem resolvê-la — ao executar este CT, confirmar visualmente qual rótulo a tela de cadastro usa para aplicar o estado de negação total descrito em 1.25.3.4, e registrar aqui o que foi observado, sem presumir equivalência.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c3|C3]]
 >
 > ---
 >
@@ -190,7 +209,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** nenhum documento criado pelo Setor B; documento do Setor A registrado normalmente.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c4|C4]]
 >
 > ---
 >
@@ -231,7 +250,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** Assunto/Serviço persistido com a categoria-base correta.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c5|C5]]
 >
 > ---
 >
@@ -277,7 +296,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** nenhuma alteração persistente além dos dois documentos criados para o teste.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c6|C6]]
 >
 > ---
 >
@@ -317,7 +336,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** nenhuma alteração de estado — é uma consulta.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c7|C7]]
 >
 > ---
 >
@@ -362,7 +381,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > O estado de revisão do Anexo (revisado/aprovado/reprovado) não tem confirmação em código localizada na análise que sustenta esta Onda — registrar na execução exatamente os rótulos/estados observados na tela, sem presumir que correspondem aos termos do TR.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c8|C8]]
 >
 > ---
 >
@@ -404,7 +423,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** dois documentos gerados, cada um refletindo o comportamento do modelo usado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c9|C9]]
 >
 > ---
 >
@@ -448,7 +467,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** Documento avançado para a próxima Etapa, com despacho e assinatura registrados na Etapa anterior.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c10|C10]]
 >
 > ---
 >
@@ -494,7 +513,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > O estado da Mesa como entidade própria não tem prova técnica de enum confirmada no código (02 §5) — este CT verifica o comportamento observável na tela, não a modelagem interna.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c11|C11]]
 >
 > ---
 >
@@ -538,7 +557,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 >
 > **Pós-condição:** duas Etiquetas criadas e aplicadas, cada uma com a visibilidade testada.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c12|C12]]
 >
 > ---
 >
@@ -581,7 +600,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > O auto-registro de Pessoa Física (fluxo específico de PF se auto-cadastrando) não foi localizado no código consultado (02 §6) — executar este CT pelo fluxo de cadastro efetivamente disponível na tela, registrando qual foi usado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c13|C13]]
 >
 > ---
 >
@@ -624,7 +643,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > O TR (1.36) não detalha o mecanismo exato dos "canais digitais do órgão" — este CT verifica o(s) canal(is) efetivamente disponível(is) no ambiente de teste, sem presumir qual(is) o TR pretendia.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c14|C14]]
 >
 > ---
 >
@@ -667,7 +686,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > Se "Demanda" é uma entidade própria ou um Documento/Processo comum de origem externa segue em aberto (inferência da fatia 05, não confirmada — 02 §6) — não presumir qual é; registrar na execução o que foi observado.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c15|C15]]
 >
 > ---
 >
@@ -714,7 +733,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > O acesso público sem login (1.38.1.b.i) é exigência literal do TR, mas não há evidência de teste automatizado localizada para esse acesso específico (02 §7) — registrar na execução o que foi observado, sem presumir ausência no produto.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c16|C16]]
 >
 > ---
 >
@@ -760,7 +779,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > A cobertura técnica localizada (fatia 17, CTs A30-C01–C08) testa a criação/execução da solicitação sequencial, mas não uma tentativa de assinatura fora da vez — esse bloqueio é o alvo declarado deste CT, a verificar na execução. "Contribuinte" como ator distinto do signatário externo não tem evidência de código localizada (02 §7) — não presumir distinção sem confirmação. **Fora deste CT:** recusa de assinatura (TR 1.40.5) é item distinto de 1.40.3, não tratado aqui.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c17|C17]]
 >
 > ---
 >
@@ -804,7 +823,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!warning] Limite conhecido
 > > A notificação ao concedente (1.41.2.d) não teve evidência de teste automatizado localizada na fatia 18 — registrar na execução o que foi observado, sem presumir ausência no produto. O fluxo para quando o servidor tem só permissão própria (sem chave) para o tipo de documento (1.41.2.c, recorte 09) segue A confirmar e não é tratado por este CT.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c18|C18]]
 >
 > ---
 >
@@ -853,7 +872,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > O caso negativo (nível não-Administrador não consegue editar) não é incluído neste CT por falta de sustentação direta na Proposta/02/03 — registrar como limite, sem presumir o comportamento. Acesso às informações cadastrais do órgão (1.42.1.a) não faz parte deste cenário.
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c19|C19]]
 >
 > ---
 >
@@ -896,7 +915,7 @@ Matriz completa: 20 CTs cobrindo C1. Próxima atualização ocorre na validaçã
 > > [!info] Limite conhecido
 > > Este CT verifica a exibição dos indicadores, sem incluir filtro interativo de tela — o TR (1.43.5) não confirma a existência desse filtro neste subitem, e nenhuma fonte revisada confirma um, por isso nenhum filtro é incluído no cenário. Cálculo/implementação do indicador não verificado. A correspondência entre "administradores e usuários autorizados" (termo do TR) e os 5 níveis canônicos segue A confirmar (recorte 11).
 >
-> **Critérios cobertos:** [[01 - Demanda#^c1|C1]]
+> **Critérios cobertos:** [[01 - Demanda#^c20|C20]]
 >
 > ---
 >
