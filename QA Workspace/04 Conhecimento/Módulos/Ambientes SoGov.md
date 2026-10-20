@@ -82,3 +82,4 @@ fonte_ultima_edicao: 2026-07-23 (Ivo Costa)
 - Notion (fonte): ver `fonte` no frontmatter.
 - [[QA Workspace/04 Conhecimento/Módulos/Construtor de Módulos|Construtor de Módulos]] — detalhe completo do Ambiente Técnico SOGO.
 - [[QA Workspace/04 Conhecimento/Módulos/Processos Urbanísticos|Processos Urbanísticos]] — funcionalidade adicional do Ambiente Cliente.
+- [[QA Workspace/04 Conhecimento/Módulos/Configurações da Instância|Configurações da Instância]] — tela do Ambiente Cliente onde dados cadastrais (visualização) e tema/marca (edição) ficam disponíveis.
