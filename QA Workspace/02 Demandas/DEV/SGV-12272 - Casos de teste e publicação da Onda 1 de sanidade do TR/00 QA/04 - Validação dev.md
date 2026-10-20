@@ -172,7 +172,7 @@ Por CT: ator/conta necessária, massa de dados de que depende (extraída das Pr�
 | [[03 - Casos de teste#^ct-016\|CT-016]] | Servidor (vê mural interno) + Cidadão (acessa Jornal Oficial, sem login) | Documento configurado para divulgação (mural interno e/ou canal externo) | [[QA Workspace/04 Conhecimento/Módulos/Divulgar Documento\|Divulgar Documento]] | A informar |
 | [[03 - Casos de teste#^ct-017\|CT-017]] | Ao menos 1 signatário interno (Servidor) e 1 externo | Solicitação de assinatura sequencial já criada, com ordem definida, pronta para a tentativa fora da vez — **não confirmado como já existente/montável** | [[QA Workspace/04 Conhecimento/Módulos/Assinaturas\|Assinaturas]] | **Não confirmado** |
 | [[03 - Casos de teste#^ct-018\|CT-018]] | Servidor concedente + Servidor convenente | Chave de acesso já concedida, com limite de uso definido — **não confirmado como já existente** | [[QA Workspace/04 Conhecimento/Módulos/Chaves de Acesso\|Chaves de Acesso]] | **Não confirmado** |
-| [[03 - Casos de teste#^ct-019\|CT-019]] | Servidor Administrador + Servidor com outro nível de acesso | Acesso à área de Personalização do Órgão | *sem doc localizada* | A informar |
+| [[03 - Casos de teste#^ct-019\|CT-019]] | Servidor Administrador + Servidor com outro nível de acesso | Acesso à área de Personalização do Órgão | [[QA Workspace/04 Conhecimento/Módulos/Configurações da Instância\|Configurações da Instância]] | A informar |
 | [[03 - Casos de teste#^ct-020\|CT-020]] | Administrador/usuário autorizado | Servidores cadastrados com diferentes status e níveis de permissão (provavelmente já existentes na base) | *sem doc localizada* | A informar |
 
 > [!warning] Pré-requisitos ainda não confirmados como existentes
@@ -202,8 +202,8 @@ Aproveitar a execução manual para recolher o que a automação da Onda 1 ainda
 | [[03 - Casos de teste#^ct-018\|CT-018]] | Notificação recebida pelo concedente | Observar | Comportamento e canal não confirmados no próprio CT | ☐ |
 | [[03 - Casos de teste#^ct-019\|CT-019]] | Salvar cores/imagens como Administrador **e** a tentativa de um servidor de outro nível | HAR + codegen | Não existe função de edição da instância no código de testes; a Onda 1 cria uma instância própria para este CT | ☐ |
 
-> [!warning] CT-002 e o SGV-12316
-> Em homologação, depois do bloqueio a senha correta **ainda autentica** — bug [[QA Workspace/02 Demandas/HML/SGV-12316 - Bug Login com senha correta aceito com a conta bloqueada/00 QA/01 - Bug|SGV-12316]]. Se reproduzir também em DEV, registrar o CT-002 como `❌ Falhou` com o SGV-12316 na coluna Defeito/Bug, sem abrir bug novo. A captura do desbloqueio continua valendo.
+> [!info] CT-002 e o SGV-12316
+> O bug [[QA Workspace/02 Demandas/HML/SGV-12316 - Bug Login com senha correta aceito com a conta bloqueada/00 QA/01 - Bug|SGV-12316]] (senha correta ainda autentica depois do bloqueio, reproduzido em homologação) é erro de produto, já aberto — está fora do alcance do CT-002. O CT-002 continua validando só o bloqueio na 5ª tentativa (o alvo original do cenário) e deve ser registrado pelo que ele de fato verifica: o bloqueio. Se o comportamento do SGV-12316 reproduzir também em DEV durante a execução, registrar como observação referenciando o SGV-12316 — sem marcar o CT-002 como falho por causa dele. A captura do desbloqueio (tabela acima) continua valendo.
 
 ### Ordem sugerida de execução
 
