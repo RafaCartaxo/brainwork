@@ -31,7 +31,7 @@ pontos: ""
 > [!settings]- Controle do card
 > **Status:** `INPUT[inlineSelect(option(backlog),option(analise),option(execucao),option(validacao),option(concluido)):status]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
-> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de teste),option(QA · Casos de teste),option(QA · Validação),option(QA · Preparação Qase),option(Concluído)):etapa_atual]`
+> **Etapa atual:** `INPUT[inlineSelect(option(QA · Triagem),option(QA · Análise da demanda),option(QA · Plano de teste),option(QA · Casos de teste),option(DEV · Análise técnica),option(DEV · Plano de execução),option(DEV · Implementação),option(DEV · Code review),option(QA · Validação),option(QA · Preparação Qase),option(Concluído)):etapa_atual]`
 
 ## Status do trabalho
 
@@ -80,5 +80,7 @@ SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR/
 ```
 
 Sem pasta `01 Automação/` — automação não faz parte do escopo desta demanda (ver `01 - Demanda.md`, Fora de escopo).
+
+A numeração das pastas (`00 QA/`) é só pra ordem de leitura/execução no explorador de arquivos — nada no conteúdo ou nos links depende dela além do nome literal da pasta.
 
 ---
