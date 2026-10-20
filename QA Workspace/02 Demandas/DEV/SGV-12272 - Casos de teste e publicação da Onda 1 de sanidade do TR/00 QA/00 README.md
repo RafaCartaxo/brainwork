@@ -26,6 +26,7 @@ pontos: ""
 > **Casos de teste:** [[03 - Casos de teste]]
 > **Validação:** [[04 - Validação dev]]
 > **Preparação Qase:** [[05 - Preparação Qase]]
+> **Automação (análise):** [[../01 Automação/00 - Automação|Automação]] · [[../01 Automação/01 - Análise|Análise da Onda 1]]
 > **Origem (SGV-12200):** [[../../SGV-12200 - Levantamento da Onda 1 de cenários de sanidade/00 QA/00 README|SGV-12200 — Levantamento da Onda 1 de cenários de sanidade]]
 
 > [!settings]- Controle do card
@@ -42,6 +43,7 @@ pontos: ""
 | Casos de teste | ✅ |
 | Validação | ⏳ |
 | Preparação Qase | ⏳ |
+| Automação | 🔎 em análise ([[../01 Automação/01 - Análise|Análise]]) |
 | Publicação no Notion | ⏳ |
 
 **Próximo passo:** execução real dos 20 CTs em ambiente DEV pelo Rafael, com evidência gravada e gate de doc (ver `04 - Validação dev.md`, seção "Pré-requisitos de execução"). Depois da validação: sincronizar os CTs aprovados na Qase e publicar o catálogo funcional no Notion — nenhum dos dois foi iniciado ainda.
@@ -70,16 +72,21 @@ Pacote para `SGV-12272`:
 
 ```text
 SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR/
-└── 00 QA/
-    ├── 00 README.md
-    ├── 01 - Demanda.md
-    ├── 02 - Plano de teste.md
-    ├── 03 - Casos de teste.md
-    ├── 04 - Validação dev.md
-    └── 05 - Preparação Qase.md
+├── 00 QA/
+│   ├── 00 README.md
+│   ├── 01 - Demanda.md
+│   ├── 02 - Plano de teste.md
+│   ├── 03 - Casos de teste.md
+│   ├── 04 - Validação dev.md
+│   └── 05 - Preparação Qase.md
+└── 01 Automação/                (análise da automação da Onda 1; plano e validação aguardam o gate)
+    ├── 00 - Automação.md
+    ├── 01 - Análise.md
+    ├── 02 - Plano de automação.md
+    └── 03 - Validação automação.md
 ```
 
-Sem pasta `01 Automação/` — automação não faz parte do escopo desta demanda (ver `01 - Demanda.md`, Fora de escopo).
+A pasta `01 Automação/` foi criada em paralelo para a **análise da automação** da Onda 1 (massa, decisões e riscos). A automação em si continua fora do escopo **desta** demanda (`01 - Demanda.md`, Fora de escopo): esta demanda entrega os CTs e a publicação; o código de teste é uma frente separada.
 
 A numeração das pastas (`00 QA/`) é só pra ordem de leitura/execução no explorador de arquivos — nada no conteúdo ou nos links depende dela além do nome literal da pasta.
 
