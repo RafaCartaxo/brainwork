@@ -70,7 +70,7 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 | CT-016 Divulgação: mural × Jornal Oficial | API / E2E | baseline | Lado interno: `ui/internal/mural.ts`, `publish-document.spec.ts`, `mural-filter.spec.ts` (provável). Lado externo/Jornal Oficial público sem helper. |
 | CT-017 Assinatura sequencial | E2E | baseline: pools (`agent`, `mayor`, `secretary`, `director`) + `citizen` | Provável: `signatures.ts`, `tests/e2e/signatures/sequential-*.spec.ts`. **Não usar** `seq*` (exclusivos de `sequential-access-levels.spec.ts`). "Assinar fora da vez" não tem cobertura. |
 | CT-018 Chave de acesso | API / E2E | atores `accessKey*` já exclusivos | Provável: `access-keys.ts`, `ui/internal/access-keys.ts`, `access-key-document-creation.spec.ts` (api e e2e). Menor custo: estender esses specs, sem entrada nova. Notificação ao concedente sem evidência. |
-| CT-019 Identidade visual do órgão | E2E | **3ª instância exclusiva** (condicional) | Sem helper de edição de personalização; `updateInstance` não é exportado em `services/instance.ts`; `ui/internal/instance.ts` cobre só o cadastro. |
+| CT-019 Identidade visual do órgão | E2E | **3ª instância exclusiva** (decidido 20/10) | Sem helper de edição de personalização; `updateInstance` não é exportado em `services/instance.ts`; `ui/internal/instance.ts` cobre só o cadastro. |
 | CT-020 Indicadores de Servidores | E2E | baseline (leitura) | Parcial: `ui/internal/statistics.ts` + `E73` cobrem os 3 cards (total/ativos/inativos). Gráficos por status e por nível dependem de job de BI que o seed não garante. |
 
 ---
@@ -88,7 +88,8 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 - **CT-007 e CT-008:** nada no código (sem serviço nem helper de Zona/Categoria de uso/Processo urbanístico) e o comportamento de revisão de Anexo não está confirmado.
 - **CT-020 (gráficos por status e por nível):** dependem de job de BI fora do controle do seed.
 - **CT-016 (acesso público ao Jornal Oficial sem login):** sem helper nem evidência.
-- **Em pendência, não decididos:** CT-002, CT-013 e CT-019 (ver **Pendências de decisão**).
+- **Decidido em 20/10 (Rafael):** todos os CTs da onda têm cobertura **API e E2E**; ao fim da Onda 1 a **3ª instância** já existe criada (CT-019 entra no escopo). CT-002 depende da correção do [[QA Workspace/02 Demandas/HML/SGV-12316 - Bug Login com senha correta aceito com a conta bloqueada/00 QA/01 - Bug|SGV-12316]].
+- **Em pendência, não decididos:** CT-013 (ver **Pendências de decisão**).
 
 ---
 
@@ -124,8 +125,8 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 | `statusTarget` (servidor GP, nível 2–3, CPF fixo) | ator | novo | CT-003 | sim — spec dono a definir | não esperado *(a confirmar)* | a definir |
 | `twoSectorCreator` (servidor com GP + DIR) | ator | novo | CT-004 (e avaliar CT-011) | sim — spec dono a definir | não (criado por convite) | a definir |
 | Módulo + A&S do CT-006 (3 setores X/Y/Z; nome de módulo ≤ 29 caracteres) | módulo + A&S | novo | CT-006 | sim — spec dono a definir | não | a definir |
-| 3ª instância de identidade visual *(condicional à pendência a)* | instância | novo | CT-019 | sim | **sim:** avisa os analistas SOGOV na criação + e-mail dos servidores | a definir |
-| Administrador (nível 5) e servidor de outro nível (2–4) da 3ª instância *(condicional)* | ator ×2 | novo | CT-019 | sim | por convite: não; por `email`: sim | a definir |
+| 3ª instância de identidade visual *(decidida em 20/10)* | instância | novo | CT-019 | sim | **sim:** avisa os analistas SOGOV na criação + e-mail dos servidores | a definir |
+| Administrador (nível 5) e servidor de outro nível (2–4) da 3ª instância | ator ×2 | novo | CT-019 | sim | por convite: não; por `email`: sim | a definir |
 
 **Reuso**
 
@@ -151,9 +152,9 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 
 Quem decide: **Rafael** (salvo indicação).
 
-- [ ] **(a) CT-019:** criar a 3ª instância (código novo em `provision.ts`, instância permanente, avisa analistas SOGOV) ou manter o CT manual.
-- [ ] **(b) CT-002:** alinhar o texto do CT com o comportamento real do produto — a 5ª senha errada gera `account-blocked` + e-mail de reativação, e a senha correta **ainda autentica** depois do bloqueio.
-- [ ] **(c) CTs que ficam manuais de vez** (candidatos naturais: CT-002, CT-013, CT-019).
+- [x] **(a) CT-019:** ~~3ª instância ou manual~~ → **3ª instância**, criada até o fim da Onda 1 (decisão do Rafael, 20/10). Custo aceito: código novo em `provision.ts`, instância permanente, aviso aos analistas SOGOV.
+- [x] **(b) CT-002:** esclarecido pelo Rafael em 20/10 — o comportamento **esperado** é: 5ª senha errada → mensagem de bloqueio + e-mail de reativação, e a senha correta **não** entra até o desbloqueio (link do e-mail ou ação interna de servidor). A senha correta ainda autenticar depois do bloqueio é bug: [[QA Workspace/02 Demandas/HML/SGV-12316 - Bug Login com senha correta aceito com a conta bloqueada/00 QA/01 - Bug|SGV-12316]] (origem provável: correção do SGV-5273). O texto do CT-002 está certo; a automação do CT-002 espera a correção.
+- [ ] **(c) CTs que ficam manuais de vez:** CT-002 e CT-019 saíram da lista (decisão de 20/10: tudo API e E2E). Resta avaliar o CT-013 (e-mail como asserção).
 - [ ] **(d) Ambiente da Onda 1:** confirmar o homolog como alvo (a validação manual é em DEV).
 - [ ] **(e) Convenção do baseline:** confirmar com quem o mantém um incremento de `SEED_SCHEMA_VERSION` por entrega.
 - [ ] **(f) Achados do código do produto:** confirmar no homolog `userType: 'publicAgent'`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS`.
