@@ -836,7 +836,7 @@ Matriz completa: 20 critérios (C1–C20), um por CT, cobertura 1:1. Critérios 
 
 ^ct-018
 
-> [!example]- CT-019 · Edição de identidade visual do órgão exigindo nível Administrador (ONDA1-19)
+> [!example]- CT-019 · Edição de identidade visual do órgão: Administrador autorizado, demais níveis barrados (ONDA1-19)
 >
 > ```meta-bind-button
 > style: primary
@@ -850,10 +850,11 @@ Matriz completa: 20 critérios (C1–C20), um por CT, cobertura 1:1. Critérios 
 >
 > **Origem:** ONDA1-19 da Proposta da Onda 1 (SGV-12200). **TR:** 1.42.1.b ("possibilidade de editar as cores temáticas da interface do menu principal do sistema"); 1.42.1.c ("upload e gerenciamento das imagens institucionais do órgão que serão exibidas em todo o sistema").
 >
-> **Descrição:** confirma que um Servidor com nível Administrador consegue editar as cores temáticas do menu principal e fazer upload/gerenciamento de imagens institucionais do órgão.
+> **Descrição:** confirma que um Servidor com nível Administrador consegue editar as cores temáticas do menu principal e fazer upload/gerenciamento de imagens institucionais do órgão, e que um Servidor com outro nível de acesso é barrado ao tentar a mesma ação.
 >
 > **Pré-condições:**
 > - Existe um Servidor com nível de acesso Administrador.
+> - Existe um Servidor com nível de acesso diferente de Administrador.
 >
 > **Dado** que um Servidor com nível Administrador acessa a Personalização do Órgão
 > **Quando** ele edita as cores temáticas do menu principal
@@ -862,15 +863,19 @@ Matriz completa: 20 critérios (C1–C20), um por CT, cobertura 1:1. Critérios 
 > **Quando** ele faz upload de uma imagem institucional
 > **Então** a imagem passa a ser gerenciada e exibida no sistema
 >
-> **Resultado esperado:** cores temáticas do menu principal editadas; imagem institucional enviada, gerenciada e exibida no sistema.
+> **Dado** que um Servidor com nível diferente de Administrador acessa a Personalização do Órgão
+> **Quando** ele tenta editar as cores temáticas do menu principal ou fazer upload de uma imagem institucional
+> **Então** o sistema barra a ação
 >
-> **Pós-condição:** alterações de personalização persistem até nova edição.
+> **Resultado esperado:** Administrador edita as cores temáticas e envia/gerencia imagem institucional com sucesso; Servidor com outro nível é barrado ao tentar a mesma ação.
+>
+> **Pós-condição:** alterações de personalização persistem até nova edição, quando realizadas pelo Administrador; nenhuma alteração ocorre na tentativa barrada.
 >
 > > [!warning] Origem de produto, não do TR
-> > A exigência de nível Administrador para esta funcionalidade é documentada no produto/contexto, não afirmada pelo texto literal do TR — 1.42.1.b/c não especifica o ator autorizado. Não apresentar essa exigência como requisito do TR.
+> > A exigência de nível Administrador para esta funcionalidade — inclusive o bloqueio de outros níveis testado neste cenário — é documentada no produto/contexto, não afirmada pelo texto literal do TR: 1.42.1.b/c não especifica o ator autorizado nem restrições de acesso. Não apresentar essa exigência como requisito do TR.
 >
-> > [!info] Limite conhecido
-> > O caso negativo (nível não-Administrador não consegue editar) não é incluído neste CT por falta de sustentação direta na Proposta/02/03 — registrar como limite, sem presumir o comportamento. Acesso às informações cadastrais do órgão (1.42.1.a) não faz parte deste cenário.
+> > [!info] Fora deste CT
+> > Acesso às informações cadastrais do órgão (1.42.1.a) não faz parte deste cenário.
 >
 > **Critérios cobertos:** [[01 - Demanda#^c19|C19]]
 >
