@@ -35,10 +35,12 @@ Confirmar que os 20 CTs (a redigir em `03 - Casos de teste.md`) cobrem fielmente
 
 ## Estratégia de teste
 
-- **Funcional/manual:** os 20 CTs nascem como casos manuais (Gherkin) — sem automação nesta demanda.
+- **Unitário:** não aplicável — não há código/regra isolada sendo desenvolvida nesta demanda; os 20 cenários cobrem funcionalidade já existente no sistema.
+- **API/repositório:** não aplicável nesta rodada — os 20 CTs nascem como casos manuais; a camada de API fica para quando a automação for planejada (fora de escopo desta demanda).
+- **UI/E2E:** os 20 CTs nascem como casos manuais (Gherkin), cobrindo o comportamento observável pelo usuário na interface — sem automação nesta demanda.
 - **Regressão:** não aplicável — cenários novos, sem baseline automatizado anterior.
 
-Camadas de API/E2E ficam para quando a automação for planejada (fora de escopo desta demanda).
+Defina apenas as camadas aplicáveis; não crie testes por obrigação quando não houver risco naquela camada.
 
 ---
 
