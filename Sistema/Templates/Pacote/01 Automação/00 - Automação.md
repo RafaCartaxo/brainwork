@@ -13,15 +13,16 @@ status: planejado
 > **README do card:** [[../00 QA/00 README|Abrir README do card]]
 > **Demanda/Bug:** [[../00 QA/01 - Demanda]]
 > **Casos de teste:** [[../00 QA/03 - Casos de teste]]
-> **Plano de automação:** [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação]]
-> **Validação automação:** [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]]
+> **Análise:** [[Sistema/Templates/Pacote/01 Automação/01 - Análise]]
+> **Plano de automação:** [[Sistema/Templates/Pacote/01 Automação/02 - Plano de automação]]
+> **Validação automação:** [[Sistema/Templates/Pacote/01 Automação/03 - Validação automação]]
 
 > [!settings]- Controle da automação
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(bloqueado),option(concluido)):status]`
 > **Framework:** `INPUT[inlineSelect(option(playwright),option(cypress_legado),option(outro)):framework]`
 > **Ambiente-alvo:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Ponto de entrada da cobertura automatizada. O escopo e a estratégia ficam em [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação|01 - Plano de automação]]; os resultados atuais, por CT, ficam em [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação|02 - Validação automação]]. A demanda e os CTs de `00 QA/` continuam sendo a fonte do comportamento esperado.
+> Ponto de entrada da cobertura automatizada. A abordagem, o escopo da onda e a massa de dados ficam em [[Sistema/Templates/Pacote/01 Automação/01 - Análise|01 - Análise]]; a estratégia por suíte fica em [[Sistema/Templates/Pacote/01 Automação/02 - Plano de automação|02 - Plano de automação]]; os resultados atuais, por CT, ficam em [[Sistema/Templates/Pacote/01 Automação/03 - Validação automação|03 - Validação automação]]. A demanda e os CTs de `00 QA/` continuam sendo a fonte do comportamento esperado.
 
 ## Próxima ação
 
@@ -38,8 +39,9 @@ status: planejado
 
 ## Checklist de encerramento
 
-- [ ] Plano e escopo atualizados em [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação]].
-- [ ] Resultado mais recente de cada CT registrado em [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]].
+- [ ] Análise da onda concluída em [[Sistema/Templates/Pacote/01 Automação/01 - Análise]] (decisões fechadas e tabela **Massa desta entrega** preenchida).
+- [ ] Plano e escopo atualizados em [[Sistema/Templates/Pacote/01 Automação/02 - Plano de automação]].
+- [ ] Resultado mais recente de cada CT registrado em [[Sistema/Templates/Pacote/01 Automação/03 - Validação automação]].
 - [ ] Cobertura sincronizada no campo **Automação** dos CTs em `../00 QA/03 - Casos de teste`.
 - [ ] Revisão de código concluída no repositório/MR.
 - [ ] Status e próxima ação atualizados.

@@ -12,24 +12,25 @@ status: planejado
 > **Demanda/Bug:** [[../00 QA/01 - Demanda]]
 > **Casos de teste:** [[../00 QA/03 - Casos de teste]]
 > **Automação:** [[Sistema/Templates/Pacote/01 Automação/00 - Automação]]
-> **Validação automação:** [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]]
+> **Análise:** [[Sistema/Templates/Pacote/01 Automação/01 - Análise]]
+> **Validação automação:** [[Sistema/Templates/Pacote/01 Automação/03 - Validação automação]]
 
 > [!settings]- Controle do plano
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 
-> Este plano registra o escopo, a estratégia e as dependências antes da implementação. Mantenha as decisões curtas e ligadas aos CTs; o andamento geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]] e os resultados executados ficam em [[Sistema/Templates/Pacote/01 Automação/02 - Validação automação]].
+> Este plano registra o escopo, a estratégia e as dependências antes da implementação. Mantenha as decisões curtas e ligadas aos CTs; o andamento geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]] e os resultados executados ficam em [[Sistema/Templates/Pacote/01 Automação/03 - Validação automação]].
 
 ## Objetivo e escopo
 
 - **Objetivo:** <comportamento que a automação vai cobrir>
-- **CTs incluídos:** <suítes/CTs vinculados à nota de casos de teste>
+- **CTs incluídos:** <suítes/CTs vinculados à nota de casos de teste; o recorte da onda está na [[Sistema/Templates/Pacote/01 Automação/01 - Análise|Análise]]>
 - **Fora do escopo:** <exclusões importantes ou “nenhum”>
 
 ## Estratégia por suíte
 
 | Suíte / CTs | Camada | Dados e estado inicial | Reuso / mudança necessária | Dependência ou gate |
 |---|---|---|---|---|
-| <suíte e links aos CTs> | <API / E2E> | <ator, preset, preparação e limpeza> | <código existente a reutilizar ou mudança necessária> | <captura, acesso, fix no ambiente ou nenhuma> |
+| <suíte e links aos CTs> | <API / E2E> | <ver tabela **Massa desta entrega** em [[Sistema/Templates/Pacote/01 Automação/01 - Análise#Massa desta entrega\|01 - Análise]]: recurso e dono; aqui só a preparação e a limpeza específicas do teste> | <código existente a reutilizar ou mudança necessária> | <captura, acesso, fix no ambiente ou nenhuma> |
 
 > Uma linha por suíte ou grupo de CTs com a mesma estratégia. Não replique aqui os passos e asserts dos casos de teste.
 
@@ -37,7 +38,7 @@ status: planejado
 
 - [ ] CTs e comportamento esperado estão definidos em `../00 QA/03 - Casos de teste`.
 - [ ] Validação manual e disponibilidade do comportamento no ambiente-alvo foram confirmadas, conforme aplicável.
-- [ ] Dados, estado inicial e forma de isolamento/preparação estão definidos.
+- [ ] Dados, estado inicial e forma de isolamento/preparação estão definidos e registrados na tabela **Massa desta entrega** da [[Sistema/Templates/Pacote/01 Automação/01 - Análise|Análise]].
 - [ ] Dependências que impedem a implementação foram resolvidas ou os CTs afetados foram explicitamente retirados do escopo desta rodada.
 
 ## Pronto para validar quando

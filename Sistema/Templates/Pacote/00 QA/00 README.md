@@ -78,8 +78,9 @@ Pacote para `<ID>`:
 │   └── 05 - Preparação Qase.md
 ├── 01 Automação/                (opcional — quando a automação for planejada)
 │   ├── 00 - Automação.md        entrada, configuração e próxima ação
-│   ├── 01 - Plano de automação.md escopo, estratégia, dados e dependências
-│   └── 02 - Validação automação.md placar atual por CT
+│   ├── 01 - Análise.md          contexto, decisões, escopo da onda e massa desta entrega
+│   ├── 02 - Plano de automação.md estratégia por suíte e dependências (dados → tabela de massa da Análise)
+│   └── 03 - Validação automação.md placar atual por CT
 └── Defeitos/                    (só se houver CT reprovado — ver Sistema/Skills/SKILL_BUGS.md; numerada por último de propósito — é exceção, não parte da sequência QA → Automação)
 ```
 

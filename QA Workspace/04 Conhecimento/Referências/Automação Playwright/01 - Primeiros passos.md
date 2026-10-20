@@ -13,13 +13,13 @@ Comandos validados de verdade nesta máquina (16/10/2026):
 
 ```bash
 cd ~/Documentos/Sogov/sogov-automation-test/playwright
-npm install                        # NÃO "npm ci" — não existe package-lock.json no pacote, `npm ci` falha na hora
+npm install                        # NÃO "npm ci" — o package-lock.json não é versionado, `npm ci` falha na hora
 npx playwright install chromium    # pode já estar em cache na máquina (foi instantâneo)
 npm run test:infra                 # confirma a config sem tocar no ambiente — 55/55 passou
 ```
 
 > [!warning] `npm ci` não funciona
-> O `package-lock.json` nunca foi versionado em `playwright/`. `npm ci` falha de saída. (O README do repo ainda manda usar `npm ci` — diverge do que foi verificado aqui.) Consequência: as dependências diretas estão pinadas, mas as transitivas não são reproduzíveis entre máquinas. Vale propor ao time versionar o lockfile.
+> O `package-lock.json` não é versionado: o `.gitignore` da raiz do repo o exclui de propósito (desde 20/09/2026). Depois do `npm install` ele existe localmente, mas num clone novo não — e `npm ci` falha de saída. (O README do repo ainda manda usar `npm ci` — diverge do que foi verificado aqui.) Consequência: as dependências diretas estão pinadas, mas as transitivas não são reproduzíveis entre máquinas. Vale propor ao time versionar o lockfile.
 
 ## Configuração do `.env`
 

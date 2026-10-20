@@ -15,14 +15,15 @@ ct_resultados:
 > **Demanda/Bug:** [[../00 QA/01 - Demanda]]
 > **Casos de teste:** [[../00 QA/03 - Casos de teste]]
 > **Automação:** [[Sistema/Templates/Pacote/01 Automação/00 - Automação]]
-> **Plano de automação:** [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação]]
+> **Análise:** [[Sistema/Templates/Pacote/01 Automação/01 - Análise]]
+> **Plano de automação:** [[Sistema/Templates/Pacote/01 Automação/02 - Plano de automação]]
 
 > [!settings]- Controle da validação
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`
 > **Framework:** `INPUT[inlineSelect(option(playwright),option(cypress_legado),option(outro)):framework]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Esta tabela é o **placar atual por CT**. Atualize o resultado existente quando o CT for executado de novo; não acrescente rodadas antigas. O plano fica em [[Sistema/Templates/Pacote/01 Automação/01 - Plano de automação]] e a próxima ação geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]].
+> Esta tabela é o **placar atual por CT**. Atualize o resultado existente quando o CT for executado de novo; não acrescente rodadas antigas. O plano fica em [[Sistema/Templates/Pacote/01 Automação/02 - Plano de automação]] e a próxima ação geral fica em [[Sistema/Templates/Pacote/01 Automação/00 - Automação]].
 
 ## Resumo da execução
 
