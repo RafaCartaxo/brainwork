@@ -70,7 +70,7 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 | CT-016 Divulgação: mural × Jornal Oficial | API / E2E | baseline | Lado interno: `ui/internal/mural.ts`, `publish-document.spec.ts`, `mural-filter.spec.ts` (provável). Lado externo/Jornal Oficial público sem helper. |
 | CT-017 Assinatura sequencial | E2E | baseline: pools (`agent`, `mayor`, `secretary`, `director`) + `citizen` | Provável: `signatures.ts`, `tests/e2e/signatures/sequential-*.spec.ts`. **Não usar** `seq*` (exclusivos de `sequential-access-levels.spec.ts`). "Assinar fora da vez" não tem cobertura. |
 | CT-018 Chave de acesso | API / E2E | atores `accessKey*` já exclusivos | Provável: `access-keys.ts`, `ui/internal/access-keys.ts`, `access-key-document-creation.spec.ts` (api e e2e). Menor custo: estender esses specs, sem entrada nova. Notificação ao concedente sem evidência. |
-| CT-019 Identidade visual do órgão | E2E | **3ª instância exclusiva** (decidido 20/10) | Sem helper de edição de personalização; `updateInstance` não é exportado em `services/instance.ts`; `ui/internal/instance.ts` cobre só o cadastro. |
+| CT-019 Identidade visual do órgão (positivo: administrador geral edita; negativo: servidor sem administrador geral e sem a permissão extra "configuração de instância" é barrado) | E2E | **3ª instância exclusiva** (decidido 20/10) | Sem helper de edição de personalização; `updateInstance` não é exportado em `services/instance.ts`; `ui/internal/instance.ts` cobre só o cadastro. |
 | CT-020 Indicadores de Servidores | E2E | baseline (leitura) | Parcial: `ui/internal/statistics.ts` + `E73` cobrem os 3 cards (total/ativos/inativos). Gráficos por status e por nível dependem de job de BI que o seed não garante. |
 
 ---
@@ -126,7 +126,7 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 | `twoSectorCreator` (servidor com GP + DIR) | ator | novo | CT-004 (e avaliar CT-011) | sim — spec dono a definir | não (criado por convite) | a definir |
 | Módulo + A&S do CT-006 (3 setores X/Y/Z; nome de módulo ≤ 29 caracteres) | módulo + A&S | novo | CT-006 | sim — spec dono a definir | não | a definir |
 | 3ª instância de identidade visual *(decidida em 20/10)* | instância | novo | CT-019 | sim | **sim:** avisa os analistas SOGOV na criação + e-mail dos servidores | a definir |
-| Administrador (nível 5) e servidor de outro nível (2–4) da 3ª instância | ator ×2 | novo | CT-019 | sim | por convite: não; por `email`: sim | a definir |
+| Servidor com administrador geral e servidor **sem** administrador geral **e sem** a permissão extra "configuração de instância" (3ª instância) | ator ×2 | novo | CT-019 | sim | por convite: não; por `email`: sim | a definir |
 
 **Reuso**
 
@@ -141,7 +141,7 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 | `otherInstance` ("Prefeitura Vizinha E2E") | instância | **não serve para o CT-019** | — | — | — | — |
 
 > [!note] Por que a `otherInstance` não serve ao CT-019
-> É a prefeitura de origem do cidadão (usada em toda execução por 4 specs de registro/vínculo e por `src/data/quick-registration.ts`) e **fica em implantação de propósito**, sem setor, módulo nem servidor. O CT-019 precisa de um Administrador e de outro nível logando na instância, com setor; ativá-la exige módulo e mudaria o papel da instância. A identidade visual também aparece em impressões e na verificação de assinatura de outros specs, então editá-la na instância compartilhada contamina testes em paralelo.
+> É a prefeitura de origem do cidadão (usada em toda execução por 4 specs de registro/vínculo e por `src/data/quick-registration.ts`) e **fica em implantação de propósito**, sem setor, módulo nem servidor. O CT-019 precisa de um servidor com administrador geral e de outro sem administrador geral e sem a permissão extra "configuração de instância" logando na instância, com setor (a permissão extra é um segundo acesso válido à tela, documentado em `Configurações da Instância` e ainda não testado — fica como variação, não como segundo CT); ativá-la exige módulo e mudaria o papel da instância. A identidade visual também aparece em impressões e na verificação de assinatura de outros specs, então editá-la na instância compartilhada contamina testes em paralelo.
 
 > [!warning] Não usar
 > Os atores `seqBasic/seqSpecialist/seqSectorAdmin/seqAdmin` e `accessKey*` são exclusivos de specs próprios; `ownership.ts` e o `parallel-safety.spec.ts` reprovam o uso em outro arquivo.
