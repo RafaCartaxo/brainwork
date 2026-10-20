@@ -22,7 +22,7 @@ pontos: ""
 
 ## Objetivo
 
-Confirmar que os 20 CTs (a redigir em `03 - Casos de teste.md`) cobrem fielmente os 20 cenários aprovados na Proposta da Onda 1 (SGV-12200), com rastreabilidade direta ao TR preservada em cada CT.
+Confirmar que os 20 CTs (redigidos em `03 - Casos de teste.md`) cobrem fielmente os 20 cenários aprovados na Proposta da Onda 1 (SGV-12200), com rastreabilidade direta ao TR preservada em cada CT.
 
 ---
 
