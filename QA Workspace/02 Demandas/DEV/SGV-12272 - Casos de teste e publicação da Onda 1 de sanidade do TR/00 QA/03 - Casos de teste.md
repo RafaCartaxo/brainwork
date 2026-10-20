@@ -836,7 +836,7 @@ Matriz completa: 20 critérios (C1–C20), um por CT, cobertura 1:1. Critérios 
 
 ^ct-018
 
-> [!example]- CT-019 · Edição de identidade visual do órgão: Administrador autorizado, demais níveis barrados (ONDA1-19)
+> [!example]- CT-019 · Edição de identidade visual do órgão: administrador geral autorizado, demais barrados (ONDA1-19)
 >
 > ```meta-bind-button
 > style: primary
@@ -850,29 +850,29 @@ Matriz completa: 20 critérios (C1–C20), um por CT, cobertura 1:1. Critérios 
 >
 > **Origem:** ONDA1-19 da Proposta da Onda 1 (SGV-12200). **TR:** 1.42.1.b ("possibilidade de editar as cores temáticas da interface do menu principal do sistema"); 1.42.1.c ("upload e gerenciamento das imagens institucionais do órgão que serão exibidas em todo o sistema").
 >
-> **Descrição:** confirma que um Servidor com nível Administrador consegue editar as cores temáticas do menu principal e fazer upload/gerenciamento de imagens institucionais do órgão, e que um Servidor com outro nível de acesso é barrado ao tentar a mesma ação.
+> **Descrição:** confirma que um Servidor com permissão de administrador geral consegue editar as cores temáticas do menu principal e fazer upload/gerenciamento de imagens da marca do órgão (tela de Configurações da Instância), e que um Servidor sem administrador geral e sem a permissão extra "configuração de instância" é barrado ao tentar a mesma ação.
 >
 > **Pré-condições:**
-> - Existe um Servidor com nível de acesso Administrador.
-> - Existe um Servidor com nível de acesso diferente de Administrador.
+> - Existe um Servidor com permissão de administrador geral.
+> - Existe um Servidor sem permissão de administrador geral e sem a permissão extra "configuração de instância" ativa.
 >
-> **Dado** que um Servidor com nível Administrador acessa a Personalização do Órgão
-> **Quando** ele edita as cores temáticas do menu principal
+> **Dado** que um Servidor com permissão de administrador geral acessa a tela de Configurações da Instância
+> **Quando** ele edita as cores temáticas
 > **Então** as cores são atualizadas na interface
 >
-> **Quando** ele faz upload de uma imagem institucional
+> **Quando** ele faz upload de uma imagem da marca
 > **Então** a imagem passa a ser gerenciada e exibida no sistema
 >
-> **Dado** que um Servidor com nível diferente de Administrador acessa a Personalização do Órgão
-> **Quando** ele tenta editar as cores temáticas do menu principal ou fazer upload de uma imagem institucional
+> **Dado** que um Servidor sem administrador geral e sem a permissão extra "configuração de instância" acessa a tela de Configurações da Instância
+> **Quando** ele tenta editar as cores temáticas ou fazer upload de uma imagem da marca
 > **Então** o sistema barra a ação
 >
-> **Resultado esperado:** Administrador edita as cores temáticas e envia/gerencia imagem institucional com sucesso; Servidor com outro nível é barrado ao tentar a mesma ação.
+> **Resultado esperado:** administrador geral edita as cores temáticas e envia/gerencia imagem da marca com sucesso; Servidor sem administrador geral e sem a permissão extra é barrado ao tentar a mesma ação.
 >
-> **Pós-condição:** alterações de personalização persistem até nova edição, quando realizadas pelo Administrador; nenhuma alteração ocorre na tentativa barrada.
+> **Pós-condição:** alterações de personalização persistem até nova edição, quando realizadas pelo administrador geral; nenhuma alteração ocorre na tentativa barrada.
 >
 > > [!warning] Origem de produto, não do TR
-> > A exigência de nível Administrador para esta funcionalidade — inclusive o bloqueio de outros níveis testado neste cenário — é documentada no produto/contexto, não afirmada pelo texto literal do TR: 1.42.1.b/c não especifica o ator autorizado nem restrições de acesso. Não apresentar essa exigência como requisito do TR.
+> > A exigência de permissão para esta funcionalidade — administrador geral **ou** a permissão extra "configuração de instância" ativa — é documentada no módulo de produto [[QA Workspace/04 Conhecimento/Módulos/Configurações da Instância|Configurações da Instância]] (importado do Notion em 20/10/2026, ainda **sem comportamento observado em execução/teste**), não afirmada pelo texto literal do TR: 1.42.1.b/c não especifica o ator autorizado nem restrições de acesso. Este cenário usa o administrador geral como ator positivo único e o bloqueio de quem não tem nenhuma das duas permissões como negativo. Não apresentar essa exigência como requisito do TR.
 >
 > > [!info] Fora deste CT
 > > Acesso às informações cadastrais do órgão (1.42.1.a) não faz parte deste cenário.
