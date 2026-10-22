@@ -3,7 +3,7 @@ demanda: "[[../00 QA/01 - Demanda]]"
 casos_origem: "[[../00 QA/03 - Casos de teste]]"
 repo: "sogov-automation-test"
 framework: playwright
-ambiente: hml
+ambiente: dev
 onda: 1
 analises_anteriores: []
 status: analise
@@ -53,7 +53,7 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 
 | Grupo de CTs | Camada | Estratégia de dados | Reuso identificado / lacuna |
 |---|---|---|---|
-| CT-001 login de servidor | API | baseline: pool `agent` | **Já coberto:** `A02-C01` em `tests/api/auth/login.spec.ts` (título confere, `@smoke`). Nada novo. |
+| CT-001 login de servidor | API + E2E (UI) | ator baseline `seed.agents.agent` | API já coberta por `A02-C01`; E2E em `tests/e2e/public-agents/login.spec.ts` implementado e aguardando execução. |
 | CT-002 bloqueio por 5 senhas erradas | API (login por request) | **ator exclusivo novo** `lockoutTarget` | Sem teste (`credentials.spec.ts` só testa 1 senha errada). Desbloqueio: `unlockSogoUserAccess` com `userType: 'publicAgent'` (helper atual `unlockCitizenAccess` fixa `'citizen'`; parametrizar). |
 | CT-003 status do servidor (Ativo/Licença/Férias/Inativo) | API + verificação de acesso | **ator exclusivo novo** `statusTarget`; restaurar `IN_ACTIVITY` no `cleanup` | Sem teste. Mutation `changePublicAgentWorkStatus` (valores `IN_ACTIVITY`, `LICENSE`, `VACATION`, `SUSPEND`) não existe em `src/api/services`. |
 | CT-004 criar documento só pelo Setor criador | API | **ator exclusivo novo** `twoSectorCreator` (GP + DIR) + módulo `accessKey` do baseline (só o GP cria) | Provável: `module.ts`, `organizational.ts`, `documents.ts`, `tests/api\|e2e/matters-services` *(a confirmar)*. Lacuna: nenhum servidor do baseline tem dois setores sem pertencer a spec dono. |
@@ -102,8 +102,8 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
   - **Seed:** `PW_AGENT_REGISTRATION=email` manda e-mail para cada servidor criado; cidadãos sempre confirmam por e-mail. Usar `invite` no primeiro seed dos servidores novos.
 - **Estado compartilhado:** CT-003, CT-006 e CT-019 alteram cadastro/configuração; sem exclusividade contaminam outros specs. Bloqueio de login é da pessoa, em todas as instâncias (CPF/e-mail são únicos no ambiente).
 - **Dados permanentes:** instância não pode ser excluída e a criação **avisa os analistas SOGOV** do ambiente; o `baseline.ts` vale para todos os QAs e ambientes (e-mails na 1ª criação em cada ambiente).
-- **Leitura do produto:** os achados sobre `unlockSogoUserAccess`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS` vêm de um checkout local (`Sogov-application`, branch `development`, último commit de 14/07/2026), possivelmente defasado em relação ao homolog.
-- **Ambiente:** a validação manual dos CTs é em DEV (decisão de 20/10/2026) e a suíte ataca o homolog (`PW_BASE_URL`): o comportamento precisa existir no ambiente-alvo.
+- **Leitura do produto:** os achados sobre `unlockSogoUserAccess`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS` vêm de um checkout local (`Sogov-application`, branch `development`, último commit de 14/07/2026), possivelmente defasado em relação ao DEV, ambiente-alvo desta onda.
+- **Ambiente:** validação manual e suíte da Onda 1 em DEV, confirmado pelo Rafael em 22/10/2026; `PW_BASE_URL` define o alvo da execução.
 
 ---
 
@@ -155,9 +155,9 @@ Quem decide: **Rafael** (salvo indicação).
 - [x] **(a) CT-019:** ~~3ª instância ou manual~~ → **3ª instância**, criada até o fim da Onda 1 (decisão do Rafael, 20/10). Custo aceito: código novo em `provision.ts`, instância permanente, aviso aos analistas SOGOV.
 - [x] **(b) CT-002:** esclarecido pelo Rafael em 20/10 — o comportamento **esperado** é: 5ª senha errada → mensagem de bloqueio + e-mail de reativação, e a senha correta **não** entra até o desbloqueio (link do e-mail ou ação interna de servidor). A senha correta ainda autenticar depois do bloqueio é bug: [[QA Workspace/02 Demandas/HML/SGV-12316 - Bug Login com senha correta aceito com a conta bloqueada/00 QA/01 - Bug|SGV-12316]] (origem provável: correção do SGV-5273). O texto do CT-002 está certo; a automação do CT-002 espera a correção.
 - [ ] **(c) CTs que ficam manuais de vez:** CT-002 e CT-019 saíram da lista (decisão de 20/10: tudo API e E2E). Resta avaliar o CT-013 (e-mail como asserção).
-- [ ] **(d) Ambiente da Onda 1:** confirmar o homolog como alvo (a validação manual é em DEV).
+- [x] **(d) Ambiente da Onda 1:** DEV, confirmado pelo Rafael em 22/10/2026.
 - [ ] **(e) Convenção do baseline:** confirmar com quem o mantém um incremento de `SEED_SCHEMA_VERSION` por entrega.
-- [ ] **(f) Achados do código do produto:** confirmar no homolog `userType: 'publicAgent'`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS`.
+- [ ] **(f) Achados do código do produto:** confirmar no DEV `userType: 'publicAgent'`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS`.
 
 > [!todo] Capturas na validação manual
 > O que precisa ser recolhido durante a validação manual (requisições e telas sem código hoje: CT-002, 003, 007, 008, 014, 016, 017, 018, 019) está listado em [[QA Workspace/02 Demandas/DEV/SGV-12272 - Casos de teste e publicação da Onda 1 de sanidade do TR/00 QA/04 - Validação dev#Capturas para a automação|04 - Validação dev → Capturas para a automação]], junto da execução de cada CT.
