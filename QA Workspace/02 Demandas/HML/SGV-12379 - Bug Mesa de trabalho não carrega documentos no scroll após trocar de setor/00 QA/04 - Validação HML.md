@@ -9,7 +9,7 @@ resultado: aguardando
 pontos: 0
 ct_resultados:
   ct_001: ⏳ Aguardando
-  ct_002: ⏳ Aguardando
+  ct_002: ❌ Falhou
   ct_003: ⏳ Aguardando
 data_inicio: ""
 data_fim: ""
@@ -40,11 +40,11 @@ data_fim: ""
 
 ## Resultado dos casos de teste
 
-| CT | Resultado | Evidência | Observação |
-|---|---|---|---|
-| [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` |  |  |
-| [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002]` |  |  |
-| [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` |  |  |
+| CT | Resultado | Evidência | Observação | Defeito/Bug |
+|---|---|---|---|---|
+| [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_001]` |  |  |  |
+| [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste#^ct-002\|CT-002]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_002]` |  |  | [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/01 - Bug\|SGV-12379]] |
+| [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste#^ct-003\|CT-003]] | `INPUT[inlineSelect(option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado),option(⚪ Não executado)):ct_resultados.ct_003]` |  |  |  |
 
 ---
 
