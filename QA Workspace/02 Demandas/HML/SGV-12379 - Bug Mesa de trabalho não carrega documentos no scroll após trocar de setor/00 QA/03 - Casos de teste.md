@@ -1,6 +1,6 @@
 ---
 demanda: "QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/01 - Bug"
-validacao: "QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/04 - Validação dev"
+validacao: "QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/04 - Validação HML"
 status: planejado
 pontos: ""
 ---
@@ -10,7 +10,7 @@ pontos: ""
 > [!info]- Navegação QA
 > **README do card:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/00 README|Abrir README do card]]
 > **Bug:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/01 - Bug|01 - Bug]]
-> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/04 - Validação dev|04 - Validação dev]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/04 - Validação HML|04 - Validação HML]]
 
 > [!settings]- Controle dos casos de teste
 > **Status:** `INPUT[inlineSelect(option(planejado),option(execucao),option(concluido)):status]`

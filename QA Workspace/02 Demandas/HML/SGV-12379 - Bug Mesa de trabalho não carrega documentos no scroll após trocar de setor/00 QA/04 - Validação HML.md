@@ -15,9 +15,9 @@ data_inicio: ""
 data_fim: ""
 ---
 
-# Validação — SGV-12379
+# Validação HML — SGV-12379
 
-> [!info]- Navegação QA
+> [!info]- Navegação QA/HML
 > **README do card:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/00 README|Abrir README do card]]
 > **Bug:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/01 - Bug|01 - Bug]]
 > **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste|03 - Casos de teste]]
@@ -27,7 +27,7 @@ data_fim: ""
 > **Resultado:** `INPUT[inlineSelect(option(aguardando),option(aprovado),option(reprovado),option(aprovado_com_ressalvas)):resultado]`
 > **Ambiente:** `INPUT[inlineSelect(option(dev),option(hml),option(prod)):ambiente]`
 
-> Registro da execução dos CTs depois da correção. Os cenários ficam em `03 - Casos de teste.md`.
+> Registro da execução manual dos CTs em HML depois da correção. Os cenários manuais ficam em `03 - Casos de teste.md`.
 
 ---
 

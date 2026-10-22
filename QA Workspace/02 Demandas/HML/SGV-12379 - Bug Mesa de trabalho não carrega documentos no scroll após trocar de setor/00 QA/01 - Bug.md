@@ -6,10 +6,10 @@ pontos_alocados: ""
 
 # SGV-12379 — Mesa de trabalho não carrega mais documentos no scroll após trocar de setor
 
-> [!info]- Navegação QA/DEV
+> [!info]- Navegação QA/HML
 > **README do card:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/00 README|Abrir README do card]]
 > **Casos de teste:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/03 - Casos de teste|03 - Casos de teste]]
-> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/04 - Validação dev|04 - Validação dev]]
+> **Validação:** [[QA Workspace/02 Demandas/HML/SGV-12379 - Bug Mesa de trabalho não carrega documentos no scroll após trocar de setor/00 QA/04 - Validação HML|04 - Validação HML]]
 
 > [!settings]- Controle do bug
 > **Prioridade:** `INPUT[inlineSelect(option(baixa),option(media),option(alta)):prioridade]`
