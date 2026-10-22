@@ -8,7 +8,7 @@ responsavel: ""
 resultado: aguardando
 pontos: 0
 ct_resultados:
-  ct_001: ⏳ Aguardando
+  ct_001: ✅ Aprovado
   ct_002: ❌ Falhou
   ct_003: ⏳ Aguardando
   ct_004: ⏳ Aguardando
