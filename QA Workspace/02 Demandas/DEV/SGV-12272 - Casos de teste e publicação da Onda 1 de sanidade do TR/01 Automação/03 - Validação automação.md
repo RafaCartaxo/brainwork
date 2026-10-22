@@ -5,7 +5,7 @@ framework: playwright
 ambiente: hml
 status: planejado
 ct_resultados:
-  ct_001: "⏳ Aguardando"
+  ct_001: "❌ Falhou"
   ct_002: "🧩 Sem teste"
   ct_003: "🧩 Sem teste"
   ct_004: "🧩 Sem teste"
@@ -64,7 +64,7 @@ dv.list([
 
 | CT | Teste no repo | Resultado atual | Última execução (data/build) | Observação |
 |---|---|---|---|---|
-| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01: tests/api/auth/login.spec.ts; CT-001: tests/e2e/public-agents/login.spec.ts` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | — | `E2E implementado; CT ainda não executado. Em 22/10, o seed falhou em DEV na confirmação de cidadãos, antes de iniciar o CT. Próxima tentativa em HML; abrir navegador visível para preencher eventual CAPTCHA.` |
+| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01: tests/api/auth/login.spec.ts; CT-001: tests/e2e/public-agents/login.spec.ts` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | `22/10/2026` | `Execução em HML: seed passou (~123 s); CT falhou no primeiro locator, antes de submeter o login. inputIcon-cpf selecionou o wrapper DIV, não o input; não chegou à autenticação/CAPTCHA. Executor ajustando o locator; resultado aguarda nova execução.` |
 | [[../00 QA/03 - Casos de teste#^ct-002\|CT-002]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_002]` | — | |
 | [[../00 QA/03 - Casos de teste#^ct-003\|CT-003]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_003]` | — | |
 | [[../00 QA/03 - Casos de teste#^ct-004\|CT-004]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_004]` | — | |
