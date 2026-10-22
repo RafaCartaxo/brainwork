@@ -2,10 +2,10 @@
 demanda: "[[../00 QA/01 - Demanda]]"
 casos_origem: "[[../00 QA/03 - Casos de teste]]"
 framework: playwright
-ambiente: hml
+ambiente: dev
 status: planejado
 ct_resultados:
-  ct_001: "🧩 Sem teste"
+  ct_001: "⏳ Aguardando"
   ct_002: "🧩 Sem teste"
   ct_003: "🧩 Sem teste"
   ct_004: "🧩 Sem teste"
@@ -64,7 +64,7 @@ dv.list([
 
 | CT | Teste no repo | Resultado atual | Última execução (data/build) | Observação |
 |---|---|---|---|---|
-| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | — | |
+| [[../00 QA/03 - Casos de teste#^ct-001\|CT-001]] | `A02-C01: tests/api/auth/login.spec.ts; CT-001: tests/e2e/public-agents/login.spec.ts` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_001]` | — | `E2E implementado; não executado nem validado. Alvo DEV.` |
 | [[../00 QA/03 - Casos de teste#^ct-002\|CT-002]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_002]` | — | |
 | [[../00 QA/03 - Casos de teste#^ct-003\|CT-003]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_003]` | — | |
 | [[../00 QA/03 - Casos de teste#^ct-004\|CT-004]] | `sem teste` | `INPUT[inlineSelect(option(🧩 Sem teste),option(⏳ Aguardando),option(🔵 Em andamento),option(✅ Aprovado),option(❌ Falhou),option(🚫 Bloqueado)):ct_resultados.ct_004]` | — | |
