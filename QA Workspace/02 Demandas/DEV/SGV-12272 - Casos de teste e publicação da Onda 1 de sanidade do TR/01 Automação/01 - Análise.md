@@ -3,7 +3,7 @@ demanda: "[[../00 QA/01 - Demanda]]"
 casos_origem: "[[../00 QA/03 - Casos de teste]]"
 repo: "sogov-automation-test"
 framework: playwright
-ambiente: dev
+ambiente: hml
 onda: 1
 analises_anteriores: []
 status: analise
@@ -103,7 +103,16 @@ Levantamento feito por nome de arquivo, serviço e grep; o spec **não foi lido 
 - **Estado compartilhado:** CT-003, CT-006 e CT-019 alteram cadastro/configuração; sem exclusividade contaminam outros specs. Bloqueio de login é da pessoa, em todas as instâncias (CPF/e-mail são únicos no ambiente).
 - **Dados permanentes:** instância não pode ser excluída e a criação **avisa os analistas SOGOV** do ambiente; o `baseline.ts` vale para todos os QAs e ambientes (e-mails na 1ª criação em cada ambiente).
 - **Leitura do produto:** os achados sobre `unlockSogoUserAccess`, `changePublicAgentWorkStatus` e `MAX_LOGIN_ATTEMPTS` vêm de um checkout local (`Sogov-application`, branch `development`, último commit de 14/07/2026), possivelmente defasado em relação ao DEV, ambiente-alvo desta onda.
-- **Ambiente:** validação manual e suíte da Onda 1 em DEV, confirmado pelo Rafael em 22/10/2026; `PW_BASE_URL` define o alvo da execução.
+- **Ambiente:** o Rafael mudou o alvo da automação para HML em 22/10/2026. A próxima tentativa do CT-001 será em HML; se o CAPTCHA aparecer, o navegador precisa abrir visivelmente para preenchimento manual.
+
+## Oportunidade futura: preparação incremental do seed
+
+> [!note] Proposta, ainda sem decisão de início
+> Manter o seed completo para a suíte inteira e avaliar um modo seletivo por CT, que prepare somente a cadeia de dependências declarada pelo caso. A proposta não altera o escopo nem o gate atual da Onda 1.
+
+Hoje o projeto E2E depende do setup que percorre a baseline completa, mesmo quando o comando filtra um único CT. Em 22/10/2026, uma tentativa em DEV levou cerca de 10 minutos e falhou durante a confirmação por e-mail de cidadãos; o seed não concluiu e o CT-001 não chegou a executar. O registro desta falha não inclui identificadores individuais nem cópia do log.
+
+Uma evolução poderia declarar por CT os recursos necessários, calcular a cadeia (por exemplo, instância → setor → servidor para o CT-001), preparar apenas esses recursos e fornecer um manifesto parcial validado. A execução completa continuaria usando a baseline inteira. A proposta precisa preservar idempotência, identidade/isolamento de atores, retomada após falhas e controle de concorrência. Uma prova de conceito isolada do CT-001 existe no working tree do repositório, mas não foi executada nem integrada ao fluxo padrão; sua continuidade está pausada.
 
 ---
 
